@@ -14,9 +14,9 @@ namespace Banco_de_Dados
         public string MsgErro { get; set; }
 
 
-        public void CarregaDados(List<string> LParametros,int Id)
+        public void CarregaDados(string[] LParametros,int Id)
         {
-            List<string> PParametros = LParametros;
+            string[] PParametros = LParametros;
             try
             {
                 string sSQL = "";
@@ -25,8 +25,8 @@ namespace Banco_de_Dados
                 sSQL += "FROM DICVendedor";
                 sSQL += "WHERE DICVendeor = " + Id;
 
-                ConectaBanco ObjConexao = new ConectaBanco();
-                ObjConexao.ExecuteCommand(PParametros, "Connection_Developer", sSQL);
+                
+                
 
             }
             catch (Exception ex)
@@ -36,9 +36,9 @@ namespace Banco_de_Dados
 
         }
 
-        public void InsereDados(List<string> LParametros)
+        public void InsereDados(string[] LParametros)
         {
-            List<string> PParametros = LParametros;
+            string[] PParametros = LParametros;
             try
             {
                 string sSQL = "";
@@ -47,8 +47,7 @@ namespace Banco_de_Dados
                 sSQL += "(VENDNome,VENDApelido)";
                 sSQL += "VALUES ('" + Nome + "," + Apelido + ")";
 
-                ConectaBanco ObjConexao = new ConectaBanco();
-                ObjConexao.ExecuteCommand(PParametros, "Connection_Developer", sSQL);
+                
 
             }
             catch (Exception ex)
