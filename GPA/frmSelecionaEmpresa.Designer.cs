@@ -56,7 +56,7 @@
             this.grdEmpresas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grdEmpresas.Size = new System.Drawing.Size(776, 210);
             this.grdEmpresas.TabIndex = 0;
-            this.grdEmpresas.DoubleClick += new System.EventHandler(this.grdEmpresas_DoubleClick);
+            this.grdEmpresas.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdEmpresas_CellDoubleClick);
             // 
             // grdID
             // 

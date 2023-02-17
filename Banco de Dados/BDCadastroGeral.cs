@@ -126,55 +126,55 @@ namespace Banco_de_Dados
 
             sSQL = "UPDATE CDCadastroEmpresas SET (";
 
-            if (RazaoSocial != "")
+            if (objCadastro.RazaoSocial.ToString() != "")
             {
                 sqlCampos += "CDCERazaoSocial, ";
 
-                sqlconteudo += RazaoSocial + ",";
+                sqlconteudo += objCadastro.RazaoSocial.ToString() + ",";
             }
-            if(RazaoFantasia != "")
+            if(objCadastro.RazaoFantasia.ToString() != "")
             {
                 sqlCampos += "CDCERazaoFantasia, ";
 
-                sqlconteudo += RazaoFantasia + ",";
+                sqlconteudo += objCadastro.RazaoFantasia.ToString() + ",";
             }
-            if(CNPJ != "")
+            if(objCadastro.CNPJ.ToString() != "")
             {
                 sqlCampos += "CDCECNPJ, ";
 
-                sqlconteudo += CNPJ + ",";
+                sqlconteudo += objCadastro.CNPJ.ToString() + ",";
             }
-            if (InscricaoEstadual != "")
+            if (objCadastro.InscricaoEstadual.ToString() != "")
             {
                 sqlCampos += "CDCEInscricao, ";
 
-                sqlconteudo += InscricaoEstadual + ",";
+                sqlconteudo += objCadastro.InscricaoEstadual.ToString() + ",";
             }
-            if (Vendedor != "")
+            if (objCadastro.Vendedor.ToString() != "")
             {
                 sqlCampos += "CDCECNPJ, ";
 
-                sqlconteudo += CNPJ + ",";
+                sqlconteudo += objCadastro.Vendedor.ToString() + ",";
             }
-            if (Cliente != null)
+            if (objCadastro.Cliente != 0)
             {
                 sqlCampos += "CDCECliente, ";
 
-                sqlconteudo += Cliente + ",";
+                sqlconteudo += objCadastro.Cliente.ToString() + ",";
             }
-            if (Distribuidor != null)
+            if (objCadastro.Distribuidor != 0)
             {
                 sqlCampos += "CDCEDistribuidor, ";
 
                 sqlconteudo += Distribuidor + ",";
             }
-            if (Fabricante != null)
+            if (Fabricante != 0)
             {
                 sqlCampos += "CDCEFabricante, ";
 
                 sqlconteudo += Fabricante + ",";
             }
-            if (Fornecedor != null)
+            if (Fornecedor != 0)
             {
                 sqlCampos += "CDCEFornecedor, ";
 

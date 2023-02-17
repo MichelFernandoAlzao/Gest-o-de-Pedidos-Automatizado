@@ -6,18 +6,18 @@ namespace GPA
 {
     public partial class frmCadEmpresas : Form
     {
-        string ID = "";
-        string RazaoSocial = "";
-        string RazaoFantasia = "";
-        string CNPJ = "";
-        string InscricaoEstadual = "";
-        string Vendedor = "";
-        char Cliente;
-        char Distribuidor;
-        char Fabricante;
-        char FOrnecedor;
-        int Enderecos;
-        int Contatos;
+        public string LID = "";
+        public string LRazaoSocial = "";
+        string LRazaoFantasia = "";
+        string LCNPJ = "";
+        string LInscricaoEstadual = "";
+        string LVendedor = "";
+        char LCliente;
+        char LDistribuidor;
+        char LFabricante;
+        char LFOrnecedor;
+        int LEnderecos;
+        int LContatos;
         string[] LParametros;
         string MsgErro;
 
@@ -37,7 +37,7 @@ namespace GPA
 
         private void cmdNovo_Click(object sender, EventArgs e)
         {
-            ID = "";
+            LID = "";
             txtRazaoSocial.Text = "";
             txtFantasia.Text = "";
             txtCNPJ.Text = "";
@@ -118,7 +118,7 @@ namespace GPA
                 MessageBox.Show("Ao menos uma identificação deve ser selecionada para a empresa");
             }
 
-            if(ID == "")
+            if(LID == "")
             {
                 objCadastro.InsereDados(LParametros);
                 MsgErro = objCadastro.MsgErro;
@@ -130,7 +130,7 @@ namespace GPA
             else
             {
                 BDCadastroGeral objAtualiza = new BDCadastroGeral();
-                List<BDCadastroGeral> lstEmpresaAnterior = objEmpresaAnterior.CarregaDados(ID, RazaoSocial, RazaoFantasia, CNPJ, "", "", "", "", "", "");
+                List<BDCadastroGeral> lstEmpresaAnterior = objEmpresaAnterior.CarregaDados(LID, LRazaoSocial, LRazaoFantasia, LCNPJ, "", "", "", "", "", "");
                 if (lstEmpresaAnterior[0].RazaoSocial != objCadastro.RazaoSocial)
                 {
                     objAtualiza.RazaoSocial = objCadastro.RazaoSocial;
@@ -199,15 +199,15 @@ namespace GPA
 
         private void CarregaCampos(BDCadastroGeral CadastroGeral)
         {
-            txtRazaoSocial.Text =  RazaoSocial;
-            txtFantasia.Text =  RazaoFantasia;
-            txtCNPJ.Text = CNPJ;
-            txtInscricaoEstadual.Text =  InscricaoEstadual;
-            txtVendedor.Text = Vendedor;
-            if (Cliente == 'S') chkCliente.Checked = true;
-            if (Distribuidor == 'S') chkDistribuidor.Checked = true;
-            if (Fabricante == 'S') chkFabricante.Checked = true;
-            if (FOrnecedor == 'S') chkFornecedor.Checked = true;
+            txtRazaoSocial.Text =  LRazaoSocial;
+            txtFantasia.Text =  LRazaoFantasia;
+            txtCNPJ.Text = LCNPJ;
+            txtInscricaoEstadual.Text =  LInscricaoEstadual;
+            txtVendedor.Text = LVendedor;
+            if (LCliente == 'S') chkCliente.Checked = true;
+            if (LDistribuidor == 'S') chkDistribuidor.Checked = true;
+            if (LFabricante == 'S') chkFabricante.Checked = true;
+            if (LFOrnecedor == 'S') chkFornecedor.Checked = true;
 
         }
 
@@ -215,15 +215,17 @@ namespace GPA
         {
             if (e.KeyCode == Keys.F1)
             {
-                frmSelecionaEmpresa objTela = new frmSelecionaEmpresa(txtRazaoSocial.Text.ToString(),"","");
-                objTela.Show();
+                frmSelecionaEmpresa objTela = new frmSelecionaEmpresa(this,txtRazaoSocial.Text.ToString(),"","");
+                objTela.ShowDialog();
+                MostraDados();
             }
+            
         }
 
         public void MostraDados()
         {
             BDCadastroGeral ObjCadastro = new BDCadastroGeral();
-            List<BDCadastroGeral> lstCadastro = ObjCadastro.CarregaDados(ID,RazaoSocial,RazaoFantasia,CNPJ,"","","","","","");
+            List<BDCadastroGeral> lstCadastro = ObjCadastro.CarregaDados(LID,LRazaoSocial,LRazaoFantasia,LCNPJ,"","","","","","");
             txtRazaoSocial.Text = lstCadastro[0].RazaoSocial.ToString();
             txtFantasia.Text = lstCadastro[0].RazaoFantasia.ToString();
             txtCNPJ.Text = lstCadastro[0].CNPJ.ToString();
@@ -251,12 +253,12 @@ namespace GPA
                 chkFornecedor.Checked = true;
             }
             else chkFornecedor.Checked= false;
-            if (lstCadastro[0].Vendedor != "")
-            {
-                Vendedores objvendedor = new Vendedores();
-                objvendedor.CarregaDados(LParametros, Convert.ToInt32(Vendedor));
-                txtVendedor.Text = objvendedor.Nome;
-            }
+            //if (lstCadastro[0].Vendedor != "")
+            //{
+            //    Vendedores objvendedor = new Vendedores();
+            //    objvendedor.CarregaDados(LParametros, Convert.ToInt32(LVendedor));
+            //    txtVendedor.Text = objvendedor.Nome;
+            //}
         }
 
         private void labCNPJ_Click(object sender, EventArgs e)
