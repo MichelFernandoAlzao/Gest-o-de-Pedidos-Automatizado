@@ -29,29 +29,34 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEntrada));
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtUsuario = new System.Windows.Forms.TextBox();
+            this.txtSenha = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.chkOperacional = new System.Windows.Forms.CheckBox();
+            this.chkSeguranca = new System.Windows.Forms.CheckBox();
+            this.chjFinanceiro = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // textBox1
+            // txtUsuario
             // 
-            this.textBox1.Location = new System.Drawing.Point(40, 207);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(300, 23);
-            this.textBox1.TabIndex = 0;
+            this.txtUsuario.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtUsuario.Location = new System.Drawing.Point(40, 207);
+            this.txtUsuario.Name = "txtUsuario";
+            this.txtUsuario.Size = new System.Drawing.Size(300, 23);
+            this.txtUsuario.TabIndex = 0;
             // 
-            // textBox2
+            // txtSenha
             // 
-            this.textBox2.Location = new System.Drawing.Point(40, 269);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(300, 23);
-            this.textBox2.TabIndex = 1;
+            this.txtSenha.Location = new System.Drawing.Point(40, 269);
+            this.txtSenha.Name = "txtSenha";
+            this.txtSenha.PasswordChar = '*';
+            this.txtSenha.Size = new System.Drawing.Size(300, 23);
+            this.txtSenha.TabIndex = 1;
             // 
             // label1
             // 
@@ -73,7 +78,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(86, 305);
+            this.button1.Location = new System.Drawing.Point(86, 325);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(209, 38);
             this.button1.TabIndex = 4;
@@ -83,7 +88,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(86, 360);
+            this.button2.Location = new System.Drawing.Point(86, 380);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(209, 38);
             this.button2.TabIndex = 6;
@@ -102,19 +107,52 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // chkOperacional
+            // 
+            this.chkOperacional.AutoSize = true;
+            this.chkOperacional.Location = new System.Drawing.Point(40, 300);
+            this.chkOperacional.Name = "chkOperacional";
+            this.chkOperacional.Size = new System.Drawing.Size(90, 19);
+            this.chkOperacional.TabIndex = 8;
+            this.chkOperacional.Text = "Operacional";
+            this.chkOperacional.UseVisualStyleBackColor = true;
+            // 
+            // chkSeguranca
+            // 
+            this.chkSeguranca.AutoSize = true;
+            this.chkSeguranca.Location = new System.Drawing.Point(259, 300);
+            this.chkSeguranca.Name = "chkSeguranca";
+            this.chkSeguranca.Size = new System.Drawing.Size(81, 19);
+            this.chkSeguranca.TabIndex = 9;
+            this.chkSeguranca.Text = "Segurança";
+            this.chkSeguranca.UseVisualStyleBackColor = true;
+            // 
+            // chjFinanceiro
+            // 
+            this.chjFinanceiro.AutoSize = true;
+            this.chjFinanceiro.Location = new System.Drawing.Point(154, 300);
+            this.chjFinanceiro.Name = "chjFinanceiro";
+            this.chjFinanceiro.Size = new System.Drawing.Size(81, 19);
+            this.chjFinanceiro.TabIndex = 10;
+            this.chjFinanceiro.Text = "Financeiro";
+            this.chjFinanceiro.UseVisualStyleBackColor = true;
+            // 
             // frmEntrada
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(384, 450);
             this.ControlBox = false;
+            this.Controls.Add(this.chjFinanceiro);
+            this.Controls.Add(this.chkSeguranca);
+            this.Controls.Add(this.chkOperacional);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtSenha);
+            this.Controls.Add(this.txtUsuario);
             this.Name = "frmEntrada";
             this.Text = "GPA -Entrada";
             this.Load += new System.EventHandler(this.frmEntrada_Load);
@@ -126,12 +164,15 @@
 
         #endregion
 
-        private TextBox textBox1;
-        private TextBox textBox2;
+        private TextBox txtUsuario;
+        private TextBox txtSenha;
         private Label label1;
         private Label label2;
         private Button button1;
         private Button button2;
         private PictureBox pictureBox1;
+        private CheckBox chkOperacional;
+        private CheckBox chkSeguranca;
+        private CheckBox chjFinanceiro;
     }
 }

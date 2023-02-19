@@ -7,11 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Banco_de_Dados;
 
 namespace Formularios
 {
     public partial class frmEntrada : Form
     {
+        private string Lusuario;
+        private string LSenha;
         List<string> LParametros;
         public frmEntrada()
         {
@@ -20,7 +23,7 @@ namespace Formularios
 
         public void frmEntrada_Load(object sender, EventArgs e)
         {
-
+            chkOperacional.Checked = true;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -30,10 +33,65 @@ namespace Formularios
 
         private void Entrar_Click(object sender, EventArgs e)
         {
-            frmCRMInicial objTela = new frmCRMInicial(Convert.ToString(textBox1.Text));
-            this.Hide();
-            objTela.ShowDialog();
-            this.Close();
+
+            if (chkOperacional.Checked)
+            {
+                if (txtUsuario.Text == "" || txtSenha.Text == "")
+                {
+                    MessageBox.Show("Usuario e / ou Senha não informados", "GPA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                List<SEGUsuario> lstUsuario = new List<SEGUsuario>();
+                SEGUsuario objUsuario = new SEGUsuario();
+                lstUsuario = objUsuario.CarregaDados("", txtUsuario.Text.ToUpper(), "", txtSenha.Text.ToUpper());
+                
+                if(lstUsuario.Count == 0)
+                {
+                    MessageBox.Show("Usuario ou senha invalidos","GPA",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                    return;
+                }
+                if(lstUsuario[0].Operacional == 'S')
+                {
+                    frmCRMInicial objTela = new frmCRMInicial(Convert.ToString(txtUsuario.Text));
+                    this.Hide();
+                    objTela.ShowDialog();
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Usuario sem permissão para este modulo.", "GPA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                
+            }
+            if (chkSeguranca.Checked)
+            {
+                if (txtUsuario.Text == "" || txtSenha.Text == "")
+                {
+                    MessageBox.Show("Usuario e / ou Senha não informados", "GPA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                List<SEGUsuario> lstUsuario = new List<SEGUsuario>();
+                SEGUsuario objUsuario = new SEGUsuario();
+                lstUsuario = objUsuario.CarregaDados("", txtUsuario.Text.ToUpper(), "", txtSenha.Text.ToUpper());
+                if (lstUsuario.Count == 0)
+                {
+                    MessageBox.Show("Usuario ou senha invalidos", "GPA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                if (lstUsuario[0].Seguranca == 'S')
+                {
+                    frmSEGUsuarios objTela = new frmSEGUsuarios();
+                    this.Hide();
+                    objTela.ShowDialog();
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Usuario sem permissão para este modulo.", "GPA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+
+            }
+            
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
