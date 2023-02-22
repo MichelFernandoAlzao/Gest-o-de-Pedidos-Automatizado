@@ -33,6 +33,23 @@ namespace Formularios
 
         private void Entrar_Click(object sender, EventArgs e)
         {
+            Entrar();            
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtUsuario_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                Entrar();
+            }
+        }
+        private void Entrar()
+        {
 
             if (chkOperacional.Checked)
             {
@@ -44,13 +61,13 @@ namespace Formularios
                 List<SEGUsuario> lstUsuario = new List<SEGUsuario>();
                 SEGUsuario objUsuario = new SEGUsuario();
                 lstUsuario = objUsuario.CarregaDados("", txtUsuario.Text.ToUpper(), "", txtSenha.Text.ToUpper());
-                
-                if(lstUsuario.Count == 0)
+
+                if (lstUsuario.Count == 0)
                 {
-                    MessageBox.Show("Usuario ou senha invalidos","GPA",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                    MessageBox.Show("Usuario ou senha invalidos", "GPA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
-                if(lstUsuario[0].Operacional == 'S')
+                if (lstUsuario[0].Operacional == 'S')
                 {
                     frmCRMInicial objTela = new frmCRMInicial(Convert.ToString(txtUsuario.Text));
                     this.Hide();
@@ -61,7 +78,7 @@ namespace Formularios
                 {
                     MessageBox.Show("Usuario sem permissão para este modulo.", "GPA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-                
+
             }
             if (chkSeguranca.Checked)
             {
@@ -91,12 +108,6 @@ namespace Formularios
                 }
 
             }
-            
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
