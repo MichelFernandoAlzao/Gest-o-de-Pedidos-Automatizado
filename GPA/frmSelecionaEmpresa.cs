@@ -21,11 +21,12 @@ namespace Formularios
         Form LChamador;
         
         string[] LParametros;
-        public frmSelecionaEmpresa(Form frmChamador,string razao, string inFantasia, string inCNPJ)
+        public frmSelecionaEmpresa(Form frmChamador,string inID,string inrazao, string inFantasia, string inCNPJ)
         {
 
             InitializeComponent();
-            Razao = razao;
+            LIDCadastro = inID;
+            Razao = inrazao;
             Fantasia = inFantasia;
             CNPJ = inCNPJ;
             LChamador = frmChamador;
@@ -39,7 +40,7 @@ namespace Formularios
         private void CarregaEmpresa(string inRazao, string inRazaoFantasia,string inCNPJ)
         {
             BDCadastroGeral objCadastro = new BDCadastroGeral();
-            List<BDCadastroGeral> lstCadastro = objCadastro.CarregaDados("", inRazao, inRazaoFantasia, inCNPJ, "", "", "", "", "", "");
+            List<BDCadastroGeral> lstCadastro = objCadastro.CarregaDados(LIDCadastro, inRazao, inRazaoFantasia, inCNPJ, "", "", "", "", "", "");
             if (lstCadastro.Count > 0) 
             {
                 foreach (BDCadastroGeral item in lstCadastro)

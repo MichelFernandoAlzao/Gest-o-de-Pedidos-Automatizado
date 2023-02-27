@@ -69,7 +69,7 @@ namespace Formularios
                 }
                 if (lstUsuario[0].Operacional == 'S')
                 {
-                    frmCRMInicial objTela = new frmCRMInicial(Convert.ToString(txtUsuario.Text));
+                    frmCRMInicial objTela = new frmCRMInicial();
                     this.Hide();
                     objTela.ShowDialog();
                     this.Close();

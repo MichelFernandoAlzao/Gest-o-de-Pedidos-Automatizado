@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadEmpresas));
             this.txtRazaoSocial = new System.Windows.Forms.TextBox();
             this.labRazaoSocial = new System.Windows.Forms.Label();
             this.txtCNPJ = new System.Windows.Forms.TextBox();
@@ -50,18 +49,18 @@
             this.cmdEndereco = new System.Windows.Forms.Button();
             this.cmdContatos = new System.Windows.Forms.Button();
             this.CmdRegOcorrencias = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtQualificacao = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtAviso = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtDiasAtraso = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtRegCobranca = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtRegVenda = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // txtRazaoSocial
@@ -84,17 +83,17 @@
             // 
             // txtCNPJ
             // 
-            this.txtCNPJ.Location = new System.Drawing.Point(814, 75);
+            this.txtCNPJ.Location = new System.Drawing.Point(841, 75);
             this.txtCNPJ.Name = "txtCNPJ";
             this.txtCNPJ.PlaceholderText = "____._____._____/_____-____";
             this.txtCNPJ.Size = new System.Drawing.Size(156, 23);
-            this.txtCNPJ.TabIndex = 2;
+            this.txtCNPJ.TabIndex = 1;
             // 
             // labCNPJ
             // 
             this.labCNPJ.AutoSize = true;
             this.labCNPJ.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labCNPJ.Location = new System.Drawing.Point(815, 57);
+            this.labCNPJ.Location = new System.Drawing.Point(841, 57);
             this.labCNPJ.Name = "labCNPJ";
             this.labCNPJ.Size = new System.Drawing.Size(58, 15);
             this.labCNPJ.TabIndex = 3;
@@ -103,16 +102,16 @@
             // 
             // txtInscricaoEstadual
             // 
-            this.txtInscricaoEstadual.Location = new System.Drawing.Point(815, 128);
+            this.txtInscricaoEstadual.Location = new System.Drawing.Point(842, 128);
             this.txtInscricaoEstadual.Name = "txtInscricaoEstadual";
             this.txtInscricaoEstadual.Size = new System.Drawing.Size(155, 23);
-            this.txtInscricaoEstadual.TabIndex = 4;
+            this.txtInscricaoEstadual.TabIndex = 3;
             // 
             // labInscricaoEstadual
             // 
             this.labInscricaoEstadual.AutoSize = true;
             this.labInscricaoEstadual.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labInscricaoEstadual.Location = new System.Drawing.Point(815, 110);
+            this.labInscricaoEstadual.Location = new System.Drawing.Point(842, 110);
             this.labInscricaoEstadual.Name = "labInscricaoEstadual";
             this.labInscricaoEstadual.Size = new System.Drawing.Size(104, 15);
             this.labInscricaoEstadual.TabIndex = 5;
@@ -133,13 +132,13 @@
             this.txtFantasia.Location = new System.Drawing.Point(12, 128);
             this.txtFantasia.Name = "txtFantasia";
             this.txtFantasia.Size = new System.Drawing.Size(681, 23);
-            this.txtFantasia.TabIndex = 7;
+            this.txtFantasia.TabIndex = 2;
             // 
             // labVendedor
             // 
             this.labVendedor.AutoSize = true;
             this.labVendedor.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labVendedor.Location = new System.Drawing.Point(815, 163);
+            this.labVendedor.Location = new System.Drawing.Point(842, 163);
             this.labVendedor.Name = "labVendedor";
             this.labVendedor.Size = new System.Drawing.Size(85, 15);
             this.labVendedor.TabIndex = 8;
@@ -147,10 +146,10 @@
             // 
             // txtVendedor
             // 
-            this.txtVendedor.Location = new System.Drawing.Point(815, 181);
+            this.txtVendedor.Location = new System.Drawing.Point(842, 181);
             this.txtVendedor.Name = "txtVendedor";
             this.txtVendedor.Size = new System.Drawing.Size(155, 23);
-            this.txtVendedor.TabIndex = 9;
+            this.txtVendedor.TabIndex = 5;
             // 
             // chkCliente
             // 
@@ -158,7 +157,7 @@
             this.chkCliente.Location = new System.Drawing.Point(12, 279);
             this.chkCliente.Name = "chkCliente";
             this.chkCliente.Size = new System.Drawing.Size(63, 19);
-            this.chkCliente.TabIndex = 10;
+            this.chkCliente.TabIndex = 7;
             this.chkCliente.Text = "Cliente";
             this.chkCliente.UseVisualStyleBackColor = true;
             // 
@@ -168,7 +167,7 @@
             this.chkDistribuidor.Location = new System.Drawing.Point(138, 279);
             this.chkDistribuidor.Name = "chkDistribuidor";
             this.chkDistribuidor.Size = new System.Drawing.Size(88, 19);
-            this.chkDistribuidor.TabIndex = 11;
+            this.chkDistribuidor.TabIndex = 8;
             this.chkDistribuidor.Text = "Distribuidor";
             this.chkDistribuidor.UseVisualStyleBackColor = true;
             // 
@@ -178,7 +177,7 @@
             this.chkFabricante.Location = new System.Drawing.Point(286, 279);
             this.chkFabricante.Name = "chkFabricante";
             this.chkFabricante.Size = new System.Drawing.Size(81, 19);
-            this.chkFabricante.TabIndex = 12;
+            this.chkFabricante.TabIndex = 9;
             this.chkFabricante.Text = "Fabricante";
             this.chkFabricante.UseVisualStyleBackColor = true;
             // 
@@ -188,24 +187,28 @@
             this.chkFornecedor.Location = new System.Drawing.Point(430, 279);
             this.chkFornecedor.Name = "chkFornecedor";
             this.chkFornecedor.Size = new System.Drawing.Size(86, 19);
-            this.chkFornecedor.TabIndex = 13;
+            this.chkFornecedor.TabIndex = 10;
             this.chkFornecedor.Text = "Fornecedor";
             this.chkFornecedor.UseVisualStyleBackColor = true;
             // 
             // cmdSair
             // 
-            this.cmdSair.Image = ((System.Drawing.Image)(resources.GetObject("cmdSair.Image")));
+            this.cmdSair.AccessibleDescription = "Sair";
+            this.cmdSair.BackgroundImage = global::Formularios.Properties.Resources.logout;
+            this.cmdSair.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.cmdSair.Location = new System.Drawing.Point(967, 11);
             this.cmdSair.Name = "cmdSair";
             this.cmdSair.Size = new System.Drawing.Size(30, 30);
-            this.cmdSair.TabIndex = 14;
+            this.cmdSair.TabIndex = 16;
             this.cmdSair.UseVisualStyleBackColor = true;
             this.cmdSair.Click += new System.EventHandler(this.cmdSair_Click);
             // 
             // cmdGravar
             // 
-            this.cmdGravar.Image = ((System.Drawing.Image)(resources.GetObject("cmdGravar.Image")));
-            this.cmdGravar.Location = new System.Drawing.Point(923, 11);
+            this.cmdGravar.AccessibleDescription = "Gravar";
+            this.cmdGravar.BackgroundImage = global::Formularios.Properties.Resources.save;
+            this.cmdGravar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.cmdGravar.Location = new System.Drawing.Point(931, 11);
             this.cmdGravar.Name = "cmdGravar";
             this.cmdGravar.Size = new System.Drawing.Size(30, 30);
             this.cmdGravar.TabIndex = 15;
@@ -214,11 +217,14 @@
             // 
             // cmdNovo
             // 
-            this.cmdNovo.Image = ((System.Drawing.Image)(resources.GetObject("cmdNovo.Image")));
-            this.cmdNovo.Location = new System.Drawing.Point(888, 12);
+            this.cmdNovo.AccessibleDescription = "Novo";
+            this.cmdNovo.AccessibleName = "Novo";
+            this.cmdNovo.BackgroundImage = global::Formularios.Properties.Resources.folder;
+            this.cmdNovo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.cmdNovo.Location = new System.Drawing.Point(896, 11);
             this.cmdNovo.Name = "cmdNovo";
             this.cmdNovo.Size = new System.Drawing.Size(29, 29);
-            this.cmdNovo.TabIndex = 16;
+            this.cmdNovo.TabIndex = 14;
             this.cmdNovo.UseVisualStyleBackColor = true;
             this.cmdNovo.Click += new System.EventHandler(this.cmdNovo_Click);
             // 
@@ -226,10 +232,10 @@
             // 
             this.labCadastroGeral.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.labCadastroGeral.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labCadastroGeral.Location = new System.Drawing.Point(12, 9);
+            this.labCadastroGeral.Location = new System.Drawing.Point(12, 11);
             this.labCadastroGeral.Margin = new System.Windows.Forms.Padding(5, 0, 3, 0);
             this.labCadastroGeral.Name = "labCadastroGeral";
-            this.labCadastroGeral.Size = new System.Drawing.Size(861, 32);
+            this.labCadastroGeral.Size = new System.Drawing.Size(878, 30);
             this.labCadastroGeral.TabIndex = 17;
             this.labCadastroGeral.Text = "Cadastro Geral";
             this.labCadastroGeral.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -239,7 +245,7 @@
             this.cmdEndereco.Location = new System.Drawing.Point(12, 403);
             this.cmdEndereco.Name = "cmdEndereco";
             this.cmdEndereco.Size = new System.Drawing.Size(80, 30);
-            this.cmdEndereco.TabIndex = 20;
+            this.cmdEndereco.TabIndex = 19;
             this.cmdEndereco.Text = "Endereços";
             this.cmdEndereco.UseVisualStyleBackColor = true;
             // 
@@ -248,25 +254,26 @@
             this.cmdContatos.Location = new System.Drawing.Point(98, 403);
             this.cmdContatos.Name = "cmdContatos";
             this.cmdContatos.Size = new System.Drawing.Size(80, 30);
-            this.cmdContatos.TabIndex = 21;
+            this.cmdContatos.TabIndex = 20;
             this.cmdContatos.Text = "Contatos";
             this.cmdContatos.UseVisualStyleBackColor = true;
+            this.cmdContatos.Click += new System.EventHandler(this.cmdContatos_Click);
             // 
             // CmdRegOcorrencias
             // 
             this.CmdRegOcorrencias.Location = new System.Drawing.Point(184, 403);
             this.CmdRegOcorrencias.Name = "CmdRegOcorrencias";
             this.CmdRegOcorrencias.Size = new System.Drawing.Size(80, 30);
-            this.CmdRegOcorrencias.TabIndex = 22;
+            this.CmdRegOcorrencias.TabIndex = 21;
             this.CmdRegOcorrencias.Text = "Ocorrencias";
             this.CmdRegOcorrencias.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // txtQualificacao
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 337);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(134, 23);
-            this.textBox1.TabIndex = 23;
+            this.txtQualificacao.Location = new System.Drawing.Point(12, 337);
+            this.txtQualificacao.Name = "txtQualificacao";
+            this.txtQualificacao.Size = new System.Drawing.Size(134, 23);
+            this.txtQualificacao.TabIndex = 11;
             // 
             // label1
             // 
@@ -278,12 +285,12 @@
             this.label1.TabIndex = 24;
             this.label1.Text = "Qualificação - F1";
             // 
-            // textBox2
+            // txtAviso
             // 
-            this.textBox2.Location = new System.Drawing.Point(12, 181);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(681, 23);
-            this.textBox2.TabIndex = 26;
+            this.txtAviso.Location = new System.Drawing.Point(12, 181);
+            this.txtAviso.Name = "txtAviso";
+            this.txtAviso.Size = new System.Drawing.Size(681, 23);
+            this.txtAviso.TabIndex = 4;
             // 
             // label2
             // 
@@ -305,12 +312,12 @@
             this.label3.TabIndex = 28;
             this.label3.Text = "Dias Atraso";
             // 
-            // textBox3
+            // txtDiasAtraso
             // 
-            this.textBox3.Location = new System.Drawing.Point(152, 337);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(69, 23);
-            this.textBox3.TabIndex = 27;
+            this.txtDiasAtraso.Location = new System.Drawing.Point(152, 337);
+            this.txtDiasAtraso.Name = "txtDiasAtraso";
+            this.txtDiasAtraso.Size = new System.Drawing.Size(69, 23);
+            this.txtDiasAtraso.TabIndex = 12;
             // 
             // label4
             // 
@@ -322,28 +329,28 @@
             this.label4.TabIndex = 30;
             this.label4.Text = "Região de Cobrança - F1";
             // 
-            // textBox4
+            // txtRegCobranca
             // 
-            this.textBox4.Location = new System.Drawing.Point(233, 337);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(283, 23);
-            this.textBox4.TabIndex = 29;
+            this.txtRegCobranca.Location = new System.Drawing.Point(233, 337);
+            this.txtRegCobranca.Name = "txtRegCobranca";
+            this.txtRegCobranca.Size = new System.Drawing.Size(283, 23);
+            this.txtRegCobranca.TabIndex = 13;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(814, 279);
+            this.button1.Location = new System.Drawing.Point(842, 275);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(156, 23);
-            this.button1.TabIndex = 31;
+            this.button1.TabIndex = 17;
             this.button1.Text = "Ultima Venda";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(814, 323);
+            this.button2.Location = new System.Drawing.Point(842, 319);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(156, 23);
-            this.button2.TabIndex = 32;
+            this.button2.TabIndex = 18;
             this.button2.Text = "Produtos Preferidos";
             this.button2.UseVisualStyleBackColor = true;
             // 
@@ -357,12 +364,12 @@
             this.label5.TabIndex = 34;
             this.label5.Text = "Região de Venda - F1";
             // 
-            // textBox5
+            // txtRegVenda
             // 
-            this.textBox5.Location = new System.Drawing.Point(12, 236);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(283, 23);
-            this.textBox5.TabIndex = 33;
+            this.txtRegVenda.Location = new System.Drawing.Point(12, 236);
+            this.txtRegVenda.Name = "txtRegVenda";
+            this.txtRegVenda.Size = new System.Drawing.Size(283, 23);
+            this.txtRegVenda.TabIndex = 6;
             // 
             // frmCadEmpresas
             // 
@@ -371,17 +378,17 @@
             this.ClientSize = new System.Drawing.Size(1009, 449);
             this.ControlBox = false;
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.txtRegVenda);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.txtRegCobranca);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtDiasAtraso);
+            this.Controls.Add(this.txtAviso);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtQualificacao);
             this.Controls.Add(this.CmdRegOcorrencias);
             this.Controls.Add(this.cmdContatos);
             this.Controls.Add(this.cmdEndereco);
@@ -434,17 +441,17 @@
         private Button cmdEndereco;
         private Button cmdContatos;
         private Button CmdRegOcorrencias;
-        private TextBox textBox1;
+        private TextBox txtQualificacao;
         private Label label1;
-        private TextBox textBox2;
+        private TextBox txtAviso;
         private Label label2;
         private Label label3;
-        private TextBox textBox3;
+        private TextBox txtDiasAtraso;
         private Label label4;
-        private TextBox textBox4;
+        private TextBox txtRegCobranca;
         private Button button1;
         private Button button2;
         private Label label5;
-        private TextBox textBox5;
+        private TextBox txtRegVenda;
     }
 }

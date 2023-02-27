@@ -263,7 +263,6 @@
             // 
             // cmdCadastroProduto
             // 
-            this.cmdCadastroProduto.Enabled = false;
             this.cmdCadastroProduto.Location = new System.Drawing.Point(132, 201);
             this.cmdCadastroProduto.Name = "cmdCadastroProduto";
             this.cmdCadastroProduto.Size = new System.Drawing.Size(113, 44);
@@ -274,7 +273,6 @@
             // 
             // cmdCadastrosEmpresas
             // 
-            this.cmdCadastrosEmpresas.Enabled = false;
             this.cmdCadastrosEmpresas.Location = new System.Drawing.Point(18, 201);
             this.cmdCadastrosEmpresas.Name = "cmdCadastrosEmpresas";
             this.cmdCadastrosEmpresas.Size = new System.Drawing.Size(113, 44);

@@ -29,28 +29,31 @@
         private void InitializeComponent()
         {
             this.lbCadProdutos = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtDescricao = new System.Windows.Forms.TextBox();
+            this.txtCodigo = new System.Windows.Forms.TextBox();
+            this.txtDataCadastro = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtDescFornecedor = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtFabricante = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.txtCodFabricante = new System.Windows.Forms.TextBox();
+            this.txtDescritivo = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.chkAtivo = new System.Windows.Forms.CheckBox();
+            this.chkOperacional = new System.Windows.Forms.CheckBox();
+            this.chkForadeLinha = new System.Windows.Forms.CheckBox();
+            this.labMelFornecedor = new System.Windows.Forms.Label();
+            this.txtMelhorFornecedor = new System.Windows.Forms.TextBox();
+            this.cmdNovo = new System.Windows.Forms.Button();
+            this.cmdGravar = new System.Windows.Forms.Button();
+            this.cmdSair = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbCadProdutos
@@ -61,32 +64,33 @@
             this.lbCadProdutos.ForeColor = System.Drawing.Color.Black;
             this.lbCadProdutos.Location = new System.Drawing.Point(12, 9);
             this.lbCadProdutos.Name = "lbCadProdutos";
-            this.lbCadProdutos.Size = new System.Drawing.Size(924, 23);
+            this.lbCadProdutos.Size = new System.Drawing.Size(755, 23);
             this.lbCadProdutos.TabIndex = 1;
             this.lbCadProdutos.Text = "Cadastro de Produtos";
             this.lbCadProdutos.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // textBox1
+            // txtDescricao
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 77);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(472, 23);
-            this.textBox1.TabIndex = 2;
+            this.txtDescricao.Location = new System.Drawing.Point(12, 77);
+            this.txtDescricao.Name = "txtDescricao";
+            this.txtDescricao.Size = new System.Drawing.Size(472, 23);
+            this.txtDescricao.TabIndex = 2;
+            this.txtDescricao.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtDescricao_KeyDown);
             // 
-            // textBox2
+            // txtCodigo
             // 
-            this.textBox2.Location = new System.Drawing.Point(503, 77);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(127, 23);
-            this.textBox2.TabIndex = 3;
+            this.txtCodigo.Location = new System.Drawing.Point(503, 77);
+            this.txtCodigo.Name = "txtCodigo";
+            this.txtCodigo.Size = new System.Drawing.Size(127, 23);
+            this.txtCodigo.TabIndex = 3;
             // 
-            // textBox3
+            // txtDataCadastro
             // 
-            this.textBox3.Location = new System.Drawing.Point(652, 77);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(115, 23);
-            this.textBox3.TabIndex = 4;
-            this.textBox3.Text = "____/____/________";
+            this.txtDataCadastro.Location = new System.Drawing.Point(652, 77);
+            this.txtDataCadastro.Name = "txtDataCadastro";
+            this.txtDataCadastro.Size = new System.Drawing.Size(115, 23);
+            this.txtDataCadastro.TabIndex = 4;
+            this.txtDataCadastro.Text = "____/____/________";
             // 
             // label1
             // 
@@ -118,12 +122,12 @@
             this.label3.TabIndex = 7;
             this.label3.Text = "Data Cadastro";
             // 
-            // textBox4
+            // txtDescFornecedor
             // 
-            this.textBox4.Location = new System.Drawing.Point(12, 137);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(472, 23);
-            this.textBox4.TabIndex = 8;
+            this.txtDescFornecedor.Location = new System.Drawing.Point(12, 137);
+            this.txtDescFornecedor.Name = "txtDescFornecedor";
+            this.txtDescFornecedor.Size = new System.Drawing.Size(472, 23);
+            this.txtDescFornecedor.TabIndex = 8;
             // 
             // label4
             // 
@@ -145,12 +149,13 @@
             this.label5.TabIndex = 11;
             this.label5.Text = "Fabricante - F1";
             // 
-            // textBox5
+            // txtFabricante
             // 
-            this.textBox5.Location = new System.Drawing.Point(12, 197);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(472, 23);
-            this.textBox5.TabIndex = 10;
+            this.txtFabricante.Location = new System.Drawing.Point(12, 197);
+            this.txtFabricante.Name = "txtFabricante";
+            this.txtFabricante.Size = new System.Drawing.Size(472, 23);
+            this.txtFabricante.TabIndex = 10;
+            this.txtFabricante.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtFabricante_KeyDown);
             // 
             // label6
             // 
@@ -162,20 +167,20 @@
             this.label6.TabIndex = 13;
             this.label6.Text = "Codigo Fabricante - F1";
             // 
-            // textBox6
+            // txtCodFabricante
             // 
-            this.textBox6.Location = new System.Drawing.Point(789, 77);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(130, 23);
-            this.textBox6.TabIndex = 12;
+            this.txtCodFabricante.Location = new System.Drawing.Point(789, 77);
+            this.txtCodFabricante.Name = "txtCodFabricante";
+            this.txtCodFabricante.Size = new System.Drawing.Size(130, 23);
+            this.txtCodFabricante.TabIndex = 12;
             // 
-            // textBox7
+            // txtDescritivo
             // 
-            this.textBox7.Location = new System.Drawing.Point(12, 344);
-            this.textBox7.Multiline = true;
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(755, 180);
-            this.textBox7.TabIndex = 14;
+            this.txtDescritivo.Location = new System.Drawing.Point(12, 344);
+            this.txtDescritivo.Multiline = true;
+            this.txtDescritivo.Name = "txtDescritivo";
+            this.txtDescritivo.Size = new System.Drawing.Size(755, 180);
+            this.txtDescritivo.TabIndex = 14;
             // 
             // label7
             // 
@@ -214,83 +219,124 @@
             this.button3.Text = "Anexos";
             this.button3.UseVisualStyleBackColor = true;
             // 
-            // checkBox1
+            // chkAtivo
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(12, 244);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(54, 19);
-            this.checkBox1.TabIndex = 19;
-            this.checkBox1.Text = "Ativo";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.chkAtivo.AutoSize = true;
+            this.chkAtivo.Location = new System.Drawing.Point(12, 244);
+            this.chkAtivo.Name = "chkAtivo";
+            this.chkAtivo.Size = new System.Drawing.Size(54, 19);
+            this.chkAtivo.TabIndex = 19;
+            this.chkAtivo.Text = "Ativo";
+            this.chkAtivo.UseVisualStyleBackColor = true;
             // 
-            // checkBox2
+            // chkOperacional
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(86, 244);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(90, 19);
-            this.checkBox2.TabIndex = 20;
-            this.checkBox2.Text = "Operacional";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.chkOperacional.AutoSize = true;
+            this.chkOperacional.Location = new System.Drawing.Point(86, 244);
+            this.chkOperacional.Name = "chkOperacional";
+            this.chkOperacional.Size = new System.Drawing.Size(90, 19);
+            this.chkOperacional.TabIndex = 20;
+            this.chkOperacional.Text = "Operacional";
+            this.chkOperacional.UseVisualStyleBackColor = true;
             // 
-            // checkBox3
+            // chkForadeLinha
             // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(204, 244);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(94, 19);
-            this.checkBox3.TabIndex = 21;
-            this.checkBox3.Text = "Fora de linha";
-            this.checkBox3.UseVisualStyleBackColor = true;
+            this.chkForadeLinha.AutoSize = true;
+            this.chkForadeLinha.Location = new System.Drawing.Point(204, 244);
+            this.chkForadeLinha.Name = "chkForadeLinha";
+            this.chkForadeLinha.Size = new System.Drawing.Size(94, 19);
+            this.chkForadeLinha.TabIndex = 21;
+            this.chkForadeLinha.Text = "Fora de linha";
+            this.chkForadeLinha.UseVisualStyleBackColor = true;
             // 
-            // label8
+            // labMelFornecedor
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label8.Location = new System.Drawing.Point(490, 179);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(114, 15);
-            this.label8.TabIndex = 23;
-            this.label8.Text = "Melhor Fornecedor";
+            this.labMelFornecedor.AutoSize = true;
+            this.labMelFornecedor.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labMelFornecedor.Location = new System.Drawing.Point(490, 179);
+            this.labMelFornecedor.Name = "labMelFornecedor";
+            this.labMelFornecedor.Size = new System.Drawing.Size(138, 15);
+            this.labMelFornecedor.TabIndex = 23;
+            this.labMelFornecedor.Text = "Melhor Fornecedor - F1";
             // 
-            // textBox8
+            // txtMelhorFornecedor
             // 
-            this.textBox8.Location = new System.Drawing.Point(490, 197);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(429, 23);
-            this.textBox8.TabIndex = 22;
+            this.txtMelhorFornecedor.Location = new System.Drawing.Point(490, 197);
+            this.txtMelhorFornecedor.Name = "txtMelhorFornecedor";
+            this.txtMelhorFornecedor.Size = new System.Drawing.Size(429, 23);
+            this.txtMelhorFornecedor.TabIndex = 22;
+            this.txtMelhorFornecedor.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtMelhorFornecedor_KeyDown);
+            // 
+            // cmdNovo
+            // 
+            this.cmdNovo.BackgroundImage = global::Formularios.Properties.Resources.folder;
+            this.cmdNovo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.cmdNovo.CausesValidation = false;
+            this.cmdNovo.Location = new System.Drawing.Point(787, 9);
+            this.cmdNovo.Name = "cmdNovo";
+            this.cmdNovo.Size = new System.Drawing.Size(40, 25);
+            this.cmdNovo.TabIndex = 24;
+            this.cmdNovo.UseVisualStyleBackColor = true;
+            this.cmdNovo.Click += new System.EventHandler(this.cmdNovo_Click);
+            // 
+            // cmdGravar
+            // 
+            this.cmdGravar.BackgroundImage = global::Formularios.Properties.Resources.save;
+            this.cmdGravar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.cmdGravar.CausesValidation = false;
+            this.cmdGravar.Location = new System.Drawing.Point(833, 9);
+            this.cmdGravar.Name = "cmdGravar";
+            this.cmdGravar.Size = new System.Drawing.Size(40, 25);
+            this.cmdGravar.TabIndex = 25;
+            this.cmdGravar.UseVisualStyleBackColor = true;
+            // 
+            // cmdSair
+            // 
+            this.cmdSair.BackgroundImage = global::Formularios.Properties.Resources.logout;
+            this.cmdSair.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.cmdSair.CausesValidation = false;
+            this.cmdSair.Location = new System.Drawing.Point(879, 9);
+            this.cmdSair.Name = "cmdSair";
+            this.cmdSair.Size = new System.Drawing.Size(40, 25);
+            this.cmdSair.TabIndex = 26;
+            this.cmdSair.UseVisualStyleBackColor = true;
+            this.cmdSair.Click += new System.EventHandler(this.cmdSair_Click);
             // 
             // frmCadProdutos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(948, 536);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.textBox8);
-            this.Controls.Add(this.checkBox3);
-            this.Controls.Add(this.checkBox2);
-            this.Controls.Add(this.checkBox1);
+            this.ControlBox = false;
+            this.Controls.Add(this.cmdSair);
+            this.Controls.Add(this.cmdGravar);
+            this.Controls.Add(this.cmdNovo);
+            this.Controls.Add(this.labMelFornecedor);
+            this.Controls.Add(this.txtMelhorFornecedor);
+            this.Controls.Add(this.chkForadeLinha);
+            this.Controls.Add(this.chkOperacional);
+            this.Controls.Add(this.chkAtivo);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBox7);
+            this.Controls.Add(this.txtDescritivo);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.txtCodFabricante);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.txtFabricante);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.txtDescFornecedor);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtDataCadastro);
+            this.Controls.Add(this.txtCodigo);
+            this.Controls.Add(this.txtDescricao);
             this.Controls.Add(this.lbCadProdutos);
             this.Name = "frmCadProdutos";
             this.Text = "Cadastro de Produtos";
+            this.Load += new System.EventHandler(this.frmCadProdutos_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -299,27 +345,30 @@
         #endregion
 
         private Label lbCadProdutos;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
+        private TextBox txtDescricao;
+        private TextBox txtCodigo;
+        private TextBox txtDataCadastro;
         private Label label1;
         private Label label2;
         private Label label3;
-        private TextBox textBox4;
+        private TextBox txtDescFornecedor;
         private Label label4;
         private Label label5;
-        private TextBox textBox5;
+        private TextBox txtFabricante;
         private Label label6;
-        private TextBox textBox6;
-        private TextBox textBox7;
+        private TextBox txtCodFabricante;
+        private TextBox txtDescritivo;
         private Label label7;
         private Button button1;
         private Button button2;
         private Button button3;
-        private CheckBox checkBox1;
-        private CheckBox checkBox2;
-        private CheckBox checkBox3;
-        private Label label8;
-        private TextBox textBox8;
+        private CheckBox chkAtivo;
+        private CheckBox chkOperacional;
+        private CheckBox chkForadeLinha;
+        private Label labMelFornecedor;
+        private TextBox txtMelhorFornecedor;
+        private Button cmdNovo;
+        private Button cmdGravar;
+        private Button cmdSair;
     }
 }

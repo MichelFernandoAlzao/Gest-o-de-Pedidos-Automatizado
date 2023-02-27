@@ -14,14 +14,14 @@ namespace Formularios
     public partial class frmCRMInicial : Form
     {
         List<string> LParametros;
-        public frmCRMInicial(string inParametros)
+        public frmCRMInicial()
         {
             InitializeComponent();
             
-            if (inParametros == "Michel")
-            {
-                HabilitaBotoes();
-            }
+            //if (inParametros == "Michel")
+            //{
+            //    HabilitaBotoes();
+            //}
         }
 
         public void HabilitaBotoes()
