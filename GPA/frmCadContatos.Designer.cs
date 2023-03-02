@@ -28,11 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadContatos));
             this.cmdSair = new System.Windows.Forms.Button();
             this.cmdGravar = new System.Windows.Forms.Button();
             this.cmdNovo = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.grdContatos = new System.Windows.Forms.DataGridView();
+            this.grdid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.grdNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.grdCargo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.grdNumero = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.grdEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.grdAniversario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.grdComprador = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.grdGerencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.grdAnotacoes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.labNome = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.txtTelefone = new System.Windows.Forms.TextBox();
@@ -45,17 +55,9 @@
             this.labAniversario = new System.Windows.Forms.Label();
             this.chkComprador = new System.Windows.Forms.CheckBox();
             this.chkGerencia = new System.Windows.Forms.CheckBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.txtAnotacoes = new System.Windows.Forms.Label();
-            this.grdid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.grdNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.grdCargo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.grdNumero = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.grdEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.grdAniversario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.grdComprador = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.grdGerencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.grdAnotacoes = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtAnotacoes = new System.Windows.Forms.TextBox();
+            this.labAnotacoes = new System.Windows.Forms.Label();
+            this.cmdExcluir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.grdContatos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -98,7 +100,7 @@
             this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(12, 12);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(668, 30);
+            this.label1.Size = new System.Drawing.Size(620, 30);
             this.label1.TabIndex = 3;
             this.label1.Text = "Contatos";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -126,7 +128,70 @@
             this.grdContatos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grdContatos.Size = new System.Drawing.Size(776, 189);
             this.grdContatos.TabIndex = 4;
-            this.grdContatos.SelectionChanged += new System.EventHandler(this.grdContatos_SelectionChanged);
+            this.grdContatos.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdContatos_Selection);
+            // 
+            // grdid
+            // 
+            this.grdid.HeaderText = "ID";
+            this.grdid.Name = "grdid";
+            this.grdid.ReadOnly = true;
+            this.grdid.Visible = false;
+            // 
+            // grdNome
+            // 
+            this.grdNome.HeaderText = "Nome";
+            this.grdNome.Name = "grdNome";
+            this.grdNome.ReadOnly = true;
+            this.grdNome.Width = 200;
+            // 
+            // grdCargo
+            // 
+            this.grdCargo.HeaderText = "Cargo";
+            this.grdCargo.Name = "grdCargo";
+            this.grdCargo.ReadOnly = true;
+            this.grdCargo.Width = 150;
+            // 
+            // grdNumero
+            // 
+            this.grdNumero.HeaderText = "Telefone";
+            this.grdNumero.Name = "grdNumero";
+            this.grdNumero.ReadOnly = true;
+            this.grdNumero.Width = 150;
+            // 
+            // grdEmail
+            // 
+            this.grdEmail.HeaderText = "E-mail";
+            this.grdEmail.Name = "grdEmail";
+            this.grdEmail.ReadOnly = true;
+            this.grdEmail.Width = 230;
+            // 
+            // grdAniversario
+            // 
+            this.grdAniversario.HeaderText = "Aniversario";
+            this.grdAniversario.Name = "grdAniversario";
+            this.grdAniversario.ReadOnly = true;
+            this.grdAniversario.Visible = false;
+            // 
+            // grdComprador
+            // 
+            this.grdComprador.HeaderText = "Comprador";
+            this.grdComprador.Name = "grdComprador";
+            this.grdComprador.ReadOnly = true;
+            this.grdComprador.Visible = false;
+            // 
+            // grdGerencia
+            // 
+            this.grdGerencia.HeaderText = "Gerencia";
+            this.grdGerencia.Name = "grdGerencia";
+            this.grdGerencia.ReadOnly = true;
+            this.grdGerencia.Visible = false;
+            // 
+            // grdAnotacoes
+            // 
+            this.grdAnotacoes.HeaderText = "Anotacoes";
+            this.grdAnotacoes.Name = "grdAnotacoes";
+            this.grdAnotacoes.ReadOnly = true;
+            this.grdAnotacoes.Visible = false;
             // 
             // labNome
             // 
@@ -230,85 +295,33 @@
             this.chkGerencia.Text = "Gerencia";
             this.chkGerencia.UseVisualStyleBackColor = true;
             // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(12, 365);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(776, 73);
-            this.textBox2.TabIndex = 18;
-            // 
             // txtAnotacoes
             // 
-            this.txtAnotacoes.AutoSize = true;
-            this.txtAnotacoes.Location = new System.Drawing.Point(12, 347);
+            this.txtAnotacoes.Location = new System.Drawing.Point(12, 365);
+            this.txtAnotacoes.Multiline = true;
             this.txtAnotacoes.Name = "txtAnotacoes";
-            this.txtAnotacoes.Size = new System.Drawing.Size(63, 15);
-            this.txtAnotacoes.TabIndex = 17;
-            this.txtAnotacoes.Text = "Anotações";
+            this.txtAnotacoes.Size = new System.Drawing.Size(776, 73);
+            this.txtAnotacoes.TabIndex = 18;
             // 
-            // grdid
+            // labAnotacoes
             // 
-            this.grdid.HeaderText = "ID";
-            this.grdid.Name = "grdid";
-            this.grdid.ReadOnly = true;
-            this.grdid.Visible = false;
+            this.labAnotacoes.AutoSize = true;
+            this.labAnotacoes.Location = new System.Drawing.Point(12, 347);
+            this.labAnotacoes.Name = "labAnotacoes";
+            this.labAnotacoes.Size = new System.Drawing.Size(63, 15);
+            this.labAnotacoes.TabIndex = 17;
+            this.labAnotacoes.Text = "Anotações";
             // 
-            // grdNome
+            // cmdExcluir
             // 
-            this.grdNome.HeaderText = "Nome";
-            this.grdNome.Name = "grdNome";
-            this.grdNome.ReadOnly = true;
-            this.grdNome.Width = 200;
-            // 
-            // grdCargo
-            // 
-            this.grdCargo.HeaderText = "Cargo";
-            this.grdCargo.Name = "grdCargo";
-            this.grdCargo.ReadOnly = true;
-            this.grdCargo.Width = 150;
-            // 
-            // grdNumero
-            // 
-            this.grdNumero.HeaderText = "Telefone";
-            this.grdNumero.Name = "grdNumero";
-            this.grdNumero.ReadOnly = true;
-            this.grdNumero.Width = 150;
-            // 
-            // grdEmail
-            // 
-            this.grdEmail.HeaderText = "E-mail";
-            this.grdEmail.Name = "grdEmail";
-            this.grdEmail.ReadOnly = true;
-            this.grdEmail.Width = 230;
-            // 
-            // grdAniversario
-            // 
-            this.grdAniversario.HeaderText = "Aniversario";
-            this.grdAniversario.Name = "grdAniversario";
-            this.grdAniversario.ReadOnly = true;
-            this.grdAniversario.Visible = false;
-            // 
-            // grdComprador
-            // 
-            this.grdComprador.HeaderText = "Comprador";
-            this.grdComprador.Name = "grdComprador";
-            this.grdComprador.ReadOnly = true;
-            this.grdComprador.Visible = false;
-            // 
-            // grdGerencia
-            // 
-            this.grdGerencia.HeaderText = "Gerencia";
-            this.grdGerencia.Name = "grdGerencia";
-            this.grdGerencia.ReadOnly = true;
-            this.grdGerencia.Visible = false;
-            // 
-            // grdAnotacoes
-            // 
-            this.grdAnotacoes.HeaderText = "Anotacoes";
-            this.grdAnotacoes.Name = "grdAnotacoes";
-            this.grdAnotacoes.ReadOnly = true;
-            this.grdAnotacoes.Visible = false;
+            this.cmdExcluir.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("cmdExcluir.BackgroundImage")));
+            this.cmdExcluir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.cmdExcluir.Location = new System.Drawing.Point(650, 12);
+            this.cmdExcluir.Name = "cmdExcluir";
+            this.cmdExcluir.Size = new System.Drawing.Size(30, 30);
+            this.cmdExcluir.TabIndex = 19;
+            this.cmdExcluir.UseVisualStyleBackColor = true;
+            this.cmdExcluir.Click += new System.EventHandler(this.cmdExcluir_Click);
             // 
             // frmCadContatos
             // 
@@ -316,8 +329,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.ControlBox = false;
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.cmdExcluir);
             this.Controls.Add(this.txtAnotacoes);
+            this.Controls.Add(this.labAnotacoes);
             this.Controls.Add(this.chkGerencia);
             this.Controls.Add(this.chkComprador);
             this.Controls.Add(this.txtAniversario);
@@ -362,8 +376,8 @@
         private Label labAniversario;
         private CheckBox chkComprador;
         private CheckBox chkGerencia;
-        private TextBox textBox2;
-        private Label txtAnotacoes;
+        private TextBox txtAnotacoes;
+        private Label labAnotacoes;
         private DataGridViewTextBoxColumn grdid;
         private DataGridViewTextBoxColumn grdNome;
         private DataGridViewTextBoxColumn grdCargo;
@@ -373,5 +387,6 @@
         private DataGridViewTextBoxColumn grdComprador;
         private DataGridViewTextBoxColumn grdGerencia;
         private DataGridViewTextBoxColumn grdAnotacoes;
+        private Button cmdExcluir;
     }
 }

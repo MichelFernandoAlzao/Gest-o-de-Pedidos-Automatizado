@@ -177,6 +177,7 @@ namespace Banco_de_Dados
                     bDContato.cpGerencia = dr["CDCGerencia"].ToString();
                     bDContato.cpNome = dr["CDCNome"].ToString();
                     bDContato.cpTelefone = dr["CDCTelefone"].ToString();
+                    
 
                     lstContatos.Add(bDContato);
 
@@ -195,76 +196,55 @@ namespace Banco_de_Dados
         }
 
 
-        public void AlteraDados(BDCadContatos OBJAtualiza)
+        public void AlteraDados()
         {
-            BDCadContatos objContato = new BDCadContatos();
-            objContato = OBJAtualiza;
             string sSQL = "";
-            string sqlCampos = "";
-            string sqlconteudo = "(";
-            string sqlWhere = " WHERE CDContatos = '" + objContato.cpID + "'";
+            string sqlconteudo = "";
+            string sqlWhere = " WHERE CDContatos = '" + cpID + "'";
 
-            sSQL = "UPDATE CDContatos SET (";
+            sSQL = "UPDATE CDContatos SET ";
 
-            if (objContato.cpAniversario.ToString() != "")
+            if (cpAniversario != null)
             {
-                sqlCampos += "CDCAniversario, ";
-
-                sqlconteudo += "'" + objContato.cpAniversario.ToString() + "',";
+                sqlconteudo += "CDCAniversario = '" + cpAniversario.ToString() + "',";
             }
-            if (objContato.cpAnotacoes.ToString() != "")
+            if (cpAnotacoes != null)
             {
-                sqlCampos += " CDCAnotacoes, ";
-
-                sqlconteudo += "'" + objContato.cpAnotacoes.ToString() + "',";
+                sqlconteudo += " CDCAnotacoes = '" + cpAnotacoes.ToString() + "',";
             }
-            if (objContato.cpEmpresaDR.ToString() != "")
+            if (cpEmpresaDR != null)
             {
-                sqlCampos += "CDCCadastroEmpresaDR, ";
-
-                sqlconteudo += "'" + objContato.cpEmpresaDR.ToString() + "',";
+                sqlconteudo += "CDCCadastroEmpresaDR = '" + cpEmpresaDR.ToString() + "',";
             }
-            if (objContato.cpCargo.ToString() != "")
+            if (cpCargo != null)
             {
-                sqlCampos += "CDCCargoDR, ";
-
-                sqlconteudo += "'" + objContato.cpCargo.ToString() + "',";
+                sqlconteudo += "CDCCargoDR = '" + cpCargo.ToString() + "',";
             }
-            if (objContato.cpComprador.ToString() != "")
+            if (cpComprador != null)
             {
-                sqlCampos += "CDCComprador, ";
-
-                sqlconteudo += "'" + objContato.cpComprador.ToString() + "',";
+                sqlconteudo += "CDCComprador = '" + cpComprador.ToString() + "',";
             }
-            if (objContato.cpEmail != "")
+            if (cpEmail != null)
             {
-                sqlCampos += "CDCEmail, ";
-
-                sqlconteudo += "'" + objContato.cpEmail.ToString() + "',";
+                sqlconteudo += "CDCEmail = '" + cpEmail.ToString() + "',";
             }
-            if (objContato.cpGerencia.ToString() != "")
+            if (cpGerencia != null)
             {
-                sqlCampos += "CDCGerencia, ";
-
-                sqlconteudo += "'" + objContato.cpGerencia + "',";
+                sqlconteudo += "CDCGerencia = '" + cpGerencia + "',";
             }
-            if (objContato.cpNome.ToString() != "")
+            if (cpNome != null)
             {
-                sqlCampos += "CDCNome, ";
-
-                sqlconteudo += "'" + objContato.cpNome.ToString() + "',";
+                sqlconteudo += "CDCNome = '" + cpNome.ToString() + "',";
             }
-            if (objContato.cpTelefone != "")
+            if (cpTelefone != null)
             {
-                sqlCampos += "CDCTelefone, ";
-
-                sqlconteudo += "'" + objContato.cpTelefone.ToString() + "',";
+                sqlconteudo += "CDCTelefone = '" + cpTelefone.ToString() + "',";
             }
 
 
 
-            sSQL = sSQL + sqlCampos.Remove(sqlCampos.Length - 2) + ")" + sqlconteudo.Remove(sqlconteudo.Length - 1) + ")";
-            sSQL += sqlWhere;
+            sSQL = sSQL + sqlconteudo.Remove(sqlconteudo.Length - 1);
+            sSQL = sSQL + sqlWhere;
 
             cmd.CommandText = sSQL;
 
@@ -284,5 +264,29 @@ namespace Banco_de_Dados
             cmd.Dispose();
         }
 
+        public void Excluir()
+        {
+            string sSQL = "";
+
+            sSQL = "DELETE FROM CDContatos WHERE CDContatos = '" + cpID + "'";
+
+            cmd.CommandText = sSQL;
+
+            try
+            {
+                cmd.Connection = conexao.conectar();
+                //Executar o comando
+                cmd.ExecuteNonQuery();
+                //Desconectar
+                conexao.desconectar();
+                MsgErro = "";
+            }
+            catch (SqlException e)
+            {
+                MsgErro = e.Message.ToString();
+            }
+            cmd.Dispose();
+        }
     }
+
 }

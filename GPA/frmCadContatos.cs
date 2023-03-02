@@ -42,7 +42,7 @@ namespace Formularios
             chkComprador.Checked = false;
             chkGerencia.Checked = false;
             LID = "";
-            LCargo = "";
+            LCargo = null;
             LTelefone = "";
             LEmail = "";
             LComprador = "";
@@ -52,6 +52,7 @@ namespace Formularios
 
         private void AtualizaGrid()
         {
+            grdContatos.Rows.Clear();
             List<BDCadContatos> lstContatos = new List<BDCadContatos>();
             BDCadContatos objContato = new BDCadContatos();
             lstContatos =  objContato.CarregaDados(LCadEmpresa);
@@ -83,14 +84,23 @@ namespace Formularios
 
         private void cmdGravar_Click(object sender, EventArgs e)
         {
+            string data = "";
             BDCadContatos objContato = new BDCadContatos();
             objContato.cpID = LID;
-            objContato.cpNome = txtNome.Text.ToString();
-            objContato.cpCargo = LCargo;
-            objContato.cpTelefone = txtTelefone.Text.ToString();
+            if(LNome != txtNome.Text)objContato.cpNome = txtNome.Text.ToString();
+            if(LCargo != txtCargo.Text)objContato.cpCargo = LCargo;
+            if(LTelefone != txtTelefone.Text)objContato.cpTelefone = txtTelefone.Text.ToString();
             objContato.cpEmpresaDR = LCadEmpresa;
-            objContato.cpEmail = txtEmail.Text.ToString();
-            string data = txtAniversario.Text.Substring(0, 2) + "/" + txtAniversario.Text.Substring(2, 2) + "/" + txtAniversario.Text.Substring(4, 4);
+            if(LEmail != txtEmail.Text)objContato.cpEmail = txtEmail.Text.ToString();
+            if (objContato.cpEmpresaDR != "" && LID == "")
+            {
+                data = txtAniversario.Text.Substring(0, 2) + "/" + txtAniversario.Text.Substring(2, 2) + "/" + txtAniversario.Text.Substring(4, 4);
+            }
+            else
+            {
+                data = txtAniversario.Text;
+            }
+             
             if (Convert.ToDateTime(data) is DateTime)
             {
 
@@ -120,7 +130,7 @@ namespace Formularios
                 objContato.cpGerencia = "N";
             }
             
-            objContato.cpAnotacoes = LAnotacoes;
+            objContato.cpAnotacoes = txtAnotacoes.Text;
 
             if(objContato.cpEmpresaDR != "" && LID == "")
             {
@@ -128,23 +138,33 @@ namespace Formularios
             }
             else
             {
-                objContato.AlteraDados(objContato);
+                objContato.AlteraDados();
             }
             AtualizaGrid();
         }
 
-        private void grdContatos_SelectionChanged(object sender, EventArgs e)
+        private void grdContatos_Selection(object sender, EventArgs e)
         {
-            LNome = grdContatos.SelectedRows[0].Cells[1].Value.ToString();
-            LCargo = grdContatos.SelectedRows[0].Cells[2].Value.ToString();
-            LTelefone = grdContatos.SelectedRows[0].Cells[3].Value.ToString();
-            LEmail = grdContatos.SelectedRows[0].Cells[4].Value.ToString();
-            LAniversario = Convert.ToDateTime(grdContatos.SelectedRows[0].Cells[5].Value);
-            LComprador = grdContatos.SelectedRows[0].Cells[6].Value.ToString();
-            Lgerencia = grdContatos.SelectedRows[0].Cells[6].Value.ToString();
-            LAnotacoes = grdContatos.SelectedRows[0].Cells[7].Value.ToString();
-
-            MostraDados();
+            if(grdContatos.SelectedRows.Count == 0) 
+            {
+                MostraDados();
+            }
+            else
+            {
+                LID = grdContatos.SelectedRows[0].Cells[0].Value.ToString();
+                LNome = grdContatos.SelectedRows[0].Cells[1].Value.ToString();
+                LCargo = grdContatos.SelectedRows[0].Cells[2].Value.ToString();
+                LTelefone = grdContatos.SelectedRows[0].Cells[3].Value.ToString();
+                LEmail = grdContatos.SelectedRows[0].Cells[4].Value.ToString();
+                LAniversario = Convert.ToDateTime(grdContatos.SelectedRows[0].Cells[5].Value);
+                LComprador = grdContatos.SelectedRows[0].Cells[6].Value.ToString();
+                Lgerencia = grdContatos.SelectedRows[0].Cells[7].Value.ToString();
+                LAnotacoes = grdContatos.SelectedRows[0].Cells[8].Value.ToString();
+                MostraDados();
+            }
+            
+            
+            
         }
 
         private void MostraDados()
@@ -174,6 +194,18 @@ namespace Formularios
             }
 
             txtAnotacoes.Text = LAnotacoes;
+        }
+
+        private void cmdExcluir_Click(object sender, EventArgs e)
+        {
+            if (LID == "") return;
+
+            if (MessageBox.Show("Deseja excluir este contato permanentemente ?", "GPA", MessageBoxButtons.YesNo) == DialogResult.No) return;
+
+            BDCadContatos objContato = new BDCadContatos();
+            objContato.cpID = LID.ToString();
+            objContato.Excluir();
+            AtualizaGrid();
         }
     }
 }

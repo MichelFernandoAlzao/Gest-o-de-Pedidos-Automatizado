@@ -147,6 +147,7 @@ namespace Banco_de_Dados
         {
             string sSQL = "";
             string sqlconteudo = "";
+            string sqlWhere = " WHERE CDCadastroEmpresas = '" + Id + "'";
 
             sSQL = "UPDATE CDCadastroEmpresas SET ";
 
@@ -207,6 +208,7 @@ namespace Banco_de_Dados
             }
 
             sSQL = sSQL + sqlconteudo.Remove(sqlconteudo.Length - 1);
+            sSQL = sSQL + sqlWhere;
 
             cmd.CommandText = sSQL;
 
