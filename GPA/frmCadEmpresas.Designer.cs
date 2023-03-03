@@ -248,6 +248,7 @@
             this.cmdEndereco.TabIndex = 19;
             this.cmdEndereco.Text = "Endereços";
             this.cmdEndereco.UseVisualStyleBackColor = true;
+            this.cmdEndereco.Click += new System.EventHandler(this.cmdEndereco_Click);
             // 
             // cmdContatos
             // 

@@ -28,16 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Pedido));
             this.lbPedidos = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.lbNumero = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtNumeroPedido = new System.Windows.Forms.TextBox();
+            this.txtEmpresa = new System.Windows.Forms.TextBox();
+            this.txtNumPedExterno = new System.Windows.Forms.TextBox();
+            this.lbNumeroPedido = new System.Windows.Forms.Label();
+            this.labEmpresa = new System.Windows.Forms.Label();
+            this.labNumPedExterno = new System.Windows.Forms.Label();
+            this.txtDataSolicitacao = new System.Windows.Forms.TextBox();
             this.lbDataSolicitacao = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtDataConfirmacao = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
@@ -45,16 +46,16 @@
             this.button3 = new System.Windows.Forms.Button();
             this.cmdItensPedido = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtxNatOperacao = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
+            this.labDescEndereco = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
+            this.labDescNumero = new System.Windows.Forms.Label();
+            this.labDescCNPJ = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
@@ -68,6 +69,10 @@
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
             this.textBox11 = new System.Windows.Forms.TextBox();
+            this.cmdExcluir = new System.Windows.Forms.Button();
+            this.cmdNovo = new System.Windows.Forms.Button();
+            this.cmdGravar = new System.Windows.Forms.Button();
+            this.cmdSair = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbPedidos
@@ -78,67 +83,68 @@
             this.lbPedidos.ForeColor = System.Drawing.Color.Black;
             this.lbPedidos.Location = new System.Drawing.Point(12, 9);
             this.lbPedidos.Name = "lbPedidos";
-            this.lbPedidos.Size = new System.Drawing.Size(776, 23);
+            this.lbPedidos.Size = new System.Drawing.Size(632, 30);
             this.lbPedidos.TabIndex = 2;
             this.lbPedidos.Text = "Pedido Saida";
-            this.lbPedidos.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lbPedidos.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // textBox1
+            // txtNumeroPedido
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 61);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 23);
-            this.textBox1.TabIndex = 3;
+            this.txtNumeroPedido.Location = new System.Drawing.Point(12, 61);
+            this.txtNumeroPedido.Name = "txtNumeroPedido";
+            this.txtNumeroPedido.Size = new System.Drawing.Size(100, 23);
+            this.txtNumeroPedido.TabIndex = 3;
             // 
-            // textBox2
+            // txtEmpresa
             // 
-            this.textBox2.Location = new System.Drawing.Point(118, 61);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(549, 23);
-            this.textBox2.TabIndex = 4;
+            this.txtEmpresa.Location = new System.Drawing.Point(118, 61);
+            this.txtEmpresa.Name = "txtEmpresa";
+            this.txtEmpresa.Size = new System.Drawing.Size(549, 23);
+            this.txtEmpresa.TabIndex = 4;
+            this.txtEmpresa.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtEmpresa_KeyDown);
             // 
-            // textBox3
+            // txtNumPedExterno
             // 
-            this.textBox3.Location = new System.Drawing.Point(674, 61);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(114, 23);
-            this.textBox3.TabIndex = 5;
+            this.txtNumPedExterno.Location = new System.Drawing.Point(674, 61);
+            this.txtNumPedExterno.Name = "txtNumPedExterno";
+            this.txtNumPedExterno.Size = new System.Drawing.Size(114, 23);
+            this.txtNumPedExterno.TabIndex = 5;
             // 
-            // lbNumero
+            // lbNumeroPedido
             // 
-            this.lbNumero.AutoSize = true;
-            this.lbNumero.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbNumero.Location = new System.Drawing.Point(12, 43);
-            this.lbNumero.Name = "lbNumero";
-            this.lbNumero.Size = new System.Drawing.Size(53, 15);
-            this.lbNumero.TabIndex = 6;
-            this.lbNumero.Text = "Numero";
+            this.lbNumeroPedido.AutoSize = true;
+            this.lbNumeroPedido.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbNumeroPedido.Location = new System.Drawing.Point(12, 43);
+            this.lbNumeroPedido.Name = "lbNumeroPedido";
+            this.lbNumeroPedido.Size = new System.Drawing.Size(53, 15);
+            this.lbNumeroPedido.TabIndex = 6;
+            this.lbNumeroPedido.Text = "Numero";
             // 
-            // label2
+            // labEmpresa
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(118, 43);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(78, 15);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Empresa - F1";
+            this.labEmpresa.AutoSize = true;
+            this.labEmpresa.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labEmpresa.Location = new System.Drawing.Point(118, 43);
+            this.labEmpresa.Name = "labEmpresa";
+            this.labEmpresa.Size = new System.Drawing.Size(78, 15);
+            this.labEmpresa.TabIndex = 7;
+            this.labEmpresa.Text = "Empresa - F1";
             // 
-            // label3
+            // labNumPedExterno
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(688, 43);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(87, 15);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "Pedido Externo";
+            this.labNumPedExterno.AutoSize = true;
+            this.labNumPedExterno.Location = new System.Drawing.Point(688, 43);
+            this.labNumPedExterno.Name = "labNumPedExterno";
+            this.labNumPedExterno.Size = new System.Drawing.Size(87, 15);
+            this.labNumPedExterno.TabIndex = 8;
+            this.labNumPedExterno.Text = "Pedido Externo";
             // 
-            // textBox4
+            // txtDataSolicitacao
             // 
-            this.textBox4.Location = new System.Drawing.Point(12, 176);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 23);
-            this.textBox4.TabIndex = 9;
+            this.txtDataSolicitacao.Location = new System.Drawing.Point(12, 176);
+            this.txtDataSolicitacao.Name = "txtDataSolicitacao";
+            this.txtDataSolicitacao.Size = new System.Drawing.Size(100, 23);
+            this.txtDataSolicitacao.TabIndex = 9;
             // 
             // lbDataSolicitacao
             // 
@@ -149,12 +155,12 @@
             this.lbDataSolicitacao.TabIndex = 10;
             this.lbDataSolicitacao.Text = "Data Solicitação";
             // 
-            // textBox5
+            // txtDataConfirmacao
             // 
-            this.textBox5.Location = new System.Drawing.Point(118, 175);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 23);
-            this.textBox5.TabIndex = 11;
+            this.txtDataConfirmacao.Location = new System.Drawing.Point(118, 175);
+            this.txtDataConfirmacao.Name = "txtDataConfirmacao";
+            this.txtDataConfirmacao.Size = new System.Drawing.Size(100, 23);
+            this.txtDataConfirmacao.TabIndex = 11;
             // 
             // label1
             // 
@@ -221,12 +227,12 @@
             this.button5.Text = "Dados Cliente";
             this.button5.UseVisualStyleBackColor = true;
             // 
-            // textBox6
+            // txtxNatOperacao
             // 
-            this.textBox6.Location = new System.Drawing.Point(237, 175);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(430, 23);
-            this.textBox6.TabIndex = 19;
+            this.txtxNatOperacao.Location = new System.Drawing.Point(237, 175);
+            this.txtxNatOperacao.Name = "txtxNatOperacao";
+            this.txtxNatOperacao.Size = new System.Drawing.Size(430, 23);
+            this.txtxNatOperacao.TabIndex = 19;
             // 
             // label5
             // 
@@ -277,15 +283,15 @@
             this.label9.TabIndex = 24;
             this.label9.Text = "Numero: ";
             // 
-            // label10
+            // labDescEndereco
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label10.Location = new System.Drawing.Point(83, 96);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(203, 15);
-            this.label10.TabIndex = 25;
-            this.label10.Text = "xxxxxxxxxxxxxxxxxxxxxxxxxxxx";
+            this.labDescEndereco.AutoSize = true;
+            this.labDescEndereco.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labDescEndereco.Location = new System.Drawing.Point(83, 96);
+            this.labDescEndereco.Name = "labDescEndereco";
+            this.labDescEndereco.Size = new System.Drawing.Size(203, 15);
+            this.labDescEndereco.TabIndex = 25;
+            this.labDescEndereco.Text = "xxxxxxxxxxxxxxxxxxxxxxxxxxxx";
             // 
             // label11
             // 
@@ -297,25 +303,25 @@
             this.label11.TabIndex = 26;
             this.label11.Text = "xxxxxx";
             // 
-            // label12
+            // labDescNumero
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label12.Location = new System.Drawing.Point(183, 118);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(49, 15);
-            this.label12.TabIndex = 27;
-            this.label12.Text = "xxxxxx";
+            this.labDescNumero.AutoSize = true;
+            this.labDescNumero.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labDescNumero.Location = new System.Drawing.Point(183, 118);
+            this.labDescNumero.Name = "labDescNumero";
+            this.labDescNumero.Size = new System.Drawing.Size(49, 15);
+            this.labDescNumero.TabIndex = 27;
+            this.labDescNumero.Text = "xxxxxx";
             // 
-            // label13
+            // labDescCNPJ
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label13.Location = new System.Drawing.Point(357, 96);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(91, 15);
-            this.label13.TabIndex = 28;
-            this.label13.Text = "xxxxxxxxxxxx";
+            this.labDescCNPJ.AutoSize = true;
+            this.labDescCNPJ.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labDescCNPJ.Location = new System.Drawing.Point(357, 96);
+            this.labDescCNPJ.Name = "labDescCNPJ";
+            this.labDescCNPJ.Size = new System.Drawing.Size(91, 15);
+            this.labDescCNPJ.TabIndex = 28;
+            this.labDescCNPJ.Text = "xxxxxxxxxxxx";
             // 
             // label14
             // 
@@ -369,6 +375,7 @@
             // 
             this.textBox8.Location = new System.Drawing.Point(675, 254);
             this.textBox8.Name = "textBox8";
+            this.textBox8.ReadOnly = true;
             this.textBox8.Size = new System.Drawing.Size(113, 23);
             this.textBox8.TabIndex = 34;
             // 
@@ -376,6 +383,7 @@
             // 
             this.textBox9.Location = new System.Drawing.Point(675, 298);
             this.textBox9.Name = "textBox9";
+            this.textBox9.ReadOnly = true;
             this.textBox9.Size = new System.Drawing.Size(113, 23);
             this.textBox9.TabIndex = 35;
             // 
@@ -413,6 +421,7 @@
             // 
             this.textBox10.Location = new System.Drawing.Point(675, 339);
             this.textBox10.Name = "textBox10";
+            this.textBox10.ReadOnly = true;
             this.textBox10.Size = new System.Drawing.Size(113, 23);
             this.textBox10.TabIndex = 38;
             // 
@@ -430,14 +439,61 @@
             // 
             this.textBox11.Location = new System.Drawing.Point(673, 386);
             this.textBox11.Name = "textBox11";
+            this.textBox11.ReadOnly = true;
             this.textBox11.Size = new System.Drawing.Size(113, 23);
             this.textBox11.TabIndex = 40;
+            // 
+            // cmdExcluir
+            // 
+            this.cmdExcluir.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("cmdExcluir.BackgroundImage")));
+            this.cmdExcluir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.cmdExcluir.Location = new System.Drawing.Point(650, 9);
+            this.cmdExcluir.Name = "cmdExcluir";
+            this.cmdExcluir.Size = new System.Drawing.Size(30, 30);
+            this.cmdExcluir.TabIndex = 45;
+            this.cmdExcluir.UseVisualStyleBackColor = true;
+            this.cmdExcluir.Click += new System.EventHandler(this.cmdExcluir_Click);
+            // 
+            // cmdNovo
+            // 
+            this.cmdNovo.BackgroundImage = global::Formularios.Properties.Resources.folder;
+            this.cmdNovo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.cmdNovo.Location = new System.Drawing.Point(686, 9);
+            this.cmdNovo.Name = "cmdNovo";
+            this.cmdNovo.Size = new System.Drawing.Size(30, 30);
+            this.cmdNovo.TabIndex = 44;
+            this.cmdNovo.UseVisualStyleBackColor = true;
+            // 
+            // cmdGravar
+            // 
+            this.cmdGravar.BackgroundImage = global::Formularios.Properties.Resources.save;
+            this.cmdGravar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.cmdGravar.Location = new System.Drawing.Point(722, 9);
+            this.cmdGravar.Name = "cmdGravar";
+            this.cmdGravar.Size = new System.Drawing.Size(30, 30);
+            this.cmdGravar.TabIndex = 43;
+            this.cmdGravar.UseVisualStyleBackColor = true;
+            // 
+            // cmdSair
+            // 
+            this.cmdSair.BackgroundImage = global::Formularios.Properties.Resources.logout;
+            this.cmdSair.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.cmdSair.Location = new System.Drawing.Point(758, 9);
+            this.cmdSair.Name = "cmdSair";
+            this.cmdSair.Size = new System.Drawing.Size(30, 30);
+            this.cmdSair.TabIndex = 42;
+            this.cmdSair.UseVisualStyleBackColor = true;
             // 
             // Pedido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ControlBox = false;
+            this.Controls.Add(this.cmdExcluir);
+            this.Controls.Add(this.cmdNovo);
+            this.Controls.Add(this.cmdGravar);
+            this.Controls.Add(this.cmdSair);
             this.Controls.Add(this.label21);
             this.Controls.Add(this.textBox11);
             this.Controls.Add(this.label20);
@@ -451,16 +507,16 @@
             this.Controls.Add(this.label16);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label14);
-            this.Controls.Add(this.label13);
-            this.Controls.Add(this.label12);
+            this.Controls.Add(this.labDescCNPJ);
+            this.Controls.Add(this.labDescNumero);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.label10);
+            this.Controls.Add(this.labDescEndereco);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.txtxNatOperacao);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.cmdItensPedido);
             this.Controls.Add(this.button3);
@@ -468,15 +524,15 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.txtDataConfirmacao);
             this.Controls.Add(this.lbDataSolicitacao);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.lbNumero);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtDataSolicitacao);
+            this.Controls.Add(this.labNumPedExterno);
+            this.Controls.Add(this.labEmpresa);
+            this.Controls.Add(this.lbNumeroPedido);
+            this.Controls.Add(this.txtNumPedExterno);
+            this.Controls.Add(this.txtEmpresa);
+            this.Controls.Add(this.txtNumeroPedido);
             this.Controls.Add(this.lbPedidos);
             this.Name = "Pedido";
             this.Text = "Pedido";
@@ -489,15 +545,15 @@
         #endregion
 
         private Label lbPedidos;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private Label lbNumero;
-        private Label label2;
-        private Label label3;
-        private TextBox textBox4;
+        private TextBox txtNumeroPedido;
+        private TextBox txtEmpresa;
+        private TextBox txtNumPedExterno;
+        private Label lbNumeroPedido;
+        private Label labEmpresa;
+        private Label labNumPedExterno;
+        private TextBox txtDataSolicitacao;
         private Label lbDataSolicitacao;
-        private TextBox textBox5;
+        private TextBox txtDataConfirmacao;
         private Label label1;
         private Label label4;
         private Button button1;
@@ -505,16 +561,16 @@
         private Button button3;
         private Button cmdItensPedido;
         private Button button5;
-        private TextBox textBox6;
+        private TextBox txtxNatOperacao;
         private Label label5;
         private Label label6;
         private Label label7;
         private Label label8;
         private Label label9;
-        private Label label10;
+        private Label labDescEndereco;
         private Label label11;
-        private Label label12;
-        private Label label13;
+        private Label labDescNumero;
+        private Label labDescCNPJ;
         private Label label14;
         private Label label15;
         private Label label16;
@@ -528,5 +584,9 @@
         private TextBox textBox10;
         private Label label21;
         private TextBox textBox11;
+        private Button cmdExcluir;
+        private Button cmdNovo;
+        private Button cmdGravar;
+        private Button cmdSair;
     }
 }

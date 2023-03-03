@@ -169,6 +169,7 @@ namespace GPA
                 string Alterar = "";
                 BDCadastroGeral objAtualiza = new BDCadastroGeral();
                 List<BDCadastroGeral> lstEmpresaAnterior = objEmpresaAnterior.CarregaDados(LID, LRazaoSocial, LRazaoFantasia, LCNPJ, "", "", "", "", "", "");
+                objAtualiza.Id = LID;
                 if (lstEmpresaAnterior[0].RazaoSocial != objCadastro.RazaoSocial)
                 {
                     objAtualiza.RazaoSocial = objCadastro.RazaoSocial;
@@ -331,6 +332,14 @@ namespace GPA
             if (LID == "") return;
 
             frmCadContatos objTela = new frmCadContatos(LID,"");
+            objTela.ShowDialog();
+        }
+
+        private void cmdEndereco_Click(object sender, EventArgs e)
+        {
+            if (LID == "") return;
+
+            frmCadEndereco objTela = new frmCadEndereco(LID);
             objTela.ShowDialog();
         }
     }
