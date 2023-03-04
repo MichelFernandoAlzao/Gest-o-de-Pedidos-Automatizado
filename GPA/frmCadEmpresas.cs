@@ -342,5 +342,11 @@ namespace GPA
             frmCadEndereco objTela = new frmCadEndereco(LID);
             objTela.ShowDialog();
         }
+
+        private void CmdRegOcorrencias_Click(object sender, EventArgs e)
+        {
+            frmOcorrencia objTela = new frmOcorrencia();
+            objTela.ShowDialog();
+        }
     }
 }

@@ -289,6 +289,7 @@
             this.cmdGravar.Size = new System.Drawing.Size(40, 25);
             this.cmdGravar.TabIndex = 25;
             this.cmdGravar.UseVisualStyleBackColor = true;
+            this.cmdGravar.Click += new System.EventHandler(this.cmdGravar_Click);
             // 
             // cmdSair
             // 

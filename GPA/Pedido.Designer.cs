@@ -53,13 +53,13 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.labDescEndereco = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
+            this.labDescCEP = new System.Windows.Forms.Label();
             this.labDescNumero = new System.Windows.Forms.Label();
             this.labDescCNPJ = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
+            this.labDescUltCompra = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.labDescVlrUltCompra = new System.Windows.Forms.Label();
+            this.txtObservacao = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.textBox9 = new System.Windows.Forms.TextBox();
@@ -73,6 +73,8 @@
             this.cmdNovo = new System.Windows.Forms.Button();
             this.cmdGravar = new System.Windows.Forms.Button();
             this.cmdSair = new System.Windows.Forms.Button();
+            this.labVendedor = new System.Windows.Forms.Label();
+            this.txtVendedor = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lbPedidos
@@ -90,6 +92,7 @@
             // 
             // txtNumeroPedido
             // 
+            this.txtNumeroPedido.Enabled = false;
             this.txtNumeroPedido.Location = new System.Drawing.Point(12, 61);
             this.txtNumeroPedido.Name = "txtNumeroPedido";
             this.txtNumeroPedido.Size = new System.Drawing.Size(100, 23);
@@ -293,15 +296,15 @@
             this.labDescEndereco.TabIndex = 25;
             this.labDescEndereco.Text = "xxxxxxxxxxxxxxxxxxxxxxxxxxxx";
             // 
-            // label11
+            // labDescCEP
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label11.Location = new System.Drawing.Point(44, 118);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(49, 15);
-            this.label11.TabIndex = 26;
-            this.label11.Text = "xxxxxx";
+            this.labDescCEP.AutoSize = true;
+            this.labDescCEP.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labDescCEP.Location = new System.Drawing.Point(44, 118);
+            this.labDescCEP.Name = "labDescCEP";
+            this.labDescCEP.Size = new System.Drawing.Size(49, 15);
+            this.labDescCEP.TabIndex = 26;
+            this.labDescCEP.Text = "xxxxxx";
             // 
             // labDescNumero
             // 
@@ -323,15 +326,15 @@
             this.labDescCNPJ.TabIndex = 28;
             this.labDescCNPJ.Text = "xxxxxxxxxxxx";
             // 
-            // label14
+            // labDescUltCompra
             // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label14.Location = new System.Drawing.Point(585, 96);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(49, 15);
-            this.label14.TabIndex = 29;
-            this.label14.Text = "xxxxxx";
+            this.labDescUltCompra.AutoSize = true;
+            this.labDescUltCompra.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labDescUltCompra.Location = new System.Drawing.Point(585, 96);
+            this.labDescUltCompra.Name = "labDescUltCompra";
+            this.labDescUltCompra.Size = new System.Drawing.Size(49, 15);
+            this.labDescUltCompra.TabIndex = 29;
+            this.labDescUltCompra.Text = "xxxxxx";
             // 
             // label15
             // 
@@ -343,23 +346,23 @@
             this.label15.TabIndex = 30;
             this.label15.Text = "Valor Ultima Compra: ";
             // 
-            // label16
+            // labDescVlrUltCompra
             // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label16.Location = new System.Drawing.Point(587, 118);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(49, 15);
-            this.label16.TabIndex = 31;
-            this.label16.Text = "xxxxxx";
+            this.labDescVlrUltCompra.AutoSize = true;
+            this.labDescVlrUltCompra.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labDescVlrUltCompra.Location = new System.Drawing.Point(587, 118);
+            this.labDescVlrUltCompra.Name = "labDescVlrUltCompra";
+            this.labDescVlrUltCompra.Size = new System.Drawing.Size(49, 15);
+            this.labDescVlrUltCompra.TabIndex = 31;
+            this.labDescVlrUltCompra.Text = "xxxxxx";
             // 
-            // textBox7
+            // txtObservacao
             // 
-            this.textBox7.Location = new System.Drawing.Point(12, 254);
-            this.textBox7.Multiline = true;
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(655, 184);
-            this.textBox7.TabIndex = 32;
+            this.txtObservacao.Location = new System.Drawing.Point(12, 254);
+            this.txtObservacao.Multiline = true;
+            this.txtObservacao.Name = "txtObservacao";
+            this.txtObservacao.Size = new System.Drawing.Size(655, 184);
+            this.txtObservacao.TabIndex = 32;
             // 
             // label17
             // 
@@ -463,6 +466,7 @@
             this.cmdNovo.Size = new System.Drawing.Size(30, 30);
             this.cmdNovo.TabIndex = 44;
             this.cmdNovo.UseVisualStyleBackColor = true;
+            this.cmdNovo.Click += new System.EventHandler(this.cmdNovo_Click);
             // 
             // cmdGravar
             // 
@@ -473,6 +477,7 @@
             this.cmdGravar.Size = new System.Drawing.Size(30, 30);
             this.cmdGravar.TabIndex = 43;
             this.cmdGravar.UseVisualStyleBackColor = true;
+            this.cmdGravar.Click += new System.EventHandler(this.cmdGravar_Click);
             // 
             // cmdSair
             // 
@@ -483,6 +488,24 @@
             this.cmdSair.Size = new System.Drawing.Size(30, 30);
             this.cmdSair.TabIndex = 42;
             this.cmdSair.UseVisualStyleBackColor = true;
+            this.cmdSair.Click += new System.EventHandler(this.cmdSair_Click);
+            // 
+            // labVendedor
+            // 
+            this.labVendedor.AutoSize = true;
+            this.labVendedor.Location = new System.Drawing.Point(567, 206);
+            this.labVendedor.Name = "labVendedor";
+            this.labVendedor.Size = new System.Drawing.Size(57, 15);
+            this.labVendedor.TabIndex = 47;
+            this.labVendedor.Text = "Vendedor";
+            // 
+            // txtVendedor
+            // 
+            this.txtVendedor.Enabled = false;
+            this.txtVendedor.Location = new System.Drawing.Point(567, 225);
+            this.txtVendedor.Name = "txtVendedor";
+            this.txtVendedor.Size = new System.Drawing.Size(100, 23);
+            this.txtVendedor.TabIndex = 46;
             // 
             // Pedido
             // 
@@ -490,6 +513,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.ControlBox = false;
+            this.Controls.Add(this.labVendedor);
+            this.Controls.Add(this.txtVendedor);
             this.Controls.Add(this.cmdExcluir);
             this.Controls.Add(this.cmdNovo);
             this.Controls.Add(this.cmdGravar);
@@ -503,13 +528,13 @@
             this.Controls.Add(this.textBox9);
             this.Controls.Add(this.textBox8);
             this.Controls.Add(this.label17);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.label16);
+            this.Controls.Add(this.txtObservacao);
+            this.Controls.Add(this.labDescVlrUltCompra);
             this.Controls.Add(this.label15);
-            this.Controls.Add(this.label14);
+            this.Controls.Add(this.labDescUltCompra);
             this.Controls.Add(this.labDescCNPJ);
             this.Controls.Add(this.labDescNumero);
-            this.Controls.Add(this.label11);
+            this.Controls.Add(this.labDescCEP);
             this.Controls.Add(this.labDescEndereco);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
@@ -568,13 +593,13 @@
         private Label label8;
         private Label label9;
         private Label labDescEndereco;
-        private Label label11;
+        private Label labDescCEP;
         private Label labDescNumero;
         private Label labDescCNPJ;
-        private Label label14;
+        private Label labDescUltCompra;
         private Label label15;
-        private Label label16;
-        private TextBox textBox7;
+        private Label labDescVlrUltCompra;
+        private TextBox txtObservacao;
         private Label label17;
         private TextBox textBox8;
         private TextBox textBox9;
@@ -588,5 +613,7 @@
         private Button cmdNovo;
         private Button cmdGravar;
         private Button cmdSair;
+        private Label labVendedor;
+        private TextBox txtVendedor;
     }
 }

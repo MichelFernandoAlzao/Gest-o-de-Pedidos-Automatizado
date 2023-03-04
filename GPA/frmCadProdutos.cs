@@ -93,29 +93,37 @@ namespace Formularios
 
         private void txtDescricao_KeyDown(object sender, KeyEventArgs e)
         {
-            if (txtDescricao.Text.Length < 5)
-            {
-                MessageBox.Show("Digite um minimo de 5 caracteres!", "GPA");
-            }
             if (e.KeyCode == Keys.F1)
             {
+                if (txtDescricao.Text.Length < 5)
+                {
+                    MessageBox.Show("Digite um minimo de 5 caracteres!", "GPA");
+                }
+                if (e.KeyCode == Keys.F1)
+                {
 
+                }
             }
+                
         }
 
         private void txtFabricante_KeyDown(object sender, KeyEventArgs e)
         {
-            if (txtFabricante.Text.Length < 5)
-            {
-                MessageBox.Show("Digite um minimo de 5 caracteres!", "GPA");
-            }
             if (e.KeyCode == Keys.F1)
             {
-                frmSelecionaEmpresa objTela = new frmSelecionaEmpresa(this,"",txtFabricante.Text.ToString(), "", "");
-                objTela.ShowDialog();
-                LFabricante = Convert.ToInt32(LID);
-                txtFabricante.Text = LRazaoSocial.ToString();
+                if (txtFabricante.Text.Length < 5)
+                {
+                    MessageBox.Show("Digite um minimo de 5 caracteres!", "GPA");
+                }
+                if (e.KeyCode == Keys.F1)
+                {
+                    frmSelecionaEmpresa objTela = new frmSelecionaEmpresa(this, "", txtFabricante.Text.ToString(), "", "");
+                    objTela.ShowDialog();
+                    LFabricante = Convert.ToInt32(LID);
+                    txtFabricante.Text = LRazaoSocial.ToString();
+                }
             }
+                
         }
 
         private void frmCadProdutos_Load(object sender, EventArgs e)
@@ -125,17 +133,25 @@ namespace Formularios
 
         private void txtMelhorFornecedor_KeyDown(object sender, KeyEventArgs e)
         {
-            if(txtMelhorFornecedor.Text.Length < 5)
+            if(e.KeyCode == Keys.F1)
             {
-                MessageBox.Show("Digite um minimo de 5 caracteres!","GPA");
+                if (txtMelhorFornecedor.Text.Length < 5)
+                {
+                    MessageBox.Show("Digite um minimo de 5 caracteres!", "GPA");
+                }
+                if (e.KeyCode == Keys.F1)
+                {
+                    frmSelecionaEmpresa objTela = new frmSelecionaEmpresa(this, "", txtMelhorFornecedor.Text.ToString(), "", "");
+                    objTela.ShowDialog();
+                    LFabricante = Convert.ToInt32(LID);
+                    txtFabricante.Text = LRazaoSocial.ToString();
+                }
             }
-            if (e.KeyCode == Keys.F1)
-            {
-                frmSelecionaEmpresa objTela = new frmSelecionaEmpresa(this, "", txtMelhorFornecedor.Text.ToString(), "", "");
-                objTela.ShowDialog();
-                LFabricante = Convert.ToInt32(LID);
-                txtFabricante.Text = LRazaoSocial.ToString();
-            }
+        }
+
+        private void cmdGravar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

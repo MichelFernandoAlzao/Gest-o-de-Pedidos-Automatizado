@@ -14,8 +14,19 @@ namespace Formularios
     public partial class Pedido : Form
     {
         string LID = "";
+        string LIDPedido = "";
         string LRazaoSocial = "";
         string LUsuario = "";
+        string LDataSolcitacao = "";
+        string LDataConfirmacao = "";
+        string LNaturezaOperacao = "";
+        string LObservacao = "";
+        string LPedidoExterno = "";
+        string LTotalItens = "";
+        string LTotaFaturando = "";
+        string LImpostos = "";
+        string LComissao = "";
+
         public Pedido(string inUsuario)
         {
             LUsuario = inUsuario;
@@ -49,6 +60,8 @@ namespace Formularios
         }
         private void cmdItensPedido_Click(object sender, EventArgs e)
         {
+            if(LIDPedido == "") { return; }
+
             frmItensPedido objItensPedido = new frmItensPedido();
             objItensPedido.ShowDialog();
         }
@@ -66,6 +79,33 @@ namespace Formularios
                 objTela.ShowDialog();
                 MostraDados();
             }
+        }
+
+        private void cmdGravar_Click(object sender, EventArgs e)
+        {
+            BDPedido objPedido = new BDPedido();
+
+        }
+
+        private void cmdNovo_Click(object sender, EventArgs e)
+        {
+            txtNumeroPedido.Text = "";
+            txtEmpresa.Text = "";
+            labDescEndereco.Text = "xxxxxxxxxxxxxxxxxxxxxxxxxxxx";
+            labDescCNPJ.Text = "xxxxxxxxxxxx";
+            labDescUltCompra.Text = "xxxxxx";
+            labDescVlrUltCompra.Text = "xxxxxx";
+            labDescCEP.Text = "xxxxxx";
+            labDescNumero.Text = "xxxxxx";
+            txtDataSolicitacao.Text = "____/____/________";
+            txtDataConfirmacao.Text = "____/____/________";
+            txtxNatOperacao.Text = "";
+            txtObservacao.Text = "";
+        }
+
+        private void cmdSair_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

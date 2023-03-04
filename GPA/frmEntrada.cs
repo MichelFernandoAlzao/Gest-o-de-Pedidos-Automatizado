@@ -69,7 +69,7 @@ namespace Formularios
                 }
                 if (lstUsuario[0].Operacional == 'S')
                 {
-                    frmCRMInicial objTela = new frmCRMInicial();
+                    frmCRMInicial objTela = new frmCRMInicial(lstUsuario[0].ID);
                     this.Hide();
                     objTela.ShowDialog();
                     this.Close();

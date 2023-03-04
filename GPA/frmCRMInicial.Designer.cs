@@ -35,7 +35,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.cmdConsultaPedido = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.DataVenda = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.VRazao = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,7 +44,7 @@
             this.UltContato = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RazSocial = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Dispensar = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button4 = new System.Windows.Forms.Button();
+            this.cmdRegistraContatos = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -127,16 +127,18 @@
             this.button2.TabIndex = 6;
             this.button2.Text = "Ultimas Vendas";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button3
+            // cmdConsultaPedido
             // 
-            this.button3.FlatAppearance.BorderSize = 3;
-            this.button3.Location = new System.Drawing.Point(132, 101);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(113, 44);
-            this.button3.TabIndex = 7;
-            this.button3.Text = "Consulta Pedidos";
-            this.button3.UseVisualStyleBackColor = true;
+            this.cmdConsultaPedido.FlatAppearance.BorderSize = 3;
+            this.cmdConsultaPedido.Location = new System.Drawing.Point(132, 101);
+            this.cmdConsultaPedido.Name = "cmdConsultaPedido";
+            this.cmdConsultaPedido.Size = new System.Drawing.Size(113, 44);
+            this.cmdConsultaPedido.TabIndex = 7;
+            this.cmdConsultaPedido.Text = "Consulta Pedidos";
+            this.cmdConsultaPedido.UseVisualStyleBackColor = true;
+            this.cmdConsultaPedido.Click += new System.EventHandler(this.cmdConsultaPedido_Click);
             // 
             // dataGridView1
             // 
@@ -201,15 +203,16 @@
             this.Dispensar.Name = "Dispensar";
             this.Dispensar.Width = 40;
             // 
-            // button4
+            // cmdRegistraContatos
             // 
-            this.button4.FlatAppearance.BorderSize = 3;
-            this.button4.Location = new System.Drawing.Point(18, 51);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(113, 44);
-            this.button4.TabIndex = 10;
-            this.button4.Text = "Registrar contato";
-            this.button4.UseVisualStyleBackColor = true;
+            this.cmdRegistraContatos.FlatAppearance.BorderSize = 3;
+            this.cmdRegistraContatos.Location = new System.Drawing.Point(18, 51);
+            this.cmdRegistraContatos.Name = "cmdRegistraContatos";
+            this.cmdRegistraContatos.Size = new System.Drawing.Size(113, 44);
+            this.cmdRegistraContatos.TabIndex = 10;
+            this.cmdRegistraContatos.Text = "Registrar contato";
+            this.cmdRegistraContatos.UseVisualStyleBackColor = true;
+            this.cmdRegistraContatos.Click += new System.EventHandler(this.cmdRegistraContatos_Click);
             // 
             // textBox1
             // 
@@ -397,10 +400,10 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.cmdRegistraContatos);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.cmdConsultaPedido);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -428,10 +431,10 @@
         private Label label2;
         private Label label3;
         private Button button2;
-        private Button button3;
+        private Button cmdConsultaPedido;
         private DataGridView dataGridView1;
         private DataGridView dataGridView2;
-        private Button button4;
+        private Button cmdRegistraContatos;
         private TextBox textBox1;
         private Label label4;
         private Label label6;

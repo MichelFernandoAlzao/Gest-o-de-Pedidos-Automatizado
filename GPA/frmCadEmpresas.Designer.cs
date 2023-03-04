@@ -268,6 +268,7 @@
             this.CmdRegOcorrencias.TabIndex = 21;
             this.CmdRegOcorrencias.Text = "Ocorrencias";
             this.CmdRegOcorrencias.UseVisualStyleBackColor = true;
+            this.CmdRegOcorrencias.Click += new System.EventHandler(this.CmdRegOcorrencias_Click);
             // 
             // txtQualificacao
             // 

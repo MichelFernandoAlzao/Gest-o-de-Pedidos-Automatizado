@@ -14,9 +14,12 @@ namespace Formularios
     public partial class frmCRMInicial : Form
     {
         List<string> LParametros;
-        public frmCRMInicial()
+        string LUsuario = "";
+        public frmCRMInicial(string inUsuario)
         {
             InitializeComponent();
+
+            LUsuario = inUsuario;
             
             //if (inParametros == "Michel")
             //{
@@ -63,8 +66,27 @@ namespace Formularios
 
         private void cmdPedidos_Click(object sender, EventArgs e)
         {
-            Pedido frmPedido = new Pedido();
+            
+            Pedido frmPedido = new Pedido(LUsuario);
             frmPedido.ShowDialog();
+        }
+
+        private void cmdRegistraContatos_Click(object sender, EventArgs e)
+        {
+            frmContatosEmpresas frmContatosEmpresas = new frmContatosEmpresas();
+            frmContatosEmpresas.ShowDialog();
+        }
+
+        private void cmdConsultaPedido_Click(object sender, EventArgs e)
+        {
+            frmConsultaPedido frmConsultaPedido = new frmConsultaPedido();
+            frmConsultaPedido.ShowDialog();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            frmUltimasVendas frmUltimasVendas = new frmUltimasVendas();
+            frmUltimasVendas.ShowDialog();
         }
     }
 }
