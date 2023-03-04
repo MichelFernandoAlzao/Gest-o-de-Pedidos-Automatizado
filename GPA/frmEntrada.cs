@@ -51,8 +51,9 @@ namespace Formularios
         private void Entrar()
         {
 
-            if (chkOperacional.Checked)
+            if (chkOperacional.Checked == true)
             {
+                
                 if (txtUsuario.Text == "" || txtSenha.Text == "")
                 {
                     MessageBox.Show("Usuario e / ou Senha não informados", "GPA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -80,7 +81,7 @@ namespace Formularios
                 }
 
             }
-            if (chkSeguranca.Checked)
+            if (chkSeguranca.Checked == true)
             {
                 if (txtUsuario.Text == "" || txtSenha.Text == "")
                 {
@@ -107,6 +108,34 @@ namespace Formularios
                     MessageBox.Show("Usuario sem permissão para este modulo.", "GPA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
 
+            }
+        }
+
+        private void chkOperacional_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (chkOperacional.Checked == true)
+            {
+                chkSeguranca.Checked = false;
+                chkFinanceiro.Checked = false;
+            }
+        }
+
+        private void chkFinanceiro_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (chkFinanceiro.Checked == true)
+            {
+                chkOperacional.Checked = false;
+                chkSeguranca.Checked = false;
+            }
+
+        }
+
+        private void chkSeguranca_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (chkSeguranca.Checked == true)
+            {
+                chkOperacional.Checked = false;
+                chkFinanceiro.Checked = false;
             }
         }
     }

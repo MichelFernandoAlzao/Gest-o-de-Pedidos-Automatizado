@@ -28,30 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtEmpresa = new System.Windows.Forms.TextBox();
             this.lbCabeçallho = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.labDescricao = new System.Windows.Forms.Label();
+            this.txtxDescricao = new System.Windows.Forms.TextBox();
+            this.labPedido = new System.Windows.Forms.Label();
+            this.txtPedido = new System.Windows.Forms.TextBox();
+            this.labProduto = new System.Windows.Forms.Label();
+            this.txtProduto = new System.Windows.Forms.TextBox();
+            this.cmdSelecionar = new System.Windows.Forms.Button();
+            this.grdProdutos = new System.Windows.Forms.DataGridView();
+            this.labData = new System.Windows.Forms.Label();
+            this.txtData = new System.Windows.Forms.TextBox();
+            this.cmdNovo = new System.Windows.Forms.Button();
+            this.cmdGravar = new System.Windows.Forms.Button();
+            this.cmdSair = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.grdProdutos)).BeginInit();
             this.SuspendLayout();
             // 
-            // textBox1
+            // txtEmpresa
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 73);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(544, 23);
-            this.textBox1.TabIndex = 0;
+            this.txtEmpresa.Location = new System.Drawing.Point(12, 73);
+            this.txtEmpresa.Name = "txtEmpresa";
+            this.txtEmpresa.Size = new System.Drawing.Size(544, 23);
+            this.txtEmpresa.TabIndex = 0;
             // 
             // lbCabeçallho
             // 
@@ -61,121 +62,143 @@
             this.lbCabeçallho.ForeColor = System.Drawing.Color.Black;
             this.lbCabeçallho.Location = new System.Drawing.Point(12, 12);
             this.lbCabeçallho.Name = "lbCabeçallho";
-            this.lbCabeçallho.Size = new System.Drawing.Size(619, 30);
+            this.lbCabeçallho.Size = new System.Drawing.Size(668, 30);
             this.lbCabeçallho.TabIndex = 11;
-            this.lbCabeçallho.Text = "Consulta Pedidos";
+            this.lbCabeçallho.Text = "Registro Ocorrencias";
             this.lbCabeçallho.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(715, 12);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(72, 30);
-            this.button3.TabIndex = 17;
-            this.button3.Text = "Sair";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(637, 12);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(72, 30);
-            this.button2.TabIndex = 16;
-            this.button2.Text = "Selecionar";
-            this.button2.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(12, 55);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(52, 15);
+            this.label1.Size = new System.Drawing.Size(78, 15);
             this.label1.TabIndex = 18;
-            this.label1.Text = "Empresa";
+            this.label1.Text = "Empresa - F1";
             // 
-            // label2
+            // labDescricao
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 115);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(58, 15);
-            this.label2.TabIndex = 20;
-            this.label2.Text = "Descrição";
+            this.labDescricao.AutoSize = true;
+            this.labDescricao.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labDescricao.Location = new System.Drawing.Point(12, 115);
+            this.labDescricao.Name = "labDescricao";
+            this.labDescricao.Size = new System.Drawing.Size(61, 15);
+            this.labDescricao.TabIndex = 20;
+            this.labDescricao.Text = "Descrição";
             // 
-            // textBox2
+            // txtxDescricao
             // 
-            this.textBox2.Location = new System.Drawing.Point(12, 133);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(775, 136);
-            this.textBox2.TabIndex = 19;
+            this.txtxDescricao.Location = new System.Drawing.Point(12, 133);
+            this.txtxDescricao.Multiline = true;
+            this.txtxDescricao.Name = "txtxDescricao";
+            this.txtxDescricao.Size = new System.Drawing.Size(775, 136);
+            this.txtxDescricao.TabIndex = 19;
             // 
-            // label3
+            // labPedido
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(686, 294);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(44, 15);
-            this.label3.TabIndex = 22;
-            this.label3.Text = "Pedido";
+            this.labPedido.AutoSize = true;
+            this.labPedido.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labPedido.Location = new System.Drawing.Point(686, 294);
+            this.labPedido.Name = "labPedido";
+            this.labPedido.Size = new System.Drawing.Size(45, 15);
+            this.labPedido.TabIndex = 22;
+            this.labPedido.Text = "Pedido";
             // 
-            // textBox3
+            // txtPedido
             // 
-            this.textBox3.Location = new System.Drawing.Point(686, 312);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(101, 23);
-            this.textBox3.TabIndex = 21;
+            this.txtPedido.Location = new System.Drawing.Point(686, 312);
+            this.txtPedido.Name = "txtPedido";
+            this.txtPedido.Size = new System.Drawing.Size(101, 23);
+            this.txtPedido.TabIndex = 21;
             // 
-            // label4
+            // labProduto
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 294);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(50, 15);
-            this.label4.TabIndex = 24;
-            this.label4.Text = "Produto";
+            this.labProduto.AutoSize = true;
+            this.labProduto.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labProduto.Location = new System.Drawing.Point(12, 294);
+            this.labProduto.Name = "labProduto";
+            this.labProduto.Size = new System.Drawing.Size(52, 15);
+            this.labProduto.TabIndex = 24;
+            this.labProduto.Text = "Produto";
             // 
-            // textBox4
+            // txtProduto
             // 
-            this.textBox4.Location = new System.Drawing.Point(12, 312);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(544, 23);
-            this.textBox4.TabIndex = 23;
+            this.txtProduto.Location = new System.Drawing.Point(12, 312);
+            this.txtProduto.Name = "txtProduto";
+            this.txtProduto.Size = new System.Drawing.Size(544, 23);
+            this.txtProduto.TabIndex = 23;
             // 
-            // button1
+            // cmdSelecionar
             // 
-            this.button1.Location = new System.Drawing.Point(562, 312);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(97, 23);
-            this.button1.TabIndex = 25;
-            this.button1.Text = "Selecionar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.cmdSelecionar.Location = new System.Drawing.Point(562, 312);
+            this.cmdSelecionar.Name = "cmdSelecionar";
+            this.cmdSelecionar.Size = new System.Drawing.Size(97, 23);
+            this.cmdSelecionar.TabIndex = 25;
+            this.cmdSelecionar.Text = "Selecionar";
+            this.cmdSelecionar.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // grdProdutos
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 341);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(776, 97);
-            this.dataGridView1.TabIndex = 26;
+            this.grdProdutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdProdutos.Location = new System.Drawing.Point(12, 341);
+            this.grdProdutos.Name = "grdProdutos";
+            this.grdProdutos.RowTemplate.Height = 25;
+            this.grdProdutos.Size = new System.Drawing.Size(776, 97);
+            this.grdProdutos.TabIndex = 26;
             // 
-            // label5
+            // labData
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(686, 55);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(31, 15);
-            this.label5.TabIndex = 28;
-            this.label5.Text = "Data";
+            this.labData.AutoSize = true;
+            this.labData.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labData.Location = new System.Drawing.Point(686, 55);
+            this.labData.Name = "labData";
+            this.labData.Size = new System.Drawing.Size(33, 15);
+            this.labData.TabIndex = 28;
+            this.labData.Text = "Data";
             // 
-            // textBox5
+            // txtData
             // 
-            this.textBox5.Location = new System.Drawing.Point(686, 73);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(101, 23);
-            this.textBox5.TabIndex = 27;
+            this.txtData.Location = new System.Drawing.Point(686, 73);
+            this.txtData.Name = "txtData";
+            this.txtData.Size = new System.Drawing.Size(101, 23);
+            this.txtData.TabIndex = 27;
+            // 
+            // cmdNovo
+            // 
+            this.cmdNovo.AccessibleDescription = "Novo";
+            this.cmdNovo.AccessibleName = "Novo";
+            this.cmdNovo.BackgroundImage = global::Formularios.Properties.Resources.folder;
+            this.cmdNovo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.cmdNovo.Location = new System.Drawing.Point(686, 13);
+            this.cmdNovo.Name = "cmdNovo";
+            this.cmdNovo.Size = new System.Drawing.Size(29, 29);
+            this.cmdNovo.TabIndex = 29;
+            this.cmdNovo.UseVisualStyleBackColor = true;
+            // 
+            // cmdGravar
+            // 
+            this.cmdGravar.AccessibleDescription = "Gravar";
+            this.cmdGravar.BackgroundImage = global::Formularios.Properties.Resources.save;
+            this.cmdGravar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.cmdGravar.Location = new System.Drawing.Point(722, 12);
+            this.cmdGravar.Name = "cmdGravar";
+            this.cmdGravar.Size = new System.Drawing.Size(30, 30);
+            this.cmdGravar.TabIndex = 30;
+            this.cmdGravar.UseVisualStyleBackColor = true;
+            this.cmdGravar.Click += new System.EventHandler(this.cmdGravar_Click);
+            // 
+            // cmdSair
+            // 
+            this.cmdSair.AccessibleDescription = "Sair";
+            this.cmdSair.BackgroundImage = global::Formularios.Properties.Resources.logout;
+            this.cmdSair.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.cmdSair.Location = new System.Drawing.Point(758, 13);
+            this.cmdSair.Name = "cmdSair";
+            this.cmdSair.Size = new System.Drawing.Size(30, 30);
+            this.cmdSair.TabIndex = 31;
+            this.cmdSair.UseVisualStyleBackColor = true;
+            this.cmdSair.Click += new System.EventHandler(this.cmdSair_Click);
             // 
             // frmOcorrencia
             // 
@@ -183,24 +206,25 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.ControlBox = false;
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.cmdNovo);
+            this.Controls.Add(this.cmdGravar);
+            this.Controls.Add(this.cmdSair);
+            this.Controls.Add(this.labData);
+            this.Controls.Add(this.txtData);
+            this.Controls.Add(this.grdProdutos);
+            this.Controls.Add(this.cmdSelecionar);
+            this.Controls.Add(this.labProduto);
+            this.Controls.Add(this.txtProduto);
+            this.Controls.Add(this.labPedido);
+            this.Controls.Add(this.txtPedido);
+            this.Controls.Add(this.labDescricao);
+            this.Controls.Add(this.txtxDescricao);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.lbCabeçallho);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtEmpresa);
             this.Name = "frmOcorrencia";
             this.Text = "Ocorrencias";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdProdutos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -223,5 +247,19 @@
         private DataGridView dataGridView1;
         private Label label5;
         private TextBox textBox5;
+        private TextBox txtEmpresa;
+        private Label labDescricao;
+        private TextBox txtxDescricao;
+        private Label labPedido;
+        private TextBox txtPedido;
+        private Label labProduto;
+        private TextBox txtProduto;
+        private Button cmdSelecionar;
+        private DataGridView grdProdutos;
+        private Label labData;
+        private TextBox txtData;
+        private Button cmdNovo;
+        private Button cmdGravar;
+        private Button cmdSair;
     }
 }

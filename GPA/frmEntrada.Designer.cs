@@ -38,7 +38,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.chkOperacional = new System.Windows.Forms.CheckBox();
             this.chkSeguranca = new System.Windows.Forms.CheckBox();
-            this.chjFinanceiro = new System.Windows.Forms.CheckBox();
+            this.chkFinanceiro = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -118,6 +118,7 @@
             this.chkOperacional.TabIndex = 8;
             this.chkOperacional.Text = "Operacional";
             this.chkOperacional.UseVisualStyleBackColor = true;
+            this.chkOperacional.MouseClick += new System.Windows.Forms.MouseEventHandler(this.chkOperacional_MouseClick);
             // 
             // chkSeguranca
             // 
@@ -128,16 +129,18 @@
             this.chkSeguranca.TabIndex = 9;
             this.chkSeguranca.Text = "Segurança";
             this.chkSeguranca.UseVisualStyleBackColor = true;
+            this.chkSeguranca.MouseClick += new System.Windows.Forms.MouseEventHandler(this.chkSeguranca_MouseClick);
             // 
-            // chjFinanceiro
+            // chkFinanceiro
             // 
-            this.chjFinanceiro.AutoSize = true;
-            this.chjFinanceiro.Location = new System.Drawing.Point(154, 300);
-            this.chjFinanceiro.Name = "chjFinanceiro";
-            this.chjFinanceiro.Size = new System.Drawing.Size(81, 19);
-            this.chjFinanceiro.TabIndex = 10;
-            this.chjFinanceiro.Text = "Financeiro";
-            this.chjFinanceiro.UseVisualStyleBackColor = true;
+            this.chkFinanceiro.AutoSize = true;
+            this.chkFinanceiro.Location = new System.Drawing.Point(154, 300);
+            this.chkFinanceiro.Name = "chkFinanceiro";
+            this.chkFinanceiro.Size = new System.Drawing.Size(81, 19);
+            this.chkFinanceiro.TabIndex = 10;
+            this.chkFinanceiro.Text = "Financeiro";
+            this.chkFinanceiro.UseVisualStyleBackColor = true;
+            this.chkFinanceiro.MouseClick += new System.Windows.Forms.MouseEventHandler(this.chkFinanceiro_MouseClick);
             // 
             // frmEntrada
             // 
@@ -145,7 +148,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(384, 450);
             this.ControlBox = false;
-            this.Controls.Add(this.chjFinanceiro);
+            this.Controls.Add(this.chkFinanceiro);
             this.Controls.Add(this.chkSeguranca);
             this.Controls.Add(this.chkOperacional);
             this.Controls.Add(this.pictureBox1);
@@ -175,6 +178,6 @@
         private PictureBox pictureBox1;
         private CheckBox chkOperacional;
         private CheckBox chkSeguranca;
-        private CheckBox chjFinanceiro;
+        private CheckBox chkFinanceiro;
     }
 }

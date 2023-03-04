@@ -12,14 +12,26 @@ namespace Formularios
 {
     public partial class frmOcorrencia : Form
     {
+        string LID = "";
+        string LEmpresaDR = "";
+        string LData = "";
+        string LDescricao = "";
+        string LPedidoDR = "";
+
+
         public frmOcorrencia()
         {
             InitializeComponent();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void cmdSair_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void cmdGravar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
