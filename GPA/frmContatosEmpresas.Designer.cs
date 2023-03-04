@@ -38,20 +38,20 @@
             this.cmdSair = new System.Windows.Forms.Button();
             this.txtDataContato = new System.Windows.Forms.TextBox();
             this.labDataContato = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.grdProdSugeridos = new System.Windows.Forms.DataGridView();
             this.grdDescItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grdVlrofertado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grdAceito = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.grdQuantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtSugestoes = new System.Windows.Forms.TextBox();
             this.labSugestoes = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtReclamacoes = new System.Windows.Forms.TextBox();
             this.labProdSugeridos = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtProduto = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.cmdAdicionar = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.grdProdSugeridos)).BeginInit();
             this.SuspendLayout();
             // 
             // labEmpresa
@@ -103,6 +103,7 @@
             this.cmdNovo.Size = new System.Drawing.Size(30, 30);
             this.cmdNovo.TabIndex = 48;
             this.cmdNovo.UseVisualStyleBackColor = true;
+            this.cmdNovo.Click += new System.EventHandler(this.cmdNovo_Click);
             // 
             // cmdGravar
             // 
@@ -142,22 +143,22 @@
             this.labDataContato.TabIndex = 51;
             this.labDataContato.Text = "Data Contato";
             // 
-            // dataGridView1
+            // grdProdSugeridos
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.grdProdSugeridos.AllowUserToAddRows = false;
+            this.grdProdSugeridos.AllowUserToDeleteRows = false;
+            this.grdProdSugeridos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdProdSugeridos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.grdDescItem,
             this.grdVlrofertado,
             this.grdAceito,
             this.grdQuantidade});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 327);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(776, 111);
-            this.dataGridView1.TabIndex = 52;
+            this.grdProdSugeridos.Location = new System.Drawing.Point(12, 327);
+            this.grdProdSugeridos.Name = "grdProdSugeridos";
+            this.grdProdSugeridos.ReadOnly = true;
+            this.grdProdSugeridos.RowTemplate.Height = 25;
+            this.grdProdSugeridos.Size = new System.Drawing.Size(776, 111);
+            this.grdProdSugeridos.TabIndex = 52;
             // 
             // grdDescItem
             // 
@@ -186,13 +187,13 @@
             this.grdQuantidade.Name = "grdQuantidade";
             this.grdQuantidade.ReadOnly = true;
             // 
-            // textBox1
+            // txtSugestoes
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 129);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(381, 101);
-            this.textBox1.TabIndex = 53;
+            this.txtSugestoes.Location = new System.Drawing.Point(12, 129);
+            this.txtSugestoes.Multiline = true;
+            this.txtSugestoes.Name = "txtSugestoes";
+            this.txtSugestoes.Size = new System.Drawing.Size(381, 101);
+            this.txtSugestoes.TabIndex = 53;
             // 
             // labSugestoes
             // 
@@ -214,13 +215,13 @@
             this.label1.TabIndex = 56;
             this.label1.Text = "Reclamações";
             // 
-            // textBox2
+            // txtReclamacoes
             // 
-            this.textBox2.Location = new System.Drawing.Point(409, 129);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(379, 101);
-            this.textBox2.TabIndex = 55;
+            this.txtReclamacoes.Location = new System.Drawing.Point(409, 129);
+            this.txtReclamacoes.Multiline = true;
+            this.txtReclamacoes.Name = "txtReclamacoes";
+            this.txtReclamacoes.Size = new System.Drawing.Size(379, 101);
+            this.txtReclamacoes.TabIndex = 55;
             // 
             // labProdSugeridos
             // 
@@ -231,12 +232,12 @@
             this.labProdSugeridos.TabIndex = 57;
             this.labProdSugeridos.Text = "Produtos Sugeridos";
             // 
-            // textBox3
+            // txtProduto
             // 
-            this.textBox3.Location = new System.Drawing.Point(12, 270);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(610, 23);
-            this.textBox3.TabIndex = 58;
+            this.txtProduto.Location = new System.Drawing.Point(12, 270);
+            this.txtProduto.Name = "txtProduto";
+            this.txtProduto.Size = new System.Drawing.Size(610, 23);
+            this.txtProduto.TabIndex = 58;
             // 
             // label2
             // 
@@ -248,14 +249,14 @@
             this.label2.TabIndex = 59;
             this.label2.Text = "Produto - F1";
             // 
-            // button1
+            // cmdAdicionar
             // 
-            this.button1.Location = new System.Drawing.Point(644, 270);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(144, 23);
-            this.button1.TabIndex = 60;
-            this.button1.Text = "Adicionar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.cmdAdicionar.Location = new System.Drawing.Point(644, 270);
+            this.cmdAdicionar.Name = "cmdAdicionar";
+            this.cmdAdicionar.Size = new System.Drawing.Size(144, 23);
+            this.cmdAdicionar.TabIndex = 60;
+            this.cmdAdicionar.Text = "Adicionar";
+            this.cmdAdicionar.UseVisualStyleBackColor = true;
             // 
             // frmContatosEmpresas
             // 
@@ -263,15 +264,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.ControlBox = false;
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.cmdAdicionar);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txtProduto);
             this.Controls.Add(this.labProdSugeridos);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtReclamacoes);
             this.Controls.Add(this.labSugestoes);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.txtSugestoes);
+            this.Controls.Add(this.grdProdSugeridos);
             this.Controls.Add(this.labDataContato);
             this.Controls.Add(this.txtDataContato);
             this.Controls.Add(this.cmdExcluir);
@@ -283,7 +284,7 @@
             this.Controls.Add(this.labEmpresa);
             this.Name = "frmContatosEmpresas";
             this.Text = "Contatos Empresas";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdProdSugeridos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -300,18 +301,18 @@
         private Button cmdSair;
         private TextBox txtDataContato;
         private Label labDataContato;
-        private DataGridView dataGridView1;
+        private DataGridView grdProdSugeridos;
         private DataGridViewTextBoxColumn grdDescItem;
         private DataGridViewTextBoxColumn grdVlrofertado;
         private DataGridViewCheckBoxColumn grdAceito;
         private DataGridViewTextBoxColumn grdQuantidade;
-        private TextBox textBox1;
+        private TextBox txtSugestoes;
         private Label labSugestoes;
         private Label label1;
-        private TextBox textBox2;
+        private TextBox txtReclamacoes;
         private Label labProdSugeridos;
-        private TextBox textBox3;
+        private TextBox txtProduto;
         private Label label2;
-        private Button button1;
+        private Button cmdAdicionar;
     }
 }

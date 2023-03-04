@@ -35,6 +35,7 @@
             this.grdCNPJ = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CmdSelecionar = new System.Windows.Forms.Button();
             this.cmdSair = new System.Windows.Forms.Button();
+            this.lbCadProdutos = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.grdEmpresas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -48,7 +49,7 @@
             this.grdRazao,
             this.grdFantasia,
             this.grdCNPJ});
-            this.grdEmpresas.Location = new System.Drawing.Point(12, 30);
+            this.grdEmpresas.Location = new System.Drawing.Point(12, 41);
             this.grdEmpresas.MultiSelect = false;
             this.grdEmpresas.Name = "grdEmpresas";
             this.grdEmpresas.ReadOnly = true;
@@ -92,7 +93,7 @@
             // 
             // CmdSelecionar
             // 
-            this.CmdSelecionar.Location = new System.Drawing.Point(632, 1);
+            this.CmdSelecionar.Location = new System.Drawing.Point(631, 12);
             this.CmdSelecionar.Name = "CmdSelecionar";
             this.CmdSelecionar.Size = new System.Drawing.Size(75, 23);
             this.CmdSelecionar.TabIndex = 1;
@@ -102,7 +103,7 @@
             // 
             // cmdSair
             // 
-            this.cmdSair.Location = new System.Drawing.Point(713, 1);
+            this.cmdSair.Location = new System.Drawing.Point(713, 12);
             this.cmdSair.Name = "cmdSair";
             this.cmdSair.Size = new System.Drawing.Size(75, 23);
             this.cmdSair.TabIndex = 2;
@@ -110,12 +111,26 @@
             this.cmdSair.UseVisualStyleBackColor = true;
             this.cmdSair.Click += new System.EventHandler(this.cmdSair_Click);
             // 
+            // lbCadProdutos
+            // 
+            this.lbCadProdutos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lbCadProdutos.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.lbCadProdutos.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbCadProdutos.ForeColor = System.Drawing.Color.Black;
+            this.lbCadProdutos.Location = new System.Drawing.Point(12, 9);
+            this.lbCadProdutos.Name = "lbCadProdutos";
+            this.lbCadProdutos.Size = new System.Drawing.Size(613, 29);
+            this.lbCadProdutos.TabIndex = 7;
+            this.lbCadProdutos.Text = "Seleciona Produtos";
+            this.lbCadProdutos.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // frmSelecionaEmpresa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 252);
+            this.ClientSize = new System.Drawing.Size(800, 256);
             this.ControlBox = false;
+            this.Controls.Add(this.lbCadProdutos);
             this.Controls.Add(this.cmdSair);
             this.Controls.Add(this.CmdSelecionar);
             this.Controls.Add(this.grdEmpresas);
@@ -137,5 +152,6 @@
         private DataGridViewTextBoxColumn grdRazao;
         private DataGridViewTextBoxColumn grdFantasia;
         private DataGridViewTextBoxColumn grdCNPJ;
+        private Label lbCadProdutos;
     }
 }

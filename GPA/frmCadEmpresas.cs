@@ -345,7 +345,7 @@ namespace GPA
 
         private void CmdRegOcorrencias_Click(object sender, EventArgs e)
         {
-            frmOcorrencia objTela = new frmOcorrencia();
+            frmOcorrencia objTela = new frmOcorrencia(LID);
             objTela.ShowDialog();
         }
     }

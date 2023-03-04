@@ -12,6 +12,13 @@ namespace Formularios
 {
     public partial class frmContatosEmpresas : Form
     {
+        string LID = "";
+        string LIDRegistro = "";
+        string LDataContato = "";
+        string LSugestoes = "";
+        string LReclamacoes = "";
+        string LVendedor = "";
+
         public frmContatosEmpresas()
         {
             InitializeComponent();
@@ -20,6 +27,22 @@ namespace Formularios
         private void cmdSair_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void cmdNovo_Click(object sender, EventArgs e)
+        {
+            LID = "";
+            LIDRegistro = "";
+            LDataContato = "";
+            LSugestoes = "";
+            LReclamacoes = "";
+            txtEmpresa.Text = "";
+            txtDataContato.Text = "";
+            txtSugestoes.Text = "";
+            txtReclamacoes.Text = "";
+            grdProdSugeridos.Rows.Clear();
+            
+
         }
     }
 }

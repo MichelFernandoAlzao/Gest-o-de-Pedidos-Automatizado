@@ -10,13 +10,16 @@ using System.Data.SqlClient;
 
 namespace Banco_de_Dados
 {
-    internal class BDRegOcorrencias
+    public class BDRegOcorrencias
     {
         public string cpID { get; set; }
         public string cpEmpresaDR { get; set; }
-        string cpData { get; set; }
-        string cpDescricao { get; set; }
-        string cpPedidoDR { get; set; }
+        public string cpFornecedorDR { get; set; }
+        public string cpDataOcorrencia { get; set; }
+        public string cpDataResolucao { get; set; }
+        public string cpDescricao { get; set; }
+        public string cpPedidoDR { get; set; }
+        public string cpMsgErro { get; set; }
 
         Conexao conexao = new Conexao();
         SqlCommand cmd = new SqlCommand();
@@ -30,62 +33,46 @@ namespace Banco_de_Dados
 
             if (cpEmpresaDR != null)
             {
-                sqlCampos += "OPRO, ";
+                sqlCampos += "OPROEmpresaDR, ";
 
                 sqlConteudo += "'" + cpEmpresaDR + "',";
             }
-
-            if (cpAnotacoes != null)
+            if (cpFornecedorDR != null)
             {
-                sqlCampos += "CDCAnotacoes, ";
+                sqlCampos += "OPROFornecedorDR, ";
 
-                sqlConteudo += "'" + cpAnotacoes + "',";
+                sqlConteudo += "'" + cpFornecedorDR + "',";
             }
 
-            if (cpCargo != null)
+            if (cpDataOcorrencia != null)
             {
-                sqlCampos += "CDCCargoDR, ";
+                sqlCampos += "OPRODataOcorrencia, ";
 
-                sqlConteudo += "'" + cpCargo + "',";
+                sqlConteudo += "'" + cpDataOcorrencia + "',";
             }
 
-            if (cpComprador != null)
+            if (cpDataResolucao != null)
             {
-                sqlCampos += "CDCComprador, ";
+                sqlCampos += "OPRODataResolucao, ";
 
-                sqlConteudo += "'" + cpComprador + "',";
+                sqlConteudo += "'" + cpDataResolucao + "',";
             }
 
-            if (cpEmpresaDR != null)
+            if (cpDescricao != null)
             {
-                sqlCampos += "CDCCadastroEmpresaDR, ";
+                sqlCampos += "OPRODescricao, ";
 
-                sqlConteudo += "'" + cpEmpresaDR + "',";
+                sqlConteudo += "'" + cpDescricao + "',";
             }
-            if (cpEmail != null)
+
+            if (cpPedidoDR != null)
             {
-                sqlCampos += "CDCEmail, ";
+                sqlCampos += "OPROPedidoDR, ";
 
-                sqlConteudo += "'" + cpEmail + "',";
+                sqlConteudo += "'" + cpPedidoDR + "',";
             }
-            if (cpNome != null)
-            {
-                sqlCampos += "CDCNome, ";
 
-                sqlConteudo += "'" + cpNome + "',";
-            }
-            if (cpGerencia != null)
-            {
-                sqlCampos += "CDCGerencia, ";
-
-                sqlConteudo += "'" + cpGerencia + "',";
-            }
-            if (cpTelefone != null)
-            {
-                sqlCampos += "CDCTelefone, ";
-
-                sqlConteudo += "'" + cpTelefone + "',";
-            }
+            
 
             sSQL = sSQL + sqlCampos.Remove(sqlCampos.Length - 2) + ")" + sqlConteudo.Remove(sqlConteudo.Length - 1) + ")";
 
@@ -98,44 +85,44 @@ namespace Banco_de_Dados
                 cmd.ExecuteNonQuery();
                 //Desconectar
                 conexao.desconectar();
-                MsgErro = "";
+                cpMsgErro = "";
             }
             catch (SqlException e)
             {
-                MsgErro = e.Message.ToString();
+                cpMsgErro = e.Message.ToString();
             }
             cmd.Dispose();
         }
-        public List<BDCadContatos> CarregaDados(string inIDEmpresa)
+        public List<BDRegOcorrencias> CarregaDados()
         {
-            List<BDCadContatos> lstContatos = new List<BDCadContatos>();
-            string slqSelect = "SELECT * FROM CDContatos ";
+            List<BDRegOcorrencias> lstRegOcorrencias = new List<BDRegOcorrencias>();
+            string slqSelect = "SELECT * FROM OPRegOcorrencias ";
             string sqlWhere = "WHERE ";
             char ClausulaWhere = 'N';
             if (cpID != null)
             {
-                sqlWhere = "WHERE CDContatos = " + cpID;
+                sqlWhere = "WHERE OPRegOcorrencias = " + cpID;
             }
-            if (inIDEmpresa != "")
+            if (cpEmpresaDR != "")
             {
-                sqlWhere = "WHERE CDCCadastroEmpresaDR = '" + inIDEmpresa + "'";
+                sqlWhere = "WHERE OPROEmpresaDR = '" + cpEmpresaDR + "'";
                 ClausulaWhere = 'S';
             }
             else
             {
-                if (cpEmpresaDR != "")
+                if (cpDataOcorrencia != "")
                 {
-                    sqlWhere += "CDCCadastroEmpresaDR = '" + cpEmpresaDR + "' " + "AND";
+                    sqlWhere += "OPRODataOcorrencia like '%" + cpDataOcorrencia + "%' " + "AND";
                     ClausulaWhere = 'S';
                 }
-                if (cpNome != "")
+                if (cpDataResolucao != "")
                 {
-                    sqlWhere += "CDCNome like '%" + cpNome + "%' " + "AND";
+                    sqlWhere += "OPRODataResolucao like '%" + cpDataResolucao + "%' " + "AND";
                     ClausulaWhere = 'S';
                 }
-                if (cpComprador != "")
+                if (cpPedidoDR != "")
                 {
-                    sqlWhere += "CDCComprador = '" + cpComprador + "' " + "AND";
+                    sqlWhere += "OPROPedidoDR = '" + cpPedidoDR + "' " + "AND";
                     ClausulaWhere = 'S';
                 }
 
@@ -159,33 +146,30 @@ namespace Banco_de_Dados
 
                 foreach (DataRow dr in dt.Rows)
                 {
-                    BDCadContatos bDContato = new BDCadContatos();
-                    bDContato.cpID = dr["CDContatos"].ToString();
-                    bDContato.cpAniversario = Convert.ToDateTime(dr["CDCAniversario"]);
-                    bDContato.cpAnotacoes = dr["CDCAnotacoes"].ToString();
-                    bDContato.cpEmpresaDR = dr["CDCCadastroEmpresaDR"].ToString();
-                    bDContato.cpCargo = dr["CDCCargoDR"].ToString();
-                    bDContato.cpComprador = dr["CDCComprador"].ToString();
-                    bDContato.cpEmail = dr["CDCEmail"].ToString();
-                    bDContato.cpGerencia = dr["CDCGerencia"].ToString();
-                    bDContato.cpNome = dr["CDCNome"].ToString();
-                    bDContato.cpTelefone = dr["CDCTelefone"].ToString();
+                    BDRegOcorrencias bDRegOcorrencias = new BDRegOcorrencias();
+                    bDRegOcorrencias.cpID = dr["OPRegOcorrencias"].ToString();
+                    bDRegOcorrencias.cpEmpresaDR = dr["OPROEmpresaDR"].ToString();
+                    bDRegOcorrencias.cpFornecedorDR = dr["OPROFornecedorDR"].ToString();
+                    bDRegOcorrencias.cpDataOcorrencia = dr["OPRODataOcorrencia"].ToString();
+                    bDRegOcorrencias.cpDataResolucao = dr["DataResolucao"].ToString();
+                    bDRegOcorrencias.cpDescricao = dr["OPRODescricao"].ToString();
+                    bDRegOcorrencias.cpPedidoDR = dr["OPROPedidoDR"].ToString();
+                    
 
-
-                    lstContatos.Add(bDContato);
+                    lstRegOcorrencias.Add(bDRegOcorrencias);
 
                 }
 
                 //Desconectar
                 conexao.desconectar();
-                MsgErro = "";
+                cpMsgErro = "";
             }
             catch (SqlException e)
             {
-                MsgErro = e.Message.ToString();
+                cpMsgErro = e.Message.ToString();
             }
             cmd.Dispose();
-            return lstContatos;
+            return lstRegOcorrencias;
         }
 
 
@@ -193,49 +177,36 @@ namespace Banco_de_Dados
         {
             string sSQL = "";
             string sqlconteudo = "";
-            string sqlWhere = " WHERE CDContatos = '" + cpID + "'";
+            string sqlWhere = " WHERE OPRegOcorrencias = '" + cpID + "'";
 
-            sSQL = "UPDATE CDContatos SET ";
+            sSQL = "UPDATE OPRegOcorrencias SET ";
 
-            if (cpAniversario != null)
-            {
-                sqlconteudo += "CDCAniversario = '" + cpAniversario.ToString() + "',";
-            }
-            if (cpAnotacoes != null)
-            {
-                sqlconteudo += " CDCAnotacoes = '" + cpAnotacoes.ToString() + "',";
-            }
+
             if (cpEmpresaDR != null)
             {
-                sqlconteudo += "CDCCadastroEmpresaDR = '" + cpEmpresaDR.ToString() + "',";
+                sqlconteudo += "OPROEmpresaDR = '" + cpEmpresaDR.ToString() + "',";
             }
-            if (cpCargo != null)
+            if (cpFornecedorDR != null)
             {
-                sqlconteudo += "CDCCargoDR = '" + cpCargo.ToString() + "',";
+                sqlconteudo += "OPROFornecedorDR = '" + cpFornecedorDR.ToString() + "',";
             }
-            if (cpComprador != null)
+            if (cpDataOcorrencia != null)
             {
-                sqlconteudo += "CDCComprador = '" + cpComprador.ToString() + "',";
+                sqlconteudo += "OPRODataOcorrencia = '" + cpDataOcorrencia.ToString() + "',";
             }
-            if (cpEmail != null)
+            if (cpDataResolucao != null)
             {
-                sqlconteudo += "CDCEmail = '" + cpEmail.ToString() + "',";
+                sqlconteudo += "OPRODataResolucao = '" + cpDataResolucao.ToString() + "',";
             }
-            if (cpGerencia != null)
+            if (cpDescricao != null)
             {
-                sqlconteudo += "CDCGerencia = '" + cpGerencia + "',";
+                sqlconteudo += "OPRODescricao = '" + cpDescricao.ToString() + "',";
             }
-            if (cpNome != null)
+            if (cpPedidoDR != null)
             {
-                sqlconteudo += "CDCNome = '" + cpNome.ToString() + "',";
+                sqlconteudo += "OPROPedidoDR = '" + cpPedidoDR.ToString() + "',";
             }
-            if (cpTelefone != null)
-            {
-                sqlconteudo += "CDCTelefone = '" + cpTelefone.ToString() + "',";
-            }
-
-
-
+            
             sSQL = sSQL + sqlconteudo.Remove(sqlconteudo.Length - 1);
             sSQL = sSQL + sqlWhere;
 
@@ -248,11 +219,11 @@ namespace Banco_de_Dados
                 cmd.ExecuteNonQuery();
                 //Desconectar
                 conexao.desconectar();
-                MsgErro = "";
+                cpMsgErro = "";
             }
             catch (SqlException e)
             {
-                MsgErro = e.Message.ToString();
+                cpMsgErro = e.Message.ToString();
             }
             cmd.Dispose();
         }
@@ -261,8 +232,8 @@ namespace Banco_de_Dados
         {
             string sSQL = "";
 
-            sSQL = "DELETE FROM CDContatos WHERE CDContatos = '" + cpID + "'";
-
+            sSQL = "DELETE FROM OPRegOcorrencias WHERE OPRegOcorrencias = '" + cpID + "'";
+            
             cmd.CommandText = sSQL;
 
             try
@@ -272,11 +243,11 @@ namespace Banco_de_Dados
                 cmd.ExecuteNonQuery();
                 //Desconectar
                 conexao.desconectar();
-                MsgErro = "";
+                cpMsgErro = "";
             }
             catch (SqlException e)
             {
-                MsgErro = e.Message.ToString();
+                cpMsgErro = e.Message.ToString();
             }
             cmd.Dispose();
         }

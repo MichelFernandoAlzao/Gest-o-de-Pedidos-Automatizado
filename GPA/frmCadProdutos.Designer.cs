@@ -45,7 +45,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.chkAtivo = new System.Windows.Forms.CheckBox();
             this.chkOperacional = new System.Windows.Forms.CheckBox();
             this.chkForadeLinha = new System.Windows.Forms.CheckBox();
@@ -64,14 +63,14 @@
             this.lbCadProdutos.ForeColor = System.Drawing.Color.Black;
             this.lbCadProdutos.Location = new System.Drawing.Point(12, 9);
             this.lbCadProdutos.Name = "lbCadProdutos";
-            this.lbCadProdutos.Size = new System.Drawing.Size(755, 23);
+            this.lbCadProdutos.Size = new System.Drawing.Size(819, 29);
             this.lbCadProdutos.TabIndex = 1;
             this.lbCadProdutos.Text = "Cadastro de Produtos";
             this.lbCadProdutos.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // txtDescricao
             // 
-            this.txtDescricao.Location = new System.Drawing.Point(12, 77);
+            this.txtDescricao.Location = new System.Drawing.Point(12, 65);
             this.txtDescricao.Name = "txtDescricao";
             this.txtDescricao.Size = new System.Drawing.Size(472, 23);
             this.txtDescricao.TabIndex = 2;
@@ -79,14 +78,14 @@
             // 
             // txtCodigo
             // 
-            this.txtCodigo.Location = new System.Drawing.Point(503, 77);
+            this.txtCodigo.Location = new System.Drawing.Point(503, 65);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(127, 23);
             this.txtCodigo.TabIndex = 3;
             // 
             // txtDataCadastro
             // 
-            this.txtDataCadastro.Location = new System.Drawing.Point(652, 77);
+            this.txtDataCadastro.Location = new System.Drawing.Point(652, 65);
             this.txtDataCadastro.Name = "txtDataCadastro";
             this.txtDataCadastro.Size = new System.Drawing.Size(115, 23);
             this.txtDataCadastro.TabIndex = 4;
@@ -96,7 +95,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(12, 59);
+            this.label1.Location = new System.Drawing.Point(12, 47);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(85, 15);
             this.label1.TabIndex = 5;
@@ -106,7 +105,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(503, 59);
+            this.label2.Location = new System.Drawing.Point(503, 47);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(69, 15);
             this.label2.TabIndex = 6;
@@ -116,7 +115,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(652, 59);
+            this.label3.Location = new System.Drawing.Point(652, 47);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(84, 15);
             this.label3.TabIndex = 7;
@@ -124,7 +123,7 @@
             // 
             // txtDescFornecedor
             // 
-            this.txtDescFornecedor.Location = new System.Drawing.Point(12, 137);
+            this.txtDescFornecedor.Location = new System.Drawing.Point(12, 113);
             this.txtDescFornecedor.Name = "txtDescFornecedor";
             this.txtDescFornecedor.Size = new System.Drawing.Size(472, 23);
             this.txtDescFornecedor.TabIndex = 8;
@@ -133,7 +132,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(12, 119);
+            this.label4.Location = new System.Drawing.Point(12, 95);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(128, 15);
             this.label4.TabIndex = 9;
@@ -143,7 +142,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(12, 179);
+            this.label5.Location = new System.Drawing.Point(12, 147);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(89, 15);
             this.label5.TabIndex = 11;
@@ -151,7 +150,7 @@
             // 
             // txtFabricante
             // 
-            this.txtFabricante.Location = new System.Drawing.Point(12, 197);
+            this.txtFabricante.Location = new System.Drawing.Point(12, 165);
             this.txtFabricante.Name = "txtFabricante";
             this.txtFabricante.Size = new System.Drawing.Size(472, 23);
             this.txtFabricante.TabIndex = 10;
@@ -161,7 +160,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(789, 59);
+            this.label6.Location = new System.Drawing.Point(789, 47);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(130, 15);
             this.label6.TabIndex = 13;
@@ -169,14 +168,14 @@
             // 
             // txtCodFabricante
             // 
-            this.txtCodFabricante.Location = new System.Drawing.Point(789, 77);
+            this.txtCodFabricante.Location = new System.Drawing.Point(789, 65);
             this.txtCodFabricante.Name = "txtCodFabricante";
             this.txtCodFabricante.Size = new System.Drawing.Size(130, 23);
             this.txtCodFabricante.TabIndex = 12;
             // 
             // txtDescritivo
             // 
-            this.txtDescritivo.Location = new System.Drawing.Point(12, 344);
+            this.txtDescritivo.Location = new System.Drawing.Point(12, 244);
             this.txtDescritivo.Multiline = true;
             this.txtDescritivo.Name = "txtDescritivo";
             this.txtDescritivo.Size = new System.Drawing.Size(755, 180);
@@ -186,7 +185,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(12, 326);
+            this.label7.Location = new System.Drawing.Point(12, 226);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(64, 15);
             this.label7.TabIndex = 15;
@@ -194,7 +193,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(789, 344);
+            this.button1.Location = new System.Drawing.Point(789, 245);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(130, 23);
             this.button1.TabIndex = 16;
@@ -203,26 +202,17 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(789, 385);
+            this.button2.Location = new System.Drawing.Point(789, 286);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(130, 23);
             this.button2.TabIndex = 17;
             this.button2.Text = "Ocorrencias";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(789, 431);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(130, 23);
-            this.button3.TabIndex = 18;
-            this.button3.Text = "Anexos";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
             // chkAtivo
             // 
             this.chkAtivo.AutoSize = true;
-            this.chkAtivo.Location = new System.Drawing.Point(12, 244);
+            this.chkAtivo.Location = new System.Drawing.Point(12, 194);
             this.chkAtivo.Name = "chkAtivo";
             this.chkAtivo.Size = new System.Drawing.Size(54, 19);
             this.chkAtivo.TabIndex = 19;
@@ -232,7 +222,7 @@
             // chkOperacional
             // 
             this.chkOperacional.AutoSize = true;
-            this.chkOperacional.Location = new System.Drawing.Point(86, 244);
+            this.chkOperacional.Location = new System.Drawing.Point(86, 194);
             this.chkOperacional.Name = "chkOperacional";
             this.chkOperacional.Size = new System.Drawing.Size(90, 19);
             this.chkOperacional.TabIndex = 20;
@@ -242,7 +232,7 @@
             // chkForadeLinha
             // 
             this.chkForadeLinha.AutoSize = true;
-            this.chkForadeLinha.Location = new System.Drawing.Point(204, 244);
+            this.chkForadeLinha.Location = new System.Drawing.Point(204, 194);
             this.chkForadeLinha.Name = "chkForadeLinha";
             this.chkForadeLinha.Size = new System.Drawing.Size(94, 19);
             this.chkForadeLinha.TabIndex = 21;
@@ -253,7 +243,7 @@
             // 
             this.labMelFornecedor.AutoSize = true;
             this.labMelFornecedor.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labMelFornecedor.Location = new System.Drawing.Point(490, 179);
+            this.labMelFornecedor.Location = new System.Drawing.Point(490, 147);
             this.labMelFornecedor.Name = "labMelFornecedor";
             this.labMelFornecedor.Size = new System.Drawing.Size(138, 15);
             this.labMelFornecedor.TabIndex = 23;
@@ -261,7 +251,7 @@
             // 
             // txtMelhorFornecedor
             // 
-            this.txtMelhorFornecedor.Location = new System.Drawing.Point(490, 197);
+            this.txtMelhorFornecedor.Location = new System.Drawing.Point(490, 165);
             this.txtMelhorFornecedor.Name = "txtMelhorFornecedor";
             this.txtMelhorFornecedor.Size = new System.Drawing.Size(429, 23);
             this.txtMelhorFornecedor.TabIndex = 22;
@@ -272,9 +262,9 @@
             this.cmdNovo.BackgroundImage = global::Formularios.Properties.Resources.folder;
             this.cmdNovo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.cmdNovo.CausesValidation = false;
-            this.cmdNovo.Location = new System.Drawing.Point(787, 9);
+            this.cmdNovo.Location = new System.Drawing.Point(837, 9);
             this.cmdNovo.Name = "cmdNovo";
-            this.cmdNovo.Size = new System.Drawing.Size(40, 25);
+            this.cmdNovo.Size = new System.Drawing.Size(29, 29);
             this.cmdNovo.TabIndex = 24;
             this.cmdNovo.UseVisualStyleBackColor = true;
             this.cmdNovo.Click += new System.EventHandler(this.cmdNovo_Click);
@@ -284,9 +274,9 @@
             this.cmdGravar.BackgroundImage = global::Formularios.Properties.Resources.save;
             this.cmdGravar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.cmdGravar.CausesValidation = false;
-            this.cmdGravar.Location = new System.Drawing.Point(833, 9);
+            this.cmdGravar.Location = new System.Drawing.Point(872, 9);
             this.cmdGravar.Name = "cmdGravar";
-            this.cmdGravar.Size = new System.Drawing.Size(40, 25);
+            this.cmdGravar.Size = new System.Drawing.Size(29, 29);
             this.cmdGravar.TabIndex = 25;
             this.cmdGravar.UseVisualStyleBackColor = true;
             this.cmdGravar.Click += new System.EventHandler(this.cmdGravar_Click);
@@ -296,9 +286,9 @@
             this.cmdSair.BackgroundImage = global::Formularios.Properties.Resources.logout;
             this.cmdSair.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.cmdSair.CausesValidation = false;
-            this.cmdSair.Location = new System.Drawing.Point(879, 9);
+            this.cmdSair.Location = new System.Drawing.Point(907, 9);
             this.cmdSair.Name = "cmdSair";
-            this.cmdSair.Size = new System.Drawing.Size(40, 25);
+            this.cmdSair.Size = new System.Drawing.Size(29, 29);
             this.cmdSair.TabIndex = 26;
             this.cmdSair.UseVisualStyleBackColor = true;
             this.cmdSair.Click += new System.EventHandler(this.cmdSair_Click);
@@ -307,7 +297,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(948, 536);
+            this.ClientSize = new System.Drawing.Size(948, 437);
             this.ControlBox = false;
             this.Controls.Add(this.cmdSair);
             this.Controls.Add(this.cmdGravar);
@@ -317,7 +307,6 @@
             this.Controls.Add(this.chkForadeLinha);
             this.Controls.Add(this.chkOperacional);
             this.Controls.Add(this.chkAtivo);
-            this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label7);
@@ -362,7 +351,6 @@
         private Label label7;
         private Button button1;
         private Button button2;
-        private Button button3;
         private CheckBox chkAtivo;
         private CheckBox chkOperacional;
         private CheckBox chkForadeLinha;

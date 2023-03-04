@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadEndereco));
-            this.cmdExcluir = new System.Windows.Forms.Button();
             this.txtReferncia = new System.Windows.Forms.TextBox();
             this.labReferencia = new System.Windows.Forms.Label();
             this.chkEndCobranca = new System.Windows.Forms.CheckBox();
@@ -63,17 +61,6 @@
             this.labEstado = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.grdEnderecos)).BeginInit();
             this.SuspendLayout();
-            // 
-            // cmdExcluir
-            // 
-            this.cmdExcluir.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("cmdExcluir.BackgroundImage")));
-            this.cmdExcluir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.cmdExcluir.Location = new System.Drawing.Point(650, 12);
-            this.cmdExcluir.Name = "cmdExcluir";
-            this.cmdExcluir.Size = new System.Drawing.Size(30, 30);
-            this.cmdExcluir.TabIndex = 39;
-            this.cmdExcluir.UseVisualStyleBackColor = true;
-            this.cmdExcluir.Click += new System.EventHandler(this.cmdExcluir_Click);
             // 
             // txtReferncia
             // 
@@ -355,7 +342,6 @@
             this.ControlBox = false;
             this.Controls.Add(this.txtEstado);
             this.Controls.Add(this.labEstado);
-            this.Controls.Add(this.cmdExcluir);
             this.Controls.Add(this.txtReferncia);
             this.Controls.Add(this.labReferencia);
             this.Controls.Add(this.chkEndCobranca);
@@ -384,8 +370,6 @@
         }
 
         #endregion
-
-        private Button cmdExcluir;
         private TextBox txtReferncia;
         private Label labReferencia;
         private CheckBox chkEndCobranca;

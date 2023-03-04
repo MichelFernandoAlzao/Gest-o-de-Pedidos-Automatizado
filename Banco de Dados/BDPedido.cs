@@ -11,19 +11,19 @@ namespace Banco_de_Dados
 {
     public class BDPedido
     {
-        string cpID { get; set; }
-        string cpEmpresaDR { get; set; }
-        string cpPedidoExterno { get; set; }
-        string cpDataContato { get; set; }
-        string cpDataConfirmacao { get; set; }
-        string cpNatureOperacaoDR { get; set; }
-        string cpObservacoes { get; set; }
-        string cpVlrTotalPedido { get; set; }
-        string cpVlrItensFaturando { get; set; }
-        string cpVlrImpostos { get; set; }
-        string cpComissao { get; set; }
-        string cpVendedorDR { get; set; }
-        string cpMsgerro { get; set; }
+        public string cpID { get; set; }
+        public string cpEmpresaDR { get; set; }
+        public string cpPedidoExterno { get; set; }
+        public string cpDataContato { get; set; }
+        public string cpDataConfirmacao { get; set; }
+        public string cpNatureOperacaoDR { get; set; }
+        public string cpObservacoes { get; set; }
+        public string cpVlrTotalPedido { get; set; }
+        public string cpVlrItensFaturando { get; set; }
+        public string cpVlrImpostos { get; set; }
+        public string cpComissao { get; set; }
+        public string cpVendedorDR { get; set; }
+        public string cpMsgerro { get; set; }
 
         Conexao conexao = new Conexao();
         SqlCommand cmd = new SqlCommand();
