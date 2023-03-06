@@ -263,7 +263,7 @@ namespace Banco_de_Dados
                 }
                 if (pVendedor != "")
                 {
-                    sqlWhere += "CDCEVendedor = " + pVendedor + "%' " + "AND";
+                    sqlWhere += "CDCEVendedor = " + pVendedor + "' " + "AND";
                     ClausulaWhere = 'S';
                 }
                 if (pCliente != "")

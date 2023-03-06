@@ -92,11 +92,11 @@
             // 
             // txtNumeroPedido
             // 
-            this.txtNumeroPedido.Enabled = false;
             this.txtNumeroPedido.Location = new System.Drawing.Point(12, 61);
             this.txtNumeroPedido.Name = "txtNumeroPedido";
             this.txtNumeroPedido.Size = new System.Drawing.Size(100, 23);
             this.txtNumeroPedido.TabIndex = 3;
+            this.txtNumeroPedido.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtNumeroPedido_KeyDown);
             // 
             // txtEmpresa
             // 
@@ -119,9 +119,9 @@
             this.lbNumeroPedido.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbNumeroPedido.Location = new System.Drawing.Point(12, 43);
             this.lbNumeroPedido.Name = "lbNumeroPedido";
-            this.lbNumeroPedido.Size = new System.Drawing.Size(53, 15);
+            this.lbNumeroPedido.Size = new System.Drawing.Size(77, 15);
             this.lbNumeroPedido.TabIndex = 6;
-            this.lbNumeroPedido.Text = "Numero";
+            this.lbNumeroPedido.Text = "Numero - F1";
             // 
             // labEmpresa
             // 

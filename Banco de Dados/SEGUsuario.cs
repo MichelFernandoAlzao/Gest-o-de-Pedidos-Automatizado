@@ -15,10 +15,10 @@ namespace Banco_de_Dados
         public string Usuario { get; set; }
         public string Nome { get; set; }
         public string Senha { get; set; }
-        public char Administrador { get; set; }
-        public char GerenciaCadastros { get; set; }
-        public char Operacional { get; set; }
-        public char Seguranca { get; set; }
+        public string Administrador { get; set; }
+        public string GerenciaCadastros { get; set; }
+        public string Operacional { get; set; }
+        public string Seguranca { get; set; }
         public string MsgErro { get; set; }
 
         Conexao conexao = new Conexao();
@@ -87,13 +87,13 @@ namespace Banco_de_Dados
                 {
                     SEGUsuario objUsuario = new SEGUsuario();
                     objUsuario.ID = dr["SEGUsuarios"].ToString();
-                    objUsuario.Administrador = Convert.ToChar(dr["USAdministrador"]);
-                    objUsuario.GerenciaCadastros = Convert.ToChar(dr["USGernciaCadastros"]);
-                    objUsuario.Operacional = Convert.ToChar(dr["USOperacional"]);
+                    objUsuario.Administrador = dr["USAdministrador"].ToString();
+                    objUsuario.GerenciaCadastros = dr["USGernciaCadastros"].ToString();
+                    objUsuario.Operacional = dr["USOperacional"].ToString();
                     objUsuario.Usuario = dr["USUsuario"].ToString();
                     objUsuario.Nome = dr["USNome"].ToString();
                     objUsuario.Senha = dr["USSenha"].ToString();
-                    objUsuario.Seguranca = Convert.ToChar(dr["USSeguranca"]);
+                    objUsuario.Seguranca = dr["USSeguranca"].ToString();
 
                     
                     lstUsuarios.Add(objUsuario);

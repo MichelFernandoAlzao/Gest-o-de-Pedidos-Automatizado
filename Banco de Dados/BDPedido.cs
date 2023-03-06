@@ -23,12 +23,12 @@ namespace Banco_de_Dados
         public string cpVlrImpostos { get; set; }
         public string cpComissao { get; set; }
         public string cpVendedorDR { get; set; }
-        public string cpMsgerro { get; set; }
+        public string cpMsgErro { get; set; }
 
         Conexao conexao = new Conexao();
         SqlCommand cmd = new SqlCommand();
 
-        public void InsereDados(string[] LParametros)
+        public void InsereDados()
         {
 
             string sSQL;
@@ -117,14 +117,14 @@ namespace Banco_de_Dados
             {
                 cmd.Connection = conexao.conectar();
                 //Executar o comando
-                cmd.ExecuteNonQuery();
+                cpID = cmd.ExecuteNonQuery().ToString();
                 //Desconectar
                 conexao.desconectar();
                 
             }
             catch (SqlException e)
             {
-                cpMsgerro = e.Message.ToString();
+                cpMsgErro = e.Message.ToString();
             }
             cmd.Dispose();
         }
@@ -165,7 +165,11 @@ namespace Banco_de_Dados
             {
                 sqlconteudo += "OPPComissao = '" + cpComissao + "',";
             }
-            
+            if (cpVendedorDR != null)
+            {
+                sqlconteudo += "OPPVendedorDR = '" + cpVendedorDR + "',";
+            }
+
 
             sSQL = sSQL + sqlconteudo.Remove(sqlconteudo.Length - 1);
             sSQL = sSQL + sqlWhere;
@@ -183,7 +187,7 @@ namespace Banco_de_Dados
             }
             catch (SqlException e)
             {
-                cpMsgerro = e.Message.ToString();
+                cpMsgErro = e.Message.ToString();
             }
             cmd.Dispose();
         }
@@ -262,10 +266,33 @@ namespace Banco_de_Dados
             }
             catch (SqlException e)
             {
-                cpMsgerro = e.Message.ToString();
+                cpMsgErro = e.Message.ToString();
             }
             cmd.Dispose();
             return lstPedido;
+        }
+        public void Excluir()
+        {
+            string sSQL = "";
+
+            sSQL = "DELETE FROM OPRegOcorrencias WHERE OPRegOcorrencias = '" + cpID + "'";
+
+            cmd.CommandText = sSQL;
+
+            try
+            {
+                cmd.Connection = conexao.conectar();
+                //Executar o comando
+                cmd.ExecuteNonQuery();
+                //Desconectar
+                conexao.desconectar();
+                cpMsgErro = "";
+            }
+            catch (SqlException e)
+            {
+                cpMsgErro = e.Message.ToString();
+            }
+            cmd.Dispose();
         }
     }
 }

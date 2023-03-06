@@ -68,7 +68,7 @@ namespace Formularios
                     MessageBox.Show("Usuario ou senha invalidos", "GPA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
-                if (lstUsuario[0].Operacional == 'S')
+                if (lstUsuario[0].Operacional == "S")
                 {
                     frmCRMInicial objTela = new frmCRMInicial(lstUsuario[0].ID);
                     this.Hide();
@@ -96,7 +96,7 @@ namespace Formularios
                     MessageBox.Show("Usuario ou senha invalidos", "GPA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
-                if (lstUsuario[0].Seguranca == 'S')
+                if (lstUsuario[0].Seguranca == "S")
                 {
                     frmSEGUsuarios objTela = new frmSEGUsuarios();
                     this.Hide();
