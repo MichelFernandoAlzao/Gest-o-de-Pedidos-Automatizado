@@ -19,7 +19,7 @@ namespace Formularios
         string LUsuario = "";
         string LDataSolcitacao = "";
         string LDataConfirmacao = "";
-        string LNaturezaOperacao = "";
+        public string LIDNaturezaOperacao = "";
         string LObservacao = "";
         string LPedidoExterno = "";
         string LTotalItens = "";
@@ -75,6 +75,12 @@ namespace Formularios
                 return;
             }
             txtNumeroPedido.Enabled = false;
+            if(LIDNaturezaOperacao != "")
+            {
+                BDNatOperacao objNatOperacao = new BDNatOperacao();
+                List<BDNatOperacao> lstNatureza = objNatOperacao.CarregaDados(LIDNaturezaOperacao);
+                txtxNatOperacao.Text = lstNatureza[0].cpDescricao.ToString();
+            }
 
         }
         private void cmdItensPedido_Click(object sender, EventArgs e)
@@ -205,12 +211,12 @@ namespace Formularios
                     return;
                 }
             }
-            if(LNaturezaOperacao == "")
+            if(LIDNaturezaOperacao == "")
             {
                 MessageBox.Show("Natureza não selcionada", "GPA");
                 return;
             }
-            objPedido.cpNatureOperacaoDR = LNaturezaOperacao.ToString();
+            objPedido.cpNatureOperacaoDR = LIDNaturezaOperacao.ToString();
             objPedido.cpVendedorDR = LUsuario;
             if(txtObservacao.Text != "")
             {
@@ -225,8 +231,24 @@ namespace Formularios
             {
                 objPedido.AlteraDados();
             }
-            
-            
+
+            LIDPedido = objPedido.cpID;
+
+            if (LIDPedido != "")
+            {
+                BDPedido objCarregaPedido = new BDPedido();
+                List<BDPedido> lstPedido = objCarregaPedido.CarregaDados(LIDPedido, "", LUsuario);
+                LID = lstPedido[0].cpEmpresaDR;
+                LDataSolcitacao = lstPedido[0].cpDataContato.Substring(0, 10);
+                if (lstPedido[0].cpDataConfirmacao != "")
+                {
+                    LDataConfirmacao = lstPedido[0].cpDataConfirmacao.Substring(0, 10);
+                }
+                LIDNaturezaOperacao = lstPedido[0].cpNatureOperacaoDR;
+                LObservacao = lstPedido[0].cpObservacoes;
+                MostraDados();
+            }
+
 
         }
 
@@ -249,7 +271,7 @@ namespace Formularios
             LRazaoSocial = "";
             LDataSolcitacao = "";
             LDataConfirmacao = "";
-            LNaturezaOperacao = "";
+            LIDNaturezaOperacao = "";
             LObservacao = "";
             LPedidoExterno = "";
             LTotalItens = "";
@@ -280,12 +302,27 @@ namespace Formularios
                     {
                         LDataConfirmacao = lstPedido[0].cpDataConfirmacao.Substring(0, 10);
                     }
-                    LNaturezaOperacao = lstPedido[0].cpNatureOperacaoDR;
+                    LIDNaturezaOperacao = lstPedido[0].cpNatureOperacaoDR;
                     LObservacao = lstPedido[0].cpObservacoes;
                     MostraDados();
                 }
             }
         }
 
+        private void txtxNatOperacao_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.F1)
+            {
+                frmSelecionaNatureza objTela = new frmSelecionaNatureza(this,LUsuario);
+                objTela.ShowDialog();
+
+                if(LIDNaturezaOperacao != "")
+                {
+                    BDNatOperacao objNatOperacao = new BDNatOperacao();
+                    List<BDNatOperacao> lstNatureza = objNatOperacao.CarregaDados(LIDNaturezaOperacao);
+                    txtxNatOperacao.Text = lstNatureza[0].cpDescricao.ToString();
+                }
+            }
+        }
     }
 }

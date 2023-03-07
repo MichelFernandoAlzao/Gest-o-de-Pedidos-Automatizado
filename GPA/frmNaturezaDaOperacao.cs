@@ -20,11 +20,37 @@ namespace Formularios
         public string LBrinde = "";
         public string LInterno = "";
         public string LRestrito = "";
-
-        public frmNaturezaDaOperacao()
+        string LUsuario = "";
+        public frmNaturezaDaOperacao(string inUsuario)
         {
             InitializeComponent();
+            LUsuario = inUsuario;
+            TestaUsuario();
             CarregaGrid();
+            if (grdNatOperacao.SelectedRows.Count != 0)
+            {
+                LID = grdNatOperacao.SelectedRows[0].Cells[0].Value.ToString();
+                LDescricao = grdNatOperacao.SelectedRows[0].Cells[1].Value.ToString();
+                LVenda = grdNatOperacao.SelectedRows[0].Cells[2].Value.ToString();
+                LBonificacao = grdNatOperacao.SelectedRows[0].Cells[3].Value.ToString();
+                LBrinde = grdNatOperacao.SelectedRows[0].Cells[4].Value.ToString();
+                LInterno = grdNatOperacao.SelectedRows[0].Cells[5].Value.ToString();
+                LRestrito = grdNatOperacao.SelectedRows[0].Cells[6].Value.ToString();
+            }
+            
+
+        }
+
+        public void TestaUsuario()
+        {
+            SEGUsuario objUsuario = new SEGUsuario();
+            objUsuario.ID = LUsuario;
+            List<SEGUsuario> lstUsuario = objUsuario.CarregaDados(LUsuario,"","","");
+            if (lstUsuario[0].GerenciaCadastros != "S")
+            {
+                MessageBox.Show("Usuario sem permissão para alterar/Cadastrar Naturezas", "GPA");
+                this.Close();
+            }
         }
 
         private void cmdNovo_Click(object sender, EventArgs e)
@@ -103,7 +129,21 @@ namespace Formularios
             }
             else
             {
+                objNatureza.cpID = LID;
                 objNatureza.AlteraDados();
+            }
+
+            grdNatOperacao.Rows.Clear();
+            CarregaGrid();
+            if (grdNatOperacao.SelectedRows.Count != 0)
+            {
+                LID = grdNatOperacao.SelectedRows[0].Cells[0].Value.ToString();
+                LDescricao = grdNatOperacao.SelectedRows[0].Cells[1].Value.ToString();
+                LVenda = grdNatOperacao.SelectedRows[0].Cells[2].Value.ToString();
+                LBonificacao = grdNatOperacao.SelectedRows[0].Cells[3].Value.ToString();
+                LBrinde = grdNatOperacao.SelectedRows[0].Cells[4].Value.ToString();
+                LInterno = grdNatOperacao.SelectedRows[0].Cells[5].Value.ToString();
+                LRestrito = grdNatOperacao.SelectedRows[0].Cells[6].Value.ToString();
             }
         }
 
@@ -179,6 +219,11 @@ namespace Formularios
                 chkInterno.Checked = false;
             }
             
+        }
+
+        private void cmdSair_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

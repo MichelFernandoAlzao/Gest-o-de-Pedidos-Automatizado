@@ -236,15 +236,16 @@
             this.txtxNatOperacao.Name = "txtxNatOperacao";
             this.txtxNatOperacao.Size = new System.Drawing.Size(430, 23);
             this.txtxNatOperacao.TabIndex = 19;
+            this.txtxNatOperacao.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtxNatOperacao_KeyDown);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(237, 157);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(124, 15);
+            this.label5.Size = new System.Drawing.Size(147, 15);
             this.label5.TabIndex = 20;
-            this.label5.Text = "Natureza da Operação";
+            this.label5.Text = "Natureza da Operação - F1";
             // 
             // label6
             // 

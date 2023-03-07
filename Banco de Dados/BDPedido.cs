@@ -35,7 +35,7 @@ namespace Banco_de_Dados
             string sqlCampos = "";
             string sqlconteudo;
 
-            sSQL = "INSERT INTO OPPedido (";
+            sSQL = "INSERT INTO OPPPedido (";
             sqlconteudo = " VALUES (";
 
             if (cpEmpresaDR.ToString() != "")
@@ -68,36 +68,53 @@ namespace Banco_de_Dados
 
                 sqlconteudo += "'" + cpNatureOperacaoDR.ToString() + "',";
             }
-            if (cpObservacoes != "")
+            if (cpObservacoes != null)
             {
                 sqlCampos += "OPPObservacao, ";
 
                 sqlconteudo += "'" + cpObservacoes.ToString() + "',";
             }
-            if (cpVlrTotalPedido != "")
+            if(cpVlrTotalPedido != null)
             {
-                sqlCampos += "OPPVlrTotalPeddo, ";
+                if (cpVlrTotalPedido != "")
+                {
+                    sqlCampos += "OPPVlrTotalPeddo, ";
 
-                sqlconteudo += "'" + cpVlrTotalPedido + "',";
+                    sqlconteudo += "'" + cpVlrTotalPedido + "',";
+                }
             }
-            if (cpVlrItensFaturando != "")
+            
+            if(cpVlrItensFaturando != null)
             {
-                sqlCampos += "OPPVlritensFaturando, ";
+                if (cpVlrItensFaturando != "")
+                {
+                    sqlCampos += "OPPVlritensFaturando, ";
 
-                sqlconteudo += "'" + cpVlrItensFaturando + "',";
+                    sqlconteudo += "'" + cpVlrItensFaturando + "',";
+                }
             }
-            if (cpVlrImpostos != "")
+            
+
+            if(cpVlrImpostos != null)
             {
-                sqlCampos += "OPPVlrimpostos, ";
+                if (cpVlrImpostos != "")
+                {
+                    sqlCampos += "OPPVlrimpostos, ";
 
-                sqlconteudo += "'" + cpVlrImpostos + "',";
+                    sqlconteudo += "'" + cpVlrImpostos + "',";
+                }
             }
-            if (cpComissao != null)
+            
+            if(cpComissao != null)
             {
-                sqlCampos += "OPPComissao, ";
+                if (cpComissao != "")
+                {
+                    sqlCampos += "OPPComissao, ";
 
-                sqlconteudo += "'" + cpComissao + "',";
+                    sqlconteudo += "'" + cpComissao + "',";
+                }
             }
+            
             if (cpVendedorDR != null)
             {
                 sqlCampos += "OPPVendedorDR, ";
@@ -117,7 +134,8 @@ namespace Banco_de_Dados
             {
                 cmd.Connection = conexao.conectar();
                 //Executar o comando
-                cpID = cmd.ExecuteNonQuery().ToString();
+                Int32 idRetorno = Convert.ToInt32(cmd.ExecuteScalar());
+                cpID = idRetorno.ToString();
                 //Desconectar
                 conexao.desconectar();
                 
@@ -133,9 +151,9 @@ namespace Banco_de_Dados
         {
             string sSQL = "";
             string sqlconteudo = "";
-            string sqlWhere = " WHERE OPPedido = '" + cpID + "'";
+            string sqlWhere = " WHERE OPPPedido = '" + cpID + "'";
 
-            sSQL = "UPDATE CDCadastroEmpresas SET ";
+            sSQL = "UPDATE OPPPedido SET ";
 
             if (cpPedidoExterno != null)
             {
@@ -195,12 +213,12 @@ namespace Banco_de_Dados
         public List<BDPedido> CarregaDados(string id, string inEmpresaDR, string inVendedorDR)
         {
             List<BDPedido> lstPedido = new List<BDPedido>();
-            string slqSelect = "SELECT * FROM OPPedido ";
+            string slqSelect = "SELECT * FROM OPPPedido ";
             string sqlWhere = "WHERE ";
             char ClausulaWhere = 'N';
             if (id != "")
             {
-                sqlWhere = "WHERE OPPedido = '" + id + "'";
+                sqlWhere = "WHERE OPPPedido = '" + id + "'";
                 ClausulaWhere = 'S';
             }
             else
@@ -275,7 +293,7 @@ namespace Banco_de_Dados
         {
             string sSQL = "";
 
-            sSQL = "DELETE FROM OPRegOcorrencias WHERE OPRegOcorrencias = '" + cpID + "'";
+            sSQL = "DELETE FROM OPPPedido WHERE OPPPedido = '" + cpID + "'";
 
             cmd.CommandText = sSQL;
 

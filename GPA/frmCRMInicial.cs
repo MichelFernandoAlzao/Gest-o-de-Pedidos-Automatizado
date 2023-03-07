@@ -88,5 +88,19 @@ namespace Formularios
             frmUltimasVendas frmUltimasVendas = new frmUltimasVendas();
             frmUltimasVendas.ShowDialog();
         }
+
+        private void CalendarioContatos_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.LButton)
+            {
+
+            }
+        }
+
+        private void cmdNatOperacao_Click(object sender, EventArgs e)
+        {
+            frmNaturezaDaOperacao frmNatOperacao = new frmNaturezaDaOperacao(LUsuario);
+            frmNatOperacao.ShowDialog();
+        }
     }
 }

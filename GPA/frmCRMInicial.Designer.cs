@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
+            this.CalendarioContatos = new System.Windows.Forms.MonthCalendar();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
@@ -36,11 +36,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.cmdConsultaPedido = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.grdUltimasVendas = new System.Windows.Forms.DataGridView();
             this.DataVenda = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.VRazao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.VValor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.grdUltContato = new System.Windows.Forms.DataGridView();
             this.UltContato = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RazSocial = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Dispensar = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -57,22 +57,30 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.grdAvisos = new System.Windows.Forms.DataGridView();
             this.DtCadastro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.avTexto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dtTermino = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Prioridade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label5 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            this.grdContatosAgendados = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.labContatos = new System.Windows.Forms.Label();
+            this.cmdNatOperacao = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.grdUltimasVendas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdUltContato)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdAvisos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdContatosAgendados)).BeginInit();
             this.SuspendLayout();
             // 
-            // monthCalendar1
+            // CalendarioContatos
             // 
-            this.monthCalendar1.Location = new System.Drawing.Point(18, 321);
-            this.monthCalendar1.Name = "monthCalendar1";
-            this.monthCalendar1.TabIndex = 0;
+            this.CalendarioContatos.Location = new System.Drawing.Point(18, 321);
+            this.CalendarioContatos.Name = "CalendarioContatos";
+            this.CalendarioContatos.TabIndex = 0;
+            this.CalendarioContatos.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CalendarioContatos_KeyDown);
             // 
             // button1
             // 
@@ -140,19 +148,19 @@
             this.cmdConsultaPedido.UseVisualStyleBackColor = true;
             this.cmdConsultaPedido.Click += new System.EventHandler(this.cmdConsultaPedido_Click);
             // 
-            // dataGridView1
+            // grdUltimasVendas
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.grdUltimasVendas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdUltimasVendas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.DataVenda,
             this.VRazao,
             this.VValor});
-            this.dataGridView1.Location = new System.Drawing.Point(669, 159);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(390, 280);
-            this.dataGridView1.TabIndex = 8;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.grdUltimasVendas.Location = new System.Drawing.Point(669, 159);
+            this.grdUltimasVendas.Name = "grdUltimasVendas";
+            this.grdUltimasVendas.RowTemplate.Height = 25;
+            this.grdUltimasVendas.Size = new System.Drawing.Size(390, 280);
+            this.grdUltimasVendas.TabIndex = 8;
+            this.grdUltimasVendas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // DataVenda
             // 
@@ -172,18 +180,18 @@
             this.VValor.Name = "VValor";
             this.VValor.Width = 70;
             // 
-            // dataGridView2
+            // grdUltContato
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.grdUltContato.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdUltContato.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.UltContato,
             this.RazSocial,
             this.Dispensar});
-            this.dataGridView2.Location = new System.Drawing.Point(257, 159);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowTemplate.Height = 25;
-            this.dataGridView2.Size = new System.Drawing.Size(390, 280);
-            this.dataGridView2.TabIndex = 9;
+            this.grdUltContato.Location = new System.Drawing.Point(257, 159);
+            this.grdUltContato.Name = "grdUltContato";
+            this.grdUltContato.RowTemplate.Height = 25;
+            this.grdUltContato.Size = new System.Drawing.Size(390, 280);
+            this.grdUltContato.TabIndex = 9;
             // 
             // UltContato
             // 
@@ -333,19 +341,19 @@
             this.label10.TabIndex = 23;
             this.label10.Text = "Empresa:";
             // 
-            // dataGridView3
+            // grdAvisos
             // 
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.grdAvisos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdAvisos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.DtCadastro,
             this.avTexto,
             this.dtTermino,
             this.Prioridade});
-            this.dataGridView3.Location = new System.Drawing.Point(257, 33);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.RowTemplate.Height = 25;
-            this.dataGridView3.Size = new System.Drawing.Size(802, 97);
-            this.dataGridView3.TabIndex = 24;
+            this.grdAvisos.Location = new System.Drawing.Point(257, 33);
+            this.grdAvisos.Name = "grdAvisos";
+            this.grdAvisos.RowTemplate.Height = 25;
+            this.grdAvisos.Size = new System.Drawing.Size(802, 97);
+            this.grdAvisos.TabIndex = 24;
             // 
             // DtCadastro
             // 
@@ -381,13 +389,67 @@
             this.label5.TabIndex = 25;
             this.label5.Text = "Avisos:";
             // 
+            // grdContatosAgendados
+            // 
+            this.grdContatosAgendados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdContatosAgendados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3});
+            this.grdContatosAgendados.Location = new System.Drawing.Point(1080, 33);
+            this.grdContatosAgendados.Name = "grdContatosAgendados";
+            this.grdContatosAgendados.RowTemplate.Height = 25;
+            this.grdContatosAgendados.Size = new System.Drawing.Size(168, 406);
+            this.grdContatosAgendados.TabIndex = 26;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "Ult.COntato";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Width = 75;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "Razao Social";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.Width = 230;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.HeaderText = "Disp";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.Width = 40;
+            // 
+            // labContatos
+            // 
+            this.labContatos.AutoSize = true;
+            this.labContatos.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labContatos.Location = new System.Drawing.Point(1080, 15);
+            this.labContatos.Name = "labContatos";
+            this.labContatos.Size = new System.Drawing.Size(58, 15);
+            this.labContatos.TabIndex = 27;
+            this.labContatos.Text = "Contatar:";
+            // 
+            // cmdNatOperacao
+            // 
+            this.cmdNatOperacao.Location = new System.Drawing.Point(1080, 460);
+            this.cmdNatOperacao.Name = "cmdNatOperacao";
+            this.cmdNatOperacao.Size = new System.Drawing.Size(168, 23);
+            this.cmdNatOperacao.TabIndex = 28;
+            this.cmdNatOperacao.Text = "Nat. Operação";
+            this.cmdNatOperacao.UseVisualStyleBackColor = true;
+            this.cmdNatOperacao.Click += new System.EventHandler(this.cmdNatOperacao_Click);
+            // 
             // frmCRMInicial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1071, 501);
+            this.ClientSize = new System.Drawing.Size(1260, 501);
+            this.Controls.Add(this.cmdNatOperacao);
+            this.Controls.Add(this.labContatos);
+            this.Controls.Add(this.grdContatosAgendados);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.dataGridView3);
+            this.Controls.Add(this.grdAvisos);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
@@ -401,8 +463,8 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.cmdRegistraContatos);
-            this.Controls.Add(this.dataGridView2);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.grdUltContato);
+            this.Controls.Add(this.grdUltimasVendas);
             this.Controls.Add(this.cmdConsultaPedido);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label3);
@@ -410,13 +472,14 @@
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.monthCalendar1);
+            this.Controls.Add(this.CalendarioContatos);
             this.Name = "frmCRMInicial";
             this.Text = "CRM - GPA";
             this.Load += new System.EventHandler(this.frmCRMInicial_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdUltimasVendas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdUltContato)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdAvisos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdContatosAgendados)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -424,7 +487,7 @@
 
         #endregion
 
-        private MonthCalendar monthCalendar1;
+        private MonthCalendar CalendarioContatos;
         private Button button1;
         private Label label1;
         private ProgressBar progressBar1;
@@ -432,8 +495,8 @@
         private Label label3;
         private Button button2;
         private Button cmdConsultaPedido;
-        private DataGridView dataGridView1;
-        private DataGridView dataGridView2;
+        private DataGridView grdUltimasVendas;
+        private DataGridView grdUltContato;
         private Button cmdRegistraContatos;
         private TextBox textBox1;
         private Label label4;
@@ -453,11 +516,17 @@
         private DataGridViewTextBoxColumn Dispensar;
         private Label label9;
         private Label label10;
-        private DataGridView dataGridView3;
+        private DataGridView grdAvisos;
         private DataGridViewTextBoxColumn DtCadastro;
         private DataGridViewTextBoxColumn avTexto;
         private DataGridViewTextBoxColumn dtTermino;
         private DataGridViewTextBoxColumn Prioridade;
         private Label label5;
+        private DataGridView grdContatosAgendados;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private Label labContatos;
+        private Button cmdNatOperacao;
     }
 }

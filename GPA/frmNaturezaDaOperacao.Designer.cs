@@ -30,6 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNaturezaDaOperacao));
             this.grdNatOperacao = new System.Windows.Forms.DataGridView();
+            this.grdNatID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.grdNatDescricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.grdvenda = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.grdBonificacao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.grdBrinde = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.grdInterno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.grdRestrito = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lbPedidos = new System.Windows.Forms.Label();
             this.chkVenda = new System.Windows.Forms.CheckBox();
             this.chkBonificacao = new System.Windows.Forms.CheckBox();
@@ -42,13 +49,6 @@
             this.cmdNovo = new System.Windows.Forms.Button();
             this.cmdGravar = new System.Windows.Forms.Button();
             this.cmdSair = new System.Windows.Forms.Button();
-            this.grdNatID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.grdNatDescricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.grdvenda = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.grdBonificacao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.grdBrinde = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.grdInterno = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.grdRestrito = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grdNatOperacao)).BeginInit();
             this.SuspendLayout();
             // 
@@ -69,9 +69,59 @@
             this.grdNatOperacao.Name = "grdNatOperacao";
             this.grdNatOperacao.ReadOnly = true;
             this.grdNatOperacao.RowTemplate.Height = 25;
+            this.grdNatOperacao.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grdNatOperacao.Size = new System.Drawing.Size(335, 374);
             this.grdNatOperacao.TabIndex = 0;
             this.grdNatOperacao.SelectionChanged += new System.EventHandler(this.grdNatOperacao_SelectionChanged);
+            // 
+            // grdNatID
+            // 
+            this.grdNatID.HeaderText = "ID";
+            this.grdNatID.Name = "grdNatID";
+            this.grdNatID.ReadOnly = true;
+            this.grdNatID.Width = 50;
+            // 
+            // grdNatDescricao
+            // 
+            this.grdNatDescricao.HeaderText = "Descrição";
+            this.grdNatDescricao.Name = "grdNatDescricao";
+            this.grdNatDescricao.ReadOnly = true;
+            this.grdNatDescricao.Width = 250;
+            // 
+            // grdvenda
+            // 
+            this.grdvenda.HeaderText = "Venda";
+            this.grdvenda.Name = "grdvenda";
+            this.grdvenda.ReadOnly = true;
+            this.grdvenda.Visible = false;
+            // 
+            // grdBonificacao
+            // 
+            this.grdBonificacao.HeaderText = "Bonificacao";
+            this.grdBonificacao.Name = "grdBonificacao";
+            this.grdBonificacao.ReadOnly = true;
+            this.grdBonificacao.Visible = false;
+            // 
+            // grdBrinde
+            // 
+            this.grdBrinde.HeaderText = "Brinde";
+            this.grdBrinde.Name = "grdBrinde";
+            this.grdBrinde.ReadOnly = true;
+            this.grdBrinde.Visible = false;
+            // 
+            // grdInterno
+            // 
+            this.grdInterno.HeaderText = "Interno";
+            this.grdInterno.Name = "grdInterno";
+            this.grdInterno.ReadOnly = true;
+            this.grdInterno.Visible = false;
+            // 
+            // grdRestrito
+            // 
+            this.grdRestrito.HeaderText = "Restrito";
+            this.grdRestrito.Name = "grdRestrito";
+            this.grdRestrito.ReadOnly = true;
+            this.grdRestrito.Visible = false;
             // 
             // lbPedidos
             // 
@@ -194,55 +244,7 @@
             this.cmdSair.Size = new System.Drawing.Size(30, 30);
             this.cmdSair.TabIndex = 46;
             this.cmdSair.UseVisualStyleBackColor = true;
-            // 
-            // grdNatID
-            // 
-            this.grdNatID.HeaderText = "ID";
-            this.grdNatID.Name = "grdNatID";
-            this.grdNatID.ReadOnly = true;
-            this.grdNatID.Width = 50;
-            // 
-            // grdNatDescricao
-            // 
-            this.grdNatDescricao.HeaderText = "Descrição";
-            this.grdNatDescricao.Name = "grdNatDescricao";
-            this.grdNatDescricao.ReadOnly = true;
-            this.grdNatDescricao.Width = 250;
-            // 
-            // grdvenda
-            // 
-            this.grdvenda.HeaderText = "Venda";
-            this.grdvenda.Name = "grdvenda";
-            this.grdvenda.ReadOnly = true;
-            this.grdvenda.Visible = false;
-            // 
-            // grdBonificacao
-            // 
-            this.grdBonificacao.HeaderText = "Bonificacao";
-            this.grdBonificacao.Name = "grdBonificacao";
-            this.grdBonificacao.ReadOnly = true;
-            this.grdBonificacao.Visible = false;
-            // 
-            // grdBrinde
-            // 
-            this.grdBrinde.HeaderText = "Brinde";
-            this.grdBrinde.Name = "grdBrinde";
-            this.grdBrinde.ReadOnly = true;
-            this.grdBrinde.Visible = false;
-            // 
-            // grdInterno
-            // 
-            this.grdInterno.HeaderText = "Interno";
-            this.grdInterno.Name = "grdInterno";
-            this.grdInterno.ReadOnly = true;
-            this.grdInterno.Visible = false;
-            // 
-            // grdRestrito
-            // 
-            this.grdRestrito.HeaderText = "Restrito";
-            this.grdRestrito.Name = "grdRestrito";
-            this.grdRestrito.ReadOnly = true;
-            this.grdRestrito.Visible = false;
+            this.cmdSair.Click += new System.EventHandler(this.cmdSair_Click);
             // 
             // frmNaturezaDaOperacao
             // 

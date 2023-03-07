@@ -113,7 +113,7 @@ namespace Banco_de_Dados
             }
             if (cpBonificacao != null)
             {
-                sqlconteudo += "CDNOBonificacao = " + cpBonificacao.ToString() + ",";
+                sqlconteudo += "CDNOBonificacao = '" + cpBonificacao.ToString() + "',";
             }
             if (cpBrinde != null)
             {
@@ -216,6 +216,49 @@ namespace Banco_de_Dados
             List<BDNatOperacao> lstNatoperacao = new List<BDNatOperacao>();
             string slqSelect = "SELECT * FROM CDNatOperacao ";
             
+            cmd.CommandText = slqSelect;
+            var dt = new DataTable();
+
+            try
+            {
+                cmd.Connection = conexao.conectar();
+                //Executar o comando
+                SqlDataReader reader = cmd.ExecuteReader();
+                dt.Load(reader);
+                reader.Close();
+
+                foreach (DataRow dr in dt.Rows)
+                {
+                    BDNatOperacao bDNatOperacao = new BDNatOperacao();
+                    bDNatOperacao.cpID = dr["CDNatOperacao"].ToString();
+                    bDNatOperacao.cpDescricao = dr["CDNODescricao"].ToString();
+                    bDNatOperacao.cpVenda = dr["CDNOVenda"].ToString();
+                    bDNatOperacao.cpBonificacao = dr["CDNOBonificacao"].ToString();
+                    bDNatOperacao.cpBrinde = dr["CDNOBrinde"].ToString();
+                    bDNatOperacao.cpInterno = dr["CDNOInterno"].ToString();
+                    bDNatOperacao.cpRestrito = dr["CDNORestrito"].ToString();
+
+                    lstNatoperacao.Add(bDNatOperacao);
+
+                }
+
+                //Desconectar
+                conexao.desconectar();
+
+            }
+            catch (SqlException e)
+            {
+                cpMsgErro = e.Message.ToString();
+            }
+            cmd.Dispose();
+            return lstNatoperacao;
+        }
+
+        public List<BDNatOperacao> CarregaRestritas()
+        {
+            List<BDNatOperacao> lstNatoperacao = new List<BDNatOperacao>();
+            string slqSelect = "SELECT * FROM CDNatOperacao WHERE CDNORestrito = 'N'";
+
             cmd.CommandText = slqSelect;
             var dt = new DataTable();
 
