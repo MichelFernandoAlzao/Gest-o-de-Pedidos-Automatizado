@@ -132,10 +132,14 @@ namespace Banco_de_Dados
 
             try
             {
+                int idRetorno = 0;
                 cmd.Connection = conexao.conectar();
                 //Executar o comando
-                Int32 idRetorno = Convert.ToInt32(cmd.ExecuteScalar());
-                cpID = idRetorno.ToString();
+                //Int32 idRetorno = (Int32)cmd.ExecuteScalar();
+
+                SqlCommand myCommand = new SqlCommand(sSQL, cmd.Connection);
+                cpID = myCommand.ExecuteScalar().ToString();
+                //cpID = idRetorno.ToString();
                 //Desconectar
                 conexao.desconectar();
                 

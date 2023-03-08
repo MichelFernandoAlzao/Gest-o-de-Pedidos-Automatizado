@@ -148,6 +148,7 @@
             this.txtDataSolicitacao.Name = "txtDataSolicitacao";
             this.txtDataSolicitacao.Size = new System.Drawing.Size(100, 23);
             this.txtDataSolicitacao.TabIndex = 9;
+            this.txtDataSolicitacao.Leave += new System.EventHandler(this.txtDataSolicitacao_Leave);
             // 
             // lbDataSolicitacao
             // 
@@ -164,6 +165,7 @@
             this.txtDataConfirmacao.Name = "txtDataConfirmacao";
             this.txtDataConfirmacao.Size = new System.Drawing.Size(100, 23);
             this.txtDataConfirmacao.TabIndex = 11;
+            this.txtDataConfirmacao.Leave += new System.EventHandler(this.txtDataConfirmacao_Leave);
             // 
             // label1
             // 

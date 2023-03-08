@@ -38,12 +38,16 @@
             this.cmdNovo = new System.Windows.Forms.Button();
             this.chkAdministrador = new System.Windows.Forms.CheckBox();
             this.chkGerenCadastros = new System.Windows.Forms.CheckBox();
+            this.chkSeguranca = new System.Windows.Forms.CheckBox();
+            this.chkOperacional = new System.Windows.Forms.CheckBox();
             this.grdUserID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grdNomeUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grdUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grdUserSenha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grdAdmin = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grdAltCadastros = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.grdOperacional = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.grdSeguranca = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grdUsuarios)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,13 +62,17 @@
             this.grdUsuario,
             this.grdUserSenha,
             this.grdAdmin,
-            this.grdAltCadastros});
+            this.grdAltCadastros,
+            this.grdOperacional,
+            this.grdSeguranca});
             this.grdUsuarios.Location = new System.Drawing.Point(12, 12);
             this.grdUsuarios.Name = "grdUsuarios";
             this.grdUsuarios.ReadOnly = true;
             this.grdUsuarios.RowTemplate.Height = 25;
+            this.grdUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grdUsuarios.Size = new System.Drawing.Size(544, 426);
             this.grdUsuarios.TabIndex = 0;
+            this.grdUsuarios.SelectionChanged += new System.EventHandler(this.grdUsuarios_SelectionChanged);
             // 
             // label1
             // 
@@ -88,6 +96,7 @@
             // 
             // txtUsuario
             // 
+            this.txtUsuario.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtUsuario.Location = new System.Drawing.Point(562, 59);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(226, 23);
@@ -95,6 +104,7 @@
             // 
             // txtNome
             // 
+            this.txtNome.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtNome.Location = new System.Drawing.Point(562, 103);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(226, 23);
@@ -150,6 +160,26 @@
             this.chkGerenCadastros.Text = "Gerencia Cadastros";
             this.chkGerenCadastros.UseVisualStyleBackColor = true;
             // 
+            // chkSeguranca
+            // 
+            this.chkSeguranca.AutoSize = true;
+            this.chkSeguranca.Location = new System.Drawing.Point(670, 191);
+            this.chkSeguranca.Name = "chkSeguranca";
+            this.chkSeguranca.Size = new System.Drawing.Size(81, 19);
+            this.chkSeguranca.TabIndex = 11;
+            this.chkSeguranca.Text = "Segurança";
+            this.chkSeguranca.UseVisualStyleBackColor = true;
+            // 
+            // chkOperacional
+            // 
+            this.chkOperacional.AutoSize = true;
+            this.chkOperacional.Location = new System.Drawing.Point(562, 191);
+            this.chkOperacional.Name = "chkOperacional";
+            this.chkOperacional.Size = new System.Drawing.Size(90, 19);
+            this.chkOperacional.TabIndex = 10;
+            this.chkOperacional.Text = "Operacional";
+            this.chkOperacional.UseVisualStyleBackColor = true;
+            // 
             // grdUserID
             // 
             this.grdUserID.HeaderText = "ID";
@@ -192,12 +222,28 @@
             this.grdAltCadastros.ReadOnly = true;
             this.grdAltCadastros.Visible = false;
             // 
+            // grdOperacional
+            // 
+            this.grdOperacional.HeaderText = "Operacional";
+            this.grdOperacional.Name = "grdOperacional";
+            this.grdOperacional.ReadOnly = true;
+            this.grdOperacional.Visible = false;
+            // 
+            // grdSeguranca
+            // 
+            this.grdSeguranca.HeaderText = "Seguranca";
+            this.grdSeguranca.Name = "grdSeguranca";
+            this.grdSeguranca.ReadOnly = true;
+            this.grdSeguranca.Visible = false;
+            // 
             // frmSEGUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.ControlBox = false;
+            this.Controls.Add(this.chkSeguranca);
+            this.Controls.Add(this.chkOperacional);
             this.Controls.Add(this.chkGerenCadastros);
             this.Controls.Add(this.chkAdministrador);
             this.Controls.Add(this.cmdNovo);
@@ -235,5 +281,9 @@
         private DataGridViewTextBoxColumn grdUserSenha;
         private DataGridViewTextBoxColumn grdAdmin;
         private DataGridViewTextBoxColumn grdAltCadastros;
+        private CheckBox chkSeguranca;
+        private CheckBox chkOperacional;
+        private DataGridViewTextBoxColumn grdOperacional;
+        private DataGridViewTextBoxColumn grdSeguranca;
     }
 }

@@ -161,19 +161,19 @@ namespace Formularios
 
             if(txtDataSolicitacao.Text != "")
             {
-                if (txtDataSolicitacao.Text.Length == 8)
-                {
-                    LDataSolcitacao = txtDataSolicitacao.Text.Substring(0, 2) + "/" + txtDataSolicitacao.Text.Substring(2, 2) + "/" + txtDataSolicitacao.Text.Substring(4, 4);
-                }
-                else
-                {
-                    MessageBox.Show("Tamanho de data de solcitação invalido", "GPA");
-                    return;
-                }
+                //if (txtDataSolicitacao.Text.Replace("/","").Length == 8)
+                //{
+                //    LDataSolcitacao = txtDataSolicitacao.Text.Substring(0, 2) + "/" + txtDataSolicitacao.Text.Substring(2, 2) + "/" + txtDataSolicitacao.Text.Substring(4, 4);
+                //}
+                //else
+                //{
+                //    MessageBox.Show("Tamanho de data de solcitação invalido", "GPA");
+                //    return;
+                //}
 
-                if (DateTime.TryParse(LDataSolcitacao, out Datatratada))
+                if (DateTime.TryParse(txtDataSolicitacao.Text, out Datatratada))
                 {
-                    objPedido.cpDataContato = LDataSolcitacao.ToString();
+                    objPedido.cpDataContato = txtDataSolicitacao.Text.ToString();
 
                 }
                 else
@@ -190,24 +190,24 @@ namespace Formularios
 
             if(txtDataConfirmacao.Text != "")
             {
-                if (txtDataConfirmacao.Text.Length == 8)
+                //if (txtDataConfirmacao.Text.Length == 8)
+                //{
+                //    LDataConfirmacao = txtDataConfirmacao.Text.Substring(0, 2) + "/" + txtDataConfirmacao.Text.Substring(2, 2) + "/" + txtDataConfirmacao.Text.Substring(4, 4);
+                //}
+                //else
+                //{
+                //    MessageBox.Show("Tamanho de data de solcitação invalido", "GPA");
+                //    return;
+                //}
+
+                if (DateTime.TryParse(txtDataConfirmacao.Text, out Datatratada))
                 {
-                    LDataConfirmacao = txtDataConfirmacao.Text.Substring(0, 2) + "/" + txtDataConfirmacao.Text.Substring(2, 2) + "/" + txtDataConfirmacao.Text.Substring(4, 4);
+                    objPedido.cpDataConfirmacao = txtDataConfirmacao.Text.ToString();
+
                 }
                 else
                 {
-                    MessageBox.Show("Tamanho de data de solcitação invalido", "GPA");
-                    return;
-                }
-
-                if (DateTime.TryParse(LDataConfirmacao, out Datatratada))
-                {
-                    objPedido.cpDataConfirmacao = LDataConfirmacao.ToString();
-
-                }
-                else
-                {
-                    MessageBox.Show("Data de solcitação em formato invalido", "GPA");
+                    MessageBox.Show("Data de confirmação em formato invalido", "GPA");
                     return;
                 }
             }
@@ -246,6 +246,7 @@ namespace Formularios
                 }
                 LIDNaturezaOperacao = lstPedido[0].cpNatureOperacaoDR;
                 LObservacao = lstPedido[0].cpObservacoes;
+                txtxNatOperacao.Enabled = false;
                 MostraDados();
             }
 
@@ -321,7 +322,43 @@ namespace Formularios
                     BDNatOperacao objNatOperacao = new BDNatOperacao();
                     List<BDNatOperacao> lstNatureza = objNatOperacao.CarregaDados(LIDNaturezaOperacao);
                     txtxNatOperacao.Text = lstNatureza[0].cpDescricao.ToString();
+
+                    MessageBox.Show("Natureza não podera ser alterado após gravar o pedido", "GPA");
                 }
+            }
+        }
+
+        private void txtDataSolicitacao_Leave(object sender, EventArgs e)
+        {
+            if(txtDataSolicitacao.Text == "")
+            {
+                txtDataSolicitacao.Text = DateTime.Today.ToString().Substring(0,10);
+            }
+            else
+            {
+                if(txtDataSolicitacao.Text.Length != 8)
+                {
+                    MessageBox.Show("Data em formato invalido", "GPA");
+                    return;
+                }
+                txtDataSolicitacao.Text = txtDataSolicitacao.Text.Insert(2, "/").Insert(5,"/");
+            }
+        }
+
+        private void txtDataConfirmacao_Leave(object sender, EventArgs e)
+        {
+            if (txtDataConfirmacao.Text == "")
+            {
+                txtDataConfirmacao.Text = DateTime.Today.ToString().Substring(0, 10);
+            }
+            else
+            {
+                if (txtDataConfirmacao.Text.Length != 8)
+                {
+                    MessageBox.Show("Data em formato invalido", "GPA");
+                    return;
+                }
+                txtDataConfirmacao.Text = txtDataConfirmacao.Text.Insert(2, "/").Insert(5, "/");
             }
         }
     }

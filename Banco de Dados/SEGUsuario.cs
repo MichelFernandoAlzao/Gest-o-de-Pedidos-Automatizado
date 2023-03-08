@@ -24,11 +24,11 @@ namespace Banco_de_Dados
         Conexao conexao = new Conexao();
         SqlCommand cmd = new SqlCommand();
 
-        public void InsereDados(string inUsuario, string inNome)
+        public void InsereDados()
         {
             string sqlComando = "INSERT INTO SEGUsuarios";
-            sqlComando += "(USUsuario,USNome,USSenha)";
-            sqlComando += "VALUES ('" + Usuario.ToString() + "','" + Nome.ToString() + "','" + Senha.ToString() + "')";
+            sqlComando += "(USUsuario,USNome,USSenha,USAdministrador,USGernciaCadastros,USOperacional,USSeguranca)";
+            sqlComando += "VALUES ('" + Usuario + "','" + Nome + "','" + Usuario + "','" + Administrador + "','" + GerenciaCadastros + "','" + Operacional + "','" + Seguranca + "')";
 
             cmd.CommandText = sqlComando;
 
@@ -62,7 +62,7 @@ namespace Banco_de_Dados
                 sqlWhere = "WHERE SEGUsuarios = " + inID;
                 ClausulaWhere = 'S';
             }
-            else
+            if(inUsuario != "" && inSenha != "")
             {
                     sqlWhere += "USUsuario = '" + inUsuario + "' AND USSenha = '" + inSenha + "'";
                     ClausulaWhere = 'S';   
@@ -110,6 +110,65 @@ namespace Banco_de_Dados
             }
             cmd.Dispose();
             return lstUsuarios;
+        }
+
+        public void AlteraDados()
+        {
+            string sSQL = "";
+            string sqlconteudo = "";
+            string sqlWhere = " WHERE SEGUsuarios = '" + ID + "'";
+
+            sSQL = "UPDATE SEGUsuarios SET ";
+
+            if (Usuario != null)
+            {
+                sqlconteudo += "USUsuario = '" + Usuario.ToString() + "',";
+            }
+            if (Nome != null)
+            {
+                sqlconteudo += "USNome = '" + Nome.ToString() + "',";
+            }
+            if (Senha != null)
+            {
+                sqlconteudo += "USSenha = '" + Senha.ToString() + "',";
+            }
+            if (Administrador != null)
+            {
+                sqlconteudo += "USAdministrador = '" + Administrador.ToString() + "',";
+            }
+            if (GerenciaCadastros != null)
+            {
+                sqlconteudo += "USGernciaCadastros = '" + GerenciaCadastros.ToString() + "',";
+            }
+            if (Operacional != null)
+            {
+                sqlconteudo += "USOperacional = '" + Operacional.ToString() + "',";
+            }
+            if (Seguranca != null)
+            {
+                sqlconteudo += "USSeguranca = '" + Seguranca.ToString() + "',";
+            }
+
+
+            sSQL = sSQL + sqlconteudo.Remove(sqlconteudo.Length - 1);
+            sSQL = sSQL + sqlWhere;
+
+            cmd.CommandText = sSQL;
+
+            try
+            {
+                cmd.Connection = conexao.conectar();
+                //Executar o comando
+                cmd.ExecuteNonQuery();
+                //Desconectar
+                conexao.desconectar();
+
+            }
+            catch (SqlException e)
+            {
+                MsgErro = e.Message.ToString();
+            }
+            cmd.Dispose();
         }
     }
 }
