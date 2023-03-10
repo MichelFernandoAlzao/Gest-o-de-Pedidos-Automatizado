@@ -21,6 +21,7 @@ namespace Formularios
         public frmSelecionaPedido(Form frmChamador, string inID, string inVendedor)
         {
             InitializeComponent();
+            LChamador = frmChamador;
             LID = inID;
             Lvendedor = inVendedor;
         }
@@ -45,8 +46,8 @@ namespace Formularios
                         {
                             item.cpID.ToString(),
                             lstEmpresa[0].RazaoSocial.ToString(),
-                            item.cpDataContato.ToString(),
-                        };
+                            item.cpDataContato.ToString().Substring(0, 10)
+                };
                     grdPedidos.Rows.Add(Row);
                 }
             }
@@ -86,5 +87,6 @@ namespace Formularios
         {
             this.Close();
         }
+
     }
 }

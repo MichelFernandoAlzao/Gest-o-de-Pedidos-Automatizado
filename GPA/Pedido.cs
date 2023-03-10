@@ -55,6 +55,7 @@ namespace Formularios
             BDCadastroGeral ObjCadastro = new BDCadastroGeral();
             List<BDCadastroGeral> lstCadastro = ObjCadastro.CarregaDados(LID, LRazaoSocial, "", "", "", LUsuario, "", "", "", "");
             txtEmpresa.Text = lstCadastro[0].RazaoSocial.ToString();
+
             BDCadEnderecos objEndereco = new BDCadEnderecos();
             List<BDCadEnderecos> lstEndereco = new List<BDCadEnderecos>();
             lstEndereco = objEndereco.CarregaDados(lstCadastro[0].Id);
@@ -69,17 +70,36 @@ namespace Formularios
                     pPossuiEndereco = "S";
                 }
             }
+
             if(pPossuiEndereco != "S")
             {
                 MessageBox.Show("Empresa não possui endereço fisico cadastrado", "GPA",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
                 return;
             }
+
             txtNumeroPedido.Enabled = false;
+
             if(LIDNaturezaOperacao != "")
             {
                 BDNatOperacao objNatOperacao = new BDNatOperacao();
                 List<BDNatOperacao> lstNatureza = objNatOperacao.CarregaDados(LIDNaturezaOperacao);
                 txtxNatOperacao.Text = lstNatureza[0].cpDescricao.ToString();
+                txtxNatOperacao.Enabled = false;
+            }
+
+            BDPedido objPedido = new BDPedido();
+            List<BDPedido> lstPedido = objPedido.CarregaDados(LIDPedido, "", LUsuario);
+            if (lstPedido[0].cpDataContato != "")
+            {
+                txtDataSolicitacao.Text = lstPedido[0].cpDataContato.ToString().Substring(0, 10);
+            }
+            if (lstPedido[0].cpDataConfirmacao != "")
+            {
+                txtDataConfirmacao.Text = lstPedido[0].cpDataConfirmacao.ToString().Substring(0, 10);
+            }
+            if(lstPedido[0].cpObservacoes != "")
+            {
+                txtObservacao.Text = lstPedido[0].cpObservacoes.ToString();
             }
 
         }
@@ -87,7 +107,7 @@ namespace Formularios
         {
             if(LIDPedido == "") { return; }
 
-            frmItensPedido objItensPedido = new frmItensPedido();
+            frmItensPedido objItensPedido = new frmItensPedido(LIDPedido);
             objItensPedido.ShowDialog();
         }
 
@@ -104,12 +124,32 @@ namespace Formularios
             {
                 frmSelecionaEmpresa objTela = new frmSelecionaEmpresa(this, "", txtEmpresa.Text.ToString(), "", "");
                 objTela.ShowDialog();
+                BDCadEnderecos objEndereco = new BDCadEnderecos();
+                List<BDCadEnderecos> lstEndereco = objEndereco.CarregaDados(LID);
+                if (lstEndereco.Count > 0)
+                {
+                    foreach (BDCadEnderecos endereco in lstEndereco)
+                    {
+                        if (endereco.cpEndFisico == "S")
+                        {
+                            labDescEndereco.Text = endereco.cpRua.ToString();
+                            labDescNumero.Text = endereco.cpNumero.ToString();
+                            break;
+                        }
+                    }
+
+                }
+                if (labDescEndereco.Text == "xxxxxxxxxxxxxxxxxxxxxxxxxxxx")
+                {
+                    MessageBox.Show("Empresa não possui endereço fisico cadastrado", "GPA");
+                    LID = "";
+                    return;
+                }
+
                 txtEmpresa.Text = LRazaoSocial;
 
-                BDCadEnderecos objEndereco =  new BDCadEnderecos();
-                List<BDCadEnderecos> lstEndereco = objEndereco.CarregaDados(LID);
-                labDescEndereco.Text = lstEndereco[0].cpRua.ToString();
-                labDescNumero.Text = lstEndereco[0].cpNumero.ToString();
+               
+                
 
                 BDPedido objPedido = new BDPedido();
                 List<BDPedido> lstPedido = objPedido.CarregaDados("", LID, LUsuario);
@@ -236,6 +276,9 @@ namespace Formularios
 
             if (LIDPedido != "")
             {
+                
+                txtNumeroPedido.Text = LIDPedido;
+                txtNumeroPedido.Enabled = false;
                 BDPedido objCarregaPedido = new BDPedido();
                 List<BDPedido> lstPedido = objCarregaPedido.CarregaDados(LIDPedido, "", LUsuario);
                 LID = lstPedido[0].cpEmpresaDR;
@@ -247,6 +290,7 @@ namespace Formularios
                 LIDNaturezaOperacao = lstPedido[0].cpNatureOperacaoDR;
                 LObservacao = lstPedido[0].cpObservacoes;
                 txtxNatOperacao.Enabled = false;
+                MessageBox.Show("Pedido Gravado", "GPA");
                 MostraDados();
             }
 
@@ -280,6 +324,7 @@ namespace Formularios
             LImpostos = "";
             LComissao = "";
             txtNumeroPedido.Enabled = true;
+            txtxNatOperacao.Enabled = true;
         }
 
         private void cmdSair_Click(object sender, EventArgs e)

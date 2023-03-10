@@ -35,7 +35,6 @@
             this.grdID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grdDescricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grdCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.grdAtivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grdPedidos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -80,8 +79,7 @@
             this.grdPedidos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.grdID,
             this.grdDescricao,
-            this.grdCodigo,
-            this.grdAtivo});
+            this.grdCodigo});
             this.grdPedidos.Location = new System.Drawing.Point(12, 37);
             this.grdPedidos.MultiSelect = false;
             this.grdPedidos.Name = "grdPedidos";
@@ -93,15 +91,14 @@
             // 
             // grdID
             // 
-            this.grdID.HeaderText = "ID";
+            this.grdID.HeaderText = "Número";
             this.grdID.Name = "grdID";
             this.grdID.ReadOnly = true;
             this.grdID.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.grdID.Visible = false;
             // 
             // grdDescricao
             // 
-            this.grdDescricao.HeaderText = "Descrição";
+            this.grdDescricao.HeaderText = "Empresa";
             this.grdDescricao.Name = "grdDescricao";
             this.grdDescricao.ReadOnly = true;
             this.grdDescricao.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -109,18 +106,11 @@
             // 
             // grdCodigo
             // 
-            this.grdCodigo.HeaderText = "Codigo";
+            this.grdCodigo.HeaderText = "Data Contato";
             this.grdCodigo.Name = "grdCodigo";
             this.grdCodigo.ReadOnly = true;
             this.grdCodigo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.grdCodigo.Width = 200;
-            // 
-            // grdAtivo
-            // 
-            this.grdAtivo.HeaderText = "Ativo";
-            this.grdAtivo.Name = "grdAtivo";
-            this.grdAtivo.ReadOnly = true;
-            this.grdAtivo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
             // frmSelecionaPedido
             // 
@@ -134,6 +124,7 @@
             this.Controls.Add(this.grdPedidos);
             this.Name = "frmSelecionaPedido";
             this.Text = "frmSelecionaPedido";
+            this.Load += new System.EventHandler(this.frmSelecionaPedido_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grdPedidos)).EndInit();
             this.ResumeLayout(false);
 

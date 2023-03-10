@@ -29,7 +29,12 @@
         private void InitializeComponent()
         {
             this.dataItemPedido = new System.Windows.Forms.DataGridView();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.grdNumero = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.grdDescricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.grdCodigoItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.grdVlrItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.grdTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtDescProduto = new System.Windows.Forms.TextBox();
             this.txtQuantidade = new System.Windows.Forms.TextBox();
             this.lbProduto = new System.Windows.Forms.Label();
             this.lbQuantidade = new System.Windows.Forms.Label();
@@ -42,23 +47,18 @@
             this.lbFornecedor = new System.Windows.Forms.Label();
             this.txtFornecedor = new System.Windows.Forms.TextBox();
             this.lbTotal = new System.Windows.Forms.Label();
-            this.lbTotalVlr = new System.Windows.Forms.Label();
+            this.lbTotalItem = new System.Windows.Forms.Label();
             this.grpbVlrPraticados = new System.Windows.Forms.GroupBox();
-            this.lbVlrPraticado1 = new System.Windows.Forms.Label();
-            this.lbPraticado1 = new System.Windows.Forms.Label();
-            this.lbVlrPraticado2 = new System.Windows.Forms.Label();
-            this.lbPraticado2 = new System.Windows.Forms.Label();
+            this.LabVlrPraticado4 = new System.Windows.Forms.Label();
+            this.lbVlrPraticado4 = new System.Windows.Forms.Label();
             this.lbVlrPraticado3 = new System.Windows.Forms.Label();
             this.labPraticado3 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.lbVlrPraticado4 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lbVlrPraticado2 = new System.Windows.Forms.Label();
+            this.lbPraticado2 = new System.Windows.Forms.Label();
+            this.lbVlrPraticado1 = new System.Windows.Forms.Label();
+            this.lbPraticado1 = new System.Windows.Forms.Label();
+            this.labTotalPedido = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.grdNumero = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.grdDescricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.grdCodigoItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.grdVlrItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.grdTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cmdGravar = new System.Windows.Forms.Button();
             this.cmdSair = new System.Windows.Forms.Button();
             this.cmdNovo = new System.Windows.Forms.Button();
@@ -86,12 +86,47 @@
             this.dataItemPedido.Size = new System.Drawing.Size(776, 150);
             this.dataItemPedido.TabIndex = 0;
             // 
-            // textBox1
+            // grdNumero
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 207);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(577, 23);
-            this.textBox1.TabIndex = 1;
+            this.grdNumero.HeaderText = "Numero";
+            this.grdNumero.Name = "grdNumero";
+            this.grdNumero.ReadOnly = true;
+            this.grdNumero.Width = 60;
+            // 
+            // grdDescricao
+            // 
+            this.grdDescricao.HeaderText = "Descrição";
+            this.grdDescricao.Name = "grdDescricao";
+            this.grdDescricao.ReadOnly = true;
+            this.grdDescricao.Width = 400;
+            // 
+            // grdCodigoItem
+            // 
+            this.grdCodigoItem.HeaderText = "Codigo Item";
+            this.grdCodigoItem.Name = "grdCodigoItem";
+            this.grdCodigoItem.ReadOnly = true;
+            // 
+            // grdVlrItem
+            // 
+            this.grdVlrItem.HeaderText = "Vlr.Item";
+            this.grdVlrItem.Name = "grdVlrItem";
+            this.grdVlrItem.ReadOnly = true;
+            this.grdVlrItem.Width = 60;
+            // 
+            // grdTotal
+            // 
+            this.grdTotal.HeaderText = "Total";
+            this.grdTotal.Name = "grdTotal";
+            this.grdTotal.ReadOnly = true;
+            this.grdTotal.Width = 60;
+            // 
+            // txtDescProduto
+            // 
+            this.txtDescProduto.Location = new System.Drawing.Point(12, 207);
+            this.txtDescProduto.Name = "txtDescProduto";
+            this.txtDescProduto.Size = new System.Drawing.Size(577, 23);
+            this.txtDescProduto.TabIndex = 1;
+            this.txtDescProduto.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtDescProduto_KeyDown);
             // 
             // txtQuantidade
             // 
@@ -99,6 +134,7 @@
             this.txtQuantidade.Name = "txtQuantidade";
             this.txtQuantidade.Size = new System.Drawing.Size(100, 23);
             this.txtQuantidade.TabIndex = 2;
+            this.txtQuantidade.Leave += new System.EventHandler(this.txtQuantidade_Leave);
             // 
             // lbProduto
             // 
@@ -167,6 +203,7 @@
             this.txtValor.Name = "txtValor";
             this.txtValor.Size = new System.Drawing.Size(100, 23);
             this.txtValor.TabIndex = 9;
+            this.txtValor.Leave += new System.EventHandler(this.txtValor_Leave);
             // 
             // lbFornecedor
             // 
@@ -194,19 +231,19 @@
             this.lbTotal.TabIndex = 13;
             this.lbTotal.Text = "Total Item: ";
             // 
-            // lbTotalVlr
+            // lbTotalItem
             // 
-            this.lbTotalVlr.AutoSize = true;
-            this.lbTotalVlr.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbTotalVlr.Location = new System.Drawing.Point(88, 364);
-            this.lbTotalVlr.Name = "lbTotalVlr";
-            this.lbTotalVlr.Size = new System.Drawing.Size(50, 12);
-            this.lbTotalVlr.TabIndex = 14;
-            this.lbTotalVlr.Text = "XXXX,XX";
+            this.lbTotalItem.AutoSize = true;
+            this.lbTotalItem.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbTotalItem.Location = new System.Drawing.Point(88, 364);
+            this.lbTotalItem.Name = "lbTotalItem";
+            this.lbTotalItem.Size = new System.Drawing.Size(50, 12);
+            this.lbTotalItem.TabIndex = 14;
+            this.lbTotalItem.Text = "XXXX,XX";
             // 
             // grpbVlrPraticados
             // 
-            this.grpbVlrPraticados.Controls.Add(this.label7);
+            this.grpbVlrPraticados.Controls.Add(this.LabVlrPraticado4);
             this.grpbVlrPraticados.Controls.Add(this.lbVlrPraticado4);
             this.grpbVlrPraticados.Controls.Add(this.lbVlrPraticado3);
             this.grpbVlrPraticados.Controls.Add(this.labPraticado3);
@@ -221,45 +258,25 @@
             this.grpbVlrPraticados.TabStop = false;
             this.grpbVlrPraticados.Text = "Valore Praticados";
             // 
-            // lbVlrPraticado1
+            // LabVlrPraticado4
             // 
-            this.lbVlrPraticado1.AutoSize = true;
-            this.lbVlrPraticado1.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbVlrPraticado1.Location = new System.Drawing.Point(63, 22);
-            this.lbVlrPraticado1.Name = "lbVlrPraticado1";
-            this.lbVlrPraticado1.Size = new System.Drawing.Size(50, 12);
-            this.lbVlrPraticado1.TabIndex = 16;
-            this.lbVlrPraticado1.Text = "XXXX,XX";
+            this.LabVlrPraticado4.AutoSize = true;
+            this.LabVlrPraticado4.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.LabVlrPraticado4.Location = new System.Drawing.Point(435, 22);
+            this.LabVlrPraticado4.Name = "LabVlrPraticado4";
+            this.LabVlrPraticado4.Size = new System.Drawing.Size(50, 12);
+            this.LabVlrPraticado4.TabIndex = 22;
+            this.LabVlrPraticado4.Text = "XXXX,XX";
             // 
-            // lbPraticado1
+            // lbVlrPraticado4
             // 
-            this.lbPraticado1.AutoSize = true;
-            this.lbPraticado1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbPraticado1.Location = new System.Drawing.Point(6, 19);
-            this.lbPraticado1.Name = "lbPraticado1";
-            this.lbPraticado1.Size = new System.Drawing.Size(51, 15);
-            this.lbPraticado1.TabIndex = 15;
-            this.lbPraticado1.Text = "Valor 1: ";
-            // 
-            // lbVlrPraticado2
-            // 
-            this.lbVlrPraticado2.AutoSize = true;
-            this.lbVlrPraticado2.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbVlrPraticado2.Location = new System.Drawing.Point(189, 22);
-            this.lbVlrPraticado2.Name = "lbVlrPraticado2";
-            this.lbVlrPraticado2.Size = new System.Drawing.Size(50, 12);
-            this.lbVlrPraticado2.TabIndex = 18;
-            this.lbVlrPraticado2.Text = "XXXX,XX";
-            // 
-            // lbPraticado2
-            // 
-            this.lbPraticado2.AutoSize = true;
-            this.lbPraticado2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbPraticado2.Location = new System.Drawing.Point(132, 19);
-            this.lbPraticado2.Name = "lbPraticado2";
-            this.lbPraticado2.Size = new System.Drawing.Size(51, 15);
-            this.lbPraticado2.TabIndex = 17;
-            this.lbPraticado2.Text = "Valor 2: ";
+            this.lbVlrPraticado4.AutoSize = true;
+            this.lbVlrPraticado4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbVlrPraticado4.Location = new System.Drawing.Point(378, 19);
+            this.lbVlrPraticado4.Name = "lbVlrPraticado4";
+            this.lbVlrPraticado4.Size = new System.Drawing.Size(51, 15);
+            this.lbVlrPraticado4.TabIndex = 21;
+            this.lbVlrPraticado4.Text = "Valor 4: ";
             // 
             // lbVlrPraticado3
             // 
@@ -281,35 +298,55 @@
             this.labPraticado3.TabIndex = 19;
             this.labPraticado3.Text = "Valor 3: ";
             // 
-            // label7
+            // lbVlrPraticado2
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(435, 22);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(50, 12);
-            this.label7.TabIndex = 22;
-            this.label7.Text = "XXXX,XX";
+            this.lbVlrPraticado2.AutoSize = true;
+            this.lbVlrPraticado2.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbVlrPraticado2.Location = new System.Drawing.Point(189, 22);
+            this.lbVlrPraticado2.Name = "lbVlrPraticado2";
+            this.lbVlrPraticado2.Size = new System.Drawing.Size(50, 12);
+            this.lbVlrPraticado2.TabIndex = 18;
+            this.lbVlrPraticado2.Text = "XXXX,XX";
             // 
-            // lbVlrPraticado4
+            // lbPraticado2
             // 
-            this.lbVlrPraticado4.AutoSize = true;
-            this.lbVlrPraticado4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbVlrPraticado4.Location = new System.Drawing.Point(378, 19);
-            this.lbVlrPraticado4.Name = "lbVlrPraticado4";
-            this.lbVlrPraticado4.Size = new System.Drawing.Size(51, 15);
-            this.lbVlrPraticado4.TabIndex = 21;
-            this.lbVlrPraticado4.Text = "Valor 4: ";
+            this.lbPraticado2.AutoSize = true;
+            this.lbPraticado2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbPraticado2.Location = new System.Drawing.Point(132, 19);
+            this.lbPraticado2.Name = "lbPraticado2";
+            this.lbPraticado2.Size = new System.Drawing.Size(51, 15);
+            this.lbPraticado2.TabIndex = 17;
+            this.lbPraticado2.Text = "Valor 2: ";
             // 
-            // label1
+            // lbVlrPraticado1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(539, 363);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 12);
-            this.label1.TabIndex = 17;
-            this.label1.Text = "XXXX,XX";
+            this.lbVlrPraticado1.AutoSize = true;
+            this.lbVlrPraticado1.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbVlrPraticado1.Location = new System.Drawing.Point(63, 22);
+            this.lbVlrPraticado1.Name = "lbVlrPraticado1";
+            this.lbVlrPraticado1.Size = new System.Drawing.Size(50, 12);
+            this.lbVlrPraticado1.TabIndex = 16;
+            this.lbVlrPraticado1.Text = "XXXX,XX";
+            // 
+            // lbPraticado1
+            // 
+            this.lbPraticado1.AutoSize = true;
+            this.lbPraticado1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbPraticado1.Location = new System.Drawing.Point(6, 19);
+            this.lbPraticado1.Name = "lbPraticado1";
+            this.lbPraticado1.Size = new System.Drawing.Size(51, 15);
+            this.lbPraticado1.TabIndex = 15;
+            this.lbPraticado1.Text = "Valor 1: ";
+            // 
+            // labTotalPedido
+            // 
+            this.labTotalPedido.AutoSize = true;
+            this.labTotalPedido.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labTotalPedido.Location = new System.Drawing.Point(539, 363);
+            this.labTotalPedido.Name = "labTotalPedido";
+            this.labTotalPedido.Size = new System.Drawing.Size(50, 12);
+            this.labTotalPedido.TabIndex = 17;
+            this.labTotalPedido.Text = "XXXX,XX";
             // 
             // label2
             // 
@@ -321,40 +358,6 @@
             this.label2.TabIndex = 16;
             this.label2.Text = "Total Pedido: ";
             // 
-            // grdNumero
-            // 
-            this.grdNumero.HeaderText = "Numero";
-            this.grdNumero.Name = "grdNumero";
-            this.grdNumero.ReadOnly = true;
-            this.grdNumero.Width = 60;
-            // 
-            // grdDescricao
-            // 
-            this.grdDescricao.HeaderText = "Descrição";
-            this.grdDescricao.Name = "grdDescricao";
-            this.grdDescricao.ReadOnly = true;
-            this.grdDescricao.Width = 400;
-            // 
-            // grdCodigoItem
-            // 
-            this.grdCodigoItem.HeaderText = "Codigo Item";
-            this.grdCodigoItem.Name = "grdCodigoItem";
-            this.grdCodigoItem.ReadOnly = true;
-            // 
-            // grdVlrItem
-            // 
-            this.grdVlrItem.HeaderText = "Vlr.Item";
-            this.grdVlrItem.Name = "grdVlrItem";
-            this.grdVlrItem.ReadOnly = true;
-            this.grdVlrItem.Width = 60;
-            // 
-            // grdTotal
-            // 
-            this.grdTotal.HeaderText = "Total";
-            this.grdTotal.Name = "grdTotal";
-            this.grdTotal.ReadOnly = true;
-            this.grdTotal.Width = 60;
-            // 
             // cmdGravar
             // 
             this.cmdGravar.Location = new System.Drawing.Point(632, 1);
@@ -363,6 +366,7 @@
             this.cmdGravar.TabIndex = 18;
             this.cmdGravar.Text = "Gravar";
             this.cmdGravar.UseVisualStyleBackColor = true;
+            this.cmdGravar.Click += new System.EventHandler(this.cmdGravar_Click);
             // 
             // cmdSair
             // 
@@ -382,6 +386,7 @@
             this.cmdNovo.TabIndex = 20;
             this.cmdNovo.Text = "Novo";
             this.cmdNovo.UseVisualStyleBackColor = true;
+            this.cmdNovo.Click += new System.EventHandler(this.cmdNovo_Click);
             // 
             // frmItensPedido
             // 
@@ -392,10 +397,10 @@
             this.Controls.Add(this.cmdNovo);
             this.Controls.Add(this.cmdSair);
             this.Controls.Add(this.cmdGravar);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.labTotalPedido);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.grpbVlrPraticados);
-            this.Controls.Add(this.lbTotalVlr);
+            this.Controls.Add(this.lbTotalItem);
             this.Controls.Add(this.lbTotal);
             this.Controls.Add(this.lbFornecedor);
             this.Controls.Add(this.txtFornecedor);
@@ -408,7 +413,7 @@
             this.Controls.Add(this.lbQuantidade);
             this.Controls.Add(this.lbProduto);
             this.Controls.Add(this.txtQuantidade);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtDescProduto);
             this.Controls.Add(this.dataItemPedido);
             this.Name = "frmItensPedido";
             this.Text = "ItensPedido";
@@ -424,7 +429,7 @@
         #endregion
 
         private DataGridView dataItemPedido;
-        private TextBox textBox1;
+        private TextBox txtDescProduto;
         private TextBox txtQuantidade;
         private Label lbProduto;
         private Label lbQuantidade;
@@ -437,9 +442,9 @@
         private Label lbFornecedor;
         private TextBox txtFornecedor;
         private Label lbTotal;
-        private Label lbTotalVlr;
+        private Label lbTotalItem;
         private GroupBox grpbVlrPraticados;
-        private Label label7;
+        private Label LabVlrPraticado4;
         private Label lbVlrPraticado4;
         private Label lbVlrPraticado3;
         private Label labPraticado3;
@@ -447,7 +452,7 @@
         private Label lbPraticado2;
         private Label lbVlrPraticado1;
         private Label lbPraticado1;
-        private Label label1;
+        private Label labTotalPedido;
         private Label label2;
         private DataGridViewTextBoxColumn grdNumero;
         private DataGridViewTextBoxColumn grdDescricao;

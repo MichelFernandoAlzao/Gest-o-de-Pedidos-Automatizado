@@ -127,21 +127,22 @@ namespace Banco_de_Dados
 
             cmd.CommandText = sSQL;
 
-
-
-
             try
             {
-                int idRetorno = 0;
                 cmd.Connection = conexao.conectar();
                 //Executar o comando
-                //Int32 idRetorno = (Int32)cmd.ExecuteScalar();
-
-                SqlCommand myCommand = new SqlCommand(sSQL, cmd.Connection);
-                cpID = myCommand.ExecuteScalar().ToString();
-                //cpID = idRetorno.ToString();
+                cmd.ExecuteScalar();
                 //Desconectar
+
+                cmd.CommandText = "SELECT IDENT_CURRENT ('OPPPedido') AS Current_Identity";
+                string LID = Convert.ToString(cmd.ExecuteScalar());
+
+                cpID = LID;
+
+
                 conexao.desconectar();
+                cpMsgErro = "";
+
                 
             }
             catch (SqlException e)
@@ -169,7 +170,7 @@ namespace Banco_de_Dados
             }
             if (cpObservacoes != null)
             {
-                sqlconteudo += "OPPObservacao = " + cpObservacoes.ToString() + ",";
+                sqlconteudo += "OPPObservacao = '" + cpObservacoes.ToString() + "',";
             }
             if (cpVlrTotalPedido != null)
             {
