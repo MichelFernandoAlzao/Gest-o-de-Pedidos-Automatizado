@@ -20,16 +20,20 @@ namespace Formularios
             InitializeComponent();
 
             LUsuario = inUsuario;
-            
-            //if (inParametros == "Michel")
-            //{
-            //    HabilitaBotoes();
-            //}
+
+            SEGUsuario sEGUsuario = new SEGUsuario();
+            List<SEGUsuario> lstUsuario = sEGUsuario.CarregaDados(inUsuario, "", "", "");
+            labNomeUsuario.Text = lstUsuario[0].Nome;
+
+            if (lstUsuario[0].Administrador == "S")
+            {
+                HabilitaBotoes();
+            }
         }
 
         public void HabilitaBotoes()
         {
-            cmdCadastrosEmpresas.Enabled = true;
+            cmdNatOperacao.Enabled = true;
             cmdCadastroProduto.Enabled = true;
         }
         public void FuncoesTela()
@@ -67,7 +71,7 @@ namespace Formularios
         private void cmdPedidos_Click(object sender, EventArgs e)
         {
             
-            Pedido frmPedido = new Pedido(LUsuario);
+            Pedido frmPedido = new Pedido(LUsuario,"");
             frmPedido.ShowDialog();
         }
 

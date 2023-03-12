@@ -69,6 +69,7 @@
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.labContatos = new System.Windows.Forms.Label();
             this.cmdNatOperacao = new System.Windows.Forms.Button();
+            this.labNomeUsuario = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.grdUltimasVendas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdUltContato)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdAvisos)).BeginInit();
@@ -440,11 +441,20 @@
             this.cmdNatOperacao.UseVisualStyleBackColor = true;
             this.cmdNatOperacao.Click += new System.EventHandler(this.cmdNatOperacao_Click);
             // 
+            // labNomeUsuario
+            // 
+            this.labNomeUsuario.AutoSize = true;
+            this.labNomeUsuario.Location = new System.Drawing.Point(88, 9);
+            this.labNomeUsuario.Name = "labNomeUsuario";
+            this.labNomeUsuario.Size = new System.Drawing.Size(0, 15);
+            this.labNomeUsuario.TabIndex = 29;
+            // 
             // frmCRMInicial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1260, 501);
+            this.Controls.Add(this.labNomeUsuario);
             this.Controls.Add(this.cmdNatOperacao);
             this.Controls.Add(this.labContatos);
             this.Controls.Add(this.grdContatosAgendados);
@@ -528,5 +538,6 @@
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private Label labContatos;
         private Button cmdNatOperacao;
+        private Label labNomeUsuario;
     }
 }

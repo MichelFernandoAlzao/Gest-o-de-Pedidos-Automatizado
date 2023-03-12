@@ -23,6 +23,7 @@ namespace Banco_de_Dados
         public string cpVlrImpostos { get; set; }
         public string cpComissao { get; set; }
         public string cpVendedorDR { get; set; }
+        public string cpConcluido { get; set; }
         public string cpMsgErro { get; set; }
 
         Conexao conexao = new Conexao();
@@ -122,6 +123,13 @@ namespace Banco_de_Dados
                 sqlconteudo += "'" + cpVendedorDR + "',";
             }
 
+            if (cpConcluido != null)
+            {
+                sqlCampos += "OPPConcluido, ";
+
+                sqlconteudo += "'" + cpConcluido + "',";
+            }
+
 
             sSQL = sSQL + sqlCampos.Remove(sqlCampos.Length - 2) + ")" + sqlconteudo.Remove(sqlconteudo.Length - 1) + ")";
 
@@ -191,6 +199,10 @@ namespace Banco_de_Dados
             if (cpVendedorDR != null)
             {
                 sqlconteudo += "OPPVendedorDR = '" + cpVendedorDR + "',";
+            }
+            if (cpConcluido != null)
+            {
+                sqlconteudo += "OPPConcluido = '" + cpConcluido + "',";
             }
 
 
@@ -278,6 +290,7 @@ namespace Banco_de_Dados
                     bDPedido.cpVlrImpostos = dr["OPPVlrimpostos"].ToString();
                     bDPedido.cpComissao = dr["OPPComissao"].ToString();
                     bDPedido.cpVendedorDR = dr["OPPVendedorDR"].ToString();
+                    bDPedido.cpConcluido = dr["OPPConcluido"].ToString();
 
                     lstPedido.Add(bDPedido);
 

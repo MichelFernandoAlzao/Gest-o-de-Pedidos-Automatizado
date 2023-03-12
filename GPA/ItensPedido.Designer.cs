@@ -28,12 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataItemPedido = new System.Windows.Forms.DataGridView();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmItensPedido));
+            this.grdItensPedido = new System.Windows.Forms.DataGridView();
             this.grdNumero = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.grdProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grdDescricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.grdQuantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grdCodigoItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grdVlrItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grdTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.grdValorFornecedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.grdLote = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtDescProduto = new System.Windows.Forms.TextBox();
             this.txtQuantidade = new System.Windows.Forms.TextBox();
             this.lbProduto = new System.Windows.Forms.Label();
@@ -62,36 +67,52 @@
             this.cmdGravar = new System.Windows.Forms.Button();
             this.cmdSair = new System.Windows.Forms.Button();
             this.cmdNovo = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataItemPedido)).BeginInit();
+            this.labValorForencedor = new System.Windows.Forms.Label();
+            this.txtValorFornecedor = new System.Windows.Forms.TextBox();
+            this.cmdExcluir = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.grdItensPedido)).BeginInit();
             this.grpbVlrPraticados.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dataItemPedido
+            // grdItensPedido
             // 
-            this.dataItemPedido.AllowUserToAddRows = false;
-            this.dataItemPedido.AllowUserToDeleteRows = false;
-            this.dataItemPedido.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataItemPedido.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.grdItensPedido.AllowUserToAddRows = false;
+            this.grdItensPedido.AllowUserToDeleteRows = false;
+            this.grdItensPedido.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdItensPedido.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.grdNumero,
+            this.grdProduto,
             this.grdDescricao,
+            this.grdQuantidade,
             this.grdCodigoItem,
             this.grdVlrItem,
-            this.grdTotal});
-            this.dataItemPedido.Location = new System.Drawing.Point(12, 30);
-            this.dataItemPedido.Name = "dataItemPedido";
-            this.dataItemPedido.ReadOnly = true;
-            this.dataItemPedido.RowHeadersVisible = false;
-            this.dataItemPedido.RowTemplate.Height = 25;
-            this.dataItemPedido.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataItemPedido.Size = new System.Drawing.Size(776, 150);
-            this.dataItemPedido.TabIndex = 0;
+            this.grdTotal,
+            this.grdValorFornecedor,
+            this.grdLote});
+            this.grdItensPedido.Location = new System.Drawing.Point(12, 30);
+            this.grdItensPedido.Name = "grdItensPedido";
+            this.grdItensPedido.ReadOnly = true;
+            this.grdItensPedido.RowHeadersVisible = false;
+            this.grdItensPedido.RowTemplate.Height = 25;
+            this.grdItensPedido.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.grdItensPedido.Size = new System.Drawing.Size(776, 150);
+            this.grdItensPedido.TabIndex = 0;
+            this.grdItensPedido.SelectionChanged += new System.EventHandler(this.grdItensPedido_SelectionChanged);
             // 
             // grdNumero
             // 
             this.grdNumero.HeaderText = "Numero";
             this.grdNumero.Name = "grdNumero";
             this.grdNumero.ReadOnly = true;
+            this.grdNumero.Visible = false;
             this.grdNumero.Width = 60;
+            // 
+            // grdProduto
+            // 
+            this.grdProduto.HeaderText = "ProdutoID";
+            this.grdProduto.Name = "grdProduto";
+            this.grdProduto.ReadOnly = true;
+            this.grdProduto.Visible = false;
             // 
             // grdDescricao
             // 
@@ -99,6 +120,12 @@
             this.grdDescricao.Name = "grdDescricao";
             this.grdDescricao.ReadOnly = true;
             this.grdDescricao.Width = 400;
+            // 
+            // grdQuantidade
+            // 
+            this.grdQuantidade.HeaderText = "Quantidade";
+            this.grdQuantidade.Name = "grdQuantidade";
+            this.grdQuantidade.ReadOnly = true;
             // 
             // grdCodigoItem
             // 
@@ -119,6 +146,20 @@
             this.grdTotal.Name = "grdTotal";
             this.grdTotal.ReadOnly = true;
             this.grdTotal.Width = 60;
+            // 
+            // grdValorFornecedor
+            // 
+            this.grdValorFornecedor.HeaderText = "ValorFornecedor";
+            this.grdValorFornecedor.Name = "grdValorFornecedor";
+            this.grdValorFornecedor.ReadOnly = true;
+            this.grdValorFornecedor.Visible = false;
+            // 
+            // grdLote
+            // 
+            this.grdLote.HeaderText = "Lote";
+            this.grdLote.Name = "grdLote";
+            this.grdLote.ReadOnly = true;
+            this.grdLote.Visible = false;
             // 
             // txtDescProduto
             // 
@@ -159,7 +200,7 @@
             this.txtLote.Location = new System.Drawing.Point(131, 261);
             this.txtLote.Name = "txtLote";
             this.txtLote.Size = new System.Drawing.Size(100, 23);
-            this.txtLote.TabIndex = 5;
+            this.txtLote.TabIndex = 3;
             // 
             // lbLote
             // 
@@ -193,16 +234,16 @@
             this.lbValor.AutoSize = true;
             this.lbValor.Location = new System.Drawing.Point(249, 243);
             this.lbValor.Name = "lbValor";
-            this.lbValor.Size = new System.Drawing.Size(33, 15);
+            this.lbValor.Size = new System.Drawing.Size(58, 15);
             this.lbValor.TabIndex = 10;
-            this.lbValor.Text = "Valor";
+            this.lbValor.Text = "Valor Unit";
             // 
             // txtValor
             // 
             this.txtValor.Location = new System.Drawing.Point(249, 261);
             this.txtValor.Name = "txtValor";
             this.txtValor.Size = new System.Drawing.Size(100, 23);
-            this.txtValor.TabIndex = 9;
+            this.txtValor.TabIndex = 4;
             this.txtValor.Leave += new System.EventHandler(this.txtValor_Leave);
             // 
             // lbFornecedor
@@ -219,7 +260,8 @@
             this.txtFornecedor.Location = new System.Drawing.Point(12, 318);
             this.txtFornecedor.Name = "txtFornecedor";
             this.txtFornecedor.Size = new System.Drawing.Size(577, 23);
-            this.txtFornecedor.TabIndex = 11;
+            this.txtFornecedor.TabIndex = 6;
+            this.txtFornecedor.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtFornecedor_KeyDown);
             // 
             // lbTotal
             // 
@@ -360,33 +402,64 @@
             // 
             // cmdGravar
             // 
-            this.cmdGravar.Location = new System.Drawing.Point(632, 1);
+            this.cmdGravar.BackgroundImage = global::Formularios.Properties.Resources.save;
+            this.cmdGravar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.cmdGravar.Location = new System.Drawing.Point(724, 1);
             this.cmdGravar.Name = "cmdGravar";
-            this.cmdGravar.Size = new System.Drawing.Size(75, 23);
-            this.cmdGravar.TabIndex = 18;
-            this.cmdGravar.Text = "Gravar";
+            this.cmdGravar.Size = new System.Drawing.Size(29, 29);
+            this.cmdGravar.TabIndex = 9;
             this.cmdGravar.UseVisualStyleBackColor = true;
             this.cmdGravar.Click += new System.EventHandler(this.cmdGravar_Click);
             // 
             // cmdSair
             // 
-            this.cmdSair.Location = new System.Drawing.Point(713, 1);
+            this.cmdSair.BackgroundImage = global::Formularios.Properties.Resources.logout;
+            this.cmdSair.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.cmdSair.Location = new System.Drawing.Point(759, 1);
             this.cmdSair.Name = "cmdSair";
-            this.cmdSair.Size = new System.Drawing.Size(75, 23);
-            this.cmdSair.TabIndex = 19;
-            this.cmdSair.Text = "Sair";
+            this.cmdSair.Size = new System.Drawing.Size(29, 29);
+            this.cmdSair.TabIndex = 10;
             this.cmdSair.UseVisualStyleBackColor = true;
             this.cmdSair.Click += new System.EventHandler(this.cmdSair_Click);
             // 
             // cmdNovo
             // 
-            this.cmdNovo.Location = new System.Drawing.Point(551, 1);
+            this.cmdNovo.BackgroundImage = global::Formularios.Properties.Resources.folder;
+            this.cmdNovo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.cmdNovo.Location = new System.Drawing.Point(689, 1);
             this.cmdNovo.Name = "cmdNovo";
-            this.cmdNovo.Size = new System.Drawing.Size(75, 23);
-            this.cmdNovo.TabIndex = 20;
-            this.cmdNovo.Text = "Novo";
+            this.cmdNovo.Size = new System.Drawing.Size(29, 29);
+            this.cmdNovo.TabIndex = 8;
             this.cmdNovo.UseVisualStyleBackColor = true;
             this.cmdNovo.Click += new System.EventHandler(this.cmdNovo_Click);
+            // 
+            // labValorForencedor
+            // 
+            this.labValorForencedor.AutoSize = true;
+            this.labValorForencedor.Location = new System.Drawing.Point(367, 243);
+            this.labValorForencedor.Name = "labValorForencedor";
+            this.labValorForencedor.Size = new System.Drawing.Size(96, 15);
+            this.labValorForencedor.TabIndex = 22;
+            this.labValorForencedor.Text = "Valor Fornecedor";
+            // 
+            // txtValorFornecedor
+            // 
+            this.txtValorFornecedor.Location = new System.Drawing.Point(367, 261);
+            this.txtValorFornecedor.Name = "txtValorFornecedor";
+            this.txtValorFornecedor.Size = new System.Drawing.Size(100, 23);
+            this.txtValorFornecedor.TabIndex = 5;
+            this.txtValorFornecedor.Leave += new System.EventHandler(this.txtValorFornecedor_Leave);
+            // 
+            // cmdExcluir
+            // 
+            this.cmdExcluir.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("cmdExcluir.BackgroundImage")));
+            this.cmdExcluir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.cmdExcluir.Location = new System.Drawing.Point(653, 1);
+            this.cmdExcluir.Name = "cmdExcluir";
+            this.cmdExcluir.Size = new System.Drawing.Size(29, 29);
+            this.cmdExcluir.TabIndex = 7;
+            this.cmdExcluir.UseVisualStyleBackColor = true;
+            this.cmdExcluir.Click += new System.EventHandler(this.cmdExcluir_Click);
             // 
             // frmItensPedido
             // 
@@ -394,6 +467,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.ControlBox = false;
+            this.Controls.Add(this.cmdExcluir);
+            this.Controls.Add(this.labValorForencedor);
+            this.Controls.Add(this.txtValorFornecedor);
             this.Controls.Add(this.cmdNovo);
             this.Controls.Add(this.cmdSair);
             this.Controls.Add(this.cmdGravar);
@@ -414,11 +490,11 @@
             this.Controls.Add(this.lbProduto);
             this.Controls.Add(this.txtQuantidade);
             this.Controls.Add(this.txtDescProduto);
-            this.Controls.Add(this.dataItemPedido);
+            this.Controls.Add(this.grdItensPedido);
             this.Name = "frmItensPedido";
             this.Text = "ItensPedido";
             this.Load += new System.EventHandler(this.frmItensPedido_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataItemPedido)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdItensPedido)).EndInit();
             this.grpbVlrPraticados.ResumeLayout(false);
             this.grpbVlrPraticados.PerformLayout();
             this.ResumeLayout(false);
@@ -428,7 +504,7 @@
 
         #endregion
 
-        private DataGridView dataItemPedido;
+        private DataGridView grdItensPedido;
         private TextBox txtDescProduto;
         private TextBox txtQuantidade;
         private Label lbProduto;
@@ -454,13 +530,20 @@
         private Label lbPraticado1;
         private Label labTotalPedido;
         private Label label2;
-        private DataGridViewTextBoxColumn grdNumero;
-        private DataGridViewTextBoxColumn grdDescricao;
-        private DataGridViewTextBoxColumn grdCodigoItem;
-        private DataGridViewTextBoxColumn grdVlrItem;
-        private DataGridViewTextBoxColumn grdTotal;
         private Button cmdGravar;
         private Button cmdSair;
         private Button cmdNovo;
+        private Label labValorForencedor;
+        private TextBox txtValorFornecedor;
+        private DataGridViewTextBoxColumn grdNumero;
+        private DataGridViewTextBoxColumn grdProduto;
+        private DataGridViewTextBoxColumn grdDescricao;
+        private DataGridViewTextBoxColumn grdQuantidade;
+        private DataGridViewTextBoxColumn grdCodigoItem;
+        private DataGridViewTextBoxColumn grdVlrItem;
+        private DataGridViewTextBoxColumn grdTotal;
+        private DataGridViewTextBoxColumn grdLote;
+        private DataGridViewTextBoxColumn grdValorFornecedor;
+        private Button cmdExcluir;
     }
 }

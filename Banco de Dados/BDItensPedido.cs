@@ -13,9 +13,10 @@ namespace Banco_de_Dados
     {
         public string cpID { get; set; }
         public string cpProdutoID { get; set; }
-        public string cpQunatidade { get; set; }
+        public string cpQuantidade { get; set; }
         public string cpLote { get; set; }
         public string cpValorUnit { get; set; }
+        public string cpValorTotalItem { get; set; }
         public string cpFornecedor { get; set; }
         public string cpValorFornecedor { get; set; }
         public string cpPedidoDR { get; set; }
@@ -41,11 +42,11 @@ namespace Banco_de_Dados
 
                 sqlconteudo += "'" + cpProdutoID.ToString() + "',";
             }
-            if (cpQunatidade.ToString() != "")
+            if (cpQuantidade.ToString() != "")
             {
                 sqlCampos += "OPITPQuantidade, ";
 
-                sqlconteudo += "'" + cpQunatidade.ToString() + "',";
+                sqlconteudo += "'" + cpQuantidade.ToString() + "',";
             }
             if (cpLote.ToString() != "")
             {
@@ -58,6 +59,12 @@ namespace Banco_de_Dados
                 sqlCampos += "OPITPValorUnitario, ";
 
                 sqlconteudo += "'" + cpValorUnit.ToString() + "',";
+            }
+            if (cpValorTotalItem.ToString() != "")
+            {
+                sqlCampos += "OPITPValorTotalItem, ";
+
+                sqlconteudo += "'" + cpValorTotalItem.ToString() + "',";
             }
             if (cpFornecedor.ToString() != "")
             {
@@ -120,9 +127,9 @@ namespace Banco_de_Dados
             {
                 sqlconteudo += "OPITPProdutoDR = '" + cpProdutoID.ToString() + "',";
             }
-            if (cpQunatidade != null)
+            if (cpQuantidade != null)
             {
-                sqlconteudo += "OPITPQuantidade = '" + cpQunatidade.ToString() + "',";
+                sqlconteudo += "OPITPQuantidade = '" + cpQuantidade.ToString() + "',";
             }
             if (cpLote != null)
             {
@@ -131,6 +138,10 @@ namespace Banco_de_Dados
             if (cpValorUnit != null)
             {
                 sqlconteudo += "OPITPValorUnitario = '" + cpValorUnit.ToString() + "',";
+            }
+            if (cpValorTotalItem != null)
+            {
+                sqlconteudo += "OPITPValorTotalItem = '" + cpValorTotalItem.ToString() + "',";
             }
             if (cpFornecedor != null)
             {
@@ -173,32 +184,45 @@ namespace Banco_de_Dados
             string slqSelect = "SELECT * FROM OPItensPedido ";
             string sqlWhere = "WHERE ";
             char ClausulaWhere = 'N';
-            if (cpID != "")
+            if(cpID != null)
             {
-                sqlWhere = "WHERE OPItensPedido = '" + cpID + "'";
-                ClausulaWhere = 'S';
+                if (cpID != "")
+                {
+                    sqlWhere = "WHERE OPItensPedido = '" + cpID + "'";
+                    ClausulaWhere = 'S';
+                }
             }
             else
             {
-                if (cpPedidoDR != "")
+                if(cpPedidoDR != null)
                 {
-                    sqlWhere += "OPITPPedidoDR = '" + cpPedidoDR + "' " + "AND";
-                    ClausulaWhere = 'S';
+                    if (cpPedidoDR != "")
+                    {
+                        sqlWhere += "OPITPPedidoDR = '" + cpPedidoDR + "' " + "AND";
+                        ClausulaWhere = 'S';
+                    }
                 }
-                if (cpValorUnit != "")
+                
+                if(cpValorUnit != null)
                 {
-                    sqlWhere += "OPITPValorUnitario like " + cpValorUnit + "%' " + "AND";
-                    ClausulaWhere = 'S';
+                    if (cpValorUnit != "")
+                    {
+                        sqlWhere += "OPITPValorUnitario like " + cpValorUnit + "%' " + "AND";
+                        ClausulaWhere = 'S';
+                    }
                 }
-
             }
 
             if (ClausulaWhere == 'S')
             {
-                if (cpID != "")
+               if(cpID != null)
                 {
-                    slqSelect += sqlWhere;
+                    if (cpID != "")
+                    {
+                        slqSelect += sqlWhere;
+                    }
                 }
+               
                 else
                 {
                     slqSelect += sqlWhere.Remove(sqlWhere.Length - 3);
@@ -220,9 +244,10 @@ namespace Banco_de_Dados
                     BDItensPedido bDITPedido = new BDItensPedido();
                     bDITPedido.cpID = dr["OPItensPedido"].ToString();
                     bDITPedido.cpProdutoID = dr["OPITPProdutoDR"].ToString();
-                    bDITPedido.cpQunatidade = dr["OPITPQuantidade"].ToString();
+                    bDITPedido.cpQuantidade = dr["OPITPQuantidade"].ToString();
                     bDITPedido.cpLote = dr["OPITPLote"].ToString();
                     bDITPedido.cpValorUnit = dr["OPITPValorUnitario"].ToString();
+                    bDITPedido.cpValorTotalItem = dr["OPITPValorTotalItem"].ToString();
                     bDITPedido.cpFornecedor = dr["OPITPFornecedorDR"].ToString();
                     bDITPedido.cpValorFornecedor = dr["OPITPValorFornecedor"].ToString();
                     bDITPedido.cpPedidoDR = dr["OPITPPedidoDR"].ToString();

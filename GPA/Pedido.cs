@@ -27,7 +27,7 @@ namespace Formularios
         string LImpostos = "";
         string LComissao = "";
 
-        public Pedido(string inUsuario)
+        public Pedido(string inUsuario,string inIDPedido)
         {
             InitializeComponent();
             LUsuario = inUsuario;
@@ -43,11 +43,29 @@ namespace Formularios
                 txtVendedor.Enabled = false;
             }
             
+            if(inIDPedido != "")
+            {
+                LIDPedido = inIDPedido;
+                cmdNovo.Enabled = false;
+                cmdGravar.Enabled = false;
+                cmdExcluir.Enabled = false;
+                txtEmpresa.Enabled = false;
+                txtDataSolicitacao.Enabled = false;
+                txtDataConfirmacao.Enabled = false;
+                txtxNatOperacao.Enabled = false;
+                txtVendedor.Enabled = false;
+                txtObservacao.Enabled = false;
+
+                MostraDados();
+            }
         }
 
         private void Pedido_Load(object sender, EventArgs e)
         {
-
+            if(LIDPedido != "")
+            {
+                MostraDados();
+            }
         }
 
         private void MostraDados()
@@ -101,6 +119,15 @@ namespace Formularios
             {
                 txtObservacao.Text = lstPedido[0].cpObservacoes.ToString();
             }
+            txtTotalItens.Text = lstPedido[0].cpVlrTotalPedido;
+            if (lstPedido[0].cpConcluido == "S")
+            {
+                chkConcluido.Checked = true;
+            }
+            else
+            {
+                chkConcluido.Checked = false;
+            }
 
         }
         private void cmdItensPedido_Click(object sender, EventArgs e)
@@ -109,6 +136,8 @@ namespace Formularios
 
             frmItensPedido objItensPedido = new frmItensPedido(LIDPedido);
             objItensPedido.ShowDialog();
+
+            MostraDados();
         }
 
         private void cmdExcluir_Click(object sender, EventArgs e)
@@ -263,6 +292,14 @@ namespace Formularios
                 objPedido.cpObservacoes = txtObservacao.Text;
             }
 
+            if(chkConcluido.Checked == true)
+            {
+                objPedido.cpConcluido = "S";
+            }
+            else
+            {
+                objPedido.cpConcluido = "N";
+            }
             if(LIDPedido == "")
             {
                 objPedido.InsereDados();

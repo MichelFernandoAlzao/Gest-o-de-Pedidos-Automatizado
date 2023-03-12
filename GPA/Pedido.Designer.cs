@@ -61,7 +61,7 @@
             this.labDescVlrUltCompra = new System.Windows.Forms.Label();
             this.txtObservacao = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.txtTotalItens = new System.Windows.Forms.TextBox();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
@@ -75,6 +75,7 @@
             this.cmdSair = new System.Windows.Forms.Button();
             this.labVendedor = new System.Windows.Forms.Label();
             this.txtVendedor = new System.Windows.Forms.TextBox();
+            this.chkConcluido = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // lbPedidos
@@ -377,13 +378,13 @@
             this.label17.TabIndex = 33;
             this.label17.Text = "Observações";
             // 
-            // textBox8
+            // txtTotalItens
             // 
-            this.textBox8.Location = new System.Drawing.Point(675, 254);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.ReadOnly = true;
-            this.textBox8.Size = new System.Drawing.Size(113, 23);
-            this.textBox8.TabIndex = 34;
+            this.txtTotalItens.Location = new System.Drawing.Point(675, 254);
+            this.txtTotalItens.Name = "txtTotalItens";
+            this.txtTotalItens.ReadOnly = true;
+            this.txtTotalItens.Size = new System.Drawing.Size(113, 23);
+            this.txtTotalItens.TabIndex = 34;
             // 
             // textBox9
             // 
@@ -510,12 +511,23 @@
             this.txtVendedor.Size = new System.Drawing.Size(100, 23);
             this.txtVendedor.TabIndex = 46;
             // 
+            // chkConcluido
+            // 
+            this.chkConcluido.AutoSize = true;
+            this.chkConcluido.Location = new System.Drawing.Point(15, 214);
+            this.chkConcluido.Name = "chkConcluido";
+            this.chkConcluido.Size = new System.Drawing.Size(71, 19);
+            this.chkConcluido.TabIndex = 48;
+            this.chkConcluido.Text = "Concluir";
+            this.chkConcluido.UseVisualStyleBackColor = true;
+            // 
             // Pedido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.ControlBox = false;
+            this.Controls.Add(this.chkConcluido);
             this.Controls.Add(this.labVendedor);
             this.Controls.Add(this.txtVendedor);
             this.Controls.Add(this.cmdExcluir);
@@ -529,7 +541,7 @@
             this.Controls.Add(this.label19);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.textBox9);
-            this.Controls.Add(this.textBox8);
+            this.Controls.Add(this.txtTotalItens);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.txtObservacao);
             this.Controls.Add(this.labDescVlrUltCompra);
@@ -618,5 +630,7 @@
         private Button cmdSair;
         private Label labVendedor;
         private TextBox txtVendedor;
+        private TextBox txtTotalItens;
+        private CheckBox chkConcluido;
     }
 }
