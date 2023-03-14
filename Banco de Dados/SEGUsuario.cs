@@ -18,6 +18,7 @@ namespace Banco_de_Dados
         public string Administrador { get; set; }
         public string GerenciaCadastros { get; set; }
         public string Operacional { get; set; }
+        public string Meta { get; set; }
         public string Seguranca { get; set; }
         public string MsgErro { get; set; }
 
@@ -56,17 +57,24 @@ namespace Banco_de_Dados
             string slqSelect = "SELECT * FROM SEGUsuarios ";
             string sqlWhere = "WHERE ";
             char ClausulaWhere = 'N';
-
-            if (inID != "")
+            if(inID != null)
             {
-                sqlWhere = "WHERE SEGUsuarios = " + inID;
-                ClausulaWhere = 'S';
+                if (inID != "")
+                {
+                    sqlWhere = "WHERE SEGUsuarios = " + inID;
+                    ClausulaWhere = 'S';
+                }
             }
-            if(inUsuario != "" && inSenha != "")
+            
+            if(inUsuario != null)
             {
+                if (inUsuario != "" && inSenha != "")
+                {
                     sqlWhere += "USUsuario = '" + inUsuario + "' AND USSenha = '" + inSenha + "'";
-                    ClausulaWhere = 'S';   
+                    ClausulaWhere = 'S';
+                }
             }
+
             if (ClausulaWhere == 'S')
             {
                 slqSelect += sqlWhere;
@@ -94,8 +102,9 @@ namespace Banco_de_Dados
                     objUsuario.Nome = dr["USNome"].ToString();
                     objUsuario.Senha = dr["USSenha"].ToString();
                     objUsuario.Seguranca = dr["USSeguranca"].ToString();
+                    objUsuario.Meta = dr["USMeta"].ToString();
 
-                    
+
                     lstUsuarios.Add(objUsuario);
 
                 }
@@ -147,6 +156,10 @@ namespace Banco_de_Dados
             if (Seguranca != null)
             {
                 sqlconteudo += "USSeguranca = '" + Seguranca.ToString() + "',";
+            }
+            if (Meta != null)
+            {
+                sqlconteudo += "USMeta = '" + Meta.ToString() + "',";
             }
 
 

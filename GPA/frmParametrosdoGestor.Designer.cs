@@ -30,7 +30,7 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.grdMetasMensais = new System.Windows.Forms.DataGridView();
             this.grdID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grdNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grdMetaMensal = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -39,7 +39,10 @@
             this.grdMetas = new System.Windows.Forms.Label();
             this.cmdGravar = new System.Windows.Forms.Button();
             this.cmdSair = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.labEmpresaPadrao = new System.Windows.Forms.Label();
+            this.txtEmpresaPadrao = new System.Windows.Forms.TextBox();
+            this.cmdGravarMetas = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.grdMetasMensais)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -62,41 +65,37 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Prazo UltimaVenda:";
             // 
-            // dataGridView1
+            // grdMetasMensais
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.grdMetasMensais.AllowUserToAddRows = false;
+            this.grdMetasMensais.AllowUserToDeleteRows = false;
+            this.grdMetasMensais.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdMetasMensais.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.grdID,
             this.grdNome,
             this.grdMetaMensal});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 288);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(395, 150);
-            this.dataGridView1.TabIndex = 2;
+            this.grdMetasMensais.Location = new System.Drawing.Point(12, 288);
+            this.grdMetasMensais.Name = "grdMetasMensais";
+            this.grdMetasMensais.RowTemplate.Height = 25;
+            this.grdMetasMensais.Size = new System.Drawing.Size(395, 150);
+            this.grdMetasMensais.TabIndex = 2;
             // 
             // grdID
             // 
             this.grdID.HeaderText = "ID";
             this.grdID.Name = "grdID";
-            this.grdID.ReadOnly = true;
             this.grdID.Visible = false;
             // 
             // grdNome
             // 
             this.grdNome.HeaderText = "Nome";
             this.grdNome.Name = "grdNome";
-            this.grdNome.ReadOnly = true;
             this.grdNome.Width = 250;
             // 
             // grdMetaMensal
             // 
             this.grdMetaMensal.HeaderText = "Meta Mensal";
             this.grdMetaMensal.Name = "grdMetaMensal";
-            this.grdMetaMensal.ReadOnly = true;
             // 
             // txtPrazoContato
             // 
@@ -131,6 +130,7 @@
             this.cmdGravar.Size = new System.Drawing.Size(29, 29);
             this.cmdGravar.TabIndex = 44;
             this.cmdGravar.UseVisualStyleBackColor = true;
+            this.cmdGravar.Click += new System.EventHandler(this.cmdGravar_Click);
             // 
             // cmdSair
             // 
@@ -141,23 +141,58 @@
             this.cmdSair.Size = new System.Drawing.Size(29, 29);
             this.cmdSair.TabIndex = 45;
             this.cmdSair.UseVisualStyleBackColor = true;
+            this.cmdSair.Click += new System.EventHandler(this.cmdSair_Click);
+            // 
+            // labEmpresaPadrao
+            // 
+            this.labEmpresaPadrao.AutoSize = true;
+            this.labEmpresaPadrao.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labEmpresaPadrao.Location = new System.Drawing.Point(11, 90);
+            this.labEmpresaPadrao.Name = "labEmpresaPadrao";
+            this.labEmpresaPadrao.Size = new System.Drawing.Size(95, 15);
+            this.labEmpresaPadrao.TabIndex = 46;
+            this.labEmpresaPadrao.Text = "Empresa Padrão";
+            // 
+            // txtEmpresaPadrao
+            // 
+            this.txtEmpresaPadrao.Location = new System.Drawing.Point(11, 108);
+            this.txtEmpresaPadrao.Name = "txtEmpresaPadrao";
+            this.txtEmpresaPadrao.Size = new System.Drawing.Size(395, 23);
+            this.txtEmpresaPadrao.TabIndex = 47;
+            this.txtEmpresaPadrao.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtEmpresaPadrao_KeyDown);
+            // 
+            // cmdGravarMetas
+            // 
+            this.cmdGravarMetas.BackgroundImage = global::Formularios.Properties.Resources.save;
+            this.cmdGravarMetas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.cmdGravarMetas.Location = new System.Drawing.Point(377, 253);
+            this.cmdGravarMetas.Name = "cmdGravarMetas";
+            this.cmdGravarMetas.Size = new System.Drawing.Size(29, 29);
+            this.cmdGravarMetas.TabIndex = 48;
+            this.cmdGravarMetas.UseVisualStyleBackColor = true;
+            this.cmdGravarMetas.Click += new System.EventHandler(this.cmdGravarMetas_Click);
             // 
             // frmParametrosdoGestor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(419, 450);
+            this.ControlBox = false;
+            this.Controls.Add(this.cmdGravarMetas);
+            this.Controls.Add(this.txtEmpresaPadrao);
+            this.Controls.Add(this.labEmpresaPadrao);
             this.Controls.Add(this.cmdSair);
             this.Controls.Add(this.cmdGravar);
             this.Controls.Add(this.grdMetas);
             this.Controls.Add(this.txtPrazoUltVenda);
             this.Controls.Add(this.txtPrazoContato);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.grdMetasMensais);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "frmParametrosdoGestor";
             this.Text = "Parametros do Gestor";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.frmParametrosdoGestor_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.grdMetasMensais)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -167,7 +202,7 @@
 
         private Label label1;
         private Label label2;
-        private DataGridView dataGridView1;
+        private DataGridView grdMetasMensais;
         private DataGridViewTextBoxColumn grdID;
         private DataGridViewTextBoxColumn grdNome;
         private DataGridViewTextBoxColumn grdMetaMensal;
@@ -176,5 +211,8 @@
         private Label grdMetas;
         private Button cmdGravar;
         private Button cmdSair;
+        private Label labEmpresaPadrao;
+        private TextBox txtEmpresaPadrao;
+        private Button cmdGravarMetas;
     }
 }

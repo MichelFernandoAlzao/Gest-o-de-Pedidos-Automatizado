@@ -11,7 +11,7 @@ using Banco_de_Dados;
 
 namespace Formularios
 {
-    public partial class Pedido : Form
+    public partial class frmPedido : Form
     {
         public string LID = "";
         public string LIDPedido = "";
@@ -27,7 +27,7 @@ namespace Formularios
         string LImpostos = "";
         string LComissao = "";
 
-        public Pedido(string inUsuario,string inIDPedido)
+        public frmPedido(string inUsuario,string inIDPedido)
         {
             InitializeComponent();
             LUsuario = inUsuario;

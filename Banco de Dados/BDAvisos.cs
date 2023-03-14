@@ -9,12 +9,13 @@ using System.Data;
 
 namespace Banco_de_Dados
 {
-    public class BDParametros
+    public class BDAvisos
     {
         public string cpID { get; set; }
-        public string cpDiasContato { get; set; }
-        public string cpDiasUltVenda { get; set; }
-        public string cpEmpresaDR { get; set; }
+        public string cpAviso { get; set; }
+        public string cpDataInicio { get; set; }
+        public string cpDataTermino { get; set; }
+        public string cpUsuarioDR { get; set; }
         public string cpMsgErro { get; set; }
 
         Conexao conexao = new Conexao();
@@ -27,28 +28,34 @@ namespace Banco_de_Dados
             string sqlCampos = "";
             string sqlconteudo;
 
-            sSQL = "INSERT INTO OPParametros (";
+            sSQL = "INSERT INTO OPAvisos (";
             sqlconteudo = " VALUES (";
 
-            if (cpDiasContato.ToString() != "")
+            if (cpAviso.ToString() != "")
             {
-                sqlCampos += "OPPUltimoContato, ";
+                sqlCampos += "OPAAviso, ";
 
-                sqlconteudo += "'" + cpDiasContato.ToString() + "',";
+                sqlconteudo += "'" + cpAviso.ToString() + "',";
             }
-            if (cpDiasUltVenda.ToString() != "")
+            if (cpDataInicio.ToString() != "")
             {
-                sqlCampos += "OPPDiasUltVenda, ";
+                sqlCampos += "OPADataInicio, ";
 
-                sqlconteudo += "'" + cpDiasUltVenda.ToString() + "',";
+                sqlconteudo += "'" + cpDataInicio.ToString() + "',";
             }
-            if (cpEmpresaDR.ToString() != "")
+            if (cpDataTermino.ToString() != "")
             {
-                sqlCampos += "OPPEmpresaDR, ";
+                sqlCampos += "OPADataTermino, ";
 
-                sqlconteudo += "'" + cpEmpresaDR.ToString() + "',";
+                sqlconteudo += "'" + cpDataTermino.ToString() + "',";
             }
-           
+            if (cpUsuarioDR.ToString() != "")
+            {
+                sqlCampos += "OPAUsuarioDR, ";
+
+                sqlconteudo += "'" + cpUsuarioDR.ToString() + "',";
+            }
+
 
             sSQL = sSQL + sqlCampos.Remove(sqlCampos.Length - 2) + ")" + sqlconteudo.Remove(sqlconteudo.Length - 1) + ")";
 
@@ -77,23 +84,26 @@ namespace Banco_de_Dados
         {
             string sSQL = "";
             string sqlconteudo = "";
-            string sqlWhere = " WHERE OPParametros = '" + cpID + "'";
+            string sqlWhere = " WHERE OPAvisos = '" + cpID + "'";
 
-            sSQL = "UPDATE OPParametros SET ";
+            sSQL = "UPDATE OPAvisos SET ";
 
-            if (cpDiasContato != null)
+            if (cpAviso != null)
             {
-                sqlconteudo += "OPPUltimoContato = '" + cpDiasContato.ToString() + "',";
+                sqlconteudo += "OPAAviso = '" + cpAviso.ToString() + "',";
             }
-            if (cpDiasUltVenda != null)
+            if (cpDataInicio != null)
             {
-                sqlconteudo += "OPPDiasUltVenda = '" + cpDiasUltVenda.ToString() + "',";
+                sqlconteudo += "OPADataInicio = '" + cpDataInicio.ToString() + "',";
             }
-            if (cpEmpresaDR != null)
+            if (cpDataTermino != null)
             {
-                sqlconteudo += "OPPEmpresaDR = '" + cpEmpresaDR.ToString() + "',";
+                sqlconteudo += "OPADataTremino = '" + cpDataTermino.ToString() + "',";
             }
-
+            if (cpUsuarioDR != null)
+            {
+                sqlconteudo += "OPAUsuario = '" + cpUsuarioDR.ToString() + "',";
+            }
             sSQL = sSQL + sqlconteudo.Remove(sqlconteudo.Length - 1);
             sSQL = sSQL + sqlWhere;
 
@@ -115,22 +125,30 @@ namespace Banco_de_Dados
             cmd.Dispose();
         }
 
-        public List<BDParametros> CarregaDados()
+        public List<BDAvisos> CarregaDados()
         {
-            List<BDParametros> lstParametros = new List<BDParametros>();
-            string slqSelect = "SELECT * FROM OPParametros ";
+            List<BDAvisos> lstAvisos = new List<BDAvisos>();
+            string slqSelect = "SELECT * FROM OPAvisos ";
             string sqlWhere = "WHERE ";
             char ClausulaWhere = 'N';
-            
-            if(cpID != null)
+
+            if (cpID != null)
             {
                 if (cpID != "")
                 {
-                    sqlWhere = "WHERE OPParametros = '" + cpID + "'";
+                    sqlWhere = "WHERE OPAvisos = '" + cpID + "'";
                     ClausulaWhere = 'S';
                 }
             }
-            
+            if (cpUsuarioDR != null)
+            {
+                if (cpUsuarioDR != "")
+                {
+                    sqlWhere = "WHERE OPAUsuarioDR = '" + cpUsuarioDR + "'";
+                    ClausulaWhere = 'S';
+                }
+            }
+
 
             if (ClausulaWhere == 'S')
             {
@@ -156,13 +174,14 @@ namespace Banco_de_Dados
 
                 foreach (DataRow dr in dt.Rows)
                 {
-                    BDParametros bDParametros = new BDParametros();
-                    bDParametros.cpID = dr["OPParametros"].ToString();
-                    bDParametros.cpDiasContato = dr["OPPUltimoContato"].ToString();
-                    bDParametros.cpDiasUltVenda = dr["OPPDiasUltVenda"].ToString();
-                    bDParametros.cpEmpresaDR = dr["OPPEmpresaDR"].ToString();
+                    BDAvisos bDParametros = new BDAvisos();
+                    bDParametros.cpID = dr["OPAviso"].ToString();
+                    bDParametros.cpID = dr["OPAAviso"].ToString();
+                    bDParametros.cpDataInicio = dr["OPADataInicio"].ToString();
+                    bDParametros.cpDataTermino = dr["OPADataTermino"].ToString();
+                    bDParametros.cpUsuarioDR = dr["OPAusuarioDR"].ToString();
 
-                    lstParametros.Add(bDParametros);
+                    lstAvisos.Add(bDParametros);
 
                 }
 
@@ -175,14 +194,14 @@ namespace Banco_de_Dados
                 cpMsgErro = e.Message.ToString();
             }
             cmd.Dispose();
-            return lstParametros;
+            return lstAvisos;
         }
 
         public void Excluir()
         {
             string sSQL = "";
 
-            sSQL = "DELETE FROM OPParametros WHERE OPParametros = '" + cpID + "'";
+            sSQL = "DELETE FROM OPAviso WHERE OPAviso = '" + cpID + "'";
 
             cmd.CommandText = sSQL;
 
@@ -203,3 +222,4 @@ namespace Banco_de_Dados
         }
     }
 }
+

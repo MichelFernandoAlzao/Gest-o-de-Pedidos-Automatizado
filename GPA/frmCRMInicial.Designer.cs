@@ -70,6 +70,8 @@
             this.labContatos = new System.Windows.Forms.Label();
             this.cmdNatOperacao = new System.Windows.Forms.Button();
             this.labNomeUsuario = new System.Windows.Forms.Label();
+            this.cmdParametros = new System.Windows.Forms.Button();
+            this.cmdCriarAviso = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.grdUltimasVendas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdUltContato)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdAvisos)).BeginInit();
@@ -433,7 +435,7 @@
             // 
             // cmdNatOperacao
             // 
-            this.cmdNatOperacao.Location = new System.Drawing.Point(1080, 460);
+            this.cmdNatOperacao.Location = new System.Drawing.Point(1080, 445);
             this.cmdNatOperacao.Name = "cmdNatOperacao";
             this.cmdNatOperacao.Size = new System.Drawing.Size(168, 23);
             this.cmdNatOperacao.TabIndex = 28;
@@ -449,11 +451,34 @@
             this.labNomeUsuario.Size = new System.Drawing.Size(0, 15);
             this.labNomeUsuario.TabIndex = 29;
             // 
+            // cmdParametros
+            // 
+            this.cmdParametros.Location = new System.Drawing.Point(1080, 474);
+            this.cmdParametros.Name = "cmdParametros";
+            this.cmdParametros.Size = new System.Drawing.Size(168, 23);
+            this.cmdParametros.TabIndex = 30;
+            this.cmdParametros.Text = "Parametros";
+            this.cmdParametros.UseVisualStyleBackColor = true;
+            this.cmdParametros.Click += new System.EventHandler(this.cmdParametros_Click);
+            // 
+            // cmdCriarAviso
+            // 
+            this.cmdCriarAviso.BackgroundImage = global::Formularios.Properties.Resources.adicionar;
+            this.cmdCriarAviso.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.cmdCriarAviso.Location = new System.Drawing.Point(1039, 12);
+            this.cmdCriarAviso.Name = "cmdCriarAviso";
+            this.cmdCriarAviso.Size = new System.Drawing.Size(20, 20);
+            this.cmdCriarAviso.TabIndex = 31;
+            this.cmdCriarAviso.UseVisualStyleBackColor = true;
+            this.cmdCriarAviso.Click += new System.EventHandler(this.cmdCriarAviso_Click);
+            // 
             // frmCRMInicial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1260, 501);
+            this.Controls.Add(this.cmdCriarAviso);
+            this.Controls.Add(this.cmdParametros);
             this.Controls.Add(this.labNomeUsuario);
             this.Controls.Add(this.cmdNatOperacao);
             this.Controls.Add(this.labContatos);
@@ -539,5 +564,7 @@
         private Label labContatos;
         private Button cmdNatOperacao;
         private Label labNomeUsuario;
+        private Button cmdParametros;
+        private Button cmdCriarAviso;
     }
 }

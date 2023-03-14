@@ -71,7 +71,7 @@ namespace Formularios
         private void cmdPedidos_Click(object sender, EventArgs e)
         {
             
-            Pedido frmPedido = new Pedido(LUsuario,"");
+            frmPedido frmPedido = new frmPedido(LUsuario,"");
             frmPedido.ShowDialog();
         }
 
@@ -105,6 +105,18 @@ namespace Formularios
         {
             frmNaturezaDaOperacao frmNatOperacao = new frmNaturezaDaOperacao(LUsuario);
             frmNatOperacao.ShowDialog();
+        }
+
+        private void cmdParametros_Click(object sender, EventArgs e)
+        {
+            frmParametrosdoGestor frmParametros = new frmParametrosdoGestor();
+            frmParametros.ShowDialog();
+        }
+
+        private void cmdCriarAviso_Click(object sender, EventArgs e)
+        {
+            frmAvisos frmAvisos = new frmAvisos();
+            frmAvisos.ShowDialog();
         }
     }
 }
