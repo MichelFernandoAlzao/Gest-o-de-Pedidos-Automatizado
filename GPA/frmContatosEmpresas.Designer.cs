@@ -51,6 +51,7 @@
             this.txtProduto = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.cmdAdicionar = new System.Windows.Forms.Button();
+            this.cmdRemover = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.grdProdSugeridos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -93,6 +94,7 @@
             this.cmdExcluir.Size = new System.Drawing.Size(30, 30);
             this.cmdExcluir.TabIndex = 49;
             this.cmdExcluir.UseVisualStyleBackColor = true;
+            this.cmdExcluir.Click += new System.EventHandler(this.cmdExcluir_Click);
             // 
             // cmdNovo
             // 
@@ -114,6 +116,7 @@
             this.cmdGravar.Size = new System.Drawing.Size(30, 30);
             this.cmdGravar.TabIndex = 47;
             this.cmdGravar.UseVisualStyleBackColor = true;
+            this.cmdGravar.Click += new System.EventHandler(this.cmdGravar_Click);
             // 
             // cmdSair
             // 
@@ -236,7 +239,7 @@
             // 
             this.txtProduto.Location = new System.Drawing.Point(12, 270);
             this.txtProduto.Name = "txtProduto";
-            this.txtProduto.Size = new System.Drawing.Size(610, 23);
+            this.txtProduto.Size = new System.Drawing.Size(706, 23);
             this.txtProduto.TabIndex = 58;
             // 
             // label2
@@ -251,12 +254,23 @@
             // 
             // cmdAdicionar
             // 
-            this.cmdAdicionar.Location = new System.Drawing.Point(644, 270);
+            this.cmdAdicionar.BackgroundImage = global::Formularios.Properties.Resources.adicionar;
+            this.cmdAdicionar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.cmdAdicionar.Location = new System.Drawing.Point(724, 266);
             this.cmdAdicionar.Name = "cmdAdicionar";
-            this.cmdAdicionar.Size = new System.Drawing.Size(144, 23);
+            this.cmdAdicionar.Size = new System.Drawing.Size(29, 29);
             this.cmdAdicionar.TabIndex = 60;
-            this.cmdAdicionar.Text = "Adicionar";
             this.cmdAdicionar.UseVisualStyleBackColor = true;
+            // 
+            // cmdRemover
+            // 
+            this.cmdRemover.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("cmdRemover.BackgroundImage")));
+            this.cmdRemover.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.cmdRemover.Location = new System.Drawing.Point(759, 266);
+            this.cmdRemover.Name = "cmdRemover";
+            this.cmdRemover.Size = new System.Drawing.Size(29, 29);
+            this.cmdRemover.TabIndex = 61;
+            this.cmdRemover.UseVisualStyleBackColor = true;
             // 
             // frmContatosEmpresas
             // 
@@ -264,6 +278,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.ControlBox = false;
+            this.Controls.Add(this.cmdRemover);
             this.Controls.Add(this.cmdAdicionar);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtProduto);
@@ -314,5 +329,6 @@
         private TextBox txtProduto;
         private Label label2;
         private Button cmdAdicionar;
+        private Button cmdRemover;
     }
 }

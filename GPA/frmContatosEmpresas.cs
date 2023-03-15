@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Banco_de_Dados;
 
 namespace Formularios
 {
@@ -43,6 +44,27 @@ namespace Formularios
             grdProdSugeridos.Rows.Clear();
             
 
+        }
+
+        private void cmdGravar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmdExcluir_Click(object sender, EventArgs e)
+        {
+            BDRegistroContato objRegContato = new BDRegistroContato();
+            objRegContato.cpID = LIDRegistro;
+            LID = "";
+            LIDRegistro = "";
+            LDataContato = "";
+            LSugestoes = "";
+            LReclamacoes = "";
+            txtEmpresa.Text = "";
+            txtDataContato.Text = "";
+            txtSugestoes.Text = "";
+            txtReclamacoes.Text = "";
+            grdProdSugeridos.Rows.Clear();
         }
     }
 }

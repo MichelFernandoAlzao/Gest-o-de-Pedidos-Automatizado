@@ -43,11 +43,14 @@
             this.txtUsuarioDestino = new System.Windows.Forms.TextBox();
             this.labUsuario = new System.Windows.Forms.Label();
             this.grdAvisos = new System.Windows.Forms.DataGridView();
+            this.chkTodos = new System.Windows.Forms.CheckBox();
             this.grdID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grdAviso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grdInicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grdTermino = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grdUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.grdIDusuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.grdTodos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grdAvisos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -166,6 +169,7 @@
             this.txtUsuarioDestino.Name = "txtUsuarioDestino";
             this.txtUsuarioDestino.Size = new System.Drawing.Size(141, 23);
             this.txtUsuarioDestino.TabIndex = 24;
+            this.txtUsuarioDestino.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtUsuarioDestino_KeyDown);
             // 
             // labUsuario
             // 
@@ -178,45 +182,81 @@
             // 
             // grdAvisos
             // 
+            this.grdAvisos.AllowUserToAddRows = false;
+            this.grdAvisos.AllowUserToDeleteRows = false;
             this.grdAvisos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdAvisos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.grdID,
             this.grdAviso,
             this.grdInicio,
             this.grdTermino,
-            this.grdUsuario});
+            this.grdUsuario,
+            this.grdIDusuario,
+            this.grdTodos});
             this.grdAvisos.Location = new System.Drawing.Point(12, 185);
             this.grdAvisos.Name = "grdAvisos";
+            this.grdAvisos.ReadOnly = true;
             this.grdAvisos.RowTemplate.Height = 25;
+            this.grdAvisos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grdAvisos.Size = new System.Drawing.Size(776, 150);
             this.grdAvisos.TabIndex = 25;
+            this.grdAvisos.SelectionChanged += new System.EventHandler(this.grdAvisos_SelectionChanged);
+            // 
+            // chkTodos
+            // 
+            this.chkTodos.AutoSize = true;
+            this.chkTodos.Location = new System.Drawing.Point(12, 160);
+            this.chkTodos.Name = "chkTodos";
+            this.chkTodos.Size = new System.Drawing.Size(57, 19);
+            this.chkTodos.TabIndex = 26;
+            this.chkTodos.Text = "Todos";
+            this.chkTodos.UseVisualStyleBackColor = true;
             // 
             // grdID
             // 
             this.grdID.HeaderText = "ID";
             this.grdID.Name = "grdID";
+            this.grdID.ReadOnly = true;
             this.grdID.Visible = false;
             // 
             // grdAviso
             // 
             this.grdAviso.HeaderText = "Aviso";
             this.grdAviso.Name = "grdAviso";
-            this.grdAviso.Width = 430;
+            this.grdAviso.ReadOnly = true;
+            this.grdAviso.Width = 400;
             // 
             // grdInicio
             // 
             this.grdInicio.HeaderText = "Inicio";
             this.grdInicio.Name = "grdInicio";
+            this.grdInicio.ReadOnly = true;
             // 
             // grdTermino
             // 
             this.grdTermino.HeaderText = "Termino";
             this.grdTermino.Name = "grdTermino";
+            this.grdTermino.ReadOnly = true;
             // 
             // grdUsuario
             // 
             this.grdUsuario.HeaderText = "Usuario";
             this.grdUsuario.Name = "grdUsuario";
+            this.grdUsuario.ReadOnly = true;
+            // 
+            // grdIDusuario
+            // 
+            this.grdIDusuario.HeaderText = "IDUsuario";
+            this.grdIDusuario.Name = "grdIDusuario";
+            this.grdIDusuario.ReadOnly = true;
+            this.grdIDusuario.Visible = false;
+            // 
+            // grdTodos
+            // 
+            this.grdTodos.HeaderText = "Todos";
+            this.grdTodos.Name = "grdTodos";
+            this.grdTodos.ReadOnly = true;
+            this.grdTodos.Width = 50;
             // 
             // frmAvisos
             // 
@@ -224,6 +264,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 349);
             this.ControlBox = false;
+            this.Controls.Add(this.chkTodos);
             this.Controls.Add(this.grdAvisos);
             this.Controls.Add(this.txtUsuarioDestino);
             this.Controls.Add(this.labUsuario);
@@ -240,6 +281,7 @@
             this.Controls.Add(this.cmdGravar);
             this.Name = "frmAvisos";
             this.Text = "Cadastro Avisos";
+            this.Load += new System.EventHandler(this.frmAvisos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grdAvisos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -262,10 +304,13 @@
         private TextBox txtUsuarioDestino;
         private Label labUsuario;
         private DataGridView grdAvisos;
+        private CheckBox chkTodos;
         private DataGridViewTextBoxColumn grdID;
         private DataGridViewTextBoxColumn grdAviso;
         private DataGridViewTextBoxColumn grdInicio;
         private DataGridViewTextBoxColumn grdTermino;
         private DataGridViewTextBoxColumn grdUsuario;
+        private DataGridViewTextBoxColumn grdIDusuario;
+        private DataGridViewTextBoxColumn grdTodos;
     }
 }

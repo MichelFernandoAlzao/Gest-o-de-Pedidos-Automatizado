@@ -52,7 +52,9 @@ namespace Formularios
 
         private void frmCRMInicial_Load(object sender, EventArgs e)
         {
-
+            CarregaAvisos();
+            CarregaUltContato();
+            CarregaUltVenda();
         }
 
         private void cmdCadastrosEmpresas_Click(object sender, EventArgs e)
@@ -117,6 +119,179 @@ namespace Formularios
         {
             frmAvisos frmAvisos = new frmAvisos();
             frmAvisos.ShowDialog();
+        }
+
+        public void CarregaAvisos()
+        {
+             grdAvisos.Rows.Clear();
+             BDAvisos objAvisos = new BDAvisos();
+            objAvisos.cpUsuarioDR = LUsuario;
+             List<BDAvisos> lstAvisos = objAvisos.CarregaDados();
+             if (lstAvisos.Count > 0)
+             {
+                 foreach (BDAvisos item in lstAvisos)
+                 {
+                    if(item.cpDataTermino != "")
+                    {
+                        if(Convert.ToDateTime(item.cpDataTermino) < DateTime.Today)
+                        {
+                            continue;
+                        }
+                    }
+                     string usuario = "";
+                     List<SEGUsuario> lstUsuario = new List<SEGUsuario>();
+                     if (item.cpUsuarioDR != "" && item.cpUsuarioDR != null)
+                     {
+                         SEGUsuario objUsuario = new SEGUsuario();
+                         lstUsuario = objUsuario.CarregaDados(item.cpUsuarioDR, "", "", "");
+                         if (lstUsuario.Count > 0)
+                         {
+                             item.cpUsuarioDR = lstUsuario[0].ID;
+                             usuario = lstUsuario[0].Nome.ToString();
+                         }
+                         else item.cpUsuarioDR = "";
+                     }
+                     string[] Row = new string[]
+                      {
+                      item.cpID.ToString(),
+                      item.cpAviso.ToString(),
+                      item.cpDataInicio.ToString(),
+                      item.cpDataTermino.ToString(),
+                      usuario.ToString(),
+                      item.cpUsuarioDR.ToString(),
+                      item.cpTodos.ToString()
+                      };
+                     grdAvisos.Rows.Add(Row);
+                 }
+             }
+
+
+            BDAvisos objAvisosGeral = new BDAvisos();
+            objAvisosGeral.cpTodos = "S";
+            List<BDAvisos> lstAvisosGeral = objAvisosGeral.CarregaDadosGeral();
+            if (lstAvisosGeral.Count > 0)
+            {
+                foreach (BDAvisos item in lstAvisosGeral)
+                {
+                    string usuario = "";
+                    List<SEGUsuario> lstUsuario = new List<SEGUsuario>();
+                    if (item.cpUsuarioDR != "" && item.cpUsuarioDR != null)
+                    {
+                        SEGUsuario objUsuario = new SEGUsuario();
+                        lstUsuario = objUsuario.CarregaDados(item.cpUsuarioDR, "", "", "");
+                        if (lstUsuario.Count > 0)
+                        {
+                            item.cpUsuarioDR = lstUsuario[0].ID;
+                            usuario = lstUsuario[0].Nome.ToString();
+                        }
+                        else item.cpUsuarioDR = "";
+                    }
+                    string[] Row = new string[]
+                     {
+                      item.cpID.ToString(),
+                      item.cpAviso.ToString(),
+                      item.cpDataInicio.ToString(),
+                      item.cpDataTermino.ToString(),
+                      "GERAL",
+                      item.cpUsuarioDR.ToString(),
+                      item.cpTodos.ToString()
+                     };
+                    grdAvisos.Rows.Add(Row);
+                }
+            }
+
+        }
+
+        public void CarregaUltContato()
+        {
+            BDParametros objParametros = new BDParametros();
+            List<BDParametros> lstParametros = objParametros.CarregaDados();
+            if(lstParametros.Count > 0)
+            {
+                grdUltContato.Rows.Clear();
+                BDRegistroContato objRegContato = new BDRegistroContato();
+                objRegContato.cpUsuarioDR = LUsuario;
+                List<BDRegistroContato> lstRegContato = objRegContato.CarregaDados();
+                if (lstRegContato.Count > 0)
+                {
+                    foreach (BDRegistroContato item in lstRegContato)
+                    {
+                        if (item.cpDataContato != "")
+                        {
+                            if (DateTime.Today.Subtract(Convert.ToDateTime(item.cpDataContato)).TotalDays < Convert.ToInt32(lstParametros[0].cpDiasContato))
+                            {
+                                continue;
+                            }
+                        }
+                        string pRazao = "";
+                        List<BDCadastroGeral> lstEmpresa = new List<BDCadastroGeral>();
+                        if (item.cpUsuarioDR != "" && item.cpUsuarioDR != null)
+                        {
+                            BDCadastroGeral objEmpresa = new BDCadastroGeral();
+                            lstEmpresa = objEmpresa.CarregaDados(item.cpEmpresaDR, "", "", "","","","","","","");
+                            if (lstEmpresa.Count > 0)
+                            {
+                                pRazao = lstEmpresa[0].RazaoSocial.ToString();
+                            }
+                            else item.cpUsuarioDR = "";
+                        }
+                        string[] Row = new string[]
+                         {
+                            item.cpID.ToString(),
+                            item.cpDataContato.ToString(),
+                            pRazao.ToString(),
+                         };
+                        grdUltContato.Rows.Add(Row);
+                    }
+                }
+            }
+            
+        }
+
+        public void CarregaUltVenda()
+        {
+            BDParametros objParametros = new BDParametros();
+            List<BDParametros> lstParametros = objParametros.CarregaDados();
+            if (lstParametros.Count > 0)
+            {
+                grdUltimasVendas.Rows.Clear();
+                BDPedido objPedido = new BDPedido();
+                objPedido.cpVendedorDR = LUsuario;
+                List<BDPedido> lstPedido = objPedido.CarregaDados("","",LUsuario);
+                if (lstPedido.Count > 0)
+                {
+                    foreach (BDPedido item in lstPedido)
+                    {
+                        if (item.cpDataConfirmacao != "")
+                        {
+                            if (DateTime.Today.Subtract(Convert.ToDateTime(item.cpDataConfirmacao)).TotalDays < Convert.ToInt32(lstParametros[0].cpDiasUltVenda))
+                            {
+                                continue;
+                            }
+                        }
+                        string pRazao = "";
+                        List<BDCadastroGeral> lstEmpresa = new List<BDCadastroGeral>();
+                        if (item.cpEmpresaDR != "" && item.cpEmpresaDR != null)
+                        {
+                            BDCadastroGeral objEmpresa = new BDCadastroGeral();
+                            lstEmpresa = objEmpresa.CarregaDados(item.cpEmpresaDR, "", "", "", "", "", "", "", "", "");
+                            if (lstEmpresa.Count > 0)
+                            {
+                                pRazao = lstEmpresa[0].RazaoSocial.ToString();
+                            }
+                        }
+                        string[] Row = new string[]
+                         {
+                            item.cpID.ToString(),
+                            item.cpDataContato.ToString(),
+                            pRazao.ToString(),
+                            item.cpVlrTotalPedido.ToString()
+                         };
+                        grdUltimasVendas.Rows.Add(Row);
+                    }
+                }
+            }
+
         }
     }
 }
