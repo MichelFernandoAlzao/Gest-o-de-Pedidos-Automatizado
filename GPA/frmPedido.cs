@@ -120,6 +120,7 @@ namespace Formularios
                 txtObservacao.Text = lstPedido[0].cpObservacoes.ToString();
             }
             txtTotalItens.Text = lstPedido[0].cpVlrTotalPedido;
+            txtTotalFaturando.Text = lstPedido[0].cpVlrItensFaturando;
             if (lstPedido[0].cpConcluido == "S")
             {
                 chkConcluido.Checked = true;

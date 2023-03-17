@@ -31,7 +31,7 @@
             this.CalendarioContatos = new System.Windows.Forms.MonthCalendar();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.pgrsbMeta = new System.Windows.Forms.ProgressBar();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
@@ -45,7 +45,7 @@
             this.RazSocial = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Dispensar = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cmdRegistraContatos = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtObjetivoDiario = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -58,6 +58,9 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.grdAvisos = new System.Windows.Forms.DataGridView();
+            this.avTexto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.grdDatainicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.grdDataTermino = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label5 = new System.Windows.Forms.Label();
             this.grdContatosAgendados = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -68,9 +71,7 @@
             this.labNomeUsuario = new System.Windows.Forms.Label();
             this.cmdParametros = new System.Windows.Forms.Button();
             this.cmdCriarAviso = new System.Windows.Forms.Button();
-            this.avTexto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.grdDatainicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.grdDataTermino = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.labProgressaoValor = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.grdUltimasVendas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdUltContato)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdAvisos)).BeginInit();
@@ -103,17 +104,17 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Meta";
             // 
-            // progressBar1
+            // pgrsbMeta
             // 
-            this.progressBar1.Location = new System.Drawing.Point(257, 460);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(802, 23);
-            this.progressBar1.TabIndex = 3;
+            this.pgrsbMeta.Location = new System.Drawing.Point(257, 460);
+            this.pgrsbMeta.Name = "pgrsbMeta";
+            this.pgrsbMeta.Size = new System.Drawing.Size(802, 23);
+            this.pgrsbMeta.TabIndex = 3;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(626, 442);
+            this.label2.Location = new System.Drawing.Point(591, 442);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(65, 15);
             this.label2.TabIndex = 4;
@@ -238,13 +239,13 @@
             this.cmdRegistraContatos.UseVisualStyleBackColor = true;
             this.cmdRegistraContatos.Click += new System.EventHandler(this.cmdRegistraContatos_Click);
             // 
-            // textBox1
+            // txtObjetivoDiario
             // 
-            this.textBox1.Location = new System.Drawing.Point(132, 286);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(113, 23);
-            this.textBox1.TabIndex = 11;
+            this.txtObjetivoDiario.Location = new System.Drawing.Point(132, 286);
+            this.txtObjetivoDiario.Name = "txtObjetivoDiario";
+            this.txtObjetivoDiario.ReadOnly = true;
+            this.txtObjetivoDiario.Size = new System.Drawing.Size(113, 23);
+            this.txtObjetivoDiario.TabIndex = 11;
             // 
             // label4
             // 
@@ -374,6 +375,27 @@
             this.grdAvisos.Size = new System.Drawing.Size(802, 97);
             this.grdAvisos.TabIndex = 24;
             // 
+            // avTexto
+            // 
+            this.avTexto.HeaderText = "Aviso";
+            this.avTexto.Name = "avTexto";
+            this.avTexto.ReadOnly = true;
+            this.avTexto.Width = 500;
+            // 
+            // grdDatainicio
+            // 
+            this.grdDatainicio.HeaderText = "Data Inicio";
+            this.grdDatainicio.Name = "grdDatainicio";
+            this.grdDatainicio.ReadOnly = true;
+            this.grdDatainicio.Width = 130;
+            // 
+            // grdDataTermino
+            // 
+            this.grdDataTermino.HeaderText = "Data Termino";
+            this.grdDataTermino.Name = "grdDataTermino";
+            this.grdDataTermino.ReadOnly = true;
+            this.grdDataTermino.Width = 130;
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -471,32 +493,21 @@
             this.cmdCriarAviso.UseVisualStyleBackColor = true;
             this.cmdCriarAviso.Click += new System.EventHandler(this.cmdCriarAviso_Click);
             // 
-            // avTexto
+            // labProgressaoValor
             // 
-            this.avTexto.HeaderText = "Aviso";
-            this.avTexto.Name = "avTexto";
-            this.avTexto.ReadOnly = true;
-            this.avTexto.Width = 500;
-            // 
-            // grdDatainicio
-            // 
-            this.grdDatainicio.HeaderText = "Data Inicio";
-            this.grdDatainicio.Name = "grdDatainicio";
-            this.grdDatainicio.ReadOnly = true;
-            this.grdDatainicio.Width = 130;
-            // 
-            // grdDataTermino
-            // 
-            this.grdDataTermino.HeaderText = "Data Termino";
-            this.grdDataTermino.Name = "grdDataTermino";
-            this.grdDataTermino.ReadOnly = true;
-            this.grdDataTermino.Width = 130;
+            this.labProgressaoValor.AutoSize = true;
+            this.labProgressaoValor.Location = new System.Drawing.Point(662, 442);
+            this.labProgressaoValor.Name = "labProgressaoValor";
+            this.labProgressaoValor.Size = new System.Drawing.Size(46, 15);
+            this.labProgressaoValor.TabIndex = 32;
+            this.labProgressaoValor.Text = "xxxx,xx";
             // 
             // frmCRMInicial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1260, 501);
+            this.Controls.Add(this.labProgressaoValor);
             this.Controls.Add(this.cmdCriarAviso);
             this.Controls.Add(this.cmdParametros);
             this.Controls.Add(this.labNomeUsuario);
@@ -516,7 +527,7 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtObjetivoDiario);
             this.Controls.Add(this.cmdRegistraContatos);
             this.Controls.Add(this.grdUltContato);
             this.Controls.Add(this.grdUltimasVendas);
@@ -524,7 +535,7 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.progressBar1);
+            this.Controls.Add(this.pgrsbMeta);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.CalendarioContatos);
@@ -545,7 +556,7 @@
         private MonthCalendar CalendarioContatos;
         private Button button1;
         private Label label1;
-        private ProgressBar progressBar1;
+        private ProgressBar pgrsbMeta;
         private Label label2;
         private Label label3;
         private Button button2;
@@ -553,7 +564,7 @@
         private DataGridView grdUltimasVendas;
         private DataGridView grdUltContato;
         private Button cmdRegistraContatos;
-        private TextBox textBox1;
+        private TextBox txtObjetivoDiario;
         private Label label4;
         private Label label6;
         private Label label7;
@@ -585,5 +596,6 @@
         private DataGridViewTextBoxColumn avTexto;
         private DataGridViewTextBoxColumn grdDatainicio;
         private DataGridViewTextBoxColumn grdDataTermino;
+        private Label labProgressaoValor;
     }
 }

@@ -89,7 +89,13 @@ namespace Banco_de_Dados
             {
                 cmd.Connection = conexao.conectar();
                 //Executar o comando
-                cpID = cmd.ExecuteNonQuery().ToString();
+                cmd.ExecuteNonQuery().ToString();
+
+                //Obtem a ID do registro criado e retorna a tela
+                cmd.CommandText = "SELECT IDENT_CURRENT ('OPRegContatosEmpresa') AS Current_Identity";
+                string LID = Convert.ToString(cmd.ExecuteScalar());
+
+                cpID = LID;
                 //Desconectar
                 conexao.desconectar();
 
@@ -123,17 +129,13 @@ namespace Banco_de_Dados
             }
             if (cpUsuarioDR != null)
             {
-                sqlconteudo += "OPAUsuarioDR = '" + cpUsuarioDR.ToString() + "',";
+                sqlconteudo += "OPRCEUsuarioDR = '" + cpUsuarioDR.ToString() + "',";
             }
             if (cpReclamacao != null)
             {
                 sqlconteudo += "OPRCEReclamacao = '" + cpReclamacao.ToString() + "',";
             }
 
-            if (cpUsuarioDR != null)
-            {
-                sqlconteudo += "OPRCEUsuarioDR = '" + cpUsuarioDR.ToString() + "',";
-            }
             sSQL = sSQL + sqlconteudo.Remove(sqlconteudo.Length - 1);
             sSQL = sSQL + sqlWhere;
 
@@ -162,9 +164,17 @@ namespace Banco_de_Dados
             string sqlWhere = "WHERE ";
             char ClausulaWhere = 'N';
 
-            if (cpEmpresaDR != null)
+            if(cpID != null)
             {
                 if (cpID != "")
+                {
+                    sqlWhere = "WHERE OPRegContatosEmpresa = '" + cpID + "'";
+                    ClausulaWhere = 'S';
+                }
+            }
+            if (cpEmpresaDR != null)
+            {
+                if (cpEmpresaDR != "")
                 {
                     sqlWhere = "WHERE OPAvisos = '" + cpEmpresaDR + "'";
                     ClausulaWhere = 'S';

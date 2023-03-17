@@ -39,19 +39,25 @@
             this.txtDataContato = new System.Windows.Forms.TextBox();
             this.labDataContato = new System.Windows.Forms.Label();
             this.grdProdSugeridos = new System.Windows.Forms.DataGridView();
+            this.grdIDProdSugerido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grdDescItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grdVlrofertado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.grdAceito = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.grdQuantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtSugestoes = new System.Windows.Forms.TextBox();
             this.labSugestoes = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtReclamacoes = new System.Windows.Forms.TextBox();
             this.labProdSugeridos = new System.Windows.Forms.Label();
-            this.txtProduto = new System.Windows.Forms.TextBox();
+            this.txtDescProduto = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.cmdAdicionar = new System.Windows.Forms.Button();
             this.cmdRemover = new System.Windows.Forms.Button();
+            this.labVlrOfertado = new System.Windows.Forms.Label();
+            this.txtValorOfertado = new System.Windows.Forms.TextBox();
+            this.labQuantidade = new System.Windows.Forms.Label();
+            this.txtQuantidade = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtRegistro = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.grdProdSugeridos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,7 +65,7 @@
             // 
             this.labEmpresa.AutoSize = true;
             this.labEmpresa.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labEmpresa.Location = new System.Drawing.Point(12, 54);
+            this.labEmpresa.Location = new System.Drawing.Point(92, 54);
             this.labEmpresa.Name = "labEmpresa";
             this.labEmpresa.Size = new System.Drawing.Size(78, 15);
             this.labEmpresa.TabIndex = 0;
@@ -67,10 +73,11 @@
             // 
             // txtEmpresa
             // 
-            this.txtEmpresa.Location = new System.Drawing.Point(12, 72);
+            this.txtEmpresa.Location = new System.Drawing.Point(92, 72);
             this.txtEmpresa.Name = "txtEmpresa";
-            this.txtEmpresa.Size = new System.Drawing.Size(610, 23);
+            this.txtEmpresa.Size = new System.Drawing.Size(542, 23);
             this.txtEmpresa.TabIndex = 1;
+            this.txtEmpresa.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtEmpresa_KeyDown);
             // 
             // lbCabeçallho
             // 
@@ -152,23 +159,32 @@
             this.grdProdSugeridos.AllowUserToDeleteRows = false;
             this.grdProdSugeridos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdProdSugeridos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.grdIDProdSugerido,
             this.grdDescItem,
             this.grdVlrofertado,
-            this.grdAceito,
             this.grdQuantidade});
             this.grdProdSugeridos.Location = new System.Drawing.Point(12, 327);
             this.grdProdSugeridos.Name = "grdProdSugeridos";
             this.grdProdSugeridos.ReadOnly = true;
             this.grdProdSugeridos.RowTemplate.Height = 25;
+            this.grdProdSugeridos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grdProdSugeridos.Size = new System.Drawing.Size(776, 111);
             this.grdProdSugeridos.TabIndex = 52;
+            this.grdProdSugeridos.SelectionChanged += new System.EventHandler(this.grdProdSugeridos_SelectionChanged);
+            // 
+            // grdIDProdSugerido
+            // 
+            this.grdIDProdSugerido.HeaderText = "ID";
+            this.grdIDProdSugerido.Name = "grdIDProdSugerido";
+            this.grdIDProdSugerido.ReadOnly = true;
+            this.grdIDProdSugerido.Visible = false;
             // 
             // grdDescItem
             // 
             this.grdDescItem.HeaderText = "Produto";
             this.grdDescItem.Name = "grdDescItem";
             this.grdDescItem.ReadOnly = true;
-            this.grdDescItem.Width = 350;
+            this.grdDescItem.Width = 500;
             // 
             // grdVlrofertado
             // 
@@ -176,13 +192,6 @@
             this.grdVlrofertado.Name = "grdVlrofertado";
             this.grdVlrofertado.ReadOnly = true;
             this.grdVlrofertado.Width = 120;
-            // 
-            // grdAceito
-            // 
-            this.grdAceito.HeaderText = "Aceito";
-            this.grdAceito.Name = "grdAceito";
-            this.grdAceito.ReadOnly = true;
-            this.grdAceito.Width = 50;
             // 
             // grdQuantidade
             // 
@@ -235,18 +244,19 @@
             this.labProdSugeridos.TabIndex = 57;
             this.labProdSugeridos.Text = "Produtos Sugeridos";
             // 
-            // txtProduto
+            // txtDescProduto
             // 
-            this.txtProduto.Location = new System.Drawing.Point(12, 270);
-            this.txtProduto.Name = "txtProduto";
-            this.txtProduto.Size = new System.Drawing.Size(706, 23);
-            this.txtProduto.TabIndex = 58;
+            this.txtDescProduto.Location = new System.Drawing.Point(12, 272);
+            this.txtDescProduto.Name = "txtDescProduto";
+            this.txtDescProduto.Size = new System.Drawing.Size(442, 23);
+            this.txtDescProduto.TabIndex = 58;
+            this.txtDescProduto.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtProduto_KeyDown);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(12, 252);
+            this.label2.Location = new System.Drawing.Point(12, 254);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(76, 15);
             this.label2.TabIndex = 59;
@@ -261,6 +271,7 @@
             this.cmdAdicionar.Size = new System.Drawing.Size(29, 29);
             this.cmdAdicionar.TabIndex = 60;
             this.cmdAdicionar.UseVisualStyleBackColor = true;
+            this.cmdAdicionar.Click += new System.EventHandler(this.cmdAdicionar_Click);
             // 
             // cmdRemover
             // 
@@ -271,6 +282,59 @@
             this.cmdRemover.Size = new System.Drawing.Size(29, 29);
             this.cmdRemover.TabIndex = 61;
             this.cmdRemover.UseVisualStyleBackColor = true;
+            this.cmdRemover.Click += new System.EventHandler(this.cmdRemover_Click);
+            // 
+            // labVlrOfertado
+            // 
+            this.labVlrOfertado.AutoSize = true;
+            this.labVlrOfertado.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labVlrOfertado.Location = new System.Drawing.Point(471, 254);
+            this.labVlrOfertado.Name = "labVlrOfertado";
+            this.labVlrOfertado.Size = new System.Drawing.Size(89, 15);
+            this.labVlrOfertado.TabIndex = 63;
+            this.labVlrOfertado.Text = "Valor Ofertado";
+            // 
+            // txtValorOfertado
+            // 
+            this.txtValorOfertado.Location = new System.Drawing.Point(471, 272);
+            this.txtValorOfertado.Name = "txtValorOfertado";
+            this.txtValorOfertado.Size = new System.Drawing.Size(108, 23);
+            this.txtValorOfertado.TabIndex = 62;
+            // 
+            // labQuantidade
+            // 
+            this.labQuantidade.AutoSize = true;
+            this.labQuantidade.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labQuantidade.Location = new System.Drawing.Point(595, 254);
+            this.labQuantidade.Name = "labQuantidade";
+            this.labQuantidade.Size = new System.Drawing.Size(71, 15);
+            this.labQuantidade.TabIndex = 65;
+            this.labQuantidade.Text = "Quantidade";
+            // 
+            // txtQuantidade
+            // 
+            this.txtQuantidade.Location = new System.Drawing.Point(595, 272);
+            this.txtQuantidade.Name = "txtQuantidade";
+            this.txtQuantidade.Size = new System.Drawing.Size(108, 23);
+            this.txtQuantidade.TabIndex = 64;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(12, 54);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(78, 15);
+            this.label3.TabIndex = 67;
+            this.label3.Text = "Registro - F1";
+            // 
+            // txtRegistro
+            // 
+            this.txtRegistro.Location = new System.Drawing.Point(12, 72);
+            this.txtRegistro.Name = "txtRegistro";
+            this.txtRegistro.Size = new System.Drawing.Size(76, 23);
+            this.txtRegistro.TabIndex = 66;
+            this.txtRegistro.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtRegistro_KeyDown);
             // 
             // frmContatosEmpresas
             // 
@@ -278,10 +342,16 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.ControlBox = false;
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.txtRegistro);
+            this.Controls.Add(this.labQuantidade);
+            this.Controls.Add(this.txtQuantidade);
+            this.Controls.Add(this.labVlrOfertado);
+            this.Controls.Add(this.txtValorOfertado);
             this.Controls.Add(this.cmdRemover);
             this.Controls.Add(this.cmdAdicionar);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.txtProduto);
+            this.Controls.Add(this.txtDescProduto);
             this.Controls.Add(this.labProdSugeridos);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtReclamacoes);
@@ -299,6 +369,7 @@
             this.Controls.Add(this.labEmpresa);
             this.Name = "frmContatosEmpresas";
             this.Text = "Contatos Empresas";
+            this.Load += new System.EventHandler(this.frmContatosEmpresas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grdProdSugeridos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -317,18 +388,24 @@
         private TextBox txtDataContato;
         private Label labDataContato;
         private DataGridView grdProdSugeridos;
-        private DataGridViewTextBoxColumn grdDescItem;
-        private DataGridViewTextBoxColumn grdVlrofertado;
-        private DataGridViewCheckBoxColumn grdAceito;
-        private DataGridViewTextBoxColumn grdQuantidade;
         private TextBox txtSugestoes;
         private Label labSugestoes;
         private Label label1;
         private TextBox txtReclamacoes;
         private Label labProdSugeridos;
-        private TextBox txtProduto;
+        private TextBox txtDescProduto;
         private Label label2;
         private Button cmdAdicionar;
         private Button cmdRemover;
+        private DataGridViewTextBoxColumn grdIDProdSugerido;
+        private DataGridViewTextBoxColumn grdDescItem;
+        private DataGridViewTextBoxColumn grdVlrofertado;
+        private DataGridViewTextBoxColumn grdQuantidade;
+        private Label labVlrOfertado;
+        private TextBox txtValorOfertado;
+        private Label labQuantidade;
+        private TextBox txtQuantidade;
+        private Label label3;
+        private TextBox txtRegistro;
     }
 }

@@ -247,7 +247,7 @@ namespace Banco_de_Dados
                 }
                 if (inVendedorDR != "")
                 {
-                    sqlWhere += "OPPVendeorDR like " + inVendedorDR + "%' " + "AND";
+                    sqlWhere += "OPPVendedorDR like '" + inVendedorDR + "%' " + "AND";
                     ClausulaWhere = 'S';
                 }
 
@@ -329,6 +329,55 @@ namespace Banco_de_Dados
                 cpMsgErro = e.Message.ToString();
             }
             cmd.Dispose();
+        }
+
+        public List<BDPedido> CarregaDadosData(string inDataInicio, string inDataTermino, string inVendedorDR)
+        {
+            List<BDPedido> lstPedido = new List<BDPedido>();
+            string slqSelect = "SELECT * FROM OPPPedido WHERE (OPPDataConfirmacao >= '" + inDataInicio + "' AND OPPDataConfirmacao <= '" + inDataTermino + "') AND OPPVendedorDR = '" + inVendedorDR + "'";
+
+            cmd.CommandText = slqSelect;
+            var dt = new DataTable();
+
+            try
+            {
+                cmd.Connection = conexao.conectar();
+                //Executar o comando
+                SqlDataReader reader = cmd.ExecuteReader();
+                dt.Load(reader);
+                reader.Close();
+
+                foreach (DataRow dr in dt.Rows)
+                {
+                    BDPedido bDPedido = new BDPedido();
+                    bDPedido.cpID = dr["OPPPedido"].ToString();
+                    bDPedido.cpEmpresaDR = dr["OPPEmpresaDR"].ToString();
+                    bDPedido.cpPedidoExterno = dr["OPPPedidoExterno"].ToString();
+                    bDPedido.cpDataContato = dr["OPPDataContato"].ToString();
+                    bDPedido.cpDataConfirmacao = dr["OPPDataConfirmacao"].ToString();
+                    bDPedido.cpNatureOperacaoDR = dr["OPPNaturezaDR"].ToString();
+                    bDPedido.cpObservacoes = dr["OPPObservacao"].ToString();
+                    bDPedido.cpVlrTotalPedido = dr["OPPVlrTotalPeddo"].ToString();
+                    bDPedido.cpVlrItensFaturando = dr["OPPVlritensFaturando"].ToString();
+                    bDPedido.cpVlrImpostos = dr["OPPVlrimpostos"].ToString();
+                    bDPedido.cpComissao = dr["OPPComissao"].ToString();
+                    bDPedido.cpVendedorDR = dr["OPPVendedorDR"].ToString();
+                    bDPedido.cpConcluido = dr["OPPConcluido"].ToString();
+
+                    lstPedido.Add(bDPedido);
+
+                }
+
+                //Desconectar
+                conexao.desconectar();
+
+            }
+            catch (SqlException e)
+            {
+                cpMsgErro = e.Message.ToString();
+            }
+            cmd.Dispose();
+            return lstPedido;
         }
     }
 }

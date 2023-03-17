@@ -62,7 +62,7 @@
             this.txtObservacao = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.txtTotalItens = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.txtTotalFaturando = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
@@ -386,13 +386,13 @@
             this.txtTotalItens.Size = new System.Drawing.Size(113, 23);
             this.txtTotalItens.TabIndex = 34;
             // 
-            // textBox9
+            // txtTotalFaturando
             // 
-            this.textBox9.Location = new System.Drawing.Point(675, 298);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.ReadOnly = true;
-            this.textBox9.Size = new System.Drawing.Size(113, 23);
-            this.textBox9.TabIndex = 35;
+            this.txtTotalFaturando.Location = new System.Drawing.Point(675, 298);
+            this.txtTotalFaturando.Name = "txtTotalFaturando";
+            this.txtTotalFaturando.ReadOnly = true;
+            this.txtTotalFaturando.Size = new System.Drawing.Size(113, 23);
+            this.txtTotalFaturando.TabIndex = 35;
             // 
             // label18
             // 
@@ -521,7 +521,7 @@
             this.chkConcluido.Text = "Concluir";
             this.chkConcluido.UseVisualStyleBackColor = true;
             // 
-            // Pedido
+            // frmPedido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -540,7 +540,7 @@
             this.Controls.Add(this.textBox10);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.label18);
-            this.Controls.Add(this.textBox9);
+            this.Controls.Add(this.txtTotalFaturando);
             this.Controls.Add(this.txtTotalItens);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.txtObservacao);
@@ -574,7 +574,7 @@
             this.Controls.Add(this.txtEmpresa);
             this.Controls.Add(this.txtNumeroPedido);
             this.Controls.Add(this.lbPedidos);
-            this.Name = "Pedido";
+            this.Name = "frmPedido";
             this.Text = "Pedido";
             this.Load += new System.EventHandler(this.Pedido_Load);
             this.ResumeLayout(false);
@@ -617,7 +617,7 @@
         private TextBox txtObservacao;
         private Label label17;
         private TextBox textBox8;
-        private TextBox textBox9;
+        private TextBox txtTotalFaturando;
         private Label label18;
         private Label label19;
         private Label label20;

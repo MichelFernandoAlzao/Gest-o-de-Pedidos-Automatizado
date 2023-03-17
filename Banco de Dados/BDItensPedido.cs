@@ -15,6 +15,7 @@ namespace Banco_de_Dados
         public string cpProdutoID { get; set; }
         public string cpQuantidade { get; set; }
         public string cpLote { get; set; }
+        public string cpFatura { get; set; }
         public string cpValorUnit { get; set; }
         public string cpValorTotalItem { get; set; }
         public string cpFornecedor { get; set; }
@@ -53,6 +54,13 @@ namespace Banco_de_Dados
                 sqlCampos += "OPITPLote, ";
 
                 sqlconteudo += "'" + cpLote.ToString() + "',";
+            }
+
+            if (cpFatura.ToString() != "")
+            {
+                sqlCampos += "OPITPFatura, ";
+
+                sqlconteudo += "'" + cpFatura.ToString() + "',";
             }
             if (cpValorUnit.ToString() != "")
             {
@@ -134,6 +142,10 @@ namespace Banco_de_Dados
             if (cpLote != null)
             {
                 sqlconteudo += "OPITPLote = '" + cpLote.ToString() + "',";
+            }
+            if (cpFatura != null)
+            {
+                sqlconteudo += "OPITPFatura = '" + cpFatura.ToString() + "',";
             }
             if (cpValorUnit != null)
             {
@@ -246,6 +258,7 @@ namespace Banco_de_Dados
                     bDITPedido.cpProdutoID = dr["OPITPProdutoDR"].ToString();
                     bDITPedido.cpQuantidade = dr["OPITPQuantidade"].ToString();
                     bDITPedido.cpLote = dr["OPITPLote"].ToString();
+                    bDITPedido.cpFatura = dr["OPITPFatura"].ToString();
                     bDITPedido.cpValorUnit = dr["OPITPValorUnitario"].ToString();
                     bDITPedido.cpValorTotalItem = dr["OPITPValorTotalItem"].ToString();
                     bDITPedido.cpFornecedor = dr["OPITPFornecedorDR"].ToString();

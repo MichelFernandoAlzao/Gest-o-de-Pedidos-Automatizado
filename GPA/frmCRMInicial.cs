@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Banco_de_Dados;
+using Camada_Negocios;
 
 namespace Formularios
 {
@@ -55,6 +56,7 @@ namespace Formularios
             CarregaAvisos();
             CarregaUltContato();
             CarregaUltVenda();
+            ProgressaoMeta();
         }
 
         private void cmdCadastrosEmpresas_Click(object sender, EventArgs e)
@@ -79,7 +81,7 @@ namespace Formularios
 
         private void cmdRegistraContatos_Click(object sender, EventArgs e)
         {
-            frmContatosEmpresas frmContatosEmpresas = new frmContatosEmpresas();
+            frmContatosEmpresas frmContatosEmpresas = new frmContatosEmpresas(LUsuario);
             frmContatosEmpresas.ShowDialog();
         }
 
@@ -237,9 +239,10 @@ namespace Formularios
                         }
                         string[] Row = new string[]
                          {
-                            item.cpID.ToString(),
                             item.cpDataContato.ToString(),
                             pRazao.ToString(),
+                            item.cpID.ToString(),
+
                          };
                         grdUltContato.Rows.Add(Row);
                     }
@@ -282,16 +285,25 @@ namespace Formularios
                         }
                         string[] Row = new string[]
                          {
-                            item.cpID.ToString(),
-                            item.cpDataContato.ToString(),
-                            pRazao.ToString(),
-                            item.cpVlrTotalPedido.ToString()
+                             item.cpDataContato.ToString(),
+                             pRazao.ToString(),
+                             item.cpVlrTotalPedido.ToString()
                          };
                         grdUltimasVendas.Rows.Add(Row);
                     }
                 }
             }
 
+        }
+
+        public void ProgressaoMeta()
+        {
+            claCalculaProgressaoMeta claCalculaProgressaoMeta = new claCalculaProgressaoMeta();
+            string[] VlrCalcMetas = claCalculaProgressaoMeta.CarregaProgressao(LUsuario);
+            txtObjetivoDiario.Text = VlrCalcMetas[3].ToString();
+            string AuxVlr = VlrCalcMetas[1].Replace(",", ".");
+            pgrsbMeta.Value = (int)Convert.ToInt32(AuxVlr);
+            labProgressaoValor.Text = AuxVlr + "%";
         }
     }
 }

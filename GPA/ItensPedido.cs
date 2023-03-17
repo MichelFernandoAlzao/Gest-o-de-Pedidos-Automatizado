@@ -103,6 +103,15 @@ namespace Formularios
 
             OBjGravarItem.cpValorFornecedor = txtValorFornecedor.Text.Replace(",", ".");
 
+            if (chkFatura.Checked)
+            {
+                OBjGravarItem.cpFatura = "S";
+            }
+            else
+            {
+                OBjGravarItem.cpFatura = "N";
+            }
+
             claNCalculaProduto ClaCalculaProduto = new claNCalculaProduto();
             OBjGravarItem.cpValorTotalItem = ClaCalculaProduto.CalculaProduto(txtValor.Text, txtQuantidade.Text, "").Replace(",",".");
             if(LIDITPedido == "")
@@ -125,6 +134,7 @@ namespace Formularios
                 BDPedido objPedido = new BDPedido();
                 claNCalculaProduto claCalcula = new claNCalculaProduto();
                 claCalcula.CalculaTotalItens(LIDPedido);
+                claCalcula.CalculaTotalFaturando(LIDPedido);
 
                 CarregaGrid();
             }
@@ -316,6 +326,14 @@ namespace Formularios
             txtLote.Text = lstITPedido[0].cpLote.ToString();
             txtValor.Text = lstITPedido[0].cpValorUnit.ToString();
             txtValorFornecedor.Text = lstITPedido[0].cpValorFornecedor.ToString();
+            if (lstITPedido[0].cpFatura == "S")
+            {
+                chkFatura.Checked = true;
+            }
+            else
+            {
+                chkFatura.Checked = false;
+            }
             if (lstITPedido[0].cpFornecedor != "")
             {
                 BDCadastroGeral objFornecedor = new BDCadastroGeral();

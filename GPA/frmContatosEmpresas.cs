@@ -13,15 +13,20 @@ namespace Formularios
 {
     public partial class frmContatosEmpresas : Form
     {
-        string LID = "";
-        string LIDRegistro = "";
+        public string LID = "";
+        public string LRazaoSocial = "";
+        public string LIDProduto = "";
+        public string LIDRegistro = "";
         string LDataContato = "";
         string LSugestoes = "";
         string LReclamacoes = "";
         string LVendedor = "";
+        string LIDPRodContato = "";
+        string LUsuario = "";
 
-        public frmContatosEmpresas()
+        public frmContatosEmpresas(string inUsuario)
         {
+            LUsuario = inUsuario;
             InitializeComponent();
         }
 
@@ -48,13 +53,68 @@ namespace Formularios
 
         private void cmdGravar_Click(object sender, EventArgs e)
         {
+            BDRegistroContato objContato = new BDRegistroContato();
+            if(LID == "")
+            {
+                MessageBox.Show("Nenhumna Empresa selcionada!","GPA");
+                return;
+            }
+            objContato.cpEmpresaDR = LID;
 
+            DateTime DataContato;
+            if(DateTime.TryParse(txtDataContato.Text.ToString(), out DataContato))
+            {
+                objContato.cpDataContato = DataContato.ToString();
+            }
+            else
+            {
+                MessageBox.Show("Data em formato invalido", "GPA");
+                return ;
+            }
+            if(txtSugestoes.Text != "")
+            {
+                objContato.cpSugestao = txtSugestoes.Text;
+            }
+            if(txtReclamacoes.Text != "")
+            {
+                objContato.cpReclamacao = txtReclamacoes.Text;
+            }
+            objContato.cpUsuarioDR = LUsuario;
+
+            if(LIDRegistro == "")
+            {
+                objContato.InsereDados();
+                if(objContato.cpMsgErro!="" && objContato.cpMsgErro != null)
+                {
+                    MessageBox.Show(objContato.cpMsgErro, "GPA");
+                    return;
+                }
+            }
+            else
+            {
+                objContato.cpID = LIDRegistro;
+                objContato.AlteraDados();
+                if (objContato.cpMsgErro != "" && objContato.cpMsgErro != null)
+                {
+                    MessageBox.Show(objContato.cpMsgErro, "GPA");
+                    return;
+                }
+            }
+
+            if(objContato.cpID != "")
+            {
+                LIDRegistro = objContato.cpID;
+                txtRegistro.Text = LIDRegistro;
+            }
+
+            MostraDados();
         }
 
         private void cmdExcluir_Click(object sender, EventArgs e)
         {
             BDRegistroContato objRegContato = new BDRegistroContato();
             objRegContato.cpID = LIDRegistro;
+            objRegContato.Excluir();
             LID = "";
             LIDRegistro = "";
             LDataContato = "";
@@ -64,7 +124,167 @@ namespace Formularios
             txtDataContato.Text = "";
             txtSugestoes.Text = "";
             txtReclamacoes.Text = "";
+            txtRegistro.Text = "";
             grdProdSugeridos.Rows.Clear();
+        }
+
+        public void MostraDados()
+        {
+            BDRegistroContato objRegContato = new BDRegistroContato();
+            objRegContato.cpID = LIDRegistro;
+            List<BDRegistroContato> lstRegContato = objRegContato.CarregaDados();
+            if(lstRegContato.Count > 0)
+            {
+                LID = lstRegContato[0].cpEmpresaDR;
+                if(LID != "")
+                {
+                    BDCadastroGeral objEmpresa = new BDCadastroGeral();
+                    List<BDCadastroGeral> lstEmpresa = objEmpresa.CarregaDados(LID,"","","","","","","","","");
+                    txtEmpresa.Text = lstEmpresa[0].RazaoSocial.ToString();
+                }
+            }
+            txtDataContato.Text = lstRegContato[0].cpDataContato.ToString().Substring(0,10);
+            txtSugestoes.Text = lstRegContato[0].cpSugestao.ToString();
+            txtReclamacoes.Text = lstRegContato[0].cpReclamacao.ToString();
+
+            CarregaGridProdutos();
+
+
+        }
+
+        private void cmdRemover_Click(object sender, EventArgs e)
+        {
+            if(LIDPRodContato == "")
+            {
+                MessageBox.Show("Nenhum Produto selecionado", "GPA");
+                return;
+            }
+            BDProdutosContato objProdutoContato = new BDProdutosContato();
+            objProdutoContato.cpID = LIDPRodContato;
+            objProdutoContato.Excluir();
+            if(objProdutoContato.cpMsgErro != "")
+            {
+                MessageBox.Show(objProdutoContato.cpMsgErro, "GPA");
+                return;
+            }
+            else
+            {
+                MessageBox.Show("Exclusão Realizada");
+            }
+
+            CarregaGridProdutos();
+        }
+
+        public void CarregaGridProdutos()
+        {
+            grdProdSugeridos.Rows.Clear();
+            BDProdutosContato objProdContato = new BDProdutosContato();
+            objProdContato.cpRegContatoDR = LIDRegistro;
+            List<BDProdutosContato> lstProdContato = objProdContato.CarregaDados();
+
+            if(lstProdContato.Count > 0)
+            {
+                foreach (BDProdutosContato item in lstProdContato)
+                {
+                    string DescProduto;
+                    BDCadProdutos objProduto = new BDCadProdutos();
+                    objProduto.cpID = item.cpProdutoDR;
+                    List<BDCadProdutos> lstProduto = objProduto.CarregaDados();
+                    string[] Row = new string[]
+                    {
+                            item.cpID.ToString(),
+                            lstProduto[0].cpDescricao.ToString(),
+                            item.cpValorOfertado.ToString(),
+                            item.cpQuantidade.ToString()
+                    };
+                    grdProdSugeridos.Rows.Add(Row);
+                }
+            }
+        }
+
+        private void cmdAdicionar_Click(object sender, EventArgs e)
+        {
+            if(LIDRegistro == "")
+            {
+                MessageBox.Show("Nenhum registro selecionado!", "GPA");
+                return;
+            }
+
+            if(LIDProduto == "")
+            {
+                MessageBox.Show("Nenhum Produto selecionado!", "GPA");
+                return;
+            }
+            BDProdutosContato objProdContato = new BDProdutosContato();
+            objProdContato.cpProdutoDR = LIDProduto;
+            objProdContato.cpRegContatoDR = LIDRegistro;
+            objProdContato.cpValorOfertado = txtValorOfertado.Text;
+            objProdContato.cpQuantidade = txtQuantidade.Text;
+
+            objProdContato.InsereDados();
+
+            txtDescProduto.Text = "";
+            txtValorOfertado.Text = "";
+            txtQuantidade.Text = "";
+
+            CarregaGridProdutos();
+        }
+
+        private void txtProduto_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.F1)
+            {
+                frmSelecionaProduto objSelecProduto = new frmSelecionaProduto(this, "", txtDescProduto.Text, "", "");
+                objSelecProduto.ShowDialog();
+                if (LIDProduto != "")
+                {
+                    BDCadProdutos objProduto = new BDCadProdutos();
+                    objProduto.cpID = LIDProduto;
+                    List<BDCadProdutos> lstProduto = objProduto.CarregaDados();
+                    txtDescProduto.Text = lstProduto[0].cpDescricao.ToString();
+                }
+            }
+        }
+
+        private void txtEmpresa_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.F1)
+            {
+                frmSelecionaEmpresa objTela = new frmSelecionaEmpresa(this, "", txtEmpresa.Text.ToString(), "", "");
+                objTela.ShowDialog();
+                if (LRazaoSocial != "")
+                {
+                    txtEmpresa.Text = LRazaoSocial;
+                }
+            }
+        }
+
+        private void frmContatosEmpresas_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void grdProdSugeridos_SelectionChanged(object sender, EventArgs e)
+        {
+            if(grdProdSugeridos.SelectedRows.Count == 0)
+            {
+                return;
+            }
+            LIDPRodContato = grdProdSugeridos.SelectedRows[0].Cells[0].Value.ToString();
+        }
+
+        private void txtRegistro_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.F1)
+            {
+                frmSelecionarRegistroContato frmSelecionarRegistroContato = new frmSelecionarRegistroContato(this, txtRegistro.Text);
+                frmSelecionarRegistroContato.ShowDialog();
+                if (LIDRegistro != "")
+                {
+                    MostraDados();
+                }
+            }
+            
         }
     }
 }

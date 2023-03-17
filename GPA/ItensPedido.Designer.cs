@@ -70,6 +70,7 @@
             this.labValorForencedor = new System.Windows.Forms.Label();
             this.txtValorFornecedor = new System.Windows.Forms.TextBox();
             this.cmdExcluir = new System.Windows.Forms.Button();
+            this.chkFatura = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.grdItensPedido)).BeginInit();
             this.grpbVlrPraticados.SuspendLayout();
             this.SuspendLayout();
@@ -461,12 +462,23 @@
             this.cmdExcluir.UseVisualStyleBackColor = true;
             this.cmdExcluir.Click += new System.EventHandler(this.cmdExcluir_Click);
             // 
+            // chkFatura
+            // 
+            this.chkFatura.AutoSize = true;
+            this.chkFatura.Location = new System.Drawing.Point(485, 265);
+            this.chkFatura.Name = "chkFatura";
+            this.chkFatura.Size = new System.Drawing.Size(59, 19);
+            this.chkFatura.TabIndex = 23;
+            this.chkFatura.Text = "Fatura";
+            this.chkFatura.UseVisualStyleBackColor = true;
+            // 
             // frmItensPedido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.ControlBox = false;
+            this.Controls.Add(this.chkFatura);
             this.Controls.Add(this.cmdExcluir);
             this.Controls.Add(this.labValorForencedor);
             this.Controls.Add(this.txtValorFornecedor);
@@ -545,5 +557,6 @@
         private DataGridViewTextBoxColumn grdLote;
         private DataGridViewTextBoxColumn grdValorFornecedor;
         private Button cmdExcluir;
+        private CheckBox chkFatura;
     }
 }

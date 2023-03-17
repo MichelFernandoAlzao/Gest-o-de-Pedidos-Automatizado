@@ -12,52 +12,56 @@ using Banco_de_Dados;
 
 namespace Formularios
 {
-    public partial class frmSelecionaPedido : Form
+    public partial class frmSelecionarRegistroContato : Form
     {
+
         public string LID;
-        private string Lvendedor;
         Form LChamador;
 
-        public frmSelecionaPedido(Form frmChamador, string inID, string inVendedor)
+        public frmSelecionarRegistroContato(Form frmChamador,string inID)
         {
             InitializeComponent();
             LChamador = frmChamador;
             LID = inID;
-            Lvendedor = inVendedor;
+           
         }
 
-        private void frmSelecionaPedido_Load(object sender, EventArgs e)
+        private void frmSelecionarRegistroContato_Load(object sender, EventArgs e)
         {
-            CarregaProduto(LID, Lvendedor);
+            CarregaRegistro(LID);
         }
 
-        private void CarregaProduto(string inID, string inVendedor)
+        private void CarregaRegistro(string inID)
         {
-            BDPedido objCadastro = new BDPedido();
-            List<BDPedido> lstCadastro = objCadastro.CarregaDados(inID,"",inVendedor);
+            BDRegistroContato objCadastro = new BDRegistroContato();
+            if(LID != "")
+            {
+                objCadastro.cpID = LID;
+            }
+            List<BDRegistroContato> lstCadastro = objCadastro.CarregaDados();
             if (lstCadastro.Count > 0)
             {
-                foreach (BDPedido item in lstCadastro)
+                foreach (BDRegistroContato item in lstCadastro)
                 {
                     string RazaoSocial;
                     BDCadastroGeral objEmpresa = new BDCadastroGeral();
-                    List<BDCadastroGeral> lstEmpresa = objEmpresa.CarregaDados(item.cpEmpresaDR,"","","","","","","","","");
+                    List<BDCadastroGeral> lstEmpresa = objEmpresa.CarregaDados(item.cpEmpresaDR, "", "", "", "", "", "", "", "", "");
                     string[] Row = new string[]
                     {
                             item.cpID.ToString(),
                             lstEmpresa[0].RazaoSocial.ToString(),
                             item.cpDataContato.ToString().Substring(0, 10)
                     };
-                    grdPedidos.Rows.Add(Row);
+                    grdRegContatos.Rows.Add(Row);
                 }
             }
         }
 
         private void grdCadastroGeral_SelectionChanged(object sender, EventArgs e)
         {
-            if (grdPedidos.SelectedRows.Count > 0)
+            if (grdRegContatos.SelectedRows.Count > 0)
             {
-                LID = grdPedidos.SelectedRows[0].Cells[0].Value.ToString();
+                LID = grdRegContatos.SelectedRows[0].Cells[0].Value.ToString();
             }
         }
 
@@ -74,11 +78,11 @@ namespace Formularios
 
         private void RetornaResultado()
         {
-            if (grdPedidos.SelectedRows.Count > 0)
+            if (grdRegContatos.SelectedRows.Count > 0)
             {
                 var TipoChamador = LChamador.GetType();
-                FieldInfo NumeroIDCadastro = TipoChamador.GetField("LIDPedido");
-                NumeroIDCadastro.SetValue(LChamador, grdPedidos.SelectedRows[0].Cells[0].Value.ToString());
+                FieldInfo NumeroIDCadastro = TipoChamador.GetField("LIDRegistro");
+                NumeroIDCadastro.SetValue(LChamador, grdRegContatos.SelectedRows[0].Cells[0].Value.ToString());
             }
             Close();
         }
@@ -87,6 +91,6 @@ namespace Formularios
         {
             this.Close();
         }
-
     }
 }
+

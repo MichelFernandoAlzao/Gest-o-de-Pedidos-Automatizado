@@ -41,6 +41,30 @@ namespace Camada_Negocios
                 objPedido.AlteraDados();
 
             }
+        }
+
+        public void CalculaTotalFaturando(string inPedidoDR)
+        {
+            double pTotalFaturando = 0;
+            BDItensPedido objItens = new BDItensPedido();
+            objItens.cpPedidoDR = inPedidoDR;
+            List<BDItensPedido> lstItens = objItens.CarregaDados();
+            if (lstItens.Count > 0)
+            {
+                foreach (BDItensPedido obj in lstItens)
+                {
+                    if(obj.cpFatura != "S")
+                    {
+                        continue;
+                    }
+                    pTotalFaturando = pTotalFaturando + Convert.ToDouble(obj.cpValorTotalItem);
+                }
+                BDPedido objPedido = new BDPedido();
+                objPedido.cpID = inPedidoDR;
+                objPedido.cpVlrItensFaturando = Convert.ToString(pTotalFaturando).Replace(",", ".");
+                objPedido.AlteraDados();
+
+            }
 
 
         }
