@@ -28,537 +28,585 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.CalendarioContatos = new System.Windows.Forms.MonthCalendar();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pgrsbMeta = new System.Windows.Forms.ProgressBar();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.cmdConsultaPedido = new System.Windows.Forms.Button();
-            this.grdUltimasVendas = new System.Windows.Forms.DataGridView();
-            this.DataVenda = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.VRazao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.VValor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.grdUltContato = new System.Windows.Forms.DataGridView();
-            this.UltContato = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RazSocial = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Dispensar = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cmdRegistraContatos = new System.Windows.Forms.Button();
-            this.txtObjetivoDiario = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.cmdPedidos = new System.Windows.Forms.Button();
-            this.cmdCadastroProduto = new System.Windows.Forms.Button();
-            this.cmdCadastrosEmpresas = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.grdAvisos = new System.Windows.Forms.DataGridView();
-            this.avTexto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.grdDatainicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.grdDataTermino = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label5 = new System.Windows.Forms.Label();
-            this.grdContatosAgendados = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.labContatos = new System.Windows.Forms.Label();
-            this.cmdNatOperacao = new System.Windows.Forms.Button();
-            this.labNomeUsuario = new System.Windows.Forms.Label();
-            this.cmdParametros = new System.Windows.Forms.Button();
-            this.cmdCriarAviso = new System.Windows.Forms.Button();
-            this.labProgressaoValor = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.grdUltimasVendas)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grdUltContato)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grdAvisos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grdContatosAgendados)).BeginInit();
-            this.SuspendLayout();
+            CalendarioContatos = new MonthCalendar();
+            button1 = new Button();
+            labConsolidado = new Label();
+            pgrsbMeta = new ProgressBar();
+            labProgressao = new Label();
+            labMeta = new Label();
+            button2 = new Button();
+            cmdConsultaPedido = new Button();
+            grdUltimasVendas = new DataGridView();
+            DataVenda = new DataGridViewTextBoxColumn();
+            VRazao = new DataGridViewTextBoxColumn();
+            VValor = new DataGridViewTextBoxColumn();
+            grdUltContato = new DataGridView();
+            UltContato = new DataGridViewTextBoxColumn();
+            RazSocial = new DataGridViewTextBoxColumn();
+            Numero = new DataGridViewTextBoxColumn();
+            cmdRegistraContatos = new Button();
+            txtObjetivoDiario = new TextBox();
+            label4 = new Label();
+            label6 = new Label();
+            label7 = new Label();
+            cmdPedidos = new Button();
+            cmdCadastroProduto = new Button();
+            cmdCadastrosEmpresas = new Button();
+            button8 = new Button();
+            label8 = new Label();
+            textBox2 = new TextBox();
+            label9 = new Label();
+            label10 = new Label();
+            grdAvisos = new DataGridView();
+            avTexto = new DataGridViewTextBoxColumn();
+            grdDatainicio = new DataGridViewTextBoxColumn();
+            grdDataTermino = new DataGridViewTextBoxColumn();
+            label5 = new Label();
+            grdContatosAgendados = new DataGridView();
+            labContatos = new Label();
+            cmdNatOperacao = new Button();
+            labNomeUsuario = new Label();
+            cmdParametros = new Button();
+            cmdCriarAviso = new Button();
+            labVlrProgressao = new Label();
+            labVlrConsolidado = new Label();
+            labVlrMeta = new Label();
+            cmdAgendarContato = new Button();
+            labAgendarContato = new Label();
+            labNomeEmpresa = new Label();
+            grdID = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)grdUltimasVendas).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)grdUltContato).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)grdAvisos).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)grdContatosAgendados).BeginInit();
+            SuspendLayout();
             // 
             // CalendarioContatos
             // 
-            this.CalendarioContatos.Location = new System.Drawing.Point(18, 321);
-            this.CalendarioContatos.Name = "CalendarioContatos";
-            this.CalendarioContatos.TabIndex = 0;
-            this.CalendarioContatos.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CalendarioContatos_KeyDown);
+            CalendarioContatos.Location = new Point(18, 321);
+            CalendarioContatos.Name = "CalendarioContatos";
+            CalendarioContatos.TabIndex = 0;
+            CalendarioContatos.KeyDown += CalendarioContatos_KeyDown;
             // 
             // button1
             // 
-            this.button1.FlatAppearance.BorderSize = 3;
-            this.button1.Location = new System.Drawing.Point(132, 51);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(113, 44);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Meus Clientes";
-            this.button1.UseVisualStyleBackColor = true;
+            button1.FlatAppearance.BorderSize = 3;
+            button1.Location = new Point(132, 45);
+            button1.Name = "button1";
+            button1.Size = new Size(113, 44);
+            button1.TabIndex = 1;
+            button1.Text = "Meus Clientes";
+            button1.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // labConsolidado
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(257, 442);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(34, 15);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Meta";
+            labConsolidado.AutoSize = true;
+            labConsolidado.Location = new Point(257, 442);
+            labConsolidado.Name = "labConsolidado";
+            labConsolidado.Size = new Size(77, 15);
+            labConsolidado.TabIndex = 2;
+            labConsolidado.Text = "Consolidado:";
             // 
             // pgrsbMeta
             // 
-            this.pgrsbMeta.Location = new System.Drawing.Point(257, 460);
-            this.pgrsbMeta.Name = "pgrsbMeta";
-            this.pgrsbMeta.Size = new System.Drawing.Size(802, 23);
-            this.pgrsbMeta.TabIndex = 3;
+            pgrsbMeta.Location = new Point(257, 460);
+            pgrsbMeta.Name = "pgrsbMeta";
+            pgrsbMeta.Size = new Size(751, 23);
+            pgrsbMeta.TabIndex = 3;
             // 
-            // label2
+            // labProgressao
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(591, 442);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(65, 15);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Progressão";
+            labProgressao.AutoSize = true;
+            labProgressao.Location = new Point(591, 442);
+            labProgressao.Name = "labProgressao";
+            labProgressao.Size = new Size(78, 15);
+            labProgressao.TabIndex = 4;
+            labProgressao.Text = "Progressão%:";
             // 
-            // label3
+            // labMeta
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(1021, 442);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(32, 15);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Total";
+            labMeta.AutoSize = true;
+            labMeta.Location = new Point(918, 442);
+            labMeta.Name = "labMeta";
+            labMeta.Size = new Size(37, 15);
+            labMeta.TabIndex = 5;
+            labMeta.Text = "Meta:";
             // 
             // button2
             // 
-            this.button2.FlatAppearance.BorderSize = 3;
-            this.button2.Location = new System.Drawing.Point(18, 101);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(113, 44);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "Ultimas Vendas";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            button2.FlatAppearance.BorderSize = 3;
+            button2.Location = new Point(18, 95);
+            button2.Name = "button2";
+            button2.Size = new Size(113, 44);
+            button2.TabIndex = 6;
+            button2.Text = "Ultimas Vendas";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // cmdConsultaPedido
             // 
-            this.cmdConsultaPedido.FlatAppearance.BorderSize = 3;
-            this.cmdConsultaPedido.Location = new System.Drawing.Point(132, 101);
-            this.cmdConsultaPedido.Name = "cmdConsultaPedido";
-            this.cmdConsultaPedido.Size = new System.Drawing.Size(113, 44);
-            this.cmdConsultaPedido.TabIndex = 7;
-            this.cmdConsultaPedido.Text = "Consulta Pedidos";
-            this.cmdConsultaPedido.UseVisualStyleBackColor = true;
-            this.cmdConsultaPedido.Click += new System.EventHandler(this.cmdConsultaPedido_Click);
+            cmdConsultaPedido.FlatAppearance.BorderSize = 3;
+            cmdConsultaPedido.Location = new Point(132, 95);
+            cmdConsultaPedido.Name = "cmdConsultaPedido";
+            cmdConsultaPedido.Size = new Size(113, 44);
+            cmdConsultaPedido.TabIndex = 7;
+            cmdConsultaPedido.Text = "Consulta Pedidos";
+            cmdConsultaPedido.UseVisualStyleBackColor = true;
+            cmdConsultaPedido.Click += cmdConsultaPedido_Click;
             // 
             // grdUltimasVendas
             // 
-            this.grdUltimasVendas.AllowUserToAddRows = false;
-            this.grdUltimasVendas.AllowUserToDeleteRows = false;
-            this.grdUltimasVendas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdUltimasVendas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.DataVenda,
-            this.VRazao,
-            this.VValor});
-            this.grdUltimasVendas.Location = new System.Drawing.Point(669, 159);
-            this.grdUltimasVendas.Name = "grdUltimasVendas";
-            this.grdUltimasVendas.ReadOnly = true;
-            this.grdUltimasVendas.RowTemplate.Height = 25;
-            this.grdUltimasVendas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grdUltimasVendas.Size = new System.Drawing.Size(390, 280);
-            this.grdUltimasVendas.TabIndex = 8;
-            this.grdUltimasVendas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            grdUltimasVendas.AllowUserToAddRows = false;
+            grdUltimasVendas.AllowUserToDeleteRows = false;
+            grdUltimasVendas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            grdUltimasVendas.Columns.AddRange(new DataGridViewColumn[] { DataVenda, VRazao, VValor });
+            grdUltimasVendas.Location = new Point(638, 159);
+            grdUltimasVendas.Name = "grdUltimasVendas";
+            grdUltimasVendas.ReadOnly = true;
+            grdUltimasVendas.RowHeadersWidth = 5;
+            grdUltimasVendas.RowTemplate.Height = 25;
+            grdUltimasVendas.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            grdUltimasVendas.Size = new Size(370, 280);
+            grdUltimasVendas.TabIndex = 8;
             // 
             // DataVenda
             // 
-            this.DataVenda.HeaderText = "Data";
-            this.DataVenda.Name = "DataVenda";
-            this.DataVenda.ReadOnly = true;
-            this.DataVenda.Width = 75;
+            DataVenda.HeaderText = "Data";
+            DataVenda.Name = "DataVenda";
+            DataVenda.ReadOnly = true;
+            DataVenda.Width = 75;
             // 
             // VRazao
             // 
-            this.VRazao.HeaderText = "Razao Social";
-            this.VRazao.Name = "VRazao";
-            this.VRazao.ReadOnly = true;
-            this.VRazao.Width = 200;
+            VRazao.HeaderText = "Razao Social";
+            VRazao.Name = "VRazao";
+            VRazao.ReadOnly = true;
+            VRazao.Width = 210;
             // 
             // VValor
             // 
-            this.VValor.HeaderText = "Valor";
-            this.VValor.Name = "VValor";
-            this.VValor.ReadOnly = true;
-            this.VValor.Width = 70;
+            VValor.HeaderText = "Valor";
+            VValor.Name = "VValor";
+            VValor.ReadOnly = true;
+            VValor.Width = 70;
             // 
             // grdUltContato
             // 
-            this.grdUltContato.AllowUserToAddRows = false;
-            this.grdUltContato.AllowUserToDeleteRows = false;
-            this.grdUltContato.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdUltContato.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.UltContato,
-            this.RazSocial,
-            this.Dispensar});
-            this.grdUltContato.Location = new System.Drawing.Point(257, 159);
-            this.grdUltContato.Name = "grdUltContato";
-            this.grdUltContato.ReadOnly = true;
-            this.grdUltContato.RowTemplate.Height = 25;
-            this.grdUltContato.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grdUltContato.Size = new System.Drawing.Size(390, 280);
-            this.grdUltContato.TabIndex = 9;
+            grdUltContato.AllowUserToAddRows = false;
+            grdUltContato.AllowUserToDeleteRows = false;
+            grdUltContato.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            grdUltContato.Columns.AddRange(new DataGridViewColumn[] { UltContato, RazSocial, Numero });
+            grdUltContato.Location = new Point(257, 159);
+            grdUltContato.Name = "grdUltContato";
+            grdUltContato.ReadOnly = true;
+            grdUltContato.RowHeadersWidth = 5;
+            grdUltContato.RowTemplate.Height = 25;
+            grdUltContato.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            grdUltContato.Size = new Size(370, 280);
+            grdUltContato.TabIndex = 9;
             // 
             // UltContato
             // 
-            this.UltContato.HeaderText = "Ult.COntato";
-            this.UltContato.Name = "UltContato";
-            this.UltContato.ReadOnly = true;
-            this.UltContato.Width = 75;
+            UltContato.HeaderText = "Ult.Contato";
+            UltContato.Name = "UltContato";
+            UltContato.ReadOnly = true;
+            UltContato.Width = 75;
             // 
             // RazSocial
             // 
-            this.RazSocial.HeaderText = "Razao Social";
-            this.RazSocial.Name = "RazSocial";
-            this.RazSocial.ReadOnly = true;
-            this.RazSocial.Width = 230;
+            RazSocial.HeaderText = "Razao Social";
+            RazSocial.Name = "RazSocial";
+            RazSocial.ReadOnly = true;
+            RazSocial.Width = 210;
             // 
-            // Dispensar
+            // Numero
             // 
-            this.Dispensar.HeaderText = "Disp";
-            this.Dispensar.Name = "Dispensar";
-            this.Dispensar.ReadOnly = true;
-            this.Dispensar.Width = 40;
+            Numero.HeaderText = "Nº";
+            Numero.Name = "Numero";
+            Numero.ReadOnly = true;
+            Numero.Width = 40;
             // 
             // cmdRegistraContatos
             // 
-            this.cmdRegistraContatos.FlatAppearance.BorderSize = 3;
-            this.cmdRegistraContatos.Location = new System.Drawing.Point(18, 51);
-            this.cmdRegistraContatos.Name = "cmdRegistraContatos";
-            this.cmdRegistraContatos.Size = new System.Drawing.Size(113, 44);
-            this.cmdRegistraContatos.TabIndex = 10;
-            this.cmdRegistraContatos.Text = "Registrar contato";
-            this.cmdRegistraContatos.UseVisualStyleBackColor = true;
-            this.cmdRegistraContatos.Click += new System.EventHandler(this.cmdRegistraContatos_Click);
+            cmdRegistraContatos.FlatAppearance.BorderSize = 3;
+            cmdRegistraContatos.Location = new Point(18, 45);
+            cmdRegistraContatos.Name = "cmdRegistraContatos";
+            cmdRegistraContatos.Size = new Size(113, 44);
+            cmdRegistraContatos.TabIndex = 10;
+            cmdRegistraContatos.Text = "Registrar contato";
+            cmdRegistraContatos.UseVisualStyleBackColor = true;
+            cmdRegistraContatos.Click += cmdRegistraContatos_Click;
             // 
             // txtObjetivoDiario
             // 
-            this.txtObjetivoDiario.Location = new System.Drawing.Point(132, 286);
-            this.txtObjetivoDiario.Name = "txtObjetivoDiario";
-            this.txtObjetivoDiario.ReadOnly = true;
-            this.txtObjetivoDiario.Size = new System.Drawing.Size(113, 23);
-            this.txtObjetivoDiario.TabIndex = 11;
+            txtObjetivoDiario.Location = new Point(132, 273);
+            txtObjetivoDiario.Name = "txtObjetivoDiario";
+            txtObjetivoDiario.ReadOnly = true;
+            txtObjetivoDiario.Size = new Size(113, 23);
+            txtObjetivoDiario.TabIndex = 11;
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(18, 289);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(93, 17);
-            this.label4.TabIndex = 12;
-            this.label4.Text = "Objetivo Diario";
+            label4.AutoSize = true;
+            label4.BorderStyle = BorderStyle.FixedSingle;
+            label4.FlatStyle = FlatStyle.Flat;
+            label4.Font = new Font("Segoe UI", 9F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
+            label4.Location = new Point(18, 276);
+            label4.Name = "label4";
+            label4.Size = new Size(93, 17);
+            label4.TabIndex = 12;
+            label4.Text = "Objetivo Diario";
             // 
             // label6
             // 
-            this.label6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(257, 133);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(148, 23);
-            this.label6.TabIndex = 14;
-            this.label6.Text = "Clientes não contatados: ";
+            label6.FlatStyle = FlatStyle.Flat;
+            label6.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label6.Location = new Point(257, 133);
+            label6.Name = "label6";
+            label6.Size = new Size(148, 23);
+            label6.TabIndex = 14;
+            label6.Text = "Clientes não contatados: ";
             // 
             // label7
             // 
-            this.label7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(669, 133);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(103, 23);
-            this.label7.TabIndex = 15;
-            this.label7.Text = "Ultimas Vendas:";
+            label7.FlatStyle = FlatStyle.Flat;
+            label7.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label7.Location = new Point(638, 133);
+            label7.Name = "label7";
+            label7.Size = new Size(103, 23);
+            label7.TabIndex = 15;
+            label7.Text = "Ultimas Vendas:";
             // 
             // cmdPedidos
             // 
-            this.cmdPedidos.Location = new System.Drawing.Point(18, 151);
-            this.cmdPedidos.Name = "cmdPedidos";
-            this.cmdPedidos.Size = new System.Drawing.Size(113, 44);
-            this.cmdPedidos.TabIndex = 16;
-            this.cmdPedidos.Text = "Pedidos";
-            this.cmdPedidos.UseVisualStyleBackColor = true;
-            this.cmdPedidos.Click += new System.EventHandler(this.cmdPedidos_Click);
+            cmdPedidos.Location = new Point(18, 145);
+            cmdPedidos.Name = "cmdPedidos";
+            cmdPedidos.Size = new Size(113, 44);
+            cmdPedidos.TabIndex = 16;
+            cmdPedidos.Text = "Pedidos";
+            cmdPedidos.UseVisualStyleBackColor = true;
+            cmdPedidos.Click += cmdPedidos_Click;
             // 
             // cmdCadastroProduto
             // 
-            this.cmdCadastroProduto.Location = new System.Drawing.Point(132, 201);
-            this.cmdCadastroProduto.Name = "cmdCadastroProduto";
-            this.cmdCadastroProduto.Size = new System.Drawing.Size(113, 44);
-            this.cmdCadastroProduto.TabIndex = 17;
-            this.cmdCadastroProduto.Text = "Produtos";
-            this.cmdCadastroProduto.UseVisualStyleBackColor = true;
-            this.cmdCadastroProduto.Click += new System.EventHandler(this.cmdCadastroProduto_Click);
+            cmdCadastroProduto.Location = new Point(132, 195);
+            cmdCadastroProduto.Name = "cmdCadastroProduto";
+            cmdCadastroProduto.Size = new Size(113, 44);
+            cmdCadastroProduto.TabIndex = 17;
+            cmdCadastroProduto.Text = "Produtos";
+            cmdCadastroProduto.UseVisualStyleBackColor = true;
+            cmdCadastroProduto.Click += cmdCadastroProduto_Click;
             // 
             // cmdCadastrosEmpresas
             // 
-            this.cmdCadastrosEmpresas.Location = new System.Drawing.Point(18, 201);
-            this.cmdCadastrosEmpresas.Name = "cmdCadastrosEmpresas";
-            this.cmdCadastrosEmpresas.Size = new System.Drawing.Size(113, 44);
-            this.cmdCadastrosEmpresas.TabIndex = 18;
-            this.cmdCadastrosEmpresas.Text = "Cadastros";
-            this.cmdCadastrosEmpresas.UseVisualStyleBackColor = true;
-            this.cmdCadastrosEmpresas.Click += new System.EventHandler(this.cmdCadastrosEmpresas_Click);
+            cmdCadastrosEmpresas.Location = new Point(18, 195);
+            cmdCadastrosEmpresas.Name = "cmdCadastrosEmpresas";
+            cmdCadastrosEmpresas.Size = new Size(113, 44);
+            cmdCadastrosEmpresas.TabIndex = 18;
+            cmdCadastrosEmpresas.Text = "Cadastros";
+            cmdCadastrosEmpresas.UseVisualStyleBackColor = true;
+            cmdCadastrosEmpresas.Click += cmdCadastrosEmpresas_Click;
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(132, 151);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(113, 44);
-            this.button8.TabIndex = 19;
-            this.button8.Text = "Relatórios";
-            this.button8.UseVisualStyleBackColor = true;
+            button8.Location = new Point(132, 145);
+            button8.Name = "button8";
+            button8.Size = new Size(113, 44);
+            button8.TabIndex = 19;
+            button8.Text = "Relatórios";
+            button8.UseVisualStyleBackColor = true;
             // 
             // label8
             // 
-            this.label8.AutoSize = true;
-            this.label8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
-            this.label8.Location = new System.Drawing.Point(18, 259);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(100, 17);
-            this.label8.TabIndex = 21;
-            this.label8.Text = "Não Consolidado";
+            label8.AutoSize = true;
+            label8.BorderStyle = BorderStyle.FixedSingle;
+            label8.FlatStyle = FlatStyle.Flat;
+            label8.Font = new Font("Segoe UI", 9F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
+            label8.Location = new Point(18, 246);
+            label8.Name = "label8";
+            label8.Size = new Size(100, 17);
+            label8.TabIndex = 21;
+            label8.Text = "Não Consolidado";
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(132, 256);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(113, 23);
-            this.textBox2.TabIndex = 20;
+            textBox2.Location = new Point(132, 243);
+            textBox2.Name = "textBox2";
+            textBox2.ReadOnly = true;
+            textBox2.Size = new Size(113, 23);
+            textBox2.TabIndex = 20;
             // 
             // label9
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label9.Location = new System.Drawing.Point(18, 9);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(64, 15);
-            this.label9.TabIndex = 22;
-            this.label9.Text = "Vendedor:";
+            label9.AutoSize = true;
+            label9.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label9.Location = new Point(18, 9);
+            label9.Name = "label9";
+            label9.Size = new Size(64, 15);
+            label9.TabIndex = 22;
+            label9.Text = "Vendedor:";
             // 
             // label10
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label10.Location = new System.Drawing.Point(18, 33);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(57, 15);
-            this.label10.TabIndex = 23;
-            this.label10.Text = "Empresa:";
+            label10.AutoSize = true;
+            label10.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label10.Location = new Point(18, 24);
+            label10.Name = "label10";
+            label10.Size = new Size(57, 15);
+            label10.TabIndex = 23;
+            label10.Text = "Empresa:";
             // 
             // grdAvisos
             // 
-            this.grdAvisos.AllowUserToAddRows = false;
-            this.grdAvisos.AllowUserToDeleteRows = false;
-            this.grdAvisos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdAvisos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.avTexto,
-            this.grdDatainicio,
-            this.grdDataTermino});
-            this.grdAvisos.Location = new System.Drawing.Point(257, 33);
-            this.grdAvisos.Name = "grdAvisos";
-            this.grdAvisos.ReadOnly = true;
-            this.grdAvisos.RowTemplate.Height = 25;
-            this.grdAvisos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grdAvisos.Size = new System.Drawing.Size(802, 97);
-            this.grdAvisos.TabIndex = 24;
+            grdAvisos.AllowUserToAddRows = false;
+            grdAvisos.AllowUserToDeleteRows = false;
+            grdAvisos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            grdAvisos.Columns.AddRange(new DataGridViewColumn[] { avTexto, grdDatainicio, grdDataTermino });
+            grdAvisos.Location = new Point(257, 33);
+            grdAvisos.Name = "grdAvisos";
+            grdAvisos.ReadOnly = true;
+            grdAvisos.RowHeadersWidth = 5;
+            grdAvisos.RowTemplate.Height = 25;
+            grdAvisos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            grdAvisos.Size = new Size(750, 97);
+            grdAvisos.TabIndex = 24;
             // 
             // avTexto
             // 
-            this.avTexto.HeaderText = "Aviso";
-            this.avTexto.Name = "avTexto";
-            this.avTexto.ReadOnly = true;
-            this.avTexto.Width = 500;
+            avTexto.HeaderText = "Aviso";
+            avTexto.Name = "avTexto";
+            avTexto.ReadOnly = true;
+            avTexto.Width = 500;
             // 
             // grdDatainicio
             // 
-            this.grdDatainicio.HeaderText = "Data Inicio";
-            this.grdDatainicio.Name = "grdDatainicio";
-            this.grdDatainicio.ReadOnly = true;
-            this.grdDatainicio.Width = 130;
+            grdDatainicio.HeaderText = "Data Inicio";
+            grdDatainicio.Name = "grdDatainicio";
+            grdDatainicio.ReadOnly = true;
             // 
             // grdDataTermino
             // 
-            this.grdDataTermino.HeaderText = "Data Termino";
-            this.grdDataTermino.Name = "grdDataTermino";
-            this.grdDataTermino.ReadOnly = true;
-            this.grdDataTermino.Width = 130;
+            grdDataTermino.HeaderText = "Data Termino";
+            grdDataTermino.Name = "grdDataTermino";
+            grdDataTermino.ReadOnly = true;
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(257, 9);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(45, 15);
-            this.label5.TabIndex = 25;
-            this.label5.Text = "Avisos:";
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label5.Location = new Point(257, 9);
+            label5.Name = "label5";
+            label5.Size = new Size(45, 15);
+            label5.TabIndex = 25;
+            label5.Text = "Avisos:";
             // 
             // grdContatosAgendados
             // 
-            this.grdContatosAgendados.AllowUserToAddRows = false;
-            this.grdContatosAgendados.AllowUserToDeleteRows = false;
-            this.grdContatosAgendados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdContatosAgendados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3});
-            this.grdContatosAgendados.Location = new System.Drawing.Point(1080, 33);
-            this.grdContatosAgendados.Name = "grdContatosAgendados";
-            this.grdContatosAgendados.ReadOnly = true;
-            this.grdContatosAgendados.RowTemplate.Height = 25;
-            this.grdContatosAgendados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grdContatosAgendados.Size = new System.Drawing.Size(168, 406);
-            this.grdContatosAgendados.TabIndex = 26;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "Ult.COntato";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 75;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "Razao Social";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 230;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.HeaderText = "Disp";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Width = 40;
+            grdContatosAgendados.AllowUserToAddRows = false;
+            grdContatosAgendados.AllowUserToDeleteRows = false;
+            grdContatosAgendados.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            grdContatosAgendados.Columns.AddRange(new DataGridViewColumn[] { grdID, dataGridViewTextBoxColumn1, dataGridViewTextBoxColumn2 });
+            grdContatosAgendados.Location = new Point(1018, 33);
+            grdContatosAgendados.MultiSelect = false;
+            grdContatosAgendados.Name = "grdContatosAgendados";
+            grdContatosAgendados.ReadOnly = true;
+            grdContatosAgendados.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            grdContatosAgendados.RowHeadersWidth = 5;
+            grdContatosAgendados.RowTemplate.Height = 25;
+            grdContatosAgendados.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            grdContatosAgendados.Size = new Size(230, 406);
+            grdContatosAgendados.TabIndex = 26;
+            grdContatosAgendados.DoubleClick += grdContatosAgendados_DoubleClick;
             // 
             // labContatos
             // 
-            this.labContatos.AutoSize = true;
-            this.labContatos.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labContatos.Location = new System.Drawing.Point(1080, 15);
-            this.labContatos.Name = "labContatos";
-            this.labContatos.Size = new System.Drawing.Size(58, 15);
-            this.labContatos.TabIndex = 27;
-            this.labContatos.Text = "Contatar:";
+            labContatos.AutoSize = true;
+            labContatos.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            labContatos.Location = new Point(1013, 15);
+            labContatos.Name = "labContatos";
+            labContatos.Size = new Size(58, 15);
+            labContatos.TabIndex = 27;
+            labContatos.Text = "Contatar:";
             // 
             // cmdNatOperacao
             // 
-            this.cmdNatOperacao.Location = new System.Drawing.Point(1080, 445);
-            this.cmdNatOperacao.Name = "cmdNatOperacao";
-            this.cmdNatOperacao.Size = new System.Drawing.Size(168, 23);
-            this.cmdNatOperacao.TabIndex = 28;
-            this.cmdNatOperacao.Text = "Nat. Operação";
-            this.cmdNatOperacao.UseVisualStyleBackColor = true;
-            this.cmdNatOperacao.Click += new System.EventHandler(this.cmdNatOperacao_Click);
+            cmdNatOperacao.Location = new Point(1080, 445);
+            cmdNatOperacao.Name = "cmdNatOperacao";
+            cmdNatOperacao.Size = new Size(168, 23);
+            cmdNatOperacao.TabIndex = 28;
+            cmdNatOperacao.Text = "Nat. Operação";
+            cmdNatOperacao.UseVisualStyleBackColor = true;
+            cmdNatOperacao.Click += cmdNatOperacao_Click;
             // 
             // labNomeUsuario
             // 
-            this.labNomeUsuario.AutoSize = true;
-            this.labNomeUsuario.Location = new System.Drawing.Point(88, 9);
-            this.labNomeUsuario.Name = "labNomeUsuario";
-            this.labNomeUsuario.Size = new System.Drawing.Size(0, 15);
-            this.labNomeUsuario.TabIndex = 29;
+            labNomeUsuario.AutoSize = true;
+            labNomeUsuario.Location = new Point(88, 9);
+            labNomeUsuario.Name = "labNomeUsuario";
+            labNomeUsuario.Size = new Size(0, 15);
+            labNomeUsuario.TabIndex = 29;
             // 
             // cmdParametros
             // 
-            this.cmdParametros.Location = new System.Drawing.Point(1080, 474);
-            this.cmdParametros.Name = "cmdParametros";
-            this.cmdParametros.Size = new System.Drawing.Size(168, 23);
-            this.cmdParametros.TabIndex = 30;
-            this.cmdParametros.Text = "Parametros";
-            this.cmdParametros.UseVisualStyleBackColor = true;
-            this.cmdParametros.Click += new System.EventHandler(this.cmdParametros_Click);
+            cmdParametros.Location = new Point(1080, 474);
+            cmdParametros.Name = "cmdParametros";
+            cmdParametros.Size = new Size(168, 23);
+            cmdParametros.TabIndex = 30;
+            cmdParametros.Text = "Parametros";
+            cmdParametros.UseVisualStyleBackColor = true;
+            cmdParametros.Click += cmdParametros_Click;
             // 
             // cmdCriarAviso
             // 
-            this.cmdCriarAviso.BackgroundImage = global::Formularios.Properties.Resources.adicionar;
-            this.cmdCriarAviso.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.cmdCriarAviso.Location = new System.Drawing.Point(1039, 12);
-            this.cmdCriarAviso.Name = "cmdCriarAviso";
-            this.cmdCriarAviso.Size = new System.Drawing.Size(20, 20);
-            this.cmdCriarAviso.TabIndex = 31;
-            this.cmdCriarAviso.UseVisualStyleBackColor = true;
-            this.cmdCriarAviso.Click += new System.EventHandler(this.cmdCriarAviso_Click);
+            cmdCriarAviso.BackgroundImage = Properties.Resources.adicionar;
+            cmdCriarAviso.BackgroundImageLayout = ImageLayout.Zoom;
+            cmdCriarAviso.Location = new Point(987, 12);
+            cmdCriarAviso.Name = "cmdCriarAviso";
+            cmdCriarAviso.Size = new Size(20, 20);
+            cmdCriarAviso.TabIndex = 31;
+            cmdCriarAviso.UseVisualStyleBackColor = true;
+            cmdCriarAviso.Click += cmdCriarAviso_Click;
             // 
-            // labProgressaoValor
+            // labVlrProgressao
             // 
-            this.labProgressaoValor.AutoSize = true;
-            this.labProgressaoValor.Location = new System.Drawing.Point(662, 442);
-            this.labProgressaoValor.Name = "labProgressaoValor";
-            this.labProgressaoValor.Size = new System.Drawing.Size(46, 15);
-            this.labProgressaoValor.TabIndex = 32;
-            this.labProgressaoValor.Text = "xxxx,xx";
+            labVlrProgressao.AutoSize = true;
+            labVlrProgressao.Location = new Point(675, 442);
+            labVlrProgressao.Name = "labVlrProgressao";
+            labVlrProgressao.Size = new Size(46, 15);
+            labVlrProgressao.TabIndex = 32;
+            labVlrProgressao.Text = "xxxx,xx";
+            // 
+            // labVlrConsolidado
+            // 
+            labVlrConsolidado.AutoSize = true;
+            labVlrConsolidado.Location = new Point(340, 442);
+            labVlrConsolidado.Name = "labVlrConsolidado";
+            labVlrConsolidado.Size = new Size(46, 15);
+            labVlrConsolidado.TabIndex = 33;
+            labVlrConsolidado.Text = "xxxx,xx";
+            // 
+            // labVlrMeta
+            // 
+            labVlrMeta.AutoSize = true;
+            labVlrMeta.Location = new Point(961, 442);
+            labVlrMeta.Name = "labVlrMeta";
+            labVlrMeta.Size = new Size(46, 15);
+            labVlrMeta.TabIndex = 34;
+            labVlrMeta.Text = "xxxx,xx";
+            // 
+            // cmdAgendarContato
+            // 
+            cmdAgendarContato.BackgroundImage = Properties.Resources.adicionar;
+            cmdAgendarContato.BackgroundImageLayout = ImageLayout.Zoom;
+            cmdAgendarContato.Location = new Point(225, 302);
+            cmdAgendarContato.Name = "cmdAgendarContato";
+            cmdAgendarContato.Size = new Size(20, 20);
+            cmdAgendarContato.TabIndex = 35;
+            cmdAgendarContato.UseVisualStyleBackColor = true;
+            cmdAgendarContato.Click += cmdAgendarContato_Click;
+            // 
+            // labAgendarContato
+            // 
+            labAgendarContato.AutoSize = true;
+            labAgendarContato.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            labAgendarContato.Location = new Point(18, 305);
+            labAgendarContato.Name = "labAgendarContato";
+            labAgendarContato.Size = new Size(104, 15);
+            labAgendarContato.TabIndex = 36;
+            labAgendarContato.Text = "Agendar Contato:";
+            // 
+            // labNomeEmpresa
+            // 
+            labNomeEmpresa.AutoSize = true;
+            labNomeEmpresa.Location = new Point(82, 24);
+            labNomeEmpresa.Name = "labNomeEmpresa";
+            labNomeEmpresa.Size = new Size(0, 15);
+            labNomeEmpresa.TabIndex = 37;
+            // 
+            // grdID
+            // 
+            grdID.HeaderText = "ID";
+            grdID.Name = "grdID";
+            grdID.ReadOnly = true;
+            grdID.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            dataGridViewTextBoxColumn1.HeaderText = "Data";
+            dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            dataGridViewTextBoxColumn1.ReadOnly = true;
+            dataGridViewTextBoxColumn1.Width = 75;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            dataGridViewTextBoxColumn2.HeaderText = "Razao Social";
+            dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            dataGridViewTextBoxColumn2.ReadOnly = true;
+            dataGridViewTextBoxColumn2.Width = 200;
             // 
             // frmCRMInicial
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1260, 501);
-            this.Controls.Add(this.labProgressaoValor);
-            this.Controls.Add(this.cmdCriarAviso);
-            this.Controls.Add(this.cmdParametros);
-            this.Controls.Add(this.labNomeUsuario);
-            this.Controls.Add(this.cmdNatOperacao);
-            this.Controls.Add(this.labContatos);
-            this.Controls.Add(this.grdContatosAgendados);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.grdAvisos);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.button8);
-            this.Controls.Add(this.cmdCadastrosEmpresas);
-            this.Controls.Add(this.cmdCadastroProduto);
-            this.Controls.Add(this.cmdPedidos);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.txtObjetivoDiario);
-            this.Controls.Add(this.cmdRegistraContatos);
-            this.Controls.Add(this.grdUltContato);
-            this.Controls.Add(this.grdUltimasVendas);
-            this.Controls.Add(this.cmdConsultaPedido);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.pgrsbMeta);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.CalendarioContatos);
-            this.Name = "frmCRMInicial";
-            this.Text = "CRM - GPA";
-            this.Load += new System.EventHandler(this.frmCRMInicial_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.grdUltimasVendas)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grdUltContato)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grdAvisos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grdContatosAgendados)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(1260, 501);
+            Controls.Add(labNomeEmpresa);
+            Controls.Add(labAgendarContato);
+            Controls.Add(cmdAgendarContato);
+            Controls.Add(labVlrMeta);
+            Controls.Add(labVlrConsolidado);
+            Controls.Add(labVlrProgressao);
+            Controls.Add(cmdCriarAviso);
+            Controls.Add(cmdParametros);
+            Controls.Add(labNomeUsuario);
+            Controls.Add(cmdNatOperacao);
+            Controls.Add(labContatos);
+            Controls.Add(grdContatosAgendados);
+            Controls.Add(label5);
+            Controls.Add(grdAvisos);
+            Controls.Add(label10);
+            Controls.Add(label9);
+            Controls.Add(label8);
+            Controls.Add(textBox2);
+            Controls.Add(button8);
+            Controls.Add(cmdCadastrosEmpresas);
+            Controls.Add(cmdCadastroProduto);
+            Controls.Add(cmdPedidos);
+            Controls.Add(label7);
+            Controls.Add(label6);
+            Controls.Add(label4);
+            Controls.Add(txtObjetivoDiario);
+            Controls.Add(cmdRegistraContatos);
+            Controls.Add(grdUltContato);
+            Controls.Add(grdUltimasVendas);
+            Controls.Add(cmdConsultaPedido);
+            Controls.Add(button2);
+            Controls.Add(labMeta);
+            Controls.Add(labProgressao);
+            Controls.Add(pgrsbMeta);
+            Controls.Add(labConsolidado);
+            Controls.Add(button1);
+            Controls.Add(CalendarioContatos);
+            Name = "frmCRMInicial";
+            Text = "CRM - GPA";
+            Load += frmCRMInicial_Load;
+            ((System.ComponentModel.ISupportInitialize)grdUltimasVendas).EndInit();
+            ((System.ComponentModel.ISupportInitialize)grdUltContato).EndInit();
+            ((System.ComponentModel.ISupportInitialize)grdAvisos).EndInit();
+            ((System.ComponentModel.ISupportInitialize)grdContatosAgendados).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
         private MonthCalendar CalendarioContatos;
         private Button button1;
-        private Label label1;
+        private Label labConsolidado;
         private ProgressBar pgrsbMeta;
-        private Label label2;
-        private Label label3;
+        private Label labProgressao;
+        private Label labMeta;
         private Button button2;
         private Button cmdConsultaPedido;
         private DataGridView grdUltimasVendas;
@@ -574,28 +622,34 @@
         private Button button8;
         private Label label8;
         private TextBox textBox2;
-        private DataGridViewTextBoxColumn DataVenda;
-        private DataGridViewTextBoxColumn VRazao;
-        private DataGridViewTextBoxColumn VValor;
-        private DataGridViewTextBoxColumn UltContato;
-        private DataGridViewTextBoxColumn RazSocial;
         private DataGridViewTextBoxColumn Dispensar;
         private Label label9;
         private Label label10;
         private DataGridView grdAvisos;
         private Label label5;
         private DataGridView grdContatosAgendados;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private Label labContatos;
         private Button cmdNatOperacao;
         private Label labNomeUsuario;
         private Button cmdParametros;
         private Button cmdCriarAviso;
+        private Label labVlrProgressao;
+        private Label labVlrConsolidado;
+        private Label labVlrMeta;
+        private DataGridViewTextBoxColumn DataVenda;
+        private DataGridViewTextBoxColumn VRazao;
+        private DataGridViewTextBoxColumn VValor;
+        private DataGridViewTextBoxColumn UltContato;
+        private DataGridViewTextBoxColumn RazSocial;
+        private DataGridViewTextBoxColumn Numero;
         private DataGridViewTextBoxColumn avTexto;
         private DataGridViewTextBoxColumn grdDatainicio;
         private DataGridViewTextBoxColumn grdDataTermino;
-        private Label labProgressaoValor;
+        private Button cmdAgendarContato;
+        private Label labAgendarContato;
+        private Label labNomeEmpresa;
+        private DataGridViewTextBoxColumn grdID;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
     }
 }

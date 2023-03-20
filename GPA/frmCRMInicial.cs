@@ -26,6 +26,19 @@ namespace Formularios
             List<SEGUsuario> lstUsuario = sEGUsuario.CarregaDados(inUsuario, "", "", "");
             labNomeUsuario.Text = lstUsuario[0].Nome;
 
+            BDParametros objParametros = new BDParametros();
+            List<BDParametros> lstParametros = objParametros.CarregaDados();
+            if (lstParametros.Count > 0)
+            {
+                if (lstParametros[0].cpEmpresaDR != "")
+                {
+                    BDCadastroGeral objCadastroGeral = new BDCadastroGeral();
+                    List<BDCadastroGeral> lstCadastroGeral = objCadastroGeral.CarregaDados(lstParametros[0].cpEmpresaDR, "", "", "", "", "", "", "", "", "");
+                    labNomeEmpresa.Text = lstCadastroGeral[0].RazaoSocial.ToString();
+                }
+            }
+
+
             if (lstUsuario[0].Administrador == "S")
             {
                 HabilitaBotoes();
@@ -41,28 +54,22 @@ namespace Formularios
         {
             BDCarregaAcessos objAcessos = new BDCarregaAcessos();
             objAcessos.CarregaAcessos(LParametros[1]);
-            if(objAcessos.CadastroEmpresa == 'S') cmdCadastrosEmpresas.Enabled = true;
+            if (objAcessos.CadastroEmpresa == 'S') cmdCadastrosEmpresas.Enabled = true;
             if (objAcessos.CadastroProduto == 'S') cmdCadastroProduto.Enabled = true;
             if (objAcessos.Vendedor == 'S') cmdPedidos.Enabled = true;
-
-        }
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
 
         }
 
         private void frmCRMInicial_Load(object sender, EventArgs e)
         {
-            CarregaAvisos();
-            CarregaUltContato();
-            CarregaUltVenda();
-            ProgressaoMeta();
+            RealizaCargas();
         }
 
         private void cmdCadastrosEmpresas_Click(object sender, EventArgs e)
         {
-            GPA.frmCadEmpresas frmCadEmpresas = new GPA.frmCadEmpresas();
+            GPA.frmCadEmpresas frmCadEmpresas = new GPA.frmCadEmpresas(LUsuario);
             frmCadEmpresas.ShowDialog();
+            RealizaCargas();
 
         }
 
@@ -70,36 +77,41 @@ namespace Formularios
         {
             frmCadProdutos frmCadProdutos = new frmCadProdutos();
             frmCadProdutos.ShowDialog();
+            RealizaCargas();
         }
 
         private void cmdPedidos_Click(object sender, EventArgs e)
         {
-            
-            frmPedido frmPedido = new frmPedido(LUsuario,"");
+
+            frmPedido frmPedido = new frmPedido(LUsuario, "");
             frmPedido.ShowDialog();
+            RealizaCargas();
         }
 
         private void cmdRegistraContatos_Click(object sender, EventArgs e)
         {
             frmContatosEmpresas frmContatosEmpresas = new frmContatosEmpresas(LUsuario);
             frmContatosEmpresas.ShowDialog();
+            RealizaCargas();
         }
 
         private void cmdConsultaPedido_Click(object sender, EventArgs e)
         {
             frmConsultaPedido frmConsultaPedido = new frmConsultaPedido();
             frmConsultaPedido.ShowDialog();
+            RealizaCargas();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            frmUltimasVendas frmUltimasVendas = new frmUltimasVendas();
+            frmUltimasVendas frmUltimasVendas = new frmUltimasVendas(LUsuario);
             frmUltimasVendas.ShowDialog();
+            RealizaCargas();
         }
 
         private void CalendarioContatos_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.LButton)
+            if (e.KeyCode == Keys.LButton)
             {
 
             }
@@ -109,52 +121,68 @@ namespace Formularios
         {
             frmNaturezaDaOperacao frmNatOperacao = new frmNaturezaDaOperacao(LUsuario);
             frmNatOperacao.ShowDialog();
+            RealizaCargas();
         }
 
         private void cmdParametros_Click(object sender, EventArgs e)
         {
             frmParametrosdoGestor frmParametros = new frmParametrosdoGestor();
             frmParametros.ShowDialog();
+            RealizaCargas();
         }
 
         private void cmdCriarAviso_Click(object sender, EventArgs e)
         {
             frmAvisos frmAvisos = new frmAvisos();
             frmAvisos.ShowDialog();
+            RealizaCargas();
         }
 
+        private void cmdAgendarContato_Click(object sender, EventArgs e)
+        {
+            frmAgendarContato frmAgendarContato = new frmAgendarContato("", LUsuario);
+            frmAgendarContato.ShowDialog();
+            RealizaCargas();
+
+        }
+        private void grdContatosAgendados_DoubleClick(object sender, EventArgs e)
+        {
+            frmAgendarContato frmAgendarContato = new frmAgendarContato(grdContatosAgendados.SelectedRows[0].Cells[0].Value.ToString(), "");
+            frmAgendarContato.ShowDialog();
+            RealizaCargas();
+        }
         public void CarregaAvisos()
         {
-             grdAvisos.Rows.Clear();
-             BDAvisos objAvisos = new BDAvisos();
+            grdAvisos.Rows.Clear();
+            BDAvisos objAvisos = new BDAvisos();
             objAvisos.cpUsuarioDR = LUsuario;
-             List<BDAvisos> lstAvisos = objAvisos.CarregaDados();
-             if (lstAvisos.Count > 0)
-             {
-                 foreach (BDAvisos item in lstAvisos)
-                 {
-                    if(item.cpDataTermino != "")
+            List<BDAvisos> lstAvisos = objAvisos.CarregaDados();
+            if (lstAvisos.Count > 0)
+            {
+                foreach (BDAvisos item in lstAvisos)
+                {
+                    if (item.cpDataTermino != "")
                     {
-                        if(Convert.ToDateTime(item.cpDataTermino) < DateTime.Today)
+                        if (Convert.ToDateTime(item.cpDataTermino) < DateTime.Today)
                         {
                             continue;
                         }
                     }
-                     string usuario = "";
-                     List<SEGUsuario> lstUsuario = new List<SEGUsuario>();
-                     if (item.cpUsuarioDR != "" && item.cpUsuarioDR != null)
+                    string usuario = "";
+                    List<SEGUsuario> lstUsuario = new List<SEGUsuario>();
+                    if (item.cpUsuarioDR != "" && item.cpUsuarioDR != null)
+                    {
+                        SEGUsuario objUsuario = new SEGUsuario();
+                        lstUsuario = objUsuario.CarregaDados(item.cpUsuarioDR, "", "", "");
+                        if (lstUsuario.Count > 0)
+                        {
+                            item.cpUsuarioDR = lstUsuario[0].ID;
+                            usuario = lstUsuario[0].Nome.ToString();
+                        }
+                        else item.cpUsuarioDR = "";
+                    }
+                    string[] Row = new string[]
                      {
-                         SEGUsuario objUsuario = new SEGUsuario();
-                         lstUsuario = objUsuario.CarregaDados(item.cpUsuarioDR, "", "", "");
-                         if (lstUsuario.Count > 0)
-                         {
-                             item.cpUsuarioDR = lstUsuario[0].ID;
-                             usuario = lstUsuario[0].Nome.ToString();
-                         }
-                         else item.cpUsuarioDR = "";
-                     }
-                     string[] Row = new string[]
-                      {
                       item.cpID.ToString(),
                       item.cpAviso.ToString(),
                       item.cpDataInicio.ToString(),
@@ -162,10 +190,10 @@ namespace Formularios
                       usuario.ToString(),
                       item.cpUsuarioDR.ToString(),
                       item.cpTodos.ToString()
-                      };
-                     grdAvisos.Rows.Add(Row);
-                 }
-             }
+                     };
+                    grdAvisos.Rows.Add(Row);
+                }
+            }
 
 
             BDAvisos objAvisosGeral = new BDAvisos();
@@ -208,7 +236,7 @@ namespace Formularios
         {
             BDParametros objParametros = new BDParametros();
             List<BDParametros> lstParametros = objParametros.CarregaDados();
-            if(lstParametros.Count > 0)
+            if (lstParametros.Count > 0)
             {
                 grdUltContato.Rows.Clear();
                 BDRegistroContato objRegContato = new BDRegistroContato();
@@ -230,7 +258,7 @@ namespace Formularios
                         if (item.cpUsuarioDR != "" && item.cpUsuarioDR != null)
                         {
                             BDCadastroGeral objEmpresa = new BDCadastroGeral();
-                            lstEmpresa = objEmpresa.CarregaDados(item.cpEmpresaDR, "", "", "","","","","","","");
+                            lstEmpresa = objEmpresa.CarregaDados(item.cpEmpresaDR, "", "", "", "", "", "", "", "", "");
                             if (lstEmpresa.Count > 0)
                             {
                                 pRazao = lstEmpresa[0].RazaoSocial.ToString();
@@ -248,7 +276,7 @@ namespace Formularios
                     }
                 }
             }
-            
+
         }
 
         public void CarregaUltVenda()
@@ -260,7 +288,7 @@ namespace Formularios
                 grdUltimasVendas.Rows.Clear();
                 BDPedido objPedido = new BDPedido();
                 objPedido.cpVendedorDR = LUsuario;
-                List<BDPedido> lstPedido = objPedido.CarregaDados("","",LUsuario);
+                List<BDPedido> lstPedido = objPedido.CarregaDados("", "", LUsuario);
                 if (lstPedido.Count > 0)
                 {
                     foreach (BDPedido item in lstPedido)
@@ -303,7 +331,51 @@ namespace Formularios
             txtObjetivoDiario.Text = VlrCalcMetas[3].ToString();
             string AuxVlr = VlrCalcMetas[1].Replace(",", ".");
             pgrsbMeta.Value = (int)Convert.ToInt32(AuxVlr);
-            labProgressaoValor.Text = AuxVlr + "%";
+            labVlrProgressao.Text = AuxVlr + "%";
+            labVlrMeta.Text = VlrCalcMetas[0]; ToString();
+            labVlrConsolidado.Text = VlrCalcMetas[2].ToString();
         }
+
+        public void CarregaAgendaContato()
+        {
+            BDAgendarContato objAgendaContato = new BDAgendarContato();
+            objAgendaContato.cpIDUsuarioDR = LUsuario;
+            List<BDAgendarContato> lstAgendarContato = objAgendaContato.CarregaDados();
+            if (lstAgendarContato.Count > 0)
+            {
+                foreach (BDAgendarContato item in lstAgendarContato)
+                {
+                    string pRazao = "";
+                    List<BDCadastroGeral> lstEmpresa = new List<BDCadastroGeral>();
+                    if (item.cpEmpresaDR != "" && item.cpEmpresaDR != null)
+                    {
+                        BDCadastroGeral objEmpresa = new BDCadastroGeral();
+                        lstEmpresa = objEmpresa.CarregaDados(item.cpEmpresaDR, "", "", "", "", "", "", "", "", "");
+                        if (lstEmpresa.Count > 0)
+                        {
+                            pRazao = lstEmpresa[0].RazaoSocial.ToString();
+                        }
+                    }
+                    string[] Row = new string[]
+                        {
+                            item.cpID.ToString(),
+                            item.cpDataContato.ToString(),
+                            pRazao.ToString(),
+                        };
+                    grdContatosAgendados.Rows.Add(Row);
+                }
+            }
+        }
+
+        public void RealizaCargas()
+        {
+            CarregaAvisos();
+            CarregaUltContato();
+            CarregaUltVenda();
+            ProgressaoMeta();
+            CarregaAgendaContato();
+        }
+
+
     }
 }

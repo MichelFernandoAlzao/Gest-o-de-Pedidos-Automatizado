@@ -28,99 +28,130 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lbCabeçallho = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button3 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.SuspendLayout();
+            lbCabeçallho = new Label();
+            cmdBuscar = new Button();
+            txtNumero = new TextBox();
+            cmdSelecionar = new Button();
+            grdListaPedido = new DataGridView();
+            grdID = new DataGridViewTextBoxColumn();
+            grdRazao = new DataGridViewTextBoxColumn();
+            grdData = new DataGridViewTextBoxColumn();
+            cmdSair = new Button();
+            ((System.ComponentModel.ISupportInitialize)grdListaPedido).BeginInit();
+            SuspendLayout();
             // 
             // lbCabeçallho
             // 
-            this.lbCabeçallho.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lbCabeçallho.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.lbCabeçallho.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbCabeçallho.ForeColor = System.Drawing.Color.Black;
-            this.lbCabeçallho.Location = new System.Drawing.Point(12, 9);
-            this.lbCabeçallho.Name = "lbCabeçallho";
-            this.lbCabeçallho.Size = new System.Drawing.Size(620, 30);
-            this.lbCabeçallho.TabIndex = 4;
-            this.lbCabeçallho.Text = "Consulta Pedidos";
-            this.lbCabeçallho.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            lbCabeçallho.BorderStyle = BorderStyle.Fixed3D;
+            lbCabeçallho.Cursor = Cursors.IBeam;
+            lbCabeçallho.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            lbCabeçallho.ForeColor = Color.Black;
+            lbCabeçallho.Location = new Point(12, 9);
+            lbCabeçallho.Name = "lbCabeçallho";
+            lbCabeçallho.Size = new Size(620, 30);
+            lbCabeçallho.TabIndex = 4;
+            lbCabeçallho.Text = "Consulta Pedidos";
+            lbCabeçallho.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // button1
+            // cmdBuscar
             // 
-            this.button1.Location = new System.Drawing.Point(137, 42);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(77, 30);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Buscar";
-            this.button1.UseVisualStyleBackColor = true;
+            cmdBuscar.Location = new Point(137, 42);
+            cmdBuscar.Name = "cmdBuscar";
+            cmdBuscar.Size = new Size(77, 30);
+            cmdBuscar.TabIndex = 5;
+            cmdBuscar.Text = "Buscar";
+            cmdBuscar.UseVisualStyleBackColor = true;
+            cmdBuscar.Click += cmdBuscar_Click;
             // 
-            // textBox1
+            // txtNumero
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 47);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(111, 23);
-            this.textBox1.TabIndex = 6;
+            txtNumero.Location = new Point(12, 47);
+            txtNumero.Name = "txtNumero";
+            txtNumero.Size = new Size(111, 23);
+            txtNumero.TabIndex = 6;
             // 
-            // button2
+            // cmdSelecionar
             // 
-            this.button2.Location = new System.Drawing.Point(638, 9);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(72, 30);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "Selecionar";
-            this.button2.UseVisualStyleBackColor = true;
+            cmdSelecionar.Location = new Point(638, 9);
+            cmdSelecionar.Name = "cmdSelecionar";
+            cmdSelecionar.Size = new Size(72, 30);
+            cmdSelecionar.TabIndex = 7;
+            cmdSelecionar.Text = "Selecionar";
+            cmdSelecionar.UseVisualStyleBackColor = true;
+            cmdSelecionar.Click += cmdSelecionar_Click;
             // 
-            // dataGridView1
+            // grdListaPedido
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 78);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(776, 157);
-            this.dataGridView1.TabIndex = 8;
+            grdListaPedido.AllowUserToAddRows = false;
+            grdListaPedido.AllowUserToDeleteRows = false;
+            grdListaPedido.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            grdListaPedido.Columns.AddRange(new DataGridViewColumn[] { grdID, grdRazao, grdData });
+            grdListaPedido.Location = new Point(12, 78);
+            grdListaPedido.Name = "grdListaPedido";
+            grdListaPedido.ReadOnly = true;
+            grdListaPedido.RowTemplate.Height = 25;
+            grdListaPedido.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            grdListaPedido.Size = new Size(776, 157);
+            grdListaPedido.TabIndex = 8;
             // 
-            // button3
+            // grdID
             // 
-            this.button3.Location = new System.Drawing.Point(716, 9);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(72, 30);
-            this.button3.TabIndex = 9;
-            this.button3.Text = "Sair";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            grdID.HeaderText = "Numero";
+            grdID.Name = "grdID";
+            grdID.ReadOnly = true;
+            // 
+            // grdRazao
+            // 
+            grdRazao.HeaderText = "Razão Social";
+            grdRazao.Name = "grdRazao";
+            grdRazao.ReadOnly = true;
+            grdRazao.Width = 500;
+            // 
+            // grdData
+            // 
+            grdData.HeaderText = "Data";
+            grdData.Name = "grdData";
+            grdData.ReadOnly = true;
+            // 
+            // cmdSair
+            // 
+            cmdSair.Location = new Point(716, 9);
+            cmdSair.Name = "cmdSair";
+            cmdSair.Size = new Size(72, 30);
+            cmdSair.TabIndex = 9;
+            cmdSair.Text = "Sair";
+            cmdSair.UseVisualStyleBackColor = true;
+            cmdSair.Click += button3_Click;
             // 
             // frmConsultaPedido
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 247);
-            this.ControlBox = false;
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.lbCabeçallho);
-            this.Name = "frmConsultaPedido";
-            this.Text = "Consulta Pedido";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 247);
+            ControlBox = false;
+            Controls.Add(cmdSair);
+            Controls.Add(grdListaPedido);
+            Controls.Add(cmdSelecionar);
+            Controls.Add(txtNumero);
+            Controls.Add(cmdBuscar);
+            Controls.Add(lbCabeçallho);
+            Name = "frmConsultaPedido";
+            Text = "Consulta Pedido";
+            ((System.ComponentModel.ISupportInitialize)grdListaPedido).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
         private Label lbCabeçallho;
-        private Button button1;
-        private TextBox textBox1;
-        private Button button2;
-        private DataGridView dataGridView1;
-        private Button button3;
+        private Button cmdBuscar;
+        private TextBox txtNumero;
+        private Button cmdSelecionar;
+        private DataGridView grdListaPedido;
+        private Button cmdSair;
+        private DataGridViewTextBoxColumn grdID;
+        private DataGridViewTextBoxColumn grdRazao;
+        private DataGridViewTextBoxColumn grdData;
     }
 }

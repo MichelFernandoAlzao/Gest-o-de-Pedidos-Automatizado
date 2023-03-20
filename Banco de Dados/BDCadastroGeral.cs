@@ -28,7 +28,7 @@ namespace Banco_de_Dados
         Conexao conexao = new Conexao();
         SqlCommand cmd = new SqlCommand();
         
-        public void InsereDados(string[] LParametros)
+        public void InsereDados()
         {
 
             string sSQL;

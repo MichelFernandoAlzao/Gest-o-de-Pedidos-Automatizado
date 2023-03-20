@@ -28,172 +28,194 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button3 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button2 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.lbCabeçallho = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.SuspendLayout();
+            cmdSair = new Button();
+            grdListaPedido = new DataGridView();
+            grdNumero = new DataGridViewTextBoxColumn();
+            grdRazao = new DataGridViewTextBoxColumn();
+            grdData = new DataGridViewTextBoxColumn();
+            cmdSelecionar = new Button();
+            cmdBuscar = new Button();
+            lbCabeçallho = new Label();
+            LabDTinicial = new Label();
+            labDTFinal = new Label();
+            chkConcluido = new CheckBox();
+            chkCancelado = new CheckBox();
+            txtDataInicio = new MaskedTextBox();
+            txtDataFim = new MaskedTextBox();
+            ((System.ComponentModel.ISupportInitialize)grdListaPedido).BeginInit();
+            SuspendLayout();
             // 
-            // button3
+            // cmdSair
             // 
-            this.button3.Location = new System.Drawing.Point(716, 11);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(72, 30);
-            this.button3.TabIndex = 15;
-            this.button3.Text = "Sair";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            cmdSair.Location = new Point(716, 11);
+            cmdSair.Name = "cmdSair";
+            cmdSair.Size = new Size(72, 30);
+            cmdSair.TabIndex = 15;
+            cmdSair.Text = "Sair";
+            cmdSair.UseVisualStyleBackColor = true;
+            cmdSair.Click += button3_Click;
             // 
-            // dataGridView1
+            // grdListaPedido
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 115);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(776, 267);
-            this.dataGridView1.TabIndex = 14;
+            grdListaPedido.AllowUserToAddRows = false;
+            grdListaPedido.AllowUserToDeleteRows = false;
+            grdListaPedido.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            grdListaPedido.Columns.AddRange(new DataGridViewColumn[] { grdNumero, grdRazao, grdData });
+            grdListaPedido.Location = new Point(12, 115);
+            grdListaPedido.Name = "grdListaPedido";
+            grdListaPedido.ReadOnly = true;
+            grdListaPedido.RowTemplate.Height = 25;
+            grdListaPedido.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            grdListaPedido.Size = new Size(776, 267);
+            grdListaPedido.TabIndex = 14;
             // 
-            // button2
+            // grdNumero
             // 
-            this.button2.Location = new System.Drawing.Point(638, 11);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(72, 30);
-            this.button2.TabIndex = 13;
-            this.button2.Text = "Selecionar";
-            this.button2.UseVisualStyleBackColor = true;
+            grdNumero.HeaderText = "Numero";
+            grdNumero.Name = "grdNumero";
+            grdNumero.ReadOnly = true;
             // 
-            // textBox1
+            // grdRazao
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 74);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(111, 23);
-            this.textBox1.TabIndex = 12;
+            grdRazao.HeaderText = "Razão Social";
+            grdRazao.Name = "grdRazao";
+            grdRazao.ReadOnly = true;
+            grdRazao.Width = 500;
             // 
-            // button1
+            // grdData
             // 
-            this.button1.Location = new System.Drawing.Point(711, 73);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(77, 23);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "Buscar";
-            this.button1.UseVisualStyleBackColor = true;
+            grdData.HeaderText = "Data";
+            grdData.Name = "grdData";
+            grdData.ReadOnly = true;
+            // 
+            // cmdSelecionar
+            // 
+            cmdSelecionar.Location = new Point(638, 11);
+            cmdSelecionar.Name = "cmdSelecionar";
+            cmdSelecionar.Size = new Size(72, 30);
+            cmdSelecionar.TabIndex = 13;
+            cmdSelecionar.Text = "Selecionar";
+            cmdSelecionar.UseVisualStyleBackColor = true;
+            cmdSelecionar.Click += cmdSelecionar_Click;
+            // 
+            // cmdBuscar
+            // 
+            cmdBuscar.Location = new Point(265, 74);
+            cmdBuscar.Name = "cmdBuscar";
+            cmdBuscar.Size = new Size(77, 23);
+            cmdBuscar.TabIndex = 11;
+            cmdBuscar.Text = "Buscar";
+            cmdBuscar.UseVisualStyleBackColor = true;
+            cmdBuscar.Click += cmdBuscar_Click;
             // 
             // lbCabeçallho
             // 
-            this.lbCabeçallho.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lbCabeçallho.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.lbCabeçallho.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbCabeçallho.ForeColor = System.Drawing.Color.Black;
-            this.lbCabeçallho.Location = new System.Drawing.Point(12, 11);
-            this.lbCabeçallho.Name = "lbCabeçallho";
-            this.lbCabeçallho.Size = new System.Drawing.Size(620, 30);
-            this.lbCabeçallho.TabIndex = 10;
-            this.lbCabeçallho.Text = "Consulta Pedidos";
-            this.lbCabeçallho.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            lbCabeçallho.BorderStyle = BorderStyle.Fixed3D;
+            lbCabeçallho.Cursor = Cursors.IBeam;
+            lbCabeçallho.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            lbCabeçallho.ForeColor = Color.Black;
+            lbCabeçallho.Location = new Point(12, 11);
+            lbCabeçallho.Name = "lbCabeçallho";
+            lbCabeçallho.Size = new Size(620, 30);
+            lbCabeçallho.TabIndex = 10;
+            lbCabeçallho.Text = "Consulta Pedidos";
+            lbCabeçallho.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // label1
+            // LabDTinicial
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 52);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(65, 15);
-            this.label1.TabIndex = 16;
-            this.label1.Text = "Data Inicial";
+            LabDTinicial.AutoSize = true;
+            LabDTinicial.Location = new Point(12, 52);
+            LabDTinicial.Name = "LabDTinicial";
+            LabDTinicial.Size = new Size(65, 15);
+            LabDTinicial.TabIndex = 16;
+            LabDTinicial.Text = "Data Inicial";
             // 
-            // label2
+            // labDTFinal
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(138, 52);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(59, 15);
-            this.label2.TabIndex = 18;
-            this.label2.Text = "Data Final";
+            labDTFinal.AutoSize = true;
+            labDTFinal.Location = new Point(138, 52);
+            labDTFinal.Name = "labDTFinal";
+            labDTFinal.Size = new Size(59, 15);
+            labDTFinal.TabIndex = 18;
+            labDTFinal.Text = "Data Final";
             // 
-            // textBox2
+            // chkConcluido
             // 
-            this.textBox2.Location = new System.Drawing.Point(138, 74);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(111, 23);
-            this.textBox2.TabIndex = 17;
+            chkConcluido.AutoSize = true;
+            chkConcluido.Location = new Point(573, 78);
+            chkConcluido.Name = "chkConcluido";
+            chkConcluido.Size = new Size(81, 19);
+            chkConcluido.TabIndex = 19;
+            chkConcluido.Text = "Concluido";
+            chkConcluido.UseVisualStyleBackColor = true;
             // 
-            // checkBox1
+            // chkCancelado
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(283, 77);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(81, 19);
-            this.checkBox1.TabIndex = 19;
-            this.checkBox1.Text = "Concluido";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            chkCancelado.AutoSize = true;
+            chkCancelado.Location = new Point(706, 78);
+            chkCancelado.Name = "chkCancelado";
+            chkCancelado.Size = new Size(82, 19);
+            chkCancelado.TabIndex = 20;
+            chkCancelado.Text = "Cancelado";
+            chkCancelado.UseVisualStyleBackColor = true;
             // 
-            // checkBox2
+            // txtDataInicio
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(416, 77);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(82, 19);
-            this.checkBox2.TabIndex = 20;
-            this.checkBox2.Text = "Cancelado";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            txtDataInicio.Location = new Point(12, 74);
+            txtDataInicio.Mask = "00/00/0000";
+            txtDataInicio.Name = "txtDataInicio";
+            txtDataInicio.Size = new Size(100, 23);
+            txtDataInicio.TabIndex = 21;
+            txtDataInicio.ValidatingType = typeof(DateTime);
             // 
-            // checkBox3
+            // txtDataFim
             // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(550, 78);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(76, 19);
-            this.checkBox3.TabIndex = 21;
-            this.checkBox3.Text = "Pendente";
-            this.checkBox3.UseVisualStyleBackColor = true;
+            txtDataFim.Location = new Point(138, 74);
+            txtDataFim.Mask = "00/00/0000";
+            txtDataFim.Name = "txtDataFim";
+            txtDataFim.Size = new Size(100, 23);
+            txtDataFim.TabIndex = 22;
+            txtDataFim.ValidatingType = typeof(DateTime);
             // 
             // frmUltimasVendas
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 397);
-            this.ControlBox = false;
-            this.Controls.Add(this.checkBox3);
-            this.Controls.Add(this.checkBox2);
-            this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.lbCabeçallho);
-            this.Name = "frmUltimasVendas";
-            this.Text = "frmUltimasVendas";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 397);
+            ControlBox = false;
+            Controls.Add(txtDataFim);
+            Controls.Add(txtDataInicio);
+            Controls.Add(chkCancelado);
+            Controls.Add(chkConcluido);
+            Controls.Add(labDTFinal);
+            Controls.Add(LabDTinicial);
+            Controls.Add(cmdSair);
+            Controls.Add(grdListaPedido);
+            Controls.Add(cmdSelecionar);
+            Controls.Add(cmdBuscar);
+            Controls.Add(lbCabeçallho);
+            Name = "frmUltimasVendas";
+            Text = "frmUltimasVendas";
+            ((System.ComponentModel.ISupportInitialize)grdListaPedido).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
-        private Button button3;
-        private DataGridView dataGridView1;
-        private Button button2;
-        private TextBox textBox1;
-        private Button button1;
+        private Button cmdSair;
+        private DataGridView grdListaPedido;
+        private Button cmdSelecionar;
+        private Button cmdBuscar;
         private Label lbCabeçallho;
-        private Label label1;
-        private Label label2;
-        private TextBox textBox2;
-        private CheckBox checkBox1;
-        private CheckBox checkBox2;
-        private CheckBox checkBox3;
+        private Label LabDTinicial;
+        private Label labDTFinal;
+        private CheckBox chkConcluido;
+        private CheckBox chkCancelado;
+        private MaskedTextBox txtDataInicio;
+        private MaskedTextBox txtDataFim;
+        private DataGridViewTextBoxColumn grdNumero;
+        private DataGridViewTextBoxColumn grdRazao;
+        private DataGridViewTextBoxColumn grdData;
     }
 }

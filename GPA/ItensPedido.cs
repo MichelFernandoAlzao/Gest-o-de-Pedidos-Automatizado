@@ -30,10 +30,22 @@ namespace Formularios
         
         
 
-        public frmItensPedido(string inIDPedido)
+        public frmItensPedido(string inIDPedido, string inConsulta)
         {
             LIDPedido = inIDPedido;
+
             InitializeComponent();
+            if (inConsulta == "S")
+            {
+                DesabilitaBotoes();
+            }
+        }
+
+        public void DesabilitaBotoes()
+        {
+            cmdNovo.Enabled = false;
+            cmdExcluir.Enabled = false;
+            cmdGravar.Enabled = false;
         }
 
         private void frmItensPedido_Load(object sender, EventArgs e)

@@ -26,6 +26,7 @@ namespace Formularios
         string LTotaFaturando = "";
         string LImpostos = "";
         string LComissao = "";
+        string LConsulta = "";
 
         public frmPedido(string inUsuario,string inIDPedido)
         {
@@ -55,6 +56,10 @@ namespace Formularios
                 txtxNatOperacao.Enabled = false;
                 txtVendedor.Enabled = false;
                 txtObservacao.Enabled = false;
+                BDPedido objPedido = new BDPedido();
+                List<BDPedido> lstPedido = objPedido.CarregaDados(LIDPedido,"","");
+                LID = lstPedido[0].cpEmpresaDR;
+                LConsulta = "S";
 
                 MostraDados();
             }
@@ -135,7 +140,7 @@ namespace Formularios
         {
             if(LIDPedido == "") { return; }
 
-            frmItensPedido objItensPedido = new frmItensPedido(LIDPedido);
+            frmItensPedido objItensPedido = new frmItensPedido(LIDPedido, LConsulta);
             objItensPedido.ShowDialog();
 
             MostraDados();

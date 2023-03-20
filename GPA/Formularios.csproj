@@ -10,6 +10,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Corrected.Microsoft.ReportingServices.ReportViewerControl.Winforms" Version="150.1358.0" />
+    <PackageReference Include="Microsoft.ReportingServices.ReportViewerControl.Winforms" Version="150.1537.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Banco de Dados\Banco de Dados.csproj" />
     <ProjectReference Include="..\Camada Negocios\Camada Negocios.csproj" />
   </ItemGroup>

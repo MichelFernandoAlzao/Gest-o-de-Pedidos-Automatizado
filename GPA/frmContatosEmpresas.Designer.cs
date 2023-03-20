@@ -29,351 +29,348 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmContatosEmpresas));
-            this.labEmpresa = new System.Windows.Forms.Label();
-            this.txtEmpresa = new System.Windows.Forms.TextBox();
-            this.lbCabeçallho = new System.Windows.Forms.Label();
-            this.cmdExcluir = new System.Windows.Forms.Button();
-            this.cmdNovo = new System.Windows.Forms.Button();
-            this.cmdGravar = new System.Windows.Forms.Button();
-            this.cmdSair = new System.Windows.Forms.Button();
-            this.txtDataContato = new System.Windows.Forms.TextBox();
-            this.labDataContato = new System.Windows.Forms.Label();
-            this.grdProdSugeridos = new System.Windows.Forms.DataGridView();
-            this.grdIDProdSugerido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.grdDescItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.grdVlrofertado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.grdQuantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtSugestoes = new System.Windows.Forms.TextBox();
-            this.labSugestoes = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtReclamacoes = new System.Windows.Forms.TextBox();
-            this.labProdSugeridos = new System.Windows.Forms.Label();
-            this.txtDescProduto = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.cmdAdicionar = new System.Windows.Forms.Button();
-            this.cmdRemover = new System.Windows.Forms.Button();
-            this.labVlrOfertado = new System.Windows.Forms.Label();
-            this.txtValorOfertado = new System.Windows.Forms.TextBox();
-            this.labQuantidade = new System.Windows.Forms.Label();
-            this.txtQuantidade = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtRegistro = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.grdProdSugeridos)).BeginInit();
-            this.SuspendLayout();
+            labEmpresa = new Label();
+            txtEmpresa = new TextBox();
+            lbCabeçallho = new Label();
+            cmdExcluir = new Button();
+            cmdNovo = new Button();
+            cmdGravar = new Button();
+            cmdSair = new Button();
+            labDataContato = new Label();
+            grdProdSugeridos = new DataGridView();
+            grdIDProdSugerido = new DataGridViewTextBoxColumn();
+            grdDescItem = new DataGridViewTextBoxColumn();
+            grdVlrofertado = new DataGridViewTextBoxColumn();
+            grdQuantidade = new DataGridViewTextBoxColumn();
+            txtSugestoes = new TextBox();
+            labSugestoes = new Label();
+            label1 = new Label();
+            txtReclamacoes = new TextBox();
+            labProdSugeridos = new Label();
+            txtDescProduto = new TextBox();
+            label2 = new Label();
+            cmdAdicionar = new Button();
+            cmdRemover = new Button();
+            labVlrOfertado = new Label();
+            labQuantidade = new Label();
+            txtQuantidade = new TextBox();
+            label3 = new Label();
+            txtRegistro = new TextBox();
+            txtDataContato = new MaskedTextBox();
+            txtValorOfertado = new TextBox();
+            ((System.ComponentModel.ISupportInitialize)grdProdSugeridos).BeginInit();
+            SuspendLayout();
             // 
             // labEmpresa
             // 
-            this.labEmpresa.AutoSize = true;
-            this.labEmpresa.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labEmpresa.Location = new System.Drawing.Point(92, 54);
-            this.labEmpresa.Name = "labEmpresa";
-            this.labEmpresa.Size = new System.Drawing.Size(78, 15);
-            this.labEmpresa.TabIndex = 0;
-            this.labEmpresa.Text = "Empresa - F1";
+            labEmpresa.AutoSize = true;
+            labEmpresa.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            labEmpresa.Location = new Point(92, 54);
+            labEmpresa.Name = "labEmpresa";
+            labEmpresa.Size = new Size(78, 15);
+            labEmpresa.TabIndex = 0;
+            labEmpresa.Text = "Empresa - F1";
             // 
             // txtEmpresa
             // 
-            this.txtEmpresa.Location = new System.Drawing.Point(92, 72);
-            this.txtEmpresa.Name = "txtEmpresa";
-            this.txtEmpresa.Size = new System.Drawing.Size(542, 23);
-            this.txtEmpresa.TabIndex = 1;
-            this.txtEmpresa.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtEmpresa_KeyDown);
+            txtEmpresa.Location = new Point(92, 72);
+            txtEmpresa.Name = "txtEmpresa";
+            txtEmpresa.Size = new Size(574, 23);
+            txtEmpresa.TabIndex = 1;
+            txtEmpresa.KeyDown += txtEmpresa_KeyDown;
             // 
             // lbCabeçallho
             // 
-            this.lbCabeçallho.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lbCabeçallho.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.lbCabeçallho.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbCabeçallho.ForeColor = System.Drawing.Color.Black;
-            this.lbCabeçallho.Location = new System.Drawing.Point(12, 3);
-            this.lbCabeçallho.Name = "lbCabeçallho";
-            this.lbCabeçallho.Size = new System.Drawing.Size(632, 30);
-            this.lbCabeçallho.TabIndex = 3;
-            this.lbCabeçallho.Text = "Contatos com Empresas";
-            this.lbCabeçallho.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            lbCabeçallho.BorderStyle = BorderStyle.Fixed3D;
+            lbCabeçallho.Cursor = Cursors.IBeam;
+            lbCabeçallho.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            lbCabeçallho.ForeColor = Color.Black;
+            lbCabeçallho.Location = new Point(12, 3);
+            lbCabeçallho.Name = "lbCabeçallho";
+            lbCabeçallho.Size = new Size(632, 30);
+            lbCabeçallho.TabIndex = 3;
+            lbCabeçallho.Text = "Contatos com Empresas";
+            lbCabeçallho.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // cmdExcluir
             // 
-            this.cmdExcluir.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("cmdExcluir.BackgroundImage")));
-            this.cmdExcluir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.cmdExcluir.Location = new System.Drawing.Point(653, 3);
-            this.cmdExcluir.Name = "cmdExcluir";
-            this.cmdExcluir.Size = new System.Drawing.Size(30, 30);
-            this.cmdExcluir.TabIndex = 49;
-            this.cmdExcluir.UseVisualStyleBackColor = true;
-            this.cmdExcluir.Click += new System.EventHandler(this.cmdExcluir_Click);
+            cmdExcluir.BackgroundImage = (Image)resources.GetObject("cmdExcluir.BackgroundImage");
+            cmdExcluir.BackgroundImageLayout = ImageLayout.Zoom;
+            cmdExcluir.Location = new Point(653, 3);
+            cmdExcluir.Name = "cmdExcluir";
+            cmdExcluir.Size = new Size(30, 30);
+            cmdExcluir.TabIndex = 49;
+            cmdExcluir.UseVisualStyleBackColor = true;
+            cmdExcluir.Click += cmdExcluir_Click;
             // 
             // cmdNovo
             // 
-            this.cmdNovo.BackgroundImage = global::Formularios.Properties.Resources.folder;
-            this.cmdNovo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.cmdNovo.Location = new System.Drawing.Point(689, 3);
-            this.cmdNovo.Name = "cmdNovo";
-            this.cmdNovo.Size = new System.Drawing.Size(30, 30);
-            this.cmdNovo.TabIndex = 48;
-            this.cmdNovo.UseVisualStyleBackColor = true;
-            this.cmdNovo.Click += new System.EventHandler(this.cmdNovo_Click);
+            cmdNovo.BackgroundImage = Properties.Resources.folder;
+            cmdNovo.BackgroundImageLayout = ImageLayout.Zoom;
+            cmdNovo.Location = new Point(689, 3);
+            cmdNovo.Name = "cmdNovo";
+            cmdNovo.Size = new Size(30, 30);
+            cmdNovo.TabIndex = 48;
+            cmdNovo.UseVisualStyleBackColor = true;
+            cmdNovo.Click += cmdNovo_Click;
             // 
             // cmdGravar
             // 
-            this.cmdGravar.BackgroundImage = global::Formularios.Properties.Resources.save;
-            this.cmdGravar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.cmdGravar.Location = new System.Drawing.Point(725, 3);
-            this.cmdGravar.Name = "cmdGravar";
-            this.cmdGravar.Size = new System.Drawing.Size(30, 30);
-            this.cmdGravar.TabIndex = 47;
-            this.cmdGravar.UseVisualStyleBackColor = true;
-            this.cmdGravar.Click += new System.EventHandler(this.cmdGravar_Click);
+            cmdGravar.BackgroundImage = Properties.Resources.save;
+            cmdGravar.BackgroundImageLayout = ImageLayout.Zoom;
+            cmdGravar.Location = new Point(725, 3);
+            cmdGravar.Name = "cmdGravar";
+            cmdGravar.Size = new Size(30, 30);
+            cmdGravar.TabIndex = 47;
+            cmdGravar.UseVisualStyleBackColor = true;
+            cmdGravar.Click += cmdGravar_Click;
             // 
             // cmdSair
             // 
-            this.cmdSair.BackgroundImage = global::Formularios.Properties.Resources.logout;
-            this.cmdSair.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.cmdSair.Location = new System.Drawing.Point(761, 3);
-            this.cmdSair.Name = "cmdSair";
-            this.cmdSair.Size = new System.Drawing.Size(30, 30);
-            this.cmdSair.TabIndex = 46;
-            this.cmdSair.UseVisualStyleBackColor = true;
-            this.cmdSair.Click += new System.EventHandler(this.cmdSair_Click);
-            // 
-            // txtDataContato
-            // 
-            this.txtDataContato.Location = new System.Drawing.Point(653, 72);
-            this.txtDataContato.Name = "txtDataContato";
-            this.txtDataContato.Size = new System.Drawing.Size(138, 23);
-            this.txtDataContato.TabIndex = 50;
+            cmdSair.BackgroundImage = Properties.Resources.logout;
+            cmdSair.BackgroundImageLayout = ImageLayout.Zoom;
+            cmdSair.Location = new Point(761, 3);
+            cmdSair.Name = "cmdSair";
+            cmdSair.Size = new Size(30, 30);
+            cmdSair.TabIndex = 46;
+            cmdSair.UseVisualStyleBackColor = true;
+            cmdSair.Click += cmdSair_Click;
             // 
             // labDataContato
             // 
-            this.labDataContato.AutoSize = true;
-            this.labDataContato.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labDataContato.Location = new System.Drawing.Point(653, 54);
-            this.labDataContato.Name = "labDataContato";
-            this.labDataContato.Size = new System.Drawing.Size(80, 15);
-            this.labDataContato.TabIndex = 51;
-            this.labDataContato.Text = "Data Contato";
+            labDataContato.AutoSize = true;
+            labDataContato.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            labDataContato.Location = new Point(689, 54);
+            labDataContato.Name = "labDataContato";
+            labDataContato.Size = new Size(80, 15);
+            labDataContato.TabIndex = 51;
+            labDataContato.Text = "Data Contato";
             // 
             // grdProdSugeridos
             // 
-            this.grdProdSugeridos.AllowUserToAddRows = false;
-            this.grdProdSugeridos.AllowUserToDeleteRows = false;
-            this.grdProdSugeridos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdProdSugeridos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.grdIDProdSugerido,
-            this.grdDescItem,
-            this.grdVlrofertado,
-            this.grdQuantidade});
-            this.grdProdSugeridos.Location = new System.Drawing.Point(12, 327);
-            this.grdProdSugeridos.Name = "grdProdSugeridos";
-            this.grdProdSugeridos.ReadOnly = true;
-            this.grdProdSugeridos.RowTemplate.Height = 25;
-            this.grdProdSugeridos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grdProdSugeridos.Size = new System.Drawing.Size(776, 111);
-            this.grdProdSugeridos.TabIndex = 52;
-            this.grdProdSugeridos.SelectionChanged += new System.EventHandler(this.grdProdSugeridos_SelectionChanged);
+            grdProdSugeridos.AllowUserToAddRows = false;
+            grdProdSugeridos.AllowUserToDeleteRows = false;
+            grdProdSugeridos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            grdProdSugeridos.Columns.AddRange(new DataGridViewColumn[] { grdIDProdSugerido, grdDescItem, grdVlrofertado, grdQuantidade });
+            grdProdSugeridos.Location = new Point(12, 327);
+            grdProdSugeridos.Name = "grdProdSugeridos";
+            grdProdSugeridos.ReadOnly = true;
+            grdProdSugeridos.RowTemplate.Height = 25;
+            grdProdSugeridos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            grdProdSugeridos.Size = new Size(776, 111);
+            grdProdSugeridos.TabIndex = 52;
+            grdProdSugeridos.SelectionChanged += grdProdSugeridos_SelectionChanged;
             // 
             // grdIDProdSugerido
             // 
-            this.grdIDProdSugerido.HeaderText = "ID";
-            this.grdIDProdSugerido.Name = "grdIDProdSugerido";
-            this.grdIDProdSugerido.ReadOnly = true;
-            this.grdIDProdSugerido.Visible = false;
+            grdIDProdSugerido.HeaderText = "ID";
+            grdIDProdSugerido.Name = "grdIDProdSugerido";
+            grdIDProdSugerido.ReadOnly = true;
+            grdIDProdSugerido.Visible = false;
             // 
             // grdDescItem
             // 
-            this.grdDescItem.HeaderText = "Produto";
-            this.grdDescItem.Name = "grdDescItem";
-            this.grdDescItem.ReadOnly = true;
-            this.grdDescItem.Width = 500;
+            grdDescItem.HeaderText = "Produto";
+            grdDescItem.Name = "grdDescItem";
+            grdDescItem.ReadOnly = true;
+            grdDescItem.Width = 500;
             // 
             // grdVlrofertado
             // 
-            this.grdVlrofertado.HeaderText = "Valor Ofertado";
-            this.grdVlrofertado.Name = "grdVlrofertado";
-            this.grdVlrofertado.ReadOnly = true;
-            this.grdVlrofertado.Width = 120;
+            grdVlrofertado.HeaderText = "Valor Ofertado";
+            grdVlrofertado.Name = "grdVlrofertado";
+            grdVlrofertado.ReadOnly = true;
+            grdVlrofertado.Width = 120;
             // 
             // grdQuantidade
             // 
-            this.grdQuantidade.HeaderText = "Quantidade";
-            this.grdQuantidade.Name = "grdQuantidade";
-            this.grdQuantidade.ReadOnly = true;
+            grdQuantidade.HeaderText = "Quantidade";
+            grdQuantidade.Name = "grdQuantidade";
+            grdQuantidade.ReadOnly = true;
             // 
             // txtSugestoes
             // 
-            this.txtSugestoes.Location = new System.Drawing.Point(12, 129);
-            this.txtSugestoes.Multiline = true;
-            this.txtSugestoes.Name = "txtSugestoes";
-            this.txtSugestoes.Size = new System.Drawing.Size(381, 101);
-            this.txtSugestoes.TabIndex = 53;
+            txtSugestoes.Location = new Point(12, 129);
+            txtSugestoes.Multiline = true;
+            txtSugestoes.Name = "txtSugestoes";
+            txtSugestoes.Size = new Size(381, 101);
+            txtSugestoes.TabIndex = 53;
             // 
             // labSugestoes
             // 
-            this.labSugestoes.AutoSize = true;
-            this.labSugestoes.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labSugestoes.Location = new System.Drawing.Point(12, 111);
-            this.labSugestoes.Name = "labSugestoes";
-            this.labSugestoes.Size = new System.Drawing.Size(64, 15);
-            this.labSugestoes.TabIndex = 54;
-            this.labSugestoes.Text = "Sugestoes";
+            labSugestoes.AutoSize = true;
+            labSugestoes.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            labSugestoes.Location = new Point(12, 111);
+            labSugestoes.Name = "labSugestoes";
+            labSugestoes.Size = new Size(64, 15);
+            labSugestoes.TabIndex = 54;
+            labSugestoes.Text = "Sugestoes";
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(409, 111);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(79, 15);
-            this.label1.TabIndex = 56;
-            this.label1.Text = "Reclamações";
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Location = new Point(409, 111);
+            label1.Name = "label1";
+            label1.Size = new Size(79, 15);
+            label1.TabIndex = 56;
+            label1.Text = "Reclamações";
             // 
             // txtReclamacoes
             // 
-            this.txtReclamacoes.Location = new System.Drawing.Point(409, 129);
-            this.txtReclamacoes.Multiline = true;
-            this.txtReclamacoes.Name = "txtReclamacoes";
-            this.txtReclamacoes.Size = new System.Drawing.Size(379, 101);
-            this.txtReclamacoes.TabIndex = 55;
+            txtReclamacoes.Location = new Point(409, 129);
+            txtReclamacoes.Multiline = true;
+            txtReclamacoes.Name = "txtReclamacoes";
+            txtReclamacoes.Size = new Size(379, 101);
+            txtReclamacoes.TabIndex = 55;
             // 
             // labProdSugeridos
             // 
-            this.labProdSugeridos.AutoSize = true;
-            this.labProdSugeridos.Location = new System.Drawing.Point(12, 309);
-            this.labProdSugeridos.Name = "labProdSugeridos";
-            this.labProdSugeridos.Size = new System.Drawing.Size(110, 15);
-            this.labProdSugeridos.TabIndex = 57;
-            this.labProdSugeridos.Text = "Produtos Sugeridos";
+            labProdSugeridos.AutoSize = true;
+            labProdSugeridos.Location = new Point(12, 309);
+            labProdSugeridos.Name = "labProdSugeridos";
+            labProdSugeridos.Size = new Size(110, 15);
+            labProdSugeridos.TabIndex = 57;
+            labProdSugeridos.Text = "Produtos Sugeridos";
             // 
             // txtDescProduto
             // 
-            this.txtDescProduto.Location = new System.Drawing.Point(12, 272);
-            this.txtDescProduto.Name = "txtDescProduto";
-            this.txtDescProduto.Size = new System.Drawing.Size(442, 23);
-            this.txtDescProduto.TabIndex = 58;
-            this.txtDescProduto.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtProduto_KeyDown);
+            txtDescProduto.Location = new Point(12, 272);
+            txtDescProduto.Name = "txtDescProduto";
+            txtDescProduto.Size = new Size(442, 23);
+            txtDescProduto.TabIndex = 58;
+            txtDescProduto.KeyDown += txtProduto_KeyDown;
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(12, 254);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(76, 15);
-            this.label2.TabIndex = 59;
-            this.label2.Text = "Produto - F1";
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.Location = new Point(12, 254);
+            label2.Name = "label2";
+            label2.Size = new Size(76, 15);
+            label2.TabIndex = 59;
+            label2.Text = "Produto - F1";
             // 
             // cmdAdicionar
             // 
-            this.cmdAdicionar.BackgroundImage = global::Formularios.Properties.Resources.adicionar;
-            this.cmdAdicionar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.cmdAdicionar.Location = new System.Drawing.Point(724, 266);
-            this.cmdAdicionar.Name = "cmdAdicionar";
-            this.cmdAdicionar.Size = new System.Drawing.Size(29, 29);
-            this.cmdAdicionar.TabIndex = 60;
-            this.cmdAdicionar.UseVisualStyleBackColor = true;
-            this.cmdAdicionar.Click += new System.EventHandler(this.cmdAdicionar_Click);
+            cmdAdicionar.BackgroundImage = Properties.Resources.adicionar;
+            cmdAdicionar.BackgroundImageLayout = ImageLayout.Stretch;
+            cmdAdicionar.Location = new Point(724, 266);
+            cmdAdicionar.Name = "cmdAdicionar";
+            cmdAdicionar.Size = new Size(29, 29);
+            cmdAdicionar.TabIndex = 60;
+            cmdAdicionar.UseVisualStyleBackColor = true;
+            cmdAdicionar.Click += cmdAdicionar_Click;
             // 
             // cmdRemover
             // 
-            this.cmdRemover.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("cmdRemover.BackgroundImage")));
-            this.cmdRemover.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.cmdRemover.Location = new System.Drawing.Point(759, 266);
-            this.cmdRemover.Name = "cmdRemover";
-            this.cmdRemover.Size = new System.Drawing.Size(29, 29);
-            this.cmdRemover.TabIndex = 61;
-            this.cmdRemover.UseVisualStyleBackColor = true;
-            this.cmdRemover.Click += new System.EventHandler(this.cmdRemover_Click);
+            cmdRemover.BackgroundImage = (Image)resources.GetObject("cmdRemover.BackgroundImage");
+            cmdRemover.BackgroundImageLayout = ImageLayout.Stretch;
+            cmdRemover.Location = new Point(759, 266);
+            cmdRemover.Name = "cmdRemover";
+            cmdRemover.Size = new Size(29, 29);
+            cmdRemover.TabIndex = 61;
+            cmdRemover.UseVisualStyleBackColor = true;
+            cmdRemover.Click += cmdRemover_Click;
             // 
             // labVlrOfertado
             // 
-            this.labVlrOfertado.AutoSize = true;
-            this.labVlrOfertado.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labVlrOfertado.Location = new System.Drawing.Point(471, 254);
-            this.labVlrOfertado.Name = "labVlrOfertado";
-            this.labVlrOfertado.Size = new System.Drawing.Size(89, 15);
-            this.labVlrOfertado.TabIndex = 63;
-            this.labVlrOfertado.Text = "Valor Ofertado";
-            // 
-            // txtValorOfertado
-            // 
-            this.txtValorOfertado.Location = new System.Drawing.Point(471, 272);
-            this.txtValorOfertado.Name = "txtValorOfertado";
-            this.txtValorOfertado.Size = new System.Drawing.Size(108, 23);
-            this.txtValorOfertado.TabIndex = 62;
+            labVlrOfertado.AutoSize = true;
+            labVlrOfertado.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            labVlrOfertado.Location = new Point(471, 254);
+            labVlrOfertado.Name = "labVlrOfertado";
+            labVlrOfertado.Size = new Size(89, 15);
+            labVlrOfertado.TabIndex = 63;
+            labVlrOfertado.Text = "Valor Ofertado";
             // 
             // labQuantidade
             // 
-            this.labQuantidade.AutoSize = true;
-            this.labQuantidade.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labQuantidade.Location = new System.Drawing.Point(595, 254);
-            this.labQuantidade.Name = "labQuantidade";
-            this.labQuantidade.Size = new System.Drawing.Size(71, 15);
-            this.labQuantidade.TabIndex = 65;
-            this.labQuantidade.Text = "Quantidade";
+            labQuantidade.AutoSize = true;
+            labQuantidade.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            labQuantidade.Location = new Point(595, 254);
+            labQuantidade.Name = "labQuantidade";
+            labQuantidade.Size = new Size(71, 15);
+            labQuantidade.TabIndex = 65;
+            labQuantidade.Text = "Quantidade";
             // 
             // txtQuantidade
             // 
-            this.txtQuantidade.Location = new System.Drawing.Point(595, 272);
-            this.txtQuantidade.Name = "txtQuantidade";
-            this.txtQuantidade.Size = new System.Drawing.Size(108, 23);
-            this.txtQuantidade.TabIndex = 64;
+            txtQuantidade.Location = new Point(595, 272);
+            txtQuantidade.Name = "txtQuantidade";
+            txtQuantidade.Size = new Size(108, 23);
+            txtQuantidade.TabIndex = 64;
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(12, 54);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(78, 15);
-            this.label3.TabIndex = 67;
-            this.label3.Text = "Registro - F1";
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label3.Location = new Point(12, 54);
+            label3.Name = "label3";
+            label3.Size = new Size(78, 15);
+            label3.TabIndex = 67;
+            label3.Text = "Registro - F1";
             // 
             // txtRegistro
             // 
-            this.txtRegistro.Location = new System.Drawing.Point(12, 72);
-            this.txtRegistro.Name = "txtRegistro";
-            this.txtRegistro.Size = new System.Drawing.Size(76, 23);
-            this.txtRegistro.TabIndex = 66;
-            this.txtRegistro.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtRegistro_KeyDown);
+            txtRegistro.Location = new Point(12, 72);
+            txtRegistro.Name = "txtRegistro";
+            txtRegistro.Size = new Size(76, 23);
+            txtRegistro.TabIndex = 66;
+            txtRegistro.KeyDown += txtRegistro_KeyDown;
+            // 
+            // txtDataContato
+            // 
+            txtDataContato.Location = new Point(688, 72);
+            txtDataContato.Mask = "00/00/0000";
+            txtDataContato.Name = "txtDataContato";
+            txtDataContato.Size = new Size(100, 23);
+            txtDataContato.TabIndex = 68;
+            txtDataContato.ValidatingType = typeof(DateTime);
+            // 
+            // txtValorOfertado
+            // 
+            txtValorOfertado.Location = new Point(471, 272);
+            txtValorOfertado.Name = "txtValorOfertado";
+            txtValorOfertado.Size = new Size(100, 23);
+            txtValorOfertado.TabIndex = 69;
             // 
             // frmContatosEmpresas
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.ControlBox = false;
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.txtRegistro);
-            this.Controls.Add(this.labQuantidade);
-            this.Controls.Add(this.txtQuantidade);
-            this.Controls.Add(this.labVlrOfertado);
-            this.Controls.Add(this.txtValorOfertado);
-            this.Controls.Add(this.cmdRemover);
-            this.Controls.Add(this.cmdAdicionar);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.txtDescProduto);
-            this.Controls.Add(this.labProdSugeridos);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtReclamacoes);
-            this.Controls.Add(this.labSugestoes);
-            this.Controls.Add(this.txtSugestoes);
-            this.Controls.Add(this.grdProdSugeridos);
-            this.Controls.Add(this.labDataContato);
-            this.Controls.Add(this.txtDataContato);
-            this.Controls.Add(this.cmdExcluir);
-            this.Controls.Add(this.cmdNovo);
-            this.Controls.Add(this.cmdGravar);
-            this.Controls.Add(this.cmdSair);
-            this.Controls.Add(this.lbCabeçallho);
-            this.Controls.Add(this.txtEmpresa);
-            this.Controls.Add(this.labEmpresa);
-            this.Name = "frmContatosEmpresas";
-            this.Text = "Contatos Empresas";
-            this.Load += new System.EventHandler(this.frmContatosEmpresas_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.grdProdSugeridos)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            ControlBox = false;
+            Controls.Add(txtValorOfertado);
+            Controls.Add(txtDataContato);
+            Controls.Add(label3);
+            Controls.Add(txtRegistro);
+            Controls.Add(labQuantidade);
+            Controls.Add(txtQuantidade);
+            Controls.Add(labVlrOfertado);
+            Controls.Add(cmdRemover);
+            Controls.Add(cmdAdicionar);
+            Controls.Add(label2);
+            Controls.Add(txtDescProduto);
+            Controls.Add(labProdSugeridos);
+            Controls.Add(label1);
+            Controls.Add(txtReclamacoes);
+            Controls.Add(labSugestoes);
+            Controls.Add(txtSugestoes);
+            Controls.Add(grdProdSugeridos);
+            Controls.Add(labDataContato);
+            Controls.Add(cmdExcluir);
+            Controls.Add(cmdNovo);
+            Controls.Add(cmdGravar);
+            Controls.Add(cmdSair);
+            Controls.Add(lbCabeçallho);
+            Controls.Add(txtEmpresa);
+            Controls.Add(labEmpresa);
+            Name = "frmContatosEmpresas";
+            Text = "Contatos Empresas";
+            Load += frmContatosEmpresas_Load;
+            ((System.ComponentModel.ISupportInitialize)grdProdSugeridos).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -385,7 +382,6 @@
         private Button cmdNovo;
         private Button cmdGravar;
         private Button cmdSair;
-        private TextBox txtDataContato;
         private Label labDataContato;
         private DataGridView grdProdSugeridos;
         private TextBox txtSugestoes;
@@ -402,10 +398,11 @@
         private DataGridViewTextBoxColumn grdVlrofertado;
         private DataGridViewTextBoxColumn grdQuantidade;
         private Label labVlrOfertado;
-        private TextBox txtValorOfertado;
         private Label labQuantidade;
         private TextBox txtQuantidade;
         private Label label3;
         private TextBox txtRegistro;
+        private MaskedTextBox txtDataContato;
+        private TextBox txtValorOfertado;
     }
 }

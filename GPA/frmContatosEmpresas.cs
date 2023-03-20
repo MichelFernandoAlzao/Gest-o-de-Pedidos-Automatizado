@@ -47,44 +47,44 @@ namespace Formularios
             txtSugestoes.Text = "";
             txtReclamacoes.Text = "";
             grdProdSugeridos.Rows.Clear();
-            
+
 
         }
 
         private void cmdGravar_Click(object sender, EventArgs e)
         {
             BDRegistroContato objContato = new BDRegistroContato();
-            if(LID == "")
+            if (LID == "")
             {
-                MessageBox.Show("Nenhumna Empresa selcionada!","GPA");
+                MessageBox.Show("Nenhumna Empresa selcionada!", "GPA");
                 return;
             }
             objContato.cpEmpresaDR = LID;
 
             DateTime DataContato;
-            if(DateTime.TryParse(txtDataContato.Text.ToString(), out DataContato))
+            if (DateTime.TryParse(txtDataContato.Text.ToString(), out DataContato))
             {
                 objContato.cpDataContato = DataContato.ToString();
             }
             else
             {
                 MessageBox.Show("Data em formato invalido", "GPA");
-                return ;
+                return;
             }
-            if(txtSugestoes.Text != "")
+            if (txtSugestoes.Text != "")
             {
                 objContato.cpSugestao = txtSugestoes.Text;
             }
-            if(txtReclamacoes.Text != "")
+            if (txtReclamacoes.Text != "")
             {
                 objContato.cpReclamacao = txtReclamacoes.Text;
             }
             objContato.cpUsuarioDR = LUsuario;
 
-            if(LIDRegistro == "")
+            if (LIDRegistro == "")
             {
                 objContato.InsereDados();
-                if(objContato.cpMsgErro!="" && objContato.cpMsgErro != null)
+                if (objContato.cpMsgErro != "" && objContato.cpMsgErro != null)
                 {
                     MessageBox.Show(objContato.cpMsgErro, "GPA");
                     return;
@@ -101,7 +101,7 @@ namespace Formularios
                 }
             }
 
-            if(objContato.cpID != "")
+            if (objContato.cpID != "")
             {
                 LIDRegistro = objContato.cpID;
                 txtRegistro.Text = LIDRegistro;
@@ -133,17 +133,17 @@ namespace Formularios
             BDRegistroContato objRegContato = new BDRegistroContato();
             objRegContato.cpID = LIDRegistro;
             List<BDRegistroContato> lstRegContato = objRegContato.CarregaDados();
-            if(lstRegContato.Count > 0)
+            if (lstRegContato.Count > 0)
             {
                 LID = lstRegContato[0].cpEmpresaDR;
-                if(LID != "")
+                if (LID != "")
                 {
                     BDCadastroGeral objEmpresa = new BDCadastroGeral();
-                    List<BDCadastroGeral> lstEmpresa = objEmpresa.CarregaDados(LID,"","","","","","","","","");
+                    List<BDCadastroGeral> lstEmpresa = objEmpresa.CarregaDados(LID, "", "", "", "", "", "", "", "", "");
                     txtEmpresa.Text = lstEmpresa[0].RazaoSocial.ToString();
                 }
             }
-            txtDataContato.Text = lstRegContato[0].cpDataContato.ToString().Substring(0,10);
+            txtDataContato.Text = lstRegContato[0].cpDataContato.ToString().Substring(0, 10);
             txtSugestoes.Text = lstRegContato[0].cpSugestao.ToString();
             txtReclamacoes.Text = lstRegContato[0].cpReclamacao.ToString();
 
@@ -154,7 +154,7 @@ namespace Formularios
 
         private void cmdRemover_Click(object sender, EventArgs e)
         {
-            if(LIDPRodContato == "")
+            if (LIDPRodContato == "")
             {
                 MessageBox.Show("Nenhum Produto selecionado", "GPA");
                 return;
@@ -162,7 +162,7 @@ namespace Formularios
             BDProdutosContato objProdutoContato = new BDProdutosContato();
             objProdutoContato.cpID = LIDPRodContato;
             objProdutoContato.Excluir();
-            if(objProdutoContato.cpMsgErro != "")
+            if (objProdutoContato.cpMsgErro != "")
             {
                 MessageBox.Show(objProdutoContato.cpMsgErro, "GPA");
                 return;
@@ -182,7 +182,7 @@ namespace Formularios
             objProdContato.cpRegContatoDR = LIDRegistro;
             List<BDProdutosContato> lstProdContato = objProdContato.CarregaDados();
 
-            if(lstProdContato.Count > 0)
+            if (lstProdContato.Count > 0)
             {
                 foreach (BDProdutosContato item in lstProdContato)
                 {
@@ -204,13 +204,13 @@ namespace Formularios
 
         private void cmdAdicionar_Click(object sender, EventArgs e)
         {
-            if(LIDRegistro == "")
+            if (LIDRegistro == "")
             {
                 MessageBox.Show("Nenhum registro selecionado!", "GPA");
                 return;
             }
 
-            if(LIDProduto == "")
+            if (LIDProduto == "")
             {
                 MessageBox.Show("Nenhum Produto selecionado!", "GPA");
                 return;
@@ -232,7 +232,7 @@ namespace Formularios
 
         private void txtProduto_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.F1)
+            if (e.KeyCode == Keys.F1)
             {
                 frmSelecionaProduto objSelecProduto = new frmSelecionaProduto(this, "", txtDescProduto.Text, "", "");
                 objSelecProduto.ShowDialog();
@@ -248,7 +248,7 @@ namespace Formularios
 
         private void txtEmpresa_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.F1)
+            if (e.KeyCode == Keys.F1)
             {
                 frmSelecionaEmpresa objTela = new frmSelecionaEmpresa(this, "", txtEmpresa.Text.ToString(), "", "");
                 objTela.ShowDialog();
@@ -266,7 +266,7 @@ namespace Formularios
 
         private void grdProdSugeridos_SelectionChanged(object sender, EventArgs e)
         {
-            if(grdProdSugeridos.SelectedRows.Count == 0)
+            if (grdProdSugeridos.SelectedRows.Count == 0)
             {
                 return;
             }
@@ -275,7 +275,7 @@ namespace Formularios
 
         private void txtRegistro_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.F1)
+            if (e.KeyCode == Keys.F1)
             {
                 frmSelecionarRegistroContato frmSelecionarRegistroContato = new frmSelecionarRegistroContato(this, txtRegistro.Text);
                 frmSelecionarRegistroContato.ShowDialog();
@@ -284,7 +284,7 @@ namespace Formularios
                     MostraDados();
                 }
             }
-            
+
         }
     }
 }

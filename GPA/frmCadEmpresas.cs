@@ -21,13 +21,13 @@ namespace GPA
         string LQualificacao;
         string LDiasAtraso;
         string LAviso;
-        string[] LParametros;
+        string LUsuario = "";
         string MsgErro;
 
-        public frmCadEmpresas()
+        public frmCadEmpresas(string inUsuario)
         {
             InitializeComponent();
-            
+            LUsuario = inUsuario;
         }
 
         private void frmCadEmpresas_Load(object sender, EventArgs e)
@@ -157,7 +157,7 @@ namespace GPA
 
             if(LID == "")
             {
-                objCadastro.InsereDados(LParametros);
+                objCadastro.InsereDados();
                 MsgErro = objCadastro.MsgErro;
                 if (MsgErro != null)
                 {
@@ -309,6 +309,19 @@ namespace GPA
                 chkFornecedor.Checked = true;
             }
             else chkFornecedor.Checked= false;
+
+            if (lstCadastro[0].Vendedor != LUsuario)
+            {
+                SEGUsuario objUsuario = new SEGUsuario();
+                List<SEGUsuario> lstUsuario = objUsuario.CarregaDados(LUsuario, "", "", "");
+                if(lstUsuario.Count > 0)
+                {
+                    if (lstUsuario[0].GerenciaCadastros != "S")
+                    {
+                        cmdGravar.Enabled = false;
+                    }
+                }
+            }
             //if (lstCadastro[0].Vendedor != "")
             //{
             //    Vendedores objvendedor = new Vendedores();
