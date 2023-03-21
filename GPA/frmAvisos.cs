@@ -53,7 +53,7 @@ namespace Formularios
 
             objAviso.cpID = LIDAviso;
 
-            if(MessageBox.Show("Deseja Excluir este aviso ?","GPA",MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show("Deseja Excluir este aviso ?", "GPA", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 objAviso.Excluir();
                 txtAviso.Text = "";
@@ -67,14 +67,14 @@ namespace Formularios
             }
 
             CarregaAvisos();
-            
+
         }
 
         private void cmdGravar_Click(object sender, EventArgs e)
         {
             BDAvisos objAviso = new BDAvisos();
 
-            if(txtAviso.Text != "")
+            if (txtAviso.Text != "")
             {
                 objAviso.cpAviso = txtAviso.Text;
             }
@@ -84,10 +84,10 @@ namespace Formularios
                 return;
             }
 
-            if(txtDataInicio.Text != "")
+            if (txtDataInicio.Text != "")
             {
                 DateTime Datainicio;
-                if(DateTime.TryParse(txtDataInicio.Text, out Datainicio))
+                if (DateTime.TryParse(txtDataInicio.Text, out Datainicio))
                 {
                     objAviso.cpDataInicio = Convert.ToString(Datainicio);
                 }
@@ -125,12 +125,12 @@ namespace Formularios
             {
                 objAviso.cpTodos = "N";
             }
-            if(LIDUsuario != "")
+            if (LIDUsuario != "")
             {
                 objAviso.cpUsuarioDR = LIDUsuario;
             }
 
-            if(LIDAviso == "")
+            if (LIDAviso == "")
             {
                 objAviso.InsereDados();
             }
@@ -156,7 +156,7 @@ namespace Formularios
                     if (item.cpUsuarioDR != "" && item.cpUsuarioDR != null)
                     {
                         SEGUsuario objUsuario = new SEGUsuario();
-                        lstUsuario = objUsuario.CarregaDados(item.cpUsuarioDR,"","","");
+                        lstUsuario = objUsuario.CarregaDados(item.cpUsuarioDR, "", "", "");
                         if (lstUsuario.Count > 0)
                         {
                             item.cpUsuarioDR = lstUsuario[0].ID;
@@ -181,7 +181,7 @@ namespace Formularios
 
         private void grdAvisos_SelectionChanged(object sender, EventArgs e)
         {
-            if(grdAvisos.SelectedRows.Count == 0)
+            if (grdAvisos.SelectedRows.Count == 0)
             {
 
                 return;
@@ -196,7 +196,7 @@ namespace Formularios
             LAviso = grdAvisos.SelectedRows[0].Cells[2].Value.ToString();
             LDataInicio = grdAvisos.SelectedRows[0].Cells[2].Value.ToString();
             LDataTermino = grdAvisos.SelectedRows[0].Cells[3].Value.ToString();
-            if(grdAvisos.SelectedRows[0].Cells[6].Value.ToString() == "S")
+            if (grdAvisos.SelectedRows[0].Cells[6].Value.ToString() == "S")
             {
                 chkTodos.Checked = true;
             }
@@ -209,12 +209,12 @@ namespace Formularios
 
         private void txtUsuarioDestino_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.F1)
+            if (e.KeyCode == Keys.F1)
             {
-                frmSelecionarUsuario frmUsuario = new frmSelecionarUsuario(this,"",txtUsuarioDestino.Text.ToString());
+                frmSelecionarUsuario frmUsuario = new frmSelecionarUsuario(this, "", txtUsuarioDestino.Text.ToString());
                 frmUsuario.ShowDialog();
-                
-                if(LIDUsuario != "")
+
+                if (LIDUsuario != "")
                 {
                     SEGUsuario objUsuario = new SEGUsuario();
                     List<SEGUsuario> lstUsuario = objUsuario.CarregaDados(LIDUsuario, "", "", "");

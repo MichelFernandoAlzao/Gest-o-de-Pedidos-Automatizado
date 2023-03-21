@@ -12,10 +12,10 @@ namespace Formularios
 {
     public partial class frmCadProdutos : Form
     {
-        string LDescricao ="";
+        string LDescricao = "";
         public string LIDProduto = "";
-        string LCodigo= "";
-        string LDataCadastro ="";
+        string LCodigo = "";
+        string LDataCadastro = "";
         string LCodigoFabricante = "";
         string LDescricaoFornecedor = "";
         string LFabricante = "";
@@ -26,9 +26,11 @@ namespace Formularios
         string LDescritivo = "";
         public string LID = "";
         public string LRazaoSocial = "";
+        string LUsuario = "";
 
-        public frmCadProdutos()
+        public frmCadProdutos(string inUsuario)
         {
+            LUsuario = inUsuario;
             InitializeComponent();
         }
 
@@ -45,7 +47,7 @@ namespace Formularios
             LCodigoFabricante = "";
             LDescricaoFornecedor = "";
             LFabricante = "";
-            LMelhorFornecedor="";
+            LMelhorFornecedor = "";
             LAtivo = "";
             LOperacional = "";
             LForaDeLinha = "";
@@ -102,22 +104,22 @@ namespace Formularios
             }
             else txtMelhorFornecedor.Text = "";
 
-            if(LAtivo == "S")
+            if (LAtivo == "S")
             {
                 chkAtivo.Checked = true;
             }
             else chkAtivo.Checked = false;
 
-            if(LOperacional == "S")
+            if (LOperacional == "S")
             {
                 chkOperacional.Checked = true;
             }
             else chkOperacional.Checked = false;
-            if(LForaDeLinha == "S")
+            if (LForaDeLinha == "S")
             {
                 chkForadeLinha.Checked = true;
             }
-            else chkForadeLinha.Checked= false;
+            else chkForadeLinha.Checked = false;
             txtDescritivo.Text = LDescritivo;
 
         }
@@ -131,15 +133,15 @@ namespace Formularios
                     MessageBox.Show("Digite um minimo de 5 caracteres!", "GPA");
                     return;
                 }
-                frmSelecionaProduto objForm = new frmSelecionaProduto(this,LIDProduto,txtDescricao.Text,LFabricante,txtCodFabricante.Text);
+                frmSelecionaProduto objForm = new frmSelecionaProduto(this, LIDProduto, txtDescricao.Text, LFabricante, txtCodFabricante.Text);
                 objForm.ShowDialog();
-                if(LIDProduto != "")
+                if (LIDProduto != "")
                 {
                     MostraDados();
                 }
-                
+
             }
-                
+
         }
 
         private void txtFabricante_KeyDown(object sender, KeyEventArgs e)
@@ -161,7 +163,7 @@ namespace Formularios
 
                 }
             }
-                
+
         }
 
         private void frmCadProdutos_Load(object sender, EventArgs e)
@@ -171,7 +173,7 @@ namespace Formularios
 
         private void txtMelhorFornecedor_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.F1)
+            if (e.KeyCode == Keys.F1)
             {
                 if (txtMelhorFornecedor.Text.Length < 5)
                 {
@@ -200,7 +202,7 @@ namespace Formularios
             objProduto.cpFabricanteDR = LFabricante;
             objProduto.cpMelhorFornecedorDR = LMelhorFornecedor;
             objProduto.cpDescritivo = txtDescritivo.Text;
-            if(chkAtivo.Checked == true)
+            if (chkAtivo.Checked == true)
             {
                 objProduto.cpAtivo = "S";
             }
@@ -208,34 +210,49 @@ namespace Formularios
             {
                 objProduto.cpAtivo = "N";
             }
-            if(chkForadeLinha.Checked == true)
+            if (chkForadeLinha.Checked == true)
             {
                 objProduto.cpForaDeLinha = "S";
             }
             else
             {
-                objProduto.cpForaDeLinha= "N";
+                objProduto.cpForaDeLinha = "N";
             }
-            if(chkOperacional.Checked == true)
+            if (chkOperacional.Checked == true)
             {
                 objProduto.cpOperacional = "S";
             }
             else
             {
-                objProduto.cpOperacional= "N";
+                objProduto.cpOperacional = "N";
             }
             objProduto.cpDescritivo = txtDescritivo.Text;
 
-            if(LIDProduto == "")
+
+            if (LIDProduto == "")
             {
                 objProduto.InsereDados();
             }
             else
             {
-                
+
                 objProduto.AlteraDados();
             }
-            
+
+        }
+
+        private void cmdUltVenda_Click(object sender, EventArgs e)
+        {
+            if(LID == "")
+            {
+                MessageBox.Show("Nenhuma empresa selecionada", "GPA");
+                return;
+            }
+            BDPedido objPedido = new BDPedido();
+            objPedido.cpEmpresaDR = LID;
+            List<BDPedido> lstPedidos = objPedido.CarregaDadosUltVenda();
+
+            frmPedido frmpedido = new frmPedido(LUsuario, lstPedidos[0].cpID);
         }
     }
 }

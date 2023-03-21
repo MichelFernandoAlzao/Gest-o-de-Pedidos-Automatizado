@@ -28,403 +28,401 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtRazaoSocial = new System.Windows.Forms.TextBox();
-            this.labRazaoSocial = new System.Windows.Forms.Label();
-            this.txtCNPJ = new System.Windows.Forms.TextBox();
-            this.labCNPJ = new System.Windows.Forms.Label();
-            this.txtInscricaoEstadual = new System.Windows.Forms.TextBox();
-            this.labInscricaoEstadual = new System.Windows.Forms.Label();
-            this.labFantasia = new System.Windows.Forms.Label();
-            this.txtFantasia = new System.Windows.Forms.TextBox();
-            this.labVendedor = new System.Windows.Forms.Label();
-            this.txtVendedor = new System.Windows.Forms.TextBox();
-            this.chkCliente = new System.Windows.Forms.CheckBox();
-            this.chkDistribuidor = new System.Windows.Forms.CheckBox();
-            this.chkFabricante = new System.Windows.Forms.CheckBox();
-            this.chkFornecedor = new System.Windows.Forms.CheckBox();
-            this.cmdSair = new System.Windows.Forms.Button();
-            this.cmdGravar = new System.Windows.Forms.Button();
-            this.cmdNovo = new System.Windows.Forms.Button();
-            this.labCadastroGeral = new System.Windows.Forms.Label();
-            this.cmdEndereco = new System.Windows.Forms.Button();
-            this.cmdContatos = new System.Windows.Forms.Button();
-            this.CmdRegOcorrencias = new System.Windows.Forms.Button();
-            this.txtQualificacao = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtAviso = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtDiasAtraso = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtRegCobranca = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtRegVenda = new System.Windows.Forms.TextBox();
-            this.SuspendLayout();
+            txtRazaoSocial = new TextBox();
+            labRazaoSocial = new Label();
+            labCNPJ = new Label();
+            txtInscricaoEstadual = new TextBox();
+            labInscricaoEstadual = new Label();
+            labFantasia = new Label();
+            txtFantasia = new TextBox();
+            labVendedor = new Label();
+            txtVendedor = new TextBox();
+            chkCliente = new CheckBox();
+            chkDistribuidor = new CheckBox();
+            chkFabricante = new CheckBox();
+            chkFornecedor = new CheckBox();
+            cmdSair = new Button();
+            cmdGravar = new Button();
+            cmdNovo = new Button();
+            labCadastroGeral = new Label();
+            cmdEndereco = new Button();
+            cmdContatos = new Button();
+            CmdRegOcorrencias = new Button();
+            txtQualificacao = new TextBox();
+            label1 = new Label();
+            txtAviso = new TextBox();
+            label2 = new Label();
+            label3 = new Label();
+            txtDiasAtraso = new TextBox();
+            label4 = new Label();
+            txtRegCobranca = new TextBox();
+            button1 = new Button();
+            button2 = new Button();
+            label5 = new Label();
+            txtRegVenda = new TextBox();
+            txtCNPJ = new MaskedTextBox();
+            SuspendLayout();
             // 
             // txtRazaoSocial
             // 
-            this.txtRazaoSocial.Location = new System.Drawing.Point(12, 75);
-            this.txtRazaoSocial.Name = "txtRazaoSocial";
-            this.txtRazaoSocial.Size = new System.Drawing.Size(681, 23);
-            this.txtRazaoSocial.TabIndex = 0;
-            this.txtRazaoSocial.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtRazaoSocial_KeyDown);
+            txtRazaoSocial.Location = new Point(12, 75);
+            txtRazaoSocial.Name = "txtRazaoSocial";
+            txtRazaoSocial.Size = new Size(681, 23);
+            txtRazaoSocial.TabIndex = 0;
+            txtRazaoSocial.KeyDown += txtRazaoSocial_KeyDown;
             // 
             // labRazaoSocial
             // 
-            this.labRazaoSocial.AutoSize = true;
-            this.labRazaoSocial.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labRazaoSocial.Location = new System.Drawing.Point(12, 57);
-            this.labRazaoSocial.Name = "labRazaoSocial";
-            this.labRazaoSocial.Size = new System.Drawing.Size(99, 15);
-            this.labRazaoSocial.TabIndex = 1;
-            this.labRazaoSocial.Text = "Razão Social - F1";
-            // 
-            // txtCNPJ
-            // 
-            this.txtCNPJ.Location = new System.Drawing.Point(841, 75);
-            this.txtCNPJ.Name = "txtCNPJ";
-            this.txtCNPJ.PlaceholderText = "____._____._____/_____-____";
-            this.txtCNPJ.Size = new System.Drawing.Size(156, 23);
-            this.txtCNPJ.TabIndex = 1;
+            labRazaoSocial.AutoSize = true;
+            labRazaoSocial.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            labRazaoSocial.Location = new Point(12, 57);
+            labRazaoSocial.Name = "labRazaoSocial";
+            labRazaoSocial.Size = new Size(99, 15);
+            labRazaoSocial.TabIndex = 1;
+            labRazaoSocial.Text = "Razão Social - F1";
             // 
             // labCNPJ
             // 
-            this.labCNPJ.AutoSize = true;
-            this.labCNPJ.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labCNPJ.Location = new System.Drawing.Point(841, 57);
-            this.labCNPJ.Name = "labCNPJ";
-            this.labCNPJ.Size = new System.Drawing.Size(58, 15);
-            this.labCNPJ.TabIndex = 3;
-            this.labCNPJ.Text = "CNPJ - F1";
-            this.labCNPJ.Click += new System.EventHandler(this.labCNPJ_Click);
+            labCNPJ.AutoSize = true;
+            labCNPJ.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            labCNPJ.Location = new Point(841, 57);
+            labCNPJ.Name = "labCNPJ";
+            labCNPJ.Size = new Size(58, 15);
+            labCNPJ.TabIndex = 3;
+            labCNPJ.Text = "CNPJ - F1";
+            labCNPJ.Click += labCNPJ_Click;
             // 
             // txtInscricaoEstadual
             // 
-            this.txtInscricaoEstadual.Location = new System.Drawing.Point(842, 128);
-            this.txtInscricaoEstadual.Name = "txtInscricaoEstadual";
-            this.txtInscricaoEstadual.Size = new System.Drawing.Size(155, 23);
-            this.txtInscricaoEstadual.TabIndex = 3;
+            txtInscricaoEstadual.Location = new Point(842, 128);
+            txtInscricaoEstadual.Name = "txtInscricaoEstadual";
+            txtInscricaoEstadual.Size = new Size(155, 23);
+            txtInscricaoEstadual.TabIndex = 3;
             // 
             // labInscricaoEstadual
             // 
-            this.labInscricaoEstadual.AutoSize = true;
-            this.labInscricaoEstadual.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labInscricaoEstadual.Location = new System.Drawing.Point(842, 110);
-            this.labInscricaoEstadual.Name = "labInscricaoEstadual";
-            this.labInscricaoEstadual.Size = new System.Drawing.Size(104, 15);
-            this.labInscricaoEstadual.TabIndex = 5;
-            this.labInscricaoEstadual.Text = "Inscrição Estadual";
+            labInscricaoEstadual.AutoSize = true;
+            labInscricaoEstadual.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            labInscricaoEstadual.Location = new Point(842, 110);
+            labInscricaoEstadual.Name = "labInscricaoEstadual";
+            labInscricaoEstadual.Size = new Size(104, 15);
+            labInscricaoEstadual.TabIndex = 5;
+            labInscricaoEstadual.Text = "Inscrição Estadual";
             // 
             // labFantasia
             // 
-            this.labFantasia.AutoSize = true;
-            this.labFantasia.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labFantasia.Location = new System.Drawing.Point(12, 110);
-            this.labFantasia.Name = "labFantasia";
-            this.labFantasia.Size = new System.Drawing.Size(88, 15);
-            this.labFantasia.TabIndex = 6;
-            this.labFantasia.Text = "Nome Fantasia";
+            labFantasia.AutoSize = true;
+            labFantasia.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            labFantasia.Location = new Point(12, 110);
+            labFantasia.Name = "labFantasia";
+            labFantasia.Size = new Size(88, 15);
+            labFantasia.TabIndex = 6;
+            labFantasia.Text = "Nome Fantasia";
             // 
             // txtFantasia
             // 
-            this.txtFantasia.Location = new System.Drawing.Point(12, 128);
-            this.txtFantasia.Name = "txtFantasia";
-            this.txtFantasia.Size = new System.Drawing.Size(681, 23);
-            this.txtFantasia.TabIndex = 2;
+            txtFantasia.Location = new Point(12, 128);
+            txtFantasia.Name = "txtFantasia";
+            txtFantasia.Size = new Size(681, 23);
+            txtFantasia.TabIndex = 2;
             // 
             // labVendedor
             // 
-            this.labVendedor.AutoSize = true;
-            this.labVendedor.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labVendedor.Location = new System.Drawing.Point(842, 163);
-            this.labVendedor.Name = "labVendedor";
-            this.labVendedor.Size = new System.Drawing.Size(85, 15);
-            this.labVendedor.TabIndex = 8;
-            this.labVendedor.Text = "Vendedor - F1";
+            labVendedor.AutoSize = true;
+            labVendedor.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            labVendedor.Location = new Point(842, 163);
+            labVendedor.Name = "labVendedor";
+            labVendedor.Size = new Size(85, 15);
+            labVendedor.TabIndex = 8;
+            labVendedor.Text = "Vendedor - F1";
             // 
             // txtVendedor
             // 
-            this.txtVendedor.Location = new System.Drawing.Point(842, 181);
-            this.txtVendedor.Name = "txtVendedor";
-            this.txtVendedor.Size = new System.Drawing.Size(155, 23);
-            this.txtVendedor.TabIndex = 5;
+            txtVendedor.Location = new Point(842, 181);
+            txtVendedor.Name = "txtVendedor";
+            txtVendedor.Size = new Size(155, 23);
+            txtVendedor.TabIndex = 5;
             // 
             // chkCliente
             // 
-            this.chkCliente.AutoSize = true;
-            this.chkCliente.Location = new System.Drawing.Point(12, 279);
-            this.chkCliente.Name = "chkCliente";
-            this.chkCliente.Size = new System.Drawing.Size(63, 19);
-            this.chkCliente.TabIndex = 7;
-            this.chkCliente.Text = "Cliente";
-            this.chkCliente.UseVisualStyleBackColor = true;
+            chkCliente.AutoSize = true;
+            chkCliente.Location = new Point(12, 279);
+            chkCliente.Name = "chkCliente";
+            chkCliente.Size = new Size(63, 19);
+            chkCliente.TabIndex = 7;
+            chkCliente.Text = "Cliente";
+            chkCliente.UseVisualStyleBackColor = true;
             // 
             // chkDistribuidor
             // 
-            this.chkDistribuidor.AutoSize = true;
-            this.chkDistribuidor.Location = new System.Drawing.Point(138, 279);
-            this.chkDistribuidor.Name = "chkDistribuidor";
-            this.chkDistribuidor.Size = new System.Drawing.Size(88, 19);
-            this.chkDistribuidor.TabIndex = 8;
-            this.chkDistribuidor.Text = "Distribuidor";
-            this.chkDistribuidor.UseVisualStyleBackColor = true;
+            chkDistribuidor.AutoSize = true;
+            chkDistribuidor.Location = new Point(138, 279);
+            chkDistribuidor.Name = "chkDistribuidor";
+            chkDistribuidor.Size = new Size(88, 19);
+            chkDistribuidor.TabIndex = 8;
+            chkDistribuidor.Text = "Distribuidor";
+            chkDistribuidor.UseVisualStyleBackColor = true;
             // 
             // chkFabricante
             // 
-            this.chkFabricante.AutoSize = true;
-            this.chkFabricante.Location = new System.Drawing.Point(286, 279);
-            this.chkFabricante.Name = "chkFabricante";
-            this.chkFabricante.Size = new System.Drawing.Size(81, 19);
-            this.chkFabricante.TabIndex = 9;
-            this.chkFabricante.Text = "Fabricante";
-            this.chkFabricante.UseVisualStyleBackColor = true;
+            chkFabricante.AutoSize = true;
+            chkFabricante.Location = new Point(286, 279);
+            chkFabricante.Name = "chkFabricante";
+            chkFabricante.Size = new Size(81, 19);
+            chkFabricante.TabIndex = 9;
+            chkFabricante.Text = "Fabricante";
+            chkFabricante.UseVisualStyleBackColor = true;
             // 
             // chkFornecedor
             // 
-            this.chkFornecedor.AutoSize = true;
-            this.chkFornecedor.Location = new System.Drawing.Point(430, 279);
-            this.chkFornecedor.Name = "chkFornecedor";
-            this.chkFornecedor.Size = new System.Drawing.Size(86, 19);
-            this.chkFornecedor.TabIndex = 10;
-            this.chkFornecedor.Text = "Fornecedor";
-            this.chkFornecedor.UseVisualStyleBackColor = true;
+            chkFornecedor.AutoSize = true;
+            chkFornecedor.Location = new Point(430, 279);
+            chkFornecedor.Name = "chkFornecedor";
+            chkFornecedor.Size = new Size(86, 19);
+            chkFornecedor.TabIndex = 10;
+            chkFornecedor.Text = "Fornecedor";
+            chkFornecedor.UseVisualStyleBackColor = true;
             // 
             // cmdSair
             // 
-            this.cmdSair.AccessibleDescription = "Sair";
-            this.cmdSair.BackgroundImage = global::Formularios.Properties.Resources.logout;
-            this.cmdSair.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.cmdSair.Location = new System.Drawing.Point(967, 11);
-            this.cmdSair.Name = "cmdSair";
-            this.cmdSair.Size = new System.Drawing.Size(30, 30);
-            this.cmdSair.TabIndex = 16;
-            this.cmdSair.UseVisualStyleBackColor = true;
-            this.cmdSair.Click += new System.EventHandler(this.cmdSair_Click);
+            cmdSair.AccessibleDescription = "Sair";
+            cmdSair.BackgroundImage = Formularios.Properties.Resources.logout;
+            cmdSair.BackgroundImageLayout = ImageLayout.Stretch;
+            cmdSair.Location = new Point(967, 11);
+            cmdSair.Name = "cmdSair";
+            cmdSair.Size = new Size(30, 30);
+            cmdSair.TabIndex = 16;
+            cmdSair.UseVisualStyleBackColor = true;
+            cmdSair.Click += cmdSair_Click;
             // 
             // cmdGravar
             // 
-            this.cmdGravar.AccessibleDescription = "Gravar";
-            this.cmdGravar.BackgroundImage = global::Formularios.Properties.Resources.save;
-            this.cmdGravar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.cmdGravar.Location = new System.Drawing.Point(931, 11);
-            this.cmdGravar.Name = "cmdGravar";
-            this.cmdGravar.Size = new System.Drawing.Size(30, 30);
-            this.cmdGravar.TabIndex = 15;
-            this.cmdGravar.UseVisualStyleBackColor = true;
-            this.cmdGravar.Click += new System.EventHandler(this.Gravar);
+            cmdGravar.AccessibleDescription = "Gravar";
+            cmdGravar.BackgroundImage = Formularios.Properties.Resources.save;
+            cmdGravar.BackgroundImageLayout = ImageLayout.Stretch;
+            cmdGravar.Location = new Point(931, 11);
+            cmdGravar.Name = "cmdGravar";
+            cmdGravar.Size = new Size(30, 30);
+            cmdGravar.TabIndex = 15;
+            cmdGravar.UseVisualStyleBackColor = true;
+            cmdGravar.Click += Gravar;
             // 
             // cmdNovo
             // 
-            this.cmdNovo.AccessibleDescription = "Novo";
-            this.cmdNovo.AccessibleName = "Novo";
-            this.cmdNovo.BackgroundImage = global::Formularios.Properties.Resources.folder;
-            this.cmdNovo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.cmdNovo.Location = new System.Drawing.Point(896, 11);
-            this.cmdNovo.Name = "cmdNovo";
-            this.cmdNovo.Size = new System.Drawing.Size(29, 29);
-            this.cmdNovo.TabIndex = 14;
-            this.cmdNovo.UseVisualStyleBackColor = true;
-            this.cmdNovo.Click += new System.EventHandler(this.cmdNovo_Click);
+            cmdNovo.AccessibleDescription = "Novo";
+            cmdNovo.AccessibleName = "Novo";
+            cmdNovo.BackgroundImage = Formularios.Properties.Resources.folder;
+            cmdNovo.BackgroundImageLayout = ImageLayout.Stretch;
+            cmdNovo.Location = new Point(896, 11);
+            cmdNovo.Name = "cmdNovo";
+            cmdNovo.Size = new Size(29, 29);
+            cmdNovo.TabIndex = 14;
+            cmdNovo.UseVisualStyleBackColor = true;
+            cmdNovo.Click += cmdNovo_Click;
             // 
             // labCadastroGeral
             // 
-            this.labCadastroGeral.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.labCadastroGeral.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labCadastroGeral.Location = new System.Drawing.Point(12, 11);
-            this.labCadastroGeral.Margin = new System.Windows.Forms.Padding(5, 0, 3, 0);
-            this.labCadastroGeral.Name = "labCadastroGeral";
-            this.labCadastroGeral.Size = new System.Drawing.Size(878, 30);
-            this.labCadastroGeral.TabIndex = 17;
-            this.labCadastroGeral.Text = "Cadastro Geral";
-            this.labCadastroGeral.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            labCadastroGeral.BorderStyle = BorderStyle.Fixed3D;
+            labCadastroGeral.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            labCadastroGeral.Location = new Point(12, 11);
+            labCadastroGeral.Margin = new Padding(5, 0, 3, 0);
+            labCadastroGeral.Name = "labCadastroGeral";
+            labCadastroGeral.Size = new Size(878, 30);
+            labCadastroGeral.TabIndex = 17;
+            labCadastroGeral.Text = "Cadastro Geral";
+            labCadastroGeral.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // cmdEndereco
             // 
-            this.cmdEndereco.Location = new System.Drawing.Point(12, 403);
-            this.cmdEndereco.Name = "cmdEndereco";
-            this.cmdEndereco.Size = new System.Drawing.Size(80, 30);
-            this.cmdEndereco.TabIndex = 19;
-            this.cmdEndereco.Text = "Endereços";
-            this.cmdEndereco.UseVisualStyleBackColor = true;
-            this.cmdEndereco.Click += new System.EventHandler(this.cmdEndereco_Click);
+            cmdEndereco.Location = new Point(12, 403);
+            cmdEndereco.Name = "cmdEndereco";
+            cmdEndereco.Size = new Size(80, 30);
+            cmdEndereco.TabIndex = 19;
+            cmdEndereco.Text = "Endereços";
+            cmdEndereco.UseVisualStyleBackColor = true;
+            cmdEndereco.Click += cmdEndereco_Click;
             // 
             // cmdContatos
             // 
-            this.cmdContatos.Location = new System.Drawing.Point(98, 403);
-            this.cmdContatos.Name = "cmdContatos";
-            this.cmdContatos.Size = new System.Drawing.Size(80, 30);
-            this.cmdContatos.TabIndex = 20;
-            this.cmdContatos.Text = "Contatos";
-            this.cmdContatos.UseVisualStyleBackColor = true;
-            this.cmdContatos.Click += new System.EventHandler(this.cmdContatos_Click);
+            cmdContatos.Location = new Point(98, 403);
+            cmdContatos.Name = "cmdContatos";
+            cmdContatos.Size = new Size(80, 30);
+            cmdContatos.TabIndex = 20;
+            cmdContatos.Text = "Contatos";
+            cmdContatos.UseVisualStyleBackColor = true;
+            cmdContatos.Click += cmdContatos_Click;
             // 
             // CmdRegOcorrencias
             // 
-            this.CmdRegOcorrencias.Location = new System.Drawing.Point(184, 403);
-            this.CmdRegOcorrencias.Name = "CmdRegOcorrencias";
-            this.CmdRegOcorrencias.Size = new System.Drawing.Size(80, 30);
-            this.CmdRegOcorrencias.TabIndex = 21;
-            this.CmdRegOcorrencias.Text = "Ocorrencias";
-            this.CmdRegOcorrencias.UseVisualStyleBackColor = true;
-            this.CmdRegOcorrencias.Click += new System.EventHandler(this.CmdRegOcorrencias_Click);
+            CmdRegOcorrencias.Location = new Point(184, 403);
+            CmdRegOcorrencias.Name = "CmdRegOcorrencias";
+            CmdRegOcorrencias.Size = new Size(80, 30);
+            CmdRegOcorrencias.TabIndex = 21;
+            CmdRegOcorrencias.Text = "Ocorrencias";
+            CmdRegOcorrencias.UseVisualStyleBackColor = true;
+            CmdRegOcorrencias.Click += CmdRegOcorrencias_Click;
             // 
             // txtQualificacao
             // 
-            this.txtQualificacao.Location = new System.Drawing.Point(12, 337);
-            this.txtQualificacao.Name = "txtQualificacao";
-            this.txtQualificacao.Size = new System.Drawing.Size(134, 23);
-            this.txtQualificacao.TabIndex = 11;
+            txtQualificacao.Location = new Point(12, 337);
+            txtQualificacao.Name = "txtQualificacao";
+            txtQualificacao.Size = new Size(134, 23);
+            txtQualificacao.TabIndex = 11;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(12, 319);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(98, 15);
-            this.label1.TabIndex = 24;
-            this.label1.Text = "Qualificação - F1";
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Location = new Point(12, 319);
+            label1.Name = "label1";
+            label1.Size = new Size(98, 15);
+            label1.TabIndex = 24;
+            label1.Text = "Qualificação - F1";
             // 
             // txtAviso
             // 
-            this.txtAviso.Location = new System.Drawing.Point(12, 181);
-            this.txtAviso.Name = "txtAviso";
-            this.txtAviso.Size = new System.Drawing.Size(681, 23);
-            this.txtAviso.TabIndex = 4;
+            txtAviso.Location = new Point(12, 181);
+            txtAviso.Name = "txtAviso";
+            txtAviso.Size = new Size(681, 23);
+            txtAviso.TabIndex = 4;
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(12, 163);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(37, 15);
-            this.label2.TabIndex = 25;
-            this.label2.Text = "Aviso";
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.Location = new Point(12, 163);
+            label2.Name = "label2";
+            label2.Size = new Size(37, 15);
+            label2.TabIndex = 25;
+            label2.Text = "Aviso";
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(152, 319);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(69, 15);
-            this.label3.TabIndex = 28;
-            this.label3.Text = "Dias Atraso";
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label3.Location = new Point(152, 319);
+            label3.Name = "label3";
+            label3.Size = new Size(69, 15);
+            label3.TabIndex = 28;
+            label3.Text = "Dias Atraso";
             // 
             // txtDiasAtraso
             // 
-            this.txtDiasAtraso.Location = new System.Drawing.Point(152, 337);
-            this.txtDiasAtraso.Name = "txtDiasAtraso";
-            this.txtDiasAtraso.Size = new System.Drawing.Size(69, 23);
-            this.txtDiasAtraso.TabIndex = 12;
+            txtDiasAtraso.Location = new Point(152, 337);
+            txtDiasAtraso.Name = "txtDiasAtraso";
+            txtDiasAtraso.Size = new Size(69, 23);
+            txtDiasAtraso.TabIndex = 12;
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(233, 319);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(140, 15);
-            this.label4.TabIndex = 30;
-            this.label4.Text = "Região de Cobrança - F1";
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label4.Location = new Point(233, 319);
+            label4.Name = "label4";
+            label4.Size = new Size(140, 15);
+            label4.TabIndex = 30;
+            label4.Text = "Região de Cobrança - F1";
             // 
             // txtRegCobranca
             // 
-            this.txtRegCobranca.Location = new System.Drawing.Point(233, 337);
-            this.txtRegCobranca.Name = "txtRegCobranca";
-            this.txtRegCobranca.Size = new System.Drawing.Size(283, 23);
-            this.txtRegCobranca.TabIndex = 13;
+            txtRegCobranca.Location = new Point(233, 337);
+            txtRegCobranca.Name = "txtRegCobranca";
+            txtRegCobranca.Size = new Size(283, 23);
+            txtRegCobranca.TabIndex = 13;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(842, 275);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(156, 23);
-            this.button1.TabIndex = 17;
-            this.button1.Text = "Ultima Venda";
-            this.button1.UseVisualStyleBackColor = true;
+            button1.Location = new Point(842, 275);
+            button1.Name = "button1";
+            button1.Size = new Size(156, 23);
+            button1.TabIndex = 17;
+            button1.Text = "Ultima Venda";
+            button1.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(842, 319);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(156, 23);
-            this.button2.TabIndex = 18;
-            this.button2.Text = "Produtos Preferidos";
-            this.button2.UseVisualStyleBackColor = true;
+            button2.Location = new Point(842, 319);
+            button2.Name = "button2";
+            button2.Size = new Size(156, 23);
+            button2.TabIndex = 18;
+            button2.Text = "Produtos Preferidos";
+            button2.UseVisualStyleBackColor = true;
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(12, 218);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(123, 15);
-            this.label5.TabIndex = 34;
-            this.label5.Text = "Região de Venda - F1";
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label5.Location = new Point(12, 218);
+            label5.Name = "label5";
+            label5.Size = new Size(123, 15);
+            label5.TabIndex = 34;
+            label5.Text = "Região de Venda - F1";
             // 
             // txtRegVenda
             // 
-            this.txtRegVenda.Location = new System.Drawing.Point(12, 236);
-            this.txtRegVenda.Name = "txtRegVenda";
-            this.txtRegVenda.Size = new System.Drawing.Size(283, 23);
-            this.txtRegVenda.TabIndex = 6;
+            txtRegVenda.Location = new Point(12, 236);
+            txtRegVenda.Name = "txtRegVenda";
+            txtRegVenda.Size = new Size(283, 23);
+            txtRegVenda.TabIndex = 6;
+            // 
+            // txtCNPJ
+            // 
+            txtCNPJ.Location = new Point(842, 75);
+            txtCNPJ.Mask = "00.000.000/0000-00";
+            txtCNPJ.Name = "txtCNPJ";
+            txtCNPJ.Size = new Size(155, 23);
+            txtCNPJ.TabIndex = 35;
             // 
             // frmCadEmpresas
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1009, 449);
-            this.ControlBox = false;
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.txtRegVenda);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.txtRegCobranca);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.txtDiasAtraso);
-            this.Controls.Add(this.txtAviso);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtQualificacao);
-            this.Controls.Add(this.CmdRegOcorrencias);
-            this.Controls.Add(this.cmdContatos);
-            this.Controls.Add(this.cmdEndereco);
-            this.Controls.Add(this.labCadastroGeral);
-            this.Controls.Add(this.cmdNovo);
-            this.Controls.Add(this.cmdGravar);
-            this.Controls.Add(this.cmdSair);
-            this.Controls.Add(this.chkFornecedor);
-            this.Controls.Add(this.chkFabricante);
-            this.Controls.Add(this.chkDistribuidor);
-            this.Controls.Add(this.chkCliente);
-            this.Controls.Add(this.txtVendedor);
-            this.Controls.Add(this.labVendedor);
-            this.Controls.Add(this.txtFantasia);
-            this.Controls.Add(this.labFantasia);
-            this.Controls.Add(this.labInscricaoEstadual);
-            this.Controls.Add(this.txtInscricaoEstadual);
-            this.Controls.Add(this.labCNPJ);
-            this.Controls.Add(this.txtCNPJ);
-            this.Controls.Add(this.labRazaoSocial);
-            this.Controls.Add(this.txtRazaoSocial);
-            this.Name = "frmCadEmpresas";
-            this.Text = "Cadastro Geral";
-            this.Load += new System.EventHandler(this.frmCadEmpresas_Load);
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(1009, 449);
+            ControlBox = false;
+            Controls.Add(txtCNPJ);
+            Controls.Add(label5);
+            Controls.Add(txtRegVenda);
+            Controls.Add(button2);
+            Controls.Add(button1);
+            Controls.Add(label4);
+            Controls.Add(txtRegCobranca);
+            Controls.Add(label3);
+            Controls.Add(txtDiasAtraso);
+            Controls.Add(txtAviso);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            Controls.Add(txtQualificacao);
+            Controls.Add(CmdRegOcorrencias);
+            Controls.Add(cmdContatos);
+            Controls.Add(cmdEndereco);
+            Controls.Add(labCadastroGeral);
+            Controls.Add(cmdNovo);
+            Controls.Add(cmdGravar);
+            Controls.Add(cmdSair);
+            Controls.Add(chkFornecedor);
+            Controls.Add(chkFabricante);
+            Controls.Add(chkDistribuidor);
+            Controls.Add(chkCliente);
+            Controls.Add(txtVendedor);
+            Controls.Add(labVendedor);
+            Controls.Add(txtFantasia);
+            Controls.Add(labFantasia);
+            Controls.Add(labInscricaoEstadual);
+            Controls.Add(txtInscricaoEstadual);
+            Controls.Add(labCNPJ);
+            Controls.Add(labRazaoSocial);
+            Controls.Add(txtRazaoSocial);
+            Name = "frmCadEmpresas";
+            Text = "Cadastro Geral";
+            Load += frmCadEmpresas_Load;
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
         private TextBox txtRazaoSocial;
         private Label labRazaoSocial;
-        private TextBox txtCNPJ;
         private Label labCNPJ;
         private TextBox txtInscricaoEstadual;
         private Label labInscricaoEstadual;
@@ -455,5 +453,6 @@
         private Button button2;
         private Label label5;
         private TextBox txtRegVenda;
+        private MaskedTextBox txtCNPJ;
     }
 }

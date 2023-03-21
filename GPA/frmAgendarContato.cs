@@ -99,17 +99,17 @@ namespace Formularios
 
         private void cmdGravar_Click(object sender, EventArgs e)
         {
-            if(LID == "")
+            if (LID == "")
             {
                 MessageBox.Show("Nenhuma empresa selecionada", "GPA");
                 return;
             }
-            if(LIDUsuario == "")
+            if (LIDUsuario == "")
             {
                 MessageBox.Show("Nenhum usuário selecionado", "GPA");
                 return;
             }
-            if(txtDataContato.Text == "")
+            if (txtDataContato.Text == "")
             {
                 MessageBox.Show("Data não informada!", "GPA");
                 return;
@@ -121,9 +121,9 @@ namespace Formularios
             objAgendaContato.cpIDUsuarioDR = LIDUsuario;
 
             objAgendaContato.InsereDados();
-            if(objAgendaContato.cpMsgErro != "")
+            if (objAgendaContato.cpMsgErro != "")
             {
-                MessageBox.Show(objAgendaContato.cpMsgErro,"GPA");
+                MessageBox.Show(objAgendaContato.cpMsgErro, "GPA");
                 return;
             }
         }

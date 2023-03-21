@@ -2,7 +2,7 @@ using Banco_de_Dados;
 using Formularios;
 
 namespace GPA
-    
+
 {
     public partial class frmCadEmpresas : Form
     {
@@ -35,7 +35,7 @@ namespace GPA
 
         }
 
-        
+
 
 
         private void cmdNovo_Click(object sender, EventArgs e)
@@ -69,7 +69,7 @@ namespace GPA
             LRegCobranca = "";
             LAviso = "";
             MsgErro = "";
-    }
+        }
 
         private void Gravar(object sender, EventArgs e)
         {
@@ -78,25 +78,25 @@ namespace GPA
 
             BDCadastroGeral objCadastro = new BDCadastroGeral();
             objCadastro.RazaoSocial = txtRazaoSocial.Text;
-            if (txtRazaoSocial.Text == "") 
+            if (txtRazaoSocial.Text == "")
             {
                 MessageBox.Show("RazaoSocial não preechida");
                 return;
             }
             objCadastro.RazaoFantasia = txtFantasia.Text;
-            if(txtFantasia.Text == "")
+            if (txtFantasia.Text == "")
             {
                 MessageBox.Show("Nome Fantasia não preechido");
                 return;
             }
             objCadastro.InscricaoEstadual = txtInscricaoEstadual.Text;
-            if(txtInscricaoEstadual.Text == "")
+            if (txtInscricaoEstadual.Text == "")
             {
                 MessageBox.Show("Inscrição Estadual não preechida");
                 return;
             }
             objCadastro.CNPJ = txtCNPJ.Text;
-            if(txtCNPJ.Text == "")
+            if (txtCNPJ.Text == "")
             {
                 MessageBox.Show("CNPJ não preechido");
                 return;
@@ -144,18 +144,18 @@ namespace GPA
             {
                 objCadastro.Distribuidor = "N";
             }
-            if(Convert.ToString(txtVendedor.Text) == "")
+            if (Convert.ToString(txtVendedor.Text) == "")
             {
                 objCadastro.Vendedor = "";
             }
-            
-            if(chkFabricante.Checked == false && chkFornecedor.Checked == false && chkCliente.Checked == false && chkDistribuidor.Checked == false)
+
+            if (chkFabricante.Checked == false && chkFornecedor.Checked == false && chkCliente.Checked == false && chkDistribuidor.Checked == false)
             {
                 MessageBox.Show("Ao menos uma identificação deve ser selecionada para a empresa");
                 return;
             }
 
-            if(LID == "")
+            if (LID == "")
             {
                 objCadastro.InsereDados();
                 MsgErro = objCadastro.MsgErro;
@@ -230,35 +230,35 @@ namespace GPA
                     objAtualiza.RegCobranca = objCadastro.RegCobranca;
                     Alterar = "S";
                 }
-                if(Alterar == "S")
+                if (Alterar == "S")
                 {
                     objAtualiza.AlteraDados();
                 }
-                
+
                 if (objAtualiza.MsgErro != "")
                 {
                     MsgErro = objAtualiza.MsgErro;
                 }
             }
-            if(MsgErro != null)
+            if (MsgErro != null)
             {
                 MessageBox.Show(MsgErro.ToString());
                 return;
             }
-            else 
+            else
             {
-                MessageBox.Show("Dados Gravados!","GPA");
+                MessageBox.Show("Dados Gravados!", "GPA");
                 MostraDados();
             }
-            
+
         }
 
         private void CarregaCampos(BDCadastroGeral CadastroGeral)
         {
-            txtRazaoSocial.Text =  LRazaoSocial;
-            txtFantasia.Text =  LRazaoFantasia;
+            txtRazaoSocial.Text = LRazaoSocial;
+            txtFantasia.Text = LRazaoFantasia;
             txtCNPJ.Text = LCNPJ;
-            txtInscricaoEstadual.Text =  LInscricaoEstadual;
+            txtInscricaoEstadual.Text = LInscricaoEstadual;
             txtVendedor.Text = LVendedor;
             if (LCliente == "S") chkCliente.Checked = true;
             if (LDistribuidor == "S") chkDistribuidor.Checked = true;
@@ -271,24 +271,41 @@ namespace GPA
         {
             if (e.KeyCode == Keys.F1)
             {
-                frmSelecionaEmpresa objTela = new frmSelecionaEmpresa(this,"",txtRazaoSocial.Text.ToString(),"","");
+                frmSelecionaEmpresa objTela = new frmSelecionaEmpresa(this, "", txtRazaoSocial.Text.ToString(), "", "");
                 objTela.ShowDialog();
+
+                if(LID != "")
+                {
+                    BDCadastroGeral objCadastro = new BDCadastroGeral();
+                    List<BDCadastroGeral> lstCadastros = objCadastro.CarregaDados(LID, "", "", "", "", "", "", "", "", "");
+
+                    if (lstCadastros.Count > 0)
+                    {
+                        if(lstCadastros[0].Aviso != null)
+                        {
+                            if (lstCadastros[0].Aviso != "")
+                            {
+                                MessageBox.Show(lstCadastros[0].Aviso.ToString(), "GPA");
+                            }
+                        }
+                    }
+                }
                 MostraDados();
             }
-            
+
         }
 
         public void MostraDados()
         {
             BDCadastroGeral ObjCadastro = new BDCadastroGeral();
-            List<BDCadastroGeral> lstCadastro = ObjCadastro.CarregaDados(LID,LRazaoSocial,LRazaoFantasia,LCNPJ,"","","","","","");
+            List<BDCadastroGeral> lstCadastro = ObjCadastro.CarregaDados(LID, LRazaoSocial, LRazaoFantasia, LCNPJ, "", "", "", "", "", "");
             txtRazaoSocial.Text = lstCadastro[0].RazaoSocial.ToString();
             txtFantasia.Text = lstCadastro[0].RazaoFantasia.ToString();
             txtCNPJ.Text = lstCadastro[0].CNPJ.ToString();
             txtInscricaoEstadual.Text = lstCadastro[0].InscricaoEstadual.ToString();
-            if (lstCadastro[0].Cliente == "S") 
+            if (lstCadastro[0].Cliente == "S")
             {
-                chkCliente.Checked = true; 
+                chkCliente.Checked = true;
             }
             else chkCliente.Checked = false;
 
@@ -296,7 +313,7 @@ namespace GPA
             {
                 chkDistribuidor.Checked = true;
             }
-            else chkDistribuidor.Checked= false;
+            else chkDistribuidor.Checked = false;
 
             if (lstCadastro[0].Fabricante == "S")
             {
@@ -308,13 +325,13 @@ namespace GPA
             {
                 chkFornecedor.Checked = true;
             }
-            else chkFornecedor.Checked= false;
+            else chkFornecedor.Checked = false;
 
             if (lstCadastro[0].Vendedor != LUsuario)
             {
                 SEGUsuario objUsuario = new SEGUsuario();
                 List<SEGUsuario> lstUsuario = objUsuario.CarregaDados(LUsuario, "", "", "");
-                if(lstUsuario.Count > 0)
+                if (lstUsuario.Count > 0)
                 {
                     if (lstUsuario[0].GerenciaCadastros != "S")
                     {
@@ -344,7 +361,7 @@ namespace GPA
         {
             if (LID == "") return;
 
-            frmCadContatos objTela = new frmCadContatos(LID,"");
+            frmCadContatos objTela = new frmCadContatos(LID, "");
             objTela.ShowDialog();
         }
 

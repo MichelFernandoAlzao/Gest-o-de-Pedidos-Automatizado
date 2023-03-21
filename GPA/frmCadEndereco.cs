@@ -67,7 +67,7 @@ namespace Formularios
 
         private void AtualizaGrid()
         {
-            
+
             List<BDCadEnderecos> lstEnderecos = new List<BDCadEnderecos>();
             BDCadEnderecos objEndereco = new BDCadEnderecos();
             lstEnderecos = objEndereco.CarregaDados(LCadEmpresa);
@@ -91,7 +91,7 @@ namespace Formularios
                     grdEnderecos.Rows.Add(Row);
                 }
             }
-            if(grdEnderecos.RowCount == 0)
+            if (grdEnderecos.RowCount == 0)
             {
                 txtIdentificacao.Text = "";
                 txtRua.Text = "";

@@ -32,7 +32,6 @@
             txtEmpresa = new TextBox();
             labEmpresa = new Label();
             labData = new Label();
-            txtDataContato = new TextBox();
             labUsuario = new Label();
             txtUsuario = new TextBox();
             cmdExcluir = new Button();
@@ -40,13 +39,14 @@
             cmdGravar = new Button();
             cmdSair = new Button();
             lbPedidos = new Label();
+            txtDataContato = new MaskedTextBox();
             SuspendLayout();
             // 
             // txtEmpresa
             // 
             txtEmpresa.Location = new Point(12, 62);
             txtEmpresa.Name = "txtEmpresa";
-            txtEmpresa.Size = new Size(430, 23);
+            txtEmpresa.Size = new Size(417, 23);
             txtEmpresa.TabIndex = 0;
             txtEmpresa.KeyDown += txtEmpresa_KeyDown;
             // 
@@ -64,18 +64,11 @@
             // 
             labData.AutoSize = true;
             labData.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            labData.Location = new Point(463, 44);
+            labData.Location = new Point(441, 44);
             labData.Name = "labData";
             labData.Size = new Size(33, 15);
             labData.TabIndex = 3;
             labData.Text = "Data";
-            // 
-            // txtDataContato
-            // 
-            txtDataContato.Location = new Point(463, 62);
-            txtDataContato.Name = "txtDataContato";
-            txtDataContato.Size = new Size(78, 23);
-            txtDataContato.TabIndex = 2;
             // 
             // labUsuario
             // 
@@ -152,12 +145,22 @@
             lbPedidos.Text = "Agendar Contato";
             lbPedidos.TextAlign = ContentAlignment.MiddleCenter;
             // 
+            // txtDataContato
+            // 
+            txtDataContato.Location = new Point(441, 62);
+            txtDataContato.Mask = "00/00/0000";
+            txtDataContato.Name = "txtDataContato";
+            txtDataContato.Size = new Size(100, 23);
+            txtDataContato.TabIndex = 51;
+            txtDataContato.ValidatingType = typeof(DateTime);
+            // 
             // frmAgendarContato
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(690, 96);
             ControlBox = false;
+            Controls.Add(txtDataContato);
             Controls.Add(cmdExcluir);
             Controls.Add(cmdNovo);
             Controls.Add(cmdGravar);
@@ -166,7 +169,6 @@
             Controls.Add(labUsuario);
             Controls.Add(txtUsuario);
             Controls.Add(labData);
-            Controls.Add(txtDataContato);
             Controls.Add(labEmpresa);
             Controls.Add(txtEmpresa);
             Name = "frmAgendarContato";
@@ -180,7 +182,6 @@
         private TextBox txtEmpresa;
         private Label labEmpresa;
         private Label labData;
-        private TextBox txtDataContato;
         private Label labUsuario;
         private TextBox txtUsuario;
         private Button cmdExcluir;
@@ -188,5 +189,6 @@
         private Button cmdGravar;
         private Button cmdSair;
         private Label lbPedidos;
+        private MaskedTextBox txtDataContato;
     }
 }

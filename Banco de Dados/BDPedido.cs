@@ -307,6 +307,8 @@ namespace Banco_de_Dados
             cmd.Dispose();
             return lstPedido;
         }
+
+
         public void Excluir()
         {
             string sSQL = "";
@@ -363,6 +365,67 @@ namespace Banco_de_Dados
                     bDPedido.cpComissao = dr["OPPComissao"].ToString();
                     bDPedido.cpVendedorDR = dr["OPPVendedorDR"].ToString();
                     bDPedido.cpConcluido = dr["OPPConcluido"].ToString();
+
+                    lstPedido.Add(bDPedido);
+
+                }
+
+                //Desconectar
+                conexao.desconectar();
+
+            }
+            catch (SqlException e)
+            {
+                cpMsgErro = e.Message.ToString();
+            }
+            cmd.Dispose();
+            return lstPedido;
+        }
+
+
+        public List<BDPedido> CarregaDadosUltVenda()
+        {
+            List<BDPedido> lstPedido = new List<BDPedido>();
+            string slqSelect = "SELECT TOP 1 OPPPedido FROM OPPPedido ";
+            string sqlWhere = "WHERE ";
+            string Orderby = "Order by OPPDataConfirmacao desc";
+            char ClausulaWhere = 'N';
+            if(cpEmpresaDR != null)
+            {
+                if (cpEmpresaDR != "")
+                {
+                    sqlWhere = "WHERE OPPEmpresaDR = '" + cpEmpresaDR + "' ";
+                    ClausulaWhere = 'S';
+                }
+            }
+            
+            if(cpVendedorDR != null)
+            {
+                if (cpVendedorDR != "")
+                {
+                    sqlWhere += "OPPVendedorDR like '" + cpVendedorDR + "%' ";
+                    ClausulaWhere = 'S';
+                }
+            }
+
+            slqSelect = slqSelect + sqlWhere + Orderby;
+
+            
+            cmd.CommandText = slqSelect;
+            var dt = new DataTable();
+
+            try
+            {
+                cmd.Connection = conexao.conectar();
+                //Executar o comando
+                SqlDataReader reader = cmd.ExecuteReader();
+                dt.Load(reader);
+                reader.Close();
+
+                foreach (DataRow dr in dt.Rows)
+                {
+                    BDPedido bDPedido = new BDPedido();
+                    bDPedido.cpID = dr["OPPPedido"].ToString();
 
                     lstPedido.Add(bDPedido);
 

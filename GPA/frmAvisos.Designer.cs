@@ -29,263 +29,256 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAvisos));
-            this.cmdExcluir = new System.Windows.Forms.Button();
-            this.cmdNovo = new System.Windows.Forms.Button();
-            this.cmdSair = new System.Windows.Forms.Button();
-            this.cmdGravar = new System.Windows.Forms.Button();
-            this.lbPedidos = new System.Windows.Forms.Label();
-            this.txtAviso = new System.Windows.Forms.TextBox();
-            this.labAvisos = new System.Windows.Forms.Label();
-            this.labInicio = new System.Windows.Forms.Label();
-            this.txtDataInicio = new System.Windows.Forms.TextBox();
-            this.txtDataTermino = new System.Windows.Forms.TextBox();
-            this.labTermino = new System.Windows.Forms.Label();
-            this.txtUsuarioDestino = new System.Windows.Forms.TextBox();
-            this.labUsuario = new System.Windows.Forms.Label();
-            this.grdAvisos = new System.Windows.Forms.DataGridView();
-            this.chkTodos = new System.Windows.Forms.CheckBox();
-            this.grdID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.grdAviso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.grdInicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.grdTermino = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.grdUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.grdIDusuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.grdTodos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.grdAvisos)).BeginInit();
-            this.SuspendLayout();
+            cmdExcluir = new Button();
+            cmdNovo = new Button();
+            cmdSair = new Button();
+            cmdGravar = new Button();
+            lbPedidos = new Label();
+            txtAviso = new TextBox();
+            labAvisos = new Label();
+            labInicio = new Label();
+            labTermino = new Label();
+            txtUsuarioDestino = new TextBox();
+            labUsuario = new Label();
+            grdAvisos = new DataGridView();
+            grdID = new DataGridViewTextBoxColumn();
+            grdAviso = new DataGridViewTextBoxColumn();
+            grdInicio = new DataGridViewTextBoxColumn();
+            grdTermino = new DataGridViewTextBoxColumn();
+            grdUsuario = new DataGridViewTextBoxColumn();
+            grdIDusuario = new DataGridViewTextBoxColumn();
+            grdTodos = new DataGridViewTextBoxColumn();
+            chkTodos = new CheckBox();
+            txtDataInicio = new MaskedTextBox();
+            txtDataTermino = new MaskedTextBox();
+            ((System.ComponentModel.ISupportInitialize)grdAvisos).BeginInit();
+            SuspendLayout();
             // 
             // cmdExcluir
             // 
-            this.cmdExcluir.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("cmdExcluir.BackgroundImage")));
-            this.cmdExcluir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.cmdExcluir.Location = new System.Drawing.Point(654, 12);
-            this.cmdExcluir.Name = "cmdExcluir";
-            this.cmdExcluir.Size = new System.Drawing.Size(29, 29);
-            this.cmdExcluir.TabIndex = 11;
-            this.cmdExcluir.UseVisualStyleBackColor = true;
-            this.cmdExcluir.Click += new System.EventHandler(this.cmdExcluir_Click);
+            cmdExcluir.BackgroundImage = (Image)resources.GetObject("cmdExcluir.BackgroundImage");
+            cmdExcluir.BackgroundImageLayout = ImageLayout.Stretch;
+            cmdExcluir.Location = new Point(654, 12);
+            cmdExcluir.Name = "cmdExcluir";
+            cmdExcluir.Size = new Size(29, 29);
+            cmdExcluir.TabIndex = 11;
+            cmdExcluir.UseVisualStyleBackColor = true;
+            cmdExcluir.Click += cmdExcluir_Click;
             // 
             // cmdNovo
             // 
-            this.cmdNovo.BackgroundImage = global::Formularios.Properties.Resources.folder;
-            this.cmdNovo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.cmdNovo.Location = new System.Drawing.Point(689, 12);
-            this.cmdNovo.Name = "cmdNovo";
-            this.cmdNovo.Size = new System.Drawing.Size(29, 29);
-            this.cmdNovo.TabIndex = 12;
-            this.cmdNovo.UseVisualStyleBackColor = true;
-            this.cmdNovo.Click += new System.EventHandler(this.cmdNovo_Click);
+            cmdNovo.BackgroundImage = Properties.Resources.folder;
+            cmdNovo.BackgroundImageLayout = ImageLayout.Stretch;
+            cmdNovo.Location = new Point(689, 12);
+            cmdNovo.Name = "cmdNovo";
+            cmdNovo.Size = new Size(29, 29);
+            cmdNovo.TabIndex = 12;
+            cmdNovo.UseVisualStyleBackColor = true;
+            cmdNovo.Click += cmdNovo_Click;
             // 
             // cmdSair
             // 
-            this.cmdSair.BackgroundImage = global::Formularios.Properties.Resources.logout;
-            this.cmdSair.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.cmdSair.Location = new System.Drawing.Point(759, 12);
-            this.cmdSair.Name = "cmdSair";
-            this.cmdSair.Size = new System.Drawing.Size(29, 29);
-            this.cmdSair.TabIndex = 14;
-            this.cmdSair.UseVisualStyleBackColor = true;
-            this.cmdSair.Click += new System.EventHandler(this.cmdSair_Click);
+            cmdSair.BackgroundImage = Properties.Resources.logout;
+            cmdSair.BackgroundImageLayout = ImageLayout.Stretch;
+            cmdSair.Location = new Point(759, 12);
+            cmdSair.Name = "cmdSair";
+            cmdSair.Size = new Size(29, 29);
+            cmdSair.TabIndex = 14;
+            cmdSair.UseVisualStyleBackColor = true;
+            cmdSair.Click += cmdSair_Click;
             // 
             // cmdGravar
             // 
-            this.cmdGravar.BackgroundImage = global::Formularios.Properties.Resources.save;
-            this.cmdGravar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.cmdGravar.Location = new System.Drawing.Point(724, 12);
-            this.cmdGravar.Name = "cmdGravar";
-            this.cmdGravar.Size = new System.Drawing.Size(29, 29);
-            this.cmdGravar.TabIndex = 13;
-            this.cmdGravar.UseVisualStyleBackColor = true;
-            this.cmdGravar.Click += new System.EventHandler(this.cmdGravar_Click);
+            cmdGravar.BackgroundImage = Properties.Resources.save;
+            cmdGravar.BackgroundImageLayout = ImageLayout.Stretch;
+            cmdGravar.Location = new Point(724, 12);
+            cmdGravar.Name = "cmdGravar";
+            cmdGravar.Size = new Size(29, 29);
+            cmdGravar.TabIndex = 13;
+            cmdGravar.UseVisualStyleBackColor = true;
+            cmdGravar.Click += cmdGravar_Click;
             // 
             // lbPedidos
             // 
-            this.lbPedidos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lbPedidos.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.lbPedidos.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbPedidos.ForeColor = System.Drawing.Color.Black;
-            this.lbPedidos.Location = new System.Drawing.Point(12, 12);
-            this.lbPedidos.Name = "lbPedidos";
-            this.lbPedidos.Size = new System.Drawing.Size(632, 30);
-            this.lbPedidos.TabIndex = 15;
-            this.lbPedidos.Text = "Cadastro Avisos";
-            this.lbPedidos.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            lbPedidos.BorderStyle = BorderStyle.Fixed3D;
+            lbPedidos.Cursor = Cursors.IBeam;
+            lbPedidos.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            lbPedidos.ForeColor = Color.Black;
+            lbPedidos.Location = new Point(12, 12);
+            lbPedidos.Name = "lbPedidos";
+            lbPedidos.Size = new Size(632, 30);
+            lbPedidos.TabIndex = 15;
+            lbPedidos.Text = "Cadastro Avisos";
+            lbPedidos.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // txtAviso
             // 
-            this.txtAviso.Location = new System.Drawing.Point(12, 60);
-            this.txtAviso.Multiline = true;
-            this.txtAviso.Name = "txtAviso";
-            this.txtAviso.Size = new System.Drawing.Size(632, 70);
-            this.txtAviso.TabIndex = 16;
+            txtAviso.Location = new Point(12, 60);
+            txtAviso.Multiline = true;
+            txtAviso.Name = "txtAviso";
+            txtAviso.Size = new Size(632, 70);
+            txtAviso.TabIndex = 16;
             // 
             // labAvisos
             // 
-            this.labAvisos.AutoSize = true;
-            this.labAvisos.Location = new System.Drawing.Point(12, 42);
-            this.labAvisos.Name = "labAvisos";
-            this.labAvisos.Size = new System.Drawing.Size(36, 15);
-            this.labAvisos.TabIndex = 17;
-            this.labAvisos.Text = "Aviso";
+            labAvisos.AutoSize = true;
+            labAvisos.Location = new Point(12, 42);
+            labAvisos.Name = "labAvisos";
+            labAvisos.Size = new Size(36, 15);
+            labAvisos.TabIndex = 17;
+            labAvisos.Text = "Aviso";
             // 
             // labInicio
             // 
-            this.labInicio.AutoSize = true;
-            this.labInicio.Location = new System.Drawing.Point(669, 44);
-            this.labInicio.Name = "labInicio";
-            this.labInicio.Size = new System.Drawing.Size(36, 15);
-            this.labInicio.TabIndex = 19;
-            this.labInicio.Text = "Inicio";
-            // 
-            // txtDataInicio
-            // 
-            this.txtDataInicio.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtDataInicio.Location = new System.Drawing.Point(669, 63);
-            this.txtDataInicio.Name = "txtDataInicio";
-            this.txtDataInicio.Size = new System.Drawing.Size(106, 23);
-            this.txtDataInicio.TabIndex = 20;
-            this.txtDataInicio.Tag = "";
-            this.txtDataInicio.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtDataTermino
-            // 
-            this.txtDataTermino.Location = new System.Drawing.Point(669, 107);
-            this.txtDataTermino.Name = "txtDataTermino";
-            this.txtDataTermino.Size = new System.Drawing.Size(106, 23);
-            this.txtDataTermino.TabIndex = 22;
+            labInicio.AutoSize = true;
+            labInicio.Location = new Point(669, 44);
+            labInicio.Name = "labInicio";
+            labInicio.Size = new Size(36, 15);
+            labInicio.TabIndex = 19;
+            labInicio.Text = "Inicio";
             // 
             // labTermino
             // 
-            this.labTermino.AutoSize = true;
-            this.labTermino.Location = new System.Drawing.Point(668, 89);
-            this.labTermino.Name = "labTermino";
-            this.labTermino.Size = new System.Drawing.Size(50, 15);
-            this.labTermino.TabIndex = 21;
-            this.labTermino.Text = "Termino";
+            labTermino.AutoSize = true;
+            labTermino.Location = new Point(668, 89);
+            labTermino.Name = "labTermino";
+            labTermino.Size = new Size(50, 15);
+            labTermino.TabIndex = 21;
+            labTermino.Text = "Termino";
             // 
             // txtUsuarioDestino
             // 
-            this.txtUsuarioDestino.Location = new System.Drawing.Point(647, 156);
-            this.txtUsuarioDestino.Name = "txtUsuarioDestino";
-            this.txtUsuarioDestino.Size = new System.Drawing.Size(141, 23);
-            this.txtUsuarioDestino.TabIndex = 24;
-            this.txtUsuarioDestino.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtUsuarioDestino_KeyDown);
+            txtUsuarioDestino.Location = new Point(647, 156);
+            txtUsuarioDestino.Name = "txtUsuarioDestino";
+            txtUsuarioDestino.Size = new Size(141, 23);
+            txtUsuarioDestino.TabIndex = 24;
+            txtUsuarioDestino.KeyDown += txtUsuarioDestino_KeyDown;
             // 
             // labUsuario
             // 
-            this.labUsuario.AutoSize = true;
-            this.labUsuario.Location = new System.Drawing.Point(647, 138);
-            this.labUsuario.Name = "labUsuario";
-            this.labUsuario.Size = new System.Drawing.Size(47, 15);
-            this.labUsuario.TabIndex = 23;
-            this.labUsuario.Text = "Usuario";
+            labUsuario.AutoSize = true;
+            labUsuario.Location = new Point(647, 138);
+            labUsuario.Name = "labUsuario";
+            labUsuario.Size = new Size(70, 15);
+            labUsuario.TabIndex = 23;
+            labUsuario.Text = "Usuario - F1";
             // 
             // grdAvisos
             // 
-            this.grdAvisos.AllowUserToAddRows = false;
-            this.grdAvisos.AllowUserToDeleteRows = false;
-            this.grdAvisos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdAvisos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.grdID,
-            this.grdAviso,
-            this.grdInicio,
-            this.grdTermino,
-            this.grdUsuario,
-            this.grdIDusuario,
-            this.grdTodos});
-            this.grdAvisos.Location = new System.Drawing.Point(12, 185);
-            this.grdAvisos.Name = "grdAvisos";
-            this.grdAvisos.ReadOnly = true;
-            this.grdAvisos.RowTemplate.Height = 25;
-            this.grdAvisos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grdAvisos.Size = new System.Drawing.Size(776, 150);
-            this.grdAvisos.TabIndex = 25;
-            this.grdAvisos.SelectionChanged += new System.EventHandler(this.grdAvisos_SelectionChanged);
-            // 
-            // chkTodos
-            // 
-            this.chkTodos.AutoSize = true;
-            this.chkTodos.Location = new System.Drawing.Point(12, 160);
-            this.chkTodos.Name = "chkTodos";
-            this.chkTodos.Size = new System.Drawing.Size(57, 19);
-            this.chkTodos.TabIndex = 26;
-            this.chkTodos.Text = "Todos";
-            this.chkTodos.UseVisualStyleBackColor = true;
+            grdAvisos.AllowUserToAddRows = false;
+            grdAvisos.AllowUserToDeleteRows = false;
+            grdAvisos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            grdAvisos.Columns.AddRange(new DataGridViewColumn[] { grdID, grdAviso, grdInicio, grdTermino, grdUsuario, grdIDusuario, grdTodos });
+            grdAvisos.Location = new Point(12, 185);
+            grdAvisos.Name = "grdAvisos";
+            grdAvisos.ReadOnly = true;
+            grdAvisos.RowTemplate.Height = 25;
+            grdAvisos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            grdAvisos.Size = new Size(776, 150);
+            grdAvisos.TabIndex = 25;
+            grdAvisos.SelectionChanged += grdAvisos_SelectionChanged;
             // 
             // grdID
             // 
-            this.grdID.HeaderText = "ID";
-            this.grdID.Name = "grdID";
-            this.grdID.ReadOnly = true;
-            this.grdID.Visible = false;
+            grdID.HeaderText = "ID";
+            grdID.Name = "grdID";
+            grdID.ReadOnly = true;
+            grdID.Visible = false;
             // 
             // grdAviso
             // 
-            this.grdAviso.HeaderText = "Aviso";
-            this.grdAviso.Name = "grdAviso";
-            this.grdAviso.ReadOnly = true;
-            this.grdAviso.Width = 400;
+            grdAviso.HeaderText = "Aviso";
+            grdAviso.Name = "grdAviso";
+            grdAviso.ReadOnly = true;
+            grdAviso.Width = 400;
             // 
             // grdInicio
             // 
-            this.grdInicio.HeaderText = "Inicio";
-            this.grdInicio.Name = "grdInicio";
-            this.grdInicio.ReadOnly = true;
+            grdInicio.HeaderText = "Inicio";
+            grdInicio.Name = "grdInicio";
+            grdInicio.ReadOnly = true;
             // 
             // grdTermino
             // 
-            this.grdTermino.HeaderText = "Termino";
-            this.grdTermino.Name = "grdTermino";
-            this.grdTermino.ReadOnly = true;
+            grdTermino.HeaderText = "Termino";
+            grdTermino.Name = "grdTermino";
+            grdTermino.ReadOnly = true;
             // 
             // grdUsuario
             // 
-            this.grdUsuario.HeaderText = "Usuario";
-            this.grdUsuario.Name = "grdUsuario";
-            this.grdUsuario.ReadOnly = true;
+            grdUsuario.HeaderText = "Usuario";
+            grdUsuario.Name = "grdUsuario";
+            grdUsuario.ReadOnly = true;
             // 
             // grdIDusuario
             // 
-            this.grdIDusuario.HeaderText = "IDUsuario";
-            this.grdIDusuario.Name = "grdIDusuario";
-            this.grdIDusuario.ReadOnly = true;
-            this.grdIDusuario.Visible = false;
+            grdIDusuario.HeaderText = "IDUsuario";
+            grdIDusuario.Name = "grdIDusuario";
+            grdIDusuario.ReadOnly = true;
+            grdIDusuario.Visible = false;
             // 
             // grdTodos
             // 
-            this.grdTodos.HeaderText = "Todos";
-            this.grdTodos.Name = "grdTodos";
-            this.grdTodos.ReadOnly = true;
-            this.grdTodos.Width = 50;
+            grdTodos.HeaderText = "Todos";
+            grdTodos.Name = "grdTodos";
+            grdTodos.ReadOnly = true;
+            grdTodos.Width = 50;
+            // 
+            // chkTodos
+            // 
+            chkTodos.AutoSize = true;
+            chkTodos.Location = new Point(12, 160);
+            chkTodos.Name = "chkTodos";
+            chkTodos.Size = new Size(57, 19);
+            chkTodos.TabIndex = 26;
+            chkTodos.Text = "Todos";
+            chkTodos.UseVisualStyleBackColor = true;
+            // 
+            // txtDataInicio
+            // 
+            txtDataInicio.Location = new Point(669, 60);
+            txtDataInicio.Mask = "00/00/0000";
+            txtDataInicio.Name = "txtDataInicio";
+            txtDataInicio.Size = new Size(100, 23);
+            txtDataInicio.TabIndex = 27;
+            txtDataInicio.ValidatingType = typeof(DateTime);
+            // 
+            // txtDataTermino
+            // 
+            txtDataTermino.Location = new Point(669, 107);
+            txtDataTermino.Mask = "00/00/0000";
+            txtDataTermino.Name = "txtDataTermino";
+            txtDataTermino.Size = new Size(100, 23);
+            txtDataTermino.TabIndex = 28;
+            txtDataTermino.ValidatingType = typeof(DateTime);
             // 
             // frmAvisos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 349);
-            this.ControlBox = false;
-            this.Controls.Add(this.chkTodos);
-            this.Controls.Add(this.grdAvisos);
-            this.Controls.Add(this.txtUsuarioDestino);
-            this.Controls.Add(this.labUsuario);
-            this.Controls.Add(this.txtDataTermino);
-            this.Controls.Add(this.labTermino);
-            this.Controls.Add(this.txtDataInicio);
-            this.Controls.Add(this.labInicio);
-            this.Controls.Add(this.labAvisos);
-            this.Controls.Add(this.txtAviso);
-            this.Controls.Add(this.lbPedidos);
-            this.Controls.Add(this.cmdExcluir);
-            this.Controls.Add(this.cmdNovo);
-            this.Controls.Add(this.cmdSair);
-            this.Controls.Add(this.cmdGravar);
-            this.Name = "frmAvisos";
-            this.Text = "Cadastro Avisos";
-            this.Load += new System.EventHandler(this.frmAvisos_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.grdAvisos)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 349);
+            ControlBox = false;
+            Controls.Add(txtDataTermino);
+            Controls.Add(txtDataInicio);
+            Controls.Add(chkTodos);
+            Controls.Add(grdAvisos);
+            Controls.Add(txtUsuarioDestino);
+            Controls.Add(labUsuario);
+            Controls.Add(labTermino);
+            Controls.Add(labInicio);
+            Controls.Add(labAvisos);
+            Controls.Add(txtAviso);
+            Controls.Add(lbPedidos);
+            Controls.Add(cmdExcluir);
+            Controls.Add(cmdNovo);
+            Controls.Add(cmdSair);
+            Controls.Add(cmdGravar);
+            Name = "frmAvisos";
+            Text = "Cadastro Avisos";
+            Load += frmAvisos_Load;
+            ((System.ComponentModel.ISupportInitialize)grdAvisos).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -298,8 +291,6 @@
         private TextBox txtAviso;
         private Label labAvisos;
         private Label labInicio;
-        private TextBox txtDataInicio;
-        private TextBox txtDataTermino;
         private Label labTermino;
         private TextBox txtUsuarioDestino;
         private Label labUsuario;
@@ -312,5 +303,7 @@
         private DataGridViewTextBoxColumn grdUsuario;
         private DataGridViewTextBoxColumn grdIDusuario;
         private DataGridViewTextBoxColumn grdTodos;
+        private MaskedTextBox txtDataInicio;
+        private MaskedTextBox txtDataTermino;
     }
 }

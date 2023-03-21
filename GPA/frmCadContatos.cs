@@ -24,7 +24,7 @@ namespace Formularios
         string Lgerencia;
         string LAnotacoes;
 
-        public frmCadContatos(string inIDEmpresa,string inCargo)
+        public frmCadContatos(string inIDEmpresa, string inCargo)
         {
             InitializeComponent();
             LCadEmpresa = inIDEmpresa;
@@ -55,7 +55,7 @@ namespace Formularios
             grdContatos.Rows.Clear();
             List<BDCadContatos> lstContatos = new List<BDCadContatos>();
             BDCadContatos objContato = new BDCadContatos();
-            lstContatos =  objContato.CarregaDados(LCadEmpresa);
+            lstContatos = objContato.CarregaDados(LCadEmpresa);
             if (lstContatos.Count > 0)
             {
                 foreach (BDCadContatos item in lstContatos)
@@ -87,11 +87,11 @@ namespace Formularios
             string data = "";
             BDCadContatos objContato = new BDCadContatos();
             objContato.cpID = LID;
-            if(LNome != txtNome.Text)objContato.cpNome = txtNome.Text.ToString();
-            if(LCargo != txtCargo.Text)objContato.cpCargo = LCargo;
-            if(LTelefone != txtTelefone.Text)objContato.cpTelefone = txtTelefone.Text.ToString();
+            if (LNome != txtNome.Text) objContato.cpNome = txtNome.Text.ToString();
+            if (LCargo != txtCargo.Text) objContato.cpCargo = LCargo;
+            if (LTelefone != txtTelefone.Text) objContato.cpTelefone = txtTelefone.Text.ToString();
             objContato.cpEmpresaDR = LCadEmpresa;
-            if(LEmail != txtEmail.Text)objContato.cpEmail = txtEmail.Text.ToString();
+            if (LEmail != txtEmail.Text) objContato.cpEmail = txtEmail.Text.ToString();
             if (objContato.cpEmpresaDR != "" && LID == "")
             {
                 data = txtAniversario.Text.Substring(0, 2) + "/" + txtAniversario.Text.Substring(2, 2) + "/" + txtAniversario.Text.Substring(4, 4);
@@ -100,7 +100,7 @@ namespace Formularios
             {
                 data = txtAniversario.Text;
             }
-             
+
             if (Convert.ToDateTime(data) is DateTime)
             {
 
@@ -111,8 +111,8 @@ namespace Formularios
                 MessageBox.Show("Data em formato invalido", "GPA");
                 return;
             }
-            
-            if(chkComprador.Checked == true)
+
+            if (chkComprador.Checked == true)
             {
                 objContato.cpComprador = "S";
             }
@@ -120,8 +120,8 @@ namespace Formularios
             {
                 objContato.cpComprador = "N";
             }
-            
-            if(chkGerencia.Checked == true)
+
+            if (chkGerencia.Checked == true)
             {
                 objContato.cpGerencia = "S";
             }
@@ -129,10 +129,10 @@ namespace Formularios
             {
                 objContato.cpGerencia = "N";
             }
-            
+
             objContato.cpAnotacoes = txtAnotacoes.Text;
 
-            if(objContato.cpEmpresaDR != "" && LID == "")
+            if (objContato.cpEmpresaDR != "" && LID == "")
             {
                 objContato.InsereDados();
             }
@@ -145,7 +145,7 @@ namespace Formularios
 
         private void grdContatos_Selection(object sender, EventArgs e)
         {
-            if(grdContatos.SelectedRows.Count == 0) 
+            if (grdContatos.SelectedRows.Count == 0)
             {
                 MostraDados();
             }
@@ -162,9 +162,9 @@ namespace Formularios
                 LAnotacoes = grdContatos.SelectedRows[0].Cells[8].Value.ToString();
                 MostraDados();
             }
-            
-            
-            
+
+
+
         }
 
         private void MostraDados()
