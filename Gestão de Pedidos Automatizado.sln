@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32526.322
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Formularios", "GPA\Formularios.csproj", "{CCF7FB3F-2311-401E-A337-ACC62002979F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Formularios", "GPA\Formularios.csproj", "{CCF7FB3F-2311-401E-A337-ACC62002979F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Banco de Dados", "Banco de Dados\Banco de Dados.csproj", "{866DD814-72EA-47DC-B1AD-7925E941332B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Banco de Dados", "Banco de Dados\Banco de Dados.csproj", "{866DD814-72EA-47DC-B1AD-7925E941332B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Camada Negocios", "Camada Negocios\Camada Negocios.csproj", "{279CBF07-2BA3-4D91-958A-7E47B1DE96AF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Camada Negocios", "Camada Negocios\Camada Negocios.csproj", "{279CBF07-2BA3-4D91-958A-7E47B1DE96AF}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Instalador GPA", "Instalador\Instalador GPA\Instalador GPA.vdproj", "{B529FC83-9A84-4074-BB88-98388FBE55E9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,8 @@ Global
 		{279CBF07-2BA3-4D91-958A-7E47B1DE96AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{279CBF07-2BA3-4D91-958A-7E47B1DE96AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{279CBF07-2BA3-4D91-958A-7E47B1DE96AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B529FC83-9A84-4074-BB88-98388FBE55E9}.Debug|Any CPU.ActiveCfg = Debug
+		{B529FC83-9A84-4074-BB88-98388FBE55E9}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
