@@ -92,19 +92,12 @@ namespace Formularios
             if (LTelefone != txtTelefone.Text) objContato.cpTelefone = txtTelefone.Text.ToString();
             objContato.cpEmpresaDR = LCadEmpresa;
             if (LEmail != txtEmail.Text) objContato.cpEmail = txtEmail.Text.ToString();
-            if (objContato.cpEmpresaDR != "" && LID == "")
-            {
-                data = txtAniversario.Text.Substring(0, 2) + "/" + txtAniversario.Text.Substring(2, 2) + "/" + txtAniversario.Text.Substring(4, 4);
-            }
-            else
-            {
-                data = txtAniversario.Text;
-            }
 
-            if (Convert.ToDateTime(data) is DateTime)
+            DateTime Data;
+            if (DateTime.TryParse(txtAniversario.Text,out Data))
             {
 
-                objContato.cpAniversario = Convert.ToDateTime(data);
+                objContato.cpAniversario = txtAniversario.Text;
             }
             else
             {
@@ -206,6 +199,19 @@ namespace Formularios
             objContato.cpID = LID.ToString();
             objContato.Excluir();
             AtualizaGrid();
+        }
+
+        private void txtAniversario_Leave(object sender, EventArgs e)
+        {
+            if (txtAniversario.Text != "")
+            {
+                DateTime Datainicio;
+                if (DateTime.TryParse(txtAniversario.Text, out Datainicio) == false)
+                {
+                    MessageBox.Show("Data Inicio em formato invalido", "GPA");
+                    return;
+                }
+            }
         }
     }
 }

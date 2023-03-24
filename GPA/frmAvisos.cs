@@ -222,5 +222,38 @@ namespace Formularios
                 }
             }
         }
+
+        private void txtDataInicio_Leave(object sender, EventArgs e)
+        {
+            if (txtDataInicio.Text.Replace("/", "") == "    ")
+            {
+                txtDataInicio.Text = DateTime.Today.ToString().Substring(0, 10);
+            }
+
+            if (txtDataInicio.Text.Replace(" ", "").Replace("/", "").Length != 8)
+            {
+                MessageBox.Show("Data em formato invalido!", "GPA");
+                return;
+            }
+        }
+
+        private void txtDataTermino_Leave(object sender, EventArgs e)
+        {
+            if (txtDataTermino.Text.Replace("/", "") == "    ")
+            {
+                txtDataTermino.Text = DateTime.Today.ToString().Substring(0, 10);
+            }
+
+            if (txtDataTermino.Text.Replace(" ", "").Replace("/", "").Length != 8)
+            {
+                MessageBox.Show("Data em formato invalido!", "GPA");
+                return;
+            }
+        }
+
+        private void grdAvisos_RowEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            grdAvisos_SelectionChanged(sender, e);
+        }
     }
 }

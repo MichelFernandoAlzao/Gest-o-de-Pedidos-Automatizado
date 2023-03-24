@@ -111,6 +111,11 @@ namespace Banco_de_Dados
                 cmd.Connection = conexao.conectar();
                 //Executar o comando
                 cmd.ExecuteNonQuery();
+
+                cmd.CommandText = "SELECT IDENT_CURRENT ('OPPPedido') AS Current_Identity";
+                string LID = Convert.ToString(cmd.ExecuteScalar());
+
+                cpID = LID;
                 //Desconectar
                 conexao.desconectar();
                 cpMsgErro = "";

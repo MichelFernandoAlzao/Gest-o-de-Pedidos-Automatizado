@@ -64,7 +64,7 @@ namespace Banco_de_Dados
             }
             if (Vendedor.ToString() != "")
             {
-                sqlCampos += "CDCECNPJ, ";
+                sqlCampos += "CDCEVendedor, ";
 
                 sqlconteudo += "'" + Vendedor.ToString() + "',";
             }
@@ -120,6 +120,13 @@ namespace Banco_de_Dados
                 sqlconteudo += "'" + RegCobranca + "',";
             }
 
+            if (Aviso != null)
+            {
+                sqlCampos += "CDCEAviso, ";
+
+                sqlconteudo += "'" + Aviso + "',";
+            }
+
             sSQL = sSQL + sqlCampos.Remove(sqlCampos.Length - 2) + ")" + sqlconteudo.Remove(sqlconteudo.Length - 1) + ")";
 
             cmd.CommandText = sSQL;
@@ -161,7 +168,7 @@ namespace Banco_de_Dados
             }
             if(CNPJ != null)
             {
-                sqlconteudo += "CDCECNPJ = " + CNPJ.ToString() + ",";
+                sqlconteudo += "CDCECNPJ = '" + CNPJ.ToString() + "',";
             }
             if (InscricaoEstadual != null)
             {
@@ -169,7 +176,7 @@ namespace Banco_de_Dados
             }
             if (Vendedor != null)
             {
-                sqlconteudo += "CDCECNPJ = '" + Vendedor.ToString() + "',";
+                sqlconteudo += "CDCEVendedor = '" + Vendedor.ToString() + "',";
             }
             if (Cliente != null)
             {
@@ -205,6 +212,11 @@ namespace Banco_de_Dados
             if(RegCobranca != null)
             {
                 sqlconteudo += "CDCERegCobranca = '" + RegCobranca + "',";
+            }
+
+            if (Aviso != null)
+            {
+                sqlconteudo += "CDCEAviso = '" + Aviso + "',";
             }
 
             sSQL = sSQL + sqlconteudo.Remove(sqlconteudo.Length - 1);
@@ -315,6 +327,7 @@ namespace Banco_de_Dados
                 {
                     BDCadastroGeral bDCadastro = new BDCadastroGeral();
                     bDCadastro.Id = dr["CDCadastroEmpresas"].ToString();
+                    bDCadastro.Aviso = dr["CDCEAviso"].ToString();
                     bDCadastro.RazaoSocial = dr["CDCERazaoSocial"].ToString();
                     bDCadastro.RazaoFantasia = dr["CDCERazaoFantasia"].ToString();
                     bDCadastro.CNPJ = dr["CDCECNPJ"].ToString();

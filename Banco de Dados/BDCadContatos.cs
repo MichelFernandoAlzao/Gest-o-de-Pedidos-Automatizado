@@ -18,7 +18,7 @@ namespace Banco_de_Dados
         public string cpTelefone { get; set; }
         public string cpEmpresaDR { get; set; }
         public string cpEmail { get; set; }
-        public DateTime cpAniversario { get; set; }
+        public string cpAniversario { get; set; }
         public string cpComprador { get; set; }
         public string cpGerencia { get; set; }
         public string cpAnotacoes { get; set; }
@@ -168,7 +168,7 @@ namespace Banco_de_Dados
                 {
                     BDCadContatos bDContato = new BDCadContatos();
                     bDContato.cpID = dr["CDContatos"].ToString();
-                    bDContato.cpAniversario = Convert.ToDateTime(dr["CDCAniversario"]);
+                    bDContato.cpAniversario =dr["CDCAniversario"].ToString();
                     bDContato.cpAnotacoes = dr["CDCAnotacoes"].ToString();
                     bDContato.cpEmpresaDR = dr["CDCCadastroEmpresaDR"].ToString();
                     bDContato.cpCargo = dr["CDCCargoDR"].ToString();

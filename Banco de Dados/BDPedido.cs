@@ -383,7 +383,7 @@ namespace Banco_de_Dados
         }
 
 
-        public List<BDPedido> CarregaDadosUltVenda()
+        public List<BDPedido> CarregaDadosUltVenda(string inProduto)
         {
             List<BDPedido> lstPedido = new List<BDPedido>();
             string slqSelect = "SELECT TOP 1 OPPPedido FROM OPPPedido ";
@@ -408,6 +408,16 @@ namespace Banco_de_Dados
                 }
             }
 
+            //if (inProduto != null)
+            //{
+            //    if (inProduto != "")
+            //    {
+            //        slqSelect = "SELECT TOP 1 OPPPedido FROM OPPPedido INNER JOIN  ";
+            //        sqlWhere = "WHERE ";
+            //        Orderby = "Order by OPPDataConfirmacao desc";
+            //    }   
+            //}       
+                    
             slqSelect = slqSelect + sqlWhere + Orderby;
 
             

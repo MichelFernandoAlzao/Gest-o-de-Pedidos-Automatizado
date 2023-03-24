@@ -201,6 +201,7 @@
             button2.TabIndex = 17;
             button2.Text = "Ocorrencias";
             button2.UseVisualStyleBackColor = true;
+            button2.Visible = false;
             // 
             // chkAtivo
             // 
@@ -288,6 +289,7 @@
             // 
             // txtDataCadastro
             // 
+            txtDataCadastro.Enabled = false;
             txtDataCadastro.Location = new Point(652, 65);
             txtDataCadastro.Mask = "00/00/0000";
             txtDataCadastro.Name = "txtDataCadastro";

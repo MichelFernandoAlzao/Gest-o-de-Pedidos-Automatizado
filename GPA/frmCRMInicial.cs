@@ -75,7 +75,7 @@ namespace Formularios
 
         private void cmdCadastroProduto_Click(object sender, EventArgs e)
         {
-            frmCadProdutos frmCadProdutos = new frmCadProdutos();
+            frmCadProdutos frmCadProdutos = new frmCadProdutos(LUsuario);
             frmCadProdutos.ShowDialog();
             RealizaCargas();
         }
@@ -338,6 +338,7 @@ namespace Formularios
 
         public void CarregaAgendaContato()
         {
+            grdContatosAgendados.Rows.Clear();
             BDAgendarContato objAgendaContato = new BDAgendarContato();
             objAgendaContato.cpIDUsuarioDR = LUsuario;
             List<BDAgendarContato> lstAgendarContato = objAgendaContato.CarregaDados();

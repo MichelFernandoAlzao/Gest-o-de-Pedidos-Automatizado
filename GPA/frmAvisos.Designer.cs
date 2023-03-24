@@ -176,6 +176,7 @@
             grdAvisos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             grdAvisos.Size = new Size(776, 150);
             grdAvisos.TabIndex = 25;
+            grdAvisos.RowEnter += grdAvisos_RowEnter;
             grdAvisos.SelectionChanged += grdAvisos_SelectionChanged;
             // 
             // grdID
@@ -242,6 +243,7 @@
             txtDataInicio.Size = new Size(100, 23);
             txtDataInicio.TabIndex = 27;
             txtDataInicio.ValidatingType = typeof(DateTime);
+            txtDataInicio.Leave += txtDataInicio_Leave;
             // 
             // txtDataTermino
             // 
@@ -251,6 +253,7 @@
             txtDataTermino.Size = new Size(100, 23);
             txtDataTermino.TabIndex = 28;
             txtDataTermino.ValidatingType = typeof(DateTime);
+            txtDataTermino.Leave += txtDataTermino_Leave;
             // 
             // frmAvisos
             // 

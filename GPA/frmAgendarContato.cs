@@ -109,7 +109,7 @@ namespace Formularios
                 MessageBox.Show("Nenhum usuário selecionado", "GPA");
                 return;
             }
-            if (txtDataContato.Text == "")
+            if (txtDataContato.Text == "  /  /")
             {
                 MessageBox.Show("Data não informada!", "GPA");
                 return;
@@ -121,9 +121,27 @@ namespace Formularios
             objAgendaContato.cpIDUsuarioDR = LIDUsuario;
 
             objAgendaContato.InsereDados();
-            if (objAgendaContato.cpMsgErro != "")
+            if (objAgendaContato.cpMsgErro != null)
             {
-                MessageBox.Show(objAgendaContato.cpMsgErro, "GPA");
+                if(objAgendaContato.cpMsgErro != "")
+                {
+                    MessageBox.Show(objAgendaContato.cpMsgErro, "GPA");
+                    return;
+                }
+                
+            }
+        }
+
+        private void txtDataContato_Leave(object sender, EventArgs e)
+        {
+            if(txtDataContato.Text.Replace("/","") == "    ")
+            {
+                txtDataContato.Text = DateTime.Today.ToString().Substring(0, 10);
+            }
+
+            if(txtDataContato.Text.Replace(" ","").Replace("/","").Length != 8)
+            {
+                MessageBox.Show("Data em formato invalido!", "GPA");
                 return;
             }
         }

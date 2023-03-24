@@ -56,7 +56,7 @@
             txtDiasAtraso = new TextBox();
             label4 = new Label();
             txtRegCobranca = new TextBox();
-            button1 = new Button();
+            cmdUltVenda = new Button();
             button2 = new Button();
             label5 = new Label();
             txtRegVenda = new TextBox();
@@ -142,6 +142,7 @@
             txtVendedor.Name = "txtVendedor";
             txtVendedor.Size = new Size(155, 23);
             txtVendedor.TabIndex = 5;
+            txtVendedor.KeyDown += txtVendedor_KeyDown;
             // 
             // chkCliente
             // 
@@ -268,6 +269,7 @@
             txtQualificacao.Name = "txtQualificacao";
             txtQualificacao.Size = new Size(134, 23);
             txtQualificacao.TabIndex = 11;
+            txtQualificacao.Visible = false;
             // 
             // label1
             // 
@@ -278,6 +280,7 @@
             label1.Size = new Size(98, 15);
             label1.TabIndex = 24;
             label1.Text = "Qualificação - F1";
+            label1.Visible = false;
             // 
             // txtAviso
             // 
@@ -305,6 +308,7 @@
             label3.Size = new Size(69, 15);
             label3.TabIndex = 28;
             label3.Text = "Dias Atraso";
+            label3.Visible = false;
             // 
             // txtDiasAtraso
             // 
@@ -312,6 +316,7 @@
             txtDiasAtraso.Name = "txtDiasAtraso";
             txtDiasAtraso.Size = new Size(69, 23);
             txtDiasAtraso.TabIndex = 12;
+            txtDiasAtraso.Visible = false;
             // 
             // label4
             // 
@@ -322,6 +327,7 @@
             label4.Size = new Size(140, 15);
             label4.TabIndex = 30;
             label4.Text = "Região de Cobrança - F1";
+            label4.Visible = false;
             // 
             // txtRegCobranca
             // 
@@ -329,15 +335,17 @@
             txtRegCobranca.Name = "txtRegCobranca";
             txtRegCobranca.Size = new Size(283, 23);
             txtRegCobranca.TabIndex = 13;
+            txtRegCobranca.Visible = false;
             // 
-            // button1
+            // cmdUltVenda
             // 
-            button1.Location = new Point(842, 275);
-            button1.Name = "button1";
-            button1.Size = new Size(156, 23);
-            button1.TabIndex = 17;
-            button1.Text = "Ultima Venda";
-            button1.UseVisualStyleBackColor = true;
+            cmdUltVenda.Location = new Point(842, 275);
+            cmdUltVenda.Name = "cmdUltVenda";
+            cmdUltVenda.Size = new Size(156, 23);
+            cmdUltVenda.TabIndex = 17;
+            cmdUltVenda.Text = "Ultima Venda";
+            cmdUltVenda.UseVisualStyleBackColor = true;
+            cmdUltVenda.Click += cmdUltVenda_Click;
             // 
             // button2
             // 
@@ -347,6 +355,7 @@
             button2.TabIndex = 18;
             button2.Text = "Produtos Preferidos";
             button2.UseVisualStyleBackColor = true;
+            button2.Visible = false;
             // 
             // label5
             // 
@@ -360,6 +369,7 @@
             // 
             // txtRegVenda
             // 
+            txtRegVenda.Enabled = false;
             txtRegVenda.Location = new Point(12, 236);
             txtRegVenda.Name = "txtRegVenda";
             txtRegVenda.Size = new Size(283, 23);
@@ -383,7 +393,7 @@
             Controls.Add(label5);
             Controls.Add(txtRegVenda);
             Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(cmdUltVenda);
             Controls.Add(label4);
             Controls.Add(txtRegCobranca);
             Controls.Add(label3);
@@ -449,7 +459,7 @@
         private TextBox txtDiasAtraso;
         private Label label4;
         private TextBox txtRegCobranca;
-        private Button button1;
+        private Button cmdUltVenda;
         private Button button2;
         private Label label5;
         private TextBox txtRegVenda;

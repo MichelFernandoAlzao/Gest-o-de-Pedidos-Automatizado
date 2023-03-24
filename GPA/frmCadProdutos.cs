@@ -194,9 +194,8 @@ namespace Formularios
         private void cmdGravar_Click(object sender, EventArgs e)
         {
             BDCadProdutos objProduto = new BDCadProdutos();
-            objProduto.cpID = LIDProduto;
             objProduto.cpDescricao = txtDescricao.Text;
-            objProduto.cpDataCadastro = DateTime.Today.ToString();
+            objProduto.cpDataCadastro = DateTime.Today.ToString().Substring(0, 10);
             objProduto.cpCodigoFabricante = txtCodFabricante.Text;
             objProduto.cpDescFornecedor = txtDescFornecedor.Text;
             objProduto.cpFabricanteDR = LFabricante;
@@ -239,18 +238,25 @@ namespace Formularios
                 objProduto.AlteraDados();
             }
 
+            if (objProduto.cpID != "")
+            {
+                LIDProduto = objProduto.cpID;
+
+                MostraDados();
+            }
+
         }
 
         private void cmdUltVenda_Click(object sender, EventArgs e)
         {
-            if(LID == "")
+            if (LIDProduto == "")
             {
-                MessageBox.Show("Nenhuma empresa selecionada", "GPA");
+                MessageBox.Show("Nenhuma produto selecionado", "GPA");
                 return;
             }
             BDPedido objPedido = new BDPedido();
             objPedido.cpEmpresaDR = LID;
-            List<BDPedido> lstPedidos = objPedido.CarregaDadosUltVenda();
+            List<BDPedido> lstPedidos = objPedido.CarregaDadosUltVenda("");
 
             frmPedido frmpedido = new frmPedido(LUsuario, lstPedidos[0].cpID);
         }

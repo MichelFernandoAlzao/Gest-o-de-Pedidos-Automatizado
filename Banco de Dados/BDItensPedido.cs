@@ -326,5 +326,51 @@ namespace Banco_de_Dados
             }
             cmd.Dispose();
         }
+
+        //public List<BDItensPedido> CarregaProdutoPreferidos(string inID)
+        //{
+        //    List<BDItensPedido> lstITPedido = new List<BDItensPedido>();
+        //    string slqSelect = "select CDProdutos,CDPDescricao,SUM(OPITPQuantidade) as Quantidade from OPItensPedido INNER JOIN CDProdutos ON OPITPProdutoDR = CDProdutos INNER JOIN OPPPedido on OPITPPedidoDR = OPPPedido where OPPEmpresaDR = " + inID + " group by CDProdutos,CDPDescricao order by Quantidade ";
+
+        //    cmd.CommandText = slqSelect;
+        //    var dt = new DataTable();
+
+        //    try
+        //    {
+        //        cmd.Connection = conexao.conectar();
+        //        //Executar o comando
+        //        SqlDataReader reader = cmd.ExecuteReader();
+        //        dt.Load(reader);
+        //        reader.Close();
+
+        //        foreach (DataRow dr in dt.Rows)
+        //        {
+        //            BDItensPedido bDITPedido = new BDItensPedido();
+        //            bDITPedido.cpID = dr["OPItensPedido"].ToString();
+        //            bDITPedido.cpProdutoID = dr["OPITPProdutoDR"].ToString();
+        //            bDITPedido.cpQuantidade = dr["OPITPQuantidade"].ToString();
+        //            bDITPedido.cpLote = dr["OPITPLote"].ToString();
+        //            bDITPedido.cpFatura = dr["OPITPFatura"].ToString();
+        //            bDITPedido.cpValorUnit = dr["OPITPValorUnitario"].ToString();
+        //            bDITPedido.cpValorTotalItem = dr["OPITPValorTotalItem"].ToString();
+        //            bDITPedido.cpFornecedor = dr["OPITPFornecedorDR"].ToString();
+        //            bDITPedido.cpValorFornecedor = dr["OPITPValorFornecedor"].ToString();
+        //            bDITPedido.cpPedidoDR = dr["OPITPPedidoDR"].ToString();
+
+        //            lstITPedido.Add(bDITPedido);
+
+        //        }
+
+        //        //Desconectar
+        //        conexao.desconectar();
+
+        //    }
+        //    catch (SqlException e)
+        //    {
+        //        cpMsgErro = e.Message.ToString();
+        //    }
+        //    cmd.Dispose();
+        //    return lstITPedido;
+        //}
     }
 }

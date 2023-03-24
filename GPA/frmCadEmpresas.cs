@@ -21,6 +21,7 @@ namespace GPA
         string LQualificacao;
         string LDiasAtraso;
         string LAviso;
+        public string LIDUsuario = "";
         string LUsuario = "";
         string MsgErro;
 
@@ -148,6 +149,10 @@ namespace GPA
             {
                 objCadastro.Vendedor = "";
             }
+            if (LIDUsuario != "")
+            {
+                objCadastro.Vendedor = LIDUsuario;
+            }
 
             if (chkFabricante.Checked == false && chkFornecedor.Checked == false && chkCliente.Checked == false && chkDistribuidor.Checked == false)
             {
@@ -155,6 +160,10 @@ namespace GPA
                 return;
             }
 
+            if (txtAviso.Text != "")
+            {
+                objCadastro.Aviso = txtAviso.Text;
+            }
             if (LID == "")
             {
                 objCadastro.InsereDados();
@@ -166,79 +175,81 @@ namespace GPA
             }
             else
             {
-                string Alterar = "";
-                BDCadastroGeral objAtualiza = new BDCadastroGeral();
-                List<BDCadastroGeral> lstEmpresaAnterior = objEmpresaAnterior.CarregaDados(LID, LRazaoSocial, LRazaoFantasia, LCNPJ, "", "", "", "", "", "");
-                objAtualiza.Id = LID;
-                if (lstEmpresaAnterior[0].RazaoSocial != objCadastro.RazaoSocial)
-                {
-                    objAtualiza.RazaoSocial = objCadastro.RazaoSocial;
-                    Alterar = "S";
-                }
-                if (lstEmpresaAnterior[0].RazaoFantasia != objCadastro.RazaoFantasia)
-                {
-                    objAtualiza.RazaoFantasia = objCadastro.RazaoFantasia;
-                    Alterar = "S";
-                }
-                if (lstEmpresaAnterior[0].InscricaoEstadual != objCadastro.InscricaoEstadual)
-                {
-                    objAtualiza.InscricaoEstadual = objCadastro.InscricaoEstadual;
-                    Alterar = "S";
-                }
-                if (lstEmpresaAnterior[0].CNPJ != objCadastro.CNPJ)
-                {
-                    objAtualiza.CNPJ = objCadastro.CNPJ;
-                    Alterar = "S";
-                }
-                if (lstEmpresaAnterior[0].Cliente != objCadastro.Cliente)
-                {
-                    objAtualiza.Cliente = objCadastro.Cliente;
-                    Alterar = "S";
-                }
-                if (lstEmpresaAnterior[0].Distribuidor != objCadastro.Distribuidor)
-                {
-                    objAtualiza.Distribuidor = objCadastro.Distribuidor;
-                    Alterar = "S";
-                }
-                if (lstEmpresaAnterior[0].Fabricante != objCadastro.Fabricante)
-                {
-                    objAtualiza.Fabricante = objCadastro.Fabricante;
-                    Alterar = "S";
-                }
-                if (lstEmpresaAnterior[0].Fornecedor != objCadastro.Fornecedor)
-                {
-                    objAtualiza.Fornecedor = objCadastro.Fornecedor;
-                    Alterar = "S";
-                }
-                if (lstEmpresaAnterior[0].Aviso != objCadastro.Aviso)
-                {
-                    objAtualiza.Aviso = objCadastro.Aviso;
-                    Alterar = "S";
-                }
-                if (lstEmpresaAnterior[0].RegiaodeVenda != objCadastro.RegiaodeVenda)
-                {
-                    objAtualiza.RegiaodeVenda = objCadastro.RegiaodeVenda;
-                    Alterar = "S";
-                }
-                if (lstEmpresaAnterior[0].Qualificacao != objCadastro.Qualificacao)
-                {
-                    objAtualiza.Qualificacao = objCadastro.Qualificacao;
-                    Alterar = "S";
-                }
-                if (lstEmpresaAnterior[0].RegCobranca != objCadastro.RegCobranca)
-                {
-                    objAtualiza.RegCobranca = objCadastro.RegCobranca;
-                    Alterar = "S";
-                }
-                if (Alterar == "S")
-                {
-                    objAtualiza.AlteraDados();
-                }
+                objCadastro.Id = LID;
+                objCadastro.AlteraDados();
+                //string Alterar = "";
+                //BDCadastroGeral objAtualiza = new BDCadastroGeral();
+                //List<BDCadastroGeral> lstEmpresaAnterior = objEmpresaAnterior.CarregaDados(LID, LRazaoSocial, LRazaoFantasia, LCNPJ, "", "", "", "", "", "");
+                //objAtualiza.Id = LID;
+                //if (lstEmpresaAnterior[0].RazaoSocial != objCadastro.RazaoSocial)
+                //{
+                //    objAtualiza.RazaoSocial = objCadastro.RazaoSocial;
+                //    Alterar = "S";
+                //}
+                //if (lstEmpresaAnterior[0].RazaoFantasia != objCadastro.RazaoFantasia)
+                //{
+                //    objAtualiza.RazaoFantasia = objCadastro.RazaoFantasia;
+                //    Alterar = "S";
+                //}
+                //if (lstEmpresaAnterior[0].InscricaoEstadual != objCadastro.InscricaoEstadual)
+                //{
+                //    objAtualiza.InscricaoEstadual = objCadastro.InscricaoEstadual;
+                //    Alterar = "S";
+                //}
+                //if (lstEmpresaAnterior[0].CNPJ != objCadastro.CNPJ)
+                //{
+                //    objAtualiza.CNPJ = objCadastro.CNPJ;
+                //    Alterar = "S";
+                //}
+                //if (lstEmpresaAnterior[0].Cliente != objCadastro.Cliente)
+                //{
+                //    objAtualiza.Cliente = objCadastro.Cliente;
+                //    Alterar = "S";
+                //}
+                //if (lstEmpresaAnterior[0].Distribuidor != objCadastro.Distribuidor)
+                //{
+                //    objAtualiza.Distribuidor = objCadastro.Distribuidor;
+                //    Alterar = "S";
+                //}
+                //if (lstEmpresaAnterior[0].Fabricante != objCadastro.Fabricante)
+                //{
+                //    objAtualiza.Fabricante = objCadastro.Fabricante;
+                //    Alterar = "S";
+                //}
+                //if (lstEmpresaAnterior[0].Fornecedor != objCadastro.Fornecedor)
+                //{
+                //    objAtualiza.Fornecedor = objCadastro.Fornecedor;
+                //    Alterar = "S";
+                //}
+                //if (lstEmpresaAnterior[0].Aviso != objCadastro.Aviso)
+                //{
+                //    objAtualiza.Aviso = objCadastro.Aviso;
+                //    Alterar = "S";
+                //}
+                //if (lstEmpresaAnterior[0].RegiaodeVenda != objCadastro.RegiaodeVenda)
+                //{
+                //    objAtualiza.RegiaodeVenda = objCadastro.RegiaodeVenda;
+                //    Alterar = "S";
+                //}
+                //if (lstEmpresaAnterior[0].Qualificacao != objCadastro.Qualificacao)
+                //{
+                //    objAtualiza.Qualificacao = objCadastro.Qualificacao;
+                //    Alterar = "S";
+                //}
+                //if (lstEmpresaAnterior[0].RegCobranca != objCadastro.RegCobranca)
+                //{
+                //    objAtualiza.RegCobranca = objCadastro.RegCobranca;
+                //    Alterar = "S";
+                //}
+                //if (Alterar == "S")
+                //{
+                //    objAtualiza.AlteraDados();
+                //}
 
-                if (objAtualiza.MsgErro != "")
-                {
-                    MsgErro = objAtualiza.MsgErro;
-                }
+                //if (objAtualiza.MsgErro != "")
+                //{
+                //    MsgErro = objAtualiza.MsgErro;
+                //}
             }
             if (MsgErro != null)
             {
@@ -274,14 +285,14 @@ namespace GPA
                 frmSelecionaEmpresa objTela = new frmSelecionaEmpresa(this, "", txtRazaoSocial.Text.ToString(), "", "");
                 objTela.ShowDialog();
 
-                if(LID != "")
+                if (LID != "")
                 {
                     BDCadastroGeral objCadastro = new BDCadastroGeral();
                     List<BDCadastroGeral> lstCadastros = objCadastro.CarregaDados(LID, "", "", "", "", "", "", "", "", "");
 
                     if (lstCadastros.Count > 0)
                     {
-                        if(lstCadastros[0].Aviso != null)
+                        if (lstCadastros[0].Aviso != null)
                         {
                             if (lstCadastros[0].Aviso != "")
                             {
@@ -289,8 +300,9 @@ namespace GPA
                             }
                         }
                     }
+                    MostraDados();
                 }
-                MostraDados();
+
             }
 
         }
@@ -339,12 +351,17 @@ namespace GPA
                     }
                 }
             }
-            //if (lstCadastro[0].Vendedor != "")
-            //{
-            //    Vendedores objvendedor = new Vendedores();
-            //    objvendedor.CarregaDados(LParametros, Convert.ToInt32(LVendedor));
-            //    txtVendedor.Text = objvendedor.Nome;
-            //}
+            if (lstCadastro[0].Vendedor != "")
+            {
+                SEGUsuario objvendedor = new SEGUsuario();
+                List<SEGUsuario> lstUsuarios = objvendedor.CarregaDados(lstCadastro[0].Vendedor, "", "", "");
+                txtVendedor.Text = lstUsuarios[0].Usuario;
+            }
+
+            if (lstCadastro[0].Aviso != "")
+            {
+                txtAviso.Text = lstCadastro[0].Aviso.ToString();
+            }
         }
 
         private void labCNPJ_Click(object sender, EventArgs e)
@@ -359,15 +376,22 @@ namespace GPA
 
         private void cmdContatos_Click(object sender, EventArgs e)
         {
-            if (LID == "") return;
-
+            if (LID == "")
+            {
+                MessageBox.Show("Nenhuma empresa selecionada!", "GPA");
+                return;
+            }
             frmCadContatos objTela = new frmCadContatos(LID, "");
             objTela.ShowDialog();
         }
 
         private void cmdEndereco_Click(object sender, EventArgs e)
         {
-            if (LID == "") return;
+            if (LID == "")
+            {
+                MessageBox.Show("Nenhuma empresa selecionada!", "GPA");
+                return;
+            }
 
             frmCadEndereco objTela = new frmCadEndereco(LID);
             objTela.ShowDialog();
@@ -375,8 +399,47 @@ namespace GPA
 
         private void CmdRegOcorrencias_Click(object sender, EventArgs e)
         {
+            if (LID == "")
+            {
+                MessageBox.Show("Nenhuma empresa selecionada!", "GPA");
+                return;
+            }
             frmOcorrencia objTela = new frmOcorrencia(LID);
             objTela.ShowDialog();
+        }
+
+        private void cmdUltVenda_Click(object sender, EventArgs e)
+        {
+            if (LID == "")
+            {
+                MessageBox.Show("Nenhuma empresa selecionada!", "GPA");
+                return;
+            }
+            BDPedido objPedido = new BDPedido();
+            objPedido.cpEmpresaDR = LID;
+            List<BDPedido> lstPedido = objPedido.CarregaDadosUltVenda("");
+
+            if (lstPedido.Count > 0)
+            {
+                frmPedido frmPedido = new frmPedido(LUsuario, lstPedido[0].cpID.ToString());
+                frmPedido.ShowDialog();
+            }
+        }
+
+        private void txtVendedor_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F1)
+            {
+                frmSelecionarUsuario frmUsuario = new frmSelecionarUsuario(this, "", txtVendedor.Text.ToString());
+                frmUsuario.ShowDialog();
+
+                if (LIDUsuario != "")
+                {
+                    SEGUsuario objUsuario = new SEGUsuario();
+                    List<SEGUsuario> lstUsuario = objUsuario.CarregaDados(LVendedor, "", "", "");
+                    txtVendedor.Text = lstUsuario[0].Usuario;
+                }
+            }
         }
     }
 }

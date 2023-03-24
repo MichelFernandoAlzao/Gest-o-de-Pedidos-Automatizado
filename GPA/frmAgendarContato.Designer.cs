@@ -153,6 +153,7 @@
             txtDataContato.Size = new Size(100, 23);
             txtDataContato.TabIndex = 51;
             txtDataContato.ValidatingType = typeof(DateTime);
+            txtDataContato.Leave += txtDataContato_Leave;
             // 
             // frmAgendarContato
             // 

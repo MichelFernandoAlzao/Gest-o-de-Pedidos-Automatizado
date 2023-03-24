@@ -314,6 +314,7 @@
             txtAniversario.Size = new Size(153, 23);
             txtAniversario.TabIndex = 21;
             txtAniversario.ValidatingType = typeof(DateTime);
+            txtAniversario.Leave += txtAniversario_Leave;
             // 
             // frmCadContatos
             // 
