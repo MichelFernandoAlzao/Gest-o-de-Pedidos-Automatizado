@@ -40,10 +40,10 @@
             label1 = new Label();
             label4 = new Label();
             button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
+            cmdUltVenda = new Button();
+            cmdOcorrencias = new Button();
             cmdItensPedido = new Button();
-            button5 = new Button();
+            cmdCadCliente = new Button();
             txtxNatOperacao = new TextBox();
             label5 = new Label();
             label6 = new Label();
@@ -180,23 +180,25 @@
             button1.Text = "button1";
             button1.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // cmdUltVenda
             // 
-            button2.Location = new Point(674, 96);
-            button2.Name = "button2";
-            button2.Size = new Size(114, 23);
-            button2.TabIndex = 15;
-            button2.Text = "Ultimas Compras";
-            button2.UseVisualStyleBackColor = true;
+            cmdUltVenda.Location = new Point(674, 96);
+            cmdUltVenda.Name = "cmdUltVenda";
+            cmdUltVenda.Size = new Size(114, 23);
+            cmdUltVenda.TabIndex = 15;
+            cmdUltVenda.Text = "Ultimas Compras";
+            cmdUltVenda.UseVisualStyleBackColor = true;
+            cmdUltVenda.Click += cmdUltVenda_Click;
             // 
-            // button3
+            // cmdOcorrencias
             // 
-            button3.Location = new Point(674, 138);
-            button3.Name = "button3";
-            button3.Size = new Size(114, 23);
-            button3.TabIndex = 16;
-            button3.Text = "Ocorrencias";
-            button3.UseVisualStyleBackColor = true;
+            cmdOcorrencias.Location = new Point(674, 138);
+            cmdOcorrencias.Name = "cmdOcorrencias";
+            cmdOcorrencias.Size = new Size(114, 23);
+            cmdOcorrencias.TabIndex = 16;
+            cmdOcorrencias.Text = "Ocorrencias";
+            cmdOcorrencias.UseVisualStyleBackColor = true;
+            cmdOcorrencias.Click += cmdOcorrencias_Click;
             // 
             // cmdItensPedido
             // 
@@ -208,14 +210,15 @@
             cmdItensPedido.UseVisualStyleBackColor = true;
             cmdItensPedido.Click += cmdItensPedido_Click;
             // 
-            // button5
+            // cmdCadCliente
             // 
-            button5.Location = new Point(674, 176);
-            button5.Name = "button5";
-            button5.Size = new Size(114, 23);
-            button5.TabIndex = 18;
-            button5.Text = "Dados Cliente";
-            button5.UseVisualStyleBackColor = true;
+            cmdCadCliente.Location = new Point(674, 176);
+            cmdCadCliente.Name = "cmdCadCliente";
+            cmdCadCliente.Size = new Size(114, 23);
+            cmdCadCliente.TabIndex = 18;
+            cmdCadCliente.Text = "Dados Cliente";
+            cmdCadCliente.UseVisualStyleBackColor = true;
+            cmdCadCliente.Visible = false;
             // 
             // txtxNatOperacao
             // 
@@ -407,6 +410,7 @@
             label20.Size = new Size(58, 15);
             label20.TabIndex = 39;
             label20.Text = "Impostos";
+            label20.Visible = false;
             // 
             // textBox10
             // 
@@ -415,6 +419,7 @@
             textBox10.ReadOnly = true;
             textBox10.Size = new Size(113, 23);
             textBox10.TabIndex = 38;
+            textBox10.Visible = false;
             // 
             // label21
             // 
@@ -425,6 +430,7 @@
             label21.Size = new Size(58, 15);
             label21.TabIndex = 41;
             label21.Text = "Comissão";
+            label21.Visible = false;
             // 
             // textBox11
             // 
@@ -433,6 +439,7 @@
             textBox11.ReadOnly = true;
             textBox11.Size = new Size(113, 23);
             textBox11.TabIndex = 40;
+            textBox11.Visible = false;
             // 
             // cmdExcluir
             // 
@@ -562,10 +569,10 @@
             Controls.Add(label6);
             Controls.Add(label5);
             Controls.Add(txtxNatOperacao);
-            Controls.Add(button5);
+            Controls.Add(cmdCadCliente);
             Controls.Add(cmdItensPedido);
-            Controls.Add(button3);
-            Controls.Add(button2);
+            Controls.Add(cmdOcorrencias);
+            Controls.Add(cmdUltVenda);
             Controls.Add(button1);
             Controls.Add(label4);
             Controls.Add(label1);
@@ -597,10 +604,10 @@
         private Label label1;
         private Label label4;
         private Button button1;
-        private Button button2;
-        private Button button3;
+        private Button cmdUltVenda;
+        private Button cmdOcorrencias;
         private Button cmdItensPedido;
-        private Button button5;
+        private Button cmdCadCliente;
         private TextBox txtxNatOperacao;
         private Label label5;
         private Label label6;

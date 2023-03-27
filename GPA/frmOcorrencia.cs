@@ -13,6 +13,7 @@ namespace Formularios
 {
     public partial class frmOcorrencia : Form
     {
+        string LCaminhoBanco = "";
         string LIDOcorrencia = "";
         public string LID = "";
         public string LRazaoSocial = "";
@@ -22,13 +23,14 @@ namespace Formularios
         string LPedidoDR = "";
 
 
-        public frmOcorrencia(string inEmpresa)
+        public frmOcorrencia(string inCaminhoBanco, string inEmpresa)
         {
+            LCaminhoBanco = inCaminhoBanco;
             LEmpresaDR = inEmpresa;
             InitializeComponent();
             List<BDCadastroGeral> lstEmpresa = new List<BDCadastroGeral>();
             BDCadastroGeral objEmpresa = new BDCadastroGeral();
-            lstEmpresa = objEmpresa.CarregaDados(LEmpresaDR, "", "", "", "", "", "", "", "", "");
+            lstEmpresa = objEmpresa.CarregaDados(LCaminhoBanco, LEmpresaDR, "", "", "", "", "", "", "", "", "");
             txtEmpresa.Text = lstEmpresa[0].RazaoSocial.ToString();
         }
 
@@ -53,18 +55,18 @@ namespace Formularios
                     MessageBox.Show("Tamanho de data de ocorrencia invalido", "GPA");
                     return;
                 }
-                 
+
                 if (DateTime.TryParse(LDataOcorrencia, out Datatratada))
                 {
                     objReOcorencia.cpDataOcorrencia = LDataOcorrencia.ToString();
-                    
+
                 }
                 else
                 {
                     MessageBox.Show("Data de Ocorrencia em formato invalido", "GPA");
                     return;
                 }
-                if(txtDataReolucao.Text != "")
+                if (txtDataReolucao.Text != "")
                 {
                     if (txtDataReolucao.Text.Length == 8)
                     {
@@ -75,7 +77,7 @@ namespace Formularios
                         MessageBox.Show("Tamanho de data de resolução invalido", "GPA");
                         return;
                     }
-                    if (MessageBox.Show("Data de resolução preenchida, deseja encerrar esta ocorrencia ?","GPA",MessageBoxButtons.YesNo) == DialogResult.No)
+                    if (MessageBox.Show("Data de resolução preenchida, deseja encerrar esta ocorrencia ?", "GPA", MessageBoxButtons.YesNo) == DialogResult.No)
                     {
                         return;
                     }
@@ -89,26 +91,26 @@ namespace Formularios
                         return;
                     }
                 }
-                if(LID != "")
+                if (LID != "")
                 {
                     objReOcorencia.cpFornecedorDR = LID;
                 }
                 objReOcorencia.cpDescricao = txtxDescricao.Text;
 
-                if(LPedidoDR != "")
+                if (LPedidoDR != "")
                 {
                     objReOcorencia.cpPedidoDR = LPedidoDR;
                 }
-                
-                if(LIDOcorrencia == "")
+
+                if (LIDOcorrencia == "")
                 {
-                    objReOcorencia.InsereDados();
+                    objReOcorencia.InsereDados(LCaminhoBanco);
                 }
                 else
                 {
-                    objReOcorencia.AlteraDados();
+                    objReOcorencia.AlteraDados(LCaminhoBanco);
                 }
-                
+
 
 
             }
@@ -140,7 +142,7 @@ namespace Formularios
         {
             if (e.KeyCode == Keys.F1)
             {
-                frmSelecionaEmpresa objTela = new frmSelecionaEmpresa(this, "", txtFornecedor.Text.ToString(), "", "");
+                frmSelecionaEmpresa objTela = new frmSelecionaEmpresa(LCaminhoBanco, this, "", txtFornecedor.Text.ToString(), "", "");
                 objTela.ShowDialog();
                 MostraDados();
             }
@@ -149,20 +151,20 @@ namespace Formularios
         private void cmdSelecionar_Click(object sender, EventArgs e)
         {
             BDPedido objPedido = new BDPedido();
-            objPedido.CarregaDados(txtPedido.Text, LEmpresaDR, "");
+            objPedido.CarregaDados(LCaminhoBanco, txtPedido.Text, LEmpresaDR, "");
             LPedidoDR = objPedido.cpID;
-            if(LPedidoDR != "") 
-            { 
-                AtualizaGrid(); 
+            if (LPedidoDR != "")
+            {
+                AtualizaGrid();
             }
-            
+
         }
         public void AtualizaGrid()
         {
             List<BDItensPedido> lstItensPedido = new List<BDItensPedido>();
             BDItensPedido objItensPedido = new BDItensPedido();
             objItensPedido.cpPedidoDR = LPedidoDR;
-            lstItensPedido = objItensPedido.CarregaDados();
+            lstItensPedido = objItensPedido.CarregaDados(LCaminhoBanco);
             if (lstItensPedido.Count > 0)
             {
                 foreach (BDItensPedido item in lstItensPedido)
@@ -178,14 +180,30 @@ namespace Formularios
 
         private void cmdExcluir_Click(object sender, EventArgs e)
         {
-            if(LIDOcorrencia == "")
+            if (LIDOcorrencia == "")
             {
                 MessageBox.Show("Nenhuma ocorrencia selecionada", "GPA");
                 return;
             }
             BDRegOcorrencias objOcorrencia = new BDRegOcorrencias();
             objOcorrencia.cpID = LIDOcorrencia;
-            objOcorrencia.Excluir();
+            objOcorrencia.Excluir(LCaminhoBanco);
+        }
+
+        private void txtDataOcorrencia_Leave(object sender, EventArgs e)
+        {
+            if (txtDataOcorrencia.Text == "  /  /")
+            {
+                txtDataOcorrencia.Text = DateTime.Today.ToString().Substring(0, 10);
+            }
+        }
+
+        private void txtDataReolucao_Leave(object sender, EventArgs e)
+        {
+            if (txtDataReolucao.Text == "  /  /")
+            {
+                txtDataReolucao.Text = DateTime.Today.ToString().Substring(0, 10);
+            }
         }
     }
 }

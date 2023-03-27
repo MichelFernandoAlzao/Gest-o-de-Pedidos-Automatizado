@@ -7,6 +7,7 @@ namespace Banco_de_Dados
 {
     public class BDCadastroGeral
     {
+        string LCaminhoBanco;
         public string Id { get; set; }
         public string RazaoSocial { get; set; }
         public string RazaoFantasia { get; set; }
@@ -25,12 +26,10 @@ namespace Banco_de_Dados
         public string MsgErro { get; set; }
         public string Parametros { get; set; }
 
-        Conexao conexao = new Conexao();
-        SqlCommand cmd = new SqlCommand();
         
-        public void InsereDados()
+        public void InsereDados(string inCaminhoBanco)
         {
-
+            LCaminhoBanco = inCaminhoBanco;
             string sSQL;
             string sqlCampos = "";
             string sqlconteudo;
@@ -129,6 +128,10 @@ namespace Banco_de_Dados
 
             sSQL = sSQL + sqlCampos.Remove(sqlCampos.Length - 2) + ")" + sqlconteudo.Remove(sqlconteudo.Length - 1) + ")";
 
+
+            Conexao conexao = new Conexao(LCaminhoBanco);
+            SqlCommand cmd = new SqlCommand();
+
             cmd.CommandText = sSQL;
 
 
@@ -150,8 +153,10 @@ namespace Banco_de_Dados
             cmd.Dispose();
         }
 
-        public void AlteraDados()
+        public void AlteraDados(string inCaminhoBanco)
         {
+            LCaminhoBanco = inCaminhoBanco;
+
             string sSQL = "";
             string sqlconteudo = "";
             string sqlWhere = " WHERE CDCadastroEmpresas = '" + Id + "'";
@@ -222,6 +227,9 @@ namespace Banco_de_Dados
             sSQL = sSQL + sqlconteudo.Remove(sqlconteudo.Length - 1);
             sSQL = sSQL + sqlWhere;
 
+            Conexao conexao = new Conexao(LCaminhoBanco);
+            SqlCommand cmd = new SqlCommand();
+
             cmd.CommandText = sSQL;
 
             try
@@ -240,8 +248,9 @@ namespace Banco_de_Dados
             cmd.Dispose();
         }
 
-        public List<BDCadastroGeral> CarregaDados(string id ,string pRazaoSocial, string pRazaoFantasia, string pCNPJ, string pInscricao, string pVendedor, string pCliente, string pDistribuidor, string pFabricante, string pFornecedor)
+        public List<BDCadastroGeral> CarregaDados(string inCaminhobanco,string id ,string pRazaoSocial, string pRazaoFantasia, string pCNPJ, string pInscricao, string pVendedor, string pCliente, string pDistribuidor, string pFabricante, string pFornecedor)
         {
+            LCaminhoBanco = inCaminhobanco;
             List<BDCadastroGeral> lstCadastros = new List<BDCadastroGeral>();
             string slqSelect = "SELECT * FROM CDCadastroEmpresas ";
             string sqlWhere = "WHERE ";
@@ -312,6 +321,11 @@ namespace Banco_de_Dados
                     slqSelect += sqlWhere.Remove(sqlWhere.Length - 3);
                 }
             }
+
+
+            Conexao conexao = new Conexao(LCaminhoBanco);
+            SqlCommand cmd = new SqlCommand();
+
             cmd.CommandText = slqSelect;
             var dt = new DataTable();
 

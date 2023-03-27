@@ -13,12 +13,14 @@ namespace Formularios
 {
     public partial class frmAgendarContato : Form
     {
+        string LCaminhoBanco = "";
         public string LID = "";
         public string LIDAContato = "";
         public string LRazaoSocial = "";
         public string LIDUsuario = "";
-        public frmAgendarContato(string inAgendaContato, string inID)
+        public frmAgendarContato(string inCaminhoBanco,string inAgendaContato, string inID)
         {
+            LCaminhoBanco = inCaminhoBanco;
             InitializeComponent();
             LIDUsuario = inID;
             if (inAgendaContato != "")
@@ -32,7 +34,7 @@ namespace Formularios
         {
             if (e.KeyCode == Keys.F1)
             {
-                frmSelecionaEmpresa frmSelecionaEmpresa = new frmSelecionaEmpresa(this, "", txtEmpresa.Text, "", "");
+                frmSelecionaEmpresa frmSelecionaEmpresa = new frmSelecionaEmpresa(LCaminhoBanco,this, "", txtEmpresa.Text, "", "");
                 frmSelecionaEmpresa.ShowDialog();
                 if (LRazaoSocial != "")
                 {
@@ -45,12 +47,12 @@ namespace Formularios
         {
             if (e.KeyCode == Keys.F1)
             {
-                frmSelecionarUsuario frmSelecionarUsuario = new frmSelecionarUsuario(this, LIDUsuario, "");
+                frmSelecionarUsuario frmSelecionarUsuario = new frmSelecionarUsuario(LCaminhoBanco, this, LIDUsuario, "");
                 frmSelecionarUsuario.ShowDialog();
                 if (LIDUsuario != "")
                 {
                     SEGUsuario objUsuario = new SEGUsuario();
-                    List<SEGUsuario> lstUsuario = objUsuario.CarregaDados(LIDUsuario, "", "", "");
+                    List<SEGUsuario> lstUsuario = objUsuario.CarregaDados(LCaminhoBanco, LIDUsuario, "", "", "");
                     txtUsuario.Text = lstUsuario[0].Usuario.ToString();
                 }
             }
@@ -60,22 +62,22 @@ namespace Formularios
         {
             BDAgendarContato objAgendarContato = new BDAgendarContato();
             objAgendarContato.cpID = LIDAContato;
-            objAgendarContato.Excluir();
+            objAgendarContato.Excluir(LCaminhoBanco);
         }
 
         public void MostraDados()
         {
             BDAgendarContato objAgendarContato = new BDAgendarContato();
             objAgendarContato.cpID = LIDAContato;
-            List<BDAgendarContato> lstAgendarContato = objAgendarContato.CarregaDados();
+            List<BDAgendarContato> lstAgendarContato = objAgendarContato.CarregaDados(LCaminhoBanco);
             if (lstAgendarContato.Count > 0)
             {
                 BDCadastroGeral objCadastroGeral = new BDCadastroGeral();
-                List<BDCadastroGeral> lstCadastroGeral = objCadastroGeral.CarregaDados(lstAgendarContato[0].cpEmpresaDR, "", "", "", "", "", "", "", "", "");
+                List<BDCadastroGeral> lstCadastroGeral = objCadastroGeral.CarregaDados(LCaminhoBanco,lstAgendarContato[0].cpEmpresaDR, "", "", "", "", "", "", "", "", "");
                 txtEmpresa.Text = lstCadastroGeral[0].RazaoSocial.ToString();
 
                 SEGUsuario objUsuario = new SEGUsuario();
-                List<SEGUsuario> lstUsuario = objUsuario.CarregaDados(lstAgendarContato[0].cpIDUsuarioDR, "", "", "");
+                List<SEGUsuario> lstUsuario = objUsuario.CarregaDados(LCaminhoBanco, lstAgendarContato[0].cpIDUsuarioDR, "", "", "");
                 txtUsuario.Text = lstUsuario[0].Usuario.ToString();
             }
 
@@ -120,7 +122,7 @@ namespace Formularios
             objAgendaContato.cpDataContato = txtDataContato.Text;
             objAgendaContato.cpIDUsuarioDR = LIDUsuario;
 
-            objAgendaContato.InsereDados();
+            objAgendaContato.InsereDados(LCaminhoBanco);
             if (objAgendaContato.cpMsgErro != null)
             {
                 if(objAgendaContato.cpMsgErro != "")

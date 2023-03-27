@@ -14,6 +14,7 @@ namespace Formularios
 {
     public partial class frmSelecionaEmpresa : Form
     {
+        string LCaminhoBanco;
         public string LIDCadastro;
         private string Razao;
         string Fantasia;
@@ -21,10 +22,11 @@ namespace Formularios
         Form LChamador;
         
         string[] LParametros;
-        public frmSelecionaEmpresa(Form frmChamador,string inID,string inrazao, string inFantasia, string inCNPJ)
+        public frmSelecionaEmpresa(string inCaminhoBanco, Form frmChamador,string inID,string inrazao, string inFantasia, string inCNPJ)
         {
 
             InitializeComponent();
+            LCaminhoBanco = inCaminhoBanco;
             LIDCadastro = inID;
             Razao = inrazao;
             Fantasia = inFantasia;
@@ -40,7 +42,7 @@ namespace Formularios
         private void CarregaEmpresa(string inRazao, string inRazaoFantasia,string inCNPJ)
         {
             BDCadastroGeral objCadastro = new BDCadastroGeral();
-            List<BDCadastroGeral> lstCadastro = objCadastro.CarregaDados(LIDCadastro, inRazao, inRazaoFantasia, inCNPJ, "", "", "", "", "", "");
+            List<BDCadastroGeral> lstCadastro = objCadastro.CarregaDados(LCaminhoBanco,LIDCadastro, inRazao, inRazaoFantasia, inCNPJ, "", "", "", "", "", "");
             if (lstCadastro.Count > 0) 
             {
                 foreach (BDCadastroGeral item in lstCadastro)

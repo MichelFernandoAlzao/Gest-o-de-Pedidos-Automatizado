@@ -11,6 +11,8 @@ namespace Banco_de_Dados
 {
     public class BDCadEnderecos
     {
+        string LcaminhoBanco;
+
         public string cpID { get; set; }
         public string cpIdentificacao { get; set; }
         public string cpRua { get; set; }
@@ -18,6 +20,7 @@ namespace Banco_de_Dados
         public string cpBairro { get; set; }
         public string cpCidade { get; set; }
         public string cpEstado { get; set; }
+        public string cpCEP { get; set; }
         public string cpReferencia { get; set; }
         public string cpEndFisico { get; set; }
         public string cpEndCobranca { get; set; }
@@ -25,12 +28,11 @@ namespace Banco_de_Dados
         public string MsgErro { get; set; }
 
 
-        Conexao conexao = new Conexao();
-        SqlCommand cmd = new SqlCommand();
-
-
-        public void InsereDados()
+        public void InsereDados(string inCaminhoBanco)
         {
+
+            LcaminhoBanco = inCaminhoBanco;
+
             string sSQL = "INSERT INTO CDCadEnderecos (";
             string sqlCampos = "";
             string sqlConteudo = " VALUES (";
@@ -54,6 +56,12 @@ namespace Banco_de_Dados
                 sqlCampos += "CDENDNumero, ";
 
                 sqlConteudo += "'" + cpNumero + "',";
+            }
+            if (cpCEP != null)
+            {
+                sqlCampos += "CDCENDCEP, ";
+
+                sqlConteudo += "'" + cpCEP + "',";
             }
 
             if (cpBairro != null)
@@ -102,6 +110,10 @@ namespace Banco_de_Dados
 
             sSQL = sSQL + sqlCampos.Remove(sqlCampos.Length - 2) + ")" + sqlConteudo.Remove(sqlConteudo.Length - 1) + ")";
 
+
+            Conexao conexao = new Conexao(LcaminhoBanco);
+            SqlCommand cmd = new SqlCommand();
+
             cmd.CommandText = sSQL;
 
             try
@@ -119,8 +131,10 @@ namespace Banco_de_Dados
             }
             cmd.Dispose();
         }
-        public List<BDCadEnderecos> CarregaDados(string inIDEmpresa)
+        public List<BDCadEnderecos> CarregaDados(string inCaminhoBanco,string inIDEmpresa)
         {
+            LcaminhoBanco = inCaminhoBanco;
+
             List<BDCadEnderecos> lstEnderecos = new List<BDCadEnderecos>();
             string slqSelect = "SELECT * FROM CDCadEnderecos ";
             string sqlWhere = "WHERE ";
@@ -140,6 +154,10 @@ namespace Banco_de_Dados
                 slqSelect += sqlWhere;
             }
 
+
+            Conexao conexao = new Conexao(LcaminhoBanco);
+            SqlCommand cmd = new SqlCommand();
+
             cmd.CommandText = slqSelect;
             var dt = new DataTable();
 
@@ -157,6 +175,7 @@ namespace Banco_de_Dados
                     bDEndereco.cpID = dr["CDCadEnderecos"].ToString();
                     bDEndereco.cpIdentificacao = dr["CDENDIdentificacao"].ToString();
                     bDEndereco.cpRua = dr["CDENDRua"].ToString();
+                    bDEndereco.cpCEP = dr["CDCENDCEP"].ToString();
                     bDEndereco.cpNumero = dr["CDENDNumero"].ToString();
                     bDEndereco.cpBairro = dr["CDCENDBairro"].ToString();
                     bDEndereco.cpCidade = dr["CDCENDCidade"].ToString();
@@ -184,8 +203,10 @@ namespace Banco_de_Dados
         }
 
 
-        public void AlteraDados()
+        public void AlteraDados(string inCaminhoBanco)
         {
+            LcaminhoBanco = inCaminhoBanco;
+
             string sSQL = "";
             string sqlconteudo = "";
             string sqlWhere = " WHERE CDCadEnderecos = '" + cpID + "'";
@@ -232,11 +253,19 @@ namespace Banco_de_Dados
             {
                 sqlconteudo += "CDCENDReferencia = '" + cpReferencia.ToString() + "',";
             }
+            if (cpCEP != null)
+            {
+                sqlconteudo += "CDCENDCEP = '" + cpCEP.ToString() + "',";
+            }
 
 
 
             sSQL = sSQL + sqlconteudo.Remove(sqlconteudo.Length - 1);
             sSQL = sSQL + sqlWhere;
+
+
+            Conexao conexao = new Conexao(LcaminhoBanco);
+            SqlCommand cmd = new SqlCommand();
 
             cmd.CommandText = sSQL;
 
@@ -256,11 +285,18 @@ namespace Banco_de_Dados
             cmd.Dispose();
         }
 
-        public void Excluir()
+        public void Excluir(string inCaminhoBanco)
         {
+
+            LcaminhoBanco = inCaminhoBanco;
+
             string sSQL = "";
 
             sSQL = "DELETE FROM CDCadEnderecos WHERE CDCadEnderecos = '" + cpID + "'";
+
+
+            Conexao conexao = new Conexao(LcaminhoBanco);
+            SqlCommand cmd = new SqlCommand();
 
             cmd.CommandText = sSQL;
 

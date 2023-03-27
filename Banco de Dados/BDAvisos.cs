@@ -11,6 +11,7 @@ namespace Banco_de_Dados
 {
     public class BDAvisos
     {
+        string LCaminhoBanco;
         public string cpID { get; set; }
         public string cpAviso { get; set; }
         public string cpDataInicio { get; set; }
@@ -19,11 +20,11 @@ namespace Banco_de_Dados
         public string cpTodos { get; set; }
         public string cpMsgErro { get; set; }
 
-        Conexao conexao = new Conexao();
-        SqlCommand cmd = new SqlCommand();
 
-        public void InsereDados()
+
+        public void InsereDados(string inCaminhoBanco)
         {
+            LCaminhoBanco = inCaminhoBanco;
 
             string sSQL;
             string sqlCampos = "";
@@ -79,6 +80,9 @@ namespace Banco_de_Dados
 
             sSQL = sSQL + sqlCampos.Remove(sqlCampos.Length - 2) + ")" + sqlconteudo.Remove(sqlconteudo.Length - 1) + ")";
 
+            Conexao conexao = new Conexao(LCaminhoBanco);
+            SqlCommand cmd = new SqlCommand();
+
             cmd.CommandText = sSQL;
 
 
@@ -100,8 +104,10 @@ namespace Banco_de_Dados
             cmd.Dispose();
         }
 
-        public void AlteraDados()
+        public void AlteraDados(string inCaminhoBanco)
         {
+            LCaminhoBanco = inCaminhoBanco;
+
             string sSQL = "";
             string sqlconteudo = "";
             string sqlWhere = " WHERE OPAvisos = '" + cpID + "'";
@@ -131,6 +137,9 @@ namespace Banco_de_Dados
             sSQL = sSQL + sqlconteudo.Remove(sqlconteudo.Length - 1);
             sSQL = sSQL + sqlWhere;
 
+            Conexao conexao = new Conexao(LCaminhoBanco);
+            SqlCommand cmd = new SqlCommand();
+
             cmd.CommandText = sSQL;
 
             try
@@ -149,8 +158,10 @@ namespace Banco_de_Dados
             cmd.Dispose();
         }
 
-        public List<BDAvisos> CarregaDados()
+        public List<BDAvisos> CarregaDados(string inCaminhoBanco)
         {
+            LCaminhoBanco = inCaminhoBanco;
+
             List<BDAvisos> lstAvisos = new List<BDAvisos>();
             string slqSelect = "SELECT * FROM OPAvisos ";
             string sqlWhere = "WHERE ";
@@ -185,6 +196,10 @@ namespace Banco_de_Dados
                     slqSelect += sqlWhere.Remove(sqlWhere.Length - 3);
                 }
             }
+
+            Conexao conexao = new Conexao(LCaminhoBanco);
+            SqlCommand cmd = new SqlCommand();
+
             cmd.CommandText = slqSelect;
             var dt = new DataTable();
 
@@ -222,8 +237,10 @@ namespace Banco_de_Dados
             return lstAvisos;
         }
 
-        public List<BDAvisos> CarregaDadosGeral()
+        public List<BDAvisos> CarregaDadosGeral(string inCaminhoBanco)
         {
+            LCaminhoBanco = inCaminhoBanco;
+
             List<BDAvisos> lstAvisos = new List<BDAvisos>();
             string slqSelect = "SELECT * FROM OPAvisos ";
             string sqlWhere = "WHERE ";
@@ -251,6 +268,10 @@ namespace Banco_de_Dados
                     slqSelect += sqlWhere.Remove(sqlWhere.Length - 3);
                 }
             }
+
+            Conexao conexao = new Conexao(LCaminhoBanco);
+            SqlCommand cmd = new SqlCommand();
+
             cmd.CommandText = slqSelect;
             var dt = new DataTable();
 
@@ -289,11 +310,16 @@ namespace Banco_de_Dados
             return lstAvisos;
         }
 
-        public void Excluir()
+        public void Excluir(string inCaminhoBanco)
         {
+            LCaminhoBanco = inCaminhoBanco;
+
             string sSQL = "";
 
             sSQL = "DELETE FROM OPAvisos WHERE OPAvisos = '" + cpID + "'";
+
+            Conexao conexao = new Conexao(LCaminhoBanco);
+            SqlCommand cmd = new SqlCommand();
 
             cmd.CommandText = sSQL;
 

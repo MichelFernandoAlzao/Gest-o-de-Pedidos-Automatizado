@@ -13,6 +13,7 @@ namespace Formularios
 {
     public partial class frmPedido : Form
     {
+        string LCaminhoBanco = "";
         public string LID = "";
         public string LIDPedido = "";
         public string LRazaoSocial = "";
@@ -28,12 +29,13 @@ namespace Formularios
         string LComissao = "";
         string LConsulta = "";
 
-        public frmPedido(string inUsuario, string inIDPedido)
+        public frmPedido(string inCaminhoBanco,string inUsuario, string inIDPedido)
         {
+            LCaminhoBanco = inCaminhoBanco;
             InitializeComponent();
             LUsuario = inUsuario;
             SEGUsuario objUsuario = new SEGUsuario();
-            List<SEGUsuario> lstusuario = objUsuario.CarregaDados(LUsuario, "", "", "");
+            List<SEGUsuario> lstusuario = objUsuario.CarregaDados(LCaminhoBanco, LUsuario, "", "", "");
             txtVendedor.Text = lstusuario[0].Nome;
             if (lstusuario[0].Administrador == "S")
             {
@@ -57,7 +59,7 @@ namespace Formularios
                 txtVendedor.Enabled = false;
                 txtObservacao.Enabled = false;
                 BDPedido objPedido = new BDPedido();
-                List<BDPedido> lstPedido = objPedido.CarregaDados(LIDPedido, "", "");
+                List<BDPedido> lstPedido = objPedido.CarregaDados(LCaminhoBanco,LIDPedido, "", "");
                 LID = lstPedido[0].cpEmpresaDR;
                 LConsulta = "S";
 
@@ -76,12 +78,12 @@ namespace Formularios
         private void MostraDados()
         {
             BDCadastroGeral ObjCadastro = new BDCadastroGeral();
-            List<BDCadastroGeral> lstCadastro = ObjCadastro.CarregaDados(LID, LRazaoSocial, "", "", "", LUsuario, "", "", "", "");
+            List<BDCadastroGeral> lstCadastro = ObjCadastro.CarregaDados(LCaminhoBanco,LID, LRazaoSocial, "", "", "", LUsuario, "", "", "", "");
             txtEmpresa.Text = lstCadastro[0].RazaoSocial.ToString();
 
             BDCadEnderecos objEndereco = new BDCadEnderecos();
             List<BDCadEnderecos> lstEndereco = new List<BDCadEnderecos>();
-            lstEndereco = objEndereco.CarregaDados(lstCadastro[0].Id);
+            lstEndereco = objEndereco.CarregaDados(LCaminhoBanco,lstCadastro[0].Id);
             labDescCNPJ.Text = lstCadastro[0].CNPJ.ToString();
             if (lstCadastro[0].Aviso != null)
             {
@@ -97,6 +99,7 @@ namespace Formularios
                 {
                     labDescEndereco.Text = endereco.cpRua.ToString();
                     labDescNumero.Text = endereco.cpNumero.ToString();
+                    labDescCEP.Text = endereco.cpCEP.ToString();
                     pPossuiEndereco = "S";
                 }
             }
@@ -112,13 +115,13 @@ namespace Formularios
             if (LIDNaturezaOperacao != "")
             {
                 BDNatOperacao objNatOperacao = new BDNatOperacao();
-                List<BDNatOperacao> lstNatureza = objNatOperacao.CarregaDados(LIDNaturezaOperacao);
+                List<BDNatOperacao> lstNatureza = objNatOperacao.CarregaDados(LCaminhoBanco, LIDNaturezaOperacao);
                 txtxNatOperacao.Text = lstNatureza[0].cpDescricao.ToString();
                 txtxNatOperacao.Enabled = false;
             }
 
             BDPedido objPedido = new BDPedido();
-            List<BDPedido> lstPedido = objPedido.CarregaDados(LIDPedido, "", LUsuario);
+            List<BDPedido> lstPedido = objPedido.CarregaDados(LCaminhoBanco,LIDPedido, "", LUsuario);
             if (lstPedido[0].cpDataContato != "")
             {
                 txtDataSolicitacao.Text = lstPedido[0].cpDataContato.ToString().Substring(0, 10);
@@ -147,7 +150,7 @@ namespace Formularios
         {
             if (LIDPedido == "") { return; }
 
-            frmItensPedido objItensPedido = new frmItensPedido(LIDPedido, LConsulta);
+            frmItensPedido objItensPedido = new frmItensPedido(LCaminhoBanco,LIDPedido, LConsulta);
             objItensPedido.ShowDialog();
 
             MostraDados();
@@ -157,17 +160,17 @@ namespace Formularios
         {
             BDPedido objPedido = new BDPedido();
             objPedido.cpID = LIDPedido;
-            objPedido.Excluir();
+            objPedido.Excluir(LCaminhoBanco);
         }
 
         private void txtEmpresa_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.F1)
             {
-                frmSelecionaEmpresa objTela = new frmSelecionaEmpresa(this, "", txtEmpresa.Text.ToString(), "", "");
+                frmSelecionaEmpresa objTela = new frmSelecionaEmpresa(LCaminhoBanco, this, "", txtEmpresa.Text.ToString(), "", "");
                 objTela.ShowDialog();
                 BDCadEnderecos objEndereco = new BDCadEnderecos();
-                List<BDCadEnderecos> lstEndereco = objEndereco.CarregaDados(LID);
+                List<BDCadEnderecos> lstEndereco = objEndereco.CarregaDados(LCaminhoBanco, LID);
                 if (lstEndereco.Count > 0)
                 {
                     foreach (BDCadEnderecos endereco in lstEndereco)
@@ -194,7 +197,7 @@ namespace Formularios
 
 
                 BDPedido objPedido = new BDPedido();
-                List<BDPedido> lstPedido = objPedido.CarregaDados("", LID, LUsuario);
+                List<BDPedido> lstPedido = objPedido.CarregaDados(LCaminhoBanco, "", LID, LUsuario);
                 if (lstPedido.Count > 0)
                 {
                     string MaiorData = "";
@@ -218,7 +221,7 @@ namespace Formularios
 
 
                 BDCadastroGeral objEmpresa = new BDCadastroGeral();
-                List<BDCadastroGeral> lstEmpresa = objEmpresa.CarregaDados(LID, LRazaoSocial, "", "", "", LUsuario, "", "", "", "");
+                List<BDCadastroGeral> lstEmpresa = objEmpresa.CarregaDados(LCaminhoBanco, LID, LRazaoSocial, "", "", "", LUsuario, "", "", "", "");
                 labDescCNPJ.Text = lstEmpresa[0].CNPJ.ToString();
 
             }
@@ -315,11 +318,11 @@ namespace Formularios
             }
             if (LIDPedido == "")
             {
-                objPedido.InsereDados();
+                objPedido.InsereDados(LCaminhoBanco);
             }
             else
             {
-                objPedido.AlteraDados();
+                objPedido.AlteraDados(LCaminhoBanco);
             }
 
             LIDPedido = objPedido.cpID;
@@ -330,7 +333,7 @@ namespace Formularios
                 txtNumeroPedido.Text = LIDPedido;
                 txtNumeroPedido.Enabled = false;
                 BDPedido objCarregaPedido = new BDPedido();
-                List<BDPedido> lstPedido = objCarregaPedido.CarregaDados(LIDPedido, "", LUsuario);
+                List<BDPedido> lstPedido = objCarregaPedido.CarregaDados(LCaminhoBanco,LIDPedido, "", LUsuario);
                 LID = lstPedido[0].cpEmpresaDR;
                 LDataSolcitacao = lstPedido[0].cpDataContato.Substring(0, 10);
                 if (lstPedido[0].cpDataConfirmacao != "")
@@ -386,12 +389,12 @@ namespace Formularios
         {
             if (e.KeyCode == Keys.F1)
             {
-                frmSelecionaPedido objTela = new frmSelecionaPedido(this, txtNumeroPedido.Text, LUsuario);
+                frmSelecionaPedido objTela = new frmSelecionaPedido(LCaminhoBanco, this, txtNumeroPedido.Text, LUsuario);
                 objTela.ShowDialog();
                 if (LIDPedido != "")
                 {
                     BDPedido objPedido = new BDPedido();
-                    List<BDPedido> lstPedido = objPedido.CarregaDados(LIDPedido, "", LUsuario);
+                    List<BDPedido> lstPedido = objPedido.CarregaDados(LCaminhoBanco, LIDPedido, "", LUsuario);
                     LID = lstPedido[0].cpEmpresaDR;
                     LDataSolcitacao = lstPedido[0].cpDataContato.Substring(0, 10);
                     if (lstPedido[0].cpDataConfirmacao != "")
@@ -409,13 +412,13 @@ namespace Formularios
         {
             if (e.KeyCode == Keys.F1)
             {
-                frmSelecionaNatureza objTela = new frmSelecionaNatureza(this, LUsuario);
+                frmSelecionaNatureza objTela = new frmSelecionaNatureza(LCaminhoBanco,this, LUsuario);
                 objTela.ShowDialog();
 
                 if (LIDNaturezaOperacao != "")
                 {
                     BDNatOperacao objNatOperacao = new BDNatOperacao();
-                    List<BDNatOperacao> lstNatureza = objNatOperacao.CarregaDados(LIDNaturezaOperacao);
+                    List<BDNatOperacao> lstNatureza = objNatOperacao.CarregaDados(LCaminhoBanco, LIDNaturezaOperacao);
                     txtxNatOperacao.Text = lstNatureza[0].cpDescricao.ToString();
 
                     MessageBox.Show("Natureza não podera ser alterado após gravar o pedido", "GPA");
@@ -455,6 +458,35 @@ namespace Formularios
                 }
                 txtDataConfirmacao.Text = txtDataConfirmacao.Text.Insert(2, "/").Insert(5, "/");
             }
+        }
+
+        private void cmdUltVenda_Click(object sender, EventArgs e)
+        {
+            if (LID == "")
+            {
+                MessageBox.Show("Nenhuma empresa selecionada!", "GPA");
+                return;
+            }
+            BDPedido objPedido = new BDPedido();
+            objPedido.cpEmpresaDR = LID;
+            List<BDPedido> lstPedido = objPedido.CarregaDadosUltVenda(LCaminhoBanco,"");
+
+            if (lstPedido.Count > 0)
+            {
+                frmPedido frmPedido = new frmPedido(LCaminhoBanco, LUsuario, lstPedido[0].cpID.ToString());
+                frmPedido.ShowDialog();
+            }
+        }
+
+        private void cmdOcorrencias_Click(object sender, EventArgs e)
+        {
+            if (LID == "")
+            {
+                MessageBox.Show("Nenhuma empresa selecionada!", "GPA");
+                return;
+            }
+            frmOcorrencia objTela = new frmOcorrencia(LCaminhoBanco, LID);
+            objTela.ShowDialog();
         }
     }
 }

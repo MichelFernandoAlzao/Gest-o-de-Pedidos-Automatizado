@@ -13,6 +13,7 @@ namespace Formularios
 {
     public partial class frmCadEndereco : Form
     {
+        string LCaminhoBanco;
         string LCadEmpresa = "";
         string LID = "";
         string LIdentificacao = "";
@@ -25,9 +26,10 @@ namespace Formularios
         string LCobranca = "";
         string LReferencia = "";
 
-        public frmCadEndereco(string inIDEmpresa)
+        public frmCadEndereco(string inCaminhoBanco,string inIDEmpresa)
         {
             InitializeComponent();
+            LCaminhoBanco = inCaminhoBanco;
             LCadEmpresa = inIDEmpresa;
             grdEnderecos.Rows.Clear();
             AtualizaGrid();
@@ -70,7 +72,7 @@ namespace Formularios
 
             List<BDCadEnderecos> lstEnderecos = new List<BDCadEnderecos>();
             BDCadEnderecos objEndereco = new BDCadEnderecos();
-            lstEnderecos = objEndereco.CarregaDados(LCadEmpresa);
+            lstEnderecos = objEndereco.CarregaDados(LCaminhoBanco,LCadEmpresa);
             if (lstEnderecos.Count > 0)
             {
                 foreach (BDCadEnderecos item in lstEnderecos)
@@ -132,6 +134,8 @@ namespace Formularios
             if (LCidade != txtCidade.Text) objEndereco.cpCidade = txtCidade.Text.ToString();
             if (LEstado != txtEstado.Text) objEndereco.cpEstado = txtEstado.Text.ToString();
 
+            objEndereco.cpCEP = txtCEP.Text;
+
 
             if (chkEndFisico.Checked == true)
             {
@@ -155,11 +159,11 @@ namespace Formularios
 
             if (objEndereco.cpCadastroDR != "" && LID == "")
             {
-                objEndereco.InsereDados();
+                objEndereco.InsereDados(LCaminhoBanco);
             }
             else
             {
-                objEndereco.AlteraDados();
+                objEndereco.AlteraDados(LCaminhoBanco);
             }
             grdEnderecos.Rows.Clear();
             AtualizaGrid();
@@ -207,7 +211,7 @@ namespace Formularios
 
             BDCadEnderecos objEndereco = new BDCadEnderecos();
             objEndereco.cpID = LID.ToString();
-            objEndereco.Excluir();
+            objEndereco.Excluir(LCaminhoBanco);
             grdEnderecos.Rows.Clear();
             AtualizaGrid();
         }

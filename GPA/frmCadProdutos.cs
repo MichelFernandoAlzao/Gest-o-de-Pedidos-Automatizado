@@ -12,6 +12,7 @@ namespace Formularios
 {
     public partial class frmCadProdutos : Form
     {
+        string LCaminhoBanco = "";
         string LDescricao = "";
         public string LIDProduto = "";
         string LCodigo = "";
@@ -28,8 +29,9 @@ namespace Formularios
         public string LRazaoSocial = "";
         string LUsuario = "";
 
-        public frmCadProdutos(string inUsuario)
+        public frmCadProdutos(string inCaminhoBanco,string inUsuario)
         {
+            LCaminhoBanco = inCaminhoBanco;
             LUsuario = inUsuario;
             InitializeComponent();
         }
@@ -70,7 +72,7 @@ namespace Formularios
         {
             BDCadProdutos objProduto = new BDCadProdutos();
             objProduto.cpID = LIDProduto;
-            List<BDCadProdutos> lstProdutos = objProduto.CarregaDados();
+            List<BDCadProdutos> lstProdutos = objProduto.CarregaDados(LCaminhoBanco);
             LDescricao = lstProdutos[0].cpDescricao;
             LDataCadastro = lstProdutos[0].cpDataCadastro;
             LCodigoFabricante = lstProdutos[0].cpCodigoFabricante;
@@ -90,7 +92,7 @@ namespace Formularios
             {
                 BDCadastroGeral objFabricante = new BDCadastroGeral();
                 List<BDCadastroGeral> lstFabricante = new List<BDCadastroGeral>();
-                lstFabricante = objFabricante.CarregaDados(Convert.ToString(LFabricante), "", "", "", "", "", "", "", "", "");
+                lstFabricante = objFabricante.CarregaDados(LCaminhoBanco, Convert.ToString(LFabricante), "", "", "", "", "", "", "", "", "");
                 txtFabricante.Text = lstFabricante[0].RazaoSocial.ToString();
             }
             else txtFabricante.Text = "";
@@ -99,7 +101,7 @@ namespace Formularios
             {
                 BDCadastroGeral objFornecedor = new BDCadastroGeral();
                 List<BDCadastroGeral> lstFornecedor = new List<BDCadastroGeral>();
-                lstFornecedor = objFornecedor.CarregaDados(Convert.ToString(LMelhorFornecedor), "", "", "", "", "", "", "", "", "");
+                lstFornecedor = objFornecedor.CarregaDados(LCaminhoBanco, Convert.ToString(LMelhorFornecedor), "", "", "", "", "", "", "", "", "");
                 txtMelhorFornecedor.Text = lstFornecedor[0].RazaoSocial.ToString();
             }
             else txtMelhorFornecedor.Text = "";
@@ -133,7 +135,7 @@ namespace Formularios
                     MessageBox.Show("Digite um minimo de 5 caracteres!", "GPA");
                     return;
                 }
-                frmSelecionaProduto objForm = new frmSelecionaProduto(this, LIDProduto, txtDescricao.Text, LFabricante, txtCodFabricante.Text);
+                frmSelecionaProduto objForm = new frmSelecionaProduto(LCaminhoBanco,this, LIDProduto, txtDescricao.Text, LFabricante, txtCodFabricante.Text);
                 objForm.ShowDialog();
                 if (LIDProduto != "")
                 {
@@ -154,7 +156,7 @@ namespace Formularios
                 }
                 if (e.KeyCode == Keys.F1)
                 {
-                    frmSelecionaEmpresa objTela = new frmSelecionaEmpresa(this, "", txtFabricante.Text.ToString(), "", "");
+                    frmSelecionaEmpresa objTela = new frmSelecionaEmpresa(LCaminhoBanco, this, "", txtFabricante.Text.ToString(), "", "");
                     objTela.ShowDialog();
                     LFabricante = LID;
                     txtFabricante.Text = LRazaoSocial.ToString();
@@ -181,7 +183,7 @@ namespace Formularios
                 }
                 if (e.KeyCode == Keys.F1)
                 {
-                    frmSelecionaEmpresa objTela = new frmSelecionaEmpresa(this, "", txtMelhorFornecedor.Text.ToString(), "", "");
+                    frmSelecionaEmpresa objTela = new frmSelecionaEmpresa(LCaminhoBanco, this, "", txtMelhorFornecedor.Text.ToString(), "", "");
                     objTela.ShowDialog();
                     LMelhorFornecedor = LID;
                     txtMelhorFornecedor.Text = LRazaoSocial.ToString();
@@ -230,12 +232,12 @@ namespace Formularios
 
             if (LIDProduto == "")
             {
-                objProduto.InsereDados();
+                objProduto.InsereDados(LCaminhoBanco);
             }
             else
             {
 
-                objProduto.AlteraDados();
+                objProduto.AlteraDados(LCaminhoBanco);
             }
 
             if (objProduto.cpID != "")
@@ -256,9 +258,18 @@ namespace Formularios
             }
             BDPedido objPedido = new BDPedido();
             objPedido.cpEmpresaDR = LID;
-            List<BDPedido> lstPedidos = objPedido.CarregaDadosUltVenda("");
+            List<BDPedido> lstPedidos = objPedido.CarregaDadosUltVendaProduto(LCaminhoBanco,LIDProduto);
 
-            frmPedido frmpedido = new frmPedido(LUsuario, lstPedidos[0].cpID);
+            if(lstPedidos.Count > 0)
+            {
+                frmPedido frmpedido = new frmPedido(LCaminhoBanco,LUsuario, lstPedidos[0].cpID);
+                frmpedido.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Não foi possivel localizar a ultima venda do item!", "GPA");
+                return;
+            }
         }
     }
 }

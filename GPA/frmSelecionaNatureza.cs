@@ -14,13 +14,15 @@ namespace Formularios
 {
     public partial class frmSelecionaNatureza : Form
     {
+        string LCaminhoBanco;
         public string LID;
         private string LUsuario;
         Form LChamador;
 
-        public frmSelecionaNatureza(Form frmChamador,string inUsuario)
+        public frmSelecionaNatureza(string inCaminhoBanco,Form frmChamador,string inUsuario)
         {
             InitializeComponent();
+            LCaminhoBanco = inCaminhoBanco;
             LUsuario = inUsuario;
             LChamador = frmChamador;
         }
@@ -36,14 +38,14 @@ namespace Formularios
             List<BDNatOperacao> lstNatureza = new List<BDNatOperacao>(); 
             SEGUsuario objUsuario = new SEGUsuario();
             objUsuario.ID = inUsuario;
-            List<SEGUsuario> lstUsuario = objUsuario.CarregaDados(inUsuario, "", "", "");
+            List<SEGUsuario> lstUsuario = objUsuario.CarregaDados(LCaminhoBanco,inUsuario, "", "", "");
             if (lstUsuario[0].Administrador == "S")
             {
-                lstNatureza = objNatureza.CarregaDadosTotal();
+                lstNatureza = objNatureza.CarregaDadosTotal(LCaminhoBanco);
             }
             else
             {
-                lstNatureza = objNatureza.CarregaRestritas();
+                lstNatureza = objNatureza.CarregaRestritas(LCaminhoBanco);
             }
             
             

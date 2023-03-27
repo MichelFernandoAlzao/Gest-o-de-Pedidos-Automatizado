@@ -13,6 +13,7 @@ namespace Formularios
 {
     public partial class frmSEGUsuarios : Form
     {
+        string LCaminhoBanco;
         string LID;
         string LUsuario;
         string LNome;
@@ -20,8 +21,9 @@ namespace Formularios
         string LGerenciaCadastros;
         string LOperacional = "";
         string LSeguranca = "";
-        public frmSEGUsuarios()
+        public frmSEGUsuarios(string inCaminhoBanco)
         {
+            LCaminhoBanco = inCaminhoBanco;
             InitializeComponent();
             AtualizaGrid();
         }
@@ -40,7 +42,7 @@ namespace Formularios
         {
             List<SEGUsuario> lstUsuarios = new List<SEGUsuario>();
             SEGUsuario objUsuario = new SEGUsuario();
-            lstUsuarios =  objUsuario.CarregaDados("","","","");
+            lstUsuarios =  objUsuario.CarregaDados(LCaminhoBanco, "","","","");
 
             if (lstUsuarios.Count > 0)
             {
@@ -106,12 +108,12 @@ namespace Formularios
 
             if (LID == "")
             {
-                objInsUsuario.InsereDados();
+                objInsUsuario.InsereDados(LCaminhoBanco);
             }
             else
             {
                 objInsUsuario.ID = LID;
-                objInsUsuario.AlteraDados();
+                objInsUsuario.AlteraDados(LCaminhoBanco);
             }
             
             

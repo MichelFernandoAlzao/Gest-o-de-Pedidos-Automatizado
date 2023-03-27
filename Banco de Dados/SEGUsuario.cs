@@ -11,6 +11,7 @@ namespace Banco_de_Dados
 {
     public class SEGUsuario
     {
+        string LCaminhoBanco;
         public string ID { get; set; }
         public string Usuario { get; set; }
         public string Nome { get; set; }
@@ -22,14 +23,17 @@ namespace Banco_de_Dados
         public string Seguranca { get; set; }
         public string MsgErro { get; set; }
 
-        Conexao conexao = new Conexao();
-        SqlCommand cmd = new SqlCommand();
 
-        public void InsereDados()
+
+        public void InsereDados(string inCmainhoBanco)
         {
+            LCaminhoBanco = inCmainhoBanco;
             string sqlComando = "INSERT INTO SEGUsuarios";
             sqlComando += "(USUsuario,USNome,USSenha,USAdministrador,USGernciaCadastros,USOperacional,USSeguranca)";
             sqlComando += "VALUES ('" + Usuario + "','" + Nome + "','" + Usuario + "','" + Administrador + "','" + GerenciaCadastros + "','" + Operacional + "','" + Seguranca + "')";
+
+            Conexao conexao = new Conexao(LCaminhoBanco);
+            SqlCommand cmd = new SqlCommand();
 
             cmd.CommandText = sqlComando;
 
@@ -50,8 +54,9 @@ namespace Banco_de_Dados
         }
 
 
-        public List<SEGUsuario> CarregaDados(string inID, string inUsuario, string inNome,string inSenha)
+        public List<SEGUsuario> CarregaDados(string inCaminhoBanco, string inID, string inUsuario, string inNome,string inSenha)
         {
+            LCaminhoBanco = inCaminhoBanco;
             List<SEGUsuario> lstUsuarios = new List<SEGUsuario>();
 
             string slqSelect = "SELECT * FROM SEGUsuarios ";
@@ -80,6 +85,8 @@ namespace Banco_de_Dados
                 slqSelect += sqlWhere;
             }
 
+            Conexao conexao = new Conexao(LCaminhoBanco);
+            SqlCommand cmd = new SqlCommand();
 
             cmd.CommandText = slqSelect;
             var dt = new DataTable();
@@ -121,8 +128,9 @@ namespace Banco_de_Dados
             return lstUsuarios;
         }
 
-        public void AlteraDados()
+        public void AlteraDados(string inCaminhoBanco)
         {
+            LCaminhoBanco = inCaminhoBanco;
             string sSQL = "";
             string sqlconteudo = "";
             string sqlWhere = " WHERE SEGUsuarios = '" + ID + "'";
@@ -165,6 +173,9 @@ namespace Banco_de_Dados
 
             sSQL = sSQL + sqlconteudo.Remove(sqlconteudo.Length - 1);
             sSQL = sSQL + sqlWhere;
+
+            Conexao conexao = new Conexao(LCaminhoBanco);
+            SqlCommand cmd = new SqlCommand();
 
             cmd.CommandText = sSQL;
 

@@ -11,18 +11,18 @@ namespace Banco_de_Dados
 {
     public class BDParametros
     {
+        string LcaminhoBanco;
         public string cpID { get; set; }
         public string cpDiasContato { get; set; }
         public string cpDiasUltVenda { get; set; }
         public string cpEmpresaDR { get; set; }
         public string cpMsgErro { get; set; }
 
-        Conexao conexao = new Conexao();
-        SqlCommand cmd = new SqlCommand();
 
-        public void InsereDados()
+
+        public void InsereDados(string inCmainhoBanco)
         {
-
+            LcaminhoBanco = inCmainhoBanco;
             string sSQL;
             string sqlCampos = "";
             string sqlconteudo;
@@ -52,6 +52,9 @@ namespace Banco_de_Dados
 
             sSQL = sSQL + sqlCampos.Remove(sqlCampos.Length - 2) + ")" + sqlconteudo.Remove(sqlconteudo.Length - 1) + ")";
 
+            Conexao conexao = new Conexao(LcaminhoBanco);
+            SqlCommand cmd = new SqlCommand();
+
             cmd.CommandText = sSQL;
 
 
@@ -73,8 +76,9 @@ namespace Banco_de_Dados
             cmd.Dispose();
         }
 
-        public void AlteraDados()
+        public void AlteraDados(string inCmainhoBanco)
         {
+            LcaminhoBanco = inCmainhoBanco;
             string sSQL = "";
             string sqlconteudo = "";
             string sqlWhere = " WHERE OPParametros = '" + cpID + "'";
@@ -97,6 +101,10 @@ namespace Banco_de_Dados
             sSQL = sSQL + sqlconteudo.Remove(sqlconteudo.Length - 1);
             sSQL = sSQL + sqlWhere;
 
+
+            Conexao conexao = new Conexao(LcaminhoBanco);
+            SqlCommand cmd = new SqlCommand();
+
             cmd.CommandText = sSQL;
 
             try
@@ -115,8 +123,10 @@ namespace Banco_de_Dados
             cmd.Dispose();
         }
 
-        public List<BDParametros> CarregaDados()
+        public List<BDParametros> CarregaDados(string inCmainhoBanco)
         {
+            LcaminhoBanco = inCmainhoBanco;
+
             List<BDParametros> lstParametros = new List<BDParametros>();
             string slqSelect = "SELECT * FROM OPParametros ";
             string sqlWhere = "WHERE ";
@@ -143,6 +153,10 @@ namespace Banco_de_Dados
                     slqSelect += sqlWhere.Remove(sqlWhere.Length - 3);
                 }
             }
+
+            Conexao conexao = new Conexao(LcaminhoBanco);
+            SqlCommand cmd = new SqlCommand();
+
             cmd.CommandText = slqSelect;
             var dt = new DataTable();
 
@@ -178,11 +192,15 @@ namespace Banco_de_Dados
             return lstParametros;
         }
 
-        public void Excluir()
+        public void Excluir(string inCaminhoBanco)
         {
+            LcaminhoBanco = inCaminhoBanco;
             string sSQL = "";
 
             sSQL = "DELETE FROM OPParametros WHERE OPParametros = '" + cpID + "'";
+
+            Conexao conexao = new Conexao(LcaminhoBanco);
+            SqlCommand cmd = new SqlCommand();
 
             cmd.CommandText = sSQL;
 

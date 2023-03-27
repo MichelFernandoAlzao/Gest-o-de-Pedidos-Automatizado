@@ -9,28 +9,33 @@ namespace Camada_Negocios
 {
     public class claCalculaProgressaoMeta
     {
+        string LCaminhoBanco;
         string[] lstValores;
         string LUsuario;
         double LMeta = 0.00;
         double LSomaPedidos = 0.00;
         int LPercProgressao;
         double LobjDiario = 0.00;
-        public string[] CarregaProgressao(string inUsuario)
+        public string[] CarregaProgressao(string inCmainhoBanco,string inUsuario)
         {
-            
+            LCaminhoBanco = inCmainhoBanco;
             LUsuario = inUsuario;
             //lstValores[0] = Meta vinda dos parametros
             //lstValores[1] = Valor progredido da meta
             //lstValores[2] = Valor não Consolidado
             //lstValores[3] = Objetivo Diario
             SEGUsuario objUsuario = new SEGUsuario();
-            List<SEGUsuario> lstUsuario = objUsuario.CarregaDados(inUsuario,"","","");
+            List<SEGUsuario> lstUsuario = objUsuario.CarregaDados(LCaminhoBanco,inUsuario,"","","");
             if(lstUsuario.Count > 0)
             {
-                if (lstUsuario[0].Meta != "" || lstUsuario[0].Meta != null)
+                if (lstUsuario[0].Meta != "")
                 {
                    LMeta = Convert.ToDouble(lstUsuario[0].Meta.ToString());
                 }                
+            }
+            else
+            {
+                LMeta = 0;
             }
 
             CalculaPrograssaoMeta();
@@ -41,7 +46,15 @@ namespace Camada_Negocios
             }
             else
             {
-                LPercProgressao = 100;
+                if(LMeta == 0)
+                {
+                    LPercProgressao = 0;
+                }
+                else
+                {
+                    LPercProgressao = 100;
+                }
+                
             }
             
 
@@ -73,7 +86,7 @@ namespace Camada_Negocios
             //Variavel que ira receber a soma dos pedidos
             
             BDPedido objPedidos = new BDPedido();
-            List<BDPedido> lstPedido = objPedidos.CarregaDadosData(Convert.ToString(primeiroDiaDoMes),Convert.ToString(ultimoDiaDoMes),LUsuario);
+            List<BDPedido> lstPedido = objPedidos.CarregaDadosData(LCaminhoBanco,Convert.ToString(primeiroDiaDoMes),Convert.ToString(ultimoDiaDoMes),LUsuario);
             if(lstPedido.Count > 0)
             {
                 foreach(BDPedido item in lstPedido)
@@ -84,6 +97,10 @@ namespace Camada_Negocios
                     }
                     LSomaPedidos = LSomaPedidos + Convert.ToDouble(item.cpVlrItensFaturando);
                 }
+            }
+            else
+            {
+                LSomaPedidos = 0;
             }
         }
 

@@ -13,6 +13,7 @@ namespace Formularios
 {
     public partial class frmNaturezaDaOperacao : Form
     {
+        string LCaminhoBanco = "";
         public string LID = "";
         public string LDescricao = "";
         public string LVenda = "";
@@ -21,8 +22,9 @@ namespace Formularios
         public string LInterno = "";
         public string LRestrito = "";
         string LUsuario = "";
-        public frmNaturezaDaOperacao(string inUsuario)
+        public frmNaturezaDaOperacao(string inCmainhoBanco,string inUsuario)
         {
+            LCaminhoBanco=inCmainhoBanco;
             InitializeComponent();
             LUsuario = inUsuario;
             TestaUsuario();
@@ -45,7 +47,7 @@ namespace Formularios
         {
             SEGUsuario objUsuario = new SEGUsuario();
             objUsuario.ID = LUsuario;
-            List<SEGUsuario> lstUsuario = objUsuario.CarregaDados(LUsuario,"","","");
+            List<SEGUsuario> lstUsuario = objUsuario.CarregaDados(LCaminhoBanco, LUsuario,"","","");
             if (lstUsuario[0].GerenciaCadastros != "S")
             {
                 MessageBox.Show("Usuario sem permissão para alterar/Cadastrar Naturezas", "GPA");
@@ -75,7 +77,7 @@ namespace Formularios
         {
             BDNatOperacao objNatOperacao = new BDNatOperacao();
             objNatOperacao.cpID = LID;
-            objNatOperacao.Excluir();
+            objNatOperacao.Excluir(LCaminhoBanco);
         }
 
         private void cmdGravar_Click(object sender, EventArgs e)
@@ -125,12 +127,12 @@ namespace Formularios
 
             if(LID == "")
             {
-                objNatureza.InsereDados();
+                objNatureza.InsereDados(LCaminhoBanco);
             }
             else
             {
                 objNatureza.cpID = LID;
-                objNatureza.AlteraDados();
+                objNatureza.AlteraDados(LCaminhoBanco);
             }
 
             grdNatOperacao.Rows.Clear();
@@ -151,7 +153,7 @@ namespace Formularios
         {
             
             BDNatOperacao objCadastro = new BDNatOperacao();
-            List<BDNatOperacao> lstCadastro = objCadastro.CarregaDadosTotal();
+            List<BDNatOperacao> lstCadastro = objCadastro.CarregaDadosTotal(LCaminhoBanco);
             if (lstCadastro.Count > 0)
             {
                 foreach (BDNatOperacao item in lstCadastro)

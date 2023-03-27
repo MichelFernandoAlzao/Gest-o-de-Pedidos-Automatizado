@@ -14,12 +14,13 @@ namespace Formularios
 {
     public partial class frmSelecionarRegistroContato : Form
     {
-
+        string LCaminhoBanco;
         public string LID;
         Form LChamador;
 
-        public frmSelecionarRegistroContato(Form frmChamador,string inID)
+        public frmSelecionarRegistroContato(string inCaminhobanco,Form frmChamador,string inID)
         {
+            LCaminhoBanco = inCaminhobanco;
             InitializeComponent();
             LChamador = frmChamador;
             LID = inID;
@@ -38,14 +39,14 @@ namespace Formularios
             {
                 objCadastro.cpID = LID;
             }
-            List<BDRegistroContato> lstCadastro = objCadastro.CarregaDados();
+            List<BDRegistroContato> lstCadastro = objCadastro.CarregaDados(LCaminhoBanco);
             if (lstCadastro.Count > 0)
             {
                 foreach (BDRegistroContato item in lstCadastro)
                 {
                     string RazaoSocial;
                     BDCadastroGeral objEmpresa = new BDCadastroGeral();
-                    List<BDCadastroGeral> lstEmpresa = objEmpresa.CarregaDados(item.cpEmpresaDR, "", "", "", "", "", "", "", "", "");
+                    List<BDCadastroGeral> lstEmpresa = objEmpresa.CarregaDados(LCaminhoBanco,item.cpEmpresaDR, "", "", "", "", "", "", "", "", "");
                     string[] Row = new string[]
                     {
                             item.cpID.ToString(),

@@ -13,13 +13,15 @@ namespace Formularios
 {
     public partial class frmAvisos : Form
     {
+        string LCaminhoBanco = "";
         string LIDAviso = "";
         public string LIDUsuario = "";
         string LAviso = "";
         string LDataInicio = "";
         string LDataTermino = "";
-        public frmAvisos()
+        public frmAvisos(string inCaminhoBanco)
         {
+            LCaminhoBanco = inCaminhoBanco;
             InitializeComponent();
         }
 
@@ -55,7 +57,7 @@ namespace Formularios
 
             if (MessageBox.Show("Deseja Excluir este aviso ?", "GPA", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                objAviso.Excluir();
+                objAviso.Excluir(LCaminhoBanco);
                 txtAviso.Text = "";
                 txtDataInicio.Text = "";
                 txtDataTermino.Text = "";
@@ -132,12 +134,12 @@ namespace Formularios
 
             if (LIDAviso == "")
             {
-                objAviso.InsereDados();
+                objAviso.InsereDados(LCaminhoBanco);
             }
             else
             {
                 objAviso.cpID = LIDAviso;
-                objAviso.AlteraDados();
+                objAviso.AlteraDados(LCaminhoBanco);
             }
 
             CarregaAvisos();
@@ -146,7 +148,7 @@ namespace Formularios
         {
             grdAvisos.Rows.Clear();
             BDAvisos objAvisos = new BDAvisos();
-            List<BDAvisos> lstAvisos = objAvisos.CarregaDados();
+            List<BDAvisos> lstAvisos = objAvisos.CarregaDados(LCaminhoBanco);
             if (lstAvisos.Count > 0)
             {
                 foreach (BDAvisos item in lstAvisos)
@@ -156,7 +158,7 @@ namespace Formularios
                     if (item.cpUsuarioDR != "" && item.cpUsuarioDR != null)
                     {
                         SEGUsuario objUsuario = new SEGUsuario();
-                        lstUsuario = objUsuario.CarregaDados(item.cpUsuarioDR, "", "", "");
+                        lstUsuario = objUsuario.CarregaDados(LCaminhoBanco,item.cpUsuarioDR, "", "", "");
                         if (lstUsuario.Count > 0)
                         {
                             item.cpUsuarioDR = lstUsuario[0].ID;
@@ -211,13 +213,13 @@ namespace Formularios
         {
             if (e.KeyCode == Keys.F1)
             {
-                frmSelecionarUsuario frmUsuario = new frmSelecionarUsuario(this, "", txtUsuarioDestino.Text.ToString());
+                frmSelecionarUsuario frmUsuario = new frmSelecionarUsuario(LCaminhoBanco,this, "", txtUsuarioDestino.Text.ToString());
                 frmUsuario.ShowDialog();
 
                 if (LIDUsuario != "")
                 {
                     SEGUsuario objUsuario = new SEGUsuario();
-                    List<SEGUsuario> lstUsuario = objUsuario.CarregaDados(LIDUsuario, "", "", "");
+                    List<SEGUsuario> lstUsuario = objUsuario.CarregaDados(LCaminhoBanco, LIDUsuario, "", "", "");
                     txtUsuarioDestino.Text = lstUsuario[0].Usuario;
                 }
             }

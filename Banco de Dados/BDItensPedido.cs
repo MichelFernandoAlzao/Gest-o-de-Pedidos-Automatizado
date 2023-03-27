@@ -11,6 +11,7 @@ namespace Banco_de_Dados
 {
     public class BDItensPedido
     {
+        string LCaminhoBanco;
         public string cpID { get; set; }
         public string cpProdutoID { get; set; }
         public string cpQuantidade { get; set; }
@@ -24,11 +25,11 @@ namespace Banco_de_Dados
         public string cpMsgErro { get; set; }
 
 
-        Conexao conexao = new Conexao();
-        SqlCommand cmd = new SqlCommand();
 
-        public void InsereDados()
+
+        public void InsereDados(string inCaminhoBanco)
         {
+            LCaminhoBanco = inCaminhoBanco;
 
             string sSQL;
             string sqlCampos = "";
@@ -96,6 +97,9 @@ namespace Banco_de_Dados
 
             sSQL = sSQL + sqlCampos.Remove(sqlCampos.Length - 2) + ")" + sqlconteudo.Remove(sqlconteudo.Length - 1) + ")";
 
+            Conexao conexao = new Conexao(LCaminhoBanco);
+            SqlCommand cmd = new SqlCommand();
+
             cmd.CommandText = sSQL;
 
             try
@@ -123,8 +127,9 @@ namespace Banco_de_Dados
             cmd.Dispose();
         }
 
-        public void AlteraDados()
+        public void AlteraDados(string inCaminhobanco)
         {
+            LCaminhoBanco = inCaminhobanco;
             string sSQL = "";
             string sqlconteudo = "";
             string sqlWhere = " WHERE OPItensPedido = '" + cpID + "'";
@@ -172,6 +177,9 @@ namespace Banco_de_Dados
             sSQL = sSQL + sqlconteudo.Remove(sqlconteudo.Length - 1);
             sSQL = sSQL + sqlWhere;
 
+            Conexao conexao = new Conexao(LCaminhoBanco);
+            SqlCommand cmd = new SqlCommand();
+
             cmd.CommandText = sSQL;
 
             try
@@ -190,8 +198,9 @@ namespace Banco_de_Dados
             cmd.Dispose();
         }
 
-        public List<BDItensPedido> CarregaDados()
+        public List<BDItensPedido> CarregaDados(string inCaminhoBanco)
         {
+            LCaminhoBanco = inCaminhoBanco;
             List<BDItensPedido> lstITPedido = new List<BDItensPedido>();
             string slqSelect = "SELECT * FROM OPItensPedido ";
             string sqlWhere = "WHERE ";
@@ -240,6 +249,10 @@ namespace Banco_de_Dados
                     slqSelect += sqlWhere.Remove(sqlWhere.Length - 3);
                 }
             }
+
+            Conexao conexao = new Conexao(LCaminhoBanco);
+            SqlCommand cmd = new SqlCommand();
+
             cmd.CommandText = slqSelect;
             var dt = new DataTable();
 
@@ -280,11 +293,14 @@ namespace Banco_de_Dados
             cmd.Dispose();
             return lstITPedido;
         }
-        public void Excluir()
+        public void Excluir(string inCaminhoBanco)
         {
             string sSQL = "";
 
             sSQL = "DELETE FROM OPItensPedido WHERE OPItensPedido = '" + cpID + "'";
+
+            Conexao conexao = new Conexao(LCaminhoBanco);
+            SqlCommand cmd = new SqlCommand();
 
             cmd.CommandText = sSQL;
 
@@ -303,11 +319,15 @@ namespace Banco_de_Dados
             }
             cmd.Dispose();
         }
-        public void ExcluirviaPedido()
+        public void ExcluirviaPedido(string inCaminhoBanco)
         {
+            LCaminhoBanco = inCaminhoBanco;
             string sSQL = "";
 
             sSQL = "DELETE FROM OPItensPedido WHERE OPITPPedidoDR = '" + cpPedidoDR + "'";
+
+            Conexao conexao = new Conexao(LCaminhoBanco);
+            SqlCommand cmd = new SqlCommand();
 
             cmd.CommandText = sSQL;
 

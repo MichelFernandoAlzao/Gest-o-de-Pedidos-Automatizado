@@ -13,8 +13,10 @@ namespace Formularios
 {
     public partial class frmConsultaPedido : Form
     {
-        public frmConsultaPedido()
+        string LCaminhoBanco;
+        public frmConsultaPedido(string inCmainhoBanco)
         {
+            LCaminhoBanco = inCmainhoBanco;
             InitializeComponent();
         }
 
@@ -26,7 +28,7 @@ namespace Formularios
         private void cmdBuscar_Click(object sender, EventArgs e)
         {
             BDPedido objPedido = new BDPedido();
-            List<BDPedido> lstPedidos = objPedido.CarregaDados(txtNumero.Text, "", "");
+            List<BDPedido> lstPedidos = objPedido.CarregaDados(LCaminhoBanco,txtNumero.Text, "", "");
 
             if (lstPedidos.Count > 0)
             {
@@ -39,7 +41,7 @@ namespace Formularios
                         if (item.cpEmpresaDR != "" && item.cpEmpresaDR != null)
                         {
                             BDCadastroGeral objEmpresa = new BDCadastroGeral();
-                            lstEmpresa = objEmpresa.CarregaDados(item.cpEmpresaDR, "", "", "", "", "", "", "", "", "");
+                            lstEmpresa = objEmpresa.CarregaDados(LCaminhoBanco, item.cpEmpresaDR, "", "", "", "", "", "", "", "", "");
                             if (lstEmpresa.Count > 0)
                             {
                                 pRazao = lstEmpresa[0].RazaoSocial.ToString();
@@ -65,7 +67,7 @@ namespace Formularios
                 return;
             }
 
-            frmPedido frmPedido = new frmPedido("", grdListaPedido.SelectedRows[0].Cells[0].Value.ToString());
+            frmPedido frmPedido = new frmPedido(LCaminhoBanco,"", grdListaPedido.SelectedRows[0].Cells[0].Value.ToString());
             frmPedido.ShowDialog();
         }
     }

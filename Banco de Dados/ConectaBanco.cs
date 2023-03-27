@@ -16,9 +16,9 @@ namespace DAL
     {
         SqlConnection con = new SqlConnection();
         //Contrutor
-        public Conexao()
+        public Conexao(string inCaminhoBanco)
         {
-            con.ConnectionString = @"Server=localhost\SQLEXPRESS;Database=GPA;Trusted_Connection=True;";
+            con.ConnectionString = inCaminhoBanco;
         }
 
         //Metodo Conectar

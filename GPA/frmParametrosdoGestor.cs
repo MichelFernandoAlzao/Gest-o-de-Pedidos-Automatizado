@@ -13,11 +13,13 @@ namespace Formularios
 {
     public partial class frmParametrosdoGestor : Form
     {
+        string LcaminhoBanco = "";
         string LIDParametro = "";
         public string LID = "";
         public string LRazaoSocial ="";
-        public frmParametrosdoGestor()
+        public frmParametrosdoGestor(string inCaminhoBanco)
         {
+            LcaminhoBanco = inCaminhoBanco;
             InitializeComponent();
         }
 
@@ -68,12 +70,12 @@ namespace Formularios
 
             if(LIDParametro == "")
             {
-                objParametros.InsereDados();
+                objParametros.InsereDados(LcaminhoBanco);
             }
             else
             {
                 objParametros.cpID = LIDParametro;
-                objParametros.AlteraDados();
+                objParametros.AlteraDados(LcaminhoBanco);
             }
 
             
@@ -85,7 +87,7 @@ namespace Formularios
         {
             BDParametros objParametros = new BDParametros();
 
-            List<BDParametros> lstParametros = objParametros.CarregaDados();
+            List<BDParametros> lstParametros = objParametros.CarregaDados(LcaminhoBanco);
             if(lstParametros.Count > 0)
             {
                 LIDParametro = lstParametros[0].cpID;
@@ -94,7 +96,7 @@ namespace Formularios
                 txtPrazoUltVenda.Text = lstParametros[0].cpDiasUltVenda;
 
                 BDCadastroGeral objCadastro = new BDCadastroGeral();
-                List<BDCadastroGeral> lstCadastro = objCadastro.CarregaDados(LID, "", "", "", "", "", "", "", "", "");
+                List<BDCadastroGeral> lstCadastro = objCadastro.CarregaDados(LcaminhoBanco,LID, "", "", "", "", "", "", "", "", "");
                 LRazaoSocial = lstCadastro[0].RazaoSocial;
                 txtEmpresaPadrao.Text = lstCadastro[0].RazaoSocial;
             }
@@ -106,7 +108,7 @@ namespace Formularios
         {
             if (e.KeyCode == Keys.F1)
             {
-                frmSelecionaEmpresa objTela = new frmSelecionaEmpresa(this, "", txtEmpresaPadrao.Text.ToString(), "", "");
+                frmSelecionaEmpresa objTela = new frmSelecionaEmpresa(LcaminhoBanco,this, "", txtEmpresaPadrao.Text.ToString(), "", "");
                 objTela.ShowDialog();
                 if(LRazaoSocial != "")
                 {
@@ -118,7 +120,7 @@ namespace Formularios
         private void CarregaUsuarios()
         {
             SEGUsuario objUsuario = new SEGUsuario();
-            List<SEGUsuario> lstUsuario = objUsuario.CarregaDados("", "", "", "");
+            List<SEGUsuario> lstUsuario = objUsuario.CarregaDados(LcaminhoBanco,"", "", "", "");
             if (lstUsuario.Count > 0)
             {
                 foreach (SEGUsuario item in lstUsuario)
@@ -157,7 +159,7 @@ namespace Formularios
 
             foreach(SEGUsuario Usuario in lstUsuarios)
             {
-                Usuario.AlteraDados();
+                Usuario.AlteraDados(LcaminhoBanco);
                 if(Usuario.MsgErro != null)
                 {
                     MessageBox.Show("Erro ao alterar meta do usuário " + Usuario.ID.ToString(), "");

@@ -13,6 +13,7 @@ namespace Formularios
 {
     public partial class frmContatosEmpresas : Form
     {
+        string LCaminhoBanco;
         public string LID = "";
         public string LRazaoSocial = "";
         public string LIDProduto = "";
@@ -24,8 +25,9 @@ namespace Formularios
         string LIDPRodContato = "";
         string LUsuario = "";
 
-        public frmContatosEmpresas(string inUsuario)
+        public frmContatosEmpresas(string inCaminhoBanco, string inUsuario)
         {
+            LCaminhoBanco = inCaminhoBanco;
             LUsuario = inUsuario;
             InitializeComponent();
         }
@@ -83,7 +85,7 @@ namespace Formularios
 
             if (LIDRegistro == "")
             {
-                objContato.InsereDados();
+                objContato.InsereDados(LCaminhoBanco);
                 if (objContato.cpMsgErro != "" && objContato.cpMsgErro != null)
                 {
                     MessageBox.Show(objContato.cpMsgErro, "GPA");
@@ -93,7 +95,7 @@ namespace Formularios
             else
             {
                 objContato.cpID = LIDRegistro;
-                objContato.AlteraDados();
+                objContato.AlteraDados(LCaminhoBanco);
                 if (objContato.cpMsgErro != "" && objContato.cpMsgErro != null)
                 {
                     MessageBox.Show(objContato.cpMsgErro, "GPA");
@@ -114,7 +116,7 @@ namespace Formularios
         {
             BDRegistroContato objRegContato = new BDRegistroContato();
             objRegContato.cpID = LIDRegistro;
-            objRegContato.Excluir();
+            objRegContato.Excluir(LCaminhoBanco);
             LID = "";
             LIDRegistro = "";
             LDataContato = "";
@@ -132,14 +134,14 @@ namespace Formularios
         {
             BDRegistroContato objRegContato = new BDRegistroContato();
             objRegContato.cpID = LIDRegistro;
-            List<BDRegistroContato> lstRegContato = objRegContato.CarregaDados();
+            List<BDRegistroContato> lstRegContato = objRegContato.CarregaDados(LCaminhoBanco);
             if (lstRegContato.Count > 0)
             {
                 LID = lstRegContato[0].cpEmpresaDR;
                 if (LID != "")
                 {
                     BDCadastroGeral objEmpresa = new BDCadastroGeral();
-                    List<BDCadastroGeral> lstEmpresa = objEmpresa.CarregaDados(LID, "", "", "", "", "", "", "", "", "");
+                    List<BDCadastroGeral> lstEmpresa = objEmpresa.CarregaDados(LCaminhoBanco,LID, "", "", "", "", "", "", "", "", "");
                     txtEmpresa.Text = lstEmpresa[0].RazaoSocial.ToString();
                 }
             }
@@ -161,7 +163,7 @@ namespace Formularios
             }
             BDProdutosContato objProdutoContato = new BDProdutosContato();
             objProdutoContato.cpID = LIDPRodContato;
-            objProdutoContato.Excluir();
+            objProdutoContato.Excluir(LCaminhoBanco);
             if (objProdutoContato.cpMsgErro != "")
             {
                 MessageBox.Show(objProdutoContato.cpMsgErro, "GPA");
@@ -180,7 +182,7 @@ namespace Formularios
             grdProdSugeridos.Rows.Clear();
             BDProdutosContato objProdContato = new BDProdutosContato();
             objProdContato.cpRegContatoDR = LIDRegistro;
-            List<BDProdutosContato> lstProdContato = objProdContato.CarregaDados();
+            List<BDProdutosContato> lstProdContato = objProdContato.CarregaDados(LCaminhoBanco);
 
             if (lstProdContato.Count > 0)
             {
@@ -189,7 +191,7 @@ namespace Formularios
                     string DescProduto;
                     BDCadProdutos objProduto = new BDCadProdutos();
                     objProduto.cpID = item.cpProdutoDR;
-                    List<BDCadProdutos> lstProduto = objProduto.CarregaDados();
+                    List<BDCadProdutos> lstProduto = objProduto.CarregaDados(LCaminhoBanco);
                     string[] Row = new string[]
                     {
                             item.cpID.ToString(),
@@ -221,7 +223,7 @@ namespace Formularios
             objProdContato.cpValorOfertado = txtValorOfertado.Text;
             objProdContato.cpQuantidade = txtQuantidade.Text;
 
-            objProdContato.InsereDados();
+            objProdContato.InsereDados(LCaminhoBanco);
 
             txtDescProduto.Text = "";
             txtValorOfertado.Text = "";
@@ -234,13 +236,13 @@ namespace Formularios
         {
             if (e.KeyCode == Keys.F1)
             {
-                frmSelecionaProduto objSelecProduto = new frmSelecionaProduto(this, "", txtDescProduto.Text, "", "");
+                frmSelecionaProduto objSelecProduto = new frmSelecionaProduto(LCaminhoBanco, this, "", txtDescProduto.Text, "", "");
                 objSelecProduto.ShowDialog();
                 if (LIDProduto != "")
                 {
                     BDCadProdutos objProduto = new BDCadProdutos();
                     objProduto.cpID = LIDProduto;
-                    List<BDCadProdutos> lstProduto = objProduto.CarregaDados();
+                    List<BDCadProdutos> lstProduto = objProduto.CarregaDados(LCaminhoBanco);
                     txtDescProduto.Text = lstProduto[0].cpDescricao.ToString();
                 }
             }
@@ -250,7 +252,7 @@ namespace Formularios
         {
             if (e.KeyCode == Keys.F1)
             {
-                frmSelecionaEmpresa objTela = new frmSelecionaEmpresa(this, "", txtEmpresa.Text.ToString(), "", "");
+                frmSelecionaEmpresa objTela = new frmSelecionaEmpresa(LCaminhoBanco, this, "", txtEmpresa.Text.ToString(), "", "");
                 objTela.ShowDialog();
                 if (LRazaoSocial != "")
                 {
@@ -277,7 +279,7 @@ namespace Formularios
         {
             if (e.KeyCode == Keys.F1)
             {
-                frmSelecionarRegistroContato frmSelecionarRegistroContato = new frmSelecionarRegistroContato(this, txtRegistro.Text);
+                frmSelecionarRegistroContato frmSelecionarRegistroContato = new frmSelecionarRegistroContato(LCaminhoBanco,this, txtRegistro.Text);
                 frmSelecionarRegistroContato.ShowDialog();
                 if (LIDRegistro != "")
                 {

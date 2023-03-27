@@ -13,6 +13,7 @@ namespace Formularios
 {
     public partial class frmEntrada : Form
     {
+        string LCaminhoBanco;
         private string Lusuario;
         private string LSenha;
         List<string> LParametros;
@@ -23,6 +24,8 @@ namespace Formularios
 
         public void frmEntrada_Load(object sender, EventArgs e)
         {
+            var data = File.ReadAllText("C:\\GPA\\Conexoes.ini");
+            LCaminhoBanco = data;
             chkOperacional.Checked = true;
         }
 
@@ -33,7 +36,7 @@ namespace Formularios
 
         private void Entrar_Click(object sender, EventArgs e)
         {
-            Entrar();            
+            Entrar();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -53,7 +56,7 @@ namespace Formularios
 
             if (chkOperacional.Checked == true)
             {
-                
+
                 if (txtUsuario.Text == "" || txtSenha.Text == "")
                 {
                     MessageBox.Show("Usuario e / ou Senha não informados", "GPA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -61,7 +64,7 @@ namespace Formularios
                 }
                 List<SEGUsuario> lstUsuario = new List<SEGUsuario>();
                 SEGUsuario objUsuario = new SEGUsuario();
-                lstUsuario = objUsuario.CarregaDados("", txtUsuario.Text.ToUpper(), "", txtSenha.Text.ToUpper());
+                lstUsuario = objUsuario.CarregaDados(LCaminhoBanco,"", txtUsuario.Text.ToUpper(), "", txtSenha.Text.ToUpper());
 
                 if (lstUsuario.Count == 0)
                 {
@@ -70,7 +73,7 @@ namespace Formularios
                 }
                 if (lstUsuario[0].Operacional == "S")
                 {
-                    frmCRMInicial objTela = new frmCRMInicial(lstUsuario[0].ID);
+                    frmCRMInicial objTela = new frmCRMInicial(LCaminhoBanco,lstUsuario[0].ID);
                     this.Hide();
                     objTela.ShowDialog();
                     this.Close();
@@ -90,7 +93,7 @@ namespace Formularios
                 }
                 List<SEGUsuario> lstUsuario = new List<SEGUsuario>();
                 SEGUsuario objUsuario = new SEGUsuario();
-                lstUsuario = objUsuario.CarregaDados("", txtUsuario.Text.ToUpper(), "", txtSenha.Text.ToUpper());
+                lstUsuario = objUsuario.CarregaDados(LCaminhoBanco, "", txtUsuario.Text.ToUpper(), "", txtSenha.Text.ToUpper());
                 if (lstUsuario.Count == 0)
                 {
                     MessageBox.Show("Usuario ou senha invalidos", "GPA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -98,7 +101,7 @@ namespace Formularios
                 }
                 if (lstUsuario[0].Seguranca == "S")
                 {
-                    frmSEGUsuarios objTela = new frmSEGUsuarios();
+                    frmSEGUsuarios objTela = new frmSEGUsuarios(LCaminhoBanco);
                     this.Hide();
                     objTela.ShowDialog();
                     this.Close();

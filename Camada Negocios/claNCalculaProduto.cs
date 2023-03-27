@@ -9,6 +9,7 @@ namespace Camada_Negocios
 {
     public class claNCalculaProduto
     {
+        string LCaminhoBanco;
         public string ValorUnit { get; set; }
         public string Quantidade { get; set; }
         public string ValroFornecedor { get; set; }
@@ -28,7 +29,7 @@ namespace Camada_Negocios
             double pTotalPedido = 0;
             BDItensPedido objItens = new BDItensPedido();
             objItens.cpPedidoDR = inPedidoDR;
-            List<BDItensPedido> lstItens = objItens.CarregaDados();
+            List<BDItensPedido> lstItens = objItens.CarregaDados(LCaminhoBanco);
             if(lstItens.Count > 0)
             {
                 foreach(BDItensPedido obj in lstItens)
@@ -38,7 +39,7 @@ namespace Camada_Negocios
                 BDPedido objPedido = new BDPedido();
                 objPedido.cpID = inPedidoDR;
                 objPedido.cpVlrTotalPedido = Convert.ToString(pTotalPedido).Replace(",",".");
-                objPedido.AlteraDados();
+                objPedido.AlteraDados(LCaminhoBanco);
 
             }
         }
@@ -48,7 +49,7 @@ namespace Camada_Negocios
             double pTotalFaturando = 0;
             BDItensPedido objItens = new BDItensPedido();
             objItens.cpPedidoDR = inPedidoDR;
-            List<BDItensPedido> lstItens = objItens.CarregaDados();
+            List<BDItensPedido> lstItens = objItens.CarregaDados(LCaminhoBanco);
             if (lstItens.Count > 0)
             {
                 foreach (BDItensPedido obj in lstItens)
@@ -62,7 +63,7 @@ namespace Camada_Negocios
                 BDPedido objPedido = new BDPedido();
                 objPedido.cpID = inPedidoDR;
                 objPedido.cpVlrItensFaturando = Convert.ToString(pTotalFaturando).Replace(",", ".");
-                objPedido.AlteraDados();
+                objPedido.AlteraDados(LCaminhoBanco);
 
             }
 

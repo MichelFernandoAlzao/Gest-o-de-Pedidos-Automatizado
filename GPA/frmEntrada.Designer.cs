@@ -29,142 +29,141 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEntrada));
-            this.txtUsuario = new System.Windows.Forms.TextBox();
-            this.txtSenha = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.chkOperacional = new System.Windows.Forms.CheckBox();
-            this.chkSeguranca = new System.Windows.Forms.CheckBox();
-            this.chkFinanceiro = new System.Windows.Forms.CheckBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.SuspendLayout();
+            txtUsuario = new TextBox();
+            txtSenha = new TextBox();
+            label1 = new Label();
+            label2 = new Label();
+            button1 = new Button();
+            button2 = new Button();
+            pictureBox1 = new PictureBox();
+            chkOperacional = new CheckBox();
+            chkSeguranca = new CheckBox();
+            chkFinanceiro = new CheckBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            SuspendLayout();
             // 
             // txtUsuario
             // 
-            this.txtUsuario.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtUsuario.Location = new System.Drawing.Point(40, 207);
-            this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(300, 23);
-            this.txtUsuario.TabIndex = 0;
-            this.txtUsuario.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtUsuario_KeyDown);
+            txtUsuario.CharacterCasing = CharacterCasing.Upper;
+            txtUsuario.Location = new Point(40, 207);
+            txtUsuario.Name = "txtUsuario";
+            txtUsuario.Size = new Size(300, 23);
+            txtUsuario.TabIndex = 0;
+            txtUsuario.KeyDown += txtUsuario_KeyDown;
             // 
             // txtSenha
             // 
-            this.txtSenha.Location = new System.Drawing.Point(40, 269);
-            this.txtSenha.Name = "txtSenha";
-            this.txtSenha.PasswordChar = '*';
-            this.txtSenha.Size = new System.Drawing.Size(300, 23);
-            this.txtSenha.TabIndex = 1;
-            this.txtSenha.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtUsuario_KeyDown);
+            txtSenha.Location = new Point(40, 269);
+            txtSenha.Name = "txtSenha";
+            txtSenha.PasswordChar = '*';
+            txtSenha.Size = new Size(300, 23);
+            txtSenha.TabIndex = 1;
+            txtSenha.KeyDown += txtUsuario_KeyDown;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(40, 189);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(47, 15);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Usuario";
+            label1.AutoSize = true;
+            label1.Location = new Point(40, 189);
+            label1.Name = "label1";
+            label1.Size = new Size(47, 15);
+            label1.TabIndex = 2;
+            label1.Text = "Usuario";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(40, 251);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(39, 15);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Senha";
+            label2.AutoSize = true;
+            label2.Location = new Point(40, 251);
+            label2.Name = "label2";
+            label2.Size = new Size(39, 15);
+            label2.TabIndex = 3;
+            label2.Text = "Senha";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(86, 325);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(209, 38);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Entrar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.Entrar_Click);
+            button1.Location = new Point(86, 325);
+            button1.Name = "button1";
+            button1.Size = new Size(209, 38);
+            button1.TabIndex = 4;
+            button1.Text = "Entrar";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += Entrar_Click;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(86, 380);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(209, 38);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "Sair";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            button2.Location = new Point(86, 380);
+            button2.Name = "button2";
+            button2.Size = new Size(209, 38);
+            button2.TabIndex = 6;
+            button2.Text = "Sair";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(95, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(200, 172);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 7;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(40, 12);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(300, 168);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 7;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // chkOperacional
             // 
-            this.chkOperacional.AutoSize = true;
-            this.chkOperacional.Location = new System.Drawing.Point(40, 300);
-            this.chkOperacional.Name = "chkOperacional";
-            this.chkOperacional.Size = new System.Drawing.Size(90, 19);
-            this.chkOperacional.TabIndex = 8;
-            this.chkOperacional.Text = "Operacional";
-            this.chkOperacional.UseVisualStyleBackColor = true;
-            this.chkOperacional.MouseClick += new System.Windows.Forms.MouseEventHandler(this.chkOperacional_MouseClick);
+            chkOperacional.AutoSize = true;
+            chkOperacional.Location = new Point(40, 300);
+            chkOperacional.Name = "chkOperacional";
+            chkOperacional.Size = new Size(90, 19);
+            chkOperacional.TabIndex = 8;
+            chkOperacional.Text = "Operacional";
+            chkOperacional.UseVisualStyleBackColor = true;
+            chkOperacional.MouseClick += chkOperacional_MouseClick;
             // 
             // chkSeguranca
             // 
-            this.chkSeguranca.AutoSize = true;
-            this.chkSeguranca.Location = new System.Drawing.Point(259, 300);
-            this.chkSeguranca.Name = "chkSeguranca";
-            this.chkSeguranca.Size = new System.Drawing.Size(81, 19);
-            this.chkSeguranca.TabIndex = 9;
-            this.chkSeguranca.Text = "Segurança";
-            this.chkSeguranca.UseVisualStyleBackColor = true;
-            this.chkSeguranca.MouseClick += new System.Windows.Forms.MouseEventHandler(this.chkSeguranca_MouseClick);
+            chkSeguranca.AutoSize = true;
+            chkSeguranca.Location = new Point(259, 300);
+            chkSeguranca.Name = "chkSeguranca";
+            chkSeguranca.Size = new Size(81, 19);
+            chkSeguranca.TabIndex = 9;
+            chkSeguranca.Text = "Segurança";
+            chkSeguranca.UseVisualStyleBackColor = true;
+            chkSeguranca.MouseClick += chkSeguranca_MouseClick;
             // 
             // chkFinanceiro
             // 
-            this.chkFinanceiro.AutoSize = true;
-            this.chkFinanceiro.Location = new System.Drawing.Point(154, 300);
-            this.chkFinanceiro.Name = "chkFinanceiro";
-            this.chkFinanceiro.Size = new System.Drawing.Size(81, 19);
-            this.chkFinanceiro.TabIndex = 10;
-            this.chkFinanceiro.Text = "Financeiro";
-            this.chkFinanceiro.UseVisualStyleBackColor = true;
-            this.chkFinanceiro.MouseClick += new System.Windows.Forms.MouseEventHandler(this.chkFinanceiro_MouseClick);
+            chkFinanceiro.AutoSize = true;
+            chkFinanceiro.Location = new Point(154, 300);
+            chkFinanceiro.Name = "chkFinanceiro";
+            chkFinanceiro.Size = new Size(81, 19);
+            chkFinanceiro.TabIndex = 10;
+            chkFinanceiro.Text = "Financeiro";
+            chkFinanceiro.UseVisualStyleBackColor = true;
+            chkFinanceiro.MouseClick += chkFinanceiro_MouseClick;
             // 
             // frmEntrada
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(384, 450);
-            this.ControlBox = false;
-            this.Controls.Add(this.chkFinanceiro);
-            this.Controls.Add(this.chkSeguranca);
-            this.Controls.Add(this.chkOperacional);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtSenha);
-            this.Controls.Add(this.txtUsuario);
-            this.Name = "frmEntrada";
-            this.Text = "GPA -Entrada";
-            this.Load += new System.EventHandler(this.frmEntrada_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(384, 450);
+            ControlBox = false;
+            Controls.Add(chkFinanceiro);
+            Controls.Add(chkSeguranca);
+            Controls.Add(chkOperacional);
+            Controls.Add(pictureBox1);
+            Controls.Add(button2);
+            Controls.Add(button1);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            Controls.Add(txtSenha);
+            Controls.Add(txtUsuario);
+            Name = "frmEntrada";
+            Text = "GPA -Entrada";
+            Load += frmEntrada_Load;
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

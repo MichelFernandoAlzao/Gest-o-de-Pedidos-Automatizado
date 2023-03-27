@@ -11,6 +11,7 @@ namespace Banco_de_Dados
 {
     public  class BDNatOperacao
     {
+        string LCaminhoBanco;
         public string cpID { get; set; }
         public string cpDescricao { get; set; }
         public string cpVenda { get; set; }
@@ -20,11 +21,11 @@ namespace Banco_de_Dados
         public string cpRestrito { get; set; }
         public string cpMsgErro { get; set; }
 
-        Conexao conexao = new Conexao();
-        SqlCommand cmd = new SqlCommand();
 
-        public void InsereDados()
+
+        public void InsereDados(string inCaminho)
         {
+            LCaminhoBanco = inCaminho;
 
             string sSQL;
             string sqlCampos = "";
@@ -69,8 +70,9 @@ namespace Banco_de_Dados
 
                 sqlconteudo += "'" + cpRestrito.ToString() + "',";
             }
-            
 
+            Conexao conexao = new Conexao(LCaminhoBanco);
+            SqlCommand cmd = new SqlCommand();
 
             sSQL = sSQL + sqlCampos.Remove(sqlCampos.Length - 2) + ")" + sqlconteudo.Remove(sqlconteudo.Length - 1) + ")";
 
@@ -95,8 +97,9 @@ namespace Banco_de_Dados
             cmd.Dispose();
         }
 
-        public void AlteraDados()
+        public void AlteraDados(string inCaminhoBanco)
         {
+            LCaminhoBanco = inCaminhoBanco;
             string sSQL = "";
             string sqlconteudo = "";
             string sqlWhere = " WHERE CDNatOperacao = '" + cpID + "'";
@@ -132,6 +135,9 @@ namespace Banco_de_Dados
             sSQL = sSQL + sqlconteudo.Remove(sqlconteudo.Length - 1);
             sSQL = sSQL + sqlWhere;
 
+            Conexao conexao = new Conexao(LCaminhoBanco);
+            SqlCommand cmd = new SqlCommand();
+
             cmd.CommandText = sSQL;
 
             try
@@ -150,8 +156,9 @@ namespace Banco_de_Dados
             cmd.Dispose();
         }
 
-        public List<BDNatOperacao> CarregaDados(string id)
+        public List<BDNatOperacao> CarregaDados(string inCaminhoBanco,string id)
         {
+            LCaminhoBanco = inCaminhoBanco;
             List<BDNatOperacao> lstNatoperacao = new List<BDNatOperacao>();
             string slqSelect = "SELECT * FROM CDNatOperacao ";
             string sqlWhere = "WHERE ";
@@ -173,6 +180,10 @@ namespace Banco_de_Dados
                     slqSelect += sqlWhere.Remove(sqlWhere.Length - 3);
                 }
             }
+
+            Conexao conexao = new Conexao(LCaminhoBanco);
+            SqlCommand cmd = new SqlCommand();
+
             cmd.CommandText = slqSelect;
             var dt = new DataTable();
 
@@ -211,11 +222,15 @@ namespace Banco_de_Dados
             return lstNatoperacao;
         }
 
-        public List<BDNatOperacao> CarregaDadosTotal()
+        public List<BDNatOperacao> CarregaDadosTotal(string inCaminhoBanco)
         {
+            LCaminhoBanco = inCaminhoBanco;
             List<BDNatOperacao> lstNatoperacao = new List<BDNatOperacao>();
             string slqSelect = "SELECT * FROM CDNatOperacao ";
-            
+
+            Conexao conexao = new Conexao(LCaminhoBanco);
+            SqlCommand cmd = new SqlCommand();
+
             cmd.CommandText = slqSelect;
             var dt = new DataTable();
 
@@ -254,11 +269,15 @@ namespace Banco_de_Dados
             return lstNatoperacao;
         }
 
-        public List<BDNatOperacao> CarregaRestritas()
+        public List<BDNatOperacao> CarregaRestritas(string inCaminhoBanco)
         {
+            LCaminhoBanco = inCaminhoBanco; 
             List<BDNatOperacao> lstNatoperacao = new List<BDNatOperacao>();
             string slqSelect = "SELECT * FROM CDNatOperacao WHERE CDNORestrito = 'N'";
 
+            Conexao conexao = new Conexao(LCaminhoBanco);
+            SqlCommand cmd = new SqlCommand();
+
             cmd.CommandText = slqSelect;
             var dt = new DataTable();
 
@@ -296,11 +315,16 @@ namespace Banco_de_Dados
             cmd.Dispose();
             return lstNatoperacao;
         }
-        public void Excluir()
+        public void Excluir(string inCaminhoBanco)
         {
+            LCaminhoBanco = inCaminhoBanco;
+
             string sSQL = "";
 
             sSQL = "DELETE FROM CDNatOperacao WHERE CDNatOperacao = '" + cpID + "'";
+
+            Conexao conexao = new Conexao(LCaminhoBanco);
+            SqlCommand cmd = new SqlCommand();
 
             cmd.CommandText = sSQL;
 

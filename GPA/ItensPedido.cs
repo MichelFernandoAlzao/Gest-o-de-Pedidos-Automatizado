@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -14,6 +15,7 @@ namespace Formularios
 {
     public partial class frmItensPedido : Form
     {
+        string LCaminhoBanco = "";
         public string LID = "";
         public string LRazaoSocial = "";
         string LIDITPedido = "";
@@ -30,8 +32,9 @@ namespace Formularios
         
         
 
-        public frmItensPedido(string inIDPedido, string inConsulta)
+        public frmItensPedido(string inCaminhoBanco,string inIDPedido, string inConsulta)
         {
+            LCaminhoBanco = inCaminhoBanco;
             LIDPedido = inIDPedido;
 
             InitializeComponent();
@@ -60,7 +63,7 @@ namespace Formularios
             //Se houverem itens já inseridos no pedido os carrega no grid
             BDItensPedido objItensPedido = new BDItensPedido();
             objItensPedido.cpPedidoDR = LIDPedido;
-            List<BDItensPedido> lstItenspedido = objItensPedido.CarregaDados();
+            List<BDItensPedido> lstItenspedido = objItensPedido.CarregaDados(LCaminhoBanco);
             if(lstItenspedido.Count > 0)
             {
                 CarregaGrid();
@@ -128,19 +131,19 @@ namespace Formularios
             OBjGravarItem.cpValorTotalItem = ClaCalculaProduto.CalculaProduto(txtValor.Text, txtQuantidade.Text, "").Replace(",",".");
             if(LIDITPedido == "")
             {
-                OBjGravarItem.InsereDados();
+                OBjGravarItem.InsereDados(LCaminhoBanco);
             }
             else
             {
                 OBjGravarItem.cpID= LIDITPedido;
-                OBjGravarItem.AlteraDados();
+                OBjGravarItem.AlteraDados(LCaminhoBanco);
             }
             
 
             //Se houverem itens já inseridos no pedido os carrega no grid
             BDItensPedido objItensPedido = new BDItensPedido();
             objItensPedido.cpPedidoDR = LIDPedido;
-            List<BDItensPedido> lstItenspedido = objItensPedido.CarregaDados();
+            List<BDItensPedido> lstItenspedido = objItensPedido.CarregaDados(LCaminhoBanco);
             if (lstItenspedido.Count > 0)
             {
                 BDPedido objPedido = new BDPedido();
@@ -183,7 +186,7 @@ namespace Formularios
         {
             BDItensPedido objExcluirItem = new BDItensPedido();
             objExcluirItem.cpID = LIDITPedido;
-            objExcluirItem.Excluir();
+            objExcluirItem.Excluir(LCaminhoBanco);
             BDPedido objPedido = new BDPedido();
             claNCalculaProduto claCalcula = new claNCalculaProduto();
             claCalcula.CalculaTotalItens(LIDPedido);
@@ -217,14 +220,14 @@ namespace Formularios
 
             BDItensPedido objItensPedido = new BDItensPedido();
             objItensPedido.cpPedidoDR = LIDPedido;
-            List<BDItensPedido> lstITPedido = objItensPedido.CarregaDados();
+            List<BDItensPedido> lstITPedido = objItensPedido.CarregaDados(LCaminhoBanco);
             if (lstITPedido.Count > 0)
             {
                 foreach (BDItensPedido item in lstITPedido)
                 {
                     BDCadProdutos objProduto = new BDCadProdutos();
                     objProduto.cpID = item.cpProdutoID;
-                    List<BDCadProdutos> lstProduto = objProduto.CarregaDados();
+                    List<BDCadProdutos> lstProduto = objProduto.CarregaDados(LCaminhoBanco);
                     string[] Row = new string[]
                         {
                             item.cpID.ToString(),
@@ -247,13 +250,13 @@ namespace Formularios
         {
             if (e.KeyCode == Keys.F1)
             {
-                frmSelecionaProduto objSelecProduto = new frmSelecionaProduto(this, "", txtDescProduto.Text, "", "");
+                frmSelecionaProduto objSelecProduto = new frmSelecionaProduto(LCaminhoBanco, this, "", txtDescProduto.Text, "", "");
                 objSelecProduto.ShowDialog();
                 if (LIDProduto != "")
                 {
                     BDCadProdutos objProduto = new BDCadProdutos();
                     objProduto.cpID = LIDProduto;
-                    List<BDCadProdutos> lstProduto = objProduto.CarregaDados();
+                    List<BDCadProdutos> lstProduto = objProduto.CarregaDados(LCaminhoBanco);
                     txtDescProduto.Text = lstProduto[0].cpDescricao.ToString();
                 }
             }
@@ -263,7 +266,7 @@ namespace Formularios
         {
             if (e.KeyCode == Keys.F1)
             {
-                frmSelecionaEmpresa frmSelecionarFornecedor = new frmSelecionaEmpresa(this, "", txtFornecedor.Text, "", "");
+                frmSelecionaEmpresa frmSelecionarFornecedor = new frmSelecionaEmpresa(LCaminhoBanco, this, "", txtFornecedor.Text, "", "");
                 frmSelecionarFornecedor.ShowDialog();
                 if (LID != "")
                 {
@@ -318,7 +321,7 @@ namespace Formularios
         {
             BDItensPedido objITPedido = new BDItensPedido();
             objITPedido.cpID = LIDITPedido;
-            List<BDItensPedido> lstITPedido = objITPedido.CarregaDados();
+            List<BDItensPedido> lstITPedido = objITPedido.CarregaDados(LCaminhoBanco);
             if (lstITPedido.Count == 0)
             {
                 MessageBox.Show("Não foi possivel carregar os itens do pedido!\n Abra a tela de itens para carregar novmanete", "GPA");
@@ -327,12 +330,12 @@ namespace Formularios
             }
             //Pega Totaldo pedido para preecher o label
             BDPedido objPedido = new BDPedido();
-            List<BDPedido> lstPedido = objPedido.CarregaDados(LIDPedido, "", "");
+            List<BDPedido> lstPedido = objPedido.CarregaDados( LCaminhoBanco,LIDPedido, "", "");
             labTotalPedido.Text = lstPedido[0].cpVlrTotalPedido;
 
             BDCadProdutos objProduto = new BDCadProdutos();
             objProduto.cpID = lstITPedido[0].cpProdutoID;
-            List<BDCadProdutos> lstProduto = objProduto.CarregaDados();
+            List<BDCadProdutos> lstProduto = objProduto.CarregaDados(LCaminhoBanco);
             txtDescProduto.Text = lstProduto[0].cpDescricao.ToString();
             txtQuantidade.Text = lstITPedido[0].cpQuantidade.ToString();
             txtLote.Text = lstITPedido[0].cpLote.ToString();
@@ -349,7 +352,7 @@ namespace Formularios
             if (lstITPedido[0].cpFornecedor != "")
             {
                 BDCadastroGeral objFornecedor = new BDCadastroGeral();
-                List<BDCadastroGeral> lstFornecedor = objFornecedor.CarregaDados(lstITPedido[0].cpFornecedor, "", "", "", "", "", "", "", "", "");
+                List<BDCadastroGeral> lstFornecedor = objFornecedor.CarregaDados(LCaminhoBanco, lstITPedido[0].cpFornecedor, "", "", "", "", "", "", "", "", "");
                 LFornecedor = lstFornecedor[0].Id;
                 txtFornecedor.Text = lstFornecedor[0].RazaoSocial.ToString();
             }

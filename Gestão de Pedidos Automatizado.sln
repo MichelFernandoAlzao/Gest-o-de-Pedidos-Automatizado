@@ -9,8 +9,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Banco de Dados", "Banco de 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Camada Negocios", "Camada Negocios\Camada Negocios.csproj", "{279CBF07-2BA3-4D91-958A-7E47B1DE96AF}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Instalador GPA", "Instalador\Instalador GPA\Instalador GPA.vdproj", "{B529FC83-9A84-4074-BB88-98388FBE55E9}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,8 +27,6 @@ Global
 		{279CBF07-2BA3-4D91-958A-7E47B1DE96AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{279CBF07-2BA3-4D91-958A-7E47B1DE96AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{279CBF07-2BA3-4D91-958A-7E47B1DE96AF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B529FC83-9A84-4074-BB88-98388FBE55E9}.Debug|Any CPU.ActiveCfg = Debug
-		{B529FC83-9A84-4074-BB88-98388FBE55E9}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

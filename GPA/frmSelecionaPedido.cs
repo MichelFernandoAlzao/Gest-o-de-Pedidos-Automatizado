@@ -14,12 +14,14 @@ namespace Formularios
 {
     public partial class frmSelecionaPedido : Form
     {
+        string LCaminhoBanco;
         public string LID;
         private string Lvendedor;
         Form LChamador;
 
-        public frmSelecionaPedido(Form frmChamador, string inID, string inVendedor)
+        public frmSelecionaPedido(string inCaminhoBanco, Form frmChamador, string inID, string inVendedor)
         {
+            LCaminhoBanco = inCaminhoBanco;
             InitializeComponent();
             LChamador = frmChamador;
             LID = inID;
@@ -34,14 +36,14 @@ namespace Formularios
         private void CarregaProduto(string inID, string inVendedor)
         {
             BDPedido objCadastro = new BDPedido();
-            List<BDPedido> lstCadastro = objCadastro.CarregaDados(inID,"",inVendedor);
+            List<BDPedido> lstCadastro = objCadastro.CarregaDados(LCaminhoBanco,inID,"",inVendedor);
             if (lstCadastro.Count > 0)
             {
                 foreach (BDPedido item in lstCadastro)
                 {
                     string RazaoSocial;
                     BDCadastroGeral objEmpresa = new BDCadastroGeral();
-                    List<BDCadastroGeral> lstEmpresa = objEmpresa.CarregaDados(item.cpEmpresaDR,"","","","","","","","","");
+                    List<BDCadastroGeral> lstEmpresa = objEmpresa.CarregaDados(LCaminhoBanco,item.cpEmpresaDR,"","","","","","","","","");
                     string[] Row = new string[]
                     {
                             item.cpID.ToString(),

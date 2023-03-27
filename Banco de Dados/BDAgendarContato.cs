@@ -12,6 +12,7 @@ namespace Banco_de_Dados
 {
     public class BDAgendarContato
     {
+        string LCaminhoBanco;
         public string cpID {  get; set; }
         public string cpEmpresaDR { get; set; }
         public string cpDataContato { get; set; }
@@ -19,12 +20,11 @@ namespace Banco_de_Dados
         public string cpMsgErro { get; set; }
 
 
-        Conexao conexao = new Conexao();
-        SqlCommand cmd = new SqlCommand();
 
-        public void InsereDados()
+
+        public void InsereDados(string inCaminhoBanco)
         {
-
+            LCaminhoBanco = inCaminhoBanco;
             string sSQL;
             string sqlCampos = "";
             string sqlconteudo;
@@ -53,6 +53,9 @@ namespace Banco_de_Dados
 
 
             sSQL = sSQL + sqlCampos.Remove(sqlCampos.Length - 2) + ")" + sqlconteudo.Remove(sqlconteudo.Length - 1) + ")";
+
+            Conexao conexao = new Conexao(LCaminhoBanco);
+            SqlCommand cmd = new SqlCommand();
 
             cmd.CommandText = sSQL;
 
@@ -127,8 +130,10 @@ namespace Banco_de_Dados
         #endregion
 
 
-        public List<BDAgendarContato> CarregaDados()
+        public List<BDAgendarContato> CarregaDados(string inCaminhoBanco)
         {
+            LCaminhoBanco = inCaminhoBanco;
+
             List<BDAgendarContato> lstAgendarContato = new List<BDAgendarContato>();
             string slqSelect = "SELECT * FROM OPAgendarContato ";
             string sqlWhere = "WHERE ";
@@ -155,6 +160,10 @@ namespace Banco_de_Dados
                     slqSelect += sqlWhere.Remove(sqlWhere.Length - 3);
                 }
             }
+
+            Conexao conexao = new Conexao(LCaminhoBanco);
+            SqlCommand cmd = new SqlCommand();
+
             cmd.CommandText = slqSelect;
             var dt = new DataTable();
 
@@ -191,11 +200,16 @@ namespace Banco_de_Dados
             return lstAgendarContato;
         }
 
-        public void Excluir()
+        public void Excluir(string inCaminhoBanco)
         {
+            LCaminhoBanco = inCaminhoBanco;
+
             string sSQL = "";
 
             sSQL = "DELETE FROM OPAgendarContato WHERE OPAgendarContato = '" + cpID + "'";
+
+            Conexao conexao = new Conexao(LCaminhoBanco);
+            SqlCommand cmd = new SqlCommand();
 
             cmd.CommandText = sSQL;
 

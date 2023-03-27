@@ -14,15 +14,17 @@ namespace Formularios
 {
     public partial class frmSelecionaProduto : Form
     {
+        string LCaminhoBanco;
         public string LID;
         private string LDescProduto;
         string LFabricanteDR;
         string LCodFabricante;
         Form LChamador;
 
-        public frmSelecionaProduto(Form frmChamador, string inID, string inDescProduto, string inFabricante,string inCodFabricante)
+        public frmSelecionaProduto(string inCaminhoBanco, Form frmChamador, string inID, string inDescProduto, string inFabricante,string inCodFabricante)
         {
             InitializeComponent();
+            LCaminhoBanco = inCaminhoBanco;
             LID = inID;
             LDescProduto = inDescProduto;
             LFabricanteDR = inFabricante;
@@ -38,7 +40,7 @@ namespace Formularios
         private void CarregaProduto(string inRazao, string inRazaoFantasia, string inCNPJ)
         {
             BDCadProdutos objCadastro = new BDCadProdutos();
-            List<BDCadProdutos> lstCadastro = objCadastro.CarregaDados();
+            List<BDCadProdutos> lstCadastro = objCadastro.CarregaDados(LCaminhoBanco);
             if (lstCadastro.Count > 0)
             {
                 foreach (BDCadProdutos item in lstCadastro)

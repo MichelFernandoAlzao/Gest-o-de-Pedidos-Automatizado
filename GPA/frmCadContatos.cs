@@ -13,6 +13,7 @@ namespace Formularios
 {
     public partial class frmCadContatos : Form
     {
+        string LCaminhoBanco;
         string LCadEmpresa;
         string LID;
         string LCargo;
@@ -24,9 +25,10 @@ namespace Formularios
         string Lgerencia;
         string LAnotacoes;
 
-        public frmCadContatos(string inIDEmpresa, string inCargo)
+        public frmCadContatos(string inCaminhoBanco, string inIDEmpresa, string inCargo)
         {
             InitializeComponent();
+            LCaminhoBanco = inCaminhoBanco;
             LCadEmpresa = inIDEmpresa;
             LID = inCargo;
             AtualizaGrid();
@@ -55,7 +57,7 @@ namespace Formularios
             grdContatos.Rows.Clear();
             List<BDCadContatos> lstContatos = new List<BDCadContatos>();
             BDCadContatos objContato = new BDCadContatos();
-            lstContatos = objContato.CarregaDados(LCadEmpresa);
+            lstContatos = objContato.CarregaDados(LCaminhoBanco,LCadEmpresa);
             if (lstContatos.Count > 0)
             {
                 foreach (BDCadContatos item in lstContatos)
@@ -127,11 +129,11 @@ namespace Formularios
 
             if (objContato.cpEmpresaDR != "" && LID == "")
             {
-                objContato.InsereDados();
+                objContato.InsereDados(LCaminhoBanco);
             }
             else
             {
-                objContato.AlteraDados();
+                objContato.AlteraDados(LCaminhoBanco);
             }
             AtualizaGrid();
         }
@@ -197,7 +199,7 @@ namespace Formularios
 
             BDCadContatos objContato = new BDCadContatos();
             objContato.cpID = LID.ToString();
-            objContato.Excluir();
+            objContato.Excluir(LCaminhoBanco);
             AtualizaGrid();
         }
 

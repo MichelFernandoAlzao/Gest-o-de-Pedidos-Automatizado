@@ -6,6 +6,7 @@ namespace GPA
 {
     public partial class frmCadEmpresas : Form
     {
+        string LCaminhoBanco = "";
         public string LID = "";
         public string LRazaoSocial = "";
         string LRazaoFantasia = "";
@@ -25,10 +26,11 @@ namespace GPA
         string LUsuario = "";
         string MsgErro;
 
-        public frmCadEmpresas(string inUsuario)
+        public frmCadEmpresas(string inCaminhoBanco, string inUsuario)
         {
             InitializeComponent();
             LUsuario = inUsuario;
+            LCaminhoBanco = inCaminhoBanco;
         }
 
         private void frmCadEmpresas_Load(object sender, EventArgs e)
@@ -166,7 +168,7 @@ namespace GPA
             }
             if (LID == "")
             {
-                objCadastro.InsereDados();
+                objCadastro.InsereDados(LCaminhoBanco);
                 MsgErro = objCadastro.MsgErro;
                 if (MsgErro != null)
                 {
@@ -176,7 +178,7 @@ namespace GPA
             else
             {
                 objCadastro.Id = LID;
-                objCadastro.AlteraDados();
+                objCadastro.AlteraDados(LCaminhoBanco);
                 //string Alterar = "";
                 //BDCadastroGeral objAtualiza = new BDCadastroGeral();
                 //List<BDCadastroGeral> lstEmpresaAnterior = objEmpresaAnterior.CarregaDados(LID, LRazaoSocial, LRazaoFantasia, LCNPJ, "", "", "", "", "", "");
@@ -282,13 +284,13 @@ namespace GPA
         {
             if (e.KeyCode == Keys.F1)
             {
-                frmSelecionaEmpresa objTela = new frmSelecionaEmpresa(this, "", txtRazaoSocial.Text.ToString(), "", "");
+                frmSelecionaEmpresa objTela = new frmSelecionaEmpresa(LCaminhoBanco, this, "", txtRazaoSocial.Text.ToString(), "", "");
                 objTela.ShowDialog();
 
                 if (LID != "")
                 {
                     BDCadastroGeral objCadastro = new BDCadastroGeral();
-                    List<BDCadastroGeral> lstCadastros = objCadastro.CarregaDados(LID, "", "", "", "", "", "", "", "", "");
+                    List<BDCadastroGeral> lstCadastros = objCadastro.CarregaDados(LCaminhoBanco,LID, "", "", "", "", "", "", "", "", "");
 
                     if (lstCadastros.Count > 0)
                     {
@@ -310,7 +312,7 @@ namespace GPA
         public void MostraDados()
         {
             BDCadastroGeral ObjCadastro = new BDCadastroGeral();
-            List<BDCadastroGeral> lstCadastro = ObjCadastro.CarregaDados(LID, LRazaoSocial, LRazaoFantasia, LCNPJ, "", "", "", "", "", "");
+            List<BDCadastroGeral> lstCadastro = ObjCadastro.CarregaDados(LCaminhoBanco,LID, LRazaoSocial, LRazaoFantasia, LCNPJ, "", "", "", "", "", "");
             txtRazaoSocial.Text = lstCadastro[0].RazaoSocial.ToString();
             txtFantasia.Text = lstCadastro[0].RazaoFantasia.ToString();
             txtCNPJ.Text = lstCadastro[0].CNPJ.ToString();
@@ -342,7 +344,7 @@ namespace GPA
             if (lstCadastro[0].Vendedor != LUsuario)
             {
                 SEGUsuario objUsuario = new SEGUsuario();
-                List<SEGUsuario> lstUsuario = objUsuario.CarregaDados(LUsuario, "", "", "");
+                List<SEGUsuario> lstUsuario = objUsuario.CarregaDados(LCaminhoBanco, LUsuario, "", "", "");
                 if (lstUsuario.Count > 0)
                 {
                     if (lstUsuario[0].GerenciaCadastros != "S")
@@ -354,7 +356,7 @@ namespace GPA
             if (lstCadastro[0].Vendedor != "")
             {
                 SEGUsuario objvendedor = new SEGUsuario();
-                List<SEGUsuario> lstUsuarios = objvendedor.CarregaDados(lstCadastro[0].Vendedor, "", "", "");
+                List<SEGUsuario> lstUsuarios = objvendedor.CarregaDados(LCaminhoBanco,lstCadastro[0].Vendedor, "", "", "");
                 txtVendedor.Text = lstUsuarios[0].Usuario;
             }
 
@@ -381,7 +383,7 @@ namespace GPA
                 MessageBox.Show("Nenhuma empresa selecionada!", "GPA");
                 return;
             }
-            frmCadContatos objTela = new frmCadContatos(LID, "");
+            frmCadContatos objTela = new frmCadContatos(LCaminhoBanco,LID, "");
             objTela.ShowDialog();
         }
 
@@ -393,7 +395,7 @@ namespace GPA
                 return;
             }
 
-            frmCadEndereco objTela = new frmCadEndereco(LID);
+            frmCadEndereco objTela = new frmCadEndereco(LCaminhoBanco, LID);
             objTela.ShowDialog();
         }
 
@@ -404,7 +406,7 @@ namespace GPA
                 MessageBox.Show("Nenhuma empresa selecionada!", "GPA");
                 return;
             }
-            frmOcorrencia objTela = new frmOcorrencia(LID);
+            frmOcorrencia objTela = new frmOcorrencia(LCaminhoBanco, LID);
             objTela.ShowDialog();
         }
 
@@ -417,11 +419,11 @@ namespace GPA
             }
             BDPedido objPedido = new BDPedido();
             objPedido.cpEmpresaDR = LID;
-            List<BDPedido> lstPedido = objPedido.CarregaDadosUltVenda("");
+            List<BDPedido> lstPedido = objPedido.CarregaDadosUltVenda(LCaminhoBanco,"");
 
             if (lstPedido.Count > 0)
             {
-                frmPedido frmPedido = new frmPedido(LUsuario, lstPedido[0].cpID.ToString());
+                frmPedido frmPedido = new frmPedido(LCaminhoBanco, LUsuario, lstPedido[0].cpID.ToString());
                 frmPedido.ShowDialog();
             }
         }
@@ -430,13 +432,13 @@ namespace GPA
         {
             if (e.KeyCode == Keys.F1)
             {
-                frmSelecionarUsuario frmUsuario = new frmSelecionarUsuario(this, "", txtVendedor.Text.ToString());
+                frmSelecionarUsuario frmUsuario = new frmSelecionarUsuario(LCaminhoBanco,this, "", txtVendedor.Text.ToString());
                 frmUsuario.ShowDialog();
 
                 if (LIDUsuario != "")
                 {
                     SEGUsuario objUsuario = new SEGUsuario();
-                    List<SEGUsuario> lstUsuario = objUsuario.CarregaDados(LVendedor, "", "", "");
+                    List<SEGUsuario> lstUsuario = objUsuario.CarregaDados(LCaminhoBanco, LVendedor, "", "", "");
                     txtVendedor.Text = lstUsuario[0].Usuario;
                 }
             }
