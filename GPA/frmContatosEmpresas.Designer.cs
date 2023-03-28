@@ -326,6 +326,7 @@
             txtDataContato.Size = new Size(100, 23);
             txtDataContato.TabIndex = 68;
             txtDataContato.ValidatingType = typeof(DateTime);
+            txtDataContato.Leave += txtDataContato_Leave;
             // 
             // txtValorOfertado
             // 

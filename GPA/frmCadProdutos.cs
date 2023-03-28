@@ -196,10 +196,20 @@ namespace Formularios
         private void cmdGravar_Click(object sender, EventArgs e)
         {
             BDCadProdutos objProduto = new BDCadProdutos();
+            if(txtDescricao.Text == "")
+            {
+                MessageBox.Show("Nenhuma descrição informada!", "GPA");
+                return;
+            }
             objProduto.cpDescricao = txtDescricao.Text;
             objProduto.cpDataCadastro = DateTime.Today.ToString().Substring(0, 10);
             objProduto.cpCodigoFabricante = txtCodFabricante.Text;
             objProduto.cpDescFornecedor = txtDescFornecedor.Text;
+            if(LFabricante == "")
+            {
+                MessageBox.Show("Nenhum Fabricante selecionado!", "GPA");
+                return;
+            }
             objProduto.cpFabricanteDR = LFabricante;
             objProduto.cpMelhorFornecedorDR = LMelhorFornecedor;
             objProduto.cpDescritivo = txtDescritivo.Text;

@@ -520,6 +520,7 @@
             txtDataConfirmacao.Size = new Size(100, 23);
             txtDataConfirmacao.TabIndex = 49;
             txtDataConfirmacao.ValidatingType = typeof(DateTime);
+            txtDataConfirmacao.Leave += txtDataConfirmacao_Leave;
             // 
             // txtDataSolicitacao
             // 

@@ -69,6 +69,7 @@
             txtNumero.Name = "txtNumero";
             txtNumero.Size = new Size(111, 23);
             txtNumero.TabIndex = 6;
+            txtNumero.KeyDown += txtNumero_KeyDown;
             // 
             // cmdSelecionar
             // 
@@ -93,6 +94,7 @@
             grdListaPedido.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             grdListaPedido.Size = new Size(776, 157);
             grdListaPedido.TabIndex = 8;
+            grdListaPedido.DoubleClick += grdListaPedido_DoubleClick;
             // 
             // grdID
             // 

@@ -18,7 +18,7 @@ namespace Formularios
         public string LIDAContato = "";
         public string LRazaoSocial = "";
         public string LIDUsuario = "";
-        public frmAgendarContato(string inCaminhoBanco,string inAgendaContato, string inID)
+        public frmAgendarContato(string inCaminhoBanco, string inAgendaContato, string inID)
         {
             LCaminhoBanco = inCaminhoBanco;
             InitializeComponent();
@@ -34,7 +34,7 @@ namespace Formularios
         {
             if (e.KeyCode == Keys.F1)
             {
-                frmSelecionaEmpresa frmSelecionaEmpresa = new frmSelecionaEmpresa(LCaminhoBanco,this, "", txtEmpresa.Text, "", "");
+                frmSelecionaEmpresa frmSelecionaEmpresa = new frmSelecionaEmpresa(LCaminhoBanco, this, "", txtEmpresa.Text, "", "");
                 frmSelecionaEmpresa.ShowDialog();
                 if (LRazaoSocial != "")
                 {
@@ -73,12 +73,14 @@ namespace Formularios
             if (lstAgendarContato.Count > 0)
             {
                 BDCadastroGeral objCadastroGeral = new BDCadastroGeral();
-                List<BDCadastroGeral> lstCadastroGeral = objCadastroGeral.CarregaDados(LCaminhoBanco,lstAgendarContato[0].cpEmpresaDR, "", "", "", "", "", "", "", "", "");
+                List<BDCadastroGeral> lstCadastroGeral = objCadastroGeral.CarregaDados(LCaminhoBanco, lstAgendarContato[0].cpEmpresaDR, "", "", "", "", "", "", "", "", "");
                 txtEmpresa.Text = lstCadastroGeral[0].RazaoSocial.ToString();
 
                 SEGUsuario objUsuario = new SEGUsuario();
                 List<SEGUsuario> lstUsuario = objUsuario.CarregaDados(LCaminhoBanco, lstAgendarContato[0].cpIDUsuarioDR, "", "", "");
                 txtUsuario.Text = lstUsuario[0].Usuario.ToString();
+
+                txtDataContato.Text = lstAgendarContato[0].cpDataContato.ToString();
             }
 
         }
@@ -125,23 +127,23 @@ namespace Formularios
             objAgendaContato.InsereDados(LCaminhoBanco);
             if (objAgendaContato.cpMsgErro != null)
             {
-                if(objAgendaContato.cpMsgErro != "")
+                if (objAgendaContato.cpMsgErro != "")
                 {
                     MessageBox.Show(objAgendaContato.cpMsgErro, "GPA");
                     return;
                 }
-                
+
             }
         }
 
         private void txtDataContato_Leave(object sender, EventArgs e)
         {
-            if(txtDataContato.Text.Replace("/","") == "    ")
+            if (txtDataContato.Text.Replace("/", "") == "    ")
             {
                 txtDataContato.Text = DateTime.Today.ToString().Substring(0, 10);
             }
 
-            if(txtDataContato.Text.Replace(" ","").Replace("/","").Length != 8)
+            if (txtDataContato.Text.Replace(" ", "").Replace("/", "").Length != 8)
             {
                 MessageBox.Show("Data em formato invalido!", "GPA");
                 return;

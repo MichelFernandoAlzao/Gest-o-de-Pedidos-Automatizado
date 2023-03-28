@@ -68,6 +68,7 @@
             grdListaPedido.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             grdListaPedido.Size = new Size(776, 267);
             grdListaPedido.TabIndex = 14;
+            grdListaPedido.DoubleClick += grdListaPedido_DoubleClick;
             // 
             // grdNumero
             // 
@@ -167,6 +168,7 @@
             txtDataInicio.Size = new Size(100, 23);
             txtDataInicio.TabIndex = 21;
             txtDataInicio.ValidatingType = typeof(DateTime);
+            txtDataInicio.Leave += txtDataInicio_Leave;
             // 
             // txtDataFim
             // 
@@ -176,6 +178,7 @@
             txtDataFim.Size = new Size(100, 23);
             txtDataFim.TabIndex = 22;
             txtDataFim.ValidatingType = typeof(DateTime);
+            txtDataFim.Leave += txtDataFim_Leave;
             // 
             // frmUltimasVendas
             // 

@@ -28,7 +28,7 @@ namespace Formularios
         private void cmdBuscar_Click(object sender, EventArgs e)
         {
             BDPedido objPedido = new BDPedido();
-            List<BDPedido> lstPedidos = objPedido.CarregaDados(LCaminhoBanco,txtNumero.Text, "", "");
+            List<BDPedido> lstPedidos = objPedido.CarregaDados(LCaminhoBanco, txtNumero.Text, "", "");
 
             if (lstPedidos.Count > 0)
             {
@@ -67,8 +67,18 @@ namespace Formularios
                 return;
             }
 
-            frmPedido frmPedido = new frmPedido(LCaminhoBanco,"", grdListaPedido.SelectedRows[0].Cells[0].Value.ToString());
+            frmPedido frmPedido = new frmPedido(LCaminhoBanco, "", grdListaPedido.SelectedRows[0].Cells[0].Value.ToString());
             frmPedido.ShowDialog();
+        }
+
+        private void grdListaPedido_DoubleClick(object sender, EventArgs e)
+        {
+            cmdSelecionar_Click(sender, e);
+        }
+
+        private void txtNumero_KeyDown(object sender, KeyEventArgs e)
+        {
+            cmdSelecionar_Click(sender, e);
         }
     }
 }

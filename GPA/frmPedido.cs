@@ -29,7 +29,7 @@ namespace Formularios
         string LComissao = "";
         string LConsulta = "";
 
-        public frmPedido(string inCaminhoBanco,string inUsuario, string inIDPedido)
+        public frmPedido(string inCaminhoBanco, string inUsuario, string inIDPedido)
         {
             LCaminhoBanco = inCaminhoBanco;
             InitializeComponent();
@@ -59,7 +59,7 @@ namespace Formularios
                 txtVendedor.Enabled = false;
                 txtObservacao.Enabled = false;
                 BDPedido objPedido = new BDPedido();
-                List<BDPedido> lstPedido = objPedido.CarregaDados(LCaminhoBanco,LIDPedido, "", "");
+                List<BDPedido> lstPedido = objPedido.CarregaDados(LCaminhoBanco, LIDPedido, "", "");
                 LID = lstPedido[0].cpEmpresaDR;
                 LConsulta = "S";
 
@@ -78,12 +78,12 @@ namespace Formularios
         private void MostraDados()
         {
             BDCadastroGeral ObjCadastro = new BDCadastroGeral();
-            List<BDCadastroGeral> lstCadastro = ObjCadastro.CarregaDados(LCaminhoBanco,LID, LRazaoSocial, "", "", "", LUsuario, "", "", "", "");
+            List<BDCadastroGeral> lstCadastro = ObjCadastro.CarregaDados(LCaminhoBanco, LID, LRazaoSocial, "", "", "", LUsuario, "", "", "", "");
             txtEmpresa.Text = lstCadastro[0].RazaoSocial.ToString();
 
             BDCadEnderecos objEndereco = new BDCadEnderecos();
             List<BDCadEnderecos> lstEndereco = new List<BDCadEnderecos>();
-            lstEndereco = objEndereco.CarregaDados(LCaminhoBanco,lstCadastro[0].Id);
+            lstEndereco = objEndereco.CarregaDados(LCaminhoBanco, lstCadastro[0].Id);
             labDescCNPJ.Text = lstCadastro[0].CNPJ.ToString();
             if (lstCadastro[0].Aviso != null)
             {
@@ -121,7 +121,7 @@ namespace Formularios
             }
 
             BDPedido objPedido = new BDPedido();
-            List<BDPedido> lstPedido = objPedido.CarregaDados(LCaminhoBanco,LIDPedido, "", LUsuario);
+            List<BDPedido> lstPedido = objPedido.CarregaDados(LCaminhoBanco, LIDPedido, "", LUsuario);
             if (lstPedido[0].cpDataContato != "")
             {
                 txtDataSolicitacao.Text = lstPedido[0].cpDataContato.ToString().Substring(0, 10);
@@ -150,7 +150,7 @@ namespace Formularios
         {
             if (LIDPedido == "") { return; }
 
-            frmItensPedido objItensPedido = new frmItensPedido(LCaminhoBanco,LIDPedido, LConsulta);
+            frmItensPedido objItensPedido = new frmItensPedido(LCaminhoBanco, LIDPedido, LConsulta);
             objItensPedido.ShowDialog();
 
             MostraDados();
@@ -333,7 +333,7 @@ namespace Formularios
                 txtNumeroPedido.Text = LIDPedido;
                 txtNumeroPedido.Enabled = false;
                 BDPedido objCarregaPedido = new BDPedido();
-                List<BDPedido> lstPedido = objCarregaPedido.CarregaDados(LCaminhoBanco,LIDPedido, "", LUsuario);
+                List<BDPedido> lstPedido = objCarregaPedido.CarregaDados(LCaminhoBanco, LIDPedido, "", LUsuario);
                 LID = lstPedido[0].cpEmpresaDR;
                 LDataSolcitacao = lstPedido[0].cpDataContato.Substring(0, 10);
                 if (lstPedido[0].cpDataConfirmacao != "")
@@ -412,7 +412,7 @@ namespace Formularios
         {
             if (e.KeyCode == Keys.F1)
             {
-                frmSelecionaNatureza objTela = new frmSelecionaNatureza(LCaminhoBanco,this, LUsuario);
+                frmSelecionaNatureza objTela = new frmSelecionaNatureza(LCaminhoBanco, this, LUsuario);
                 objTela.ShowDialog();
 
                 if (LIDNaturezaOperacao != "")
@@ -428,35 +428,35 @@ namespace Formularios
 
         private void txtDataSolicitacao_Leave(object sender, EventArgs e)
         {
-            if (txtDataSolicitacao.Text == "")
+            if (txtDataSolicitacao.Text == "  /  /")
             {
-                txtDataSolicitacao.Text = DateTime.Today.ToString().Substring(0, 10);
+                txtDataSolicitacao.Text = DateTime.Today.ToShortDateString();
             }
             else
             {
-                if (txtDataSolicitacao.Text.Length != 8)
+                if (DateTime.TryParse(txtDataSolicitacao.Text, out DateTime result) == false)
                 {
                     MessageBox.Show("Data em formato invalido", "GPA");
+                    txtDataConfirmacao.Text = "";
                     return;
                 }
-                txtDataSolicitacao.Text = txtDataSolicitacao.Text.Insert(2, "/").Insert(5, "/");
             }
         }
 
         private void txtDataConfirmacao_Leave(object sender, EventArgs e)
         {
-            if (txtDataConfirmacao.Text == "")
+            if (txtDataConfirmacao.Text == "  /  /")
             {
-                txtDataConfirmacao.Text = DateTime.Today.ToString().Substring(0, 10);
+                txtDataConfirmacao.Text = DateTime.Today.ToShortDateString();
             }
             else
             {
-                if (txtDataConfirmacao.Text.Length != 8)
+                if (DateTime.TryParse(txtDataConfirmacao.Text, out DateTime result) == false)
                 {
                     MessageBox.Show("Data em formato invalido", "GPA");
+                    txtDataConfirmacao.Text = "";
                     return;
                 }
-                txtDataConfirmacao.Text = txtDataConfirmacao.Text.Insert(2, "/").Insert(5, "/");
             }
         }
 
@@ -469,7 +469,7 @@ namespace Formularios
             }
             BDPedido objPedido = new BDPedido();
             objPedido.cpEmpresaDR = LID;
-            List<BDPedido> lstPedido = objPedido.CarregaDadosUltVenda(LCaminhoBanco,"");
+            List<BDPedido> lstPedido = objPedido.CarregaDadosUltVenda(LCaminhoBanco, "");
 
             if (lstPedido.Count > 0)
             {

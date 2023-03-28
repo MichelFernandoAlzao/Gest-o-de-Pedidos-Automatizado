@@ -33,73 +33,114 @@ namespace Banco_de_Dados
 
         public void InsereDados(string inCaminhoBanco)
         {
+            LCaminhoBanco = inCaminhoBanco;
             string sSQL = "INSERT INTO CDPRodutos (";
             string sqlCampos = "";
             string sqlConteudo = " VALUES (";
 
             if (cpDescricao != null)
             {
-                sqlCampos += "CDPDescricao, ";
+                if(cpDescricao != "")
+                {
+                    sqlCampos += "CDPDescricao, ";
 
-                sqlConteudo += "'" + cpDescricao + "',";
+                    sqlConteudo += "'" + cpDescricao + "',";
+                }
+                
             }
 
             if (cpDataCadastro != null)
             {
-                sqlCampos += "CDPDataCadastro, ";
+                if(cpDataCadastro != "")
+                {
+                    sqlCampos += "CDPDataCadastro, ";
 
-                sqlConteudo += "'" + cpDataCadastro + "',";
+                    sqlConteudo += "'" + cpDataCadastro + "',";
+                }
+                
             }
 
             if (cpCodigoFabricante != null)
             {
-                sqlCampos += "CDPCodigoFabricante, ";
+                if(cpCodigoFabricante != "")
+                {
+                    sqlCampos += "CDPCodigoFabricante, ";
 
-                sqlConteudo += "'" + cpCodigoFabricante + "',";
+                    sqlConteudo += "'" + cpCodigoFabricante + "',";
+                }
+                
             }
 
             if (cpDescFornecedor != null)
             {
-                sqlCampos += "CDPDescFornecedor, ";
+                if(cpDescFornecedor != "")
+                {
+                    sqlCampos += "CDPDescFornecedor, ";
 
-                sqlConteudo += "'" + cpDescFornecedor + "',";
+                    sqlConteudo += "'" + cpDescFornecedor + "',";
+                }
+                
             }
 
             if (cpFabricanteDR != null)
             {
-                sqlCampos += "CDPFabricanteDR, ";
+                if(cpFabricanteDR != "")
+                {
+                    sqlCampos += "CDPFabricanteDR, ";
 
-                sqlConteudo += "'" + cpFabricanteDR + "',";
+                    sqlConteudo += "'" + cpFabricanteDR + "',";
+                }
+                
             }
             if (cpMelhorFornecedorDR != null)
             {
-                sqlCampos += "CDPMelhorFornecedorDR, ";
+                if(cpMelhorFornecedorDR != "")
+                {
+                    sqlCampos += "CDPMelhorFornecedorDR, ";
 
-                sqlConteudo += "'" + cpMelhorFornecedorDR + "',";
+                    sqlConteudo += "'" + cpMelhorFornecedorDR + "',";
+                }
+                
             }
             if (cpAtivo != null)
             {
-                sqlCampos += "CDPAtivo, ";
+                if(cpAtivo != "")
+                {
+                    sqlCampos += "CDPAtivo, ";
 
-                sqlConteudo += "'" + cpAtivo + "',";
+                    sqlConteudo += "'" + cpAtivo + "',";
+                }
+                
             }
             if (cpOperacional != null)
             {
-                sqlCampos += "CDPOperacional, ";
+                if(cpOperacional != "")
+                {
+                    sqlCampos += "CDPOperacional, ";
 
-                sqlConteudo += "'" + cpOperacional + "',";
+                    sqlConteudo += "'" + cpOperacional + "',";
+                }
+                
             }
             if (cpForaDeLinha != null)
             {
-                sqlCampos += "CDPForaDeLinha, ";
+                if(cpForaDeLinha != "")
+                {
+                    sqlCampos += "CDPForaDeLinha, ";
 
-                sqlConteudo += "'" + cpForaDeLinha + "',";
+                    sqlConteudo += "'" + cpForaDeLinha + "',";
+                }
+                
             }
             if (cpDescritivo != null)
             {
-                sqlCampos += "CDPDescritivo, ";
+                if(cpDescritivo != "")
+                {
+                    sqlCampos += "CDPDescritivo, ";
 
-                sqlConteudo += "'" + cpDescritivo + "',";
+                    sqlConteudo += "'" + cpDescritivo + "',";
+                }
+                
             }
 
 

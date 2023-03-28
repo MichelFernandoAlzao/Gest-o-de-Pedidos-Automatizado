@@ -141,7 +141,7 @@ namespace Formularios
                 if (LID != "")
                 {
                     BDCadastroGeral objEmpresa = new BDCadastroGeral();
-                    List<BDCadastroGeral> lstEmpresa = objEmpresa.CarregaDados(LCaminhoBanco,LID, "", "", "", "", "", "", "", "", "");
+                    List<BDCadastroGeral> lstEmpresa = objEmpresa.CarregaDados(LCaminhoBanco, LID, "", "", "", "", "", "", "", "", "");
                     txtEmpresa.Text = lstEmpresa[0].RazaoSocial.ToString();
                 }
             }
@@ -279,7 +279,7 @@ namespace Formularios
         {
             if (e.KeyCode == Keys.F1)
             {
-                frmSelecionarRegistroContato frmSelecionarRegistroContato = new frmSelecionarRegistroContato(LCaminhoBanco,this, txtRegistro.Text);
+                frmSelecionarRegistroContato frmSelecionarRegistroContato = new frmSelecionarRegistroContato(LCaminhoBanco, this, txtRegistro.Text);
                 frmSelecionarRegistroContato.ShowDialog();
                 if (LIDRegistro != "")
                 {
@@ -287,6 +287,23 @@ namespace Formularios
                 }
             }
 
+        }
+
+        private void txtDataContato_Leave(object sender, EventArgs e)
+        {
+            if(txtDataContato.Text == "  /  /")
+            {
+                txtDataContato.Text = DateTime.Today.ToShortDateString();
+            }
+            else   
+            {
+                if(DateTime.TryParse(txtDataContato.Text, out DateTime result) == false)
+                {
+                    MessageBox.Show("Data em formato invalido", "GPA");
+                    txtDataContato.Text = "";
+                    return;
+                }
+            }
         }
     }
 }

@@ -35,14 +35,14 @@ namespace Formularios
                 return;
             }
 
-            frmPedido frmPedido = new frmPedido(LCaminhoBanco,"", grdListaPedido.SelectedRows[0].Cells[0].Value.ToString());
+            frmPedido frmPedido = new frmPedido(LCaminhoBanco, "", grdListaPedido.SelectedRows[0].Cells[0].Value.ToString());
             frmPedido.ShowDialog();
         }
 
         private void cmdBuscar_Click(object sender, EventArgs e)
         {
             BDPedido objPedido = new BDPedido();
-            List<BDPedido> lstPedidos = objPedido.CarregaDadosData(LCaminhoBanco,txtDataInicio.Text, txtDataFim.Text, LUsuario);
+            List<BDPedido> lstPedidos = objPedido.CarregaDadosData(LCaminhoBanco, txtDataInicio.Text, txtDataFim.Text, LUsuario);
 
             if (lstPedidos.Count > 0)
             {
@@ -55,7 +55,7 @@ namespace Formularios
                         if (item.cpEmpresaDR != "" && item.cpEmpresaDR != null)
                         {
                             BDCadastroGeral objEmpresa = new BDCadastroGeral();
-                            lstEmpresa = objEmpresa.CarregaDados(LCaminhoBanco,item.cpEmpresaDR, "", "", "", "", "", "", "", "", "");
+                            lstEmpresa = objEmpresa.CarregaDados(LCaminhoBanco, item.cpEmpresaDR, "", "", "", "", "", "", "", "", "");
                             if (lstEmpresa.Count > 0)
                             {
                                 pRazao = lstEmpresa[0].RazaoSocial.ToString();
@@ -72,6 +72,47 @@ namespace Formularios
                     }
                 }
             }
+        }
+
+        private void txtDataInicio_Leave(object sender, EventArgs e)
+        {
+            if (txtDataInicio.Text == "  /  /")
+            {
+                txtDataInicio.Text = DateTime.Today.ToShortDateString();
+            }
+            else
+            {
+                if(DateTime.TryParse(txtDataInicio.Text, out DateTime result) == false)
+                {
+                    MessageBox.Show("Data inicial em formato invalido", "GPA");
+                    txtDataInicio.Text = "";
+                    return;
+                }
+                
+            }
+        }
+
+        private void txtDataFim_Leave(object sender, EventArgs e)
+        {
+            if (txtDataFim.Text == "  /  /")
+            {
+                txtDataFim.Text = DateTime.Today.ToShortDateString();
+            }
+            else
+            {
+                if (DateTime.TryParse(txtDataFim.Text, out DateTime result) == false)
+                {
+                    MessageBox.Show("Data inicial em formato invalido", "GPA");
+                    txtDataFim.Text = "";
+                    return;
+                }
+
+            }
+        }
+
+        private void grdListaPedido_DoubleClick(object sender, EventArgs e)
+        {
+            cmdSelecionar_Click(sender, e);
         }
     }
 }
