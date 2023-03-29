@@ -121,6 +121,14 @@ namespace Formularios
 
         private void cmdNatOperacao_Click(object sender, EventArgs e)
         {
+            SEGUsuario objUsuario = new SEGUsuario();
+            objUsuario.ID = LUsuario;
+            List<SEGUsuario> lstUsuario = objUsuario.CarregaDados(LCaminhoBanco, LUsuario, "", "", "");
+            if (lstUsuario[0].GerenciaCadastros != "S")
+            {
+                MessageBox.Show("Usuario sem permissão para alterar/Cadastrar Naturezas", "GPA");
+                return;
+            }
             frmNaturezaDaOperacao frmNatOperacao = new frmNaturezaDaOperacao(LCaminhoBanco,LUsuario);
             frmNatOperacao.ShowDialog();
             RealizaCargas();
