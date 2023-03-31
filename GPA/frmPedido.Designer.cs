@@ -76,6 +76,7 @@
             chkConcluido = new CheckBox();
             txtDataConfirmacao = new MaskedTextBox();
             txtDataSolicitacao = new MaskedTextBox();
+            cmdImprimir = new Button();
             SuspendLayout();
             // 
             // lbPedidos
@@ -86,7 +87,7 @@
             lbPedidos.ForeColor = Color.Black;
             lbPedidos.Location = new Point(12, 9);
             lbPedidos.Name = "lbPedidos";
-            lbPedidos.Size = new Size(632, 30);
+            lbPedidos.Size = new Size(597, 30);
             lbPedidos.TabIndex = 2;
             lbPedidos.Text = "Pedido Saida";
             lbPedidos.TextAlign = ContentAlignment.MiddleCenter;
@@ -532,12 +533,24 @@
             txtDataSolicitacao.ValidatingType = typeof(DateTime);
             txtDataSolicitacao.Leave += txtDataSolicitacao_Leave;
             // 
+            // cmdImprimir
+            // 
+            cmdImprimir.BackgroundImage = (Image)resources.GetObject("cmdImprimir.BackgroundImage");
+            cmdImprimir.BackgroundImageLayout = ImageLayout.Zoom;
+            cmdImprimir.Location = new Point(614, 9);
+            cmdImprimir.Name = "cmdImprimir";
+            cmdImprimir.Size = new Size(30, 30);
+            cmdImprimir.TabIndex = 51;
+            cmdImprimir.UseVisualStyleBackColor = true;
+            cmdImprimir.Click += cmdImprimir_Click;
+            // 
             // frmPedido
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             ControlBox = false;
+            Controls.Add(cmdImprimir);
             Controls.Add(txtDataSolicitacao);
             Controls.Add(txtDataConfirmacao);
             Controls.Add(chkConcluido);
@@ -642,5 +655,6 @@
         private CheckBox chkConcluido;
         private MaskedTextBox txtDataConfirmacao;
         private MaskedTextBox txtDataSolicitacao;
+        private Button cmdImprimir;
     }
 }

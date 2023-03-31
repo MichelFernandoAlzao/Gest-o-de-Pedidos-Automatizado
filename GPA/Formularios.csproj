@@ -10,13 +10,18 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Corrected.Microsoft.ReportingServices.ReportViewerControl.Winforms" Version="150.1358.0" />
-    <PackageReference Include="Microsoft.ReportingServices.ReportViewerControl.Winforms" Version="150.1537.0" />
+    <PackageReference Include="ReportViewerCore.WinForms" Version="15.1.17" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Banco de Dados\Banco de Dados.csproj" />
     <ProjectReference Include="..\Camada Negocios\Camada Negocios.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Relatorios\Pedido.rdlc">
+      <CustomToolNamespace>Relatorios</CustomToolNamespace>
+    </EmbeddedResource>
   </ItemGroup>
 
   <ItemGroup>
@@ -35,6 +40,10 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Teste\" />
   </ItemGroup>
 
 </Project>

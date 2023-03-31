@@ -488,5 +488,30 @@ namespace Formularios
             frmOcorrencia objTela = new frmOcorrencia(LCaminhoBanco, LID);
             objTela.ShowDialog();
         }
+
+        private void cmdImprimir_Click(object sender, EventArgs e)
+        {
+            if(LIDPedido == "")
+            {
+                MessageBox.Show("Nenhum pedido selecionado", "GPA");
+                return;
+            }
+            if(LID != "")
+            {
+                BDItensPedido objItensPedido = new BDItensPedido();
+                objItensPedido.cpPedidoDR = LIDPedido;
+                List<BDItensPedido> lstItensPedido = objItensPedido.CarregaDados(LCaminhoBanco);
+                if(lstItensPedido.Count > 0) 
+                {
+                    string[] Proprelatorio =
+                    {
+                        "Formularios.Relatorios.Pedido.rdlc"
+                    };
+                    frmRelatorios frmrelatorio = new frmRelatorios(Proprelatorio);
+                    frmrelatorio.ShowDialog();
+                }
+            }
+            
+        }
     }
 }
