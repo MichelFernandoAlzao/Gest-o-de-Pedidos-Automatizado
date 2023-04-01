@@ -78,7 +78,10 @@ namespace Formularios
 
         private void txtNumero_KeyDown(object sender, KeyEventArgs e)
         {
-            cmdSelecionar_Click(sender, e);
+            if (e.KeyCode == Keys.Enter)
+            {
+                cmdBuscar_Click(sender, e);
+            }
         }
     }
 }

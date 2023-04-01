@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmConsultaPedido));
             lbCabeçallho = new Label();
             cmdBuscar = new Button();
             txtNumero = new TextBox();
@@ -48,18 +49,19 @@
             lbCabeçallho.ForeColor = Color.Black;
             lbCabeçallho.Location = new Point(12, 9);
             lbCabeçallho.Name = "lbCabeçallho";
-            lbCabeçallho.Size = new Size(620, 30);
+            lbCabeçallho.Size = new Size(704, 30);
             lbCabeçallho.TabIndex = 4;
             lbCabeçallho.Text = "Consulta Pedidos";
             lbCabeçallho.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // cmdBuscar
             // 
-            cmdBuscar.Location = new Point(137, 42);
+            cmdBuscar.BackgroundImage = (Image)resources.GetObject("cmdBuscar.BackgroundImage");
+            cmdBuscar.BackgroundImageLayout = ImageLayout.Stretch;
+            cmdBuscar.Location = new Point(129, 42);
             cmdBuscar.Name = "cmdBuscar";
-            cmdBuscar.Size = new Size(77, 30);
+            cmdBuscar.Size = new Size(30, 30);
             cmdBuscar.TabIndex = 5;
-            cmdBuscar.Text = "Buscar";
             cmdBuscar.UseVisualStyleBackColor = true;
             cmdBuscar.Click += cmdBuscar_Click;
             // 
@@ -73,11 +75,12 @@
             // 
             // cmdSelecionar
             // 
-            cmdSelecionar.Location = new Point(638, 9);
+            cmdSelecionar.BackgroundImage = (Image)resources.GetObject("cmdSelecionar.BackgroundImage");
+            cmdSelecionar.BackgroundImageLayout = ImageLayout.Stretch;
+            cmdSelecionar.Location = new Point(722, 9);
             cmdSelecionar.Name = "cmdSelecionar";
-            cmdSelecionar.Size = new Size(72, 30);
+            cmdSelecionar.Size = new Size(30, 30);
             cmdSelecionar.TabIndex = 7;
-            cmdSelecionar.Text = "Selecionar";
             cmdSelecionar.UseVisualStyleBackColor = true;
             cmdSelecionar.Click += cmdSelecionar_Click;
             // 
@@ -117,11 +120,12 @@
             // 
             // cmdSair
             // 
-            cmdSair.Location = new Point(716, 9);
+            cmdSair.BackgroundImage = Properties.Resources.logout;
+            cmdSair.BackgroundImageLayout = ImageLayout.Stretch;
+            cmdSair.Location = new Point(758, 9);
             cmdSair.Name = "cmdSair";
-            cmdSair.Size = new Size(72, 30);
+            cmdSair.Size = new Size(30, 30);
             cmdSair.TabIndex = 9;
-            cmdSair.Text = "Sair";
             cmdSair.UseVisualStyleBackColor = true;
             cmdSair.Click += button3_Click;
             // 

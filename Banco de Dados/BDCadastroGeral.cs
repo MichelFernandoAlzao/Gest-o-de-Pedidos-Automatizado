@@ -142,6 +142,11 @@ namespace Banco_de_Dados
                 cmd.Connection = conexao.conectar();
                 //Executar o comando
                 cmd.ExecuteNonQuery();
+
+                cmd.CommandText = "SELECT IDENT_CURRENT ('CDCadastroEmpresas') AS Current_Identity";
+                string LID = Convert.ToString(cmd.ExecuteScalar());
+
+                Id = LID;
                 //Desconectar
                 conexao.desconectar();
                 MsgErro = "";
@@ -264,47 +269,47 @@ namespace Banco_de_Dados
             {
                 if (pRazaoSocial != "")
                 {
-                    sqlWhere += "CDCERazaoSocial like '%" + pRazaoSocial + "%' " +"AND";
+                    sqlWhere += " CDCERazaoSocial like '%" + pRazaoSocial + "%' " +"AND";
                     ClausulaWhere = 'S';
                 }
                 if (pRazaoFantasia != "")
                 {
-                    sqlWhere += "CDCERazaoFantasia like " + pRazaoFantasia + "%' " + "AND";
+                    sqlWhere += " CDCERazaoFantasia like " + pRazaoFantasia + "%' " + "AND";
                     ClausulaWhere = 'S';
                 }
                 if (pCNPJ != "")
                 {
-                    sqlWhere += "CDCECNPJ like " + pCNPJ + "%' " + "AND";
+                    sqlWhere += " CDCECNPJ like " + pCNPJ + "%' " + "AND";
                     ClausulaWhere = 'S';
                 }
                 if (pInscricao != "")
                 {
-                    sqlWhere += "CDCEInscricao like " + pInscricao + "%' " + "AND";
+                    sqlWhere += " CDCEInscricao like " + pInscricao + "%' " + "AND";
                     ClausulaWhere = 'S';
                 }
                 if (pVendedor != "")
                 {
-                    sqlWhere += "CDCEVendedor = " + pVendedor + "' " + "AND";
+                    sqlWhere += " CDCEVendedor = " + pVendedor + " " + "AND";
                     ClausulaWhere = 'S';
                 }
                 if (pCliente != "")
                 {
-                    sqlWhere += "CDCECliente like " + pCliente + "%' " + "AND";
+                    sqlWhere += " CDCECliente like " + pCliente + "%' " + "AND";
                     ClausulaWhere = 'S';
                 }
                 if (pDistribuidor != "")
                 {
-                    sqlWhere += "CDCEDistribuidor like " + pDistribuidor + "%' " + "AND";
+                    sqlWhere += " CDCEDistribuidor like " + pDistribuidor + "%' " + "AND";
                     ClausulaWhere = 'S';
                 }
                 if (pFabricante != "")
                 {
-                    sqlWhere += "CDCEFabricante like " + pFabricante + "%' " + "AND";
+                    sqlWhere += " CDCEFabricante like " + pFabricante + "%' " + "AND";
                     ClausulaWhere = 'S';
                 }
                 if (pFornecedor != "")
                 {
-                    sqlWhere += "CDCEFornecedor like " + pFornecedor + "%' " + "AND";
+                    sqlWhere += " CDCEFornecedor like " + pFornecedor + "%' " + "AND";
                     ClausulaWhere = 'S';
                 }
 

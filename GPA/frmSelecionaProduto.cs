@@ -21,7 +21,7 @@ namespace Formularios
         string LCodFabricante;
         Form LChamador;
 
-        public frmSelecionaProduto(string inCaminhoBanco, Form frmChamador, string inID, string inDescProduto, string inFabricante,string inCodFabricante)
+        public frmSelecionaProduto(string inCaminhoBanco, Form frmChamador, string inID, string inDescProduto, string inFabricante, string inCodFabricante)
         {
             InitializeComponent();
             LCaminhoBanco = inCaminhoBanco;
@@ -92,5 +92,9 @@ namespace Formularios
             this.Close();
         }
 
+        private void grdProdutos_DoubleClick(object sender, EventArgs e)
+        {
+            CmdSelecionar_Click(sender, e);
+        }
     }
 }

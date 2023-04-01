@@ -26,11 +26,17 @@ namespace GPA
         string LUsuario = "";
         string MsgErro;
 
-        public frmCadEmpresas(string inCaminhoBanco, string inUsuario)
+        public frmCadEmpresas(string inCaminhoBanco, string inUsuario, string inID)
         {
+
             InitializeComponent();
             LUsuario = inUsuario;
             LCaminhoBanco = inCaminhoBanco;
+            if (inID != "")
+            {
+                LID = inID;
+                MostraDados();
+            }
         }
 
         private void frmCadEmpresas_Load(object sender, EventArgs e)
@@ -151,10 +157,9 @@ namespace GPA
             {
                 objCadastro.Vendedor = "";
             }
-            if (LIDUsuario != "")
-            {
-                objCadastro.Vendedor = LIDUsuario;
-            }
+
+            objCadastro.Vendedor = LIDUsuario;
+
 
             if (chkFabricante.Checked == false && chkFornecedor.Checked == false && chkCliente.Checked == false && chkDistribuidor.Checked == false)
             {
@@ -170,9 +175,15 @@ namespace GPA
             {
                 objCadastro.InsereDados(LCaminhoBanco);
                 MsgErro = objCadastro.MsgErro;
-                if (MsgErro != null)
+                if (MsgErro != "")
                 {
                     MessageBox.Show(MsgErro);
+                }
+                else
+                {
+                    MessageBox.Show("Cadastro Gravado!", "GPA");
+                    LID = objCadastro.Id;
+                    MostraDados();
                 }
             }
             else
@@ -252,17 +263,19 @@ namespace GPA
                 //{
                 //    MsgErro = objAtualiza.MsgErro;
                 //}
+
+                if (objCadastro.MsgErro != "")
+                {
+                    MessageBox.Show(MsgErro.ToString());
+                    return;
+                }
+                else
+                {
+                    MessageBox.Show("Dados Gravados!", "GPA");
+                    MostraDados();
+                }
             }
-            if (MsgErro != null)
-            {
-                MessageBox.Show(MsgErro.ToString());
-                return;
-            }
-            else
-            {
-                MessageBox.Show("Dados Gravados!", "GPA");
-                MostraDados();
-            }
+
 
         }
 
@@ -290,7 +303,7 @@ namespace GPA
                 if (LID != "")
                 {
                     BDCadastroGeral objCadastro = new BDCadastroGeral();
-                    List<BDCadastroGeral> lstCadastros = objCadastro.CarregaDados(LCaminhoBanco,LID, "", "", "", "", "", "", "", "", "");
+                    List<BDCadastroGeral> lstCadastros = objCadastro.CarregaDados(LCaminhoBanco, LID, "", "", "", "", "", "", "", "", "");
 
                     if (lstCadastros.Count > 0)
                     {
@@ -312,7 +325,7 @@ namespace GPA
         public void MostraDados()
         {
             BDCadastroGeral ObjCadastro = new BDCadastroGeral();
-            List<BDCadastroGeral> lstCadastro = ObjCadastro.CarregaDados(LCaminhoBanco,LID, LRazaoSocial, LRazaoFantasia, LCNPJ, "", "", "", "", "", "");
+            List<BDCadastroGeral> lstCadastro = ObjCadastro.CarregaDados(LCaminhoBanco, LID, LRazaoSocial, LRazaoFantasia, LCNPJ, "", "", "", "", "", "");
             txtRazaoSocial.Text = lstCadastro[0].RazaoSocial.ToString();
             txtFantasia.Text = lstCadastro[0].RazaoFantasia.ToString();
             txtCNPJ.Text = lstCadastro[0].CNPJ.ToString();
@@ -356,7 +369,7 @@ namespace GPA
             if (lstCadastro[0].Vendedor != "")
             {
                 SEGUsuario objvendedor = new SEGUsuario();
-                List<SEGUsuario> lstUsuarios = objvendedor.CarregaDados(LCaminhoBanco,lstCadastro[0].Vendedor, "", "", "");
+                List<SEGUsuario> lstUsuarios = objvendedor.CarregaDados(LCaminhoBanco, lstCadastro[0].Vendedor, "", "", "");
                 txtVendedor.Text = lstUsuarios[0].Usuario;
             }
 
@@ -383,7 +396,7 @@ namespace GPA
                 MessageBox.Show("Nenhuma empresa selecionada!", "GPA");
                 return;
             }
-            frmCadContatos objTela = new frmCadContatos(LCaminhoBanco,LID, "");
+            frmCadContatos objTela = new frmCadContatos(LCaminhoBanco, LID, "");
             objTela.ShowDialog();
         }
 
@@ -419,7 +432,7 @@ namespace GPA
             }
             BDPedido objPedido = new BDPedido();
             objPedido.cpEmpresaDR = LID;
-            List<BDPedido> lstPedido = objPedido.CarregaDadosUltVenda(LCaminhoBanco,"");
+            List<BDPedido> lstPedido = objPedido.CarregaDadosUltVenda(LCaminhoBanco, "");
 
             if (lstPedido.Count > 0)
             {
@@ -432,7 +445,7 @@ namespace GPA
         {
             if (e.KeyCode == Keys.F1)
             {
-                frmSelecionarUsuario frmUsuario = new frmSelecionarUsuario(LCaminhoBanco,this, "", txtVendedor.Text.ToString());
+                frmSelecionarUsuario frmUsuario = new frmSelecionarUsuario(LCaminhoBanco, this, "", txtVendedor.Text.ToString());
                 frmUsuario.ShowDialog();
 
                 if (LIDUsuario != "")

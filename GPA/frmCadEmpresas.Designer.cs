@@ -61,6 +61,7 @@
             label5 = new Label();
             txtRegVenda = new TextBox();
             txtCNPJ = new MaskedTextBox();
+            chkAtivo = new CheckBox();
             SuspendLayout();
             // 
             // txtRazaoSocial
@@ -383,12 +384,23 @@
             txtCNPJ.Size = new Size(155, 23);
             txtCNPJ.TabIndex = 35;
             // 
+            // chkAtivo
+            // 
+            chkAtivo.AutoSize = true;
+            chkAtivo.Location = new Point(708, 79);
+            chkAtivo.Name = "chkAtivo";
+            chkAtivo.Size = new Size(54, 19);
+            chkAtivo.TabIndex = 36;
+            chkAtivo.Text = "Ativo";
+            chkAtivo.UseVisualStyleBackColor = true;
+            // 
             // frmCadEmpresas
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1009, 449);
             ControlBox = false;
+            Controls.Add(chkAtivo);
             Controls.Add(txtCNPJ);
             Controls.Add(label5);
             Controls.Add(txtRegVenda);
@@ -464,5 +476,6 @@
         private Label label5;
         private TextBox txtRegVenda;
         private MaskedTextBox txtCNPJ;
+        private CheckBox chkAtivo;
     }
 }

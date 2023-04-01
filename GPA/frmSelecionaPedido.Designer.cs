@@ -28,106 +28,103 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lbLancPedido = new System.Windows.Forms.Label();
-            this.cmdSair = new System.Windows.Forms.Button();
-            this.CmdSelecionar = new System.Windows.Forms.Button();
-            this.grdPedidos = new System.Windows.Forms.DataGridView();
-            this.grdID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.grdDescricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.grdCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.grdPedidos)).BeginInit();
-            this.SuspendLayout();
+            lbLancPedido = new Label();
+            cmdSair = new Button();
+            CmdSelecionar = new Button();
+            grdPedidos = new DataGridView();
+            grdID = new DataGridViewTextBoxColumn();
+            grdDescricao = new DataGridViewTextBoxColumn();
+            grdCodigo = new DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)grdPedidos).BeginInit();
+            SuspendLayout();
             // 
             // lbLancPedido
             // 
-            this.lbLancPedido.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lbLancPedido.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.lbLancPedido.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbLancPedido.ForeColor = System.Drawing.Color.Black;
-            this.lbLancPedido.Location = new System.Drawing.Point(13, 5);
-            this.lbLancPedido.Name = "lbLancPedido";
-            this.lbLancPedido.Size = new System.Drawing.Size(613, 29);
-            this.lbLancPedido.TabIndex = 10;
-            this.lbLancPedido.Text = "Seleciona Pedido";
-            this.lbLancPedido.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            lbLancPedido.BorderStyle = BorderStyle.Fixed3D;
+            lbLancPedido.Cursor = Cursors.IBeam;
+            lbLancPedido.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            lbLancPedido.ForeColor = Color.Black;
+            lbLancPedido.Location = new Point(13, 5);
+            lbLancPedido.Name = "lbLancPedido";
+            lbLancPedido.Size = new Size(613, 29);
+            lbLancPedido.TabIndex = 10;
+            lbLancPedido.Text = "Seleciona Pedido";
+            lbLancPedido.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // cmdSair
             // 
-            this.cmdSair.Location = new System.Drawing.Point(713, 8);
-            this.cmdSair.Name = "cmdSair";
-            this.cmdSair.Size = new System.Drawing.Size(75, 23);
-            this.cmdSair.TabIndex = 9;
-            this.cmdSair.Text = "Sair";
-            this.cmdSair.UseVisualStyleBackColor = true;
-            this.cmdSair.Click += new System.EventHandler(this.cmdSair_Click);
+            cmdSair.Location = new Point(713, 8);
+            cmdSair.Name = "cmdSair";
+            cmdSair.Size = new Size(75, 23);
+            cmdSair.TabIndex = 9;
+            cmdSair.Text = "Sair";
+            cmdSair.UseVisualStyleBackColor = true;
+            cmdSair.Click += cmdSair_Click;
             // 
             // CmdSelecionar
             // 
-            this.CmdSelecionar.Location = new System.Drawing.Point(632, 8);
-            this.CmdSelecionar.Name = "CmdSelecionar";
-            this.CmdSelecionar.Size = new System.Drawing.Size(75, 23);
-            this.CmdSelecionar.TabIndex = 8;
-            this.CmdSelecionar.Text = "Selecionar";
-            this.CmdSelecionar.UseVisualStyleBackColor = true;
-            this.CmdSelecionar.Click += new System.EventHandler(this.CmdSelecionar_Click);
+            CmdSelecionar.Location = new Point(632, 8);
+            CmdSelecionar.Name = "CmdSelecionar";
+            CmdSelecionar.Size = new Size(75, 23);
+            CmdSelecionar.TabIndex = 8;
+            CmdSelecionar.Text = "Selecionar";
+            CmdSelecionar.UseVisualStyleBackColor = true;
+            CmdSelecionar.Click += CmdSelecionar_Click;
             // 
             // grdPedidos
             // 
-            this.grdPedidos.AllowUserToAddRows = false;
-            this.grdPedidos.AllowUserToDeleteRows = false;
-            this.grdPedidos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdPedidos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.grdID,
-            this.grdDescricao,
-            this.grdCodigo});
-            this.grdPedidos.Location = new System.Drawing.Point(12, 37);
-            this.grdPedidos.MultiSelect = false;
-            this.grdPedidos.Name = "grdPedidos";
-            this.grdPedidos.ReadOnly = true;
-            this.grdPedidos.RowTemplate.Height = 25;
-            this.grdPedidos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grdPedidos.Size = new System.Drawing.Size(776, 210);
-            this.grdPedidos.TabIndex = 7;
+            grdPedidos.AllowUserToAddRows = false;
+            grdPedidos.AllowUserToDeleteRows = false;
+            grdPedidos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            grdPedidos.Columns.AddRange(new DataGridViewColumn[] { grdID, grdDescricao, grdCodigo });
+            grdPedidos.Location = new Point(12, 37);
+            grdPedidos.MultiSelect = false;
+            grdPedidos.Name = "grdPedidos";
+            grdPedidos.ReadOnly = true;
+            grdPedidos.RowTemplate.Height = 25;
+            grdPedidos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            grdPedidos.Size = new Size(776, 210);
+            grdPedidos.TabIndex = 7;
+            grdPedidos.DoubleClick += grdPedidos_DoubleClick;
             // 
             // grdID
             // 
-            this.grdID.HeaderText = "Número";
-            this.grdID.Name = "grdID";
-            this.grdID.ReadOnly = true;
-            this.grdID.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            grdID.HeaderText = "Número";
+            grdID.Name = "grdID";
+            grdID.ReadOnly = true;
+            grdID.Resizable = DataGridViewTriState.True;
             // 
             // grdDescricao
             // 
-            this.grdDescricao.HeaderText = "Empresa";
-            this.grdDescricao.Name = "grdDescricao";
-            this.grdDescricao.ReadOnly = true;
-            this.grdDescricao.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.grdDescricao.Width = 450;
+            grdDescricao.HeaderText = "Empresa";
+            grdDescricao.Name = "grdDescricao";
+            grdDescricao.ReadOnly = true;
+            grdDescricao.Resizable = DataGridViewTriState.True;
+            grdDescricao.Width = 450;
             // 
             // grdCodigo
             // 
-            this.grdCodigo.HeaderText = "Data Contato";
-            this.grdCodigo.Name = "grdCodigo";
-            this.grdCodigo.ReadOnly = true;
-            this.grdCodigo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.grdCodigo.Width = 200;
+            grdCodigo.HeaderText = "Data Contato";
+            grdCodigo.Name = "grdCodigo";
+            grdCodigo.ReadOnly = true;
+            grdCodigo.Resizable = DataGridViewTriState.True;
+            grdCodigo.Width = 200;
             // 
             // frmSelecionaPedido
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 251);
-            this.ControlBox = false;
-            this.Controls.Add(this.lbLancPedido);
-            this.Controls.Add(this.cmdSair);
-            this.Controls.Add(this.CmdSelecionar);
-            this.Controls.Add(this.grdPedidos);
-            this.Name = "frmSelecionaPedido";
-            this.Text = "frmSelecionaPedido";
-            this.Load += new System.EventHandler(this.frmSelecionaPedido_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.grdPedidos)).EndInit();
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 251);
+            ControlBox = false;
+            Controls.Add(lbLancPedido);
+            Controls.Add(cmdSair);
+            Controls.Add(CmdSelecionar);
+            Controls.Add(grdPedidos);
+            Name = "frmSelecionaPedido";
+            Text = "frmSelecionaPedido";
+            Load += frmSelecionaPedido_Load;
+            ((System.ComponentModel.ISupportInitialize)grdPedidos).EndInit();
+            ResumeLayout(false);
         }
 
         #endregion

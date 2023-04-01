@@ -28,106 +28,103 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lbSelecRegistroContato = new System.Windows.Forms.Label();
-            this.cmdSair = new System.Windows.Forms.Button();
-            this.CmdSelecionar = new System.Windows.Forms.Button();
-            this.grdRegContatos = new System.Windows.Forms.DataGridView();
-            this.grdID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.grdDescricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.grdCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.grdRegContatos)).BeginInit();
-            this.SuspendLayout();
+            lbSelecRegistroContato = new Label();
+            cmdSair = new Button();
+            CmdSelecionar = new Button();
+            grdRegContatos = new DataGridView();
+            grdID = new DataGridViewTextBoxColumn();
+            grdDescricao = new DataGridViewTextBoxColumn();
+            grdCodigo = new DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)grdRegContatos).BeginInit();
+            SuspendLayout();
             // 
             // lbSelecRegistroContato
             // 
-            this.lbSelecRegistroContato.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lbSelecRegistroContato.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.lbSelecRegistroContato.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbSelecRegistroContato.ForeColor = System.Drawing.Color.Black;
-            this.lbSelecRegistroContato.Location = new System.Drawing.Point(13, 7);
-            this.lbSelecRegistroContato.Name = "lbSelecRegistroContato";
-            this.lbSelecRegistroContato.Size = new System.Drawing.Size(613, 29);
-            this.lbSelecRegistroContato.TabIndex = 14;
-            this.lbSelecRegistroContato.Text = "Selecionar Registro Contato";
-            this.lbSelecRegistroContato.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            lbSelecRegistroContato.BorderStyle = BorderStyle.Fixed3D;
+            lbSelecRegistroContato.Cursor = Cursors.IBeam;
+            lbSelecRegistroContato.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            lbSelecRegistroContato.ForeColor = Color.Black;
+            lbSelecRegistroContato.Location = new Point(13, 7);
+            lbSelecRegistroContato.Name = "lbSelecRegistroContato";
+            lbSelecRegistroContato.Size = new Size(613, 29);
+            lbSelecRegistroContato.TabIndex = 14;
+            lbSelecRegistroContato.Text = "Selecionar Registro Contato";
+            lbSelecRegistroContato.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // cmdSair
             // 
-            this.cmdSair.Location = new System.Drawing.Point(713, 10);
-            this.cmdSair.Name = "cmdSair";
-            this.cmdSair.Size = new System.Drawing.Size(75, 23);
-            this.cmdSair.TabIndex = 13;
-            this.cmdSair.Text = "Sair";
-            this.cmdSair.UseVisualStyleBackColor = true;
-            this.cmdSair.Click += new System.EventHandler(this.cmdSair_Click);
+            cmdSair.Location = new Point(713, 10);
+            cmdSair.Name = "cmdSair";
+            cmdSair.Size = new Size(75, 23);
+            cmdSair.TabIndex = 13;
+            cmdSair.Text = "Sair";
+            cmdSair.UseVisualStyleBackColor = true;
+            cmdSair.Click += cmdSair_Click;
             // 
             // CmdSelecionar
             // 
-            this.CmdSelecionar.Location = new System.Drawing.Point(632, 10);
-            this.CmdSelecionar.Name = "CmdSelecionar";
-            this.CmdSelecionar.Size = new System.Drawing.Size(75, 23);
-            this.CmdSelecionar.TabIndex = 12;
-            this.CmdSelecionar.Text = "Selecionar";
-            this.CmdSelecionar.UseVisualStyleBackColor = true;
-            this.CmdSelecionar.Click += new System.EventHandler(this.CmdSelecionar_Click);
+            CmdSelecionar.Location = new Point(632, 10);
+            CmdSelecionar.Name = "CmdSelecionar";
+            CmdSelecionar.Size = new Size(75, 23);
+            CmdSelecionar.TabIndex = 12;
+            CmdSelecionar.Text = "Selecionar";
+            CmdSelecionar.UseVisualStyleBackColor = true;
+            CmdSelecionar.Click += CmdSelecionar_Click;
             // 
             // grdRegContatos
             // 
-            this.grdRegContatos.AllowUserToAddRows = false;
-            this.grdRegContatos.AllowUserToDeleteRows = false;
-            this.grdRegContatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdRegContatos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.grdID,
-            this.grdDescricao,
-            this.grdCodigo});
-            this.grdRegContatos.Location = new System.Drawing.Point(12, 39);
-            this.grdRegContatos.MultiSelect = false;
-            this.grdRegContatos.Name = "grdRegContatos";
-            this.grdRegContatos.ReadOnly = true;
-            this.grdRegContatos.RowTemplate.Height = 25;
-            this.grdRegContatos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grdRegContatos.Size = new System.Drawing.Size(776, 210);
-            this.grdRegContatos.TabIndex = 11;
+            grdRegContatos.AllowUserToAddRows = false;
+            grdRegContatos.AllowUserToDeleteRows = false;
+            grdRegContatos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            grdRegContatos.Columns.AddRange(new DataGridViewColumn[] { grdID, grdDescricao, grdCodigo });
+            grdRegContatos.Location = new Point(12, 39);
+            grdRegContatos.MultiSelect = false;
+            grdRegContatos.Name = "grdRegContatos";
+            grdRegContatos.ReadOnly = true;
+            grdRegContatos.RowTemplate.Height = 25;
+            grdRegContatos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            grdRegContatos.Size = new Size(776, 210);
+            grdRegContatos.TabIndex = 11;
+            grdRegContatos.DoubleClick += grdRegContatos_DoubleClick;
             // 
             // grdID
             // 
-            this.grdID.HeaderText = "Número";
-            this.grdID.Name = "grdID";
-            this.grdID.ReadOnly = true;
-            this.grdID.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            grdID.HeaderText = "Número";
+            grdID.Name = "grdID";
+            grdID.ReadOnly = true;
+            grdID.Resizable = DataGridViewTriState.True;
             // 
             // grdDescricao
             // 
-            this.grdDescricao.HeaderText = "Empresa";
-            this.grdDescricao.Name = "grdDescricao";
-            this.grdDescricao.ReadOnly = true;
-            this.grdDescricao.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.grdDescricao.Width = 450;
+            grdDescricao.HeaderText = "Empresa";
+            grdDescricao.Name = "grdDescricao";
+            grdDescricao.ReadOnly = true;
+            grdDescricao.Resizable = DataGridViewTriState.True;
+            grdDescricao.Width = 450;
             // 
             // grdCodigo
             // 
-            this.grdCodigo.HeaderText = "Data Contato";
-            this.grdCodigo.Name = "grdCodigo";
-            this.grdCodigo.ReadOnly = true;
-            this.grdCodigo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.grdCodigo.Width = 200;
+            grdCodigo.HeaderText = "Data Contato";
+            grdCodigo.Name = "grdCodigo";
+            grdCodigo.ReadOnly = true;
+            grdCodigo.Resizable = DataGridViewTriState.True;
+            grdCodigo.Width = 200;
             // 
             // frmSelecionarRegistroContato
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 255);
-            this.ControlBox = false;
-            this.Controls.Add(this.lbSelecRegistroContato);
-            this.Controls.Add(this.cmdSair);
-            this.Controls.Add(this.CmdSelecionar);
-            this.Controls.Add(this.grdRegContatos);
-            this.Name = "frmSelecionarRegistroContato";
-            this.Text = "frmSelecionarRegistroContato";
-            this.Load += new System.EventHandler(this.frmSelecionarRegistroContato_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.grdRegContatos)).EndInit();
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 255);
+            ControlBox = false;
+            Controls.Add(lbSelecRegistroContato);
+            Controls.Add(cmdSair);
+            Controls.Add(CmdSelecionar);
+            Controls.Add(grdRegContatos);
+            Name = "frmSelecionarRegistroContato";
+            Text = "frmSelecionarRegistroContato";
+            Load += frmSelecionarRegistroContato_Load;
+            ((System.ComponentModel.ISupportInitialize)grdRegContatos).EndInit();
+            ResumeLayout(false);
         }
 
         #endregion

@@ -17,15 +17,15 @@ namespace Formularios
         string LCaminhoBanco = "";
         List<string> LParametros;
         string LUsuario = "";
-        public frmCRMInicial(string inCaminhoBanco,string inUsuario)
+        public frmCRMInicial(string inCaminhoBanco, string inUsuario)
         {
-            LCaminhoBanco=inCaminhoBanco;
+            LCaminhoBanco = inCaminhoBanco;
             InitializeComponent();
 
             LUsuario = inUsuario;
 
             SEGUsuario sEGUsuario = new SEGUsuario();
-            List<SEGUsuario> lstUsuario = sEGUsuario.CarregaDados(LCaminhoBanco,inUsuario, "", "", "");
+            List<SEGUsuario> lstUsuario = sEGUsuario.CarregaDados(LCaminhoBanco, inUsuario, "", "", "");
             labNomeUsuario.Text = lstUsuario[0].Nome;
 
             BDParametros objParametros = new BDParametros();
@@ -69,7 +69,7 @@ namespace Formularios
 
         private void cmdCadastrosEmpresas_Click(object sender, EventArgs e)
         {
-            GPA.frmCadEmpresas frmCadEmpresas = new GPA.frmCadEmpresas(LCaminhoBanco, LUsuario);
+            GPA.frmCadEmpresas frmCadEmpresas = new GPA.frmCadEmpresas(LCaminhoBanco, LUsuario,"");
             frmCadEmpresas.ShowDialog();
             RealizaCargas();
 
@@ -77,7 +77,7 @@ namespace Formularios
 
         private void cmdCadastroProduto_Click(object sender, EventArgs e)
         {
-            frmCadProdutos frmCadProdutos = new frmCadProdutos(LCaminhoBanco,LUsuario);
+            frmCadProdutos frmCadProdutos = new frmCadProdutos(LCaminhoBanco, LUsuario);
             frmCadProdutos.ShowDialog();
             RealizaCargas();
         }
@@ -92,7 +92,7 @@ namespace Formularios
 
         private void cmdRegistraContatos_Click(object sender, EventArgs e)
         {
-            frmContatosEmpresas frmContatosEmpresas = new frmContatosEmpresas(LCaminhoBanco,LUsuario);
+            frmContatosEmpresas frmContatosEmpresas = new frmContatosEmpresas(LCaminhoBanco, LUsuario);
             frmContatosEmpresas.ShowDialog();
             RealizaCargas();
         }
@@ -106,7 +106,7 @@ namespace Formularios
 
         private void button2_Click(object sender, EventArgs e)
         {
-            frmUltimasVendas frmUltimasVendas = new frmUltimasVendas(LCaminhoBanco,LUsuario);
+            frmUltimasVendas frmUltimasVendas = new frmUltimasVendas(LCaminhoBanco, LUsuario);
             frmUltimasVendas.ShowDialog();
             RealizaCargas();
         }
@@ -129,7 +129,7 @@ namespace Formularios
                 MessageBox.Show("Usuario sem permissão para alterar/Cadastrar Naturezas", "GPA");
                 return;
             }
-            frmNaturezaDaOperacao frmNatOperacao = new frmNaturezaDaOperacao(LCaminhoBanco,LUsuario);
+            frmNaturezaDaOperacao frmNatOperacao = new frmNaturezaDaOperacao(LCaminhoBanco, LUsuario);
             frmNatOperacao.ShowDialog();
             RealizaCargas();
         }
@@ -150,14 +150,14 @@ namespace Formularios
 
         private void cmdAgendarContato_Click(object sender, EventArgs e)
         {
-            frmAgendarContato frmAgendarContato = new frmAgendarContato(LCaminhoBanco,"", LUsuario);
+            frmAgendarContato frmAgendarContato = new frmAgendarContato(LCaminhoBanco, "", LUsuario);
             frmAgendarContato.ShowDialog();
             RealizaCargas();
 
         }
         private void grdContatosAgendados_DoubleClick(object sender, EventArgs e)
         {
-            frmAgendarContato frmAgendarContato = new frmAgendarContato(LCaminhoBanco,grdContatosAgendados.SelectedRows[0].Cells[0].Value.ToString(), "");
+            frmAgendarContato frmAgendarContato = new frmAgendarContato(LCaminhoBanco, grdContatosAgendados.SelectedRows[0].Cells[0].Value.ToString(), "");
             frmAgendarContato.ShowDialog();
             RealizaCargas();
         }
@@ -387,6 +387,10 @@ namespace Formularios
             CarregaAgendaContato();
         }
 
-
+        private void cmdMeusClientes_Click(object sender, EventArgs e)
+        {
+            frmMeusClientes frmMeusClientes = new frmMeusClientes(LCaminhoBanco,LUsuario);
+            frmMeusClientes.ShowDialog();
+        }
     }
 }

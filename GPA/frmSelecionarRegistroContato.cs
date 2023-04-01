@@ -18,13 +18,13 @@ namespace Formularios
         public string LID;
         Form LChamador;
 
-        public frmSelecionarRegistroContato(string inCaminhobanco,Form frmChamador,string inID)
+        public frmSelecionarRegistroContato(string inCaminhobanco, Form frmChamador, string inID)
         {
             LCaminhoBanco = inCaminhobanco;
             InitializeComponent();
             LChamador = frmChamador;
             LID = inID;
-           
+
         }
 
         private void frmSelecionarRegistroContato_Load(object sender, EventArgs e)
@@ -35,7 +35,7 @@ namespace Formularios
         private void CarregaRegistro(string inID)
         {
             BDRegistroContato objCadastro = new BDRegistroContato();
-            if(LID != "")
+            if (LID != "")
             {
                 objCadastro.cpID = LID;
             }
@@ -46,7 +46,7 @@ namespace Formularios
                 {
                     string RazaoSocial;
                     BDCadastroGeral objEmpresa = new BDCadastroGeral();
-                    List<BDCadastroGeral> lstEmpresa = objEmpresa.CarregaDados(LCaminhoBanco,item.cpEmpresaDR, "", "", "", "", "", "", "", "", "");
+                    List<BDCadastroGeral> lstEmpresa = objEmpresa.CarregaDados(LCaminhoBanco, item.cpEmpresaDR, "", "", "", "", "", "", "", "", "");
                     string[] Row = new string[]
                     {
                             item.cpID.ToString(),
@@ -91,6 +91,11 @@ namespace Formularios
         private void cmdSair_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void grdRegContatos_DoubleClick(object sender, EventArgs e)
+        {
+            CmdSelecionar_Click(sender, e);
         }
     }
 }

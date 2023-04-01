@@ -36,14 +36,14 @@ namespace Formularios
         private void CarregaProduto(string inID, string inVendedor)
         {
             BDPedido objCadastro = new BDPedido();
-            List<BDPedido> lstCadastro = objCadastro.CarregaDados(LCaminhoBanco,inID,"",inVendedor);
+            List<BDPedido> lstCadastro = objCadastro.CarregaDados(LCaminhoBanco, inID, "", inVendedor);
             if (lstCadastro.Count > 0)
             {
                 foreach (BDPedido item in lstCadastro)
                 {
                     string RazaoSocial;
                     BDCadastroGeral objEmpresa = new BDCadastroGeral();
-                    List<BDCadastroGeral> lstEmpresa = objEmpresa.CarregaDados(LCaminhoBanco,item.cpEmpresaDR,"","","","","","","","","");
+                    List<BDCadastroGeral> lstEmpresa = objEmpresa.CarregaDados(LCaminhoBanco, item.cpEmpresaDR, "", "", "", "", "", "", "", "", "");
                     string[] Row = new string[]
                     {
                             item.cpID.ToString(),
@@ -90,5 +90,9 @@ namespace Formularios
             this.Close();
         }
 
+        private void grdPedidos_DoubleClick(object sender, EventArgs e)
+        {
+            CmdSelecionar_Click(sender, e);
+        }
     }
 }

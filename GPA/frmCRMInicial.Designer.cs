@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             CalendarioContatos = new MonthCalendar();
-            button1 = new Button();
+            cmdMeusClientes = new Button();
             labConsolidado = new Label();
             pgrsbMeta = new ProgressBar();
             labProgressao = new Label();
@@ -63,6 +63,9 @@
             grdDataTermino = new DataGridViewTextBoxColumn();
             label5 = new Label();
             grdContatosAgendados = new DataGridView();
+            grdID = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
             labContatos = new Label();
             cmdNatOperacao = new Button();
             labNomeUsuario = new Label();
@@ -74,9 +77,6 @@
             cmdAgendarContato = new Button();
             labAgendarContato = new Label();
             labNomeEmpresa = new Label();
-            grdID = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)grdUltimasVendas).BeginInit();
             ((System.ComponentModel.ISupportInitialize)grdUltContato).BeginInit();
             ((System.ComponentModel.ISupportInitialize)grdAvisos).BeginInit();
@@ -90,15 +90,16 @@
             CalendarioContatos.TabIndex = 0;
             CalendarioContatos.KeyDown += CalendarioContatos_KeyDown;
             // 
-            // button1
+            // cmdMeusClientes
             // 
-            button1.FlatAppearance.BorderSize = 3;
-            button1.Location = new Point(132, 45);
-            button1.Name = "button1";
-            button1.Size = new Size(113, 44);
-            button1.TabIndex = 1;
-            button1.Text = "Meus Clientes";
-            button1.UseVisualStyleBackColor = true;
+            cmdMeusClientes.FlatAppearance.BorderSize = 3;
+            cmdMeusClientes.Location = new Point(132, 45);
+            cmdMeusClientes.Name = "cmdMeusClientes";
+            cmdMeusClientes.Size = new Size(113, 44);
+            cmdMeusClientes.TabIndex = 1;
+            cmdMeusClientes.Text = "Meus Clientes";
+            cmdMeusClientes.UseVisualStyleBackColor = true;
+            cmdMeusClientes.Click += cmdMeusClientes_Click;
             // 
             // labConsolidado
             // 
@@ -420,6 +421,27 @@
             grdContatosAgendados.TabIndex = 26;
             grdContatosAgendados.DoubleClick += grdContatosAgendados_DoubleClick;
             // 
+            // grdID
+            // 
+            grdID.HeaderText = "ID";
+            grdID.Name = "grdID";
+            grdID.ReadOnly = true;
+            grdID.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            dataGridViewTextBoxColumn1.HeaderText = "Data";
+            dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            dataGridViewTextBoxColumn1.ReadOnly = true;
+            dataGridViewTextBoxColumn1.Width = 75;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            dataGridViewTextBoxColumn2.HeaderText = "Razao Social";
+            dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            dataGridViewTextBoxColumn2.ReadOnly = true;
+            dataGridViewTextBoxColumn2.Width = 200;
+            // 
             // labContatos
             // 
             labContatos.AutoSize = true;
@@ -525,27 +547,6 @@
             labNomeEmpresa.Size = new Size(0, 15);
             labNomeEmpresa.TabIndex = 37;
             // 
-            // grdID
-            // 
-            grdID.HeaderText = "ID";
-            grdID.Name = "grdID";
-            grdID.ReadOnly = true;
-            grdID.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            dataGridViewTextBoxColumn1.HeaderText = "Data";
-            dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            dataGridViewTextBoxColumn1.ReadOnly = true;
-            dataGridViewTextBoxColumn1.Width = 75;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            dataGridViewTextBoxColumn2.HeaderText = "Razao Social";
-            dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            dataGridViewTextBoxColumn2.ReadOnly = true;
-            dataGridViewTextBoxColumn2.Width = 200;
-            // 
             // frmCRMInicial
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -586,7 +587,7 @@
             Controls.Add(labProgressao);
             Controls.Add(pgrsbMeta);
             Controls.Add(labConsolidado);
-            Controls.Add(button1);
+            Controls.Add(cmdMeusClientes);
             Controls.Add(CalendarioContatos);
             Name = "frmCRMInicial";
             Text = "CRM - GPA";
@@ -602,7 +603,7 @@
         #endregion
 
         private MonthCalendar CalendarioContatos;
-        private Button button1;
+        private Button cmdMeusClientes;
         private Label labConsolidado;
         private ProgressBar pgrsbMeta;
         private Label labProgressao;
