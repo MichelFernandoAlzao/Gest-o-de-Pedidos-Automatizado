@@ -159,6 +159,7 @@
             Controls.Add(txtSenha);
             Controls.Add(txtUsuario);
             Name = "frmEntrada";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "GPA -Entrada";
             Load += frmEntrada_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

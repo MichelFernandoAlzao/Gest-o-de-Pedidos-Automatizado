@@ -34,7 +34,7 @@ namespace Formularios
                 objCadastro.RazaoSocial = txtRazaoSocial.Text;
 
             }
-            List<BDCadastroGeral> lstCadastro = objCadastro.CarregaDados(LCaminhoBanco, "",txtRazaoSocial.Text,"", "", "", LUsuario, "", "", "", "");
+            List<BDCadastroGeral> lstCadastro = objCadastro.CarregaDados(LCaminhoBanco, "", txtRazaoSocial.Text, "", "", "", LUsuario, "", "", "", "");
             if (lstCadastro.Count > 0)
             {
                 foreach (BDCadastroGeral item in lstCadastro)
@@ -74,6 +74,11 @@ namespace Formularios
         private void cmdSair_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void grdMeusClientes_DoubleClick(object sender, EventArgs e)
+        {
+            cmdSelecionar_Click(sender, e);
         }
     }
 }

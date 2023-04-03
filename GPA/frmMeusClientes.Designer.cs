@@ -54,6 +54,7 @@
             grdMeusClientes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             grdMeusClientes.Size = new Size(688, 242);
             grdMeusClientes.TabIndex = 0;
+            grdMeusClientes.DoubleClick += grdMeusClientes_DoubleClick;
             // 
             // grdID
             // 

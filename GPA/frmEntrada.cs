@@ -64,7 +64,7 @@ namespace Formularios
                 }
                 List<SEGUsuario> lstUsuario = new List<SEGUsuario>();
                 SEGUsuario objUsuario = new SEGUsuario();
-                lstUsuario = objUsuario.CarregaDados(LCaminhoBanco,"", txtUsuario.Text.ToUpper(), "", txtSenha.Text.ToUpper());
+                lstUsuario = objUsuario.CarregaDados(LCaminhoBanco, "", txtUsuario.Text.ToUpper(), "", txtSenha.Text.ToUpper());
 
                 if (lstUsuario.Count == 0)
                 {
@@ -73,7 +73,7 @@ namespace Formularios
                 }
                 if (lstUsuario[0].Operacional == "S")
                 {
-                    frmCRMInicial objTela = new frmCRMInicial(LCaminhoBanco,lstUsuario[0].ID);
+                    frmCRMInicial objTela = new frmCRMInicial(LCaminhoBanco, lstUsuario[0].ID);
                     this.Hide();
                     objTela.ShowDialog();
                     this.Close();

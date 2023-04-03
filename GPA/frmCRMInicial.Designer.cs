@@ -590,6 +590,7 @@
             Controls.Add(cmdMeusClientes);
             Controls.Add(CalendarioContatos);
             Name = "frmCRMInicial";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "CRM - GPA";
             Load += frmCRMInicial_Load;
             ((System.ComponentModel.ISupportInitialize)grdUltimasVendas).EndInit();

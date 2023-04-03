@@ -69,7 +69,7 @@ namespace Formularios
 
         private void cmdCadastrosEmpresas_Click(object sender, EventArgs e)
         {
-            GPA.frmCadEmpresas frmCadEmpresas = new GPA.frmCadEmpresas(LCaminhoBanco, LUsuario,"");
+            GPA.frmCadEmpresas frmCadEmpresas = new GPA.frmCadEmpresas(LCaminhoBanco, LUsuario, "");
             frmCadEmpresas.ShowDialog();
             RealizaCargas();
 
@@ -389,7 +389,7 @@ namespace Formularios
 
         private void cmdMeusClientes_Click(object sender, EventArgs e)
         {
-            frmMeusClientes frmMeusClientes = new frmMeusClientes(LCaminhoBanco,LUsuario);
+            frmMeusClientes frmMeusClientes = new frmMeusClientes(LCaminhoBanco, LUsuario);
             frmMeusClientes.ShowDialog();
         }
     }
