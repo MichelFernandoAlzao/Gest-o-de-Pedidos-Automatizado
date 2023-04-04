@@ -27,12 +27,13 @@ namespace Formularios
         string LQuantidade = "";
         string LLote = "";
         string LFornecedor = "";
+        string LUsuario = "";
 
 
-        
-        
 
-        public frmItensPedido(string inCaminhoBanco,string inIDPedido, string inConsulta)
+
+
+        public frmItensPedido(string inCaminhoBanco, string inIDPedido, string inConsulta)
         {
             LCaminhoBanco = inCaminhoBanco;
             LIDPedido = inIDPedido;
@@ -54,7 +55,7 @@ namespace Formularios
         private void frmItensPedido_Load(object sender, EventArgs e)
         {
             //Verifica se tela foi chamada com pedido carregado -- Precaução para falahas de carregamento
-            if(LIDPedido == "")
+            if (LIDPedido == "")
             {
                 MessageBox.Show("Nenhuma pedido selecionado", "GPA");
                 this.Close();
@@ -64,7 +65,7 @@ namespace Formularios
             BDItensPedido objItensPedido = new BDItensPedido();
             objItensPedido.cpPedidoDR = LIDPedido;
             List<BDItensPedido> lstItenspedido = objItensPedido.CarregaDados(LCaminhoBanco);
-            if(lstItenspedido.Count > 0)
+            if (lstItenspedido.Count > 0)
             {
                 CarregaGrid();
             }
@@ -79,34 +80,34 @@ namespace Formularios
         {
             BDItensPedido OBjGravarItem = new BDItensPedido();
 
-            if(LIDProduto == "")
+            if (LIDProduto == "")
             {
                 MessageBox.Show("Produto não Selelcionado! \n Impossivel Gravar", "GPA");
                 return;
             }
             OBjGravarItem.cpProdutoID = LIDProduto;
             OBjGravarItem.cpPedidoDR = LIDPedido;
-            if(txtValor.Text == "")
+            if (txtValor.Text == "")
             {
                 MessageBox.Show("Valor unitario não informado", "GPA");
                 return;
             }
-            OBjGravarItem.cpValorUnit = txtValor.Text.Replace(",",".");
+            OBjGravarItem.cpValorUnit = txtValor.Text.Replace(",", ".");
 
-            if(txtValorFornecedor.Text != "")
+            if (txtValorFornecedor.Text != "")
             {
                 OBjGravarItem.cpValorFornecedor = txtValorFornecedor.Text.Replace(",", ".");
             }
-            if(txtQuantidade.Text == "")
+            if (txtQuantidade.Text == "")
             {
                 MessageBox.Show("Quantidade não informada", "GPA");
             }
 
             OBjGravarItem.cpQuantidade = txtQuantidade.Text;
             OBjGravarItem.cpLote = txtLote.Text;
-            if(LFornecedor == "")
+            if (LFornecedor == "")
             {
-                if(MessageBox.Show("Nenhuma Fornecedor seleiconado, deseja prosseguir assim mesmo ?","GPA",MessageBoxButtons.YesNo) == DialogResult.No)
+                if (MessageBox.Show("Nenhuma Fornecedor seleiconado, deseja prosseguir assim mesmo ?", "GPA", MessageBoxButtons.YesNo) == DialogResult.No)
                 {
                     return;
                 }
@@ -128,17 +129,17 @@ namespace Formularios
             }
 
             claNCalculaProduto ClaCalculaProduto = new claNCalculaProduto();
-            OBjGravarItem.cpValorTotalItem = ClaCalculaProduto.CalculaProduto(txtValor.Text, txtQuantidade.Text, "").Replace(",",".");
-            if(LIDITPedido == "")
+            OBjGravarItem.cpValorTotalItem = ClaCalculaProduto.CalculaProduto(txtValor.Text, txtQuantidade.Text, "").Replace(",", ".");
+            if (LIDITPedido == "")
             {
                 OBjGravarItem.InsereDados(LCaminhoBanco);
             }
             else
             {
-                OBjGravarItem.cpID= LIDITPedido;
+                OBjGravarItem.cpID = LIDITPedido;
                 OBjGravarItem.AlteraDados(LCaminhoBanco);
             }
-            
+
 
             //Se houverem itens já inseridos no pedido os carrega no grid
             BDItensPedido objItensPedido = new BDItensPedido();
@@ -196,8 +197,8 @@ namespace Formularios
 
         private void grdItensPedido_SelectionChanged(object sender, EventArgs e)
         {
-            
-            if(grdItensPedido.SelectedRows.Count == 0)
+
+            if (grdItensPedido.SelectedRows.Count == 0)
             {
                 return;
             }
@@ -330,7 +331,7 @@ namespace Formularios
             }
             //Pega Totaldo pedido para preecher o label
             BDPedido objPedido = new BDPedido();
-            List<BDPedido> lstPedido = objPedido.CarregaDados( LCaminhoBanco,LIDPedido, "", "");
+            List<BDPedido> lstPedido = objPedido.CarregaDados(LCaminhoBanco, LIDPedido, "", "");
             labTotalPedido.Text = lstPedido[0].cpVlrTotalPedido;
 
             BDCadProdutos objProduto = new BDCadProdutos();
@@ -357,6 +358,12 @@ namespace Formularios
                 txtFornecedor.Text = lstFornecedor[0].RazaoSocial.ToString();
             }
 
+        }
+
+        private void cmdCadProduto_Click(object sender, EventArgs e)
+        {
+            frmCadProdutos frmCadProdutos = new frmCadProdutos(LCaminhoBanco,LUsuario);
+            frmCadProdutos.ShowDialog();
         }
     }
 }
