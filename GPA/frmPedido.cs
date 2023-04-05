@@ -496,6 +496,8 @@ namespace Formularios
                 MessageBox.Show("Nenhum pedido selecionado", "GPA");
                 return;
             }
+            MessageBox.Show("Em desenvolvimento", "GPA");
+            return;
             if(LID != "")
             {
                 BDItensPedido objItensPedido = new BDItensPedido();

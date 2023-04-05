@@ -33,16 +33,20 @@ namespace Formularios
             LCadEmpresa = inIDEmpresa;
             grdEnderecos.Rows.Clear();
             AtualizaGrid();
-            LID = grdEnderecos.Rows[0].Cells[0].Value.ToString();
-            LIdentificacao = grdEnderecos.Rows[0].Cells[1].Value.ToString();
-            LRua = grdEnderecos.Rows[0].Cells[2].Value.ToString();
-            LNumero = grdEnderecos.Rows[0].Cells[3].Value.ToString();
-            LBairro = grdEnderecos.Rows[0].Cells[4].Value.ToString();
-            LCidade = grdEnderecos.Rows[0].Cells[5].Value.ToString();
-            LEstado = grdEnderecos.Rows[0].Cells[6].Value.ToString();
-            LReferencia = grdEnderecos.Rows[0].Cells[7].Value.ToString();
-            LFisico = grdEnderecos.Rows[0].Cells[8].Value.ToString();
-            LCobranca = grdEnderecos.Rows[0].Cells[9].Value.ToString();
+            if(grdEnderecos.Rows.Count > 0 )
+            {
+                LID = grdEnderecos.Rows[0].Cells[0].Value.ToString();
+                LIdentificacao = grdEnderecos.Rows[0].Cells[1].Value.ToString();
+                LRua = grdEnderecos.Rows[0].Cells[2].Value.ToString();
+                LNumero = grdEnderecos.Rows[0].Cells[3].Value.ToString();
+                LBairro = grdEnderecos.Rows[0].Cells[4].Value.ToString();
+                LCidade = grdEnderecos.Rows[0].Cells[5].Value.ToString();
+                LEstado = grdEnderecos.Rows[0].Cells[6].Value.ToString();
+                LReferencia = grdEnderecos.Rows[0].Cells[7].Value.ToString();
+                LFisico = grdEnderecos.Rows[0].Cells[8].Value.ToString();
+                LCobranca = grdEnderecos.Rows[0].Cells[9].Value.ToString();
+            }
+            
         }
 
         private void cmdNovo_Click(object sender, EventArgs e)

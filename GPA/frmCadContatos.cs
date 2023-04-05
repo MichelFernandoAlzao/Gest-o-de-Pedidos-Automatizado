@@ -13,24 +13,23 @@ namespace Formularios
 {
     public partial class frmCadContatos : Form
     {
-        string LCaminhoBanco;
-        string LCadEmpresa;
-        string LID;
-        string LCargo;
-        string LTelefone;
-        string LEmail;
-        string LNome;
+        string LCaminhoBanco = "";
+        string LCadEmpresa= "";
+        string LID="";
+        string LCargo = "";
+        string LTelefone = "";
+        string LEmail = "";
+        string LNome = "";
         DateTime LAniversario;
-        string LComprador;
-        string Lgerencia;
-        string LAnotacoes;
+        string LComprador = "";
+        string Lgerencia = "";
+        string LAnotacoes = "";
 
         public frmCadContatos(string inCaminhoBanco, string inIDEmpresa, string inCargo)
         {
             InitializeComponent();
             LCaminhoBanco = inCaminhoBanco;
             LCadEmpresa = inIDEmpresa;
-            LID = inCargo;
             AtualizaGrid();
         }
 
@@ -91,7 +90,7 @@ namespace Formularios
             objContato.cpID = LID;
             if (LNome != txtNome.Text) objContato.cpNome = txtNome.Text.ToString();
             if (LCargo != txtCargo.Text) objContato.cpCargo = LCargo;
-            if (LTelefone != txtTelefone.Text) objContato.cpTelefone = txtTelefone.Text.ToString();
+            if (LTelefone != txtTelefone.Text) objContato.cpTelefone = txtTelefone.Text.ToString().Replace("(","").Replace(")","").Replace("-","").Replace(" ","");
             objContato.cpEmpresaDR = LCadEmpresa;
             if (LEmail != txtEmail.Text) objContato.cpEmail = txtEmail.Text.ToString();
 
