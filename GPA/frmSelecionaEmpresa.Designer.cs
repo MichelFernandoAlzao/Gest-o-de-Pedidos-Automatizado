@@ -28,119 +28,115 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.grdEmpresas = new System.Windows.Forms.DataGridView();
-            this.grdID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.grdRazao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.grdFantasia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.grdCNPJ = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CmdSelecionar = new System.Windows.Forms.Button();
-            this.cmdSair = new System.Windows.Forms.Button();
-            this.lbCadProdutos = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.grdEmpresas)).BeginInit();
-            this.SuspendLayout();
+            grdEmpresas = new DataGridView();
+            grdID = new DataGridViewTextBoxColumn();
+            grdRazao = new DataGridViewTextBoxColumn();
+            grdFantasia = new DataGridViewTextBoxColumn();
+            grdCNPJ = new DataGridViewTextBoxColumn();
+            CmdSelecionar = new Button();
+            cmdSair = new Button();
+            lbCadProdutos = new Label();
+            ((System.ComponentModel.ISupportInitialize)grdEmpresas).BeginInit();
+            SuspendLayout();
             // 
             // grdEmpresas
             // 
-            this.grdEmpresas.AllowUserToAddRows = false;
-            this.grdEmpresas.AllowUserToDeleteRows = false;
-            this.grdEmpresas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdEmpresas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.grdID,
-            this.grdRazao,
-            this.grdFantasia,
-            this.grdCNPJ});
-            this.grdEmpresas.Location = new System.Drawing.Point(12, 41);
-            this.grdEmpresas.MultiSelect = false;
-            this.grdEmpresas.Name = "grdEmpresas";
-            this.grdEmpresas.ReadOnly = true;
-            this.grdEmpresas.RowTemplate.Height = 25;
-            this.grdEmpresas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grdEmpresas.Size = new System.Drawing.Size(776, 210);
-            this.grdEmpresas.TabIndex = 0;
-            this.grdEmpresas.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdEmpresas_CellDoubleClick);
+            grdEmpresas.AllowUserToAddRows = false;
+            grdEmpresas.AllowUserToDeleteRows = false;
+            grdEmpresas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            grdEmpresas.Columns.AddRange(new DataGridViewColumn[] { grdID, grdRazao, grdFantasia, grdCNPJ });
+            grdEmpresas.Location = new Point(12, 41);
+            grdEmpresas.MultiSelect = false;
+            grdEmpresas.Name = "grdEmpresas";
+            grdEmpresas.ReadOnly = true;
+            grdEmpresas.RowTemplate.Height = 25;
+            grdEmpresas.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            grdEmpresas.Size = new Size(776, 210);
+            grdEmpresas.TabIndex = 0;
+            grdEmpresas.CellDoubleClick += grdEmpresas_CellDoubleClick;
             // 
             // grdID
             // 
-            this.grdID.HeaderText = "ID";
-            this.grdID.Name = "grdID";
-            this.grdID.ReadOnly = true;
-            this.grdID.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.grdID.Visible = false;
+            grdID.HeaderText = "ID";
+            grdID.Name = "grdID";
+            grdID.ReadOnly = true;
+            grdID.Resizable = DataGridViewTriState.True;
+            grdID.Visible = false;
             // 
             // grdRazao
             // 
-            this.grdRazao.HeaderText = "Razao Social";
-            this.grdRazao.Name = "grdRazao";
-            this.grdRazao.ReadOnly = true;
-            this.grdRazao.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.grdRazao.Width = 300;
+            grdRazao.HeaderText = "Razao Social";
+            grdRazao.Name = "grdRazao";
+            grdRazao.ReadOnly = true;
+            grdRazao.Resizable = DataGridViewTriState.True;
+            grdRazao.Width = 300;
             // 
             // grdFantasia
             // 
-            this.grdFantasia.HeaderText = "Razão Fantasia";
-            this.grdFantasia.Name = "grdFantasia";
-            this.grdFantasia.ReadOnly = true;
-            this.grdFantasia.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.grdFantasia.Width = 300;
+            grdFantasia.HeaderText = "Razão Fantasia";
+            grdFantasia.Name = "grdFantasia";
+            grdFantasia.ReadOnly = true;
+            grdFantasia.Resizable = DataGridViewTriState.True;
+            grdFantasia.Width = 300;
             // 
             // grdCNPJ
             // 
-            this.grdCNPJ.HeaderText = "CNPJ";
-            this.grdCNPJ.Name = "grdCNPJ";
-            this.grdCNPJ.ReadOnly = true;
-            this.grdCNPJ.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.grdCNPJ.Width = 150;
+            grdCNPJ.HeaderText = "CNPJ";
+            grdCNPJ.Name = "grdCNPJ";
+            grdCNPJ.ReadOnly = true;
+            grdCNPJ.Resizable = DataGridViewTriState.True;
+            grdCNPJ.Width = 150;
             // 
             // CmdSelecionar
             // 
-            this.CmdSelecionar.Location = new System.Drawing.Point(631, 12);
-            this.CmdSelecionar.Name = "CmdSelecionar";
-            this.CmdSelecionar.Size = new System.Drawing.Size(75, 23);
-            this.CmdSelecionar.TabIndex = 1;
-            this.CmdSelecionar.Text = "Selecionar";
-            this.CmdSelecionar.UseVisualStyleBackColor = true;
-            this.CmdSelecionar.Click += new System.EventHandler(this.CmdSelecionar_Click);
+            CmdSelecionar.Location = new Point(631, 12);
+            CmdSelecionar.Name = "CmdSelecionar";
+            CmdSelecionar.Size = new Size(75, 23);
+            CmdSelecionar.TabIndex = 1;
+            CmdSelecionar.Text = "Selecionar";
+            CmdSelecionar.UseVisualStyleBackColor = true;
+            CmdSelecionar.Click += CmdSelecionar_Click;
             // 
             // cmdSair
             // 
-            this.cmdSair.Location = new System.Drawing.Point(713, 12);
-            this.cmdSair.Name = "cmdSair";
-            this.cmdSair.Size = new System.Drawing.Size(75, 23);
-            this.cmdSair.TabIndex = 2;
-            this.cmdSair.Text = "Sair";
-            this.cmdSair.UseVisualStyleBackColor = true;
-            this.cmdSair.Click += new System.EventHandler(this.cmdSair_Click);
+            cmdSair.Location = new Point(713, 12);
+            cmdSair.Name = "cmdSair";
+            cmdSair.Size = new Size(75, 23);
+            cmdSair.TabIndex = 2;
+            cmdSair.Text = "Sair";
+            cmdSair.UseVisualStyleBackColor = true;
+            cmdSair.Click += cmdSair_Click;
             // 
             // lbCadProdutos
             // 
-            this.lbCadProdutos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lbCadProdutos.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.lbCadProdutos.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbCadProdutos.ForeColor = System.Drawing.Color.Black;
-            this.lbCadProdutos.Location = new System.Drawing.Point(12, 9);
-            this.lbCadProdutos.Name = "lbCadProdutos";
-            this.lbCadProdutos.Size = new System.Drawing.Size(613, 29);
-            this.lbCadProdutos.TabIndex = 7;
-            this.lbCadProdutos.Text = "Seleciona Produtos";
-            this.lbCadProdutos.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            lbCadProdutos.BorderStyle = BorderStyle.Fixed3D;
+            lbCadProdutos.Cursor = Cursors.IBeam;
+            lbCadProdutos.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            lbCadProdutos.ForeColor = Color.Black;
+            lbCadProdutos.Location = new Point(12, 9);
+            lbCadProdutos.Name = "lbCadProdutos";
+            lbCadProdutos.Size = new Size(613, 29);
+            lbCadProdutos.TabIndex = 7;
+            lbCadProdutos.Text = "Seleciona Produtos";
+            lbCadProdutos.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // frmSelecionaEmpresa
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 256);
-            this.ControlBox = false;
-            this.Controls.Add(this.lbCadProdutos);
-            this.Controls.Add(this.cmdSair);
-            this.Controls.Add(this.CmdSelecionar);
-            this.Controls.Add(this.grdEmpresas);
-            this.Name = "frmSelecionaEmpresa";
-            this.ShowIcon = false;
-            this.Text = "Selecionar Empresa";
-            this.Load += new System.EventHandler(this.SelecionaEmpresa_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.grdEmpresas)).EndInit();
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 256);
+            ControlBox = false;
+            Controls.Add(lbCadProdutos);
+            Controls.Add(cmdSair);
+            Controls.Add(CmdSelecionar);
+            Controls.Add(grdEmpresas);
+            Name = "frmSelecionaEmpresa";
+            ShowIcon = false;
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Selecionar Empresa";
+            Load += SelecionaEmpresa_Load;
+            ((System.ComponentModel.ISupportInitialize)grdEmpresas).EndInit();
+            ResumeLayout(false);
         }
 
         #endregion

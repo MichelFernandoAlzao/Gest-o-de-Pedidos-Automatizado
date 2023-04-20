@@ -29,248 +29,241 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNaturezaDaOperacao));
-            this.grdNatOperacao = new System.Windows.Forms.DataGridView();
-            this.grdNatID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.grdNatDescricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.grdvenda = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.grdBonificacao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.grdBrinde = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.grdInterno = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.grdRestrito = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lbPedidos = new System.Windows.Forms.Label();
-            this.chkVenda = new System.Windows.Forms.CheckBox();
-            this.chkBonificacao = new System.Windows.Forms.CheckBox();
-            this.chkBrinde = new System.Windows.Forms.CheckBox();
-            this.chkInterno = new System.Windows.Forms.CheckBox();
-            this.chkRestrito = new System.Windows.Forms.CheckBox();
-            this.txtDescricao = new System.Windows.Forms.TextBox();
-            this.labDescricao = new System.Windows.Forms.Label();
-            this.cmdExcluir = new System.Windows.Forms.Button();
-            this.cmdNovo = new System.Windows.Forms.Button();
-            this.cmdGravar = new System.Windows.Forms.Button();
-            this.cmdSair = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.grdNatOperacao)).BeginInit();
-            this.SuspendLayout();
+            grdNatOperacao = new DataGridView();
+            grdNatID = new DataGridViewTextBoxColumn();
+            grdNatDescricao = new DataGridViewTextBoxColumn();
+            grdvenda = new DataGridViewTextBoxColumn();
+            grdBonificacao = new DataGridViewTextBoxColumn();
+            grdBrinde = new DataGridViewTextBoxColumn();
+            grdInterno = new DataGridViewTextBoxColumn();
+            grdRestrito = new DataGridViewTextBoxColumn();
+            lbPedidos = new Label();
+            chkVenda = new CheckBox();
+            chkBonificacao = new CheckBox();
+            chkBrinde = new CheckBox();
+            chkInterno = new CheckBox();
+            chkRestrito = new CheckBox();
+            txtDescricao = new TextBox();
+            labDescricao = new Label();
+            cmdExcluir = new Button();
+            cmdNovo = new Button();
+            cmdGravar = new Button();
+            cmdSair = new Button();
+            ((System.ComponentModel.ISupportInitialize)grdNatOperacao).BeginInit();
+            SuspendLayout();
             // 
             // grdNatOperacao
             // 
-            this.grdNatOperacao.AllowUserToAddRows = false;
-            this.grdNatOperacao.AllowUserToDeleteRows = false;
-            this.grdNatOperacao.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdNatOperacao.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.grdNatID,
-            this.grdNatDescricao,
-            this.grdvenda,
-            this.grdBonificacao,
-            this.grdBrinde,
-            this.grdInterno,
-            this.grdRestrito});
-            this.grdNatOperacao.Location = new System.Drawing.Point(12, 64);
-            this.grdNatOperacao.Name = "grdNatOperacao";
-            this.grdNatOperacao.ReadOnly = true;
-            this.grdNatOperacao.RowTemplate.Height = 25;
-            this.grdNatOperacao.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grdNatOperacao.Size = new System.Drawing.Size(335, 374);
-            this.grdNatOperacao.TabIndex = 0;
-            this.grdNatOperacao.SelectionChanged += new System.EventHandler(this.grdNatOperacao_SelectionChanged);
+            grdNatOperacao.AllowUserToAddRows = false;
+            grdNatOperacao.AllowUserToDeleteRows = false;
+            grdNatOperacao.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            grdNatOperacao.Columns.AddRange(new DataGridViewColumn[] { grdNatID, grdNatDescricao, grdvenda, grdBonificacao, grdBrinde, grdInterno, grdRestrito });
+            grdNatOperacao.Location = new Point(12, 64);
+            grdNatOperacao.Name = "grdNatOperacao";
+            grdNatOperacao.ReadOnly = true;
+            grdNatOperacao.RowTemplate.Height = 25;
+            grdNatOperacao.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            grdNatOperacao.Size = new Size(335, 374);
+            grdNatOperacao.TabIndex = 0;
+            grdNatOperacao.SelectionChanged += grdNatOperacao_SelectionChanged;
             // 
             // grdNatID
             // 
-            this.grdNatID.HeaderText = "ID";
-            this.grdNatID.Name = "grdNatID";
-            this.grdNatID.ReadOnly = true;
-            this.grdNatID.Width = 50;
+            grdNatID.HeaderText = "ID";
+            grdNatID.Name = "grdNatID";
+            grdNatID.ReadOnly = true;
+            grdNatID.Width = 50;
             // 
             // grdNatDescricao
             // 
-            this.grdNatDescricao.HeaderText = "Descrição";
-            this.grdNatDescricao.Name = "grdNatDescricao";
-            this.grdNatDescricao.ReadOnly = true;
-            this.grdNatDescricao.Width = 250;
+            grdNatDescricao.HeaderText = "Descrição";
+            grdNatDescricao.Name = "grdNatDescricao";
+            grdNatDescricao.ReadOnly = true;
+            grdNatDescricao.Width = 250;
             // 
             // grdvenda
             // 
-            this.grdvenda.HeaderText = "Venda";
-            this.grdvenda.Name = "grdvenda";
-            this.grdvenda.ReadOnly = true;
-            this.grdvenda.Visible = false;
+            grdvenda.HeaderText = "Venda";
+            grdvenda.Name = "grdvenda";
+            grdvenda.ReadOnly = true;
+            grdvenda.Visible = false;
             // 
             // grdBonificacao
             // 
-            this.grdBonificacao.HeaderText = "Bonificacao";
-            this.grdBonificacao.Name = "grdBonificacao";
-            this.grdBonificacao.ReadOnly = true;
-            this.grdBonificacao.Visible = false;
+            grdBonificacao.HeaderText = "Bonificacao";
+            grdBonificacao.Name = "grdBonificacao";
+            grdBonificacao.ReadOnly = true;
+            grdBonificacao.Visible = false;
             // 
             // grdBrinde
             // 
-            this.grdBrinde.HeaderText = "Brinde";
-            this.grdBrinde.Name = "grdBrinde";
-            this.grdBrinde.ReadOnly = true;
-            this.grdBrinde.Visible = false;
+            grdBrinde.HeaderText = "Brinde";
+            grdBrinde.Name = "grdBrinde";
+            grdBrinde.ReadOnly = true;
+            grdBrinde.Visible = false;
             // 
             // grdInterno
             // 
-            this.grdInterno.HeaderText = "Interno";
-            this.grdInterno.Name = "grdInterno";
-            this.grdInterno.ReadOnly = true;
-            this.grdInterno.Visible = false;
+            grdInterno.HeaderText = "Interno";
+            grdInterno.Name = "grdInterno";
+            grdInterno.ReadOnly = true;
+            grdInterno.Visible = false;
             // 
             // grdRestrito
             // 
-            this.grdRestrito.HeaderText = "Restrito";
-            this.grdRestrito.Name = "grdRestrito";
-            this.grdRestrito.ReadOnly = true;
-            this.grdRestrito.Visible = false;
+            grdRestrito.HeaderText = "Restrito";
+            grdRestrito.Name = "grdRestrito";
+            grdRestrito.ReadOnly = true;
+            grdRestrito.Visible = false;
             // 
             // lbPedidos
             // 
-            this.lbPedidos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lbPedidos.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.lbPedidos.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbPedidos.ForeColor = System.Drawing.Color.Black;
-            this.lbPedidos.Location = new System.Drawing.Point(12, 16);
-            this.lbPedidos.Name = "lbPedidos";
-            this.lbPedidos.Size = new System.Drawing.Size(632, 30);
-            this.lbPedidos.TabIndex = 3;
-            this.lbPedidos.Text = "Natureza da Operação";
-            this.lbPedidos.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            lbPedidos.BorderStyle = BorderStyle.Fixed3D;
+            lbPedidos.Cursor = Cursors.IBeam;
+            lbPedidos.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            lbPedidos.ForeColor = Color.Black;
+            lbPedidos.Location = new Point(12, 16);
+            lbPedidos.Name = "lbPedidos";
+            lbPedidos.Size = new Size(632, 30);
+            lbPedidos.TabIndex = 3;
+            lbPedidos.Text = "Natureza da Operação";
+            lbPedidos.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // chkVenda
             // 
-            this.chkVenda.AutoSize = true;
-            this.chkVenda.Location = new System.Drawing.Point(353, 124);
-            this.chkVenda.Name = "chkVenda";
-            this.chkVenda.Size = new System.Drawing.Size(58, 19);
-            this.chkVenda.TabIndex = 4;
-            this.chkVenda.Text = "Venda";
-            this.chkVenda.UseVisualStyleBackColor = true;
+            chkVenda.AutoSize = true;
+            chkVenda.Location = new Point(353, 124);
+            chkVenda.Name = "chkVenda";
+            chkVenda.Size = new Size(58, 19);
+            chkVenda.TabIndex = 4;
+            chkVenda.Text = "Venda";
+            chkVenda.UseVisualStyleBackColor = true;
             // 
             // chkBonificacao
             // 
-            this.chkBonificacao.AutoSize = true;
-            this.chkBonificacao.Location = new System.Drawing.Point(353, 149);
-            this.chkBonificacao.Name = "chkBonificacao";
-            this.chkBonificacao.Size = new System.Drawing.Size(88, 19);
-            this.chkBonificacao.TabIndex = 5;
-            this.chkBonificacao.Text = "Bonificação";
-            this.chkBonificacao.UseVisualStyleBackColor = true;
+            chkBonificacao.AutoSize = true;
+            chkBonificacao.Location = new Point(353, 149);
+            chkBonificacao.Name = "chkBonificacao";
+            chkBonificacao.Size = new Size(88, 19);
+            chkBonificacao.TabIndex = 5;
+            chkBonificacao.Text = "Bonificação";
+            chkBonificacao.UseVisualStyleBackColor = true;
             // 
             // chkBrinde
             // 
-            this.chkBrinde.AutoSize = true;
-            this.chkBrinde.Location = new System.Drawing.Point(353, 174);
-            this.chkBrinde.Name = "chkBrinde";
-            this.chkBrinde.Size = new System.Drawing.Size(60, 19);
-            this.chkBrinde.TabIndex = 6;
-            this.chkBrinde.Text = "Brinde";
-            this.chkBrinde.UseVisualStyleBackColor = true;
+            chkBrinde.AutoSize = true;
+            chkBrinde.Location = new Point(353, 174);
+            chkBrinde.Name = "chkBrinde";
+            chkBrinde.Size = new Size(60, 19);
+            chkBrinde.TabIndex = 6;
+            chkBrinde.Text = "Brinde";
+            chkBrinde.UseVisualStyleBackColor = true;
             // 
             // chkInterno
             // 
-            this.chkInterno.AutoSize = true;
-            this.chkInterno.Location = new System.Drawing.Point(353, 199);
-            this.chkInterno.Name = "chkInterno";
-            this.chkInterno.Size = new System.Drawing.Size(64, 19);
-            this.chkInterno.TabIndex = 7;
-            this.chkInterno.Text = "Interno";
-            this.chkInterno.UseVisualStyleBackColor = true;
+            chkInterno.AutoSize = true;
+            chkInterno.Location = new Point(353, 199);
+            chkInterno.Name = "chkInterno";
+            chkInterno.Size = new Size(64, 19);
+            chkInterno.TabIndex = 7;
+            chkInterno.Text = "Interno";
+            chkInterno.UseVisualStyleBackColor = true;
             // 
             // chkRestrito
             // 
-            this.chkRestrito.AutoSize = true;
-            this.chkRestrito.Location = new System.Drawing.Point(353, 224);
-            this.chkRestrito.Name = "chkRestrito";
-            this.chkRestrito.Size = new System.Drawing.Size(66, 19);
-            this.chkRestrito.TabIndex = 8;
-            this.chkRestrito.Text = "Restrito";
-            this.chkRestrito.UseVisualStyleBackColor = true;
+            chkRestrito.AutoSize = true;
+            chkRestrito.Location = new Point(353, 224);
+            chkRestrito.Name = "chkRestrito";
+            chkRestrito.Size = new Size(66, 19);
+            chkRestrito.TabIndex = 8;
+            chkRestrito.Text = "Restrito";
+            chkRestrito.UseVisualStyleBackColor = true;
             // 
             // txtDescricao
             // 
-            this.txtDescricao.Location = new System.Drawing.Point(353, 82);
-            this.txtDescricao.Name = "txtDescricao";
-            this.txtDescricao.Size = new System.Drawing.Size(435, 23);
-            this.txtDescricao.TabIndex = 9;
+            txtDescricao.Location = new Point(353, 82);
+            txtDescricao.Name = "txtDescricao";
+            txtDescricao.Size = new Size(435, 23);
+            txtDescricao.TabIndex = 9;
             // 
             // labDescricao
             // 
-            this.labDescricao.AutoSize = true;
-            this.labDescricao.Location = new System.Drawing.Point(353, 64);
-            this.labDescricao.Name = "labDescricao";
-            this.labDescricao.Size = new System.Drawing.Size(58, 15);
-            this.labDescricao.TabIndex = 10;
-            this.labDescricao.Text = "Descrição";
+            labDescricao.AutoSize = true;
+            labDescricao.Location = new Point(353, 64);
+            labDescricao.Name = "labDescricao";
+            labDescricao.Size = new Size(58, 15);
+            labDescricao.TabIndex = 10;
+            labDescricao.Text = "Descrição";
             // 
             // cmdExcluir
             // 
-            this.cmdExcluir.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("cmdExcluir.BackgroundImage")));
-            this.cmdExcluir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.cmdExcluir.Location = new System.Drawing.Point(650, 12);
-            this.cmdExcluir.Name = "cmdExcluir";
-            this.cmdExcluir.Size = new System.Drawing.Size(30, 30);
-            this.cmdExcluir.TabIndex = 49;
-            this.cmdExcluir.UseVisualStyleBackColor = true;
-            this.cmdExcluir.Click += new System.EventHandler(this.cmdExcluir_Click);
+            cmdExcluir.BackgroundImage = (Image)resources.GetObject("cmdExcluir.BackgroundImage");
+            cmdExcluir.BackgroundImageLayout = ImageLayout.Zoom;
+            cmdExcluir.Location = new Point(650, 12);
+            cmdExcluir.Name = "cmdExcluir";
+            cmdExcluir.Size = new Size(30, 30);
+            cmdExcluir.TabIndex = 49;
+            cmdExcluir.UseVisualStyleBackColor = true;
+            cmdExcluir.Click += cmdExcluir_Click;
             // 
             // cmdNovo
             // 
-            this.cmdNovo.BackgroundImage = global::Formularios.Properties.Resources.folder;
-            this.cmdNovo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.cmdNovo.Location = new System.Drawing.Point(686, 12);
-            this.cmdNovo.Name = "cmdNovo";
-            this.cmdNovo.Size = new System.Drawing.Size(30, 30);
-            this.cmdNovo.TabIndex = 48;
-            this.cmdNovo.UseVisualStyleBackColor = true;
-            this.cmdNovo.Click += new System.EventHandler(this.cmdNovo_Click);
+            cmdNovo.BackgroundImage = Properties.Resources.folder;
+            cmdNovo.BackgroundImageLayout = ImageLayout.Zoom;
+            cmdNovo.Location = new Point(686, 12);
+            cmdNovo.Name = "cmdNovo";
+            cmdNovo.Size = new Size(30, 30);
+            cmdNovo.TabIndex = 48;
+            cmdNovo.UseVisualStyleBackColor = true;
+            cmdNovo.Click += cmdNovo_Click;
             // 
             // cmdGravar
             // 
-            this.cmdGravar.BackgroundImage = global::Formularios.Properties.Resources.save;
-            this.cmdGravar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.cmdGravar.Location = new System.Drawing.Point(722, 12);
-            this.cmdGravar.Name = "cmdGravar";
-            this.cmdGravar.Size = new System.Drawing.Size(30, 30);
-            this.cmdGravar.TabIndex = 47;
-            this.cmdGravar.UseVisualStyleBackColor = true;
-            this.cmdGravar.Click += new System.EventHandler(this.cmdGravar_Click);
+            cmdGravar.BackgroundImage = Properties.Resources.save;
+            cmdGravar.BackgroundImageLayout = ImageLayout.Zoom;
+            cmdGravar.Location = new Point(722, 12);
+            cmdGravar.Name = "cmdGravar";
+            cmdGravar.Size = new Size(30, 30);
+            cmdGravar.TabIndex = 47;
+            cmdGravar.UseVisualStyleBackColor = true;
+            cmdGravar.Click += cmdGravar_Click;
             // 
             // cmdSair
             // 
-            this.cmdSair.BackgroundImage = global::Formularios.Properties.Resources.logout;
-            this.cmdSair.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.cmdSair.Location = new System.Drawing.Point(758, 12);
-            this.cmdSair.Name = "cmdSair";
-            this.cmdSair.Size = new System.Drawing.Size(30, 30);
-            this.cmdSair.TabIndex = 46;
-            this.cmdSair.UseVisualStyleBackColor = true;
-            this.cmdSair.Click += new System.EventHandler(this.cmdSair_Click);
+            cmdSair.BackgroundImage = Properties.Resources.logout;
+            cmdSair.BackgroundImageLayout = ImageLayout.Zoom;
+            cmdSair.Location = new Point(758, 12);
+            cmdSair.Name = "cmdSair";
+            cmdSair.Size = new Size(30, 30);
+            cmdSair.TabIndex = 46;
+            cmdSair.UseVisualStyleBackColor = true;
+            cmdSair.Click += cmdSair_Click;
             // 
             // frmNaturezaDaOperacao
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.ControlBox = false;
-            this.Controls.Add(this.cmdExcluir);
-            this.Controls.Add(this.cmdNovo);
-            this.Controls.Add(this.cmdGravar);
-            this.Controls.Add(this.cmdSair);
-            this.Controls.Add(this.labDescricao);
-            this.Controls.Add(this.txtDescricao);
-            this.Controls.Add(this.chkRestrito);
-            this.Controls.Add(this.chkInterno);
-            this.Controls.Add(this.chkBrinde);
-            this.Controls.Add(this.chkBonificacao);
-            this.Controls.Add(this.chkVenda);
-            this.Controls.Add(this.lbPedidos);
-            this.Controls.Add(this.grdNatOperacao);
-            this.Name = "frmNaturezaDaOperacao";
-            this.Text = "Natureza da Operação";
-            ((System.ComponentModel.ISupportInitialize)(this.grdNatOperacao)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            ControlBox = false;
+            Controls.Add(cmdExcluir);
+            Controls.Add(cmdNovo);
+            Controls.Add(cmdGravar);
+            Controls.Add(cmdSair);
+            Controls.Add(labDescricao);
+            Controls.Add(txtDescricao);
+            Controls.Add(chkRestrito);
+            Controls.Add(chkInterno);
+            Controls.Add(chkBrinde);
+            Controls.Add(chkBonificacao);
+            Controls.Add(chkVenda);
+            Controls.Add(lbPedidos);
+            Controls.Add(grdNatOperacao);
+            Name = "frmNaturezaDaOperacao";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Natureza da Operação";
+            ((System.ComponentModel.ISupportInitialize)grdNatOperacao).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

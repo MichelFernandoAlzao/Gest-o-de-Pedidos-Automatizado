@@ -373,6 +373,7 @@
             Controls.Add(cmdGravar);
             Controls.Add(cmdSair);
             Name = "frmCadEndereco";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Cadastro Endereços";
             ((System.ComponentModel.ISupportInitialize)grdEnderecos).EndInit();
             ResumeLayout(false);

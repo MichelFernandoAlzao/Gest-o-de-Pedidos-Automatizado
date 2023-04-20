@@ -198,6 +198,7 @@
             Controls.Add(cmdBuscar);
             Controls.Add(lbCabeçallho);
             Name = "frmUltimasVendas";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "frmUltimasVendas";
             ((System.ComponentModel.ISupportInitialize)grdListaPedido).EndInit();
             ResumeLayout(false);

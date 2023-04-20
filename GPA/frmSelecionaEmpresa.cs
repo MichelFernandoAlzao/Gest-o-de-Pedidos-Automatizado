@@ -20,9 +20,9 @@ namespace Formularios
         string Fantasia;
         string CNPJ;
         Form LChamador;
-        
+
         string[] LParametros;
-        public frmSelecionaEmpresa(string inCaminhoBanco, Form frmChamador,string inID,string inrazao, string inFantasia, string inCNPJ)
+        public frmSelecionaEmpresa(string inCaminhoBanco, Form frmChamador, string inID, string inrazao, string inFantasia, string inCNPJ)
         {
 
             InitializeComponent();
@@ -36,19 +36,19 @@ namespace Formularios
 
         private void SelecionaEmpresa_Load(object sender, EventArgs e)
         {
-            CarregaEmpresa(Razao,Fantasia,CNPJ);
+            CarregaEmpresa(Razao, Fantasia, CNPJ);
         }
 
-        private void CarregaEmpresa(string inRazao, string inRazaoFantasia,string inCNPJ)
+        private void CarregaEmpresa(string inRazao, string inRazaoFantasia, string inCNPJ)
         {
             BDCadastroGeral objCadastro = new BDCadastroGeral();
-            List<BDCadastroGeral> lstCadastro = objCadastro.CarregaDados(LCaminhoBanco,LIDCadastro, inRazao, inRazaoFantasia, inCNPJ, "", "", "", "", "", "");
-            if (lstCadastro.Count > 0) 
+            List<BDCadastroGeral> lstCadastro = objCadastro.CarregaDados(LCaminhoBanco, LIDCadastro, inRazao, inRazaoFantasia, inCNPJ, "", "", "", "", "", "");
+            if (lstCadastro.Count > 0)
             {
                 foreach (BDCadastroGeral item in lstCadastro)
                 {
                     string[] Row = new string[]
-                        { 
+                        {
                             item.Id.ToString(),
                             item.RazaoSocial.ToString(),
                             item.RazaoFantasia.ToString(),
@@ -66,7 +66,7 @@ namespace Formularios
                 LIDCadastro = grdEmpresas.SelectedRows[0].Cells[0].Value.ToString();
             }
         }
-        
+
 
         private void CmdSelecionar_Click(object sender, EventArgs e)
         {
@@ -95,9 +95,9 @@ namespace Formularios
         }
 
         private void cmdSair_Click(object sender, EventArgs e)
-         {
-             this.Close();
-         }
+        {
+            this.Close();
+        }
 
 
     }

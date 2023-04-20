@@ -343,6 +343,7 @@
             Controls.Add(cmdGravar);
             Controls.Add(cmdSair);
             Name = "frmCadContatos";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Contatos";
             ((System.ComponentModel.ISupportInitialize)grdContatos).EndInit();
             ResumeLayout(false);

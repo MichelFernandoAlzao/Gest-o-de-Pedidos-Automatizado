@@ -118,6 +118,7 @@
             Controls.Add(grdProdutos);
             Controls.Add(cmdSair);
             Name = "frmProdutosPreferidos";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Produtos Preferidos";
             ((System.ComponentModel.ISupportInitialize)grdProdutos).EndInit();
             ResumeLayout(false);

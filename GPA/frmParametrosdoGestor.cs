@@ -16,7 +16,7 @@ namespace Formularios
         string LcaminhoBanco = "";
         string LIDParametro = "";
         public string LID = "";
-        public string LRazaoSocial ="";
+        public string LRazaoSocial = "";
         public frmParametrosdoGestor(string inCaminhoBanco)
         {
             LcaminhoBanco = inCaminhoBanco;
@@ -33,7 +33,7 @@ namespace Formularios
             int PrazoContato;
             int PrazoVenda;
             BDParametros objParametros = new BDParametros();
-            if(txtPrazoContato.Text != "")
+            if (txtPrazoContato.Text != "")
             {
                 if (int.TryParse(txtPrazoContato.Text, out PrazoContato))
                 {
@@ -46,9 +46,9 @@ namespace Formularios
                 return;
             }
 
-            if(txtPrazoUltVenda.Text != "")
+            if (txtPrazoUltVenda.Text != "")
             {
-                if(int.TryParse(txtPrazoUltVenda.Text,out PrazoVenda))
+                if (int.TryParse(txtPrazoUltVenda.Text, out PrazoVenda))
                 {
                     objParametros.cpDiasUltVenda = Convert.ToString(PrazoVenda);
                 }
@@ -58,7 +58,7 @@ namespace Formularios
                 MessageBox.Show("Obrigatorio o preechimento do prazo para ultima Venda!", "GPA");
                 return;
             }
-            if(LID != "")
+            if (LID != "")
             {
                 objParametros.cpEmpresaDR = LID;
             }
@@ -68,7 +68,7 @@ namespace Formularios
                 return;
             }
 
-            if(LIDParametro == "")
+            if (LIDParametro == "")
             {
                 objParametros.InsereDados(LcaminhoBanco);
             }
@@ -78,7 +78,7 @@ namespace Formularios
                 objParametros.AlteraDados(LcaminhoBanco);
             }
 
-            
+
 
 
         }
@@ -88,7 +88,7 @@ namespace Formularios
             BDParametros objParametros = new BDParametros();
 
             List<BDParametros> lstParametros = objParametros.CarregaDados(LcaminhoBanco);
-            if(lstParametros.Count > 0)
+            if (lstParametros.Count > 0)
             {
                 LIDParametro = lstParametros[0].cpID;
                 LID = lstParametros[0].cpEmpresaDR;
@@ -96,21 +96,21 @@ namespace Formularios
                 txtPrazoUltVenda.Text = lstParametros[0].cpDiasUltVenda;
 
                 BDCadastroGeral objCadastro = new BDCadastroGeral();
-                List<BDCadastroGeral> lstCadastro = objCadastro.CarregaDados(LcaminhoBanco,LID, "", "", "", "", "", "", "", "", "");
+                List<BDCadastroGeral> lstCadastro = objCadastro.CarregaDados(LcaminhoBanco, LID, "", "", "", "", "", "", "", "", "");
                 LRazaoSocial = lstCadastro[0].RazaoSocial;
                 txtEmpresaPadrao.Text = lstCadastro[0].RazaoSocial;
             }
             CarregaUsuarios();
-            
+
         }
 
         private void txtEmpresaPadrao_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.F1)
             {
-                frmSelecionaEmpresa objTela = new frmSelecionaEmpresa(LcaminhoBanco,this, "", txtEmpresaPadrao.Text.ToString(), "", "");
+                frmSelecionaEmpresa objTela = new frmSelecionaEmpresa(LcaminhoBanco, this, "", txtEmpresaPadrao.Text.ToString(), "", "");
                 objTela.ShowDialog();
-                if(LRazaoSocial != "")
+                if (LRazaoSocial != "")
                 {
                     txtEmpresaPadrao.Text = LRazaoSocial;
                 }
@@ -120,7 +120,7 @@ namespace Formularios
         private void CarregaUsuarios()
         {
             SEGUsuario objUsuario = new SEGUsuario();
-            List<SEGUsuario> lstUsuario = objUsuario.CarregaDados(LcaminhoBanco,"", "", "", "");
+            List<SEGUsuario> lstUsuario = objUsuario.CarregaDados(LcaminhoBanco, "", "", "", "");
             if (lstUsuario.Count > 0)
             {
                 foreach (SEGUsuario item in lstUsuario)
@@ -150,17 +150,17 @@ namespace Formularios
                 }
                 else
                 {
-                    MessageBox.Show("Valor de meta informado para " + row.Cells[1].Value.ToString() + " em formato invalido","GPA");
+                    MessageBox.Show("Valor de meta informado para " + row.Cells[1].Value.ToString() + " em formato invalido", "GPA");
                     return;
                 }
-                
+
                 lstUsuarios.Add(objusuario);
             }
 
-            foreach(SEGUsuario Usuario in lstUsuarios)
+            foreach (SEGUsuario Usuario in lstUsuarios)
             {
                 Usuario.AlteraDados(LcaminhoBanco);
-                if(Usuario.MsgErro != null)
+                if (Usuario.MsgErro != null)
                 {
                     MessageBox.Show("Erro ao alterar meta do usuário " + Usuario.ID.ToString(), "");
                 }

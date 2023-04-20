@@ -158,7 +158,7 @@ namespace Formularios
                     if (item.cpUsuarioDR != "" && item.cpUsuarioDR != null)
                     {
                         SEGUsuario objUsuario = new SEGUsuario();
-                        lstUsuario = objUsuario.CarregaDados(LCaminhoBanco,item.cpUsuarioDR, "", "", "");
+                        lstUsuario = objUsuario.CarregaDados(LCaminhoBanco, item.cpUsuarioDR, "", "", "");
                         if (lstUsuario.Count > 0)
                         {
                             item.cpUsuarioDR = lstUsuario[0].ID;
@@ -213,7 +213,7 @@ namespace Formularios
         {
             if (e.KeyCode == Keys.F1)
             {
-                frmSelecionarUsuario frmUsuario = new frmSelecionarUsuario(LCaminhoBanco,this, "", txtUsuarioDestino.Text.ToString());
+                frmSelecionarUsuario frmUsuario = new frmSelecionarUsuario(LCaminhoBanco, this, "", txtUsuarioDestino.Text.ToString());
                 frmUsuario.ShowDialog();
 
                 if (LIDUsuario != "")

@@ -329,6 +329,7 @@
             Controls.Add(txtDescricao);
             Controls.Add(lbCadProdutos);
             Name = "frmCadProdutos";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Cadastro de Produtos";
             Load += frmCadProdutos_Load;
             ResumeLayout(false);

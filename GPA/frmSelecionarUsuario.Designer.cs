@@ -28,100 +28,98 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.cmdSair = new System.Windows.Forms.Button();
-            this.CmdSelecionar = new System.Windows.Forms.Button();
-            this.grdUsuarios = new System.Windows.Forms.DataGridView();
-            this.lbSelecUsuario = new System.Windows.Forms.Label();
-            this.grdID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.grdNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.grdUsuarios)).BeginInit();
-            this.SuspendLayout();
+            cmdSair = new Button();
+            CmdSelecionar = new Button();
+            grdUsuarios = new DataGridView();
+            grdID = new DataGridViewTextBoxColumn();
+            grdNome = new DataGridViewTextBoxColumn();
+            lbSelecUsuario = new Label();
+            ((System.ComponentModel.ISupportInitialize)grdUsuarios).BeginInit();
+            SuspendLayout();
             // 
             // cmdSair
             // 
-            this.cmdSair.BackgroundImage = global::Formularios.Properties.Resources.logout;
-            this.cmdSair.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.cmdSair.Location = new System.Drawing.Point(210, 12);
-            this.cmdSair.Name = "cmdSair";
-            this.cmdSair.Size = new System.Drawing.Size(29, 29);
-            this.cmdSair.TabIndex = 5;
-            this.cmdSair.UseVisualStyleBackColor = true;
-            this.cmdSair.Click += new System.EventHandler(this.cmdSair_Click);
+            cmdSair.BackgroundImage = Properties.Resources.logout;
+            cmdSair.BackgroundImageLayout = ImageLayout.Stretch;
+            cmdSair.Location = new Point(210, 12);
+            cmdSair.Name = "cmdSair";
+            cmdSair.Size = new Size(29, 29);
+            cmdSair.TabIndex = 5;
+            cmdSair.UseVisualStyleBackColor = true;
+            cmdSair.Click += cmdSair_Click;
             // 
             // CmdSelecionar
             // 
-            this.CmdSelecionar.BackgroundImage = global::Formularios.Properties.Resources.verificar;
-            this.CmdSelecionar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.CmdSelecionar.Location = new System.Drawing.Point(175, 12);
-            this.CmdSelecionar.Name = "CmdSelecionar";
-            this.CmdSelecionar.Size = new System.Drawing.Size(29, 29);
-            this.CmdSelecionar.TabIndex = 4;
-            this.CmdSelecionar.UseVisualStyleBackColor = true;
-            this.CmdSelecionar.Click += new System.EventHandler(this.CmdSelecionar_Click);
+            CmdSelecionar.BackgroundImage = Properties.Resources.verificar;
+            CmdSelecionar.BackgroundImageLayout = ImageLayout.Stretch;
+            CmdSelecionar.Location = new Point(175, 12);
+            CmdSelecionar.Name = "CmdSelecionar";
+            CmdSelecionar.Size = new Size(29, 29);
+            CmdSelecionar.TabIndex = 4;
+            CmdSelecionar.UseVisualStyleBackColor = true;
+            CmdSelecionar.Click += CmdSelecionar_Click;
             // 
             // grdUsuarios
             // 
-            this.grdUsuarios.AllowUserToAddRows = false;
-            this.grdUsuarios.AllowUserToDeleteRows = false;
-            this.grdUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.grdID,
-            this.grdNome});
-            this.grdUsuarios.Location = new System.Drawing.Point(12, 47);
-            this.grdUsuarios.MultiSelect = false;
-            this.grdUsuarios.Name = "grdUsuarios";
-            this.grdUsuarios.ReadOnly = true;
-            this.grdUsuarios.RowTemplate.Height = 25;
-            this.grdUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grdUsuarios.Size = new System.Drawing.Size(227, 410);
-            this.grdUsuarios.TabIndex = 3;
-            // 
-            // lbSelecUsuario
-            // 
-            this.lbSelecUsuario.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lbSelecUsuario.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.lbSelecUsuario.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbSelecUsuario.ForeColor = System.Drawing.Color.Black;
-            this.lbSelecUsuario.Location = new System.Drawing.Point(11, 12);
-            this.lbSelecUsuario.Name = "lbSelecUsuario";
-            this.lbSelecUsuario.Size = new System.Drawing.Size(158, 29);
-            this.lbSelecUsuario.TabIndex = 6;
-            this.lbSelecUsuario.Text = "Usuarios";
-            this.lbSelecUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            grdUsuarios.AllowUserToAddRows = false;
+            grdUsuarios.AllowUserToDeleteRows = false;
+            grdUsuarios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            grdUsuarios.Columns.AddRange(new DataGridViewColumn[] { grdID, grdNome });
+            grdUsuarios.Location = new Point(12, 47);
+            grdUsuarios.MultiSelect = false;
+            grdUsuarios.Name = "grdUsuarios";
+            grdUsuarios.ReadOnly = true;
+            grdUsuarios.RowTemplate.Height = 25;
+            grdUsuarios.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            grdUsuarios.Size = new Size(227, 410);
+            grdUsuarios.TabIndex = 3;
             // 
             // grdID
             // 
-            this.grdID.HeaderText = "ID";
-            this.grdID.Name = "grdID";
-            this.grdID.ReadOnly = true;
-            this.grdID.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.grdID.Visible = false;
-            this.grdID.Width = 150;
+            grdID.HeaderText = "ID";
+            grdID.Name = "grdID";
+            grdID.ReadOnly = true;
+            grdID.Resizable = DataGridViewTriState.True;
+            grdID.Visible = false;
+            grdID.Width = 150;
             // 
             // grdNome
             // 
-            this.grdNome.HeaderText = "Nome";
-            this.grdNome.Name = "grdNome";
-            this.grdNome.ReadOnly = true;
-            this.grdNome.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.grdNome.Width = 200;
+            grdNome.HeaderText = "Nome";
+            grdNome.Name = "grdNome";
+            grdNome.ReadOnly = true;
+            grdNome.Resizable = DataGridViewTriState.True;
+            grdNome.Width = 200;
+            // 
+            // lbSelecUsuario
+            // 
+            lbSelecUsuario.BorderStyle = BorderStyle.Fixed3D;
+            lbSelecUsuario.Cursor = Cursors.IBeam;
+            lbSelecUsuario.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            lbSelecUsuario.ForeColor = Color.Black;
+            lbSelecUsuario.Location = new Point(11, 12);
+            lbSelecUsuario.Name = "lbSelecUsuario";
+            lbSelecUsuario.Size = new Size(158, 29);
+            lbSelecUsuario.TabIndex = 6;
+            lbSelecUsuario.Text = "Usuarios";
+            lbSelecUsuario.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // frmSelecionarUsuario
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(251, 469);
-            this.ControlBox = false;
-            this.Controls.Add(this.lbSelecUsuario);
-            this.Controls.Add(this.cmdSair);
-            this.Controls.Add(this.CmdSelecionar);
-            this.Controls.Add(this.grdUsuarios);
-            this.Name = "frmSelecionarUsuario";
-            this.Text = "Selecionar Usuario";
-            this.Load += new System.EventHandler(this.frmSelecionaProduto_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.grdUsuarios)).EndInit();
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(251, 469);
+            ControlBox = false;
+            Controls.Add(lbSelecUsuario);
+            Controls.Add(cmdSair);
+            Controls.Add(CmdSelecionar);
+            Controls.Add(grdUsuarios);
+            Name = "frmSelecionarUsuario";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Selecionar Usuario";
+            Load += frmSelecionaProduto_Load;
+            ((System.ComponentModel.ISupportInitialize)grdUsuarios).EndInit();
+            ResumeLayout(false);
         }
 
         #endregion

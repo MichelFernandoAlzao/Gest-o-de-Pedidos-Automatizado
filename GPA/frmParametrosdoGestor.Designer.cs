@@ -28,174 +28,171 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.grdMetasMensais = new System.Windows.Forms.DataGridView();
-            this.grdID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.grdNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.grdMetaMensal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtPrazoContato = new System.Windows.Forms.TextBox();
-            this.txtPrazoUltVenda = new System.Windows.Forms.TextBox();
-            this.grdMetas = new System.Windows.Forms.Label();
-            this.cmdGravar = new System.Windows.Forms.Button();
-            this.cmdSair = new System.Windows.Forms.Button();
-            this.labEmpresaPadrao = new System.Windows.Forms.Label();
-            this.txtEmpresaPadrao = new System.Windows.Forms.TextBox();
-            this.cmdGravarMetas = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.grdMetasMensais)).BeginInit();
-            this.SuspendLayout();
+            label1 = new Label();
+            label2 = new Label();
+            grdMetasMensais = new DataGridView();
+            grdID = new DataGridViewTextBoxColumn();
+            grdNome = new DataGridViewTextBoxColumn();
+            grdMetaMensal = new DataGridViewTextBoxColumn();
+            txtPrazoContato = new TextBox();
+            txtPrazoUltVenda = new TextBox();
+            grdMetas = new Label();
+            cmdGravar = new Button();
+            cmdSair = new Button();
+            labEmpresaPadrao = new Label();
+            txtEmpresaPadrao = new TextBox();
+            cmdGravarMetas = new Button();
+            ((System.ComponentModel.ISupportInitialize)grdMetasMensais).BeginInit();
+            SuspendLayout();
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(12, 25);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(114, 15);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Prazo para contato:";
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Location = new Point(12, 25);
+            label1.Name = "label1";
+            label1.Size = new Size(114, 15);
+            label1.TabIndex = 0;
+            label1.Text = "Prazo para contato:";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(12, 58);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(115, 15);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Prazo UltimaVenda:";
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.Location = new Point(12, 58);
+            label2.Name = "label2";
+            label2.Size = new Size(115, 15);
+            label2.TabIndex = 1;
+            label2.Text = "Prazo UltimaVenda:";
             // 
             // grdMetasMensais
             // 
-            this.grdMetasMensais.AllowUserToAddRows = false;
-            this.grdMetasMensais.AllowUserToDeleteRows = false;
-            this.grdMetasMensais.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdMetasMensais.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.grdID,
-            this.grdNome,
-            this.grdMetaMensal});
-            this.grdMetasMensais.Location = new System.Drawing.Point(12, 288);
-            this.grdMetasMensais.Name = "grdMetasMensais";
-            this.grdMetasMensais.RowTemplate.Height = 25;
-            this.grdMetasMensais.Size = new System.Drawing.Size(395, 150);
-            this.grdMetasMensais.TabIndex = 2;
+            grdMetasMensais.AllowUserToAddRows = false;
+            grdMetasMensais.AllowUserToDeleteRows = false;
+            grdMetasMensais.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            grdMetasMensais.Columns.AddRange(new DataGridViewColumn[] { grdID, grdNome, grdMetaMensal });
+            grdMetasMensais.Location = new Point(12, 288);
+            grdMetasMensais.Name = "grdMetasMensais";
+            grdMetasMensais.RowTemplate.Height = 25;
+            grdMetasMensais.Size = new Size(395, 150);
+            grdMetasMensais.TabIndex = 2;
             // 
             // grdID
             // 
-            this.grdID.HeaderText = "ID";
-            this.grdID.Name = "grdID";
-            this.grdID.Visible = false;
+            grdID.HeaderText = "ID";
+            grdID.Name = "grdID";
+            grdID.Visible = false;
             // 
             // grdNome
             // 
-            this.grdNome.HeaderText = "Nome";
-            this.grdNome.Name = "grdNome";
-            this.grdNome.Width = 250;
+            grdNome.HeaderText = "Nome";
+            grdNome.Name = "grdNome";
+            grdNome.Width = 250;
             // 
             // grdMetaMensal
             // 
-            this.grdMetaMensal.HeaderText = "Meta Mensal";
-            this.grdMetaMensal.Name = "grdMetaMensal";
+            grdMetaMensal.HeaderText = "Meta Mensal";
+            grdMetaMensal.Name = "grdMetaMensal";
             // 
             // txtPrazoContato
             // 
-            this.txtPrazoContato.Location = new System.Drawing.Point(132, 17);
-            this.txtPrazoContato.Name = "txtPrazoContato";
-            this.txtPrazoContato.Size = new System.Drawing.Size(53, 23);
-            this.txtPrazoContato.TabIndex = 1;
+            txtPrazoContato.Location = new Point(132, 17);
+            txtPrazoContato.Name = "txtPrazoContato";
+            txtPrazoContato.Size = new Size(53, 23);
+            txtPrazoContato.TabIndex = 1;
             // 
             // txtPrazoUltVenda
             // 
-            this.txtPrazoUltVenda.Location = new System.Drawing.Point(133, 50);
-            this.txtPrazoUltVenda.Name = "txtPrazoUltVenda";
-            this.txtPrazoUltVenda.Size = new System.Drawing.Size(53, 23);
-            this.txtPrazoUltVenda.TabIndex = 3;
+            txtPrazoUltVenda.Location = new Point(133, 50);
+            txtPrazoUltVenda.Name = "txtPrazoUltVenda";
+            txtPrazoUltVenda.Size = new Size(53, 23);
+            txtPrazoUltVenda.TabIndex = 3;
             // 
             // grdMetas
             // 
-            this.grdMetas.AutoSize = true;
-            this.grdMetas.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.grdMetas.Location = new System.Drawing.Point(12, 270);
-            this.grdMetas.Name = "grdMetas";
-            this.grdMetas.Size = new System.Drawing.Size(91, 15);
-            this.grdMetas.TabIndex = 4;
-            this.grdMetas.Text = "Metas Mensais:";
+            grdMetas.AutoSize = true;
+            grdMetas.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            grdMetas.Location = new Point(12, 270);
+            grdMetas.Name = "grdMetas";
+            grdMetas.Size = new Size(91, 15);
+            grdMetas.TabIndex = 4;
+            grdMetas.Text = "Metas Mensais:";
             // 
             // cmdGravar
             // 
-            this.cmdGravar.BackgroundImage = global::Formularios.Properties.Resources.save;
-            this.cmdGravar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.cmdGravar.Location = new System.Drawing.Point(342, 11);
-            this.cmdGravar.Name = "cmdGravar";
-            this.cmdGravar.Size = new System.Drawing.Size(29, 29);
-            this.cmdGravar.TabIndex = 44;
-            this.cmdGravar.UseVisualStyleBackColor = true;
-            this.cmdGravar.Click += new System.EventHandler(this.cmdGravar_Click);
+            cmdGravar.BackgroundImage = Properties.Resources.save;
+            cmdGravar.BackgroundImageLayout = ImageLayout.Zoom;
+            cmdGravar.Location = new Point(342, 11);
+            cmdGravar.Name = "cmdGravar";
+            cmdGravar.Size = new Size(29, 29);
+            cmdGravar.TabIndex = 44;
+            cmdGravar.UseVisualStyleBackColor = true;
+            cmdGravar.Click += cmdGravar_Click;
             // 
             // cmdSair
             // 
-            this.cmdSair.BackgroundImage = global::Formularios.Properties.Resources.logout;
-            this.cmdSair.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.cmdSair.Location = new System.Drawing.Point(377, 12);
-            this.cmdSair.Name = "cmdSair";
-            this.cmdSair.Size = new System.Drawing.Size(29, 29);
-            this.cmdSair.TabIndex = 45;
-            this.cmdSair.UseVisualStyleBackColor = true;
-            this.cmdSair.Click += new System.EventHandler(this.cmdSair_Click);
+            cmdSair.BackgroundImage = Properties.Resources.logout;
+            cmdSair.BackgroundImageLayout = ImageLayout.Zoom;
+            cmdSair.Location = new Point(377, 12);
+            cmdSair.Name = "cmdSair";
+            cmdSair.Size = new Size(29, 29);
+            cmdSair.TabIndex = 45;
+            cmdSair.UseVisualStyleBackColor = true;
+            cmdSair.Click += cmdSair_Click;
             // 
             // labEmpresaPadrao
             // 
-            this.labEmpresaPadrao.AutoSize = true;
-            this.labEmpresaPadrao.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labEmpresaPadrao.Location = new System.Drawing.Point(11, 90);
-            this.labEmpresaPadrao.Name = "labEmpresaPadrao";
-            this.labEmpresaPadrao.Size = new System.Drawing.Size(95, 15);
-            this.labEmpresaPadrao.TabIndex = 46;
-            this.labEmpresaPadrao.Text = "Empresa Padrão";
+            labEmpresaPadrao.AutoSize = true;
+            labEmpresaPadrao.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            labEmpresaPadrao.Location = new Point(11, 90);
+            labEmpresaPadrao.Name = "labEmpresaPadrao";
+            labEmpresaPadrao.Size = new Size(95, 15);
+            labEmpresaPadrao.TabIndex = 46;
+            labEmpresaPadrao.Text = "Empresa Padrão";
             // 
             // txtEmpresaPadrao
             // 
-            this.txtEmpresaPadrao.Location = new System.Drawing.Point(11, 108);
-            this.txtEmpresaPadrao.Name = "txtEmpresaPadrao";
-            this.txtEmpresaPadrao.Size = new System.Drawing.Size(395, 23);
-            this.txtEmpresaPadrao.TabIndex = 47;
-            this.txtEmpresaPadrao.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtEmpresaPadrao_KeyDown);
+            txtEmpresaPadrao.Location = new Point(11, 108);
+            txtEmpresaPadrao.Name = "txtEmpresaPadrao";
+            txtEmpresaPadrao.Size = new Size(395, 23);
+            txtEmpresaPadrao.TabIndex = 47;
+            txtEmpresaPadrao.KeyDown += txtEmpresaPadrao_KeyDown;
             // 
             // cmdGravarMetas
             // 
-            this.cmdGravarMetas.BackgroundImage = global::Formularios.Properties.Resources.save;
-            this.cmdGravarMetas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.cmdGravarMetas.Location = new System.Drawing.Point(377, 253);
-            this.cmdGravarMetas.Name = "cmdGravarMetas";
-            this.cmdGravarMetas.Size = new System.Drawing.Size(29, 29);
-            this.cmdGravarMetas.TabIndex = 48;
-            this.cmdGravarMetas.UseVisualStyleBackColor = true;
-            this.cmdGravarMetas.Click += new System.EventHandler(this.cmdGravarMetas_Click);
+            cmdGravarMetas.BackgroundImage = Properties.Resources.save;
+            cmdGravarMetas.BackgroundImageLayout = ImageLayout.Zoom;
+            cmdGravarMetas.Location = new Point(377, 253);
+            cmdGravarMetas.Name = "cmdGravarMetas";
+            cmdGravarMetas.Size = new Size(29, 29);
+            cmdGravarMetas.TabIndex = 48;
+            cmdGravarMetas.UseVisualStyleBackColor = true;
+            cmdGravarMetas.Click += cmdGravarMetas_Click;
             // 
             // frmParametrosdoGestor
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(419, 450);
-            this.ControlBox = false;
-            this.Controls.Add(this.cmdGravarMetas);
-            this.Controls.Add(this.txtEmpresaPadrao);
-            this.Controls.Add(this.labEmpresaPadrao);
-            this.Controls.Add(this.cmdSair);
-            this.Controls.Add(this.cmdGravar);
-            this.Controls.Add(this.grdMetas);
-            this.Controls.Add(this.txtPrazoUltVenda);
-            this.Controls.Add(this.txtPrazoContato);
-            this.Controls.Add(this.grdMetasMensais);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Name = "frmParametrosdoGestor";
-            this.Text = "Parametros do Gestor";
-            this.Load += new System.EventHandler(this.frmParametrosdoGestor_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.grdMetasMensais)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(419, 450);
+            ControlBox = false;
+            Controls.Add(cmdGravarMetas);
+            Controls.Add(txtEmpresaPadrao);
+            Controls.Add(labEmpresaPadrao);
+            Controls.Add(cmdSair);
+            Controls.Add(cmdGravar);
+            Controls.Add(grdMetas);
+            Controls.Add(txtPrazoUltVenda);
+            Controls.Add(txtPrazoContato);
+            Controls.Add(grdMetasMensais);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            Name = "frmParametrosdoGestor";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Parametros do Gestor";
+            Load += frmParametrosdoGestor_Load;
+            ((System.ComponentModel.ISupportInitialize)grdMetasMensais).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

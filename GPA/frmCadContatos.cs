@@ -14,8 +14,8 @@ namespace Formularios
     public partial class frmCadContatos : Form
     {
         string LCaminhoBanco = "";
-        string LCadEmpresa= "";
-        string LID="";
+        string LCadEmpresa = "";
+        string LID = "";
         string LCargo = "";
         string LTelefone = "";
         string LEmail = "";
@@ -56,7 +56,7 @@ namespace Formularios
             grdContatos.Rows.Clear();
             List<BDCadContatos> lstContatos = new List<BDCadContatos>();
             BDCadContatos objContato = new BDCadContatos();
-            lstContatos = objContato.CarregaDados(LCaminhoBanco,LCadEmpresa);
+            lstContatos = objContato.CarregaDados(LCaminhoBanco, LCadEmpresa);
             if (lstContatos.Count > 0)
             {
                 foreach (BDCadContatos item in lstContatos)
@@ -90,12 +90,12 @@ namespace Formularios
             objContato.cpID = LID;
             if (LNome != txtNome.Text) objContato.cpNome = txtNome.Text.ToString();
             if (LCargo != txtCargo.Text) objContato.cpCargo = LCargo;
-            if (LTelefone != txtTelefone.Text) objContato.cpTelefone = txtTelefone.Text.ToString().Replace("(","").Replace(")","").Replace("-","").Replace(" ","");
+            if (LTelefone != txtTelefone.Text) objContato.cpTelefone = txtTelefone.Text.ToString().Replace("(", "").Replace(")", "").Replace("-", "").Replace(" ", "");
             objContato.cpEmpresaDR = LCadEmpresa;
             if (LEmail != txtEmail.Text) objContato.cpEmail = txtEmail.Text.ToString();
 
             DateTime Data;
-            if (DateTime.TryParse(txtAniversario.Text,out Data))
+            if (DateTime.TryParse(txtAniversario.Text, out Data))
             {
 
                 objContato.cpAniversario = txtAniversario.Text;

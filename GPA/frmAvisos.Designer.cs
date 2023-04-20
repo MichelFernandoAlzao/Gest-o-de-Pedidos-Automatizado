@@ -277,6 +277,7 @@
             Controls.Add(cmdSair);
             Controls.Add(cmdGravar);
             Name = "frmAvisos";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Cadastro Avisos";
             Load += frmAvisos_Load;
             ((System.ComponentModel.ISupportInitialize)grdAvisos).EndInit();

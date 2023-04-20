@@ -331,6 +331,7 @@
             Controls.Add(lbCabeçallho);
             Controls.Add(txtEmpresa);
             Name = "frmOcorrencia";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Ocorrencias";
             ((System.ComponentModel.ISupportInitialize)grdProdutos).EndInit();
             ResumeLayout(false);

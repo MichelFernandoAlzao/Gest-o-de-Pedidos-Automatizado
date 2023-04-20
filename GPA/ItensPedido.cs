@@ -362,7 +362,7 @@ namespace Formularios
 
         private void cmdCadProduto_Click(object sender, EventArgs e)
         {
-            frmCadProdutos frmCadProdutos = new frmCadProdutos(LCaminhoBanco,LUsuario);
+            frmCadProdutos frmCadProdutos = new frmCadProdutos(LCaminhoBanco, LUsuario);
             frmCadProdutos.ShowDialog();
         }
     }

@@ -367,6 +367,7 @@
             Controls.Add(txtEmpresa);
             Controls.Add(labEmpresa);
             Name = "frmContatosEmpresas";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Contatos Empresas";
             Load += frmContatosEmpresas_Load;
             ((System.ComponentModel.ISupportInitialize)grdProdSugeridos).EndInit();

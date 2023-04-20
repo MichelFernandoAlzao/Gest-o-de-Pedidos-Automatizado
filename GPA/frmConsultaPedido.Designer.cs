@@ -142,6 +142,7 @@
             Controls.Add(cmdBuscar);
             Controls.Add(lbCabeçallho);
             Name = "frmConsultaPedido";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Consulta Pedido";
             ((System.ComponentModel.ISupportInitialize)grdListaPedido).EndInit();
             ResumeLayout(false);

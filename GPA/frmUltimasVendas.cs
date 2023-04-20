@@ -82,13 +82,13 @@ namespace Formularios
             }
             else
             {
-                if(DateTime.TryParse(txtDataInicio.Text, out DateTime result) == false)
+                if (DateTime.TryParse(txtDataInicio.Text, out DateTime result) == false)
                 {
                     MessageBox.Show("Data inicial em formato invalido", "GPA");
                     txtDataInicio.Text = "";
                     return;
                 }
-                
+
             }
         }
 

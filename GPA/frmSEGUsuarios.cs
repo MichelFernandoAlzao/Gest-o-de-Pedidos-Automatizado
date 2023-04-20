@@ -35,14 +35,14 @@ namespace Formularios
 
         private void frmSEGUsuarios_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         private void AtualizaGrid()
         {
             List<SEGUsuario> lstUsuarios = new List<SEGUsuario>();
             SEGUsuario objUsuario = new SEGUsuario();
-            lstUsuarios =  objUsuario.CarregaDados(LCaminhoBanco, "","","","");
+            lstUsuarios = objUsuario.CarregaDados(LCaminhoBanco, "", "", "", "");
 
             if (lstUsuarios.Count > 0)
             {
@@ -115,8 +115,8 @@ namespace Formularios
                 objInsUsuario.ID = LID;
                 objInsUsuario.AlteraDados(LCaminhoBanco);
             }
-            
-            
+
+
             grdUsuarios.Rows.Clear();
             AtualizaGrid();
         }
@@ -154,7 +154,7 @@ namespace Formularios
         {
             txtNome.Text = LNome;
             txtUsuario.Text = LUsuario;
-            if(LAdministrador == "S")
+            if (LAdministrador == "S")
             {
                 chkAdministrador.Checked = true;
             }

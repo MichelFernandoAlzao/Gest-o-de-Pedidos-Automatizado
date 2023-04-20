@@ -291,13 +291,13 @@ namespace Formularios
 
         private void txtDataContato_Leave(object sender, EventArgs e)
         {
-            if(txtDataContato.Text == "  /  /")
+            if (txtDataContato.Text == "  /  /")
             {
                 txtDataContato.Text = DateTime.Today.ToShortDateString();
             }
-            else   
+            else
             {
-                if(DateTime.TryParse(txtDataContato.Text, out DateTime result) == false)
+                if (DateTime.TryParse(txtDataContato.Text, out DateTime result) == false)
                 {
                     MessageBox.Show("Data em formato invalido", "GPA");
                     txtDataContato.Text = "";

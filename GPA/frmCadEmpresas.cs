@@ -366,17 +366,24 @@ namespace GPA
                     }
                 }
             }
-            if (lstCadastro[0].Vendedor != "")
+            if (lstCadastro[0].Vendedor != null)
             {
-                SEGUsuario objvendedor = new SEGUsuario();
-                List<SEGUsuario> lstUsuarios = objvendedor.CarregaDados(LCaminhoBanco, lstCadastro[0].Vendedor, "", "", "");
-                txtVendedor.Text = lstUsuarios[0].Usuario;
+                if (lstCadastro[0].Vendedor != "")
+                {
+                    SEGUsuario objvendedor = new SEGUsuario();
+                    List<SEGUsuario> lstUsuarios = objvendedor.CarregaDados(LCaminhoBanco, lstCadastro[0].Vendedor, "", "", "");
+                    txtVendedor.Text = lstUsuarios[0].Usuario;
+                }
             }
-
-            if (lstCadastro[0].Aviso != "")
+            
+            if (lstCadastro[0].Aviso != null)
             {
-                txtAviso.Text = lstCadastro[0].Aviso.ToString();
+                if (lstCadastro[0].Aviso != "")
+                {
+                    txtAviso.Text = lstCadastro[0].Aviso.ToString();
+                }
             }
+            
         }
 
         private void labCNPJ_Click(object sender, EventArgs e)

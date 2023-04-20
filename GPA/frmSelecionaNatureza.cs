@@ -19,7 +19,7 @@ namespace Formularios
         private string LUsuario;
         Form LChamador;
 
-        public frmSelecionaNatureza(string inCaminhoBanco,Form frmChamador,string inUsuario)
+        public frmSelecionaNatureza(string inCaminhoBanco, Form frmChamador, string inUsuario)
         {
             InitializeComponent();
             LCaminhoBanco = inCaminhoBanco;
@@ -35,10 +35,10 @@ namespace Formularios
         private void CarregaNatureza(string inID, string inUsuario)
         {
             BDNatOperacao objNatureza = new BDNatOperacao();
-            List<BDNatOperacao> lstNatureza = new List<BDNatOperacao>(); 
+            List<BDNatOperacao> lstNatureza = new List<BDNatOperacao>();
             SEGUsuario objUsuario = new SEGUsuario();
             objUsuario.ID = inUsuario;
-            List<SEGUsuario> lstUsuario = objUsuario.CarregaDados(LCaminhoBanco,inUsuario, "", "", "");
+            List<SEGUsuario> lstUsuario = objUsuario.CarregaDados(LCaminhoBanco, inUsuario, "", "", "");
             if (lstUsuario[0].Administrador == "S")
             {
                 lstNatureza = objNatureza.CarregaDadosTotal(LCaminhoBanco);
@@ -47,8 +47,8 @@ namespace Formularios
             {
                 lstNatureza = objNatureza.CarregaRestritas(LCaminhoBanco);
             }
-            
-            
+
+
             if (lstNatureza.Count > 0)
             {
                 foreach (BDNatOperacao item in lstNatureza)
@@ -97,6 +97,6 @@ namespace Formularios
             this.Close();
         }
 
-        
+
     }
 }

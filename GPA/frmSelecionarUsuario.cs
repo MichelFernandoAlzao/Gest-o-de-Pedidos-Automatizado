@@ -21,7 +21,7 @@ namespace Formularios
         string LCodFabricante;
         Form LChamador;
 
-        public frmSelecionarUsuario(string inCaminhoBanco,Form frmChamador, string inID, string inUsuario)
+        public frmSelecionarUsuario(string inCaminhoBanco, Form frmChamador, string inID, string inUsuario)
         {
             InitializeComponent();
             LCaminhoBanco = inCaminhoBanco;
@@ -32,13 +32,13 @@ namespace Formularios
 
         private void frmSelecionaProduto_Load(object sender, EventArgs e)
         {
-            CarregaProduto(LID,Lusuario);
+            CarregaProduto(LID, Lusuario);
         }
 
         private void CarregaProduto(string inID, string inUsuario)
         {
             SEGUsuario objCadastro = new SEGUsuario();
-            List<SEGUsuario> lstCadastro = objCadastro.CarregaDados(LCaminhoBanco,inID,inUsuario,"","");
+            List<SEGUsuario> lstCadastro = objCadastro.CarregaDados(LCaminhoBanco, inID, inUsuario, "", "");
             if (lstCadastro.Count > 0)
             {
                 foreach (SEGUsuario item in lstCadastro)

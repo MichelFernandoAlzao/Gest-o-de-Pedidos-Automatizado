@@ -599,6 +599,7 @@
             Controls.Add(txtNumeroPedido);
             Controls.Add(lbPedidos);
             Name = "frmPedido";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Pedido";
             Load += Pedido_Load;
             ResumeLayout(false);

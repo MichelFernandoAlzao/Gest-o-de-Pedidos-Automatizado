@@ -435,6 +435,7 @@
             Controls.Add(labRazaoSocial);
             Controls.Add(txtRazaoSocial);
             Name = "frmCadEmpresas";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Cadastro Geral";
             Load += frmCadEmpresas_Load;
             ResumeLayout(false);

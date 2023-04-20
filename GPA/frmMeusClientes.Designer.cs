@@ -143,6 +143,7 @@
             Controls.Add(txtRazaoSocial);
             Controls.Add(grdMeusClientes);
             Name = "frmMeusClientes";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Meus Clientes";
             ((System.ComponentModel.ISupportInitialize)grdMeusClientes).EndInit();
             ResumeLayout(false);

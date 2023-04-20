@@ -507,6 +507,7 @@
             Controls.Add(txtDescProduto);
             Controls.Add(grdItensPedido);
             Name = "frmItensPedido";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "ItensPedido";
             Load += frmItensPedido_Load;
             ((System.ComponentModel.ISupportInitialize)grdItensPedido).EndInit();

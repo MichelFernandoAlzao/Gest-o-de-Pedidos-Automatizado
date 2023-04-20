@@ -491,19 +491,19 @@ namespace Formularios
 
         private void cmdImprimir_Click(object sender, EventArgs e)
         {
-            if(LIDPedido == "")
+            if (LIDPedido == "")
             {
                 MessageBox.Show("Nenhum pedido selecionado", "GPA");
                 return;
             }
             MessageBox.Show("Em desenvolvimento", "GPA");
             return;
-            if(LID != "")
+            if (LID != "")
             {
                 BDItensPedido objItensPedido = new BDItensPedido();
                 objItensPedido.cpPedidoDR = LIDPedido;
                 List<BDItensPedido> lstItensPedido = objItensPedido.CarregaDados(LCaminhoBanco);
-                if(lstItensPedido.Count > 0) 
+                if (lstItensPedido.Count > 0)
                 {
                     string[] Proprelatorio =
                     {
@@ -513,7 +513,7 @@ namespace Formularios
                     frmrelatorio.ShowDialog();
                 }
             }
-            
+
         }
     }
 }

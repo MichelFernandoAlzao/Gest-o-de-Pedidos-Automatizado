@@ -121,6 +121,7 @@
             Controls.Add(CmdSelecionar);
             Controls.Add(grdPedidos);
             Name = "frmSelecionaPedido";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "frmSelecionaPedido";
             Load += frmSelecionaPedido_Load;
             ((System.ComponentModel.ISupportInitialize)grdPedidos).EndInit();

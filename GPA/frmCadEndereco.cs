@@ -26,14 +26,14 @@ namespace Formularios
         string LCobranca = "";
         string LReferencia = "";
 
-        public frmCadEndereco(string inCaminhoBanco,string inIDEmpresa)
+        public frmCadEndereco(string inCaminhoBanco, string inIDEmpresa)
         {
             InitializeComponent();
             LCaminhoBanco = inCaminhoBanco;
             LCadEmpresa = inIDEmpresa;
             grdEnderecos.Rows.Clear();
             AtualizaGrid();
-            if(grdEnderecos.Rows.Count > 0 )
+            if (grdEnderecos.Rows.Count > 0)
             {
                 LID = grdEnderecos.Rows[0].Cells[0].Value.ToString();
                 LIdentificacao = grdEnderecos.Rows[0].Cells[1].Value.ToString();
@@ -46,7 +46,7 @@ namespace Formularios
                 LFisico = grdEnderecos.Rows[0].Cells[8].Value.ToString();
                 LCobranca = grdEnderecos.Rows[0].Cells[9].Value.ToString();
             }
-            
+
         }
 
         private void cmdNovo_Click(object sender, EventArgs e)
@@ -76,7 +76,7 @@ namespace Formularios
 
             List<BDCadEnderecos> lstEnderecos = new List<BDCadEnderecos>();
             BDCadEnderecos objEndereco = new BDCadEnderecos();
-            lstEnderecos = objEndereco.CarregaDados(LCaminhoBanco,LCadEmpresa);
+            lstEnderecos = objEndereco.CarregaDados(LCaminhoBanco, LCadEmpresa);
             if (lstEnderecos.Count > 0)
             {
                 foreach (BDCadEnderecos item in lstEnderecos)

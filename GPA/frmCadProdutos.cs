@@ -29,7 +29,7 @@ namespace Formularios
         public string LRazaoSocial = "";
         string LUsuario = "";
 
-        public frmCadProdutos(string inCaminhoBanco,string inUsuario)
+        public frmCadProdutos(string inCaminhoBanco, string inUsuario)
         {
             LCaminhoBanco = inCaminhoBanco;
             LUsuario = inUsuario;
@@ -135,7 +135,7 @@ namespace Formularios
                     MessageBox.Show("Digite um minimo de 5 caracteres!", "GPA");
                     return;
                 }
-                frmSelecionaProduto objForm = new frmSelecionaProduto(LCaminhoBanco,this, LIDProduto, txtDescricao.Text, LFabricante, txtCodFabricante.Text);
+                frmSelecionaProduto objForm = new frmSelecionaProduto(LCaminhoBanco, this, LIDProduto, txtDescricao.Text, LFabricante, txtCodFabricante.Text);
                 objForm.ShowDialog();
                 if (LIDProduto != "")
                 {
@@ -196,7 +196,7 @@ namespace Formularios
         private void cmdGravar_Click(object sender, EventArgs e)
         {
             BDCadProdutos objProduto = new BDCadProdutos();
-            if(txtDescricao.Text == "")
+            if (txtDescricao.Text == "")
             {
                 MessageBox.Show("Nenhuma descrição informada!", "GPA");
                 return;
@@ -205,7 +205,7 @@ namespace Formularios
             objProduto.cpDataCadastro = DateTime.Today.ToString().Substring(0, 10);
             objProduto.cpCodigoFabricante = txtCodFabricante.Text;
             objProduto.cpDescFornecedor = txtDescFornecedor.Text;
-            if(LFabricante == "")
+            if (LFabricante == "")
             {
                 MessageBox.Show("Nenhum Fabricante selecionado!", "GPA");
                 return;
@@ -268,11 +268,11 @@ namespace Formularios
             }
             BDPedido objPedido = new BDPedido();
             objPedido.cpEmpresaDR = LID;
-            List<BDPedido> lstPedidos = objPedido.CarregaDadosUltVendaProduto(LCaminhoBanco,LIDProduto);
+            List<BDPedido> lstPedidos = objPedido.CarregaDadosUltVendaProduto(LCaminhoBanco, LIDProduto);
 
-            if(lstPedidos.Count > 0)
+            if (lstPedidos.Count > 0)
             {
-                frmPedido frmpedido = new frmPedido(LCaminhoBanco,LUsuario, lstPedidos[0].cpID);
+                frmPedido frmpedido = new frmPedido(LCaminhoBanco, LUsuario, lstPedidos[0].cpID);
                 frmpedido.ShowDialog();
             }
             else

@@ -173,6 +173,7 @@
             Controls.Add(labEmpresa);
             Controls.Add(txtEmpresa);
             Name = "frmAgendarContato";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Agendar Contato";
             ResumeLayout(false);
             PerformLayout();

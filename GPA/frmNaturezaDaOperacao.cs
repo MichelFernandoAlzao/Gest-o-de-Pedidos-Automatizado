@@ -22,9 +22,9 @@ namespace Formularios
         public string LInterno = "";
         public string LRestrito = "";
         string LUsuario = "";
-        public frmNaturezaDaOperacao(string inCmainhoBanco,string inUsuario)
+        public frmNaturezaDaOperacao(string inCmainhoBanco, string inUsuario)
         {
-            LCaminhoBanco=inCmainhoBanco;
+            LCaminhoBanco = inCmainhoBanco;
             InitializeComponent();
             LUsuario = inUsuario;
             TestaUsuario();
@@ -39,7 +39,7 @@ namespace Formularios
                 LInterno = grdNatOperacao.SelectedRows[0].Cells[5].Value.ToString();
                 LRestrito = grdNatOperacao.SelectedRows[0].Cells[6].Value.ToString();
             }
-            
+
 
         }
 
@@ -47,7 +47,7 @@ namespace Formularios
         {
             SEGUsuario objUsuario = new SEGUsuario();
             objUsuario.ID = LUsuario;
-            List<SEGUsuario> lstUsuario = objUsuario.CarregaDados(LCaminhoBanco, LUsuario,"","","");
+            List<SEGUsuario> lstUsuario = objUsuario.CarregaDados(LCaminhoBanco, LUsuario, "", "", "");
             if (lstUsuario[0].GerenciaCadastros != "S")
             {
                 MessageBox.Show("Usuario sem permissão para alterar/Cadastrar Naturezas", "GPA");
@@ -70,7 +70,7 @@ namespace Formularios
             LBrinde = "";
             LInterno = "";
             LRestrito = "";
-        
+
         }
 
         private void cmdExcluir_Click(object sender, EventArgs e)
@@ -84,33 +84,33 @@ namespace Formularios
         {
             BDNatOperacao objNatureza = new BDNatOperacao();
             objNatureza.cpDescricao = txtDescricao.Text;
-            if(chkVenda.Checked == true)
+            if (chkVenda.Checked == true)
             {
                 objNatureza.cpVenda = "S";
             }
             else
             {
-                objNatureza.cpVenda="N";
+                objNatureza.cpVenda = "N";
             }
-            if(chkBonificacao.Checked == true)
+            if (chkBonificacao.Checked == true)
             {
                 objNatureza.cpBonificacao = "S";
             }
             else
             {
-                objNatureza.cpBonificacao="N";
+                objNatureza.cpBonificacao = "N";
             }
-            if(chkBrinde.Checked == true)
+            if (chkBrinde.Checked == true)
             {
                 objNatureza.cpBrinde = "S";
             }
             else
             {
-                objNatureza.cpBrinde ="N";
+                objNatureza.cpBrinde = "N";
             }
-            if(chkInterno.Checked == true)
+            if (chkInterno.Checked == true)
             {
-                objNatureza.cpInterno="S";
+                objNatureza.cpInterno = "S";
             }
             else
             {
@@ -125,7 +125,7 @@ namespace Formularios
                 objNatureza.cpRestrito = "N";
             }
 
-            if(LID == "")
+            if (LID == "")
             {
                 objNatureza.InsereDados(LCaminhoBanco);
             }
@@ -151,7 +151,7 @@ namespace Formularios
 
         private void CarregaGrid()
         {
-            
+
             BDNatOperacao objCadastro = new BDNatOperacao();
             List<BDNatOperacao> lstCadastro = objCadastro.CarregaDadosTotal(LCaminhoBanco);
             if (lstCadastro.Count > 0)
@@ -183,7 +183,7 @@ namespace Formularios
             LBrinde = grdNatOperacao.SelectedRows[0].Cells[4].Value.ToString();
             LInterno = grdNatOperacao.SelectedRows[0].Cells[5].Value.ToString();
             LRestrito = grdNatOperacao.SelectedRows[0].Cells[6].Value.ToString();
-            
+
             MostraDados();
         }
 
@@ -191,7 +191,7 @@ namespace Formularios
         {
             txtDescricao.Text = LDescricao;
 
-            if(LVenda == "S")
+            if (LVenda == "S")
             {
                 chkVenda.Checked = true;
             }
@@ -200,19 +200,19 @@ namespace Formularios
                 chkVenda.Checked = false;
             }
 
-            if(LBonificacao == "S")
+            if (LBonificacao == "S")
             {
                 chkBonificacao.Checked = true;
             }
             else
             {
-                chkBonificacao.Checked= false;
+                chkBonificacao.Checked = false;
             }
-            if(LBrinde == "S")
+            if (LBrinde == "S")
             {
                 chkBrinde.Checked = true;
             }
-            if(LInterno == "S")
+            if (LInterno == "S")
             {
                 chkInterno.Checked = true;
             }
@@ -220,7 +220,7 @@ namespace Formularios
             {
                 chkInterno.Checked = false;
             }
-            
+
         }
 
         private void cmdSair_Click(object sender, EventArgs e)

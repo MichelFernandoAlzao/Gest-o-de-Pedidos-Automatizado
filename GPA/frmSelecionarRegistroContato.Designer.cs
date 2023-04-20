@@ -121,6 +121,7 @@
             Controls.Add(CmdSelecionar);
             Controls.Add(grdRegContatos);
             Name = "frmSelecionarRegistroContato";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "frmSelecionarRegistroContato";
             Load += frmSelecionarRegistroContato_Load;
             ((System.ComponentModel.ISupportInitialize)grdRegContatos).EndInit();
