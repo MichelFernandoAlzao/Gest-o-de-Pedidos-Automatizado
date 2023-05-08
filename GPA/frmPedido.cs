@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -144,6 +145,8 @@ namespace Formularios
             {
                 chkConcluido.Checked = false;
             }
+            txtValidadeProposta.Text = lstPedido[0].cpValidadeProposta.ToString();
+            txtFatMinimo.Text = lstPedido[0].cpVlrFatMinimo.ToString();
 
         }
         private void cmdItensPedido_Click(object sender, EventArgs e)
@@ -316,6 +319,10 @@ namespace Formularios
             {
                 objPedido.cpConcluido = "N";
             }
+
+            objPedido.cpValidadeProposta = txtValidadeProposta.Text;
+            objPedido.cpVlrFatMinimo = txtFatMinimo.Text;
+
             if (LIDPedido == "")
             {
                 objPedido.InsereDados(LCaminhoBanco);
@@ -324,6 +331,7 @@ namespace Formularios
             {
                 objPedido.AlteraDados(LCaminhoBanco);
             }
+
 
             LIDPedido = objPedido.cpID;
 
@@ -496,9 +504,9 @@ namespace Formularios
                 MessageBox.Show("Nenhum pedido selecionado", "GPA");
                 return;
             }
-            MessageBox.Show("Em desenvolvimento", "GPA");
-            return;
-            if (LID != "")
+            //MessageBox.Show("Em desenvolvimento", "GPA");
+            //return;
+            if (LIDPedido != "")
             {
                 BDItensPedido objItensPedido = new BDItensPedido();
                 objItensPedido.cpPedidoDR = LIDPedido;
@@ -507,13 +515,34 @@ namespace Formularios
                 {
                     string[] Proprelatorio =
                     {
-                        "Formularios.Relatorios.Pedido.rdlc"
+                        "Formularios.Relatorios.Pedido.rdlc",
+                        LIDPedido
                     };
-                    frmRelatorios frmrelatorio = new frmRelatorios(Proprelatorio);
+                    frmRelatorios frmrelatorio = new frmRelatorios(LCaminhoBanco, Proprelatorio);
                     frmrelatorio.ShowDialog();
                 }
             }
 
+        }
+
+        private void txtFatMinimo_Leave(object sender, EventArgs e)
+        {
+            double VlrFatMinimo = Convert.ToDouble(txtFatMinimo.Text = txtFatMinimo.Text);
+            txtFatMinimo.Text = VlrFatMinimo.ToString("N2");
+        }
+
+        private void txtFatMinimo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != ','))
+            {
+                e.Handled = true;
+                MessageBox.Show("este campo aceita somente numero e virgula");
+            }
+            if ((e.KeyChar == ',') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+                MessageBox.Show("este campo aceita somente uma virgula");
+            }
         }
     }
 }

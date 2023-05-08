@@ -77,6 +77,10 @@
             txtDataConfirmacao = new MaskedTextBox();
             txtDataSolicitacao = new MaskedTextBox();
             cmdImprimir = new Button();
+            txtValidadeProposta = new MaskedTextBox();
+            labValidadeProp = new Label();
+            labFatMinimo = new Label();
+            txtFatMinimo = new TextBox();
             SuspendLayout();
             // 
             // lbPedidos
@@ -350,7 +354,7 @@
             // 
             // txtObservacao
             // 
-            txtObservacao.Location = new Point(12, 254);
+            txtObservacao.Location = new Point(12, 300);
             txtObservacao.Multiline = true;
             txtObservacao.Name = "txtObservacao";
             txtObservacao.Size = new Size(655, 184);
@@ -360,7 +364,7 @@
             // 
             label17.AutoSize = true;
             label17.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label17.Location = new Point(15, 236);
+            label17.Location = new Point(11, 280);
             label17.Name = "label17";
             label17.Size = new Size(78, 15);
             label17.TabIndex = 33;
@@ -506,7 +510,7 @@
             // chkConcluido
             // 
             chkConcluido.AutoSize = true;
-            chkConcluido.Location = new Point(15, 214);
+            chkConcluido.Location = new Point(12, 254);
             chkConcluido.Name = "chkConcluido";
             chkConcluido.Size = new Size(71, 19);
             chkConcluido.TabIndex = 48;
@@ -544,12 +548,52 @@
             cmdImprimir.UseVisualStyleBackColor = true;
             cmdImprimir.Click += cmdImprimir_Click;
             // 
+            // txtValidadeProposta
+            // 
+            txtValidadeProposta.Location = new Point(12, 225);
+            txtValidadeProposta.Mask = "00/00/0000";
+            txtValidadeProposta.Name = "txtValidadeProposta";
+            txtValidadeProposta.Size = new Size(100, 23);
+            txtValidadeProposta.TabIndex = 53;
+            txtValidadeProposta.ValidatingType = typeof(DateTime);
+            // 
+            // labValidadeProp
+            // 
+            labValidadeProp.AutoSize = true;
+            labValidadeProp.Location = new Point(12, 206);
+            labValidadeProp.Name = "labValidadeProp";
+            labValidadeProp.Size = new Size(101, 15);
+            labValidadeProp.TabIndex = 52;
+            labValidadeProp.Text = "Validade Proposta";
+            // 
+            // labFatMinimo
+            // 
+            labFatMinimo.AutoSize = true;
+            labFatMinimo.Location = new Point(121, 210);
+            labFatMinimo.Name = "labFatMinimo";
+            labFatMinimo.Size = new Size(120, 15);
+            labFatMinimo.TabIndex = 55;
+            labFatMinimo.Text = "Faturamento Minimo";
+            // 
+            // txtFatMinimo
+            // 
+            txtFatMinimo.Location = new Point(121, 228);
+            txtFatMinimo.Name = "txtFatMinimo";
+            txtFatMinimo.Size = new Size(120, 23);
+            txtFatMinimo.TabIndex = 54;
+            txtFatMinimo.KeyPress += txtFatMinimo_KeyPress;
+            txtFatMinimo.Leave += txtFatMinimo_Leave;
+            // 
             // frmPedido
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(800, 496);
             ControlBox = false;
+            Controls.Add(labFatMinimo);
+            Controls.Add(txtFatMinimo);
+            Controls.Add(txtValidadeProposta);
+            Controls.Add(labValidadeProp);
             Controls.Add(cmdImprimir);
             Controls.Add(txtDataSolicitacao);
             Controls.Add(txtDataConfirmacao);
@@ -657,5 +701,9 @@
         private MaskedTextBox txtDataConfirmacao;
         private MaskedTextBox txtDataSolicitacao;
         private Button cmdImprimir;
+        private MaskedTextBox txtValidadeProposta;
+        private Label labValidadeProp;
+        private Label labFatMinimo;
+        private TextBox txtFatMinimo;
     }
 }

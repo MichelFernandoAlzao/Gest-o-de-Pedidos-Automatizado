@@ -24,8 +24,9 @@ namespace Camada_Negocios
             return ValorTotal;
         }
 
-        public void CalculaTotalItens(string inPedidoDR)
+        public void CalculaTotalItens(string inPedidoDR,string inCaminhoBanco)
         {
+            LCaminhoBanco = inCaminhoBanco;
             double pTotalPedido = 0;
             BDItensPedido objItens = new BDItensPedido();
             objItens.cpPedidoDR = inPedidoDR;
@@ -44,8 +45,9 @@ namespace Camada_Negocios
             }
         }
 
-        public void CalculaTotalFaturando(string inPedidoDR)
+        public void CalculaTotalFaturando(string inPedidoDR,string inCaminhoBanco)
         {
+            LCaminhoBanco = inCaminhoBanco;
             double pTotalFaturando = 0;
             BDItensPedido objItens = new BDItensPedido();
             objItens.cpPedidoDR = inPedidoDR;

@@ -39,13 +39,14 @@
             chkOperacional = new CheckBox();
             chkSeguranca = new CheckBox();
             chkFinanceiro = new CheckBox();
+            cboServidor = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // txtUsuario
             // 
             txtUsuario.CharacterCasing = CharacterCasing.Upper;
-            txtUsuario.Location = new Point(40, 207);
+            txtUsuario.Location = new Point(40, 203);
             txtUsuario.Name = "txtUsuario";
             txtUsuario.Size = new Size(300, 23);
             txtUsuario.TabIndex = 0;
@@ -53,7 +54,7 @@
             // 
             // txtSenha
             // 
-            txtSenha.Location = new Point(40, 269);
+            txtSenha.Location = new Point(40, 250);
             txtSenha.Name = "txtSenha";
             txtSenha.PasswordChar = '*';
             txtSenha.Size = new Size(300, 23);
@@ -63,7 +64,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(40, 189);
+            label1.Location = new Point(40, 185);
             label1.Name = "label1";
             label1.Size = new Size(47, 15);
             label1.TabIndex = 2;
@@ -72,7 +73,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(40, 251);
+            label2.Location = new Point(40, 232);
             label2.Name = "label2";
             label2.Size = new Size(39, 15);
             label2.TabIndex = 3;
@@ -80,7 +81,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(86, 325);
+            button1.Location = new Point(91, 355);
             button1.Name = "button1";
             button1.Size = new Size(209, 38);
             button1.TabIndex = 4;
@@ -90,7 +91,7 @@
             // 
             // button2
             // 
-            button2.Location = new Point(86, 380);
+            button2.Location = new Point(92, 400);
             button2.Name = "button2";
             button2.Size = new Size(209, 38);
             button2.TabIndex = 6;
@@ -112,7 +113,7 @@
             // chkOperacional
             // 
             chkOperacional.AutoSize = true;
-            chkOperacional.Location = new Point(40, 300);
+            chkOperacional.Location = new Point(40, 281);
             chkOperacional.Name = "chkOperacional";
             chkOperacional.Size = new Size(90, 19);
             chkOperacional.TabIndex = 8;
@@ -123,7 +124,7 @@
             // chkSeguranca
             // 
             chkSeguranca.AutoSize = true;
-            chkSeguranca.Location = new Point(259, 300);
+            chkSeguranca.Location = new Point(259, 281);
             chkSeguranca.Name = "chkSeguranca";
             chkSeguranca.Size = new Size(81, 19);
             chkSeguranca.TabIndex = 9;
@@ -134,7 +135,7 @@
             // chkFinanceiro
             // 
             chkFinanceiro.AutoSize = true;
-            chkFinanceiro.Location = new Point(154, 300);
+            chkFinanceiro.Location = new Point(154, 281);
             chkFinanceiro.Name = "chkFinanceiro";
             chkFinanceiro.Size = new Size(81, 19);
             chkFinanceiro.TabIndex = 10;
@@ -142,12 +143,21 @@
             chkFinanceiro.UseVisualStyleBackColor = true;
             chkFinanceiro.MouseClick += chkFinanceiro_MouseClick;
             // 
+            // cboServidor
+            // 
+            cboServidor.FormattingEnabled = true;
+            cboServidor.Location = new Point(91, 326);
+            cboServidor.Name = "cboServidor";
+            cboServidor.Size = new Size(210, 23);
+            cboServidor.TabIndex = 11;
+            // 
             // frmEntrada
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(384, 450);
             ControlBox = false;
+            Controls.Add(cboServidor);
             Controls.Add(chkFinanceiro);
             Controls.Add(chkSeguranca);
             Controls.Add(chkOperacional);
@@ -179,5 +189,6 @@
         private CheckBox chkOperacional;
         private CheckBox chkSeguranca;
         private CheckBox chkFinanceiro;
+        private ComboBox cboServidor;
     }
 }

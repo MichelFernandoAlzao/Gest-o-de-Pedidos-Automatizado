@@ -1,9 +1,14 @@
-﻿using System;
+﻿using Camada_Relatorios;
+using CarregaRelatorios;
+using Microsoft.Reporting.WinForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.Intrinsics.Arm;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -13,20 +18,37 @@ namespace Formularios
 {
     public partial class frmRelatorios : Form
     {
+        string LCaminhoBanco = "";
         string[] ParametrosRel;
-        public frmRelatorios(string[] inParametrosRel)
+        DataTable objDatTableRel = new DataTable();
+        public frmRelatorios(string inCaminhoBanco, string[] inParametrosRel)
         {
+            LCaminhoBanco = inCaminhoBanco;
+            string pRelatorio = inParametrosRel[0];
+            List<RelatorioPedido> lstPedido = new List<RelatorioPedido>();
             ParametrosRel = inParametrosRel;
             InitializeComponent();
 
-            ReportViewer.LocalReport.ReportEmbeddedResource = "Formularios.Relatorios.Pedido.rdlc";
-
+            if (pRelatorio == "Formularios.Relatorios.Pedido.rdlc")
+            {
+                CarregaRelatorio objRelPedido = new CarregaRelatorio();
+                lstPedido = objRelPedido.CarregaRelatorioRDLC(LCaminhoBanco, ParametrosRel[1]);
+                
+                //var fonteDeDados = new Microsoft.Reporting.WinForms.ReportDataSource();
+                ReportDataSource fonteDeDados = new ReportDataSource();
+                fonteDeDados.Name = "Pedido";
+                fonteDeDados.Value = lstPedido;
+                this.ReportViewer.LocalReport.DataSources.Clear();
+                this.ReportViewer.LocalReport.DataSources.Add(fonteDeDados);
+                ReportViewer.LocalReport.ReportEmbeddedResource = pRelatorio;
+                this.Controls.Add(this.ReportViewer);
+            }
             ReportViewer.RefreshReport();
         }
 
         private void frmRelatorios_Load(object sender, EventArgs e)
         {
-
+            
         }
     }
 }

@@ -24,8 +24,16 @@ namespace Formularios
 
         public void frmEntrada_Load(object sender, EventArgs e)
         {
-            var data = File.ReadAllText("C:\\GPA\\Conexoes.ini");
-            LCaminhoBanco = data;
+            string[] Servidor = File.ReadAllLines("C:\\GPA\\Conexoes.ini");
+            cboServidor.Items.Clear();
+            foreach (string ServidorSerie in Servidor)
+            {
+                cboServidor.Items.Add(ServidorSerie);
+            }
+            if(cboServidor.Items.Count > 0)
+            {
+                cboServidor.SelectedIndex = 0;
+            }
             chkOperacional.Checked = true;
         }
 
@@ -53,7 +61,13 @@ namespace Formularios
         }
         private void Entrar()
         {
-
+            if(cboServidor.SelectedIndex == -1)
+            {
+                MessageBox.Show("Nenhum servidor selecionado","GPA");
+                return;
+            }
+            int i = cboServidor.SelectedItem.ToString().IndexOf("|");
+            LCaminhoBanco = cboServidor.SelectedItem.ToString().Remove(0,i+1);
             if (chkOperacional.Checked == true)
             {
 
@@ -65,7 +79,11 @@ namespace Formularios
                 List<SEGUsuario> lstUsuario = new List<SEGUsuario>();
                 SEGUsuario objUsuario = new SEGUsuario();
                 lstUsuario = objUsuario.CarregaDados(LCaminhoBanco, "", txtUsuario.Text.ToUpper(), "", txtSenha.Text.ToUpper());
-
+                if(objUsuario.MsgErro != "")
+                {
+                    MessageBox.Show(objUsuario.MsgErro.ToString(),"GPA");
+                    return;
+                }
                 if (lstUsuario.Count == 0)
                 {
                     MessageBox.Show("Usuario ou senha invalidos", "GPA", MessageBoxButtons.OK, MessageBoxIcon.Warning);

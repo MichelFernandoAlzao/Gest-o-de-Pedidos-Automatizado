@@ -7,7 +7,14 @@
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
     <StartupObject>GPA.Program</StartupObject>
+    <ApplicationIcon>Logo.ico</ApplicationIcon>
+    <AssemblyName>GPA</AssemblyName>
+    <PackageIcon>Logo.jpg</PackageIcon>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="Logo.ico" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="ReportViewerCore.WinForms" Version="15.1.17" />
@@ -16,13 +23,21 @@
   <ItemGroup>
     <ProjectReference Include="..\Banco de Dados\Banco de Dados.csproj" />
     <ProjectReference Include="..\Camada Negocios\Camada Negocios.csproj" />
-    <ProjectReference Include="..\Relatorios\Relatorios.csproj" />
+    <ProjectReference Include="..\Camada Relatorios\Camada Relatorios.csproj" />
+    <ProjectReference Include="..\CarregaRelatorios\CarregaRelatorios.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="Relatorios\Pedido.rdlc">
       <CustomToolNamespace>Relatorios</CustomToolNamespace>
     </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\..\..\Desktop\Logo.jpg">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
 
   <ItemGroup>

@@ -169,6 +169,11 @@ namespace Formularios
             {
                 objEndereco.AlteraDados(LCaminhoBanco);
             }
+            if(objEndereco.MsgErro != "")
+            {
+                MessageBox.Show(objEndereco.MsgErro.ToString(),"GPA");
+                return;
+            }
             grdEnderecos.Rows.Clear();
             AtualizaGrid();
             MostraDados();

@@ -19,6 +19,8 @@ namespace Banco_de_Dados
         public string cpDataConfirmacao { get; set; }
         public string cpNatureOperacaoDR { get; set; }
         public string cpObservacoes { get; set; }
+        public string cpValidadeProposta { get; set; }
+        public string cpVlrFatMinimo { get; set; }
         public string cpVlrTotalPedido { get; set; }
         public string cpVlrItensFaturando { get; set; }
         public string cpVlrImpostos { get; set; }
@@ -94,9 +96,28 @@ namespace Banco_de_Dados
                     sqlconteudo += "'" + cpVlrItensFaturando + "',";
                 }
             }
-            
+            if (cpValidadeProposta != null)
+            {
+                if (cpValidadeProposta != "")
+                {
+                    sqlCampos += "OPPValidadeProposta, ";
 
-            if(cpVlrImpostos != null)
+                    sqlconteudo += "'" + cpValidadeProposta + "',";
+                }
+            }
+
+            if (cpVlrFatMinimo != null)
+            {
+                if (cpVlrFatMinimo != "")
+                {
+                    sqlCampos += "OPPVlrFatMinimo, ";
+
+                    sqlconteudo += "'" + cpVlrFatMinimo + "',";
+                }
+            }
+
+
+            if (cpVlrImpostos != null)
             {
                 if (cpVlrImpostos != "")
                 {
@@ -196,6 +217,14 @@ namespace Banco_de_Dados
             if (cpVlrImpostos != null)
             {
                 sqlconteudo += "OPPVlrimpostos = '" + cpVlrImpostos.ToString() + "',";
+            }
+            if (cpVlrFatMinimo != null)
+            {
+                sqlconteudo += "OPPVlrFatMinimo = '" + cpVlrFatMinimo.ToString().Replace(",",".") + "',";
+            }
+            if (cpValidadeProposta != null)
+            {
+                sqlconteudo += "OPPValidadeProposta = '" + cpValidadeProposta.ToString() + "',";
             }
             if (cpComissao != null)
             {
@@ -303,6 +332,8 @@ namespace Banco_de_Dados
                     bDPedido.cpVlrItensFaturando = dr["OPPVlritensFaturando"].ToString();
                     bDPedido.cpVlrImpostos = dr["OPPVlrimpostos"].ToString();
                     bDPedido.cpComissao = dr["OPPComissao"].ToString();
+                    bDPedido.cpVlrFatMinimo = dr["OPPVlrFatMinimo"].ToString();
+                    bDPedido.cpValidadeProposta = dr["OPPValidadeProposta"].ToString();
                     bDPedido.cpVendedorDR = dr["OPPVendedorDR"].ToString();
                     bDPedido.cpConcluido = dr["OPPConcluido"].ToString();
 
