@@ -112,7 +112,7 @@ namespace Banco_de_Dados
                 {
                     sqlCampos += "OPPVlrFatMinimo, ";
 
-                    sqlconteudo += "'" + cpVlrFatMinimo + "',";
+                    sqlconteudo += "'" + cpVlrFatMinimo.Replace(",",".") + "',";
                 }
             }
 

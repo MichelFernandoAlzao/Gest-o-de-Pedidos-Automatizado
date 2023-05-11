@@ -304,7 +304,7 @@ namespace Formularios
                 MessageBox.Show("Natureza não selcionada", "GPA");
                 return;
             }
-            objPedido.cpNatureOperacaoDR = LIDNaturezaOperacao.ToString();
+            objPedido.cpNatureOperacaoDR = LIDNaturezaOperacao;
             objPedido.cpVendedorDR = LUsuario;
             if (txtObservacao.Text != "")
             {
@@ -319,9 +319,15 @@ namespace Formularios
             {
                 objPedido.cpConcluido = "N";
             }
-
-            objPedido.cpValidadeProposta = txtValidadeProposta.Text;
-            objPedido.cpVlrFatMinimo = txtFatMinimo.Text;
+            if (txtValidadeProposta.Text.Replace(" ", "").Replace("/", "") != "")
+            {
+                objPedido.cpValidadeProposta = txtValidadeProposta.Text;
+            }
+            if(txtFatMinimo.Text != "")
+            {
+                objPedido.cpVlrFatMinimo = txtFatMinimo.Text;
+            }
+            
 
             if (LIDPedido == "")
             {
@@ -335,24 +341,33 @@ namespace Formularios
 
             LIDPedido = objPedido.cpID;
 
-            if (LIDPedido != "")
+            if (LIDPedido != null)
             {
-
-                txtNumeroPedido.Text = LIDPedido;
-                txtNumeroPedido.Enabled = false;
-                BDPedido objCarregaPedido = new BDPedido();
-                List<BDPedido> lstPedido = objCarregaPedido.CarregaDados(LCaminhoBanco, LIDPedido, "", LUsuario);
-                LID = lstPedido[0].cpEmpresaDR;
-                LDataSolcitacao = lstPedido[0].cpDataContato.Substring(0, 10);
-                if (lstPedido[0].cpDataConfirmacao != "")
+                if (LIDPedido != "")
                 {
-                    LDataConfirmacao = lstPedido[0].cpDataConfirmacao.Substring(0, 10);
+                    txtNumeroPedido.Text = LIDPedido;
+                    txtNumeroPedido.Enabled = false;
+                    BDPedido objCarregaPedido = new BDPedido();
+                    List<BDPedido> lstPedido = objCarregaPedido.CarregaDados(LCaminhoBanco, LIDPedido, "", LUsuario);
+                    LID = lstPedido[0].cpEmpresaDR;
+                    LDataSolcitacao = lstPedido[0].cpDataContato.Substring(0, 10);
+                    if (lstPedido[0].cpDataConfirmacao != "")
+                    {
+                        LDataConfirmacao = lstPedido[0].cpDataConfirmacao.Substring(0, 10);
+                    }
+                    LIDNaturezaOperacao = lstPedido[0].cpNatureOperacaoDR;
+                    //if(lstPedido[0].cpObservacoes != null)
+                    //{
+                    //    if(lstPedido[0].cpObservacoes != "")
+                    //    {
+                    //        LObservacao = lstPedido[0].cpObservacoes;
+                    //    }
+                    //}
+                    txtxNatOperacao.Enabled = false;
+                    MessageBox.Show("Pedido Gravado", "GPA");
+                    MostraDados();
                 }
-                LIDNaturezaOperacao = lstPedido[0].cpNatureOperacaoDR;
-                LObservacao = lstPedido[0].cpObservacoes;
-                txtxNatOperacao.Enabled = false;
-                MessageBox.Show("Pedido Gravado", "GPA");
-                MostraDados();
+                  
             }
 
 
@@ -527,6 +542,7 @@ namespace Formularios
 
         private void txtFatMinimo_Leave(object sender, EventArgs e)
         {
+            if (txtFatMinimo.Text == "") return;
             double VlrFatMinimo = Convert.ToDouble(txtFatMinimo.Text = txtFatMinimo.Text);
             txtFatMinimo.Text = VlrFatMinimo.ToString("N2");
         }
