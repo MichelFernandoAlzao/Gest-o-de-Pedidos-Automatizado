@@ -64,7 +64,7 @@
             label18 = new Label();
             label19 = new Label();
             label20 = new Label();
-            textBox10 = new TextBox();
+            txtImpostos = new TextBox();
             label21 = new Label();
             textBox11 = new TextBox();
             cmdExcluir = new Button();
@@ -73,7 +73,6 @@
             cmdSair = new Button();
             labVendedor = new Label();
             txtVendedor = new TextBox();
-            chkConcluido = new CheckBox();
             txtDataConfirmacao = new MaskedTextBox();
             txtDataSolicitacao = new MaskedTextBox();
             cmdImprimir = new Button();
@@ -81,6 +80,13 @@
             labValidadeProp = new Label();
             labFatMinimo = new Label();
             txtFatMinimo = new TextBox();
+            txtPrazoEntrega = new MaskedTextBox();
+            label2 = new Label();
+            label3 = new Label();
+            txtPrazoPagamento = new TextBox();
+            chkImpInclu = new CheckBox();
+            cboStatus = new ComboBox();
+            labStatus = new Label();
             SuspendLayout();
             // 
             // lbPedidos
@@ -160,7 +166,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(118, 157);
+            label1.Location = new Point(115, 156);
             label1.Name = "label1";
             label1.Size = new Size(103, 15);
             label1.TabIndex = 12;
@@ -170,7 +176,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.Location = new Point(454, 96);
+            label4.Location = new Point(283, 118);
             label4.Name = "label4";
             label4.Size = new Size(125, 15);
             label4.TabIndex = 13;
@@ -207,7 +213,7 @@
             // 
             // cmdItensPedido
             // 
-            cmdItensPedido.Location = new Point(673, 415);
+            cmdItensPedido.Location = new Point(674, 205);
             cmdItensPedido.Name = "cmdItensPedido";
             cmdItensPedido.Size = new Size(115, 23);
             cmdItensPedido.TabIndex = 17;
@@ -227,16 +233,16 @@
             // 
             // txtxNatOperacao
             // 
-            txtxNatOperacao.Location = new Point(237, 175);
+            txtxNatOperacao.Location = new Point(224, 176);
             txtxNatOperacao.Name = "txtxNatOperacao";
-            txtxNatOperacao.Size = new Size(430, 23);
+            txtxNatOperacao.Size = new Size(440, 23);
             txtxNatOperacao.TabIndex = 19;
             txtxNatOperacao.KeyDown += txtxNatOperacao_KeyDown;
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(237, 157);
+            label5.Location = new Point(224, 158);
             label5.Name = "label5";
             label5.Size = new Size(147, 15);
             label5.TabIndex = 20;
@@ -246,7 +252,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label6.Location = new Point(296, 96);
+            label6.Location = new Point(482, 96);
             label6.Name = "label6";
             label6.Size = new Size(65, 15);
             label6.TabIndex = 21;
@@ -276,7 +282,7 @@
             // 
             label9.AutoSize = true;
             label9.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label9.Location = new Point(118, 118);
+            label9.Location = new Point(121, 118);
             label9.Name = "label9";
             label9.Size = new Size(59, 15);
             label9.TabIndex = 24;
@@ -306,7 +312,7 @@
             // 
             labDescNumero.AutoSize = true;
             labDescNumero.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            labDescNumero.Location = new Point(183, 118);
+            labDescNumero.Location = new Point(186, 118);
             labDescNumero.Name = "labDescNumero";
             labDescNumero.Size = new Size(49, 15);
             labDescNumero.TabIndex = 27;
@@ -316,7 +322,7 @@
             // 
             labDescCNPJ.AutoSize = true;
             labDescCNPJ.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            labDescCNPJ.Location = new Point(357, 96);
+            labDescCNPJ.Location = new Point(543, 96);
             labDescCNPJ.Name = "labDescCNPJ";
             labDescCNPJ.Size = new Size(91, 15);
             labDescCNPJ.TabIndex = 28;
@@ -326,7 +332,7 @@
             // 
             labDescUltCompra.AutoSize = true;
             labDescUltCompra.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            labDescUltCompra.Location = new Point(585, 96);
+            labDescUltCompra.Location = new Point(414, 118);
             labDescUltCompra.Name = "labDescUltCompra";
             labDescUltCompra.Size = new Size(49, 15);
             labDescUltCompra.TabIndex = 29;
@@ -336,7 +342,7 @@
             // 
             label15.AutoSize = true;
             label15.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label15.Location = new Point(454, 118);
+            label15.Location = new Point(482, 118);
             label15.Name = "label15";
             label15.Size = new Size(127, 15);
             label15.TabIndex = 30;
@@ -346,7 +352,7 @@
             // 
             labDescVlrUltCompra.AutoSize = true;
             labDescVlrUltCompra.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            labDescVlrUltCompra.Location = new Point(587, 118);
+            labDescVlrUltCompra.Location = new Point(615, 118);
             labDescVlrUltCompra.Name = "labDescVlrUltCompra";
             labDescVlrUltCompra.Size = new Size(49, 15);
             labDescVlrUltCompra.TabIndex = 31;
@@ -354,17 +360,17 @@
             // 
             // txtObservacao
             // 
-            txtObservacao.Location = new Point(12, 300);
+            txtObservacao.Location = new Point(12, 330);
             txtObservacao.Multiline = true;
             txtObservacao.Name = "txtObservacao";
-            txtObservacao.Size = new Size(655, 184);
+            txtObservacao.Size = new Size(655, 154);
             txtObservacao.TabIndex = 32;
             // 
             // label17
             // 
             label17.AutoSize = true;
             label17.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label17.Location = new Point(11, 280);
+            label17.Location = new Point(12, 312);
             label17.Name = "label17";
             label17.Size = new Size(78, 15);
             label17.TabIndex = 33;
@@ -372,7 +378,7 @@
             // 
             // txtTotalItens
             // 
-            txtTotalItens.Location = new Point(675, 254);
+            txtTotalItens.Location = new Point(676, 330);
             txtTotalItens.Name = "txtTotalItens";
             txtTotalItens.ReadOnly = true;
             txtTotalItens.Size = new Size(113, 23);
@@ -380,7 +386,7 @@
             // 
             // txtTotalFaturando
             // 
-            txtTotalFaturando.Location = new Point(675, 298);
+            txtTotalFaturando.Location = new Point(676, 374);
             txtTotalFaturando.Name = "txtTotalFaturando";
             txtTotalFaturando.ReadOnly = true;
             txtTotalFaturando.Size = new Size(113, 23);
@@ -390,7 +396,7 @@
             // 
             label18.AutoSize = true;
             label18.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label18.Location = new Point(677, 236);
+            label18.Location = new Point(678, 312);
             label18.Name = "label18";
             label18.Size = new Size(65, 15);
             label18.TabIndex = 36;
@@ -400,7 +406,7 @@
             // 
             label19.AutoSize = true;
             label19.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label19.Location = new Point(677, 280);
+            label19.Location = new Point(678, 356);
             label19.Name = "label19";
             label19.Size = new Size(63, 15);
             label19.TabIndex = 37;
@@ -410,27 +416,26 @@
             // 
             label20.AutoSize = true;
             label20.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label20.Location = new Point(677, 321);
+            label20.Location = new Point(678, 397);
             label20.Name = "label20";
             label20.Size = new Size(58, 15);
             label20.TabIndex = 39;
             label20.Text = "Impostos";
             label20.Visible = false;
             // 
-            // textBox10
+            // txtImpostos
             // 
-            textBox10.Location = new Point(675, 339);
-            textBox10.Name = "textBox10";
-            textBox10.ReadOnly = true;
-            textBox10.Size = new Size(113, 23);
-            textBox10.TabIndex = 38;
-            textBox10.Visible = false;
+            txtImpostos.Location = new Point(676, 415);
+            txtImpostos.Name = "txtImpostos";
+            txtImpostos.Size = new Size(113, 23);
+            txtImpostos.TabIndex = 38;
+            txtImpostos.Visible = false;
             // 
             // label21
             // 
             label21.AutoSize = true;
             label21.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label21.Location = new Point(675, 368);
+            label21.Location = new Point(676, 444);
             label21.Name = "label21";
             label21.Size = new Size(58, 15);
             label21.TabIndex = 41;
@@ -439,7 +444,7 @@
             // 
             // textBox11
             // 
-            textBox11.Location = new Point(673, 386);
+            textBox11.Location = new Point(674, 462);
             textBox11.Name = "textBox11";
             textBox11.ReadOnly = true;
             textBox11.Size = new Size(113, 23);
@@ -504,22 +509,13 @@
             txtVendedor.Enabled = false;
             txtVendedor.Location = new Point(567, 225);
             txtVendedor.Name = "txtVendedor";
+            txtVendedor.ReadOnly = true;
             txtVendedor.Size = new Size(100, 23);
             txtVendedor.TabIndex = 46;
             // 
-            // chkConcluido
-            // 
-            chkConcluido.AutoSize = true;
-            chkConcluido.Location = new Point(12, 254);
-            chkConcluido.Name = "chkConcluido";
-            chkConcluido.Size = new Size(71, 19);
-            chkConcluido.TabIndex = 48;
-            chkConcluido.Text = "Concluir";
-            chkConcluido.UseVisualStyleBackColor = true;
-            // 
             // txtDataConfirmacao
             // 
-            txtDataConfirmacao.Location = new Point(121, 177);
+            txtDataConfirmacao.Location = new Point(118, 176);
             txtDataConfirmacao.Mask = "00/00/0000";
             txtDataConfirmacao.Name = "txtDataConfirmacao";
             txtDataConfirmacao.Size = new Size(100, 23);
@@ -550,7 +546,7 @@
             // 
             // txtValidadeProposta
             // 
-            txtValidadeProposta.Location = new Point(12, 225);
+            txtValidadeProposta.Location = new Point(118, 225);
             txtValidadeProposta.Mask = "00/00/0000";
             txtValidadeProposta.Name = "txtValidadeProposta";
             txtValidadeProposta.Size = new Size(100, 23);
@@ -560,7 +556,7 @@
             // labValidadeProp
             // 
             labValidadeProp.AutoSize = true;
-            labValidadeProp.Location = new Point(12, 206);
+            labValidadeProp.Location = new Point(118, 206);
             labValidadeProp.Name = "labValidadeProp";
             labValidadeProp.Size = new Size(101, 15);
             labValidadeProp.TabIndex = 52;
@@ -569,7 +565,7 @@
             // labFatMinimo
             // 
             labFatMinimo.AutoSize = true;
-            labFatMinimo.Location = new Point(121, 210);
+            labFatMinimo.Location = new Point(227, 210);
             labFatMinimo.Name = "labFatMinimo";
             labFatMinimo.Size = new Size(120, 15);
             labFatMinimo.TabIndex = 55;
@@ -577,12 +573,74 @@
             // 
             // txtFatMinimo
             // 
-            txtFatMinimo.Location = new Point(121, 228);
+            txtFatMinimo.Location = new Point(224, 225);
             txtFatMinimo.Name = "txtFatMinimo";
             txtFatMinimo.Size = new Size(120, 23);
             txtFatMinimo.TabIndex = 54;
             txtFatMinimo.KeyPress += txtFatMinimo_KeyPress;
             txtFatMinimo.Leave += txtFatMinimo_Leave;
+            // 
+            // txtPrazoEntrega
+            // 
+            txtPrazoEntrega.Location = new Point(12, 225);
+            txtPrazoEntrega.Mask = "00/00/0000";
+            txtPrazoEntrega.Name = "txtPrazoEntrega";
+            txtPrazoEntrega.Size = new Size(100, 23);
+            txtPrazoEntrega.TabIndex = 57;
+            txtPrazoEntrega.ValidatingType = typeof(DateTime);
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(12, 210);
+            label2.Name = "label2";
+            label2.Size = new Size(79, 15);
+            label2.TabIndex = 56;
+            label2.Text = "Prazo Entrega";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(353, 210);
+            label3.Name = "label3";
+            label3.Size = new Size(100, 15);
+            label3.TabIndex = 59;
+            label3.Text = "Prazo Pagamento";
+            // 
+            // txtPrazoPagamento
+            // 
+            txtPrazoPagamento.Location = new Point(353, 225);
+            txtPrazoPagamento.Name = "txtPrazoPagamento";
+            txtPrazoPagamento.Size = new Size(110, 23);
+            txtPrazoPagamento.TabIndex = 58;
+            // 
+            // chkImpInclu
+            // 
+            chkImpInclu.AutoSize = true;
+            chkImpInclu.Location = new Point(469, 227);
+            chkImpInclu.Name = "chkImpInclu";
+            chkImpInclu.Size = new Size(91, 19);
+            chkImpInclu.TabIndex = 60;
+            chkImpInclu.Text = "Imp. Incluso";
+            chkImpInclu.UseVisualStyleBackColor = true;
+            // 
+            // cboStatus
+            // 
+            cboStatus.FormattingEnabled = true;
+            cboStatus.Items.AddRange(new object[] { "Concluido", "Pendente", "Cancelado" });
+            cboStatus.Location = new Point(12, 270);
+            cboStatus.Name = "cboStatus";
+            cboStatus.Size = new Size(100, 23);
+            cboStatus.TabIndex = 61;
+            // 
+            // labStatus
+            // 
+            labStatus.AutoSize = true;
+            labStatus.Location = new Point(12, 252);
+            labStatus.Name = "labStatus";
+            labStatus.Size = new Size(42, 15);
+            labStatus.TabIndex = 62;
+            labStatus.Text = "Status:";
             // 
             // frmPedido
             // 
@@ -590,6 +648,13 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 496);
             ControlBox = false;
+            Controls.Add(labStatus);
+            Controls.Add(cboStatus);
+            Controls.Add(chkImpInclu);
+            Controls.Add(label3);
+            Controls.Add(txtPrazoPagamento);
+            Controls.Add(txtPrazoEntrega);
+            Controls.Add(label2);
             Controls.Add(labFatMinimo);
             Controls.Add(txtFatMinimo);
             Controls.Add(txtValidadeProposta);
@@ -597,7 +662,6 @@
             Controls.Add(cmdImprimir);
             Controls.Add(txtDataSolicitacao);
             Controls.Add(txtDataConfirmacao);
-            Controls.Add(chkConcluido);
             Controls.Add(labVendedor);
             Controls.Add(txtVendedor);
             Controls.Add(cmdExcluir);
@@ -607,7 +671,7 @@
             Controls.Add(label21);
             Controls.Add(textBox11);
             Controls.Add(label20);
-            Controls.Add(textBox10);
+            Controls.Add(txtImpostos);
             Controls.Add(label19);
             Controls.Add(label18);
             Controls.Add(txtTotalFaturando);
@@ -697,7 +761,6 @@
         private Label labVendedor;
         private TextBox txtVendedor;
         private TextBox txtTotalItens;
-        private CheckBox chkConcluido;
         private MaskedTextBox txtDataConfirmacao;
         private MaskedTextBox txtDataSolicitacao;
         private Button cmdImprimir;
@@ -705,5 +768,13 @@
         private Label labValidadeProp;
         private Label labFatMinimo;
         private TextBox txtFatMinimo;
+        private MaskedTextBox txtPrazoEntrega;
+        private Label label2;
+        private Label label3;
+        private TextBox txtPrazoPagamento;
+        private CheckBox chkImpInclu;
+        private ComboBox cboStatus;
+        private Label labStatus;
+        private TextBox txtImpostos;
     }
 }

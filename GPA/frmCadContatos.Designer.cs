@@ -120,6 +120,7 @@
             grdContatos.Size = new Size(776, 189);
             grdContatos.TabIndex = 4;
             grdContatos.CellEnter += grdContatos_Selection;
+            grdContatos.SelectionChanged += grdContatos_SelectionChanged;
             // 
             // grdid
             // 

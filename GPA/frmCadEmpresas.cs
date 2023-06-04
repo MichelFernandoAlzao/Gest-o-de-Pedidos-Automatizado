@@ -32,6 +32,7 @@ namespace GPA
             InitializeComponent();
             LUsuario = inUsuario;
             LCaminhoBanco = inCaminhoBanco;
+            txtCNPJ.FormatProvider = new System.Globalization.CultureInfo("en-US");
             if (inID != "")
             {
                 LID = inID;
@@ -158,7 +159,31 @@ namespace GPA
                 objCadastro.Vendedor = "";
             }
 
-            objCadastro.Vendedor = LIDUsuario;
+
+            if (LIDUsuario != "")
+            {
+                if (LID != "")
+                {
+                    BDCadastroGeral objVerifCadastro = new BDCadastroGeral();
+                    List<BDCadastroGeral> lstVerfCadastro = objVerifCadastro.CarregaDados(LCaminhoBanco, LID, "", "", "", "", "", "", "", "", "");
+                    SEGUsuario objUsuario = new SEGUsuario();
+                    List<SEGUsuario> lstUsuario = objUsuario.CarregaDados(LCaminhoBanco, LUsuario, "", "", "");
+                    if (lstVerfCadastro[0].Vendedor != LIDUsuario && lstUsuario[0].GerenciaCadastros == "N")
+                    {
+                        MessageBox.Show("Você não é o vendedor deste cadastro e não possui permissão para alterar!\nImpossivel Gravar!", "GPA");
+                        return;
+                    }
+
+                }
+
+                objCadastro.Vendedor = LIDUsuario;
+            }
+            else
+            {
+                MessageBox.Show("Selecione um vendedor responsavel!", "GPA");
+                return;
+            }
+
 
 
             if (chkFabricante.Checked == false && chkFornecedor.Checked == false && chkCliente.Checked == false && chkDistribuidor.Checked == false)
@@ -190,79 +215,6 @@ namespace GPA
             {
                 objCadastro.Id = LID;
                 objCadastro.AlteraDados(LCaminhoBanco);
-                //string Alterar = "";
-                //BDCadastroGeral objAtualiza = new BDCadastroGeral();
-                //List<BDCadastroGeral> lstEmpresaAnterior = objEmpresaAnterior.CarregaDados(LID, LRazaoSocial, LRazaoFantasia, LCNPJ, "", "", "", "", "", "");
-                //objAtualiza.Id = LID;
-                //if (lstEmpresaAnterior[0].RazaoSocial != objCadastro.RazaoSocial)
-                //{
-                //    objAtualiza.RazaoSocial = objCadastro.RazaoSocial;
-                //    Alterar = "S";
-                //}
-                //if (lstEmpresaAnterior[0].RazaoFantasia != objCadastro.RazaoFantasia)
-                //{
-                //    objAtualiza.RazaoFantasia = objCadastro.RazaoFantasia;
-                //    Alterar = "S";
-                //}
-                //if (lstEmpresaAnterior[0].InscricaoEstadual != objCadastro.InscricaoEstadual)
-                //{
-                //    objAtualiza.InscricaoEstadual = objCadastro.InscricaoEstadual;
-                //    Alterar = "S";
-                //}
-                //if (lstEmpresaAnterior[0].CNPJ != objCadastro.CNPJ)
-                //{
-                //    objAtualiza.CNPJ = objCadastro.CNPJ;
-                //    Alterar = "S";
-                //}
-                //if (lstEmpresaAnterior[0].Cliente != objCadastro.Cliente)
-                //{
-                //    objAtualiza.Cliente = objCadastro.Cliente;
-                //    Alterar = "S";
-                //}
-                //if (lstEmpresaAnterior[0].Distribuidor != objCadastro.Distribuidor)
-                //{
-                //    objAtualiza.Distribuidor = objCadastro.Distribuidor;
-                //    Alterar = "S";
-                //}
-                //if (lstEmpresaAnterior[0].Fabricante != objCadastro.Fabricante)
-                //{
-                //    objAtualiza.Fabricante = objCadastro.Fabricante;
-                //    Alterar = "S";
-                //}
-                //if (lstEmpresaAnterior[0].Fornecedor != objCadastro.Fornecedor)
-                //{
-                //    objAtualiza.Fornecedor = objCadastro.Fornecedor;
-                //    Alterar = "S";
-                //}
-                //if (lstEmpresaAnterior[0].Aviso != objCadastro.Aviso)
-                //{
-                //    objAtualiza.Aviso = objCadastro.Aviso;
-                //    Alterar = "S";
-                //}
-                //if (lstEmpresaAnterior[0].RegiaodeVenda != objCadastro.RegiaodeVenda)
-                //{
-                //    objAtualiza.RegiaodeVenda = objCadastro.RegiaodeVenda;
-                //    Alterar = "S";
-                //}
-                //if (lstEmpresaAnterior[0].Qualificacao != objCadastro.Qualificacao)
-                //{
-                //    objAtualiza.Qualificacao = objCadastro.Qualificacao;
-                //    Alterar = "S";
-                //}
-                //if (lstEmpresaAnterior[0].RegCobranca != objCadastro.RegCobranca)
-                //{
-                //    objAtualiza.RegCobranca = objCadastro.RegCobranca;
-                //    Alterar = "S";
-                //}
-                //if (Alterar == "S")
-                //{
-                //    objAtualiza.AlteraDados();
-                //}
-
-                //if (objAtualiza.MsgErro != "")
-                //{
-                //    MsgErro = objAtualiza.MsgErro;
-                //}
 
                 if (objCadastro.MsgErro != "")
                 {
@@ -372,10 +324,14 @@ namespace GPA
                 {
                     SEGUsuario objvendedor = new SEGUsuario();
                     List<SEGUsuario> lstUsuarios = objvendedor.CarregaDados(LCaminhoBanco, lstCadastro[0].Vendedor, "", "", "");
-                    txtVendedor.Text = lstUsuarios[0].Usuario;
+                    if (lstUsuarios.Count > 0)
+                    {
+                        LIDUsuario = lstUsuarios[0].ID;
+                        txtVendedor.Text = lstUsuarios[0].Usuario;
+                    }
                 }
             }
-            
+
             if (lstCadastro[0].Aviso != null)
             {
                 if (lstCadastro[0].Aviso != "")
@@ -383,11 +339,6 @@ namespace GPA
                     txtAviso.Text = lstCadastro[0].Aviso.ToString();
                 }
             }
-            
-        }
-
-        private void labCNPJ_Click(object sender, EventArgs e)
-        {
 
         }
 
@@ -458,7 +409,7 @@ namespace GPA
                 if (LIDUsuario != "")
                 {
                     SEGUsuario objUsuario = new SEGUsuario();
-                    List<SEGUsuario> lstUsuario = objUsuario.CarregaDados(LCaminhoBanco, LVendedor, "", "", "");
+                    List<SEGUsuario> lstUsuario = objUsuario.CarregaDados(LCaminhoBanco, LIDUsuario, "", "", "");
                     txtVendedor.Text = lstUsuario[0].Usuario;
                 }
             }

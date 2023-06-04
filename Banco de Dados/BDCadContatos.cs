@@ -38,9 +38,13 @@ namespace Banco_de_Dados
             
             if(cpAniversario!= null)
             {
-                sqlCampos += "CDCAniversario, ";
+                if(cpAniversario.Replace(" ","").Replace("/","") != "")
+                {
+                    sqlCampos += "CDCAniversario, ";
 
-                sqlConteudo += "'" + cpAniversario + "',";
+                    sqlConteudo += "'" + cpAniversario + "',";
+                }
+                
             } 
 
             if(cpAnotacoes != null)

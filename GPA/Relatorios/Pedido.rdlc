@@ -33,6 +33,14 @@
           <DataField>fdFatMinimo</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="fdImpInclu">
+          <DataField>fdImpInclu</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="fdImpostos">
+          <DataField>fdImpostos</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
         <Field Name="fdOPITPQuantidade">
           <DataField>fdOPITPQuantidade</DataField>
           <rd:TypeName>System.String</rd:TypeName>
@@ -59,6 +67,14 @@
         </Field>
         <Field Name="fdOPPVlrItensFaturando">
           <DataField>fdOPPVlrItensFaturando</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="fdPrazoEntrega">
+          <DataField>fdPrazoEntrega</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="fdPrazoPagamento">
+          <DataField>fdPrazoPagamento</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="fdValidadeProposta">
@@ -965,7 +981,7 @@
             <Top>0.92604cm</Top>
             <Left>0.56917cm</Left>
             <Height>3.7141cm</Height>
-            <Width>18.92251cm</Width>
+            <Width>18.92249cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1025,21 +1041,21 @@
                     <TablixCell />
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox95">
+                        <Textbox Name="fdPrazoEntrega">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value />
+                                  <Value>=Fields!fdPrazoEntrega.Value</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox95</rd:DefaultName>
+                          <rd:DefaultName>fdPrazoEntrega</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -1233,21 +1249,21 @@
                     <TablixCell />
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox105">
+                        <Textbox Name="fdPrazoPagamento">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value />
+                                  <Value>=Fields!fdPrazoPagamento.Value</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox105</rd:DefaultName>
+                          <rd:DefaultName>fdPrazoPagamento</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -1302,21 +1318,21 @@
                     <TablixCell />
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox108">
+                        <Textbox Name="fdImpInclu">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value />
+                                  <Value>=Fields!fdImpInclu.Value</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox108</rd:DefaultName>
+                          <rd:DefaultName>fdImpInclu</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>

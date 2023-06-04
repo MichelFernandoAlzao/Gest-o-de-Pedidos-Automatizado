@@ -1,4 +1,5 @@
-﻿using Camada_Relatorios;
+﻿using Banco_de_Dados;
+using Camada_Relatorios;
 using DAL;
 using System.Data;
 using System.Data.SqlClient;
@@ -12,7 +13,7 @@ namespace CarregaRelatorios
             DataTable DTPedido = new DataTable();
             string sSQL = "";
 
-            sSQL += "SELECT OPPPedido,OPPObservacao,OPPVlritensFaturando,CDCERazaoSocial,CDCECNPJ,OPPDataContato,CDPDescricao,OPITPValorUnitario,OPITPValorTotalItem,OPITPQuantidade,OPPValidadeProposta,OPPVlrFatMinimo ";
+            sSQL += "SELECT OPPPedido,OPPObservacao,OPPVlritensFaturando,CDCERazaoSocial,CDCECNPJ,OPPDataContato,CDPDescricao,OPITPValorUnitario,OPITPValorTotalItem,OPITPQuantidade,OPPValidadeProposta,OPPVlrFatMinimo,OPPPrazoEntrega,OPPPrazoPagamento,OPPVlrImpostos,OPPImpostosInclusos ";
             sSQL += "FROM OPItensPedido ";
             sSQL += "INNER JOIN OPPPedido ON OPITPPedidoDR = OPPPedido ";
             sSQL += "INNER JOIN CDCadastroEmpresas ON OPPEmpresaDR = CDCadastroEmpresas ";
@@ -49,6 +50,9 @@ namespace CarregaRelatorios
                     bDPedidoItens.fdValidadeProposta = dr["OPPValidadeProposta"].ToString();
                     bDPedidoItens.fdOPITPValorTotalItem = dr["OPITPValorTotalItem"].ToString();
                     bDPedidoItens.fdOPITPQuantidade = dr["OPITPQuantidade"].ToString();
+                    bDPedidoItens.fdImpInclu = dr["OPPImpostosInclusos"].ToString();
+                    bDPedidoItens.fdPrazoEntrega = dr["OPPPrazoEntrega"].ToString();
+                    bDPedidoItens.fdPrazoPagamento = dr["OPPPrazoPagamento"].ToString();
 
 
                     lstrelPedido.Add(bDPedidoItens);

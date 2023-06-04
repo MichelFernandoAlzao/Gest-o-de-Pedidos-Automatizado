@@ -82,6 +82,7 @@
             txtCodigo.Name = "txtCodigo";
             txtCodigo.Size = new Size(127, 23);
             txtCodigo.TabIndex = 3;
+            txtCodigo.KeyDown += txtCodigo_KeyDown;
             // 
             // label1
             // 

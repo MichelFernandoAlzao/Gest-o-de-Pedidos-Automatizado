@@ -91,7 +91,6 @@
             labCNPJ.Size = new Size(58, 15);
             labCNPJ.TabIndex = 3;
             labCNPJ.Text = "CNPJ - F1";
-            labCNPJ.Click += labCNPJ_Click;
             // 
             // txtInscricaoEstadual
             // 
@@ -379,7 +378,7 @@
             // txtCNPJ
             // 
             txtCNPJ.Location = new Point(842, 75);
-            txtCNPJ.Mask = "00.000.000/0000-00";
+            txtCNPJ.Mask = "00,000,000/0000-00";
             txtCNPJ.Name = "txtCNPJ";
             txtCNPJ.Size = new Size(155, 23);
             txtCNPJ.TabIndex = 35;

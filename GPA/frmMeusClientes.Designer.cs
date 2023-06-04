@@ -38,6 +38,7 @@
             lbCabeçallho = new Label();
             cmdSair = new Button();
             cmdSelecionar = new Button();
+            chkGerencia = new CheckBox();
             ((System.ComponentModel.ISupportInitialize)grdMeusClientes).BeginInit();
             SuspendLayout();
             // 
@@ -81,7 +82,7 @@
             // 
             txtRazaoSocial.Location = new Point(12, 52);
             txtRazaoSocial.Name = "txtRazaoSocial";
-            txtRazaoSocial.Size = new Size(688, 23);
+            txtRazaoSocial.Size = new Size(610, 23);
             txtRazaoSocial.TabIndex = 1;
             txtRazaoSocial.KeyDown += txtRazaoSocial_KeyDown;
             // 
@@ -130,12 +131,24 @@
             cmdSelecionar.UseVisualStyleBackColor = true;
             cmdSelecionar.Click += cmdSelecionar_Click;
             // 
+            // chkGerencia
+            // 
+            chkGerencia.AutoSize = true;
+            chkGerencia.Location = new Point(643, 54);
+            chkGerencia.Name = "chkGerencia";
+            chkGerencia.Size = new Size(57, 19);
+            chkGerencia.TabIndex = 12;
+            chkGerencia.Text = "Todos";
+            chkGerencia.UseVisualStyleBackColor = true;
+            chkGerencia.CheckedChanged += chkGerencia_CheckedChanged;
+            // 
             // frmMeusClientes
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(712, 335);
             ControlBox = false;
+            Controls.Add(chkGerencia);
             Controls.Add(cmdSair);
             Controls.Add(cmdSelecionar);
             Controls.Add(lbCabeçallho);
@@ -145,6 +158,7 @@
             Name = "frmMeusClientes";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Meus Clientes";
+            Load += frmMeusClientes_Load;
             ((System.ComponentModel.ISupportInitialize)grdMeusClientes).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -161,5 +175,6 @@
         private Label lbCabeçallho;
         private Button cmdSair;
         private Button cmdSelecionar;
+        private CheckBox chkGerencia;
     }
 }

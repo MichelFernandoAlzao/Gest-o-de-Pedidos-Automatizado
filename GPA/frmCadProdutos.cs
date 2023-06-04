@@ -281,5 +281,24 @@ namespace Formularios
                 return;
             }
         }
+
+        private void txtCodigo_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.F1) 
+            {
+                if(txtCodigo.Text == "")
+                {
+                    MessageBox.Show("Nenhum Código Informado!","GPA");
+                    return;
+                }
+                frmSelecionaProduto frmSelecionaProduto = new frmSelecionaProduto(LCaminhoBanco,this,txtCodigo.Text,"","","");
+                frmSelecionaProduto.ShowDialog();
+
+                if (LIDProduto != "")
+                {
+                    MostraDados();
+                }
+            }
+        }
     }
 }

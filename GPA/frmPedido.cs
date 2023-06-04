@@ -110,7 +110,7 @@ namespace Formularios
                 MessageBox.Show("Empresa não possui endereço fisico cadastrado", "GPA", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
-
+            txtNumeroPedido.Text = LIDPedido;
             txtNumeroPedido.Enabled = false;
 
             if (LIDNaturezaOperacao != "")
@@ -137,16 +137,19 @@ namespace Formularios
             }
             txtTotalItens.Text = lstPedido[0].cpVlrTotalPedido;
             txtTotalFaturando.Text = lstPedido[0].cpVlrItensFaturando;
-            if (lstPedido[0].cpConcluido == "S")
-            {
-                chkConcluido.Checked = true;
-            }
-            else
-            {
-                chkConcluido.Checked = false;
-            }
+            cboStatus.Text = lstPedido[0].cpStatus;
             txtValidadeProposta.Text = lstPedido[0].cpValidadeProposta.ToString();
             txtFatMinimo.Text = lstPedido[0].cpVlrFatMinimo.ToString();
+            txtPrazoPagamento.Text = lstPedido[0].cpPrazoPagamento.ToString();
+            txtPrazoEntrega.Text = lstPedido[0].cpPrazoEntrega.ToString();
+            if (lstPedido[0].cpImpInclu == "S")
+            {
+                chkImpInclu.Checked = true;
+            }
+            else 
+            { 
+                chkImpInclu.Checked = false;
+            }
 
         }
         private void cmdItensPedido_Click(object sender, EventArgs e)
@@ -311,23 +314,35 @@ namespace Formularios
                 objPedido.cpObservacoes = txtObservacao.Text;
             }
 
-            if (chkConcluido.Checked == true)
-            {
-                objPedido.cpConcluido = "S";
-            }
-            else
-            {
-                objPedido.cpConcluido = "N";
-            }
+            objPedido.cpStatus = cboStatus.Text.ToString();
             if (txtValidadeProposta.Text.Replace(" ", "").Replace("/", "") != "")
             {
                 objPedido.cpValidadeProposta = txtValidadeProposta.Text;
             }
-            if(txtFatMinimo.Text != "")
+            if (txtFatMinimo.Text != "")
             {
                 objPedido.cpVlrFatMinimo = txtFatMinimo.Text;
             }
-            
+            if (txtImpostos.Text != "")
+            {
+                objPedido.cpVlrImpostos = txtImpostos.Text;
+            }
+            if (txtPrazoPagamento.Text != "")
+            {
+                objPedido.cpPrazoPagamento = txtPrazoPagamento.Text;
+            }
+            if (txtPrazoEntrega.Text != "")
+            {
+                objPedido.cpPrazoEntrega = txtPrazoEntrega.Text;
+            }
+            if (chkImpInclu.Checked == true)
+            {
+                objPedido.cpImpInclu = "S";
+            }
+            else
+            {
+                objPedido.cpImpInclu = "N";
+            }
 
             if (LIDPedido == "")
             {
@@ -367,7 +382,7 @@ namespace Formularios
                     MessageBox.Show("Pedido Gravado", "GPA");
                     MostraDados();
                 }
-                  
+
             }
 
 
@@ -401,6 +416,11 @@ namespace Formularios
             LComissao = "";
             txtNumeroPedido.Enabled = true;
             txtxNatOperacao.Enabled = true;
+            txtPrazoEntrega.Text = "";
+            txtPrazoPagamento.Text = "";
+            chkImpInclu.Checked = false;
+            txtValidadeProposta.Text = "";
+            txtFatMinimo.Text = "";
         }
 
         private void cmdSair_Click(object sender, EventArgs e)

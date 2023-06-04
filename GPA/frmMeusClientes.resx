@@ -66,11 +66,20 @@
   <metadata name="grdCNPJ.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <metadata name="grdID.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="grdRazaoSocial.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="grdCNPJ.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="cmdSelecionar.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vQAADr0BR/uQrQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAACt3SURBVHhe7d0H
+        vAAADrwBlbxySQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAACt3SURBVHhe7d0H
         1GRVme7xJmeQqCBRJBhBEEVFRMEEKIo6gJeRq2ICBgxIUFSQ4UrQGTFecBRBEcU4wCgqiIoOgiiCIKCC
         BCVLajI09z7vbblN08/XX9qnzj77/f/W+q81a6S7q86uqvN+9VWdPQNA01ZSO6oPq6+p89UV6lZ1/z+K
         /zv+f/G/nag+pOLPxJ8FAAADsbE6Sl2oHlb/Z4rNUr9TR6qNFAAAqMxSam91kXIn8xLFQPEvakkFAAB6

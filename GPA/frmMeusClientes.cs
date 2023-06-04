@@ -22,19 +22,38 @@ namespace Formularios
             LCaminhoBanco = inCaminhoBanco;
             LUsuario = inUsuario;
             InitializeComponent();
+            VerificaPermissao();
             CarregaGridClientes();
         }
 
+        public void VerificaPermissao()
+        {
+            SEGUsuario objUsuario = new SEGUsuario();
+            List<SEGUsuario> lstUsuario = objUsuario.CarregaDados(LCaminhoBanco,LUsuario,"","","");
+
+            if (lstUsuario[0].GerenciaCadastros == "N")
+            {
+                chkGerencia.Enabled = false;
+            }
+        }
         public void CarregaGridClientes()
         {
-
+            string AuxVendedor = "";
+            if(chkGerencia.Checked == true)
+            {
+                AuxVendedor = "";
+            }
+            else
+            {
+                AuxVendedor = LUsuario;
+            }
             BDCadastroGeral objCadastro = new BDCadastroGeral();
             if (txtRazaoSocial.Text != "")
             {
                 objCadastro.RazaoSocial = txtRazaoSocial.Text;
 
             }
-            List<BDCadastroGeral> lstCadastro = objCadastro.CarregaDados(LCaminhoBanco, "", txtRazaoSocial.Text, "", "", "", LUsuario, "", "", "", "");
+            List<BDCadastroGeral> lstCadastro = objCadastro.CarregaDadosPorVendedor(LCaminhoBanco, AuxVendedor);
             if (lstCadastro.Count > 0)
             {
                 foreach (BDCadastroGeral item in lstCadastro)
@@ -79,6 +98,19 @@ namespace Formularios
         private void grdMeusClientes_DoubleClick(object sender, EventArgs e)
         {
             cmdSelecionar_Click(sender, e);
+        }
+
+        private void frmMeusClientes_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void chkGerencia_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!chkGerencia.Checked)
+            {
+
+            }
         }
     }
 }

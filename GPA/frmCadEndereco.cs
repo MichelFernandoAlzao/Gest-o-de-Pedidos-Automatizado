@@ -25,6 +25,7 @@ namespace Formularios
         string LFisico = "";
         string LCobranca = "";
         string LReferencia = "";
+        string LCEP = "";
 
         public frmCadEndereco(string inCaminhoBanco, string inIDEmpresa)
         {
@@ -69,6 +70,7 @@ namespace Formularios
             LFisico = "";
             LCobranca = "";
             LReferencia = "";
+            LCEP = "";
         }
 
         private void AtualizaGrid()
@@ -91,6 +93,7 @@ namespace Formularios
                             item.cpCidade.ToString(),
                             item.cpEstado.ToString(),
                             item.cpReferencia.ToString(),
+                            item.cpCEP.ToString(),
                             item.cpEndFisico.ToString(),
                             item.cpEndCobranca.ToString()
                         };
@@ -117,6 +120,7 @@ namespace Formularios
                 LFisico = "";
                 LCobranca = "";
                 LReferencia = "";
+                LCEP = "";
             }
         }
 
@@ -169,9 +173,9 @@ namespace Formularios
             {
                 objEndereco.AlteraDados(LCaminhoBanco);
             }
-            if(objEndereco.MsgErro != "")
+            if (objEndereco.MsgErro != "")
             {
-                MessageBox.Show(objEndereco.MsgErro.ToString(),"GPA");
+                MessageBox.Show(objEndereco.MsgErro.ToString(), "GPA");
                 return;
             }
             grdEnderecos.Rows.Clear();
@@ -190,7 +194,7 @@ namespace Formularios
             txtBairro.Text = LBairro;
             txtCidade.Text = LCidade;
             txtEstado.Text = LEstado;
-
+            txtCEP.Text = LCEP;
             if (LFisico == "S")
             {
                 chkEndFisico.Checked = true;
@@ -236,8 +240,9 @@ namespace Formularios
             LCidade = grdEnderecos.SelectedRows[0].Cells[5].Value.ToString();
             LEstado = grdEnderecos.SelectedRows[0].Cells[6].Value.ToString();
             LReferencia = grdEnderecos.SelectedRows[0].Cells[7].Value.ToString();
-            LFisico = grdEnderecos.SelectedRows[0].Cells[8].Value.ToString();
-            LCobranca = grdEnderecos.SelectedRows[0].Cells[9].Value.ToString();
+            LCEP = grdEnderecos.SelectedRows[0].Cells[8].Value.ToString();
+            LFisico = grdEnderecos.SelectedRows[0].Cells[9].Value.ToString();
+            LCobranca = grdEnderecos.SelectedRows[0].Cells[10].Value.ToString();
             MostraDados();
         }
 

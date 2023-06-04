@@ -20,7 +20,7 @@ namespace Formularios
         string LTelefone = "";
         string LEmail = "";
         string LNome = "";
-        DateTime LAniversario;
+        string LAniversario = "";
         string LComprador = "";
         string Lgerencia = "";
         string LAnotacoes = "";
@@ -94,16 +94,14 @@ namespace Formularios
             objContato.cpEmpresaDR = LCadEmpresa;
             if (LEmail != txtEmail.Text) objContato.cpEmail = txtEmail.Text.ToString();
 
-            DateTime Data;
-            if (DateTime.TryParse(txtAniversario.Text, out Data))
+            if (txtAniversario.Text.Replace(" ", "").Replace("/", "") != "")
             {
 
                 objContato.cpAniversario = txtAniversario.Text;
             }
             else
             {
-                MessageBox.Show("Data em formato invalido", "GPA");
-                return;
+                objContato.cpAniversario = null;
             }
 
             if (chkComprador.Checked == true)
@@ -150,7 +148,7 @@ namespace Formularios
                 LCargo = grdContatos.SelectedRows[0].Cells[2].Value.ToString();
                 LTelefone = grdContatos.SelectedRows[0].Cells[3].Value.ToString();
                 LEmail = grdContatos.SelectedRows[0].Cells[4].Value.ToString();
-                LAniversario = Convert.ToDateTime(grdContatos.SelectedRows[0].Cells[5].Value);
+                LAniversario = grdContatos.SelectedRows[0].Cells[5].Value.ToString();
                 LComprador = grdContatos.SelectedRows[0].Cells[6].Value.ToString();
                 Lgerencia = grdContatos.SelectedRows[0].Cells[7].Value.ToString();
                 LAnotacoes = grdContatos.SelectedRows[0].Cells[8].Value.ToString();
@@ -206,13 +204,40 @@ namespace Formularios
         {
             if (txtAniversario.Text != "")
             {
-                DateTime Datainicio;
-                if (DateTime.TryParse(txtAniversario.Text, out Datainicio) == false)
+                if (txtAniversario.Text.Replace(" ", "").Replace("/", "") != "")
                 {
-                    MessageBox.Show("Data Inicio em formato invalido", "GPA");
-                    return;
+                    DateTime Datainicio;
+                    if (DateTime.TryParse(txtAniversario.Text, out Datainicio) == false)
+                    {
+                        MessageBox.Show("Data Inicio em formato invalido", "GPA");
+                        txtAniversario.Text = "";
+                        return;
+                    }
                 }
+
             }
+        }
+
+        private void grdContatos_SelectionChanged(object sender, EventArgs e)
+        {
+            if (grdContatos.SelectedRows.Count == 0)
+            {
+                MostraDados();
+            }
+            else
+            {
+                LID = grdContatos.SelectedRows[0].Cells[0].Value.ToString();
+                LNome = grdContatos.SelectedRows[0].Cells[1].Value.ToString();
+                LCargo = grdContatos.SelectedRows[0].Cells[2].Value.ToString();
+                LTelefone = grdContatos.SelectedRows[0].Cells[3].Value.ToString();
+                LEmail = grdContatos.SelectedRows[0].Cells[4].Value.ToString();
+                LAniversario = grdContatos.SelectedRows[0].Cells[5].Value.ToString();
+                LComprador = grdContatos.SelectedRows[0].Cells[6].Value.ToString();
+                Lgerencia = grdContatos.SelectedRows[0].Cells[7].Value.ToString();
+                LAnotacoes = grdContatos.SelectedRows[0].Cells[8].Value.ToString();
+                MostraDados();
+            }
+
         }
     }
 }

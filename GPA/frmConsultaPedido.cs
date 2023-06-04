@@ -52,7 +52,7 @@ namespace Formularios
                             item.cpID.ToString(),
                             pRazao.ToString(),
                             item.cpDataContato.ToString(),
-                            item.cpConcluido.ToString()
+                            item.cpStatus.ToString()
                             };
                         grdListaPedido.Rows.Add(Row);
                     }

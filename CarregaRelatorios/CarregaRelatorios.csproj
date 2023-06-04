@@ -11,4 +11,8 @@
     <ProjectReference Include="..\Camada Relatorios\Camada Relatorios.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+
 </Project>

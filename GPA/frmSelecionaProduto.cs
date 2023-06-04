@@ -34,12 +34,25 @@ namespace Formularios
 
         private void frmSelecionaProduto_Load(object sender, EventArgs e)
         {
-            CarregaProduto(LDescProduto, LFabricanteDR, LCodFabricante);
+            CarregaProduto(LID,LDescProduto, LFabricanteDR, LCodFabricante);
         }
 
-        private void CarregaProduto(string inRazao, string inRazaoFantasia, string inCNPJ)
+        private void CarregaProduto(string inIDProd,string inDescProduto, string inFabricanteDR, string inCodFabricante)
         {
+
             BDCadProdutos objCadastro = new BDCadProdutos();
+            if (inIDProd != "")
+            {
+                objCadastro.cpID = inIDProd;
+            }
+            if(inDescProduto != "")
+            {
+                objCadastro.cpDescricao = inDescProduto;
+            }
+            if(inCodFabricante!="")
+            {
+                objCadastro.cpCodigoFabricante = inCodFabricante;
+            }
             List<BDCadProdutos> lstCadastro = objCadastro.CarregaDados(LCaminhoBanco);
             if (lstCadastro.Count > 0)
             {
@@ -56,15 +69,6 @@ namespace Formularios
                 }
             }
         }
-
-        private void grdCadastroGeral_SelectionChanged(object sender, EventArgs e)
-        {
-            if (grdProdutos.SelectedRows.Count > 0)
-            {
-                LID = grdProdutos.SelectedRows[0].Cells[0].Value.ToString();
-            }
-        }
-
 
         private void CmdSelecionar_Click(object sender, EventArgs e)
         {

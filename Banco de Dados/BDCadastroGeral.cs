@@ -372,5 +372,74 @@ namespace Banco_de_Dados
             cmd.Dispose();
             return lstCadastros;
         }
+
+        public List<BDCadastroGeral> CarregaDadosPorVendedor(string inCaminhobanco, string pVendedor)
+        {
+            LCaminhoBanco = inCaminhobanco;
+            List<BDCadastroGeral> lstCadastros = new List<BDCadastroGeral>();
+            string slqSelect = "SELECT * FROM CDCadastroEmpresas ";
+            string sqlWhere = "WHERE ";
+            char ClausulaWhere = 'N';
+
+            if (pVendedor != "")
+            {
+                sqlWhere += " CDCEVendedor = " + pVendedor + "";
+                ClausulaWhere = 'S';
+            }
+  
+
+            if (ClausulaWhere == 'S')
+            {
+                if (pVendedor != "")
+                {
+                    slqSelect += sqlWhere;
+                }
+            }
+
+
+            Conexao conexao = new Conexao(LCaminhoBanco);
+            SqlCommand cmd = new SqlCommand();
+
+            cmd.CommandText = slqSelect;
+            var dt = new DataTable();
+
+            try
+            {
+                cmd.Connection = conexao.conectar();
+                //Executar o comando
+                SqlDataReader reader = cmd.ExecuteReader();
+                dt.Load(reader);
+                reader.Close();
+
+                foreach (DataRow dr in dt.Rows)
+                {
+                    BDCadastroGeral bDCadastro = new BDCadastroGeral();
+                    bDCadastro.Id = dr["CDCadastroEmpresas"].ToString();
+                    bDCadastro.Aviso = dr["CDCEAviso"].ToString();
+                    bDCadastro.RazaoSocial = dr["CDCERazaoSocial"].ToString();
+                    bDCadastro.RazaoFantasia = dr["CDCERazaoFantasia"].ToString();
+                    bDCadastro.CNPJ = dr["CDCECNPJ"].ToString();
+                    bDCadastro.InscricaoEstadual = dr["CDCEInscricao"].ToString();
+                    bDCadastro.Vendedor = dr["CDCEVendedor"].ToString();
+                    bDCadastro.Cliente = dr["CDCECliente"].ToString();
+                    bDCadastro.Distribuidor = dr["CDCEDistribuidor"].ToString();
+                    bDCadastro.Fabricante = dr["CDCEFabricante"].ToString();
+                    bDCadastro.Fornecedor = dr["CDCEFornecedor"].ToString();
+
+                    lstCadastros.Add(bDCadastro);
+
+                }
+
+                //Desconectar
+                conexao.desconectar();
+                MsgErro = "";
+            }
+            catch (SqlException e)
+            {
+                MsgErro = e.Message.ToString();
+            }
+            cmd.Dispose();
+            return lstCadastros;
+        }
     }
 }

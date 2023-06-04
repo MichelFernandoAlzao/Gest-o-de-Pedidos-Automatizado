@@ -23,6 +23,10 @@ namespace Camada_Relatorios
         public string fdOPITPQuantidade { get; set; }
         public string fdValidadeProposta { get; set; }
         public string fdFatMinimo { get; set; }
+        public string fdPrazoPagamento { get; set; }
+        public string fdPrazoEntrega { get; set; }
+        public string fdImpostos { get;set; }
+        public string fdImpInclu { get; set; }
 
         
     }

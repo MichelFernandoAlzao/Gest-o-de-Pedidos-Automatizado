@@ -13,20 +13,24 @@ namespace Banco_de_Dados
     {
         string LcaminhoBanco;
         public string cpID { get; set; }
+        public string cpComissao { get; set; }
         public string cpEmpresaDR { get; set; }
+        public string cpImpInclu { get; set; }
         public string cpPedidoExterno { get; set; }
         public string cpDataContato { get; set; }
         public string cpDataConfirmacao { get; set; }
         public string cpNatureOperacaoDR { get; set; }
         public string cpObservacoes { get; set; }
+        public string cpPrazoEntrega { get; set; }
+        public string cpPrazoPagamento { get; set; }
+        public string cpStatus { get; set; }
         public string cpValidadeProposta { get; set; }
         public string cpVlrFatMinimo { get; set; }
         public string cpVlrTotalPedido { get; set; }
         public string cpVlrItensFaturando { get; set; }
         public string cpVlrImpostos { get; set; }
-        public string cpComissao { get; set; }
         public string cpVendedorDR { get; set; }
-        public string cpConcluido { get; set; }
+        
         public string cpMsgErro { get; set; }
 
 
@@ -144,13 +148,26 @@ namespace Banco_de_Dados
                 sqlconteudo += "'" + cpVendedorDR + "',";
             }
 
-            if (cpConcluido != null)
+            if (cpStatus != null)
             {
-                sqlCampos += "OPPConcluido, ";
+                sqlCampos += "OPPStatus, ";
 
-                sqlconteudo += "'" + cpConcluido + "',";
+                sqlconteudo += "'" + cpStatus + "',";
             }
 
+            if(cpPrazoPagamento != null)
+            {
+                sqlCampos += "OPPPrazoPagamento, ";
+
+                sqlconteudo += "'" + cpPrazoPagamento + "',";
+            }
+
+            if (cpPrazoEntrega != null)
+            {
+                sqlCampos += "OPPPrazoEntrega, ";
+
+                sqlconteudo += "'" + cpPrazoEntrega + "',";
+            }
 
             sSQL = sSQL + sqlCampos.Remove(sqlCampos.Length - 2) + ")" + sqlconteudo.Remove(sqlconteudo.Length - 1) + ")";
 
@@ -234,11 +251,22 @@ namespace Banco_de_Dados
             {
                 sqlconteudo += "OPPVendedorDR = '" + cpVendedorDR + "',";
             }
-            if (cpConcluido != null)
+            if (cpStatus != null)
             {
-                sqlconteudo += "OPPConcluido = '" + cpConcluido + "',";
+                sqlconteudo += "OPPStatus = '" + cpStatus + "',";
             }
-
+            if (cpPrazoPagamento != null)
+            {
+                sqlconteudo += "OPPPrazoPagamento = '" + cpPrazoPagamento + "',";
+            }
+            if (cpPrazoEntrega != null)
+            {
+                sqlconteudo += "OPPPrazoEntrega = '" + cpPrazoEntrega + "',";
+            }
+            if (cpImpInclu != null)
+            {
+                sqlconteudo += "OPPImpostosInclusos = '" + cpImpInclu + "',";
+            }
 
             sSQL = sSQL + sqlconteudo.Remove(sqlconteudo.Length - 1);
             sSQL = sSQL + sqlWhere;
@@ -275,6 +303,12 @@ namespace Banco_de_Dados
             if (id != "")
             {
                 sqlWhere = "WHERE OPPPedido = '" + id + "'";
+
+                if (inVendedorDR != "")
+                {
+                    sqlWhere += " AND OPPVendedorDR = '" + inVendedorDR + "'";
+                }
+
                 ClausulaWhere = 'S';
             }
             else
@@ -291,6 +325,8 @@ namespace Banco_de_Dados
                 }
 
             }
+
+
 
             if (ClausulaWhere == 'S')
             {
@@ -335,7 +371,10 @@ namespace Banco_de_Dados
                     bDPedido.cpVlrFatMinimo = dr["OPPVlrFatMinimo"].ToString();
                     bDPedido.cpValidadeProposta = dr["OPPValidadeProposta"].ToString();
                     bDPedido.cpVendedorDR = dr["OPPVendedorDR"].ToString();
-                    bDPedido.cpConcluido = dr["OPPConcluido"].ToString();
+                    bDPedido.cpStatus = dr["OPPStatus"].ToString();
+                    bDPedido.cpPrazoEntrega = dr["OPPPrazoEntrega"].ToString();
+                    bDPedido.cpPrazoPagamento = dr["OPPPrazoPagamento"].ToString();
+                    bDPedido.cpImpInclu = dr["OPPImpostosInclusos"].ToString();
 
                     lstPedido.Add(bDPedido);
 
@@ -417,7 +456,11 @@ namespace Banco_de_Dados
                     bDPedido.cpVlrImpostos = dr["OPPVlrimpostos"].ToString();
                     bDPedido.cpComissao = dr["OPPComissao"].ToString();
                     bDPedido.cpVendedorDR = dr["OPPVendedorDR"].ToString();
-                    bDPedido.cpConcluido = dr["OPPConcluido"].ToString();
+                    bDPedido.cpStatus = dr["OPPConcluido"].ToString();
+                    bDPedido.cpStatus = dr["OPPStatus"].ToString();
+                    bDPedido.cpPrazoEntrega = dr["OPPPrazoEntrega"].ToString();
+                    bDPedido.cpPrazoPagamento = dr["OPPPrazpPagamento"].ToString();
+                    bDPedido.cpImpInclu = dr["OPPImpostosInclusos"].ToString();
 
                     lstPedido.Add(bDPedido);
 

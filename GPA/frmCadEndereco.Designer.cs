@@ -51,6 +51,7 @@
             grdCidade = new DataGridViewTextBoxColumn();
             grdEstado = new DataGridViewTextBoxColumn();
             grdReferencia = new DataGridViewTextBoxColumn();
+            grdCEP = new DataGridViewTextBoxColumn();
             grdFisico = new DataGridViewTextBoxColumn();
             grdCobranca = new DataGridViewTextBoxColumn();
             label1 = new Label();
@@ -186,7 +187,7 @@
             grdEnderecos.AllowUserToAddRows = false;
             grdEnderecos.AllowUserToDeleteRows = false;
             grdEnderecos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            grdEnderecos.Columns.AddRange(new DataGridViewColumn[] { grdid, grdIdentificacao, grdRua, grdNumero, grdBairro, grdCidade, grdEstado, grdReferencia, grdFisico, grdCobranca });
+            grdEnderecos.Columns.AddRange(new DataGridViewColumn[] { grdid, grdIdentificacao, grdRua, grdNumero, grdBairro, grdCidade, grdEstado, grdReferencia, grdCEP, grdFisico, grdCobranca });
             grdEnderecos.Location = new Point(12, 48);
             grdEnderecos.MultiSelect = false;
             grdEnderecos.Name = "grdEnderecos";
@@ -251,6 +252,13 @@
             grdReferencia.Name = "grdReferencia";
             grdReferencia.ReadOnly = true;
             grdReferencia.Visible = false;
+            // 
+            // grdCEP
+            // 
+            grdCEP.HeaderText = "CEP";
+            grdCEP.Name = "grdCEP";
+            grdCEP.ReadOnly = true;
+            grdCEP.Visible = false;
             // 
             // grdFisico
             // 
@@ -338,7 +346,7 @@
             // txtCEP
             // 
             txtCEP.Location = new Point(612, 308);
-            txtCEP.Mask = "00.000-000";
+            txtCEP.Mask = "00,000-000";
             txtCEP.Name = "txtCEP";
             txtCEP.Size = new Size(93, 23);
             txtCEP.TabIndex = 42;
@@ -414,5 +422,6 @@
         private DataGridViewTextBoxColumn grdCobranca;
         private Label labCEP;
         private MaskedTextBox txtCEP;
+        private DataGridViewTextBoxColumn grdCEP;
     }
 }
