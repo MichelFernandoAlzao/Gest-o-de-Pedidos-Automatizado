@@ -156,7 +156,7 @@ namespace Formularios
                 }
                 if (e.KeyCode == Keys.F1)
                 {
-                    frmSelecionaEmpresa objTela = new frmSelecionaEmpresa(LCaminhoBanco, this, "", txtFabricante.Text.ToString(), "", "");
+                    frmSelecionaEmpresa objTela = new frmSelecionaEmpresa(LCaminhoBanco, this, "", txtFabricante.Text.ToString(), "", "","");
                     objTela.ShowDialog();
                     LFabricante = LID;
                     txtFabricante.Text = LRazaoSocial.ToString();
@@ -183,7 +183,7 @@ namespace Formularios
                 }
                 if (e.KeyCode == Keys.F1)
                 {
-                    frmSelecionaEmpresa objTela = new frmSelecionaEmpresa(LCaminhoBanco, this, "", txtMelhorFornecedor.Text.ToString(), "", "");
+                    frmSelecionaEmpresa objTela = new frmSelecionaEmpresa(LCaminhoBanco, this, "", txtMelhorFornecedor.Text.ToString(), "", "","");
                     objTela.ShowDialog();
                     LMelhorFornecedor = LID;
                     txtMelhorFornecedor.Text = LRazaoSocial.ToString();

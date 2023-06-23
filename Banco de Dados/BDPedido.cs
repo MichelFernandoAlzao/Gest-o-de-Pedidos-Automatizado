@@ -425,7 +425,7 @@ namespace Banco_de_Dados
         {
             LcaminhoBanco = inCaminhoBanco;
             List<BDPedido> lstPedido = new List<BDPedido>();
-            string slqSelect = "SELECT * FROM OPPPedido WHERE (OPPDataConfirmacao >= '" + inDataInicio + "' AND OPPDataConfirmacao <= '" + inDataTermino + "') AND OPPVendedorDR = '" + inVendedorDR + "'";
+            string slqSelect = "SELECT * FROM OPPPedido WHERE (OPPDataConfirmacao >= '" + inDataInicio + "' AND OPPDataConfirmacao <= '" + inDataTermino + "') AND OPPVendedorDR = '" + inVendedorDR + "' AND OPPStatus = 'Concluido'";
 
             Conexao conexao = new Conexao(LcaminhoBanco);
             SqlCommand cmd = new SqlCommand();
@@ -456,10 +456,9 @@ namespace Banco_de_Dados
                     bDPedido.cpVlrImpostos = dr["OPPVlrimpostos"].ToString();
                     bDPedido.cpComissao = dr["OPPComissao"].ToString();
                     bDPedido.cpVendedorDR = dr["OPPVendedorDR"].ToString();
-                    bDPedido.cpStatus = dr["OPPConcluido"].ToString();
                     bDPedido.cpStatus = dr["OPPStatus"].ToString();
                     bDPedido.cpPrazoEntrega = dr["OPPPrazoEntrega"].ToString();
-                    bDPedido.cpPrazoPagamento = dr["OPPPrazpPagamento"].ToString();
+                    bDPedido.cpPrazoPagamento = dr["OPPPrazoPagamento"].ToString();
                     bDPedido.cpImpInclu = dr["OPPImpostosInclusos"].ToString();
 
                     lstPedido.Add(bDPedido);

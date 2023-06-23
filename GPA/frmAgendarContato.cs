@@ -34,7 +34,7 @@ namespace Formularios
         {
             if (e.KeyCode == Keys.F1)
             {
-                frmSelecionaEmpresa frmSelecionaEmpresa = new frmSelecionaEmpresa(LCaminhoBanco, this, "", txtEmpresa.Text, "", "");
+                frmSelecionaEmpresa frmSelecionaEmpresa = new frmSelecionaEmpresa(LCaminhoBanco, this, "", txtEmpresa.Text, "", "","");
                 frmSelecionaEmpresa.ShowDialog();
                 if (LRazaoSocial != "")
                 {

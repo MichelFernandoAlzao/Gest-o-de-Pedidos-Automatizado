@@ -108,7 +108,7 @@ namespace Formularios
         {
             if (e.KeyCode == Keys.F1)
             {
-                frmSelecionaEmpresa objTela = new frmSelecionaEmpresa(LcaminhoBanco, this, "", txtEmpresaPadrao.Text.ToString(), "", "");
+                frmSelecionaEmpresa objTela = new frmSelecionaEmpresa(LcaminhoBanco, this, "", txtEmpresaPadrao.Text.ToString(), "", "", "");
                 objTela.ShowDialog();
                 if (LRazaoSocial != "")
                 {

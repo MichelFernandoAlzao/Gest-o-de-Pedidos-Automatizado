@@ -267,7 +267,7 @@ namespace Formularios
         {
             if (e.KeyCode == Keys.F1)
             {
-                frmSelecionaEmpresa frmSelecionarFornecedor = new frmSelecionaEmpresa(LCaminhoBanco, this, "", txtFornecedor.Text, "", "");
+                frmSelecionaEmpresa frmSelecionarFornecedor = new frmSelecionaEmpresa(LCaminhoBanco, this, "", txtFornecedor.Text, "", "","");
                 frmSelecionarFornecedor.ShowDialog();
                 if (LID != "")
                 {
@@ -290,31 +290,39 @@ namespace Formularios
 
         private void txtValor_Leave(object sender, EventArgs e)
         {
-            if (txtValor.Text.Length < 4)
-            {
-                MessageBox.Show("Valor em formato invalido", "GPA");
-                return;
-            }
-            double Valor;
-            if (Double.TryParse(txtValor.Text, out Valor))
-            {
-                txtValor.Text = Valor.ToString();
-            }
+            //if (txtValor.Text.Length < 4)
+            //{
+            //    MessageBox.Show("Valor em formato invalido", "GPA");
+            //    return;
+            //}
+            //double Valor;
+            //if (Double.TryParse(txtValor.Text, out Valor))
+            //{
+            //    txtValor.Text = Valor.ToString();
+            //}
 
+
+            if (txtValor.Text == "") return;
+            double VlrFatMinimo = Convert.ToDouble(txtValor.Text = txtValor.Text);
+            txtValor.Text = VlrFatMinimo.ToString("N2");
         }
 
         private void txtValorFornecedor_Leave(object sender, EventArgs e)
         {
-            if (txtValorFornecedor.Text.Length < 4)
-            {
-                MessageBox.Show("Valor em formato invalido", "GPA");
-                return;
-            }
-            double Valor;
-            if (Double.TryParse(txtValorFornecedor.Text, out Valor))
-            {
-                txtValorFornecedor.Text = Valor.ToString();
-            }
+            //if (txtValorFornecedor.Text.Length < 4)
+            //{
+            //    MessageBox.Show("Valor em formato invalido", "GPA");
+            //    return;
+            //}
+            //double Valor;
+            //if (Double.TryParse(txtValorFornecedor.Text, out Valor))
+            //{
+            //    txtValorFornecedor.Text = Valor.ToString();
+            //}
+
+            if (txtValorFornecedor.Text == "") return;
+            double VlrFatMinimo = Convert.ToDouble(txtValorFornecedor.Text = txtValorFornecedor.Text);
+            txtValorFornecedor.Text = VlrFatMinimo.ToString("N2");
         }
 
 

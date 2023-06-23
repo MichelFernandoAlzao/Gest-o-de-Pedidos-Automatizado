@@ -203,7 +203,7 @@
             // 
             // cmdOcorrencias
             // 
-            cmdOcorrencias.Location = new Point(674, 138);
+            cmdOcorrencias.Location = new Point(674, 126);
             cmdOcorrencias.Name = "cmdOcorrencias";
             cmdOcorrencias.Size = new Size(114, 23);
             cmdOcorrencias.TabIndex = 16;
@@ -213,7 +213,7 @@
             // 
             // cmdItensPedido
             // 
-            cmdItensPedido.Location = new Point(674, 205);
+            cmdItensPedido.Location = new Point(674, 191);
             cmdItensPedido.Name = "cmdItensPedido";
             cmdItensPedido.Size = new Size(115, 23);
             cmdItensPedido.TabIndex = 17;
@@ -223,13 +223,13 @@
             // 
             // cmdCadCliente
             // 
-            cmdCadCliente.Location = new Point(674, 176);
+            cmdCadCliente.Location = new Point(674, 159);
             cmdCadCliente.Name = "cmdCadCliente";
             cmdCadCliente.Size = new Size(114, 23);
             cmdCadCliente.TabIndex = 18;
             cmdCadCliente.Text = "Dados Cliente";
             cmdCadCliente.UseVisualStyleBackColor = true;
-            cmdCadCliente.Visible = false;
+            cmdCadCliente.Click += cmdCadCliente_Click;
             // 
             // txtxNatOperacao
             // 
@@ -552,6 +552,7 @@
             txtValidadeProposta.Size = new Size(100, 23);
             txtValidadeProposta.TabIndex = 53;
             txtValidadeProposta.ValidatingType = typeof(DateTime);
+            txtValidadeProposta.Leave += txtValidadeProposta_Leave;
             // 
             // labValidadeProp
             // 
@@ -588,6 +589,7 @@
             txtPrazoEntrega.Size = new Size(100, 23);
             txtPrazoEntrega.TabIndex = 57;
             txtPrazoEntrega.ValidatingType = typeof(DateTime);
+            txtPrazoEntrega.Leave += txtPrazoEntrega_Leave;
             // 
             // label2
             // 

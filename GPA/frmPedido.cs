@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Banco_de_Dados;
+using GPA;
 
 namespace Formularios
 {
@@ -138,6 +139,11 @@ namespace Formularios
             txtTotalItens.Text = lstPedido[0].cpVlrTotalPedido;
             txtTotalFaturando.Text = lstPedido[0].cpVlrItensFaturando;
             cboStatus.Text = lstPedido[0].cpStatus;
+            if (lstPedido[0].cpStatus == "Concluido")
+            {
+                cmdGravar.Enabled = false;
+                cmdExcluir.Enabled = false;
+            }
             txtValidadeProposta.Text = lstPedido[0].cpValidadeProposta.ToString();
             txtFatMinimo.Text = lstPedido[0].cpVlrFatMinimo.ToString();
             txtPrazoPagamento.Text = lstPedido[0].cpPrazoPagamento.ToString();
@@ -146,8 +152,8 @@ namespace Formularios
             {
                 chkImpInclu.Checked = true;
             }
-            else 
-            { 
+            else
+            {
                 chkImpInclu.Checked = false;
             }
 
@@ -173,7 +179,7 @@ namespace Formularios
         {
             if (e.KeyCode == Keys.F1)
             {
-                frmSelecionaEmpresa objTela = new frmSelecionaEmpresa(LCaminhoBanco, this, "", txtEmpresa.Text.ToString(), "", "");
+                frmSelecionaEmpresa objTela = new frmSelecionaEmpresa(LCaminhoBanco, this, "", txtEmpresa.Text.ToString(), "", "",LUsuario);
                 objTela.ShowDialog();
                 BDCadEnderecos objEndereco = new BDCadEnderecos();
                 List<BDCadEnderecos> lstEndereco = objEndereco.CarregaDados(LCaminhoBanco, LID);
@@ -315,6 +321,11 @@ namespace Formularios
             }
 
             objPedido.cpStatus = cboStatus.Text.ToString();
+            if (objPedido.cpStatus == "Concluido")
+            {
+                if (MessageBox.Show("Deseja concluir este pedido ?\n O pedido só podera ser reaberto por um gestor!", "GPA", MessageBoxButtons.YesNo) == DialogResult.No)
+                    return;
+            }
             if (txtValidadeProposta.Text.Replace(" ", "").Replace("/", "") != "")
             {
                 objPedido.cpValidadeProposta = txtValidadeProposta.Text;
@@ -421,6 +432,9 @@ namespace Formularios
             chkImpInclu.Checked = false;
             txtValidadeProposta.Text = "";
             txtFatMinimo.Text = "";
+            cboStatus.Text = "";
+            cmdGravar.Enabled = true;
+            cmdExcluir.Enabled = true;
         }
 
         private void cmdSair_Click(object sender, EventArgs e)
@@ -556,6 +570,11 @@ namespace Formularios
                     frmRelatorios frmrelatorio = new frmRelatorios(LCaminhoBanco, Proprelatorio);
                     frmrelatorio.ShowDialog();
                 }
+                else
+                {
+                    MessageBox.Show("Pedido sem itens!", "GPA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
             }
 
         }
@@ -578,6 +597,49 @@ namespace Formularios
             {
                 e.Handled = true;
                 MessageBox.Show("este campo aceita somente uma virgula");
+            }
+        }
+
+        private void txtValidadeProposta_Leave(object sender, EventArgs e)
+        {
+            if (txtValidadeProposta.Text == "  /  /")
+            {
+                txtValidadeProposta.Text = DateTime.Today.ToShortDateString();
+            }
+            else
+            {
+                if (DateTime.TryParse(txtValidadeProposta.Text, out DateTime result) == false)
+                {
+                    MessageBox.Show("Data em formato invalido", "GPA");
+                    txtValidadeProposta.Text = "";
+                    return;
+                }
+            }
+        }
+
+        private void txtPrazoEntrega_Leave(object sender, EventArgs e)
+        {
+            if (txtPrazoEntrega.Text == "  /  /")
+            {
+                txtPrazoEntrega.Text = DateTime.Today.ToShortDateString();
+            }
+            else
+            {
+                if (DateTime.TryParse(txtPrazoEntrega.Text, out DateTime result) == false)
+                {
+                    MessageBox.Show("Data em formato invalido", "GPA");
+                    txtPrazoEntrega.Text = "";
+                    return;
+                }
+            }
+        }
+
+        private void cmdCadCliente_Click(object sender, EventArgs e)
+        {
+            if (LIDPedido != "")
+            {
+                frmCadEmpresas frmCadastro = new frmCadEmpresas(LCaminhoBanco, LUsuario, LID);
+                frmCadastro.ShowDialog();
             }
         }
     }

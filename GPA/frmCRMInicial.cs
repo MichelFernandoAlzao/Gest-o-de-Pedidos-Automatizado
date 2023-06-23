@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Banco_de_Dados;
 using Camada_Negocios;
+using Camada_de_tratamento_de_Valores;
 
 namespace Formularios
 {
@@ -17,6 +18,7 @@ namespace Formularios
         string LCaminhoBanco = "";
         List<string> LParametros;
         string LUsuario = "";
+        FormataValores objFormataValores = new FormataValores();
         public frmCRMInicial(string inCaminhoBanco, string inUsuario)
         {
             LCaminhoBanco = inCaminhoBanco;
@@ -26,7 +28,7 @@ namespace Formularios
 
             SEGUsuario sEGUsuario = new SEGUsuario();
             List<SEGUsuario> lstUsuario = sEGUsuario.CarregaDados(LCaminhoBanco, inUsuario, "", "", "");
-            labNomeUsuario.Text = lstUsuario[0].Nome;
+
 
             BDParametros objParametros = new BDParametros();
             List<BDParametros> lstParametros = objParametros.CarregaDados(LCaminhoBanco);
@@ -39,27 +41,6 @@ namespace Formularios
                     labNomeEmpresa.Text = lstCadastroGeral[0].RazaoSocial.ToString();
                 }
             }
-
-
-            if (lstUsuario[0].Administrador == "S")
-            {
-                HabilitaBotoes();
-            }
-        }
-
-        public void HabilitaBotoes()
-        {
-            cmdNatOperacao.Enabled = true;
-            cmdCadastroProduto.Enabled = true;
-        }
-        public void FuncoesTela()
-        {
-            BDCarregaAcessos objAcessos = new BDCarregaAcessos();
-            objAcessos.CarregaAcessos(LParametros[1]);
-            if (objAcessos.CadastroEmpresa == 'S') cmdCadastrosEmpresas.Enabled = true;
-            if (objAcessos.CadastroProduto == 'S') cmdCadastroProduto.Enabled = true;
-            if (objAcessos.Vendedor == 'S') cmdPedidos.Enabled = true;
-
         }
 
         private void frmCRMInicial_Load(object sender, EventArgs e)
@@ -338,12 +319,12 @@ namespace Formularios
         {
             claCalculaProgressaoMeta claCalculaProgressaoMeta = new claCalculaProgressaoMeta();
             string[] VlrCalcMetas = claCalculaProgressaoMeta.CarregaProgressao(LCaminhoBanco, LUsuario);
-            txtObjetivoDiario.Text = VlrCalcMetas[3].ToString();
+            txtObjetivoDiario.Text = objFormataValores.FormataVlrBRL(VlrCalcMetas[3].ToString());
             string AuxVlr = VlrCalcMetas[1].Replace(",", ".");
             pgrsbMeta.Value = (int)Convert.ToInt32(AuxVlr);
             labVlrProgressao.Text = AuxVlr + "%";
-            labVlrMeta.Text = VlrCalcMetas[0]; ToString();
-            labVlrConsolidado.Text = VlrCalcMetas[2].ToString();
+            labVlrMeta.Text = objFormataValores.FormataVlrBRL(VlrCalcMetas[0]);
+            labVlrConsolidado.Text = objFormataValores.FormataVlrBRL(VlrCalcMetas[2].ToString());
         }
 
         public void CarregaAgendaContato()
@@ -391,6 +372,95 @@ namespace Formularios
         {
             frmMeusClientes frmMeusClientes = new frmMeusClientes(LCaminhoBanco, LUsuario);
             frmMeusClientes.ShowDialog();
+        }
+
+        private void cmdRelatorios_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Em desenvolvimento", "GPA", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            return;
+            frmSelecionaRelatorio frmRelatorios = new frmSelecionaRelatorio();
+            frmRelatorios.ShowDialog();
+        }
+
+        private void MnuParametros_Click(object sender, EventArgs e)
+        {
+            frmParametrosdoGestor frmParametros = new frmParametrosdoGestor(LCaminhoBanco);
+            frmParametros.ShowDialog();
+            RealizaCargas();
+        }
+
+        private void MnuCadEmpresas_Click(object sender, EventArgs e)
+        {
+            GPA.frmCadEmpresas frmCadEmpresas = new GPA.frmCadEmpresas(LCaminhoBanco, LUsuario, "");
+            frmCadEmpresas.ShowDialog();
+            RealizaCargas();
+        }
+
+        private void MnuCadProdutos_Click(object sender, EventArgs e)
+        {
+            frmCadProdutos frmCadProdutos = new frmCadProdutos(LCaminhoBanco, LUsuario);
+            frmCadProdutos.ShowDialog();
+            RealizaCargas();
+        }
+
+        private void MnuPedidos_Click(object sender, EventArgs e)
+        {
+            frmPedido frmPedido = new frmPedido(LCaminhoBanco, LUsuario, "");
+            frmPedido.ShowDialog();
+            RealizaCargas();
+        }
+
+        private void MnuUltimasVendas_Click(object sender, EventArgs e)
+        {
+            frmUltimasVendas frmUltimasVendas = new frmUltimasVendas(LCaminhoBanco, LUsuario);
+            frmUltimasVendas.ShowDialog();
+            RealizaCargas();
+        }
+
+        private void MnuConsultaPedidos_Click(object sender, EventArgs e)
+        {
+            frmConsultaPedido frmConsultaPedido = new frmConsultaPedido(LCaminhoBanco);
+            frmConsultaPedido.ShowDialog();
+            RealizaCargas();
+        }
+
+        private void MnuMeusClientes_Click(object sender, EventArgs e)
+        {
+            frmMeusClientes frmMeusClientes = new frmMeusClientes(LCaminhoBanco, LUsuario);
+            frmMeusClientes.ShowDialog();
+        }
+
+        private void MnuRegistraContato_Click(object sender, EventArgs e)
+        {
+            frmContatosEmpresas frmContatosEmpresas = new frmContatosEmpresas(LCaminhoBanco, LUsuario);
+            frmContatosEmpresas.ShowDialog();
+            RealizaCargas();
+        }
+
+        private void MnuNatOperacao_Click(object sender, EventArgs e)
+        {
+            SEGUsuario objUsuario = new SEGUsuario();
+            objUsuario.ID = LUsuario;
+            List<SEGUsuario> lstUsuario = objUsuario.CarregaDados(LCaminhoBanco, LUsuario, "", "", "");
+            if (lstUsuario[0].GerenciaCadastros != "S")
+            {
+                MessageBox.Show("Usuario sem permissão para alterar/Cadastrar Naturezas", "GPA");
+                return;
+            }
+            frmNaturezaDaOperacao frmNatOperacao = new frmNaturezaDaOperacao(LCaminhoBanco, LUsuario);
+            frmNatOperacao.ShowDialog();
+            RealizaCargas();
+        }
+
+        private void rankingDeVendasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void vendasPorVendedorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmVendasPorCliente frmVendasPorCliente = new frmVendasPorCliente(LCaminhoBanco, LUsuario);
+            frmVendasPorCliente.ShowDialog();
         }
     }
 }

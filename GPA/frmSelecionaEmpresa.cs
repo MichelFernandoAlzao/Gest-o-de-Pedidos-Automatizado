@@ -19,10 +19,11 @@ namespace Formularios
         private string Razao;
         string Fantasia;
         string CNPJ;
+        string LUsuario;
         Form LChamador;
 
         string[] LParametros;
-        public frmSelecionaEmpresa(string inCaminhoBanco, Form frmChamador, string inID, string inrazao, string inFantasia, string inCNPJ)
+        public frmSelecionaEmpresa(string inCaminhoBanco, Form frmChamador, string inID, string inrazao, string inFantasia, string inCNPJ,string inUsuario)
         {
 
             InitializeComponent();
@@ -32,6 +33,7 @@ namespace Formularios
             Fantasia = inFantasia;
             CNPJ = inCNPJ;
             LChamador = frmChamador;
+            LUsuario = inUsuario;
         }
 
         private void SelecionaEmpresa_Load(object sender, EventArgs e)
@@ -41,8 +43,20 @@ namespace Formularios
 
         private void CarregaEmpresa(string inRazao, string inRazaoFantasia, string inCNPJ)
         {
+            string IDVendedor = "";
+
+            if (LUsuario != "")
+            {
+                SEGUsuario objUsuario = new SEGUsuario();
+                List<SEGUsuario> lstUsuario = objUsuario.CarregaDados(LCaminhoBanco, LUsuario, "", "", "");
+                if (lstUsuario[0].GerenciaCadastros != "S")
+                {
+                    IDVendedor = LUsuario;
+                }
+            }
+            
             BDCadastroGeral objCadastro = new BDCadastroGeral();
-            List<BDCadastroGeral> lstCadastro = objCadastro.CarregaDados(LCaminhoBanco, LIDCadastro, inRazao, inRazaoFantasia, inCNPJ, "", "", "", "", "", "");
+            List<BDCadastroGeral> lstCadastro = objCadastro.CarregaDados(LCaminhoBanco, LIDCadastro, inRazao, inRazaoFantasia, inCNPJ, "", IDVendedor, "", "", "", "");
             if (lstCadastro.Count > 0)
             {
                 foreach (BDCadastroGeral item in lstCadastro)

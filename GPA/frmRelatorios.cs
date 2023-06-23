@@ -24,13 +24,16 @@ namespace Formularios
         public frmRelatorios(string inCaminhoBanco, string[] inParametrosRel)
         {
             LCaminhoBanco = inCaminhoBanco;
-            string pRelatorio = inParametrosRel[0];
-            List<RelatorioPedido> lstPedido = new List<RelatorioPedido>();
-            ParametrosRel = inParametrosRel;
+            
             InitializeComponent();
 
+
+            string pRelatorio = inParametrosRel[0];
+
+            ParametrosRel = inParametrosRel;
             if (pRelatorio == "Formularios.Relatorios.Pedido.rdlc")
             {
+                List<RelatorioPedido> lstPedido = new List<RelatorioPedido>();
                 CarregaRelatorio objRelPedido = new CarregaRelatorio();
                 lstPedido = objRelPedido.CarregaRelatorioRDLC(LCaminhoBanco, ParametrosRel[1]);
                 

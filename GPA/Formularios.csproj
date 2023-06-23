@@ -22,6 +22,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Banco de Dados\Banco de Dados.csproj" />
+    <ProjectReference Include="..\Camada de tratamento de Valores\Camada de tratamento de Valores.csproj" />
     <ProjectReference Include="..\Camada Negocios\Camada Negocios.csproj" />
     <ProjectReference Include="..\Camada Relatorios\Camada Relatorios.csproj" />
     <ProjectReference Include="..\CarregaRelatorios\CarregaRelatorios.csproj" />

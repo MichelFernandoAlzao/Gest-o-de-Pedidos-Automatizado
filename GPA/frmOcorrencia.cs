@@ -142,7 +142,7 @@ namespace Formularios
         {
             if (e.KeyCode == Keys.F1)
             {
-                frmSelecionaEmpresa objTela = new frmSelecionaEmpresa(LCaminhoBanco, this, "", txtFornecedor.Text.ToString(), "", "");
+                frmSelecionaEmpresa objTela = new frmSelecionaEmpresa(LCaminhoBanco, this, "", txtFornecedor.Text.ToString(), "", "","");
                 objTela.ShowDialog();
                 MostraDados();
             }

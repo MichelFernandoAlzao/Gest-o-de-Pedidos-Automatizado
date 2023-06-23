@@ -11,25 +11,25 @@
           </Border>
         </Style>
       </Line>
-      <Tablix Name="Tablix2">
+      <Tablix Name="Tablix1">
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>4.87833cm</Width>
+              <Width>5.88561cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.875cm</Width>
+              <Width>2.5cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>4.87833cm</Width>
+              <Width>5.88561cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>4.87833cm</Width>
+              <Width>5.88561cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>0.6cm</Height>
+              <Height>0.5074cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -40,7 +40,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value />
+                              <Value>Numero</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -70,7 +70,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value />
+                              <Value>Razão Social</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -100,7 +100,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value />
+                              <Value>Natureza de Operação</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -130,7 +130,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value />
+                              <Value>Total</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -154,7 +154,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.6cm</Height>
+              <Height>0.5074cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -184,6 +184,7 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -298,10 +299,9 @@
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
-        <DataSetName>DataSet1</DataSetName>
-        <Top>0.17639cm</Top>
-        <Height>1.2cm</Height>
-        <Width>16.51cm</Width>
+        <Top>0.03528cm</Top>
+        <Height>1.01479cm</Height>
+        <Width>20.15683cm</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -313,33 +313,28 @@
     <Height>2in</Height>
     <Style />
   </Body>
-  <Width>6.5in</Width>
+  <Width>7.93576in</Width>
   <Page>
     <PageHeader>
       <Height>2.55833cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
-      <ReportItems>
-        <Image Name="CabecalhoProposta">
-          <Source>Embedded</Source>
-          <Value>img7</Value>
-          <Sizing>FitProportional</Sizing>
-          <Height>2.4525cm</Height>
-          <Width>6.68382cm</Width>
-          <ToolTip>Cabeçalho</ToolTip>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-          </Style>
-        </Image>
-      </ReportItems>
       <Style>
         <Border>
           <Style>None</Style>
         </Border>
       </Style>
     </PageHeader>
+    <PageFooter>
+      <Height>2.54cm</Height>
+      <PrintOnFirstPage>true</PrintOnFirstPage>
+      <PrintOnLastPage>true</PrintOnLastPage>
+      <Style>
+        <Border>
+          <Style>None</Style>
+        </Border>
+      </Style>
+    </PageFooter>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>
     <LeftMargin>2cm</LeftMargin>
@@ -350,12 +345,52 @@
     <Style />
   </Page>
   <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="Camada_Relatorios">
+      <ConnectionProperties>
+        <DataProvider>System.Data.DataSet</DataProvider>
+        <ConnectString>/* Local Connection */</ConnectString>
+      </ConnectionProperties>
+      <rd:DataSourceID>bf43ecf4-cabd-4464-a3b1-ad8d3937a632</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
   <DataSets>
-    <DataSet Name="DataSet1">
+    <DataSet Name="VendasPorVendedor">
       <Query>
-        <DataSourceName />
-        <CommandText />
+        <DataSourceName>Camada_Relatorios</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
       </Query>
+      <Fields>
+        <Field Name="DataConfirmacao">
+          <DataField>DataConfirmacao</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DataPedido">
+          <DataField>DataPedido</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="IDPedido">
+          <DataField>IDPedido</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="NatOperacao">
+          <DataField>NatOperacao</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RazaoSocial">
+          <DataField>RazaoSocial</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="VlrItensFaturando">
+          <DataField>VlrItensFaturando</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <rd:DataSetInfo>
+        <rd:DataSetName>Camada_Relatorios</rd:DataSetName>
+        <rd:TableName>VendasPorCliente</rd:TableName>
+        <rd:ObjectDataSourceType>Camada_Relatorios.VendasPorCliente, Camada Relatorios, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+      </rd:DataSetInfo>
     </DataSet>
   </DataSets>
   <EmbeddedImages>

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Camada_Relatorios
 {
-    internal class VendasPorCliente
+    public class VendasPorCliente
     {
         public string IDPedido { get; set; }
         public string RazaoSocial { get; set; }
@@ -14,6 +14,5 @@ namespace Camada_Relatorios
         public string DataConfirmacao { get; set; }
         public string VlrItensFaturando { get; set; }
         public string NatOperacao { get; set; }
-        public string SomaVendas { get; set; }
     }
 }

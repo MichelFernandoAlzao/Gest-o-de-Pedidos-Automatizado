@@ -107,10 +107,8 @@ namespace Formularios
 
         private void chkGerencia_CheckedChanged(object sender, EventArgs e)
         {
-            if (!chkGerencia.Checked)
-            {
-
-            }
+            grdMeusClientes.Rows.Clear();
+            CarregaGridClientes();
         }
     }
 }
