@@ -57,7 +57,7 @@
             txtEmpresa.Location = new Point(12, 71);
             txtEmpresa.Name = "txtEmpresa";
             txtEmpresa.Size = new Size(411, 23);
-            txtEmpresa.TabIndex = 8;
+            txtEmpresa.TabIndex = 1;
             txtEmpresa.KeyDown += txtEmpresa_KeyDown;
             // 
             // txtVendedor
@@ -65,7 +65,7 @@
             txtVendedor.Location = new Point(268, 134);
             txtVendedor.Name = "txtVendedor";
             txtVendedor.Size = new Size(155, 23);
-            txtVendedor.TabIndex = 10;
+            txtVendedor.TabIndex = 4;
             txtVendedor.KeyDown += txtVendedor_KeyDown;
             // 
             // labVendedor
@@ -84,7 +84,7 @@
             txtDataInicial.Mask = "00/00/0000";
             txtDataInicial.Name = "txtDataInicial";
             txtDataInicial.Size = new Size(100, 23);
-            txtDataInicial.TabIndex = 54;
+            txtDataInicial.TabIndex = 2;
             txtDataInicial.ValidatingType = typeof(DateTime);
             txtDataInicial.Leave += txtDataInicial_Leave;
             // 
@@ -94,7 +94,7 @@
             txtDataFinal.Mask = "00/00/0000";
             txtDataFinal.Name = "txtDataFinal";
             txtDataFinal.Size = new Size(100, 23);
-            txtDataFinal.TabIndex = 53;
+            txtDataFinal.TabIndex = 3;
             txtDataFinal.ValidatingType = typeof(DateTime);
             txtDataFinal.Leave += txtDataFinal_Leave;
             // 
@@ -136,7 +136,7 @@
             cmdSair.Location = new Point(393, 12);
             cmdSair.Name = "cmdSair";
             cmdSair.Size = new Size(30, 30);
-            cmdSair.TabIndex = 57;
+            cmdSair.TabIndex = 6;
             cmdSair.UseVisualStyleBackColor = true;
             cmdSair.Click += cmdSair_Click;
             // 
@@ -147,8 +147,9 @@
             cmdImprimir.Location = new Point(357, 12);
             cmdImprimir.Name = "cmdImprimir";
             cmdImprimir.Size = new Size(30, 30);
-            cmdImprimir.TabIndex = 59;
+            cmdImprimir.TabIndex = 5;
             cmdImprimir.UseVisualStyleBackColor = true;
+            cmdImprimir.Click += cmdImprimir_Click;
             // 
             // frmVendasPorCliente
             // 

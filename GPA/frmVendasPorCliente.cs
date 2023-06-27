@@ -44,7 +44,7 @@ namespace Formularios
                 frmSelecionaEmpresa objTela = new frmSelecionaEmpresa(LCaminhoBanco, this, "", txtEmpresa.Text.ToString(), "", "", LUsuario);
                 objTela.ShowDialog();
             }
-            if(LID != "")
+            if (LID != "")
             {
                 txtEmpresa.Text = LRazaoSocial;
             }
@@ -103,6 +103,30 @@ namespace Formularios
         private void cmdSair_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void cmdImprimir_Click(object sender, EventArgs e)
+        {
+            if (txtDataInicial.Text.Replace(" ", "").Replace("/", "") == "")
+            {
+                MessageBox.Show("Data inicial deve ser informada", "GPA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            if (txtDataFinal.Text.Replace(" ", "").Replace("/", "") == "")
+            {
+                MessageBox.Show("Data final deve ser informada", "GPA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            string[] Proprelatorio =
+{
+                        "Formularios.Relatorios.VendasPorCliente.rdlc",
+                        LIDUsuario.ToString(),
+                        txtDataInicial.Text,
+                        txtDataFinal.Text
+                    };
+            frmRelatorios frmrelatorio = new frmRelatorios(LCaminhoBanco, Proprelatorio);
+            frmrelatorio.ShowDialog();
         }
     }
 }

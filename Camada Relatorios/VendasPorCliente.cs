@@ -14,5 +14,6 @@ namespace Camada_Relatorios
         public string DataConfirmacao { get; set; }
         public string VlrItensFaturando { get; set; }
         public string NatOperacao { get; set; }
+        public string Vendedor { get; set; }
     }
 }

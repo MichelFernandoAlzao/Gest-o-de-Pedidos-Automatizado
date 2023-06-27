@@ -46,7 +46,23 @@ namespace Formularios
                 ReportViewer.LocalReport.ReportEmbeddedResource = pRelatorio;
                 this.Controls.Add(this.ReportViewer);
             }
+            if (pRelatorio == "Formularios.Relatorios.VendasPorCliente.rdlc")
+            {
+                List<VendasPorCliente> lstVendas = new List<VendasPorCliente>();
+                RelVendasPorCliente objRelVendas = new RelVendasPorCliente();
+                lstVendas = objRelVendas.CarregaRelatorioRDLC(LCaminhoBanco, ParametrosRel);
+
+                ReportDataSource fonteDeDados = new ReportDataSource();
+                fonteDeDados.Name = "VendasPorCliente";
+                fonteDeDados.Value = lstVendas;
+                this.ReportViewer.LocalReport.DataSources.Clear();
+                this.ReportViewer.LocalReport.DataSources.Add(fonteDeDados);
+                ReportViewer.LocalReport.ReportEmbeddedResource = pRelatorio;
+                this.Controls.Add(this.ReportViewer);
+            }
+            ReportViewer.SetDisplayMode(DisplayMode.PrintLayout);
             ReportViewer.RefreshReport();
+            
         }
 
         private void frmRelatorios_Load(object sender, EventArgs e)

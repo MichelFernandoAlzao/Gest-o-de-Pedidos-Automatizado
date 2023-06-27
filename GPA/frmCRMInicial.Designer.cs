@@ -515,7 +515,7 @@
             // MnuParametros
             // 
             MnuParametros.Name = "MnuParametros";
-            MnuParametros.Size = new Size(134, 22);
+            MnuParametros.Size = new Size(180, 22);
             MnuParametros.Text = "Parametros";
             MnuParametros.Click += MnuParametros_Click;
             // 

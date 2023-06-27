@@ -13,6 +13,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Relatorios\VendasPorCliente.rdlc" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Include="Logo.ico" />
   </ItemGroup>
 
@@ -32,6 +36,7 @@
     <EmbeddedResource Include="Relatorios\Pedido.rdlc">
       <CustomToolNamespace>Relatorios</CustomToolNamespace>
     </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\VendasPorCliente.rdlc" />
   </ItemGroup>
 
   <ItemGroup>

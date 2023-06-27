@@ -203,14 +203,14 @@ namespace Formularios
                 return;
             }
 
-            LIDITPedido = grdItensPedido.Rows[0].Cells[0].Value.ToString();
-            LIDProduto = grdItensPedido.Rows[0].Cells[1].Value.ToString();
-            LQuantidade = grdItensPedido.Rows[0].Cells[3].Value.ToString();
-            LValor = grdItensPedido.Rows[0].Cells[5].Value.ToString();
-            LValorTotalItem = grdItensPedido.Rows[0].Cells[6].Value.ToString();
-            LValorFornecedor = grdItensPedido.Rows[0].Cells[7].Value.ToString();
-            LLote = grdItensPedido.Rows[0].Cells[8].Value.ToString();
-            lbTotalItem.Text = LValorTotalItem = grdItensPedido.Rows[0].Cells[6].Value.ToString();
+            LIDITPedido = grdItensPedido.SelectedRows[0].Cells[0].Value.ToString();
+            LIDProduto = grdItensPedido.SelectedRows[0].Cells[1].Value.ToString();
+            LQuantidade = grdItensPedido.SelectedRows[0].Cells[3].Value.ToString();
+            LValor = grdItensPedido.SelectedRows[0].Cells[5].Value.ToString();
+            LValorTotalItem = grdItensPedido.SelectedRows[0].Cells[6].Value.ToString();
+            LValorFornecedor = grdItensPedido.SelectedRows[0].Cells[7].Value.ToString();
+            LLote = grdItensPedido.SelectedRows[0].Cells[8].Value.ToString();
+            lbTotalItem.Text = LValorTotalItem = grdItensPedido.SelectedRows[0].Cells[6].Value.ToString();
 
             MostraDados();
         }

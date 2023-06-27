@@ -13,15 +13,27 @@ namespace CarregaRelatorios
 {
     public class RelVendasPorCliente
     {
-        public List<VendasPorCliente> CarregaRelatorioRDLC(string inCaminhoBanco,string inVendedor)
+        public List<VendasPorCliente> CarregaRelatorioRDLC(string inCaminhoBanco,string[]inParametrosRel)
         {
+            string inVendedor = inParametrosRel[1];
+            string inDataInicial = inParametrosRel[2];
+            string inDataFinal = inParametrosRel[3];
             DataTable DTVendasPorCliente = new DataTable();
             string sSQL = "";
-            sSQL += "SELECT OPPPedido,CDCERazaoSocial,OPPDataContato,OPPDataConfirmacao, OPPVlritensFaturando,CDNODescricao ";
+            sSQL += "SELECT OPPPedido,CDCERazaoSocial,OPPDataContato,OPPDataConfirmacao, OPPVlritensFaturando,CDNODescricao, USUsuario ";
             sSQL += "FROM OPPPedido ";
             sSQL += "INNER JOIN CDCadastroEmpresas ON OPPEmpresaDR = CDCadastroEmpresas ";
             sSQL += "INNER JOIN CDNatOperacao ON OPPNaturezaDR = CDNatOperacao ";
-            sSQL += "WHERE OPPVendedorDR = '" + inVendedor + "' AND OPPStatus = 'Concluido'";
+            sSQL += "INNER JOIN SEGUsuarios on OPPVendedorDR = SEGUsuarios ";
+            sSQL += "WHERE OPPStatus = 'Concluido'";
+            sSQL += " AND (OPPDataConfirmacao >= '" + inDataInicial + "' AND OPPDataConfirmacao <= '" + inDataFinal + "')";
+            if (inVendedor != "")
+            {
+                sSQL += " AND OPPVendedorDR = '" + inVendedor + "'";
+            }
+            sSQL += " ORDER BY OPPVlritensFaturando desc,OPPDataConfirmacao";
+
+
 
             Conexao conexao = new Conexao(inCaminhoBanco);
             SqlCommand cmd = new SqlCommand();
@@ -48,6 +60,7 @@ namespace CarregaRelatorios
                     bDVendasPorCliente.DataConfirmacao = dr["OPPDataConfirmacao"].ToString();
                     bDVendasPorCliente.VlrItensFaturando = dr["OPPVlritensFaturando"].ToString();
                     bDVendasPorCliente.NatOperacao = dr["CDNODescricao"].ToString();
+                    bDVendasPorCliente.Vendedor = dr["USUsuario"].ToString();
 
 
                     lstRelVendasPorCliente.Add(bDVendasPorCliente);

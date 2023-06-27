@@ -342,7 +342,7 @@ namespace Formularios
             {
                 objPedido.cpPrazoPagamento = txtPrazoPagamento.Text;
             }
-            if (txtPrazoEntrega.Text != "")
+            if (txtPrazoEntrega.Text.Replace(" ","").Replace("/","") != "")
             {
                 objPedido.cpPrazoEntrega = txtPrazoEntrega.Text;
             }
