@@ -179,7 +179,7 @@ namespace Formularios
         {
             if (e.KeyCode == Keys.F1)
             {
-                frmSelecionaEmpresa objTela = new frmSelecionaEmpresa(LCaminhoBanco, this, "", txtEmpresa.Text.ToString(), "", "",LUsuario);
+                frmSelecionaEmpresa objTela = new frmSelecionaEmpresa(LCaminhoBanco, this, "", txtEmpresa.Text.ToString(), "", "", LUsuario);
                 objTela.ShowDialog();
                 BDCadEnderecos objEndereco = new BDCadEnderecos();
                 List<BDCadEnderecos> lstEndereco = objEndereco.CarregaDados(LCaminhoBanco, LID);
@@ -342,7 +342,7 @@ namespace Formularios
             {
                 objPedido.cpPrazoPagamento = txtPrazoPagamento.Text;
             }
-            if (txtPrazoEntrega.Text.Replace(" ","").Replace("/","") != "")
+            if (txtPrazoEntrega.Text.Replace(" ", "").Replace("/", "") != "")
             {
                 objPedido.cpPrazoEntrega = txtPrazoEntrega.Text;
             }

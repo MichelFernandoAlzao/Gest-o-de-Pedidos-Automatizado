@@ -88,6 +88,7 @@
             // 
             grdListaPedido.AllowUserToAddRows = false;
             grdListaPedido.AllowUserToDeleteRows = false;
+            grdListaPedido.BackgroundColor = SystemColors.GradientActiveCaption;
             grdListaPedido.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             grdListaPedido.Columns.AddRange(new DataGridViewColumn[] { grdID, grdRazao, grdData });
             grdListaPedido.Location = new Point(12, 78);
@@ -133,6 +134,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.Info;
             ClientSize = new Size(800, 247);
             ControlBox = false;
             Controls.Add(cmdSair);

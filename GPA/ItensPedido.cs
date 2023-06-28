@@ -149,8 +149,8 @@ namespace Formularios
             {
                 BDPedido objPedido = new BDPedido();
                 claNCalculaProduto claCalcula = new claNCalculaProduto();
-                claCalcula.CalculaTotalItens(LIDPedido,LCaminhoBanco);
-                claCalcula.CalculaTotalFaturando(LIDPedido,LCaminhoBanco);
+                claCalcula.CalculaTotalItens(LIDPedido, LCaminhoBanco);
+                claCalcula.CalculaTotalFaturando(LIDPedido, LCaminhoBanco);
 
                 CarregaGrid();
             }
@@ -190,7 +190,7 @@ namespace Formularios
             objExcluirItem.Excluir(LCaminhoBanco);
             BDPedido objPedido = new BDPedido();
             claNCalculaProduto claCalcula = new claNCalculaProduto();
-            claCalcula.CalculaTotalItens(LIDPedido,LCaminhoBanco);
+            claCalcula.CalculaTotalItens(LIDPedido, LCaminhoBanco);
             Novo();
             CarregaGrid();
         }
@@ -267,7 +267,7 @@ namespace Formularios
         {
             if (e.KeyCode == Keys.F1)
             {
-                frmSelecionaEmpresa frmSelecionarFornecedor = new frmSelecionaEmpresa(LCaminhoBanco, this, "", txtFornecedor.Text, "", "","");
+                frmSelecionaEmpresa frmSelecionarFornecedor = new frmSelecionaEmpresa(LCaminhoBanco, this, "", txtFornecedor.Text, "", "", "");
                 frmSelecionarFornecedor.ShowDialog();
                 if (LID != "")
                 {

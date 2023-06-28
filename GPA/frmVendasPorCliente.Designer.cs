@@ -155,6 +155,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.Info;
             ClientSize = new Size(436, 184);
             ControlBox = false;
             Controls.Add(cmdImprimir);

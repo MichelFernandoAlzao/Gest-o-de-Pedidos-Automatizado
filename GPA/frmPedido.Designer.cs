@@ -107,7 +107,7 @@
             txtNumeroPedido.Location = new Point(12, 61);
             txtNumeroPedido.Name = "txtNumeroPedido";
             txtNumeroPedido.Size = new Size(100, 23);
-            txtNumeroPedido.TabIndex = 3;
+            txtNumeroPedido.TabIndex = 1;
             txtNumeroPedido.KeyDown += txtNumeroPedido_KeyDown;
             // 
             // txtEmpresa
@@ -115,7 +115,7 @@
             txtEmpresa.Location = new Point(118, 61);
             txtEmpresa.Name = "txtEmpresa";
             txtEmpresa.Size = new Size(549, 23);
-            txtEmpresa.TabIndex = 4;
+            txtEmpresa.TabIndex = 2;
             txtEmpresa.KeyDown += txtEmpresa_KeyDown;
             // 
             // txtNumPedExterno
@@ -123,7 +123,7 @@
             txtNumPedExterno.Location = new Point(674, 61);
             txtNumPedExterno.Name = "txtNumPedExterno";
             txtNumPedExterno.Size = new Size(114, 23);
-            txtNumPedExterno.TabIndex = 5;
+            txtNumPedExterno.TabIndex = 3;
             // 
             // lbNumeroPedido
             // 
@@ -196,7 +196,7 @@
             cmdUltVenda.Location = new Point(674, 96);
             cmdUltVenda.Name = "cmdUltVenda";
             cmdUltVenda.Size = new Size(114, 23);
-            cmdUltVenda.TabIndex = 15;
+            cmdUltVenda.TabIndex = 14;
             cmdUltVenda.Text = "Ultimas Compras";
             cmdUltVenda.UseVisualStyleBackColor = true;
             cmdUltVenda.Click += cmdUltVenda_Click;
@@ -206,7 +206,7 @@
             cmdOcorrencias.Location = new Point(674, 126);
             cmdOcorrencias.Name = "cmdOcorrencias";
             cmdOcorrencias.Size = new Size(114, 23);
-            cmdOcorrencias.TabIndex = 16;
+            cmdOcorrencias.TabIndex = 15;
             cmdOcorrencias.Text = "Ocorrencias";
             cmdOcorrencias.UseVisualStyleBackColor = true;
             cmdOcorrencias.Click += cmdOcorrencias_Click;
@@ -226,7 +226,7 @@
             cmdCadCliente.Location = new Point(674, 159);
             cmdCadCliente.Name = "cmdCadCliente";
             cmdCadCliente.Size = new Size(114, 23);
-            cmdCadCliente.TabIndex = 18;
+            cmdCadCliente.TabIndex = 16;
             cmdCadCliente.Text = "Dados Cliente";
             cmdCadCliente.UseVisualStyleBackColor = true;
             cmdCadCliente.Click += cmdCadCliente_Click;
@@ -236,7 +236,7 @@
             txtxNatOperacao.Location = new Point(224, 176);
             txtxNatOperacao.Name = "txtxNatOperacao";
             txtxNatOperacao.Size = new Size(440, 23);
-            txtxNatOperacao.TabIndex = 19;
+            txtxNatOperacao.TabIndex = 6;
             txtxNatOperacao.KeyDown += txtxNatOperacao_KeyDown;
             // 
             // label5
@@ -364,7 +364,7 @@
             txtObservacao.Multiline = true;
             txtObservacao.Name = "txtObservacao";
             txtObservacao.Size = new Size(655, 154);
-            txtObservacao.TabIndex = 32;
+            txtObservacao.TabIndex = 13;
             // 
             // label17
             // 
@@ -458,7 +458,7 @@
             cmdExcluir.Location = new Point(650, 9);
             cmdExcluir.Name = "cmdExcluir";
             cmdExcluir.Size = new Size(30, 30);
-            cmdExcluir.TabIndex = 45;
+            cmdExcluir.TabIndex = 19;
             cmdExcluir.UseVisualStyleBackColor = true;
             cmdExcluir.Click += cmdExcluir_Click;
             // 
@@ -469,7 +469,7 @@
             cmdNovo.Location = new Point(686, 9);
             cmdNovo.Name = "cmdNovo";
             cmdNovo.Size = new Size(30, 30);
-            cmdNovo.TabIndex = 44;
+            cmdNovo.TabIndex = 20;
             cmdNovo.UseVisualStyleBackColor = true;
             cmdNovo.Click += cmdNovo_Click;
             // 
@@ -480,7 +480,7 @@
             cmdGravar.Location = new Point(722, 9);
             cmdGravar.Name = "cmdGravar";
             cmdGravar.Size = new Size(30, 30);
-            cmdGravar.TabIndex = 43;
+            cmdGravar.TabIndex = 21;
             cmdGravar.UseVisualStyleBackColor = true;
             cmdGravar.Click += cmdGravar_Click;
             // 
@@ -491,7 +491,7 @@
             cmdSair.Location = new Point(758, 9);
             cmdSair.Name = "cmdSair";
             cmdSair.Size = new Size(30, 30);
-            cmdSair.TabIndex = 42;
+            cmdSair.TabIndex = 22;
             cmdSair.UseVisualStyleBackColor = true;
             cmdSair.Click += cmdSair_Click;
             // 
@@ -519,7 +519,7 @@
             txtDataConfirmacao.Mask = "00/00/0000";
             txtDataConfirmacao.Name = "txtDataConfirmacao";
             txtDataConfirmacao.Size = new Size(100, 23);
-            txtDataConfirmacao.TabIndex = 49;
+            txtDataConfirmacao.TabIndex = 5;
             txtDataConfirmacao.ValidatingType = typeof(DateTime);
             txtDataConfirmacao.Leave += txtDataConfirmacao_Leave;
             // 
@@ -529,7 +529,7 @@
             txtDataSolicitacao.Mask = "00/00/0000";
             txtDataSolicitacao.Name = "txtDataSolicitacao";
             txtDataSolicitacao.Size = new Size(100, 23);
-            txtDataSolicitacao.TabIndex = 50;
+            txtDataSolicitacao.TabIndex = 4;
             txtDataSolicitacao.ValidatingType = typeof(DateTime);
             txtDataSolicitacao.Leave += txtDataSolicitacao_Leave;
             // 
@@ -540,7 +540,7 @@
             cmdImprimir.Location = new Point(614, 9);
             cmdImprimir.Name = "cmdImprimir";
             cmdImprimir.Size = new Size(30, 30);
-            cmdImprimir.TabIndex = 51;
+            cmdImprimir.TabIndex = 18;
             cmdImprimir.UseVisualStyleBackColor = true;
             cmdImprimir.Click += cmdImprimir_Click;
             // 
@@ -550,7 +550,7 @@
             txtValidadeProposta.Mask = "00/00/0000";
             txtValidadeProposta.Name = "txtValidadeProposta";
             txtValidadeProposta.Size = new Size(100, 23);
-            txtValidadeProposta.TabIndex = 53;
+            txtValidadeProposta.TabIndex = 8;
             txtValidadeProposta.ValidatingType = typeof(DateTime);
             txtValidadeProposta.Leave += txtValidadeProposta_Leave;
             // 
@@ -577,7 +577,7 @@
             txtFatMinimo.Location = new Point(224, 225);
             txtFatMinimo.Name = "txtFatMinimo";
             txtFatMinimo.Size = new Size(120, 23);
-            txtFatMinimo.TabIndex = 54;
+            txtFatMinimo.TabIndex = 9;
             txtFatMinimo.KeyPress += txtFatMinimo_KeyPress;
             txtFatMinimo.Leave += txtFatMinimo_Leave;
             // 
@@ -587,7 +587,7 @@
             txtPrazoEntrega.Mask = "00/00/0000";
             txtPrazoEntrega.Name = "txtPrazoEntrega";
             txtPrazoEntrega.Size = new Size(100, 23);
-            txtPrazoEntrega.TabIndex = 57;
+            txtPrazoEntrega.TabIndex = 7;
             txtPrazoEntrega.ValidatingType = typeof(DateTime);
             txtPrazoEntrega.Leave += txtPrazoEntrega_Leave;
             // 
@@ -614,7 +614,7 @@
             txtPrazoPagamento.Location = new Point(353, 225);
             txtPrazoPagamento.Name = "txtPrazoPagamento";
             txtPrazoPagamento.Size = new Size(110, 23);
-            txtPrazoPagamento.TabIndex = 58;
+            txtPrazoPagamento.TabIndex = 10;
             // 
             // chkImpInclu
             // 
@@ -622,7 +622,7 @@
             chkImpInclu.Location = new Point(469, 227);
             chkImpInclu.Name = "chkImpInclu";
             chkImpInclu.Size = new Size(91, 19);
-            chkImpInclu.TabIndex = 60;
+            chkImpInclu.TabIndex = 11;
             chkImpInclu.Text = "Imp. Incluso";
             chkImpInclu.UseVisualStyleBackColor = true;
             // 
@@ -633,7 +633,7 @@
             cboStatus.Location = new Point(12, 270);
             cboStatus.Name = "cboStatus";
             cboStatus.Size = new Size(100, 23);
-            cboStatus.TabIndex = 61;
+            cboStatus.TabIndex = 12;
             // 
             // labStatus
             // 
@@ -648,6 +648,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.Info;
             ClientSize = new Size(800, 496);
             ControlBox = false;
             Controls.Add(labStatus);

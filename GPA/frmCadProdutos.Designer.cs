@@ -73,7 +73,7 @@
             txtDescricao.Location = new Point(12, 65);
             txtDescricao.Name = "txtDescricao";
             txtDescricao.Size = new Size(472, 23);
-            txtDescricao.TabIndex = 2;
+            txtDescricao.TabIndex = 0;
             txtDescricao.KeyDown += txtDescricao_KeyDown;
             // 
             // txtCodigo
@@ -81,7 +81,7 @@
             txtCodigo.Location = new Point(503, 65);
             txtCodigo.Name = "txtCodigo";
             txtCodigo.Size = new Size(127, 23);
-            txtCodigo.TabIndex = 3;
+            txtCodigo.TabIndex = 1;
             txtCodigo.KeyDown += txtCodigo_KeyDown;
             // 
             // label1
@@ -119,7 +119,7 @@
             txtDescFornecedor.Location = new Point(12, 113);
             txtDescFornecedor.Name = "txtDescFornecedor";
             txtDescFornecedor.Size = new Size(472, 23);
-            txtDescFornecedor.TabIndex = 8;
+            txtDescFornecedor.TabIndex = 4;
             // 
             // label4
             // 
@@ -146,7 +146,7 @@
             txtFabricante.Location = new Point(12, 165);
             txtFabricante.Name = "txtFabricante";
             txtFabricante.Size = new Size(472, 23);
-            txtFabricante.TabIndex = 10;
+            txtFabricante.TabIndex = 5;
             txtFabricante.KeyDown += txtFabricante_KeyDown;
             // 
             // label6
@@ -164,7 +164,7 @@
             txtCodFabricante.Location = new Point(789, 65);
             txtCodFabricante.Name = "txtCodFabricante";
             txtCodFabricante.Size = new Size(130, 23);
-            txtCodFabricante.TabIndex = 12;
+            txtCodFabricante.TabIndex = 3;
             // 
             // txtDescritivo
             // 
@@ -172,7 +172,7 @@
             txtDescritivo.Multiline = true;
             txtDescritivo.Name = "txtDescritivo";
             txtDescritivo.Size = new Size(755, 180);
-            txtDescritivo.TabIndex = 14;
+            txtDescritivo.TabIndex = 10;
             // 
             // label7
             // 
@@ -189,7 +189,7 @@
             cmdUltVenda.Location = new Point(789, 245);
             cmdUltVenda.Name = "cmdUltVenda";
             cmdUltVenda.Size = new Size(130, 23);
-            cmdUltVenda.TabIndex = 16;
+            cmdUltVenda.TabIndex = 11;
             cmdUltVenda.Text = "Ultima Venda";
             cmdUltVenda.UseVisualStyleBackColor = true;
             cmdUltVenda.Click += cmdUltVenda_Click;
@@ -199,7 +199,7 @@
             button2.Location = new Point(789, 286);
             button2.Name = "button2";
             button2.Size = new Size(130, 23);
-            button2.TabIndex = 17;
+            button2.TabIndex = 12;
             button2.Text = "Ocorrencias";
             button2.UseVisualStyleBackColor = true;
             button2.Visible = false;
@@ -210,7 +210,7 @@
             chkAtivo.Location = new Point(12, 194);
             chkAtivo.Name = "chkAtivo";
             chkAtivo.Size = new Size(54, 19);
-            chkAtivo.TabIndex = 19;
+            chkAtivo.TabIndex = 7;
             chkAtivo.Text = "Ativo";
             chkAtivo.UseVisualStyleBackColor = true;
             // 
@@ -220,7 +220,7 @@
             chkOperacional.Location = new Point(86, 194);
             chkOperacional.Name = "chkOperacional";
             chkOperacional.Size = new Size(90, 19);
-            chkOperacional.TabIndex = 20;
+            chkOperacional.TabIndex = 8;
             chkOperacional.Text = "Operacional";
             chkOperacional.UseVisualStyleBackColor = true;
             // 
@@ -230,7 +230,7 @@
             chkForadeLinha.Location = new Point(204, 194);
             chkForadeLinha.Name = "chkForadeLinha";
             chkForadeLinha.Size = new Size(94, 19);
-            chkForadeLinha.TabIndex = 21;
+            chkForadeLinha.TabIndex = 9;
             chkForadeLinha.Text = "Fora de linha";
             chkForadeLinha.UseVisualStyleBackColor = true;
             // 
@@ -249,7 +249,7 @@
             txtMelhorFornecedor.Location = new Point(490, 165);
             txtMelhorFornecedor.Name = "txtMelhorFornecedor";
             txtMelhorFornecedor.Size = new Size(429, 23);
-            txtMelhorFornecedor.TabIndex = 22;
+            txtMelhorFornecedor.TabIndex = 6;
             txtMelhorFornecedor.KeyDown += txtMelhorFornecedor_KeyDown;
             // 
             // cmdNovo
@@ -260,7 +260,7 @@
             cmdNovo.Location = new Point(837, 9);
             cmdNovo.Name = "cmdNovo";
             cmdNovo.Size = new Size(29, 29);
-            cmdNovo.TabIndex = 24;
+            cmdNovo.TabIndex = 13;
             cmdNovo.UseVisualStyleBackColor = true;
             cmdNovo.Click += cmdNovo_Click;
             // 
@@ -272,7 +272,7 @@
             cmdGravar.Location = new Point(872, 9);
             cmdGravar.Name = "cmdGravar";
             cmdGravar.Size = new Size(29, 29);
-            cmdGravar.TabIndex = 25;
+            cmdGravar.TabIndex = 14;
             cmdGravar.UseVisualStyleBackColor = true;
             cmdGravar.Click += cmdGravar_Click;
             // 
@@ -284,7 +284,7 @@
             cmdSair.Location = new Point(907, 9);
             cmdSair.Name = "cmdSair";
             cmdSair.Size = new Size(29, 29);
-            cmdSair.TabIndex = 26;
+            cmdSair.TabIndex = 15;
             cmdSair.UseVisualStyleBackColor = true;
             cmdSair.Click += cmdSair_Click;
             // 
@@ -295,13 +295,14 @@
             txtDataCadastro.Mask = "00/00/0000";
             txtDataCadastro.Name = "txtDataCadastro";
             txtDataCadastro.Size = new Size(100, 23);
-            txtDataCadastro.TabIndex = 27;
+            txtDataCadastro.TabIndex = 2;
             txtDataCadastro.ValidatingType = typeof(DateTime);
             // 
             // frmCadProdutos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.Info;
             ClientSize = new Size(948, 437);
             ControlBox = false;
             Controls.Add(txtDataCadastro);

@@ -156,6 +156,7 @@
             // 
             grdProdutos.AllowUserToAddRows = false;
             grdProdutos.AllowUserToDeleteRows = false;
+            grdProdutos.BackgroundColor = SystemColors.GradientActiveCaption;
             grdProdutos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             grdProdutos.Columns.AddRange(new DataGridViewColumn[] { grdIDItem, grdDescProduto, grdVlrProd, grdQtdPedido, grdTotalItem });
             grdProdutos.Location = new Point(12, 341);
@@ -307,6 +308,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.Info;
             ClientSize = new Size(800, 450);
             ControlBox = false;
             Controls.Add(txtDataReolucao);

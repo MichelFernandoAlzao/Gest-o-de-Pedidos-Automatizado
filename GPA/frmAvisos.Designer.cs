@@ -167,6 +167,7 @@
             // 
             grdAvisos.AllowUserToAddRows = false;
             grdAvisos.AllowUserToDeleteRows = false;
+            grdAvisos.BackgroundColor = SystemColors.GradientActiveCaption;
             grdAvisos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             grdAvisos.Columns.AddRange(new DataGridViewColumn[] { grdID, grdAviso, grdInicio, grdTermino, grdUsuario, grdIDusuario, grdTodos });
             grdAvisos.Location = new Point(12, 185);
@@ -259,6 +260,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.Info;
             ClientSize = new Size(800, 349);
             ControlBox = false;
             Controls.Add(txtDataTermino);

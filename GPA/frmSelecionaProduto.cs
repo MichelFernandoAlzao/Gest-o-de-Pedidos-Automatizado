@@ -34,10 +34,10 @@ namespace Formularios
 
         private void frmSelecionaProduto_Load(object sender, EventArgs e)
         {
-            CarregaProduto(LID,LDescProduto, LFabricanteDR, LCodFabricante);
+            CarregaProduto(LID, LDescProduto, LFabricanteDR, LCodFabricante);
         }
 
-        private void CarregaProduto(string inIDProd,string inDescProduto, string inFabricanteDR, string inCodFabricante)
+        private void CarregaProduto(string inIDProd, string inDescProduto, string inFabricanteDR, string inCodFabricante)
         {
 
             BDCadProdutos objCadastro = new BDCadProdutos();
@@ -45,11 +45,11 @@ namespace Formularios
             {
                 objCadastro.cpID = inIDProd;
             }
-            if(inDescProduto != "")
+            if (inDescProduto != "")
             {
                 objCadastro.cpDescricao = inDescProduto;
             }
-            if(inCodFabricante!="")
+            if (inCodFabricante != "")
             {
                 objCadastro.cpCodigoFabricante = inCodFabricante;
             }

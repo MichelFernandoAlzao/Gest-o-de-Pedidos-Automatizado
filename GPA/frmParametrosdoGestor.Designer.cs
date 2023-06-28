@@ -69,6 +69,7 @@
             // 
             grdMetasMensais.AllowUserToAddRows = false;
             grdMetasMensais.AllowUserToDeleteRows = false;
+            grdMetasMensais.BackgroundColor = SystemColors.GradientActiveCaption;
             grdMetasMensais.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             grdMetasMensais.Columns.AddRange(new DataGridViewColumn[] { grdID, grdNome, grdMetaMensal });
             grdMetasMensais.Location = new Point(12, 288);
@@ -173,6 +174,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.Info;
             ClientSize = new Size(419, 450);
             ControlBox = false;
             Controls.Add(cmdGravarMetas);

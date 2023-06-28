@@ -49,6 +49,12 @@ namespace Formularios
             txtSugestoes.Text = "";
             txtReclamacoes.Text = "";
             grdProdSugeridos.Rows.Clear();
+            TxtContato2.Text = "";
+            labCtt2.Visible = false;
+            TxtContato2.Visible = false;
+            TxtContato1.Text = "";
+            labCtt1.Visible = false;
+            TxtContato1.Visible = false;
 
 
         }
@@ -252,11 +258,26 @@ namespace Formularios
         {
             if (e.KeyCode == Keys.F1)
             {
-                frmSelecionaEmpresa objTela = new frmSelecionaEmpresa(LCaminhoBanco, this, "", txtEmpresa.Text.ToString(), "", "","");
+                frmSelecionaEmpresa objTela = new frmSelecionaEmpresa(LCaminhoBanco, this, "", txtEmpresa.Text.ToString(), "", "", LUsuario);
                 objTela.ShowDialog();
                 if (LRazaoSocial != "")
                 {
                     txtEmpresa.Text = LRazaoSocial;
+
+                    BDCadContatos objContato = new BDCadContatos();
+                    List<BDCadContatos> lstContatos = objContato.CarregaDados(LCaminhoBanco, LID);
+                    if (lstContatos.Count > 0)
+                    {
+                        TxtContato1.Text = lstContatos[0].cpTelefone.ToString();
+                        labCtt1.Visible = true;
+                        TxtContato1.Visible = true;
+                    }
+                    if (lstContatos.Count > 1)
+                    {
+                        TxtContato2.Text = lstContatos[1].cpTelefone.ToString();
+                        labCtt2.Visible = true;
+                        TxtContato2.Visible = true;
+                    }
                 }
             }
         }

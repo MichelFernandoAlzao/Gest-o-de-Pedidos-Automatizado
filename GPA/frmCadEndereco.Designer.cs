@@ -186,6 +186,7 @@
             // 
             grdEnderecos.AllowUserToAddRows = false;
             grdEnderecos.AllowUserToDeleteRows = false;
+            grdEnderecos.BackgroundColor = SystemColors.GradientActiveCaption;
             grdEnderecos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             grdEnderecos.Columns.AddRange(new DataGridViewColumn[] { grdid, grdIdentificacao, grdRua, grdNumero, grdBairro, grdCidade, grdEstado, grdReferencia, grdCEP, grdFisico, grdCobranca });
             grdEnderecos.Location = new Point(12, 48);
@@ -355,6 +356,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.Info;
             ClientSize = new Size(800, 450);
             ControlBox = false;
             Controls.Add(txtCEP);

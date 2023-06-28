@@ -63,6 +63,7 @@
             // 
             grdProdutos.AllowUserToAddRows = false;
             grdProdutos.AllowUserToDeleteRows = false;
+            grdProdutos.BackgroundColor = SystemColors.GradientActiveCaption;
             grdProdutos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             grdProdutos.Columns.AddRange(new DataGridViewColumn[] { grdID, grdDescricao, grdCodigo, grdAtivo });
             grdProdutos.Location = new Point(11, 36);
@@ -123,6 +124,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.Info;
             ClientSize = new Size(800, 250);
             ControlBox = false;
             Controls.Add(lbCadProdutos);

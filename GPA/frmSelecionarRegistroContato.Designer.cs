@@ -75,6 +75,7 @@
             // 
             grdRegContatos.AllowUserToAddRows = false;
             grdRegContatos.AllowUserToDeleteRows = false;
+            grdRegContatos.BackgroundColor = SystemColors.GradientActiveCaption;
             grdRegContatos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             grdRegContatos.Columns.AddRange(new DataGridViewColumn[] { grdID, grdDescricao, grdCodigo });
             grdRegContatos.Location = new Point(12, 39);
@@ -114,6 +115,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.Info;
             ClientSize = new Size(800, 255);
             ControlBox = false;
             Controls.Add(lbSelecRegistroContato);

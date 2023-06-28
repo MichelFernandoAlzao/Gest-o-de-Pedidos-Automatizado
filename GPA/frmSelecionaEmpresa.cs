@@ -23,7 +23,7 @@ namespace Formularios
         Form LChamador;
 
         string[] LParametros;
-        public frmSelecionaEmpresa(string inCaminhoBanco, Form frmChamador, string inID, string inrazao, string inFantasia, string inCNPJ,string inUsuario)
+        public frmSelecionaEmpresa(string inCaminhoBanco, Form frmChamador, string inID, string inrazao, string inFantasia, string inCNPJ, string inUsuario)
         {
 
             InitializeComponent();
@@ -54,7 +54,7 @@ namespace Formularios
                     IDVendedor = LUsuario;
                 }
             }
-            
+
             BDCadastroGeral objCadastro = new BDCadastroGeral();
             List<BDCadastroGeral> lstCadastro = objCadastro.CarregaDados(LCaminhoBanco, LIDCadastro, inRazao, inRazaoFantasia, inCNPJ, "", IDVendedor, "", "", "", "");
             if (lstCadastro.Count > 0)

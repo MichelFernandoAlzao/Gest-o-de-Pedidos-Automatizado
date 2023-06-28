@@ -156,7 +156,7 @@ namespace Formularios
                 }
                 if (e.KeyCode == Keys.F1)
                 {
-                    frmSelecionaEmpresa objTela = new frmSelecionaEmpresa(LCaminhoBanco, this, "", txtFabricante.Text.ToString(), "", "","");
+                    frmSelecionaEmpresa objTela = new frmSelecionaEmpresa(LCaminhoBanco, this, "", txtFabricante.Text.ToString(), "", "", "");
                     objTela.ShowDialog();
                     LFabricante = LID;
                     txtFabricante.Text = LRazaoSocial.ToString();
@@ -183,7 +183,7 @@ namespace Formularios
                 }
                 if (e.KeyCode == Keys.F1)
                 {
-                    frmSelecionaEmpresa objTela = new frmSelecionaEmpresa(LCaminhoBanco, this, "", txtMelhorFornecedor.Text.ToString(), "", "","");
+                    frmSelecionaEmpresa objTela = new frmSelecionaEmpresa(LCaminhoBanco, this, "", txtMelhorFornecedor.Text.ToString(), "", "", "");
                     objTela.ShowDialog();
                     LMelhorFornecedor = LID;
                     txtMelhorFornecedor.Text = LRazaoSocial.ToString();
@@ -284,14 +284,14 @@ namespace Formularios
 
         private void txtCodigo_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.F1) 
+            if (e.KeyCode == Keys.F1)
             {
-                if(txtCodigo.Text == "")
+                if (txtCodigo.Text == "")
                 {
-                    MessageBox.Show("Nenhum Código Informado!","GPA");
+                    MessageBox.Show("Nenhum Código Informado!", "GPA");
                     return;
                 }
-                frmSelecionaProduto frmSelecionaProduto = new frmSelecionaProduto(LCaminhoBanco,this,txtCodigo.Text,"","","");
+                frmSelecionaProduto frmSelecionaProduto = new frmSelecionaProduto(LCaminhoBanco, this, txtCodigo.Text, "", "", "");
                 frmSelecionaProduto.ShowDialog();
 
                 if (LIDProduto != "")

@@ -76,6 +76,7 @@
             // 
             grdNatureza.AllowUserToAddRows = false;
             grdNatureza.AllowUserToDeleteRows = false;
+            grdNatureza.BackgroundColor = SystemColors.GradientActiveCaption;
             grdNatureza.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             grdNatureza.Columns.AddRange(new DataGridViewColumn[] { grdID, grdDescricao, grdCodigo, grdAtivo });
             grdNatureza.Location = new Point(12, 36);
@@ -124,6 +125,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.Info;
             ClientSize = new Size(480, 450);
             ControlBox = false;
             Controls.Add(lbSelectNatOperacao);

@@ -249,7 +249,7 @@ namespace GPA
         {
             if (e.KeyCode == Keys.F1)
             {
-                frmSelecionaEmpresa objTela = new frmSelecionaEmpresa(LCaminhoBanco, this, "", txtRazaoSocial.Text.ToString(), "", "",LUsuario);
+                frmSelecionaEmpresa objTela = new frmSelecionaEmpresa(LCaminhoBanco, this, "", txtRazaoSocial.Text.ToString(), "", "", LUsuario);
                 objTela.ShowDialog();
 
                 if (LID != "")

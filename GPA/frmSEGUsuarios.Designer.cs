@@ -55,6 +55,7 @@
             // 
             grdUsuarios.AllowUserToAddRows = false;
             grdUsuarios.AllowUserToDeleteRows = false;
+            grdUsuarios.BackgroundColor = SystemColors.GradientActiveCaption;
             grdUsuarios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             grdUsuarios.Columns.AddRange(new DataGridViewColumn[] { grdUserID, grdNomeUsuario, grdUsuario, grdUserSenha, grdAdmin, grdAltCadastros, grdOperacional, grdSeguranca });
             grdUsuarios.Location = new Point(12, 12);
@@ -232,6 +233,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.Info;
             ClientSize = new Size(800, 450);
             ControlBox = false;
             Controls.Add(chkSeguranca);

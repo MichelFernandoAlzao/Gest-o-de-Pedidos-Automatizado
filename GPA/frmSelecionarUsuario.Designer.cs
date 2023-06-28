@@ -63,6 +63,7 @@
             // 
             grdUsuarios.AllowUserToAddRows = false;
             grdUsuarios.AllowUserToDeleteRows = false;
+            grdUsuarios.BackgroundColor = SystemColors.GradientActiveCaption;
             grdUsuarios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             grdUsuarios.Columns.AddRange(new DataGridViewColumn[] { grdID, grdNome });
             grdUsuarios.Location = new Point(12, 47);
@@ -108,6 +109,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.Info;
             ClientSize = new Size(251, 469);
             ControlBox = false;
             Controls.Add(lbSelecUsuario);

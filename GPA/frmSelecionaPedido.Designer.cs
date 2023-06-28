@@ -75,6 +75,7 @@
             // 
             grdPedidos.AllowUserToAddRows = false;
             grdPedidos.AllowUserToDeleteRows = false;
+            grdPedidos.BackgroundColor = SystemColors.GradientActiveCaption;
             grdPedidos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             grdPedidos.Columns.AddRange(new DataGridViewColumn[] { grdID, grdDescricao, grdCodigo });
             grdPedidos.Location = new Point(12, 37);
@@ -114,6 +115,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.Info;
             ClientSize = new Size(800, 251);
             ControlBox = false;
             Controls.Add(lbLancPedido);

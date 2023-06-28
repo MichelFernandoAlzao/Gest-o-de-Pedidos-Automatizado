@@ -109,6 +109,7 @@
             // 
             grdContatos.AllowUserToAddRows = false;
             grdContatos.AllowUserToDeleteRows = false;
+            grdContatos.BackgroundColor = SystemColors.GradientActiveCaption;
             grdContatos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             grdContatos.Columns.AddRange(new DataGridViewColumn[] { grdid, grdNome, grdCargo, grdNumero, grdEmail, grdAniversario, grdComprador, grdGerencia, grdAnotacoes });
             grdContatos.Location = new Point(12, 48);
@@ -321,6 +322,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.Info;
             ClientSize = new Size(800, 450);
             ControlBox = false;
             Controls.Add(txtAniversario);

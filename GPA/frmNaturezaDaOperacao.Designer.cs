@@ -56,6 +56,7 @@
             // 
             grdNatOperacao.AllowUserToAddRows = false;
             grdNatOperacao.AllowUserToDeleteRows = false;
+            grdNatOperacao.BackgroundColor = SystemColors.GradientActiveCaption;
             grdNatOperacao.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             grdNatOperacao.Columns.AddRange(new DataGridViewColumn[] { grdNatID, grdNatDescricao, grdvenda, grdBonificacao, grdBrinde, grdInterno, grdRestrito });
             grdNatOperacao.Location = new Point(12, 64);
@@ -243,6 +244,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.Info;
             ClientSize = new Size(800, 450);
             ControlBox = false;
             Controls.Add(cmdExcluir);

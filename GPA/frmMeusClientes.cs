@@ -29,7 +29,7 @@ namespace Formularios
         public void VerificaPermissao()
         {
             SEGUsuario objUsuario = new SEGUsuario();
-            List<SEGUsuario> lstUsuario = objUsuario.CarregaDados(LCaminhoBanco,LUsuario,"","","");
+            List<SEGUsuario> lstUsuario = objUsuario.CarregaDados(LCaminhoBanco, LUsuario, "", "", "");
 
             if (lstUsuario[0].GerenciaCadastros == "N")
             {
@@ -39,7 +39,7 @@ namespace Formularios
         public void CarregaGridClientes()
         {
             string AuxVendedor = "";
-            if(chkGerencia.Checked == true)
+            if (chkGerencia.Checked == true)
             {
                 AuxVendedor = "";
             }

@@ -134,15 +134,16 @@
             // 
             grdUltimasVendas.AllowUserToAddRows = false;
             grdUltimasVendas.AllowUserToDeleteRows = false;
+            grdUltimasVendas.BackgroundColor = SystemColors.GradientActiveCaption;
             grdUltimasVendas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             grdUltimasVendas.Columns.AddRange(new DataGridViewColumn[] { DataVenda, VRazao, VValor });
-            grdUltimasVendas.Location = new Point(635, 179);
+            grdUltimasVendas.Location = new Point(635, 175);
             grdUltimasVendas.Name = "grdUltimasVendas";
             grdUltimasVendas.ReadOnly = true;
             grdUltimasVendas.RowHeadersWidth = 5;
             grdUltimasVendas.RowTemplate.Height = 25;
             grdUltimasVendas.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            grdUltimasVendas.Size = new Size(370, 290);
+            grdUltimasVendas.Size = new Size(370, 294);
             grdUltimasVendas.TabIndex = 8;
             // 
             // DataVenda
@@ -170,15 +171,16 @@
             // 
             grdUltContato.AllowUserToAddRows = false;
             grdUltContato.AllowUserToDeleteRows = false;
+            grdUltContato.BackgroundColor = SystemColors.GradientActiveCaption;
             grdUltContato.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             grdUltContato.Columns.AddRange(new DataGridViewColumn[] { UltContato, RazSocial, Numero });
-            grdUltContato.Location = new Point(254, 179);
+            grdUltContato.Location = new Point(254, 175);
             grdUltContato.Name = "grdUltContato";
             grdUltContato.ReadOnly = true;
             grdUltContato.RowHeadersWidth = 5;
             grdUltContato.RowTemplate.Height = 25;
             grdUltContato.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            grdUltContato.Size = new Size(370, 290);
+            grdUltContato.Size = new Size(370, 294);
             grdUltContato.TabIndex = 9;
             // 
             // UltContato
@@ -266,6 +268,7 @@
             // 
             grdAvisos.AllowUserToAddRows = false;
             grdAvisos.AllowUserToDeleteRows = false;
+            grdAvisos.BackgroundColor = SystemColors.GradientActiveCaption;
             grdAvisos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             grdAvisos.Columns.AddRange(new DataGridViewColumn[] { avTexto, grdDatainicio, grdDataTermino });
             grdAvisos.Location = new Point(254, 45);
@@ -300,7 +303,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label5.Location = new Point(254, 21);
+            label5.Location = new Point(254, 27);
             label5.Name = "label5";
             label5.Size = new Size(45, 15);
             label5.TabIndex = 25;
@@ -310,6 +313,7 @@
             // 
             grdContatosAgendados.AllowUserToAddRows = false;
             grdContatosAgendados.AllowUserToDeleteRows = false;
+            grdContatosAgendados.BackgroundColor = SystemColors.GradientActiveCaption;
             grdContatosAgendados.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             grdContatosAgendados.Columns.AddRange(new DataGridViewColumn[] { grdID, dataGridViewTextBoxColumn1, dataGridViewTextBoxColumn2 });
             grdContatosAgendados.Location = new Point(12, 297);
@@ -406,6 +410,7 @@
             // 
             // menuStrip1
             // 
+            menuStrip1.BackColor = SystemColors.GradientInactiveCaption;
             menuStrip1.Items.AddRange(new ToolStripItem[] { cadastrosToolStripMenuItem, vendasToolStripMenuItem, consultasToolStripMenuItem, relatóriosToolStripMenuItem, parametrosToolStripMenuItem, controleContatoToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
@@ -515,7 +520,7 @@
             // MnuParametros
             // 
             MnuParametros.Name = "MnuParametros";
-            MnuParametros.Size = new Size(180, 22);
+            MnuParametros.Size = new Size(134, 22);
             MnuParametros.Text = "Parametros";
             MnuParametros.Click += MnuParametros_Click;
             // 
@@ -555,6 +560,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.Info;
             ClientSize = new Size(1045, 526);
             Controls.Add(labNomeEmpresa);
             Controls.Add(label10);
@@ -584,7 +590,7 @@
             MainMenuStrip = menuStrip1;
             Name = "frmCRMInicial";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "CRM - GPA";
+            Text = "m";
             Load += frmCRMInicial_Load;
             ((System.ComponentModel.ISupportInitialize)grdUltimasVendas).EndInit();
             ((System.ComponentModel.ISupportInitialize)grdUltContato).EndInit();

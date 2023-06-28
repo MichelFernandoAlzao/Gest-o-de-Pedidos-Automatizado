@@ -97,7 +97,7 @@
             txtInscricaoEstadual.Location = new Point(842, 128);
             txtInscricaoEstadual.Name = "txtInscricaoEstadual";
             txtInscricaoEstadual.Size = new Size(155, 23);
-            txtInscricaoEstadual.TabIndex = 3;
+            txtInscricaoEstadual.TabIndex = 4;
             // 
             // labInscricaoEstadual
             // 
@@ -124,7 +124,7 @@
             txtFantasia.Location = new Point(12, 128);
             txtFantasia.Name = "txtFantasia";
             txtFantasia.Size = new Size(681, 23);
-            txtFantasia.TabIndex = 2;
+            txtFantasia.TabIndex = 3;
             // 
             // labVendedor
             // 
@@ -141,7 +141,7 @@
             txtVendedor.Location = new Point(842, 181);
             txtVendedor.Name = "txtVendedor";
             txtVendedor.Size = new Size(155, 23);
-            txtVendedor.TabIndex = 5;
+            txtVendedor.TabIndex = 6;
             txtVendedor.KeyDown += txtVendedor_KeyDown;
             // 
             // chkCliente
@@ -150,7 +150,7 @@
             chkCliente.Location = new Point(12, 279);
             chkCliente.Name = "chkCliente";
             chkCliente.Size = new Size(63, 19);
-            chkCliente.TabIndex = 7;
+            chkCliente.TabIndex = 8;
             chkCliente.Text = "Cliente";
             chkCliente.UseVisualStyleBackColor = true;
             // 
@@ -160,7 +160,7 @@
             chkDistribuidor.Location = new Point(138, 279);
             chkDistribuidor.Name = "chkDistribuidor";
             chkDistribuidor.Size = new Size(88, 19);
-            chkDistribuidor.TabIndex = 8;
+            chkDistribuidor.TabIndex = 9;
             chkDistribuidor.Text = "Distribuidor";
             chkDistribuidor.UseVisualStyleBackColor = true;
             // 
@@ -170,7 +170,7 @@
             chkFabricante.Location = new Point(286, 279);
             chkFabricante.Name = "chkFabricante";
             chkFabricante.Size = new Size(81, 19);
-            chkFabricante.TabIndex = 9;
+            chkFabricante.TabIndex = 10;
             chkFabricante.Text = "Fabricante";
             chkFabricante.UseVisualStyleBackColor = true;
             // 
@@ -180,7 +180,7 @@
             chkFornecedor.Location = new Point(430, 279);
             chkFornecedor.Name = "chkFornecedor";
             chkFornecedor.Size = new Size(86, 19);
-            chkFornecedor.TabIndex = 10;
+            chkFornecedor.TabIndex = 11;
             chkFornecedor.Text = "Fornecedor";
             chkFornecedor.UseVisualStyleBackColor = true;
             // 
@@ -192,7 +192,7 @@
             cmdSair.Location = new Point(967, 11);
             cmdSair.Name = "cmdSair";
             cmdSair.Size = new Size(30, 30);
-            cmdSair.TabIndex = 16;
+            cmdSair.TabIndex = 19;
             cmdSair.UseVisualStyleBackColor = true;
             cmdSair.Click += cmdSair_Click;
             // 
@@ -204,7 +204,7 @@
             cmdGravar.Location = new Point(931, 11);
             cmdGravar.Name = "cmdGravar";
             cmdGravar.Size = new Size(30, 30);
-            cmdGravar.TabIndex = 15;
+            cmdGravar.TabIndex = 18;
             cmdGravar.UseVisualStyleBackColor = true;
             cmdGravar.Click += Gravar;
             // 
@@ -217,7 +217,7 @@
             cmdNovo.Location = new Point(896, 11);
             cmdNovo.Name = "cmdNovo";
             cmdNovo.Size = new Size(29, 29);
-            cmdNovo.TabIndex = 14;
+            cmdNovo.TabIndex = 17;
             cmdNovo.UseVisualStyleBackColor = true;
             cmdNovo.Click += cmdNovo_Click;
             // 
@@ -238,7 +238,7 @@
             cmdEndereco.Location = new Point(12, 403);
             cmdEndereco.Name = "cmdEndereco";
             cmdEndereco.Size = new Size(80, 30);
-            cmdEndereco.TabIndex = 19;
+            cmdEndereco.TabIndex = 14;
             cmdEndereco.Text = "Endereços";
             cmdEndereco.UseVisualStyleBackColor = true;
             cmdEndereco.Click += cmdEndereco_Click;
@@ -248,7 +248,7 @@
             cmdContatos.Location = new Point(98, 403);
             cmdContatos.Name = "cmdContatos";
             cmdContatos.Size = new Size(80, 30);
-            cmdContatos.TabIndex = 20;
+            cmdContatos.TabIndex = 15;
             cmdContatos.Text = "Contatos";
             cmdContatos.UseVisualStyleBackColor = true;
             cmdContatos.Click += cmdContatos_Click;
@@ -258,7 +258,7 @@
             CmdRegOcorrencias.Location = new Point(184, 403);
             CmdRegOcorrencias.Name = "CmdRegOcorrencias";
             CmdRegOcorrencias.Size = new Size(80, 30);
-            CmdRegOcorrencias.TabIndex = 21;
+            CmdRegOcorrencias.TabIndex = 16;
             CmdRegOcorrencias.Text = "Ocorrencias";
             CmdRegOcorrencias.UseVisualStyleBackColor = true;
             CmdRegOcorrencias.Click += CmdRegOcorrencias_Click;
@@ -287,7 +287,7 @@
             txtAviso.Location = new Point(12, 181);
             txtAviso.Name = "txtAviso";
             txtAviso.Size = new Size(681, 23);
-            txtAviso.TabIndex = 4;
+            txtAviso.TabIndex = 5;
             // 
             // label2
             // 
@@ -342,7 +342,7 @@
             cmdUltVenda.Location = new Point(842, 275);
             cmdUltVenda.Name = "cmdUltVenda";
             cmdUltVenda.Size = new Size(156, 23);
-            cmdUltVenda.TabIndex = 17;
+            cmdUltVenda.TabIndex = 12;
             cmdUltVenda.Text = "Ultima Venda";
             cmdUltVenda.UseVisualStyleBackColor = true;
             cmdUltVenda.Click += cmdUltVenda_Click;
@@ -352,7 +352,7 @@
             button2.Location = new Point(842, 319);
             button2.Name = "button2";
             button2.Size = new Size(156, 23);
-            button2.TabIndex = 18;
+            button2.TabIndex = 13;
             button2.Text = "Produtos Preferidos";
             button2.UseVisualStyleBackColor = true;
             button2.Visible = false;
@@ -373,7 +373,7 @@
             txtRegVenda.Location = new Point(12, 236);
             txtRegVenda.Name = "txtRegVenda";
             txtRegVenda.Size = new Size(283, 23);
-            txtRegVenda.TabIndex = 6;
+            txtRegVenda.TabIndex = 7;
             // 
             // txtCNPJ
             // 
@@ -381,7 +381,7 @@
             txtCNPJ.Mask = "00,000,000/0000-00";
             txtCNPJ.Name = "txtCNPJ";
             txtCNPJ.Size = new Size(155, 23);
-            txtCNPJ.TabIndex = 35;
+            txtCNPJ.TabIndex = 2;
             // 
             // chkAtivo
             // 
@@ -389,7 +389,7 @@
             chkAtivo.Location = new Point(708, 79);
             chkAtivo.Name = "chkAtivo";
             chkAtivo.Size = new Size(54, 19);
-            chkAtivo.TabIndex = 36;
+            chkAtivo.TabIndex = 1;
             chkAtivo.Text = "Ativo";
             chkAtivo.UseVisualStyleBackColor = true;
             // 
@@ -397,6 +397,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.Info;
             ClientSize = new Size(1009, 449);
             ControlBox = false;
             Controls.Add(chkAtivo);

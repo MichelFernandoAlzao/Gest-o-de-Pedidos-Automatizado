@@ -80,6 +80,7 @@
             // 
             grdItensPedido.AllowUserToAddRows = false;
             grdItensPedido.AllowUserToDeleteRows = false;
+            grdItensPedido.BackgroundColor = SystemColors.GradientActiveCaption;
             grdItensPedido.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             grdItensPedido.Columns.AddRange(new DataGridViewColumn[] { grdNumero, grdProduto, grdDescricao, grdQuantidade, grdCodigoItem, grdVlrItem, grdTotal, grdValorFornecedor, grdLote });
             grdItensPedido.Location = new Point(12, 30);
@@ -209,7 +210,7 @@
             btnOcorrencias.Location = new Point(653, 207);
             btnOcorrencias.Name = "btnOcorrencias";
             btnOcorrencias.Size = new Size(135, 23);
-            btnOcorrencias.TabIndex = 7;
+            btnOcorrencias.TabIndex = 8;
             btnOcorrencias.Text = "Ocorrencias";
             btnOcorrencias.UseVisualStyleBackColor = true;
             // 
@@ -218,7 +219,7 @@
             cmdUltimasCompras.Location = new Point(653, 239);
             cmdUltimasCompras.Name = "cmdUltimasCompras";
             cmdUltimasCompras.Size = new Size(135, 23);
-            cmdUltimasCompras.TabIndex = 8;
+            cmdUltimasCompras.TabIndex = 9;
             cmdUltimasCompras.Text = "Ultimas Compras";
             cmdUltimasCompras.UseVisualStyleBackColor = true;
             // 
@@ -253,7 +254,7 @@
             txtFornecedor.Location = new Point(12, 318);
             txtFornecedor.Name = "txtFornecedor";
             txtFornecedor.Size = new Size(577, 23);
-            txtFornecedor.TabIndex = 6;
+            txtFornecedor.TabIndex = 7;
             txtFornecedor.KeyDown += txtFornecedor_KeyDown;
             // 
             // lbTotal
@@ -400,7 +401,7 @@
             cmdGravar.Location = new Point(724, 1);
             cmdGravar.Name = "cmdGravar";
             cmdGravar.Size = new Size(29, 29);
-            cmdGravar.TabIndex = 9;
+            cmdGravar.TabIndex = 13;
             cmdGravar.UseVisualStyleBackColor = true;
             cmdGravar.Click += cmdGravar_Click;
             // 
@@ -411,7 +412,7 @@
             cmdSair.Location = new Point(759, 1);
             cmdSair.Name = "cmdSair";
             cmdSair.Size = new Size(29, 29);
-            cmdSair.TabIndex = 10;
+            cmdSair.TabIndex = 14;
             cmdSair.UseVisualStyleBackColor = true;
             cmdSair.Click += cmdSair_Click;
             // 
@@ -422,7 +423,7 @@
             cmdNovo.Location = new Point(689, 1);
             cmdNovo.Name = "cmdNovo";
             cmdNovo.Size = new Size(29, 29);
-            cmdNovo.TabIndex = 8;
+            cmdNovo.TabIndex = 12;
             cmdNovo.UseVisualStyleBackColor = true;
             cmdNovo.Click += cmdNovo_Click;
             // 
@@ -450,7 +451,7 @@
             cmdExcluir.Location = new Point(653, 1);
             cmdExcluir.Name = "cmdExcluir";
             cmdExcluir.Size = new Size(29, 29);
-            cmdExcluir.TabIndex = 7;
+            cmdExcluir.TabIndex = 11;
             cmdExcluir.UseVisualStyleBackColor = true;
             cmdExcluir.Click += cmdExcluir_Click;
             // 
@@ -460,7 +461,7 @@
             chkFatura.Location = new Point(485, 265);
             chkFatura.Name = "chkFatura";
             chkFatura.Size = new Size(59, 19);
-            chkFatura.TabIndex = 23;
+            chkFatura.TabIndex = 6;
             chkFatura.Text = "Fatura";
             chkFatura.UseVisualStyleBackColor = true;
             // 
@@ -469,7 +470,7 @@
             cmdCadProduto.Location = new Point(653, 268);
             cmdCadProduto.Name = "cmdCadProduto";
             cmdCadProduto.Size = new Size(135, 23);
-            cmdCadProduto.TabIndex = 24;
+            cmdCadProduto.TabIndex = 10;
             cmdCadProduto.Text = "Cad. Produtos";
             cmdCadProduto.UseVisualStyleBackColor = true;
             cmdCadProduto.Click += cmdCadProduto_Click;
@@ -478,6 +479,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.Info;
             ClientSize = new Size(800, 450);
             ControlBox = false;
             Controls.Add(cmdCadProduto);

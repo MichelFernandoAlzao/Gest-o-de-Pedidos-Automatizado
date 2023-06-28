@@ -58,6 +58,10 @@
             txtRegistro = new TextBox();
             txtDataContato = new MaskedTextBox();
             txtValorOfertado = new TextBox();
+            labCtt1 = new Label();
+            TxtContato1 = new MaskedTextBox();
+            TxtContato2 = new MaskedTextBox();
+            labCtt2 = new Label();
             ((System.ComponentModel.ISupportInitialize)grdProdSugeridos).BeginInit();
             SuspendLayout();
             // 
@@ -65,7 +69,7 @@
             // 
             labEmpresa.AutoSize = true;
             labEmpresa.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            labEmpresa.Location = new Point(92, 54);
+            labEmpresa.Location = new Point(92, 42);
             labEmpresa.Name = "labEmpresa";
             labEmpresa.Size = new Size(78, 15);
             labEmpresa.TabIndex = 0;
@@ -73,7 +77,7 @@
             // 
             // txtEmpresa
             // 
-            txtEmpresa.Location = new Point(92, 72);
+            txtEmpresa.Location = new Point(92, 60);
             txtEmpresa.Name = "txtEmpresa";
             txtEmpresa.Size = new Size(574, 23);
             txtEmpresa.TabIndex = 1;
@@ -140,7 +144,7 @@
             // 
             labDataContato.AutoSize = true;
             labDataContato.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            labDataContato.Location = new Point(689, 54);
+            labDataContato.Location = new Point(689, 42);
             labDataContato.Name = "labDataContato";
             labDataContato.Size = new Size(80, 15);
             labDataContato.TabIndex = 51;
@@ -150,6 +154,7 @@
             // 
             grdProdSugeridos.AllowUserToAddRows = false;
             grdProdSugeridos.AllowUserToDeleteRows = false;
+            grdProdSugeridos.BackgroundColor = SystemColors.GradientActiveCaption;
             grdProdSugeridos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             grdProdSugeridos.Columns.AddRange(new DataGridViewColumn[] { grdIDProdSugerido, grdDescItem, grdVlrofertado, grdQuantidade });
             grdProdSugeridos.Location = new Point(12, 327);
@@ -190,7 +195,7 @@
             // 
             // txtSugestoes
             // 
-            txtSugestoes.Location = new Point(12, 129);
+            txtSugestoes.Location = new Point(12, 146);
             txtSugestoes.Multiline = true;
             txtSugestoes.Name = "txtSugestoes";
             txtSugestoes.Size = new Size(381, 101);
@@ -200,7 +205,7 @@
             // 
             labSugestoes.AutoSize = true;
             labSugestoes.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            labSugestoes.Location = new Point(12, 111);
+            labSugestoes.Location = new Point(12, 128);
             labSugestoes.Name = "labSugestoes";
             labSugestoes.Size = new Size(64, 15);
             labSugestoes.TabIndex = 54;
@@ -210,7 +215,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(409, 111);
+            label1.Location = new Point(409, 128);
             label1.Name = "label1";
             label1.Size = new Size(79, 15);
             label1.TabIndex = 56;
@@ -218,7 +223,7 @@
             // 
             // txtReclamacoes
             // 
-            txtReclamacoes.Location = new Point(409, 129);
+            txtReclamacoes.Location = new Point(409, 146);
             txtReclamacoes.Multiline = true;
             txtReclamacoes.Name = "txtReclamacoes";
             txtReclamacoes.Size = new Size(379, 101);
@@ -304,7 +309,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(12, 54);
+            label3.Location = new Point(12, 42);
             label3.Name = "label3";
             label3.Size = new Size(78, 15);
             label3.TabIndex = 67;
@@ -312,7 +317,7 @@
             // 
             // txtRegistro
             // 
-            txtRegistro.Location = new Point(12, 72);
+            txtRegistro.Location = new Point(12, 60);
             txtRegistro.Name = "txtRegistro";
             txtRegistro.Size = new Size(76, 23);
             txtRegistro.TabIndex = 66;
@@ -320,7 +325,7 @@
             // 
             // txtDataContato
             // 
-            txtDataContato.Location = new Point(688, 72);
+            txtDataContato.Location = new Point(688, 60);
             txtDataContato.Mask = "00/00/0000";
             txtDataContato.Name = "txtDataContato";
             txtDataContato.Size = new Size(100, 23);
@@ -335,12 +340,55 @@
             txtValorOfertado.Size = new Size(100, 23);
             txtValorOfertado.TabIndex = 69;
             // 
+            // labCtt1
+            // 
+            labCtt1.AutoSize = true;
+            labCtt1.Location = new Point(12, 86);
+            labCtt1.Name = "labCtt1";
+            labCtt1.Size = new Size(59, 15);
+            labCtt1.TabIndex = 70;
+            labCtt1.Text = "Contato 1";
+            labCtt1.Visible = false;
+            // 
+            // TxtContato1
+            // 
+            TxtContato1.Location = new Point(12, 104);
+            TxtContato1.Mask = "(99) 00000-0000";
+            TxtContato1.Name = "TxtContato1";
+            TxtContato1.Size = new Size(130, 23);
+            TxtContato1.TabIndex = 71;
+            TxtContato1.Visible = false;
+            // 
+            // TxtContato2
+            // 
+            TxtContato2.Location = new Point(148, 104);
+            TxtContato2.Mask = "(99) 00000-0000";
+            TxtContato2.Name = "TxtContato2";
+            TxtContato2.Size = new Size(130, 23);
+            TxtContato2.TabIndex = 73;
+            TxtContato2.Visible = false;
+            // 
+            // labCtt2
+            // 
+            labCtt2.AutoSize = true;
+            labCtt2.Location = new Point(148, 86);
+            labCtt2.Name = "labCtt2";
+            labCtt2.Size = new Size(59, 15);
+            labCtt2.TabIndex = 72;
+            labCtt2.Text = "Contato 2";
+            labCtt2.Visible = false;
+            // 
             // frmContatosEmpresas
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.Info;
             ClientSize = new Size(800, 450);
             ControlBox = false;
+            Controls.Add(TxtContato2);
+            Controls.Add(labCtt2);
+            Controls.Add(TxtContato1);
+            Controls.Add(labCtt1);
             Controls.Add(txtValorOfertado);
             Controls.Add(txtDataContato);
             Controls.Add(label3);
@@ -406,5 +454,9 @@
         private TextBox txtRegistro;
         private MaskedTextBox txtDataContato;
         private TextBox txtValorOfertado;
+        private Label labCtt1;
+        private MaskedTextBox TxtContato1;
+        private MaskedTextBox TxtContato2;
+        private Label labCtt2;
     }
 }
