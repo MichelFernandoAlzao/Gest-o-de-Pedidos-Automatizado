@@ -590,7 +590,7 @@
             MainMenuStrip = menuStrip1;
             Name = "frmCRMInicial";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "m";
+            Text = "GPA - Home";
             Load += frmCRMInicial_Load;
             ((System.ComponentModel.ISupportInitialize)grdUltimasVendas).EndInit();
             ((System.ComponentModel.ISupportInitialize)grdUltContato).EndInit();

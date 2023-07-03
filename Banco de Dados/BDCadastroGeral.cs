@@ -19,6 +19,7 @@ namespace Banco_de_Dados
         public string Fabricante { get; set; }
         public string Fornecedor { get; set; }
         public string Aviso { get; set; }
+        public string Ativo { get; set; }
         public string Qualificacao { get; set; }
         public string DiasAtraso { get; set; }
         public string RegCobranca { get; set; }
@@ -125,6 +126,11 @@ namespace Banco_de_Dados
 
                 sqlconteudo += "'" + Aviso + "',";
             }
+            if(Ativo != null)
+            {
+                sqlCampos += "CDCEAtivo, ";
+                sqlconteudo += "'" + Ativo + "',";
+            }
 
             sSQL = sSQL + sqlCampos.Remove(sqlCampos.Length - 2) + ")" + sqlconteudo.Remove(sqlconteudo.Length - 1) + ")";
 
@@ -228,6 +234,10 @@ namespace Banco_de_Dados
             {
                 sqlconteudo += "CDCEAviso = '" + Aviso + "',";
             }
+            if (Ativo != null)
+            {
+                sqlconteudo += "CDCEAtivo = '" + Ativo + "',";
+            }
 
             sSQL = sSQL + sqlconteudo.Remove(sqlconteudo.Length - 1);
             sSQL = sSQL + sqlWhere;
@@ -267,52 +277,80 @@ namespace Banco_de_Dados
             }
             else
             {
-                if (pRazaoSocial != "")
+                if(pRazaoSocial != null)
                 {
-                    sqlWhere += " CDCERazaoSocial like '%" + pRazaoSocial + "%' " +"AND";
-                    ClausulaWhere = 'S';
+                    if (pRazaoSocial.Replace(" ","") != "")
+                    {
+                        sqlWhere += " CDCERazaoSocial like '%" + pRazaoSocial + "%' " + "AND";
+                        ClausulaWhere = 'S';
+                    }
                 }
-                if (pRazaoFantasia != "")
+                if(pRazaoFantasia != null)
                 {
-                    sqlWhere += " CDCERazaoFantasia like " + pRazaoFantasia + "%' " + "AND";
-                    ClausulaWhere = 'S';
+                    if (pRazaoFantasia.Replace(" ", "") != "")
+                    {
+                        sqlWhere += " CDCERazaoFantasia like '%" + pRazaoFantasia + "%' " + "AND";
+                        ClausulaWhere = 'S';
+                    }
                 }
-                if (pCNPJ != "")
+                if(pCNPJ != null)
                 {
-                    sqlWhere += " CDCECNPJ like " + pCNPJ + "%' " + "AND";
-                    ClausulaWhere = 'S';
+                    if (pCNPJ != "")
+                    {
+                        sqlWhere += " CDCECNPJ like '" + pCNPJ + "%' " + "AND";
+                        ClausulaWhere = 'S';
+                    }
                 }
-                if (pInscricao != "")
+                if(pInscricao != null)
                 {
-                    sqlWhere += " CDCEInscricao like " + pInscricao + "%' " + "AND";
-                    ClausulaWhere = 'S';
+                    if (pInscricao != "")
+                    {
+                        sqlWhere += " CDCEInscricao like '" + pInscricao + "%' " + "AND";
+                        ClausulaWhere = 'S';
+                    }
                 }
-                if (pVendedor != "")
+                if(pVendedor != null)
                 {
-                    sqlWhere += " CDCEVendedor = " + pVendedor + " " + "AND";
-                    ClausulaWhere = 'S';
+                    if (pVendedor != "")
+                    {
+                        sqlWhere += " CDCEVendedor = " + pVendedor + " " + "AND";
+                        ClausulaWhere = 'S';
+                    }
                 }
-                if (pCliente != "")
+                
+                if(pCliente != null) 
                 {
-                    sqlWhere += " CDCECliente like " + pCliente + "%' " + "AND";
-                    ClausulaWhere = 'S';
+                    if (pCliente != "")
+                    {
+                        sqlWhere += " CDCECliente like '" + pCliente + "' " + "AND";
+                        ClausulaWhere = 'S';
+                    }
                 }
-                if (pDistribuidor != "")
+                
+                if(pDistribuidor != null)
                 {
-                    sqlWhere += " CDCEDistribuidor like " + pDistribuidor + "%' " + "AND";
-                    ClausulaWhere = 'S';
+                    if (pDistribuidor != "")
+                    {
+                        sqlWhere += " CDCEDistribuidor like '" + pDistribuidor + "' " + "AND";
+                        ClausulaWhere = 'S';
+                    }
                 }
-                if (pFabricante != "")
+                if(pFabricante != null)
                 {
-                    sqlWhere += " CDCEFabricante like " + pFabricante + "%' " + "AND";
-                    ClausulaWhere = 'S';
+                    if (pFabricante != "")
+                    {
+                        sqlWhere += " CDCEFabricante like '" + pFabricante + "' " + "AND";
+                        ClausulaWhere = 'S';
+                    }
                 }
-                if (pFornecedor != "")
+                if(pFornecedor != null)
                 {
-                    sqlWhere += " CDCEFornecedor like " + pFornecedor + "%' " + "AND";
-                    ClausulaWhere = 'S';
+                    if (pFornecedor != "")
+                    {
+                        sqlWhere += " CDCEFornecedor like '" + pFornecedor + "' " + "AND";
+                        ClausulaWhere = 'S';
+                    }
                 }
-
             }
 
             if (ClausulaWhere == 'S')
@@ -347,6 +385,7 @@ namespace Banco_de_Dados
                     BDCadastroGeral bDCadastro = new BDCadastroGeral();
                     bDCadastro.Id = dr["CDCadastroEmpresas"].ToString();
                     bDCadastro.Aviso = dr["CDCEAviso"].ToString();
+                    bDCadastro.Ativo = dr["CDCEAtivo"].ToString();
                     bDCadastro.RazaoSocial = dr["CDCERazaoSocial"].ToString();
                     bDCadastro.RazaoFantasia = dr["CDCERazaoFantasia"].ToString();
                     bDCadastro.CNPJ = dr["CDCECNPJ"].ToString();
@@ -386,6 +425,32 @@ namespace Banco_de_Dados
                 sqlWhere += " CDCEVendedor = " + pVendedor + "";
                 ClausulaWhere = 'S';
             }
+            if(RazaoSocial != null)
+            {
+                if (RazaoSocial != "")
+                {
+                    if(pVendedor != null)
+                    {
+                        if (pVendedor != "")
+                        {
+                            sqlWhere += " AND CDCERazaoSocial like '%" + RazaoSocial + "%'";
+                        }
+                    }
+                    else
+                    {
+                        sqlWhere += "CDCERazaoSocial like '%" + RazaoSocial + "%'";
+                    }
+                    
+                }
+            }
+            if(CNPJ != null)
+            {
+                if (CNPJ != "")
+                {
+                    sqlWhere += "CDCECNPJ like '%" + CNPJ + "'%'";
+                }
+            }
+            
   
 
             if (ClausulaWhere == 'S')
@@ -416,6 +481,7 @@ namespace Banco_de_Dados
                     BDCadastroGeral bDCadastro = new BDCadastroGeral();
                     bDCadastro.Id = dr["CDCadastroEmpresas"].ToString();
                     bDCadastro.Aviso = dr["CDCEAviso"].ToString();
+                    bDCadastro.Ativo = dr["CDCEAtivo"].ToString();
                     bDCadastro.RazaoSocial = dr["CDCERazaoSocial"].ToString();
                     bDCadastro.RazaoFantasia = dr["CDCERazaoFantasia"].ToString();
                     bDCadastro.CNPJ = dr["CDCECNPJ"].ToString();

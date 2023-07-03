@@ -78,6 +78,7 @@
             // 
             // txtCodigo
             // 
+            txtCodigo.Enabled = false;
             txtCodigo.Location = new Point(503, 65);
             txtCodigo.Name = "txtCodigo";
             txtCodigo.Size = new Size(127, 23);
@@ -165,6 +166,7 @@
             txtCodFabricante.Name = "txtCodFabricante";
             txtCodFabricante.Size = new Size(130, 23);
             txtCodFabricante.TabIndex = 3;
+            txtCodFabricante.KeyDown += txtCodFabricante_KeyDown;
             // 
             // txtDescritivo
             // 

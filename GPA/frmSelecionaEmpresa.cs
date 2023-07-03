@@ -20,10 +20,13 @@ namespace Formularios
         string Fantasia;
         string CNPJ;
         string LUsuario;
+        string LFabricante;
+        string LFornecedor;
+        string LCliente;
         Form LChamador;
 
         string[] LParametros;
-        public frmSelecionaEmpresa(string inCaminhoBanco, Form frmChamador, string inID, string inrazao, string inFantasia, string inCNPJ, string inUsuario)
+        public frmSelecionaEmpresa(string inCaminhoBanco, Form frmChamador, string inID, string inrazao, string inFantasia, string inCNPJ, string inUsuario,string inFabricante,string inFornecedor, string inCLiente)
         {
 
             InitializeComponent();
@@ -34,6 +37,9 @@ namespace Formularios
             CNPJ = inCNPJ;
             LChamador = frmChamador;
             LUsuario = inUsuario;
+            LFornecedor = inFornecedor;
+            LFabricante = inFabricante;
+            LCliente = inCLiente;
         }
 
         private void SelecionaEmpresa_Load(object sender, EventArgs e)
@@ -56,7 +62,24 @@ namespace Formularios
             }
 
             BDCadastroGeral objCadastro = new BDCadastroGeral();
-            List<BDCadastroGeral> lstCadastro = objCadastro.CarregaDados(LCaminhoBanco, LIDCadastro, inRazao, inRazaoFantasia, inCNPJ, "", IDVendedor, "", "", "", "");
+            List<BDCadastroGeral> lstCadastro = new List<BDCadastroGeral>();
+            if (LFabricante != "")
+            {
+                lstCadastro = objCadastro.CarregaDados(LCaminhoBanco, LIDCadastro, inRazao, inRazaoFantasia, inCNPJ, "", IDVendedor, "", "", "S", "");
+            }
+            if (LFornecedor != "")
+            {
+                lstCadastro = objCadastro.CarregaDados(LCaminhoBanco, LIDCadastro, inRazao, inRazaoFantasia, inCNPJ, "", IDVendedor, "", "", "", "S");
+            }
+            if (LCliente != "")
+            {
+                lstCadastro = objCadastro.CarregaDados(LCaminhoBanco, LIDCadastro, inRazao, inRazaoFantasia, inCNPJ, "", IDVendedor, "S", "", "", "");
+            }
+            if(LFabricante == "" && LFornecedor == "" && LCliente == "")
+            {
+                lstCadastro = objCadastro.CarregaDados(LCaminhoBanco, LIDCadastro, inRazao, inRazaoFantasia, inCNPJ, "", IDVendedor, "", "", "", "");
+            }
+
             if (lstCadastro.Count > 0)
             {
                 foreach (BDCadastroGeral item in lstCadastro)

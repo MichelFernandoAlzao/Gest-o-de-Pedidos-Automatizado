@@ -180,23 +180,33 @@ namespace Banco_de_Dados
             string slqSelect = "SELECT * FROM CDProdutos ";
             string sqlWhere = "WHERE ";
             char ClausulaWhere = 'N';
-            if (cpID != "")
+            if(cpID != null)
             {
-                sqlWhere = "WHERE CDProdutos = " + cpID;
+                if (cpID != "")
+                {
+                    sqlWhere = "WHERE CDProdutos = " + cpID;
+                    ClausulaWhere = 'S';
+                }
             }
+            
             else
             {
-                if (cpCodigoFabricante != "")
+                if(cpCodigoFabricante != null)
                 {
-                    sqlWhere += "CDPCodigoFabricante = '" + cpCodigoFabricante + "' " + "AND";
-                    ClausulaWhere = 'S';
+                    if (cpCodigoFabricante.Replace(" ", "") != "")
+                    {
+                        sqlWhere += "CDPCodigoFabricante like '%" + cpCodigoFabricante + "%' " + "AND";
+                        ClausulaWhere = 'S';
+                    }
                 }
-                if (cpDescricao != "")
+                if(cpDescricao != null)
                 {
-                    sqlWhere += "CDPDescricao like '%" + cpDescricao + "%' " + "AND";
-                    ClausulaWhere = 'S';
+                    if (cpDescricao.Replace(" ","") != "")
+                    {
+                        sqlWhere += "CDPDescricao like '%" + cpDescricao + "%' " + "AND";
+                        ClausulaWhere = 'S';
+                    }
                 }
-             
             }
             if (ClausulaWhere == 'S')
             {
@@ -309,6 +319,7 @@ namespace Banco_de_Dados
                 cmd.Connection = conexao.conectar();
                 //Executar o comando
                 cmd.ExecuteNonQuery();
+
                 //Desconectar
                 conexao.desconectar();
                 cpMsgErro = "";

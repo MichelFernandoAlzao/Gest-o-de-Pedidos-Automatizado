@@ -179,7 +179,7 @@ namespace Formularios
         {
             if (e.KeyCode == Keys.F1)
             {
-                frmSelecionaEmpresa objTela = new frmSelecionaEmpresa(LCaminhoBanco, this, "", txtEmpresa.Text.ToString(), "", "", LUsuario);
+                frmSelecionaEmpresa objTela = new frmSelecionaEmpresa(LCaminhoBanco, this, "", txtEmpresa.Text.ToString(), "", "", LUsuario, "", "", "S");
                 objTela.ShowDialog();
                 BDCadEnderecos objEndereco = new BDCadEnderecos();
                 List<BDCadEnderecos> lstEndereco = objEndereco.CarregaDados(LCaminhoBanco, LID);

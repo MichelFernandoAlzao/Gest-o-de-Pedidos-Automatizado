@@ -41,18 +41,30 @@ namespace Formularios
         {
 
             BDCadProdutos objCadastro = new BDCadProdutos();
-            if (inIDProd != "")
+            if (inIDProd != null)
             {
-                objCadastro.cpID = inIDProd;
+                if (inIDProd != "")
+                {
+                    objCadastro.cpID = inIDProd;
+                }
             }
-            if (inDescProduto != "")
+
+            if (inDescProduto != null)
             {
-                objCadastro.cpDescricao = inDescProduto;
+                if (inDescProduto != "")
+                {
+                    objCadastro.cpDescricao = inDescProduto;
+                }
             }
-            if (inCodFabricante != "")
+
+            if (inFabricanteDR != null)
             {
-                objCadastro.cpCodigoFabricante = inCodFabricante;
+                if (inCodFabricante != "")
+                {
+                    objCadastro.cpCodigoFabricante = inCodFabricante;
+                }
             }
+
             List<BDCadProdutos> lstCadastro = objCadastro.CarregaDados(LCaminhoBanco);
             if (lstCadastro.Count > 0)
             {

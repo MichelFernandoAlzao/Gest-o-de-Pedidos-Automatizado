@@ -53,6 +53,11 @@ namespace Formularios
                 objCadastro.RazaoSocial = txtRazaoSocial.Text;
 
             }
+            if(txtCNPJ.Text.Replace(" ","").Replace(".","").Replace("/","").Replace("-","") != "")
+            {
+                objCadastro.RazaoSocial = null;
+                objCadastro.CNPJ = txtCNPJ.Text;
+            }
             List<BDCadastroGeral> lstCadastro = objCadastro.CarregaDadosPorVendedor(LCaminhoBanco, AuxVendedor);
             if (lstCadastro.Count > 0)
             {
@@ -109,6 +114,15 @@ namespace Formularios
         {
             grdMeusClientes.Rows.Clear();
             CarregaGridClientes();
+        }
+
+        private void txtCNPJ_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F1)
+            {
+                grdMeusClientes.Rows.Clear();
+                CarregaGridClientes();
+            }
         }
     }
 }

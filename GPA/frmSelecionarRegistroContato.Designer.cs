@@ -124,7 +124,7 @@
             Controls.Add(grdRegContatos);
             Name = "frmSelecionarRegistroContato";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "frmSelecionarRegistroContato";
+            Text = "Selecionar Registro Contato";
             Load += frmSelecionarRegistroContato_Load;
             ((System.ComponentModel.ISupportInitialize)grdRegContatos).EndInit();
             ResumeLayout(false);

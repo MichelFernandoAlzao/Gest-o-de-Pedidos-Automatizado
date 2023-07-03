@@ -510,7 +510,7 @@
             Controls.Add(grdItensPedido);
             Name = "frmItensPedido";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "ItensPedido";
+            Text = "Itens Pedido";
             Load += frmItensPedido_Load;
             ((System.ComponentModel.ISupportInitialize)grdItensPedido).EndInit();
             grpbVlrPraticados.ResumeLayout(false);

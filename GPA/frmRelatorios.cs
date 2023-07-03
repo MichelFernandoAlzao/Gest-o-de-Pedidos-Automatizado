@@ -24,7 +24,7 @@ namespace Formularios
         public frmRelatorios(string inCaminhoBanco, string[] inParametrosRel)
         {
             LCaminhoBanco = inCaminhoBanco;
-            
+
             InitializeComponent();
 
 
@@ -36,7 +36,7 @@ namespace Formularios
                 List<RelatorioPedido> lstPedido = new List<RelatorioPedido>();
                 CarregaRelatorio objRelPedido = new CarregaRelatorio();
                 lstPedido = objRelPedido.CarregaRelatorioRDLC(LCaminhoBanco, ParametrosRel[1]);
-                
+
                 //var fonteDeDados = new Microsoft.Reporting.WinForms.ReportDataSource();
                 ReportDataSource fonteDeDados = new ReportDataSource();
                 fonteDeDados.Name = "Pedido";
@@ -62,12 +62,12 @@ namespace Formularios
             }
             ReportViewer.SetDisplayMode(DisplayMode.PrintLayout);
             ReportViewer.RefreshReport();
-            
+
         }
 
         private void frmRelatorios_Load(object sender, EventArgs e)
         {
-            
+
         }
     }
 }

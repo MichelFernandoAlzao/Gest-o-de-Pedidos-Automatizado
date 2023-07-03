@@ -133,7 +133,7 @@
             Controls.Add(grdProdutos);
             Name = "frmSelecionaProduto";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "frmSelecionaProduto";
+            Text = "Selecionar Produto";
             Load += frmSelecionaProduto_Load;
             ((System.ComponentModel.ISupportInitialize)grdProdutos).EndInit();
             ResumeLayout(false);

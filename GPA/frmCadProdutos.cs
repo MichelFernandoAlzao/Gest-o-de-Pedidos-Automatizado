@@ -153,10 +153,11 @@ namespace Formularios
                 if (txtFabricante.Text.Length < 5)
                 {
                     MessageBox.Show("Digite um minimo de 5 caracteres!", "GPA");
+                    return;
                 }
                 if (e.KeyCode == Keys.F1)
                 {
-                    frmSelecionaEmpresa objTela = new frmSelecionaEmpresa(LCaminhoBanco, this, "", txtFabricante.Text.ToString(), "", "", "");
+                    frmSelecionaEmpresa objTela = new frmSelecionaEmpresa(LCaminhoBanco, this, "", txtFabricante.Text.ToString(), "", "", "", "S", "", "");
                     objTela.ShowDialog();
                     LFabricante = LID;
                     txtFabricante.Text = LRazaoSocial.ToString();
@@ -180,10 +181,11 @@ namespace Formularios
                 if (txtMelhorFornecedor.Text.Length < 5)
                 {
                     MessageBox.Show("Digite um minimo de 5 caracteres!", "GPA");
+                    return;
                 }
                 if (e.KeyCode == Keys.F1)
                 {
-                    frmSelecionaEmpresa objTela = new frmSelecionaEmpresa(LCaminhoBanco, this, "", txtMelhorFornecedor.Text.ToString(), "", "", "");
+                    frmSelecionaEmpresa objTela = new frmSelecionaEmpresa(LCaminhoBanco, this, "", txtMelhorFornecedor.Text.ToString(), "", "", "", "", "S", "");
                     objTela.ShowDialog();
                     LMelhorFornecedor = LID;
                     txtMelhorFornecedor.Text = LRazaoSocial.ToString();
@@ -205,13 +207,25 @@ namespace Formularios
             objProduto.cpDataCadastro = DateTime.Today.ToString().Substring(0, 10);
             objProduto.cpCodigoFabricante = txtCodFabricante.Text;
             objProduto.cpDescFornecedor = txtDescFornecedor.Text;
-            if (LFabricante == "")
+            if (LFabricante != null)
             {
-                MessageBox.Show("Nenhum Fabricante selecionado!", "GPA");
-                return;
+                if (LFabricante == "")
+                {
+                    if (MessageBox.Show("Nenhum Fabricante selecionado!\nDeseja Salvar ?", "GPA", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No) { return; }
+                }
+                else
+                {
+                    objProduto.cpFabricanteDR = LFabricante;
+                }
             }
-            objProduto.cpFabricanteDR = LFabricante;
-            objProduto.cpMelhorFornecedorDR = LMelhorFornecedor;
+            if (LMelhorFornecedor != null)
+            {
+                if (LMelhorFornecedor != "")
+                {
+                    objProduto.cpMelhorFornecedorDR = LMelhorFornecedor;
+                }
+            }
+
             objProduto.cpDescritivo = txtDescritivo.Text;
             if (chkAtivo.Checked == true)
             {
@@ -246,8 +260,18 @@ namespace Formularios
             }
             else
             {
-
+                objProduto.cpID = LIDProduto;
                 objProduto.AlteraDados(LCaminhoBanco);
+
+            }
+            if (objProduto.cpMsgErro != null)
+            {
+                if (objProduto.cpMsgErro != "")
+                {
+                    MessageBox.Show(objProduto.cpMsgErro, "GPA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
             }
 
             if (objProduto.cpID != "")
@@ -300,5 +324,20 @@ namespace Formularios
                 }
             }
         }
+
+        private void txtCodFabricante_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F1)
+            {
+                frmSelecionaProduto objForm = new frmSelecionaProduto(LCaminhoBanco, this, LIDProduto, txtDescricao.Text, LFabricante, txtCodFabricante.Text);
+                objForm.ShowDialog();
+                if (LIDProduto != "")
+                {
+                    MostraDados();
+                }
+
+            }
+        }
+
     }
 }

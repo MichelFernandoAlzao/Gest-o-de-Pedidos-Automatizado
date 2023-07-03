@@ -7,9 +7,23 @@
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
     <StartupObject>GPA.Program</StartupObject>
-    <ApplicationIcon>Logo.ico</ApplicationIcon>
+    <ApplicationIcon>logo_transparent.ico</ApplicationIcon>
     <AssemblyName>GPA</AssemblyName>
-    <PackageIcon>Logo.jpg</PackageIcon>
+    <PackageIcon>logo_transparent.ico</PackageIcon>
+    <ProduceReferenceAssembly>False</ProduceReferenceAssembly>
+    <BaseOutputPath>C:\Users\Michel\Desktop</BaseOutputPath>
+    <NoWin32Manifest>true</NoWin32Manifest>
+    <IsPublishable>True</IsPublishable>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <Optimize>False</Optimize>
+    <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
   </PropertyGroup>
 
   <ItemGroup>
@@ -17,7 +31,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="Logo.ico" />
+    <Content Include="logo_transparent.ico" />
   </ItemGroup>
 
   <ItemGroup>
@@ -40,7 +54,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="..\..\..\..\Desktop\Logo.jpg">
+    <None Include="E:\Downloads\logo_transparent.ico">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>

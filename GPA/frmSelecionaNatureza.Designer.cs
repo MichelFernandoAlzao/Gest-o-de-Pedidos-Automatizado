@@ -134,7 +134,7 @@
             Controls.Add(grdNatureza);
             Name = "frmSelecionaNatureza";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "frmSelecionaNatureza";
+            Text = "Selecionar Natureza";
             Load += frmSelecionaNatureza_Load;
             ((System.ComponentModel.ISupportInitialize)grdNatureza).EndInit();
             ResumeLayout(false);

@@ -21,6 +21,7 @@ namespace Formularios
         FormataValores objFormataValores = new FormataValores();
         public frmCRMInicial(string inCaminhoBanco, string inUsuario)
         {
+            this.MaximizeBox = false;
             LCaminhoBanco = inCaminhoBanco;
             InitializeComponent();
 

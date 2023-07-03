@@ -151,6 +151,7 @@ namespace Formularios
                     txtEmpresa.Text = lstEmpresa[0].RazaoSocial.ToString();
                 }
             }
+            txtRegistro.Text = lstRegContato[0].cpID.ToString();
             txtDataContato.Text = lstRegContato[0].cpDataContato.ToString().Substring(0, 10);
             txtSugestoes.Text = lstRegContato[0].cpSugestao.ToString();
             txtReclamacoes.Text = lstRegContato[0].cpReclamacao.ToString();
@@ -258,7 +259,7 @@ namespace Formularios
         {
             if (e.KeyCode == Keys.F1)
             {
-                frmSelecionaEmpresa objTela = new frmSelecionaEmpresa(LCaminhoBanco, this, "", txtEmpresa.Text.ToString(), "", "", LUsuario);
+                frmSelecionaEmpresa objTela = new frmSelecionaEmpresa(LCaminhoBanco, this, "", txtEmpresa.Text.ToString(), "", "", LUsuario,"","","");
                 objTela.ShowDialog();
                 if (LRazaoSocial != "")
                 {
@@ -323,6 +324,37 @@ namespace Formularios
                     MessageBox.Show("Data em formato invalido", "GPA");
                     txtDataContato.Text = "";
                     return;
+                }
+            }
+        }
+
+        private void cmdContatos_Click(object sender, EventArgs e)
+        {
+            if (LID == "")
+            {
+                MessageBox.Show("Nenhuma empresa selecionada!", "GPA");
+                return;
+            }
+            frmCadContatos objTela = new frmCadContatos(LCaminhoBanco, LID, "");
+            objTela.ShowDialog();
+
+            if (LRazaoSocial != "")
+            {
+                txtEmpresa.Text = LRazaoSocial;
+
+                BDCadContatos objContato = new BDCadContatos();
+                List<BDCadContatos> lstContatos = objContato.CarregaDados(LCaminhoBanco, LID);
+                if (lstContatos.Count > 0)
+                {
+                    TxtContato1.Text = lstContatos[0].cpTelefone.ToString();
+                    labCtt1.Visible = true;
+                    TxtContato1.Visible = true;
+                }
+                if (lstContatos.Count > 1)
+                {
+                    TxtContato2.Text = lstContatos[1].cpTelefone.ToString();
+                    labCtt2.Visible = true;
+                    TxtContato2.Visible = true;
                 }
             }
         }

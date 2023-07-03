@@ -62,6 +62,7 @@
             TxtContato1 = new MaskedTextBox();
             TxtContato2 = new MaskedTextBox();
             labCtt2 = new Label();
+            cmdContatos = new Button();
             ((System.ComponentModel.ISupportInitialize)grdProdSugeridos).BeginInit();
             SuspendLayout();
             // 
@@ -378,6 +379,16 @@
             labCtt2.Text = "Contato 2";
             labCtt2.Visible = false;
             // 
+            // cmdContatos
+            // 
+            cmdContatos.Location = new Point(689, 97);
+            cmdContatos.Name = "cmdContatos";
+            cmdContatos.Size = new Size(99, 30);
+            cmdContatos.TabIndex = 74;
+            cmdContatos.Text = "Contatos";
+            cmdContatos.UseVisualStyleBackColor = true;
+            cmdContatos.Click += cmdContatos_Click;
+            // 
             // frmContatosEmpresas
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -385,6 +396,7 @@
             BackColor = SystemColors.Info;
             ClientSize = new Size(800, 450);
             ControlBox = false;
+            Controls.Add(cmdContatos);
             Controls.Add(TxtContato2);
             Controls.Add(labCtt2);
             Controls.Add(TxtContato1);
@@ -458,5 +470,6 @@
         private MaskedTextBox TxtContato1;
         private MaskedTextBox TxtContato2;
         private Label labCtt2;
+        private Button cmdContatos;
     }
 }

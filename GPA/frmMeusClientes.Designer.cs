@@ -39,6 +39,8 @@
             cmdSair = new Button();
             cmdSelecionar = new Button();
             chkGerencia = new CheckBox();
+            txtCNPJ = new MaskedTextBox();
+            label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)grdMeusClientes).BeginInit();
             SuspendLayout();
             // 
@@ -83,7 +85,7 @@
             // 
             txtRazaoSocial.Location = new Point(12, 52);
             txtRazaoSocial.Name = "txtRazaoSocial";
-            txtRazaoSocial.Size = new Size(610, 23);
+            txtRazaoSocial.Size = new Size(415, 23);
             txtRazaoSocial.TabIndex = 1;
             txtRazaoSocial.KeyDown += txtRazaoSocial_KeyDown;
             // 
@@ -143,6 +145,25 @@
             chkGerencia.UseVisualStyleBackColor = true;
             chkGerencia.CheckedChanged += chkGerencia_CheckedChanged;
             // 
+            // txtCNPJ
+            // 
+            txtCNPJ.Location = new Point(449, 52);
+            txtCNPJ.Mask = "00,000,000/0000-00";
+            txtCNPJ.Name = "txtCNPJ";
+            txtCNPJ.Size = new Size(173, 23);
+            txtCNPJ.TabIndex = 13;
+            txtCNPJ.KeyDown += txtCNPJ_KeyDown;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Location = new Point(449, 34);
+            label1.Name = "label1";
+            label1.Size = new Size(58, 15);
+            label1.TabIndex = 14;
+            label1.Text = "CNPJ - F1";
+            // 
             // frmMeusClientes
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -150,6 +171,8 @@
             BackColor = SystemColors.Info;
             ClientSize = new Size(712, 335);
             ControlBox = false;
+            Controls.Add(label1);
+            Controls.Add(txtCNPJ);
             Controls.Add(chkGerencia);
             Controls.Add(cmdSair);
             Controls.Add(cmdSelecionar);
@@ -178,5 +201,7 @@
         private Button cmdSair;
         private Button cmdSelecionar;
         private CheckBox chkGerencia;
+        private MaskedTextBox txtCNPJ;
+        private Label label1;
     }
 }

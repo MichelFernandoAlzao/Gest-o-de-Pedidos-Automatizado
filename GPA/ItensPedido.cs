@@ -267,7 +267,7 @@ namespace Formularios
         {
             if (e.KeyCode == Keys.F1)
             {
-                frmSelecionaEmpresa frmSelecionarFornecedor = new frmSelecionaEmpresa(LCaminhoBanco, this, "", txtFornecedor.Text, "", "", "");
+                frmSelecionaEmpresa frmSelecionarFornecedor = new frmSelecionaEmpresa(LCaminhoBanco, this, "", txtFornecedor.Text, "", "", "", "", "S", "");
                 frmSelecionarFornecedor.ShowDialog();
                 if (LID != "")
                 {

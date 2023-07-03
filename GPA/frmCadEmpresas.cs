@@ -112,6 +112,14 @@ namespace GPA
                 return;
             }
             objCadastro.Aviso = txtAviso.Text;
+            if (chkAtivo.Checked)
+            {
+                objCadastro.Ativo = "S";
+            }
+            else
+            {
+                objCadastro.Ativo = "N";
+            }
 
             objCadastro.RegiaodeVenda = LRegVenda;
 
@@ -249,7 +257,7 @@ namespace GPA
         {
             if (e.KeyCode == Keys.F1)
             {
-                frmSelecionaEmpresa objTela = new frmSelecionaEmpresa(LCaminhoBanco, this, "", txtRazaoSocial.Text.ToString(), "", "", LUsuario);
+                frmSelecionaEmpresa objTela = new frmSelecionaEmpresa(LCaminhoBanco, this, "", txtRazaoSocial.Text.ToString(), "", "", LUsuario,"","","");
                 objTela.ShowDialog();
 
                 if (LID != "")
@@ -305,6 +313,11 @@ namespace GPA
                 chkFornecedor.Checked = true;
             }
             else chkFornecedor.Checked = false;
+            if (lstCadastro[0].Ativo == "S")
+            {
+                chkAtivo.Checked = true;
+            }
+            else chkAtivo.Checked = false;
 
             if (lstCadastro[0].Vendedor != LUsuario)
             {

@@ -15,6 +15,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarregaRelatorios", "Carreg
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Camada de tratamento de Valores", "Camada de tratamento de Valores\Camada de tratamento de Valores.csproj", "{5DAA8A81-160D-4656-83AE-B740705F401D}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Gestão de Pedidos Automatizado", "Gestão de Pedidos Automatizado\Gestão de Pedidos Automatizado.vdproj", "{7CA53EDC-F03B-4FF4-AA43-F7DB44095FD8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,8 @@ Global
 		{5DAA8A81-160D-4656-83AE-B740705F401D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5DAA8A81-160D-4656-83AE-B740705F401D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5DAA8A81-160D-4656-83AE-B740705F401D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7CA53EDC-F03B-4FF4-AA43-F7DB44095FD8}.Debug|Any CPU.ActiveCfg = Debug
+		{7CA53EDC-F03B-4FF4-AA43-F7DB44095FD8}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
