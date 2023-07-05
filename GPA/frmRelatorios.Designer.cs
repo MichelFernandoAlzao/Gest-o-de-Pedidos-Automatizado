@@ -50,7 +50,6 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Relatorios";
             WindowState = FormWindowState.Maximized;
-            Load += frmRelatorios_Load;
             ResumeLayout(false);
         }
 

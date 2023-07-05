@@ -73,6 +73,7 @@
             MnuUltimasVendas = new ToolStripMenuItem();
             MnuConsultaPedidos = new ToolStripMenuItem();
             MnuMeusClientes = new ToolStripMenuItem();
+            mnuBuscaCadastros = new ToolStripMenuItem();
             relatóriosToolStripMenuItem = new ToolStripMenuItem();
             rankingDeVendasToolStripMenuItem = new ToolStripMenuItem();
             vendasPorVendedorToolStripMenuItem = new ToolStripMenuItem();
@@ -82,6 +83,7 @@
             MnuRegistraContato = new ToolStripMenuItem();
             labNomeEmpresa = new Label();
             label10 = new Label();
+            registrosDeContatosToolStripMenuItem = new ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)grdUltimasVendas).BeginInit();
             ((System.ComponentModel.ISupportInitialize)grdUltContato).BeginInit();
             ((System.ComponentModel.ISupportInitialize)grdAvisos).BeginInit();
@@ -462,7 +464,7 @@
             // 
             // consultasToolStripMenuItem
             // 
-            consultasToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { MnuUltimasVendas, MnuConsultaPedidos, MnuMeusClientes });
+            consultasToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { MnuUltimasVendas, MnuConsultaPedidos, MnuMeusClientes, mnuBuscaCadastros });
             consultasToolStripMenuItem.Name = "consultasToolStripMenuItem";
             consultasToolStripMenuItem.Size = new Size(71, 20);
             consultasToolStripMenuItem.Text = "Consultas";
@@ -470,27 +472,34 @@
             // MnuUltimasVendas
             // 
             MnuUltimasVendas.Name = "MnuUltimasVendas";
-            MnuUltimasVendas.Size = new Size(166, 22);
+            MnuUltimasVendas.Size = new Size(177, 22);
             MnuUltimasVendas.Text = "Ultimas Vendas";
             MnuUltimasVendas.Click += MnuUltimasVendas_Click;
             // 
             // MnuConsultaPedidos
             // 
             MnuConsultaPedidos.Name = "MnuConsultaPedidos";
-            MnuConsultaPedidos.Size = new Size(166, 22);
+            MnuConsultaPedidos.Size = new Size(177, 22);
             MnuConsultaPedidos.Text = "Consulta Pedidos";
             MnuConsultaPedidos.Click += MnuConsultaPedidos_Click;
             // 
             // MnuMeusClientes
             // 
             MnuMeusClientes.Name = "MnuMeusClientes";
-            MnuMeusClientes.Size = new Size(166, 22);
+            MnuMeusClientes.Size = new Size(177, 22);
             MnuMeusClientes.Text = "Meus Clientes";
             MnuMeusClientes.Click += MnuMeusClientes_Click;
             // 
+            // mnuBuscaCadastros
+            // 
+            mnuBuscaCadastros.Name = "mnuBuscaCadastros";
+            mnuBuscaCadastros.Size = new Size(177, 22);
+            mnuBuscaCadastros.Text = "Cadastros por CNPJ";
+            mnuBuscaCadastros.Click += mnuBuscaCadastros_Click;
+            // 
             // relatóriosToolStripMenuItem
             // 
-            relatóriosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { rankingDeVendasToolStripMenuItem, vendasPorVendedorToolStripMenuItem });
+            relatóriosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { rankingDeVendasToolStripMenuItem, vendasPorVendedorToolStripMenuItem, registrosDeContatosToolStripMenuItem });
             relatóriosToolStripMenuItem.Name = "relatóriosToolStripMenuItem";
             relatóriosToolStripMenuItem.Size = new Size(71, 20);
             relatóriosToolStripMenuItem.Text = "Relatórios";
@@ -498,7 +507,7 @@
             // rankingDeVendasToolStripMenuItem
             // 
             rankingDeVendasToolStripMenuItem.Name = "rankingDeVendasToolStripMenuItem";
-            rankingDeVendasToolStripMenuItem.Size = new Size(185, 22);
+            rankingDeVendasToolStripMenuItem.Size = new Size(189, 22);
             rankingDeVendasToolStripMenuItem.Text = "Ranking de Vendas";
             rankingDeVendasToolStripMenuItem.Visible = false;
             rankingDeVendasToolStripMenuItem.Click += rankingDeVendasToolStripMenuItem_Click;
@@ -506,7 +515,7 @@
             // vendasPorVendedorToolStripMenuItem
             // 
             vendasPorVendedorToolStripMenuItem.Name = "vendasPorVendedorToolStripMenuItem";
-            vendasPorVendedorToolStripMenuItem.Size = new Size(185, 22);
+            vendasPorVendedorToolStripMenuItem.Size = new Size(189, 22);
             vendasPorVendedorToolStripMenuItem.Text = "Vendas por Vendedor";
             vendasPorVendedorToolStripMenuItem.Click += vendasPorVendedorToolStripMenuItem_Click;
             // 
@@ -555,6 +564,13 @@
             label10.Size = new Size(57, 15);
             label10.TabIndex = 40;
             label10.Text = "Empresa:";
+            // 
+            // registrosDeContatosToolStripMenuItem
+            // 
+            registrosDeContatosToolStripMenuItem.Name = "registrosDeContatosToolStripMenuItem";
+            registrosDeContatosToolStripMenuItem.Size = new Size(189, 22);
+            registrosDeContatosToolStripMenuItem.Text = "Registros de Contatos";
+            registrosDeContatosToolStripMenuItem.Click += registrosDeContatosToolStripMenuItem_Click;
             // 
             // frmCRMInicial
             // 
@@ -659,5 +675,7 @@
         private Label labNomeEmpresa;
         private Label label10;
         private ToolStripMenuItem vendasPorVendedorToolStripMenuItem;
+        private ToolStripMenuItem mnuBuscaCadastros;
+        private ToolStripMenuItem registrosDeContatosToolStripMenuItem;
     }
 }

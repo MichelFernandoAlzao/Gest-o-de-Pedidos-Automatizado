@@ -89,6 +89,11 @@ namespace Formularios
             }
             objContato.cpUsuarioDR = LUsuario;
 
+            if(txtSugestoes.Text.ToString().Replace(" ","") == "" && txtReclamacoes.Text.ToString().Replace(" ", "") == "")
+            {
+                MessageBox.Show("Nenhuma reclamação ou Sugestão informada, impossivel gravar!", "GPA", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+            }
+
             if (LIDRegistro == "")
             {
                 objContato.InsereDados(LCaminhoBanco);

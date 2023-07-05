@@ -20,7 +20,6 @@ namespace Formularios
     {
         string LCaminhoBanco = "";
         string[] ParametrosRel;
-        DataTable objDatTableRel = new DataTable();
         public frmRelatorios(string inCaminhoBanco, string[] inParametrosRel)
         {
             LCaminhoBanco = inCaminhoBanco;
@@ -60,13 +59,22 @@ namespace Formularios
                 ReportViewer.LocalReport.ReportEmbeddedResource = pRelatorio;
                 this.Controls.Add(this.ReportViewer);
             }
+            if (pRelatorio == "Formularios.Relatorios.RegistroContatos.rdlc")
+            {
+                List<RegistrodeContato> lstregistros = new List<RegistrodeContato>();
+                RelRegistroContatos objRelRegistros = new RelRegistroContatos();
+                lstregistros = objRelRegistros.CarregaRelatorioRDLC(LCaminhoBanco, ParametrosRel);
+
+                ReportDataSource fonteDeDados = new ReportDataSource();
+                fonteDeDados.Name = "RegistroDeContatos";
+                fonteDeDados.Value = lstregistros;
+                this.ReportViewer.LocalReport.DataSources.Clear();
+                this.ReportViewer.LocalReport.DataSources.Add(fonteDeDados);
+                ReportViewer.LocalReport.ReportEmbeddedResource = pRelatorio;
+                this.Controls.Add(this.ReportViewer);
+            }
             ReportViewer.SetDisplayMode(DisplayMode.PrintLayout);
             ReportViewer.RefreshReport();
-
-        }
-
-        private void frmRelatorios_Load(object sender, EventArgs e)
-        {
 
         }
     }

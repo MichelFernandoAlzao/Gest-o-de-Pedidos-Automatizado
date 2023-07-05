@@ -382,6 +382,7 @@
             txtCNPJ.Name = "txtCNPJ";
             txtCNPJ.Size = new Size(155, 23);
             txtCNPJ.TabIndex = 2;
+            txtCNPJ.Leave += txtCNPJ_Leave;
             // 
             // chkAtivo
             // 

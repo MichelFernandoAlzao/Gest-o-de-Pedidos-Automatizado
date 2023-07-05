@@ -105,12 +105,18 @@ namespace GPA
                 MessageBox.Show("Inscrição Estadual não preechida");
                 return;
             }
-            objCadastro.CNPJ = txtCNPJ.Text;
-            if (txtCNPJ.Text == "")
+            
+            if (txtCNPJ.Text.ToString().Replace(" ", "").Replace(".", "").Replace("/", "").Replace("-", "") == "")
             {
                 MessageBox.Show("CNPJ não preechido");
                 return;
             }
+            if(txtCNPJ.Text.ToString().Replace(" ", "").Replace(".", "").Replace("/", "").Replace("-", "").Length < 14)
+            {
+                MessageBox.Show("Comprimento do CNPJ invalido","GPA",MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            objCadastro.CNPJ = txtCNPJ.Text;
             objCadastro.Aviso = txtAviso.Text;
             if (chkAtivo.Checked)
             {
@@ -239,25 +245,11 @@ namespace GPA
 
         }
 
-        private void CarregaCampos(BDCadastroGeral CadastroGeral)
-        {
-            txtRazaoSocial.Text = LRazaoSocial;
-            txtFantasia.Text = LRazaoFantasia;
-            txtCNPJ.Text = LCNPJ;
-            txtInscricaoEstadual.Text = LInscricaoEstadual;
-            txtVendedor.Text = LVendedor;
-            if (LCliente == "S") chkCliente.Checked = true;
-            if (LDistribuidor == "S") chkDistribuidor.Checked = true;
-            if (LFabricante == "S") chkFabricante.Checked = true;
-            if (LFOrnecedor == "S") chkFornecedor.Checked = true;
-
-        }
-
         private void txtRazaoSocial_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.F1)
             {
-                frmSelecionaEmpresa objTela = new frmSelecionaEmpresa(LCaminhoBanco, this, "", txtRazaoSocial.Text.ToString(), "", "", LUsuario,"","","");
+                frmSelecionaEmpresa objTela = new frmSelecionaEmpresa(LCaminhoBanco, this, "", txtRazaoSocial.Text.ToString(), "", "", LUsuario, "", "", "");
                 objTela.ShowDialog();
 
                 if (LID != "")
@@ -424,6 +416,18 @@ namespace GPA
                     SEGUsuario objUsuario = new SEGUsuario();
                     List<SEGUsuario> lstUsuario = objUsuario.CarregaDados(LCaminhoBanco, LIDUsuario, "", "", "");
                     txtVendedor.Text = lstUsuario[0].Usuario;
+                }
+            }
+        }
+
+        private void txtCNPJ_Leave(object sender, EventArgs e)
+        {
+            if (txtCNPJ.Text.ToString().Replace(" ", "").Replace(".", "").Replace("/","").Replace("-","") != "")
+            {
+                if (txtCNPJ.Text.ToString().Replace(" ", "").Replace(".", "").Replace("/", "").Replace("-", "").Length < 14)
+                {
+                    MessageBox.Show("Comprimento de CNPJ invalido","GPA",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
+                    return;
                 }
             }
         }

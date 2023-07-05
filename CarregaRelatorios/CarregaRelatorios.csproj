@@ -12,6 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="DataSources\" />
     <Folder Include="Properties\" />
   </ItemGroup>
 

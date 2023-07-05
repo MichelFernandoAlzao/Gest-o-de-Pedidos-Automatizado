@@ -463,5 +463,17 @@ namespace Formularios
             frmVendasPorCliente frmVendasPorCliente = new frmVendasPorCliente(LCaminhoBanco, LUsuario);
             frmVendasPorCliente.ShowDialog();
         }
+
+        private void mnuBuscaCadastros_Click(object sender, EventArgs e)
+        {
+            frmBuscaCadastroCNPJ frmBuscaCadastroCNPJ = new frmBuscaCadastroCNPJ(LCaminhoBanco, LUsuario);
+            frmBuscaCadastroCNPJ.ShowDialog();
+        }
+
+        private void registrosDeContatosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmRelRegistroContatos frmRelRegistroContatos = new frmRelRegistroContatos(LCaminhoBanco,LUsuario);
+            frmRelRegistroContatos.ShowDialog();
+        }
     }
 }

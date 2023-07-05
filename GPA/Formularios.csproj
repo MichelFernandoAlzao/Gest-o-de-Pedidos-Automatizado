@@ -27,6 +27,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Relatorios\RegistroContatos.rdlc" />
     <None Remove="Relatorios\VendasPorCliente.rdlc" />
   </ItemGroup>
 
@@ -50,6 +51,7 @@
     <EmbeddedResource Include="Relatorios\Pedido.rdlc">
       <CustomToolNamespace>Relatorios</CustomToolNamespace>
     </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\RegistroContatos.rdlc" />
     <EmbeddedResource Include="Relatorios\VendasPorCliente.rdlc" />
   </ItemGroup>
 
@@ -62,6 +64,9 @@
 
   <ItemGroup>
     <Compile Update="frmSelecionarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="frmRelRegistroContatos.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Properties\Resources.Designer.cs">
