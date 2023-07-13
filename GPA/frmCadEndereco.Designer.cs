@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadEndereco));
             txtReferncia = new TextBox();
             labReferencia = new Label();
             chkEndCobranca = new CheckBox();
@@ -71,11 +72,12 @@
             txtReferncia.Multiline = true;
             txtReferncia.Name = "txtReferncia";
             txtReferncia.Size = new Size(776, 73);
-            txtReferncia.TabIndex = 9;
+            txtReferncia.TabIndex = 10;
             // 
             // labReferencia
             // 
             labReferencia.AutoSize = true;
+            labReferencia.BackColor = Color.Transparent;
             labReferencia.Location = new Point(12, 347);
             labReferencia.Name = "labReferencia";
             labReferencia.Size = new Size(62, 15);
@@ -85,22 +87,24 @@
             // chkEndCobranca
             // 
             chkEndCobranca.AutoSize = true;
+            chkEndCobranca.BackColor = Color.Transparent;
             chkEndCobranca.Location = new Point(711, 324);
             chkEndCobranca.Name = "chkEndCobranca";
             chkEndCobranca.Size = new Size(77, 19);
-            chkEndCobranca.TabIndex = 8;
+            chkEndCobranca.TabIndex = 9;
             chkEndCobranca.Text = "Cobrança";
-            chkEndCobranca.UseVisualStyleBackColor = true;
+            chkEndCobranca.UseVisualStyleBackColor = false;
             // 
             // chkEndFisico
             // 
             chkEndFisico.AutoSize = true;
+            chkEndFisico.BackColor = Color.Transparent;
             chkEndFisico.Location = new Point(711, 299);
             chkEndFisico.Name = "chkEndFisico";
             chkEndFisico.Size = new Size(56, 19);
-            chkEndFisico.TabIndex = 7;
+            chkEndFisico.TabIndex = 8;
             chkEndFisico.Text = "Fisico";
-            chkEndFisico.UseVisualStyleBackColor = true;
+            chkEndFisico.UseVisualStyleBackColor = false;
             // 
             // txtCidade
             // 
@@ -112,6 +116,7 @@
             // labCidade
             // 
             labCidade.AutoSize = true;
+            labCidade.BackColor = Color.Transparent;
             labCidade.Location = new Point(345, 290);
             labCidade.Name = "labCidade";
             labCidade.Size = new Size(44, 15);
@@ -128,6 +133,7 @@
             // labBairro
             // 
             labBairro.AutoSize = true;
+            labBairro.BackColor = Color.Transparent;
             labBairro.Location = new Point(12, 290);
             labBairro.Name = "labBairro";
             labBairro.Size = new Size(38, 15);
@@ -144,6 +150,7 @@
             // labRua
             // 
             labRua.AutoSize = true;
+            labRua.BackColor = Color.Transparent;
             labRua.Location = new Point(213, 240);
             labRua.Name = "labRua";
             labRua.Size = new Size(27, 15);
@@ -160,6 +167,7 @@
             // labNumero
             // 
             labNumero.AutoSize = true;
+            labNumero.BackColor = Color.Transparent;
             labNumero.Location = new Point(599, 240);
             labNumero.Name = "labNumero";
             labNumero.Size = new Size(51, 15);
@@ -176,6 +184,7 @@
             // labIdentificacao
             // 
             labIdentificacao.AutoSize = true;
+            labIdentificacao.BackColor = Color.Transparent;
             labIdentificacao.Location = new Point(12, 240);
             labIdentificacao.Name = "labIdentificacao";
             labIdentificacao.Size = new Size(75, 15);
@@ -196,7 +205,7 @@
             grdEnderecos.RowTemplate.Height = 25;
             grdEnderecos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             grdEnderecos.Size = new Size(776, 189);
-            grdEnderecos.TabIndex = 24;
+            grdEnderecos.TabIndex = 14;
             grdEnderecos.SelectionChanged += grdEnderecos_SelectionChanged;
             // 
             // grdid
@@ -277,6 +286,7 @@
             // 
             // label1
             // 
+            label1.BackColor = Color.Transparent;
             label1.BorderStyle = BorderStyle.Fixed3D;
             label1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label1.Location = new Point(12, 12);
@@ -293,7 +303,7 @@
             cmdNovo.Location = new Point(686, 12);
             cmdNovo.Name = "cmdNovo";
             cmdNovo.Size = new Size(30, 30);
-            cmdNovo.TabIndex = 22;
+            cmdNovo.TabIndex = 11;
             cmdNovo.UseVisualStyleBackColor = true;
             cmdNovo.Click += cmdNovo_Click;
             // 
@@ -304,7 +314,7 @@
             cmdGravar.Location = new Point(722, 12);
             cmdGravar.Name = "cmdGravar";
             cmdGravar.Size = new Size(30, 30);
-            cmdGravar.TabIndex = 21;
+            cmdGravar.TabIndex = 12;
             cmdGravar.UseVisualStyleBackColor = true;
             cmdGravar.Click += cmdGravar_Click;
             // 
@@ -315,7 +325,7 @@
             cmdSair.Location = new Point(758, 12);
             cmdSair.Name = "cmdSair";
             cmdSair.Size = new Size(30, 30);
-            cmdSair.TabIndex = 20;
+            cmdSair.TabIndex = 13;
             cmdSair.UseVisualStyleBackColor = true;
             cmdSair.Click += cmdSair_Click;
             // 
@@ -329,6 +339,7 @@
             // labEstado
             // 
             labEstado.AutoSize = true;
+            labEstado.BackColor = Color.Transparent;
             labEstado.Location = new Point(520, 290);
             labEstado.Name = "labEstado";
             labEstado.Size = new Size(21, 15);
@@ -338,6 +349,7 @@
             // labCEP
             // 
             labCEP.AutoSize = true;
+            labCEP.BackColor = Color.Transparent;
             labCEP.Location = new Point(612, 290);
             labCEP.Name = "labCEP";
             labCEP.Size = new Size(28, 15);
@@ -350,13 +362,14 @@
             txtCEP.Mask = "00,000-000";
             txtCEP.Name = "txtCEP";
             txtCEP.Size = new Size(93, 23);
-            txtCEP.TabIndex = 42;
+            txtCEP.TabIndex = 7;
             // 
             // frmCadEndereco
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Info;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(800, 450);
             ControlBox = false;
             Controls.Add(txtCEP);

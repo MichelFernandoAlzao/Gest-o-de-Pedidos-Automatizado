@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSelecionaNatureza));
             lbSelectNatOperacao = new Label();
             cmdSair = new Button();
             CmdSelecionar = new Button();
@@ -41,6 +42,7 @@
             // 
             // lbSelectNatOperacao
             // 
+            lbSelectNatOperacao.BackColor = Color.Transparent;
             lbSelectNatOperacao.BorderStyle = BorderStyle.Fixed3D;
             lbSelectNatOperacao.Cursor = Cursors.IBeam;
             lbSelectNatOperacao.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
@@ -126,6 +128,8 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Info;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(480, 450);
             ControlBox = false;
             Controls.Add(lbSelectNatOperacao);

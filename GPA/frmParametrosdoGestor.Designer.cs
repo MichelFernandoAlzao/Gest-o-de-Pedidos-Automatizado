@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmParametrosdoGestor));
             label1 = new Label();
             label2 = new Label();
             grdMetasMensais = new DataGridView();
@@ -48,6 +49,7 @@
             // label1
             // 
             label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
             label1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label1.Location = new Point(12, 25);
             label1.Name = "label1";
@@ -58,6 +60,7 @@
             // label2
             // 
             label2.AutoSize = true;
+            label2.BackColor = Color.Transparent;
             label2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label2.Location = new Point(12, 58);
             label2.Name = "label2";
@@ -112,6 +115,7 @@
             // grdMetas
             // 
             grdMetas.AutoSize = true;
+            grdMetas.BackColor = Color.Transparent;
             grdMetas.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             grdMetas.Location = new Point(12, 270);
             grdMetas.Name = "grdMetas";
@@ -144,6 +148,7 @@
             // labEmpresaPadrao
             // 
             labEmpresaPadrao.AutoSize = true;
+            labEmpresaPadrao.BackColor = Color.Transparent;
             labEmpresaPadrao.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             labEmpresaPadrao.Location = new Point(11, 90);
             labEmpresaPadrao.Name = "labEmpresaPadrao";
@@ -175,6 +180,8 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Info;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(419, 450);
             ControlBox = false;
             Controls.Add(cmdGravarMetas);

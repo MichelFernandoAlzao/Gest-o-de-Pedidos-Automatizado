@@ -34,11 +34,25 @@ namespace Formularios
         {
             if (e.KeyCode == Keys.F1)
             {
-                frmSelecionaEmpresa frmSelecionaEmpresa = new frmSelecionaEmpresa(LCaminhoBanco, this, "", txtEmpresa.Text, "", "", "","","","");
+                frmSelecionaEmpresa frmSelecionaEmpresa = new frmSelecionaEmpresa(LCaminhoBanco, this, "", txtEmpresa.Text, "", "", "", "", "", "");
                 frmSelecionaEmpresa.ShowDialog();
                 if (LRazaoSocial != "")
                 {
                     txtEmpresa.Text = LRazaoSocial;
+                    BDCadContatos objContato = new BDCadContatos();
+                    List<BDCadContatos> lstContato = objContato.CarregaDados(LCaminhoBanco,LID);
+                    if(lstContato.Count > 0)
+                    {
+                        foreach(BDCadContatos contato in lstContato)
+                        {
+                            if(contato.cpComprador == "S")
+                            {
+                                txtNome.Text = contato.cpNome;
+                                txtFone.Text = contato.cpTelefone;
+                                continue;
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -99,6 +113,8 @@ namespace Formularios
             txtEmpresa.Text = "";
             txtDataContato.Text = "";
             txtUsuario.Text = "";
+            txtNome.Text = "";
+            txtFone.Text = "";
         }
 
         private void cmdGravar_Click(object sender, EventArgs e)

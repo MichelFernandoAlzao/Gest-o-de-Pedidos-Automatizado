@@ -43,6 +43,7 @@
             // 
             // lbCabeçallho
             // 
+            lbCabeçallho.BackColor = Color.Transparent;
             lbCabeçallho.BorderStyle = BorderStyle.Fixed3D;
             lbCabeçallho.Cursor = Cursors.IBeam;
             lbCabeçallho.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
@@ -70,7 +71,7 @@
             txtNumero.Location = new Point(12, 47);
             txtNumero.Name = "txtNumero";
             txtNumero.Size = new Size(111, 23);
-            txtNumero.TabIndex = 6;
+            txtNumero.TabIndex = 0;
             txtNumero.KeyDown += txtNumero_KeyDown;
             // 
             // cmdSelecionar
@@ -80,7 +81,7 @@
             cmdSelecionar.Location = new Point(722, 9);
             cmdSelecionar.Name = "cmdSelecionar";
             cmdSelecionar.Size = new Size(30, 30);
-            cmdSelecionar.TabIndex = 7;
+            cmdSelecionar.TabIndex = 1;
             cmdSelecionar.UseVisualStyleBackColor = true;
             cmdSelecionar.Click += cmdSelecionar_Click;
             // 
@@ -97,7 +98,7 @@
             grdListaPedido.RowTemplate.Height = 25;
             grdListaPedido.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             grdListaPedido.Size = new Size(776, 157);
-            grdListaPedido.TabIndex = 8;
+            grdListaPedido.TabIndex = 3;
             grdListaPedido.DoubleClick += grdListaPedido_DoubleClick;
             // 
             // grdID
@@ -126,7 +127,7 @@
             cmdSair.Location = new Point(758, 9);
             cmdSair.Name = "cmdSair";
             cmdSair.Size = new Size(30, 30);
-            cmdSair.TabIndex = 9;
+            cmdSair.TabIndex = 2;
             cmdSair.UseVisualStyleBackColor = true;
             cmdSair.Click += button3_Click;
             // 
@@ -135,6 +136,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Info;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(800, 247);
             ControlBox = false;
             Controls.Add(cmdSair);

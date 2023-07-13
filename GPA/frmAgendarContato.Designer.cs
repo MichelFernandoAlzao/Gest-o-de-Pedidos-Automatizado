@@ -40,6 +40,10 @@
             cmdSair = new Button();
             lbPedidos = new Label();
             txtDataContato = new MaskedTextBox();
+            LabNomeContato = new Label();
+            txtNome = new TextBox();
+            label2 = new Label();
+            txtFone = new MaskedTextBox();
             SuspendLayout();
             // 
             // txtEmpresa
@@ -53,6 +57,7 @@
             // labEmpresa
             // 
             labEmpresa.AutoSize = true;
+            labEmpresa.BackColor = Color.Transparent;
             labEmpresa.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             labEmpresa.Location = new Point(12, 44);
             labEmpresa.Name = "labEmpresa";
@@ -63,6 +68,7 @@
             // labData
             // 
             labData.AutoSize = true;
+            labData.BackColor = Color.Transparent;
             labData.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             labData.Location = new Point(441, 44);
             labData.Name = "labData";
@@ -73,6 +79,7 @@
             // labUsuario
             // 
             labUsuario.AutoSize = true;
+            labUsuario.BackColor = Color.Transparent;
             labUsuario.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             labUsuario.Location = new Point(558, 44);
             labUsuario.Name = "labUsuario";
@@ -134,6 +141,7 @@
             // 
             // lbPedidos
             // 
+            lbPedidos.BackColor = Color.Transparent;
             lbPedidos.BorderStyle = BorderStyle.Fixed3D;
             lbPedidos.Cursor = Cursors.IBeam;
             lbPedidos.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
@@ -155,13 +163,56 @@
             txtDataContato.ValidatingType = typeof(DateTime);
             txtDataContato.Leave += txtDataContato_Leave;
             // 
+            // LabNomeContato
+            // 
+            LabNomeContato.AutoSize = true;
+            LabNomeContato.BackColor = Color.Transparent;
+            LabNomeContato.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            LabNomeContato.Location = new Point(12, 101);
+            LabNomeContato.Name = "LabNomeContato";
+            LabNomeContato.Size = new Size(41, 15);
+            LabNomeContato.TabIndex = 53;
+            LabNomeContato.Text = "Nome";
+            // 
+            // txtNome
+            // 
+            txtNome.Location = new Point(12, 119);
+            txtNome.Name = "txtNome";
+            txtNome.Size = new Size(462, 23);
+            txtNome.TabIndex = 52;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.BackColor = Color.Transparent;
+            label2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.Location = new Point(492, 101);
+            label2.Name = "label2";
+            label2.Size = new Size(34, 15);
+            label2.TabIndex = 55;
+            label2.Text = "Fone";
+            // 
+            // txtFone
+            // 
+            txtFone.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            txtFone.Location = new Point(492, 119);
+            txtFone.Mask = "(99) 00000-0000";
+            txtFone.Name = "txtFone";
+            txtFone.Size = new Size(185, 23);
+            txtFone.TabIndex = 56;
+            // 
             // frmAgendarContato
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Info;
-            ClientSize = new Size(690, 96);
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            ClientSize = new Size(690, 154);
             ControlBox = false;
+            Controls.Add(txtFone);
+            Controls.Add(label2);
+            Controls.Add(LabNomeContato);
+            Controls.Add(txtNome);
             Controls.Add(txtDataContato);
             Controls.Add(cmdExcluir);
             Controls.Add(cmdNovo);
@@ -193,5 +244,9 @@
         private Button cmdSair;
         private Label lbPedidos;
         private MaskedTextBox txtDataContato;
+        private Label LabNomeContato;
+        private TextBox txtNome;
+        private Label label2;
+        private MaskedTextBox txtFone;
     }
 }

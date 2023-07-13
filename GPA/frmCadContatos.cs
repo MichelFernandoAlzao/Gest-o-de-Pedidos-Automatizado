@@ -35,6 +35,10 @@ namespace Formularios
 
         private void cmdNovo_Click(object sender, EventArgs e)
         {
+            Novo();
+        }
+        private void Novo()
+        {
             txtNome.Text = "";
             txtCargo.Text = "";
             txtTelefone.Text = "";
@@ -49,6 +53,7 @@ namespace Formularios
             LComprador = "";
             Lgerencia = "";
             LAnotacoes = "";
+
         }
 
         private void AtualizaGrid()
@@ -75,6 +80,10 @@ namespace Formularios
                         };
                     grdContatos.Rows.Add(Row);
                 }
+            }
+            else
+            {
+                Novo();
             }
         }
 

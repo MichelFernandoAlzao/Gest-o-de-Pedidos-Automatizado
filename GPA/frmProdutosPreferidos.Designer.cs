@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProdutosPreferidos));
             cmdSair = new Button();
             grdProdutos = new DataGridView();
             grdID = new DataGridViewTextBoxColumn();
@@ -98,6 +99,7 @@
             // 
             // lbCadProdutos
             // 
+            lbCadProdutos.BackColor = Color.Transparent;
             lbCadProdutos.BorderStyle = BorderStyle.Fixed3D;
             lbCadProdutos.Cursor = Cursors.IBeam;
             lbCadProdutos.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
@@ -114,6 +116,8 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Info;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(800, 306);
             ControlBox = false;
             Controls.Add(lbCadProdutos);

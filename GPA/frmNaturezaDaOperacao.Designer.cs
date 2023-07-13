@@ -65,7 +65,7 @@
             grdNatOperacao.RowTemplate.Height = 25;
             grdNatOperacao.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             grdNatOperacao.Size = new Size(335, 374);
-            grdNatOperacao.TabIndex = 0;
+            grdNatOperacao.TabIndex = 10;
             grdNatOperacao.SelectionChanged += grdNatOperacao_SelectionChanged;
             // 
             // grdNatID
@@ -119,6 +119,7 @@
             // 
             // lbPedidos
             // 
+            lbPedidos.BackColor = Color.Transparent;
             lbPedidos.BorderStyle = BorderStyle.Fixed3D;
             lbPedidos.Cursor = Cursors.IBeam;
             lbPedidos.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
@@ -133,63 +134,69 @@
             // chkVenda
             // 
             chkVenda.AutoSize = true;
+            chkVenda.BackColor = Color.Transparent;
             chkVenda.Location = new Point(353, 124);
             chkVenda.Name = "chkVenda";
             chkVenda.Size = new Size(58, 19);
-            chkVenda.TabIndex = 4;
+            chkVenda.TabIndex = 1;
             chkVenda.Text = "Venda";
-            chkVenda.UseVisualStyleBackColor = true;
+            chkVenda.UseVisualStyleBackColor = false;
             // 
             // chkBonificacao
             // 
             chkBonificacao.AutoSize = true;
+            chkBonificacao.BackColor = Color.Transparent;
             chkBonificacao.Location = new Point(353, 149);
             chkBonificacao.Name = "chkBonificacao";
             chkBonificacao.Size = new Size(88, 19);
-            chkBonificacao.TabIndex = 5;
+            chkBonificacao.TabIndex = 2;
             chkBonificacao.Text = "Bonificação";
-            chkBonificacao.UseVisualStyleBackColor = true;
+            chkBonificacao.UseVisualStyleBackColor = false;
             // 
             // chkBrinde
             // 
             chkBrinde.AutoSize = true;
+            chkBrinde.BackColor = Color.Transparent;
             chkBrinde.Location = new Point(353, 174);
             chkBrinde.Name = "chkBrinde";
             chkBrinde.Size = new Size(60, 19);
-            chkBrinde.TabIndex = 6;
+            chkBrinde.TabIndex = 3;
             chkBrinde.Text = "Brinde";
-            chkBrinde.UseVisualStyleBackColor = true;
+            chkBrinde.UseVisualStyleBackColor = false;
             // 
             // chkInterno
             // 
             chkInterno.AutoSize = true;
+            chkInterno.BackColor = Color.Transparent;
             chkInterno.Location = new Point(353, 199);
             chkInterno.Name = "chkInterno";
             chkInterno.Size = new Size(64, 19);
-            chkInterno.TabIndex = 7;
+            chkInterno.TabIndex = 4;
             chkInterno.Text = "Interno";
-            chkInterno.UseVisualStyleBackColor = true;
+            chkInterno.UseVisualStyleBackColor = false;
             // 
             // chkRestrito
             // 
             chkRestrito.AutoSize = true;
+            chkRestrito.BackColor = Color.Transparent;
             chkRestrito.Location = new Point(353, 224);
             chkRestrito.Name = "chkRestrito";
             chkRestrito.Size = new Size(66, 19);
-            chkRestrito.TabIndex = 8;
+            chkRestrito.TabIndex = 5;
             chkRestrito.Text = "Restrito";
-            chkRestrito.UseVisualStyleBackColor = true;
+            chkRestrito.UseVisualStyleBackColor = false;
             // 
             // txtDescricao
             // 
             txtDescricao.Location = new Point(353, 82);
             txtDescricao.Name = "txtDescricao";
             txtDescricao.Size = new Size(435, 23);
-            txtDescricao.TabIndex = 9;
+            txtDescricao.TabIndex = 0;
             // 
             // labDescricao
             // 
             labDescricao.AutoSize = true;
+            labDescricao.BackColor = Color.Transparent;
             labDescricao.Location = new Point(353, 64);
             labDescricao.Name = "labDescricao";
             labDescricao.Size = new Size(58, 15);
@@ -203,7 +210,7 @@
             cmdExcluir.Location = new Point(650, 12);
             cmdExcluir.Name = "cmdExcluir";
             cmdExcluir.Size = new Size(30, 30);
-            cmdExcluir.TabIndex = 49;
+            cmdExcluir.TabIndex = 6;
             cmdExcluir.UseVisualStyleBackColor = true;
             cmdExcluir.Click += cmdExcluir_Click;
             // 
@@ -214,7 +221,7 @@
             cmdNovo.Location = new Point(686, 12);
             cmdNovo.Name = "cmdNovo";
             cmdNovo.Size = new Size(30, 30);
-            cmdNovo.TabIndex = 48;
+            cmdNovo.TabIndex = 7;
             cmdNovo.UseVisualStyleBackColor = true;
             cmdNovo.Click += cmdNovo_Click;
             // 
@@ -225,7 +232,7 @@
             cmdGravar.Location = new Point(722, 12);
             cmdGravar.Name = "cmdGravar";
             cmdGravar.Size = new Size(30, 30);
-            cmdGravar.TabIndex = 47;
+            cmdGravar.TabIndex = 8;
             cmdGravar.UseVisualStyleBackColor = true;
             cmdGravar.Click += cmdGravar_Click;
             // 
@@ -236,7 +243,7 @@
             cmdSair.Location = new Point(758, 12);
             cmdSair.Name = "cmdSair";
             cmdSair.Size = new Size(30, 30);
-            cmdSair.TabIndex = 46;
+            cmdSair.TabIndex = 9;
             cmdSair.UseVisualStyleBackColor = true;
             cmdSair.Click += cmdSair_Click;
             // 
@@ -245,6 +252,8 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Info;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(800, 450);
             ControlBox = false;
             Controls.Add(cmdExcluir);

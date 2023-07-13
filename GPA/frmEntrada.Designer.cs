@@ -84,7 +84,7 @@
             button1.Location = new Point(91, 355);
             button1.Name = "button1";
             button1.Size = new Size(209, 38);
-            button1.TabIndex = 4;
+            button1.TabIndex = 3;
             button1.Text = "Entrar";
             button1.UseVisualStyleBackColor = true;
             button1.Click += Entrar_Click;
@@ -94,7 +94,7 @@
             button2.Location = new Point(92, 400);
             button2.Name = "button2";
             button2.Size = new Size(209, 38);
-            button2.TabIndex = 6;
+            button2.TabIndex = 4;
             button2.Text = "Sair";
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
@@ -116,7 +116,7 @@
             chkOperacional.Location = new Point(40, 281);
             chkOperacional.Name = "chkOperacional";
             chkOperacional.Size = new Size(90, 19);
-            chkOperacional.TabIndex = 8;
+            chkOperacional.TabIndex = 5;
             chkOperacional.Text = "Operacional";
             chkOperacional.UseVisualStyleBackColor = true;
             chkOperacional.MouseClick += chkOperacional_MouseClick;
@@ -127,7 +127,7 @@
             chkSeguranca.Location = new Point(259, 281);
             chkSeguranca.Name = "chkSeguranca";
             chkSeguranca.Size = new Size(81, 19);
-            chkSeguranca.TabIndex = 9;
+            chkSeguranca.TabIndex = 7;
             chkSeguranca.Text = "Segurança";
             chkSeguranca.UseVisualStyleBackColor = true;
             chkSeguranca.MouseClick += chkSeguranca_MouseClick;
@@ -138,7 +138,7 @@
             chkFinanceiro.Location = new Point(154, 281);
             chkFinanceiro.Name = "chkFinanceiro";
             chkFinanceiro.Size = new Size(81, 19);
-            chkFinanceiro.TabIndex = 10;
+            chkFinanceiro.TabIndex = 6;
             chkFinanceiro.Text = "Financeiro";
             chkFinanceiro.UseVisualStyleBackColor = true;
             chkFinanceiro.MouseClick += chkFinanceiro_MouseClick;
@@ -149,7 +149,7 @@
             cboServidor.Location = new Point(91, 326);
             cboServidor.Name = "cboServidor";
             cboServidor.Size = new Size(210, 23);
-            cboServidor.TabIndex = 11;
+            cboServidor.TabIndex = 2;
             // 
             // frmEntrada
             // 

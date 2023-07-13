@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSelecionaPedido));
             lbLancPedido = new Label();
             cmdSair = new Button();
             CmdSelecionar = new Button();
@@ -40,6 +41,7 @@
             // 
             // lbLancPedido
             // 
+            lbLancPedido.BackColor = Color.Transparent;
             lbLancPedido.BorderStyle = BorderStyle.Fixed3D;
             lbLancPedido.Cursor = Cursors.IBeam;
             lbLancPedido.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
@@ -116,6 +118,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Info;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(800, 251);
             ControlBox = false;
             Controls.Add(lbLancPedido);

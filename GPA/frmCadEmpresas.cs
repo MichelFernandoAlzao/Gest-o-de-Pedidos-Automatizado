@@ -105,17 +105,26 @@ namespace GPA
                 MessageBox.Show("Inscrição Estadual não preechida");
                 return;
             }
-            
+
             if (txtCNPJ.Text.ToString().Replace(" ", "").Replace(".", "").Replace("/", "").Replace("-", "") == "")
             {
                 MessageBox.Show("CNPJ não preechido");
                 return;
             }
-            if(txtCNPJ.Text.ToString().Replace(" ", "").Replace(".", "").Replace("/", "").Replace("-", "").Length < 14)
+            if (txtCNPJ.Text.ToString().Replace(" ", "").Replace(".", "").Replace("/", "").Replace("-", "").Length < 14)
             {
-                MessageBox.Show("Comprimento do CNPJ invalido","GPA",MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Comprimento do CNPJ invalido", "GPA", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+
+            BDCadastroGeral objVerificaCNPJ = new BDCadastroGeral();
+            List<BDCadastroGeral> lstVerificaCNPJ = objVerificaCNPJ.CarregaDados(LCaminhoBanco, "", "", "", txtCNPJ.Text, "", "", "", "", "", "");
+            if (lstVerificaCNPJ.Count > 0)
+            {
+                MessageBox.Show("CNPJ já cadastrado, não é permitido o cadastro em duplicidade", "GPA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             objCadastro.CNPJ = txtCNPJ.Text;
             objCadastro.Aviso = txtAviso.Text;
             if (chkAtivo.Checked)
@@ -422,11 +431,11 @@ namespace GPA
 
         private void txtCNPJ_Leave(object sender, EventArgs e)
         {
-            if (txtCNPJ.Text.ToString().Replace(" ", "").Replace(".", "").Replace("/","").Replace("-","") != "")
+            if (txtCNPJ.Text.ToString().Replace(" ", "").Replace(".", "").Replace("/", "").Replace("-", "") != "")
             {
                 if (txtCNPJ.Text.ToString().Replace(" ", "").Replace(".", "").Replace("/", "").Replace("-", "").Length < 14)
                 {
-                    MessageBox.Show("Comprimento de CNPJ invalido","GPA",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
+                    MessageBox.Show("Comprimento de CNPJ invalido", "GPA", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                 }
             }

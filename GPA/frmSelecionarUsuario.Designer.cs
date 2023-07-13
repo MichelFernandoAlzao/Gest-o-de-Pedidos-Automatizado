@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSelecionarUsuario));
             cmdSair = new Button();
             CmdSelecionar = new Button();
             grdUsuarios = new DataGridView();
@@ -94,6 +95,7 @@
             // 
             // lbSelecUsuario
             // 
+            lbSelecUsuario.BackColor = Color.Transparent;
             lbSelecUsuario.BorderStyle = BorderStyle.Fixed3D;
             lbSelecUsuario.Cursor = Cursors.IBeam;
             lbSelecUsuario.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
@@ -110,6 +112,8 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Info;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(251, 469);
             ControlBox = false;
             Controls.Add(lbSelecUsuario);

@@ -26,7 +26,7 @@ namespace Formularios
         Form LChamador;
 
         string[] LParametros;
-        public frmSelecionaEmpresa(string inCaminhoBanco, Form frmChamador, string inID, string inrazao, string inFantasia, string inCNPJ, string inUsuario,string inFabricante,string inFornecedor, string inCLiente)
+        public frmSelecionaEmpresa(string inCaminhoBanco, Form frmChamador, string inID, string inrazao, string inFantasia, string inCNPJ, string inUsuario, string inFabricante, string inFornecedor, string inCLiente)
         {
 
             InitializeComponent();
@@ -75,7 +75,7 @@ namespace Formularios
             {
                 lstCadastro = objCadastro.CarregaDados(LCaminhoBanco, LIDCadastro, inRazao, inRazaoFantasia, inCNPJ, "", IDVendedor, "S", "", "", "");
             }
-            if(LFabricante == "" && LFornecedor == "" && LCliente == "")
+            if (LFabricante == "" && LFornecedor == "" && LCliente == "")
             {
                 lstCadastro = objCadastro.CarregaDados(LCaminhoBanco, LIDCadastro, inRazao, inRazaoFantasia, inCNPJ, "", IDVendedor, "", "", "", "");
             }

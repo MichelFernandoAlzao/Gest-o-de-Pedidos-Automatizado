@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadEmpresas));
             txtRazaoSocial = new TextBox();
             labRazaoSocial = new Label();
             labCNPJ = new Label();
@@ -75,6 +76,7 @@
             // labRazaoSocial
             // 
             labRazaoSocial.AutoSize = true;
+            labRazaoSocial.BackColor = Color.Transparent;
             labRazaoSocial.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             labRazaoSocial.Location = new Point(12, 57);
             labRazaoSocial.Name = "labRazaoSocial";
@@ -85,6 +87,7 @@
             // labCNPJ
             // 
             labCNPJ.AutoSize = true;
+            labCNPJ.BackColor = Color.Transparent;
             labCNPJ.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             labCNPJ.Location = new Point(841, 57);
             labCNPJ.Name = "labCNPJ";
@@ -102,6 +105,7 @@
             // labInscricaoEstadual
             // 
             labInscricaoEstadual.AutoSize = true;
+            labInscricaoEstadual.BackColor = Color.Transparent;
             labInscricaoEstadual.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             labInscricaoEstadual.Location = new Point(842, 110);
             labInscricaoEstadual.Name = "labInscricaoEstadual";
@@ -112,6 +116,7 @@
             // labFantasia
             // 
             labFantasia.AutoSize = true;
+            labFantasia.BackColor = Color.Transparent;
             labFantasia.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             labFantasia.Location = new Point(12, 110);
             labFantasia.Name = "labFantasia";
@@ -129,6 +134,7 @@
             // labVendedor
             // 
             labVendedor.AutoSize = true;
+            labVendedor.BackColor = Color.Transparent;
             labVendedor.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             labVendedor.Location = new Point(842, 163);
             labVendedor.Name = "labVendedor";
@@ -147,42 +153,46 @@
             // chkCliente
             // 
             chkCliente.AutoSize = true;
+            chkCliente.BackColor = Color.Transparent;
             chkCliente.Location = new Point(12, 279);
             chkCliente.Name = "chkCliente";
             chkCliente.Size = new Size(63, 19);
             chkCliente.TabIndex = 8;
             chkCliente.Text = "Cliente";
-            chkCliente.UseVisualStyleBackColor = true;
+            chkCliente.UseVisualStyleBackColor = false;
             // 
             // chkDistribuidor
             // 
             chkDistribuidor.AutoSize = true;
+            chkDistribuidor.BackColor = Color.Transparent;
             chkDistribuidor.Location = new Point(138, 279);
             chkDistribuidor.Name = "chkDistribuidor";
             chkDistribuidor.Size = new Size(88, 19);
             chkDistribuidor.TabIndex = 9;
             chkDistribuidor.Text = "Distribuidor";
-            chkDistribuidor.UseVisualStyleBackColor = true;
+            chkDistribuidor.UseVisualStyleBackColor = false;
             // 
             // chkFabricante
             // 
             chkFabricante.AutoSize = true;
+            chkFabricante.BackColor = Color.Transparent;
             chkFabricante.Location = new Point(286, 279);
             chkFabricante.Name = "chkFabricante";
             chkFabricante.Size = new Size(81, 19);
             chkFabricante.TabIndex = 10;
             chkFabricante.Text = "Fabricante";
-            chkFabricante.UseVisualStyleBackColor = true;
+            chkFabricante.UseVisualStyleBackColor = false;
             // 
             // chkFornecedor
             // 
             chkFornecedor.AutoSize = true;
+            chkFornecedor.BackColor = Color.Transparent;
             chkFornecedor.Location = new Point(430, 279);
             chkFornecedor.Name = "chkFornecedor";
             chkFornecedor.Size = new Size(86, 19);
             chkFornecedor.TabIndex = 11;
             chkFornecedor.Text = "Fornecedor";
-            chkFornecedor.UseVisualStyleBackColor = true;
+            chkFornecedor.UseVisualStyleBackColor = false;
             // 
             // cmdSair
             // 
@@ -192,7 +202,7 @@
             cmdSair.Location = new Point(967, 11);
             cmdSair.Name = "cmdSair";
             cmdSair.Size = new Size(30, 30);
-            cmdSair.TabIndex = 19;
+            cmdSair.TabIndex = 22;
             cmdSair.UseVisualStyleBackColor = true;
             cmdSair.Click += cmdSair_Click;
             // 
@@ -204,7 +214,7 @@
             cmdGravar.Location = new Point(931, 11);
             cmdGravar.Name = "cmdGravar";
             cmdGravar.Size = new Size(30, 30);
-            cmdGravar.TabIndex = 18;
+            cmdGravar.TabIndex = 21;
             cmdGravar.UseVisualStyleBackColor = true;
             cmdGravar.Click += Gravar;
             // 
@@ -217,12 +227,13 @@
             cmdNovo.Location = new Point(896, 11);
             cmdNovo.Name = "cmdNovo";
             cmdNovo.Size = new Size(29, 29);
-            cmdNovo.TabIndex = 17;
+            cmdNovo.TabIndex = 20;
             cmdNovo.UseVisualStyleBackColor = true;
             cmdNovo.Click += cmdNovo_Click;
             // 
             // labCadastroGeral
             // 
+            labCadastroGeral.BackColor = Color.Transparent;
             labCadastroGeral.BorderStyle = BorderStyle.Fixed3D;
             labCadastroGeral.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             labCadastroGeral.Location = new Point(12, 11);
@@ -238,7 +249,7 @@
             cmdEndereco.Location = new Point(12, 403);
             cmdEndereco.Name = "cmdEndereco";
             cmdEndereco.Size = new Size(80, 30);
-            cmdEndereco.TabIndex = 14;
+            cmdEndereco.TabIndex = 17;
             cmdEndereco.Text = "Endereços";
             cmdEndereco.UseVisualStyleBackColor = true;
             cmdEndereco.Click += cmdEndereco_Click;
@@ -248,7 +259,7 @@
             cmdContatos.Location = new Point(98, 403);
             cmdContatos.Name = "cmdContatos";
             cmdContatos.Size = new Size(80, 30);
-            cmdContatos.TabIndex = 15;
+            cmdContatos.TabIndex = 18;
             cmdContatos.Text = "Contatos";
             cmdContatos.UseVisualStyleBackColor = true;
             cmdContatos.Click += cmdContatos_Click;
@@ -258,7 +269,7 @@
             CmdRegOcorrencias.Location = new Point(184, 403);
             CmdRegOcorrencias.Name = "CmdRegOcorrencias";
             CmdRegOcorrencias.Size = new Size(80, 30);
-            CmdRegOcorrencias.TabIndex = 16;
+            CmdRegOcorrencias.TabIndex = 19;
             CmdRegOcorrencias.Text = "Ocorrencias";
             CmdRegOcorrencias.UseVisualStyleBackColor = true;
             CmdRegOcorrencias.Click += CmdRegOcorrencias_Click;
@@ -268,12 +279,13 @@
             txtQualificacao.Location = new Point(12, 337);
             txtQualificacao.Name = "txtQualificacao";
             txtQualificacao.Size = new Size(134, 23);
-            txtQualificacao.TabIndex = 11;
+            txtQualificacao.TabIndex = 14;
             txtQualificacao.Visible = false;
             // 
             // label1
             // 
             label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
             label1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label1.Location = new Point(12, 319);
             label1.Name = "label1";
@@ -292,6 +304,7 @@
             // label2
             // 
             label2.AutoSize = true;
+            label2.BackColor = Color.Transparent;
             label2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label2.Location = new Point(12, 163);
             label2.Name = "label2";
@@ -302,6 +315,7 @@
             // label3
             // 
             label3.AutoSize = true;
+            label3.BackColor = Color.Transparent;
             label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label3.Location = new Point(152, 319);
             label3.Name = "label3";
@@ -315,12 +329,13 @@
             txtDiasAtraso.Location = new Point(152, 337);
             txtDiasAtraso.Name = "txtDiasAtraso";
             txtDiasAtraso.Size = new Size(69, 23);
-            txtDiasAtraso.TabIndex = 12;
+            txtDiasAtraso.TabIndex = 15;
             txtDiasAtraso.Visible = false;
             // 
             // label4
             // 
             label4.AutoSize = true;
+            label4.BackColor = Color.Transparent;
             label4.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label4.Location = new Point(233, 319);
             label4.Name = "label4";
@@ -334,7 +349,7 @@
             txtRegCobranca.Location = new Point(233, 337);
             txtRegCobranca.Name = "txtRegCobranca";
             txtRegCobranca.Size = new Size(283, 23);
-            txtRegCobranca.TabIndex = 13;
+            txtRegCobranca.TabIndex = 16;
             txtRegCobranca.Visible = false;
             // 
             // cmdUltVenda
@@ -360,6 +375,7 @@
             // label5
             // 
             label5.AutoSize = true;
+            label5.BackColor = Color.Transparent;
             label5.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label5.Location = new Point(12, 218);
             label5.Name = "label5";
@@ -387,18 +403,20 @@
             // chkAtivo
             // 
             chkAtivo.AutoSize = true;
+            chkAtivo.BackColor = Color.Transparent;
             chkAtivo.Location = new Point(708, 79);
             chkAtivo.Name = "chkAtivo";
             chkAtivo.Size = new Size(54, 19);
             chkAtivo.TabIndex = 1;
             chkAtivo.Text = "Ativo";
-            chkAtivo.UseVisualStyleBackColor = true;
+            chkAtivo.UseVisualStyleBackColor = false;
             // 
             // frmCadEmpresas
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Info;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(1009, 449);
             ControlBox = false;
             Controls.Add(chkAtivo);

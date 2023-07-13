@@ -28,7 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            CalendarioContatos = new MonthCalendar();
+            components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCRMInicial));
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title3 = new System.Windows.Forms.DataVisualization.Charting.Title();
             labConsolidado = new Label();
             pgrsbMeta = new ProgressBar();
             labProgressao = new Label();
@@ -47,26 +52,15 @@
             label7 = new Label();
             label8 = new Label();
             textBox2 = new TextBox();
-            grdAvisos = new DataGridView();
-            avTexto = new DataGridViewTextBoxColumn();
-            grdDatainicio = new DataGridViewTextBoxColumn();
-            grdDataTermino = new DataGridViewTextBoxColumn();
-            label5 = new Label();
-            grdContatosAgendados = new DataGridView();
-            grdID = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
-            cmdCriarAviso = new Button();
             labVlrProgressao = new Label();
             labVlrConsolidado = new Label();
             labVlrMeta = new Label();
-            cmdAgendarContato = new Button();
-            labAgendarContato = new Label();
             menuStrip1 = new MenuStrip();
             cadastrosToolStripMenuItem = new ToolStripMenuItem();
             MnuCadEmpresas = new ToolStripMenuItem();
             MnuCadProdutos = new ToolStripMenuItem();
             MnuNatOperacao = new ToolStripMenuItem();
+            mnuCadastraAvisos = new ToolStripMenuItem();
             vendasToolStripMenuItem = new ToolStripMenuItem();
             MnuPedidos = new ToolStripMenuItem();
             consultasToolStripMenuItem = new ToolStripMenuItem();
@@ -77,518 +71,378 @@
             relatóriosToolStripMenuItem = new ToolStripMenuItem();
             rankingDeVendasToolStripMenuItem = new ToolStripMenuItem();
             vendasPorVendedorToolStripMenuItem = new ToolStripMenuItem();
+            registrosDeContatosToolStripMenuItem = new ToolStripMenuItem();
             parametrosToolStripMenuItem = new ToolStripMenuItem();
             MnuParametros = new ToolStripMenuItem();
             controleContatoToolStripMenuItem = new ToolStripMenuItem();
             MnuRegistraContato = new ToolStripMenuItem();
+            mnuAvisos = new ToolStripMenuItem();
             labNomeEmpresa = new Label();
             label10 = new Label();
-            registrosDeContatosToolStripMenuItem = new ToolStripMenuItem();
+            NotifyAvisos = new NotifyIcon(components);
+            openFileDialog1 = new OpenFileDialog();
+            pictureBox1 = new PictureBox();
+            chrtVendasMesaMes = new System.Windows.Forms.DataVisualization.Charting.Chart();
             ((System.ComponentModel.ISupportInitialize)grdUltimasVendas).BeginInit();
             ((System.ComponentModel.ISupportInitialize)grdUltContato).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)grdAvisos).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)grdContatosAgendados).BeginInit();
             menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)chrtVendasMesaMes).BeginInit();
             SuspendLayout();
-            // 
-            // CalendarioContatos
-            // 
-            CalendarioContatos.Location = new Point(15, 123);
-            CalendarioContatos.Name = "CalendarioContatos";
-            CalendarioContatos.TabIndex = 0;
-            CalendarioContatos.KeyDown += CalendarioContatos_KeyDown;
             // 
             // labConsolidado
             // 
-            labConsolidado.AutoSize = true;
-            labConsolidado.Location = new Point(254, 472);
+            resources.ApplyResources(labConsolidado, "labConsolidado");
+            labConsolidado.BackColor = Color.Transparent;
             labConsolidado.Name = "labConsolidado";
-            labConsolidado.Size = new Size(77, 15);
-            labConsolidado.TabIndex = 2;
-            labConsolidado.Text = "Consolidado:";
             // 
             // pgrsbMeta
             // 
-            pgrsbMeta.Location = new Point(254, 490);
+            resources.ApplyResources(pgrsbMeta, "pgrsbMeta");
+            pgrsbMeta.BackColor = Color.Gainsboro;
+            pgrsbMeta.ForeColor = Color.Gainsboro;
+            pgrsbMeta.MarqueeAnimationSpeed = 0;
             pgrsbMeta.Name = "pgrsbMeta";
-            pgrsbMeta.Size = new Size(751, 23);
-            pgrsbMeta.TabIndex = 3;
+            pgrsbMeta.Style = ProgressBarStyle.Marquee;
             // 
             // labProgressao
             // 
-            labProgressao.AutoSize = true;
-            labProgressao.Location = new Point(588, 472);
+            resources.ApplyResources(labProgressao, "labProgressao");
+            labProgressao.BackColor = Color.Transparent;
             labProgressao.Name = "labProgressao";
-            labProgressao.Size = new Size(78, 15);
-            labProgressao.TabIndex = 4;
-            labProgressao.Text = "Progressão%:";
             // 
             // labMeta
             // 
-            labMeta.AutoSize = true;
-            labMeta.Location = new Point(905, 472);
+            resources.ApplyResources(labMeta, "labMeta");
+            labMeta.BackColor = Color.Transparent;
             labMeta.Name = "labMeta";
-            labMeta.Size = new Size(37, 15);
-            labMeta.TabIndex = 5;
-            labMeta.Text = "Meta:";
             // 
             // grdUltimasVendas
             // 
+            resources.ApplyResources(grdUltimasVendas, "grdUltimasVendas");
             grdUltimasVendas.AllowUserToAddRows = false;
             grdUltimasVendas.AllowUserToDeleteRows = false;
             grdUltimasVendas.BackgroundColor = SystemColors.GradientActiveCaption;
             grdUltimasVendas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             grdUltimasVendas.Columns.AddRange(new DataGridViewColumn[] { DataVenda, VRazao, VValor });
-            grdUltimasVendas.Location = new Point(635, 175);
+            grdUltimasVendas.MultiSelect = false;
             grdUltimasVendas.Name = "grdUltimasVendas";
             grdUltimasVendas.ReadOnly = true;
-            grdUltimasVendas.RowHeadersWidth = 5;
             grdUltimasVendas.RowTemplate.Height = 25;
             grdUltimasVendas.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            grdUltimasVendas.Size = new Size(370, 294);
-            grdUltimasVendas.TabIndex = 8;
             // 
             // DataVenda
             // 
-            DataVenda.HeaderText = "Data";
+            resources.ApplyResources(DataVenda, "DataVenda");
             DataVenda.Name = "DataVenda";
             DataVenda.ReadOnly = true;
-            DataVenda.Width = 75;
             // 
             // VRazao
             // 
-            VRazao.HeaderText = "Razao Social";
+            resources.ApplyResources(VRazao, "VRazao");
             VRazao.Name = "VRazao";
             VRazao.ReadOnly = true;
-            VRazao.Width = 210;
             // 
             // VValor
             // 
-            VValor.HeaderText = "Valor";
+            resources.ApplyResources(VValor, "VValor");
             VValor.Name = "VValor";
             VValor.ReadOnly = true;
-            VValor.Width = 70;
             // 
             // grdUltContato
             // 
+            resources.ApplyResources(grdUltContato, "grdUltContato");
             grdUltContato.AllowUserToAddRows = false;
             grdUltContato.AllowUserToDeleteRows = false;
             grdUltContato.BackgroundColor = SystemColors.GradientActiveCaption;
             grdUltContato.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             grdUltContato.Columns.AddRange(new DataGridViewColumn[] { UltContato, RazSocial, Numero });
-            grdUltContato.Location = new Point(254, 175);
+            grdUltContato.MultiSelect = false;
             grdUltContato.Name = "grdUltContato";
             grdUltContato.ReadOnly = true;
-            grdUltContato.RowHeadersWidth = 5;
             grdUltContato.RowTemplate.Height = 25;
             grdUltContato.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            grdUltContato.Size = new Size(370, 294);
-            grdUltContato.TabIndex = 9;
             // 
             // UltContato
             // 
-            UltContato.HeaderText = "Ult.Contato";
+            resources.ApplyResources(UltContato, "UltContato");
             UltContato.Name = "UltContato";
             UltContato.ReadOnly = true;
-            UltContato.Width = 75;
             // 
             // RazSocial
             // 
-            RazSocial.HeaderText = "Razao Social";
+            resources.ApplyResources(RazSocial, "RazSocial");
             RazSocial.Name = "RazSocial";
             RazSocial.ReadOnly = true;
-            RazSocial.Width = 210;
             // 
             // Numero
             // 
-            Numero.HeaderText = "Nº";
+            resources.ApplyResources(Numero, "Numero");
             Numero.Name = "Numero";
             Numero.ReadOnly = true;
-            Numero.Width = 40;
             // 
             // txtObjetivoDiario
             // 
-            txtObjetivoDiario.Location = new Point(129, 75);
+            resources.ApplyResources(txtObjetivoDiario, "txtObjetivoDiario");
             txtObjetivoDiario.Name = "txtObjetivoDiario";
             txtObjetivoDiario.ReadOnly = true;
-            txtObjetivoDiario.Size = new Size(113, 23);
-            txtObjetivoDiario.TabIndex = 11;
             // 
             // label4
             // 
-            label4.AutoSize = true;
+            resources.ApplyResources(label4, "label4");
+            label4.BackColor = Color.Transparent;
             label4.BorderStyle = BorderStyle.FixedSingle;
             label4.FlatStyle = FlatStyle.Flat;
-            label4.Font = new Font("Segoe UI", 9F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
-            label4.Location = new Point(15, 78);
             label4.Name = "label4";
-            label4.Size = new Size(93, 17);
-            label4.TabIndex = 12;
-            label4.Text = "Objetivo Diario";
             // 
             // label6
             // 
+            resources.ApplyResources(label6, "label6");
+            label6.BackColor = Color.Transparent;
             label6.FlatStyle = FlatStyle.Flat;
-            label6.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label6.Location = new Point(254, 153);
             label6.Name = "label6";
-            label6.Size = new Size(148, 23);
-            label6.TabIndex = 14;
-            label6.Text = "Clientes não contatados: ";
             // 
             // label7
             // 
+            resources.ApplyResources(label7, "label7");
+            label7.BackColor = Color.Transparent;
             label7.FlatStyle = FlatStyle.Flat;
-            label7.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label7.Location = new Point(635, 153);
             label7.Name = "label7";
-            label7.Size = new Size(103, 23);
-            label7.TabIndex = 15;
-            label7.Text = "Ultimas Vendas:";
             // 
             // label8
             // 
-            label8.AutoSize = true;
+            resources.ApplyResources(label8, "label8");
+            label8.BackColor = Color.Transparent;
             label8.BorderStyle = BorderStyle.FixedSingle;
             label8.FlatStyle = FlatStyle.Flat;
-            label8.Font = new Font("Segoe UI", 9F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
-            label8.Location = new Point(15, 48);
             label8.Name = "label8";
-            label8.Size = new Size(100, 17);
-            label8.TabIndex = 21;
-            label8.Text = "Não Consolidado";
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(129, 45);
+            resources.ApplyResources(textBox2, "textBox2");
             textBox2.Name = "textBox2";
             textBox2.ReadOnly = true;
-            textBox2.Size = new Size(113, 23);
-            textBox2.TabIndex = 20;
-            // 
-            // grdAvisos
-            // 
-            grdAvisos.AllowUserToAddRows = false;
-            grdAvisos.AllowUserToDeleteRows = false;
-            grdAvisos.BackgroundColor = SystemColors.GradientActiveCaption;
-            grdAvisos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            grdAvisos.Columns.AddRange(new DataGridViewColumn[] { avTexto, grdDatainicio, grdDataTermino });
-            grdAvisos.Location = new Point(254, 45);
-            grdAvisos.Name = "grdAvisos";
-            grdAvisos.ReadOnly = true;
-            grdAvisos.RowHeadersWidth = 5;
-            grdAvisos.RowTemplate.Height = 25;
-            grdAvisos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            grdAvisos.Size = new Size(750, 105);
-            grdAvisos.TabIndex = 24;
-            // 
-            // avTexto
-            // 
-            avTexto.HeaderText = "Aviso";
-            avTexto.Name = "avTexto";
-            avTexto.ReadOnly = true;
-            avTexto.Width = 500;
-            // 
-            // grdDatainicio
-            // 
-            grdDatainicio.HeaderText = "Data Inicio";
-            grdDatainicio.Name = "grdDatainicio";
-            grdDatainicio.ReadOnly = true;
-            // 
-            // grdDataTermino
-            // 
-            grdDataTermino.HeaderText = "Data Termino";
-            grdDataTermino.Name = "grdDataTermino";
-            grdDataTermino.ReadOnly = true;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label5.Location = new Point(254, 27);
-            label5.Name = "label5";
-            label5.Size = new Size(45, 15);
-            label5.TabIndex = 25;
-            label5.Text = "Avisos:";
-            // 
-            // grdContatosAgendados
-            // 
-            grdContatosAgendados.AllowUserToAddRows = false;
-            grdContatosAgendados.AllowUserToDeleteRows = false;
-            grdContatosAgendados.BackgroundColor = SystemColors.GradientActiveCaption;
-            grdContatosAgendados.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            grdContatosAgendados.Columns.AddRange(new DataGridViewColumn[] { grdID, dataGridViewTextBoxColumn1, dataGridViewTextBoxColumn2 });
-            grdContatosAgendados.Location = new Point(12, 297);
-            grdContatosAgendados.MultiSelect = false;
-            grdContatosAgendados.Name = "grdContatosAgendados";
-            grdContatosAgendados.ReadOnly = true;
-            grdContatosAgendados.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            grdContatosAgendados.RowHeadersWidth = 5;
-            grdContatosAgendados.RowTemplate.Height = 25;
-            grdContatosAgendados.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            grdContatosAgendados.Size = new Size(230, 216);
-            grdContatosAgendados.TabIndex = 26;
-            grdContatosAgendados.DoubleClick += grdContatosAgendados_DoubleClick;
-            // 
-            // grdID
-            // 
-            grdID.HeaderText = "ID";
-            grdID.Name = "grdID";
-            grdID.ReadOnly = true;
-            grdID.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            dataGridViewTextBoxColumn1.HeaderText = "Data";
-            dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            dataGridViewTextBoxColumn1.ReadOnly = true;
-            dataGridViewTextBoxColumn1.Width = 75;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            dataGridViewTextBoxColumn2.HeaderText = "Razao Social";
-            dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            dataGridViewTextBoxColumn2.ReadOnly = true;
-            dataGridViewTextBoxColumn2.Width = 200;
-            // 
-            // cmdCriarAviso
-            // 
-            cmdCriarAviso.BackgroundImage = Properties.Resources.adicionar;
-            cmdCriarAviso.BackgroundImageLayout = ImageLayout.Zoom;
-            cmdCriarAviso.Location = new Point(984, 24);
-            cmdCriarAviso.Name = "cmdCriarAviso";
-            cmdCriarAviso.Size = new Size(20, 20);
-            cmdCriarAviso.TabIndex = 31;
-            cmdCriarAviso.UseVisualStyleBackColor = true;
-            cmdCriarAviso.Click += cmdCriarAviso_Click;
             // 
             // labVlrProgressao
             // 
-            labVlrProgressao.AutoSize = true;
-            labVlrProgressao.Location = new Point(672, 472);
+            resources.ApplyResources(labVlrProgressao, "labVlrProgressao");
+            labVlrProgressao.BackColor = Color.Transparent;
             labVlrProgressao.Name = "labVlrProgressao";
-            labVlrProgressao.Size = new Size(46, 15);
-            labVlrProgressao.TabIndex = 32;
-            labVlrProgressao.Text = "xxxx,xx";
             // 
             // labVlrConsolidado
             // 
-            labVlrConsolidado.AutoSize = true;
-            labVlrConsolidado.Location = new Point(337, 472);
+            resources.ApplyResources(labVlrConsolidado, "labVlrConsolidado");
+            labVlrConsolidado.BackColor = Color.Transparent;
             labVlrConsolidado.Name = "labVlrConsolidado";
-            labVlrConsolidado.Size = new Size(46, 15);
-            labVlrConsolidado.TabIndex = 33;
-            labVlrConsolidado.Text = "xxxx,xx";
             // 
             // labVlrMeta
             // 
-            labVlrMeta.AutoSize = true;
-            labVlrMeta.Location = new Point(942, 472);
+            resources.ApplyResources(labVlrMeta, "labVlrMeta");
+            labVlrMeta.BackColor = Color.Transparent;
             labVlrMeta.Name = "labVlrMeta";
-            labVlrMeta.Size = new Size(46, 15);
-            labVlrMeta.TabIndex = 34;
-            labVlrMeta.Text = "xxxx,xx";
-            // 
-            // cmdAgendarContato
-            // 
-            cmdAgendarContato.BackgroundImage = Properties.Resources.adicionar;
-            cmdAgendarContato.BackgroundImageLayout = ImageLayout.Zoom;
-            cmdAgendarContato.Location = new Point(222, 102);
-            cmdAgendarContato.Name = "cmdAgendarContato";
-            cmdAgendarContato.Size = new Size(20, 20);
-            cmdAgendarContato.TabIndex = 35;
-            cmdAgendarContato.UseVisualStyleBackColor = true;
-            cmdAgendarContato.Click += cmdAgendarContato_Click;
-            // 
-            // labAgendarContato
-            // 
-            labAgendarContato.AutoSize = true;
-            labAgendarContato.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            labAgendarContato.Location = new Point(15, 107);
-            labAgendarContato.Name = "labAgendarContato";
-            labAgendarContato.Size = new Size(104, 15);
-            labAgendarContato.TabIndex = 36;
-            labAgendarContato.Text = "Agendar Contato:";
             // 
             // menuStrip1
             // 
-            menuStrip1.BackColor = SystemColors.GradientInactiveCaption;
+            resources.ApplyResources(menuStrip1, "menuStrip1");
+            menuStrip1.BackColor = Color.Transparent;
             menuStrip1.Items.AddRange(new ToolStripItem[] { cadastrosToolStripMenuItem, vendasToolStripMenuItem, consultasToolStripMenuItem, relatóriosToolStripMenuItem, parametrosToolStripMenuItem, controleContatoToolStripMenuItem });
-            menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(1045, 24);
-            menuStrip1.TabIndex = 38;
-            menuStrip1.Text = "menuStrip1";
             // 
             // cadastrosToolStripMenuItem
             // 
-            cadastrosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { MnuCadEmpresas, MnuCadProdutos, MnuNatOperacao });
+            resources.ApplyResources(cadastrosToolStripMenuItem, "cadastrosToolStripMenuItem");
+            cadastrosToolStripMenuItem.BackColor = Color.Transparent;
+            cadastrosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { MnuCadEmpresas, MnuCadProdutos, MnuNatOperacao, mnuCadastraAvisos });
             cadastrosToolStripMenuItem.Name = "cadastrosToolStripMenuItem";
-            cadastrosToolStripMenuItem.Size = new Size(71, 20);
-            cadastrosToolStripMenuItem.Text = "Cadastros";
             // 
             // MnuCadEmpresas
             // 
+            resources.ApplyResources(MnuCadEmpresas, "MnuCadEmpresas");
             MnuCadEmpresas.Name = "MnuCadEmpresas";
-            MnuCadEmpresas.Size = new Size(150, 22);
-            MnuCadEmpresas.Text = "Empresas";
             MnuCadEmpresas.Click += MnuCadEmpresas_Click;
             // 
             // MnuCadProdutos
             // 
+            resources.ApplyResources(MnuCadProdutos, "MnuCadProdutos");
             MnuCadProdutos.Name = "MnuCadProdutos";
-            MnuCadProdutos.Size = new Size(150, 22);
-            MnuCadProdutos.Text = "Produtos";
             MnuCadProdutos.Click += MnuCadProdutos_Click;
             // 
             // MnuNatOperacao
             // 
+            resources.ApplyResources(MnuNatOperacao, "MnuNatOperacao");
             MnuNatOperacao.Name = "MnuNatOperacao";
-            MnuNatOperacao.Size = new Size(150, 22);
-            MnuNatOperacao.Text = "Nat. Operação";
             MnuNatOperacao.Click += MnuNatOperacao_Click;
+            // 
+            // mnuCadastraAvisos
+            // 
+            resources.ApplyResources(mnuCadastraAvisos, "mnuCadastraAvisos");
+            mnuCadastraAvisos.Name = "mnuCadastraAvisos";
+            mnuCadastraAvisos.Click += mnuCadastraAvisos_Click;
             // 
             // vendasToolStripMenuItem
             // 
+            resources.ApplyResources(vendasToolStripMenuItem, "vendasToolStripMenuItem");
             vendasToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { MnuPedidos });
             vendasToolStripMenuItem.Name = "vendasToolStripMenuItem";
-            vendasToolStripMenuItem.Size = new Size(103, 20);
-            vendasToolStripMenuItem.Text = "Pedidos\\Vendas";
             // 
             // MnuPedidos
             // 
+            resources.ApplyResources(MnuPedidos, "MnuPedidos");
+            MnuPedidos.BackColor = Color.Transparent;
             MnuPedidos.Name = "MnuPedidos";
-            MnuPedidos.Size = new Size(116, 22);
-            MnuPedidos.Text = "Pedidos";
             MnuPedidos.Click += MnuPedidos_Click;
             // 
             // consultasToolStripMenuItem
             // 
+            resources.ApplyResources(consultasToolStripMenuItem, "consultasToolStripMenuItem");
             consultasToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { MnuUltimasVendas, MnuConsultaPedidos, MnuMeusClientes, mnuBuscaCadastros });
             consultasToolStripMenuItem.Name = "consultasToolStripMenuItem";
-            consultasToolStripMenuItem.Size = new Size(71, 20);
-            consultasToolStripMenuItem.Text = "Consultas";
             // 
             // MnuUltimasVendas
             // 
+            resources.ApplyResources(MnuUltimasVendas, "MnuUltimasVendas");
             MnuUltimasVendas.Name = "MnuUltimasVendas";
-            MnuUltimasVendas.Size = new Size(177, 22);
-            MnuUltimasVendas.Text = "Ultimas Vendas";
             MnuUltimasVendas.Click += MnuUltimasVendas_Click;
             // 
             // MnuConsultaPedidos
             // 
+            resources.ApplyResources(MnuConsultaPedidos, "MnuConsultaPedidos");
             MnuConsultaPedidos.Name = "MnuConsultaPedidos";
-            MnuConsultaPedidos.Size = new Size(177, 22);
-            MnuConsultaPedidos.Text = "Consulta Pedidos";
             MnuConsultaPedidos.Click += MnuConsultaPedidos_Click;
             // 
             // MnuMeusClientes
             // 
+            resources.ApplyResources(MnuMeusClientes, "MnuMeusClientes");
             MnuMeusClientes.Name = "MnuMeusClientes";
-            MnuMeusClientes.Size = new Size(177, 22);
-            MnuMeusClientes.Text = "Meus Clientes";
             MnuMeusClientes.Click += MnuMeusClientes_Click;
             // 
             // mnuBuscaCadastros
             // 
+            resources.ApplyResources(mnuBuscaCadastros, "mnuBuscaCadastros");
             mnuBuscaCadastros.Name = "mnuBuscaCadastros";
-            mnuBuscaCadastros.Size = new Size(177, 22);
-            mnuBuscaCadastros.Text = "Cadastros por CNPJ";
             mnuBuscaCadastros.Click += mnuBuscaCadastros_Click;
             // 
             // relatóriosToolStripMenuItem
             // 
+            resources.ApplyResources(relatóriosToolStripMenuItem, "relatóriosToolStripMenuItem");
             relatóriosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { rankingDeVendasToolStripMenuItem, vendasPorVendedorToolStripMenuItem, registrosDeContatosToolStripMenuItem });
             relatóriosToolStripMenuItem.Name = "relatóriosToolStripMenuItem";
-            relatóriosToolStripMenuItem.Size = new Size(71, 20);
-            relatóriosToolStripMenuItem.Text = "Relatórios";
             // 
             // rankingDeVendasToolStripMenuItem
             // 
+            resources.ApplyResources(rankingDeVendasToolStripMenuItem, "rankingDeVendasToolStripMenuItem");
             rankingDeVendasToolStripMenuItem.Name = "rankingDeVendasToolStripMenuItem";
-            rankingDeVendasToolStripMenuItem.Size = new Size(189, 22);
-            rankingDeVendasToolStripMenuItem.Text = "Ranking de Vendas";
-            rankingDeVendasToolStripMenuItem.Visible = false;
             rankingDeVendasToolStripMenuItem.Click += rankingDeVendasToolStripMenuItem_Click;
             // 
             // vendasPorVendedorToolStripMenuItem
             // 
+            resources.ApplyResources(vendasPorVendedorToolStripMenuItem, "vendasPorVendedorToolStripMenuItem");
             vendasPorVendedorToolStripMenuItem.Name = "vendasPorVendedorToolStripMenuItem";
-            vendasPorVendedorToolStripMenuItem.Size = new Size(189, 22);
-            vendasPorVendedorToolStripMenuItem.Text = "Vendas por Vendedor";
             vendasPorVendedorToolStripMenuItem.Click += vendasPorVendedorToolStripMenuItem_Click;
+            // 
+            // registrosDeContatosToolStripMenuItem
+            // 
+            resources.ApplyResources(registrosDeContatosToolStripMenuItem, "registrosDeContatosToolStripMenuItem");
+            registrosDeContatosToolStripMenuItem.Name = "registrosDeContatosToolStripMenuItem";
+            registrosDeContatosToolStripMenuItem.Click += registrosDeContatosToolStripMenuItem_Click;
             // 
             // parametrosToolStripMenuItem
             // 
+            resources.ApplyResources(parametrosToolStripMenuItem, "parametrosToolStripMenuItem");
             parametrosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { MnuParametros });
             parametrosToolStripMenuItem.Name = "parametrosToolStripMenuItem";
-            parametrosToolStripMenuItem.Size = new Size(86, 20);
-            parametrosToolStripMenuItem.Text = "Manutenção";
             // 
             // MnuParametros
             // 
+            resources.ApplyResources(MnuParametros, "MnuParametros");
             MnuParametros.Name = "MnuParametros";
-            MnuParametros.Size = new Size(134, 22);
-            MnuParametros.Text = "Parametros";
             MnuParametros.Click += MnuParametros_Click;
             // 
             // controleContatoToolStripMenuItem
             // 
-            controleContatoToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { MnuRegistraContato });
+            resources.ApplyResources(controleContatoToolStripMenuItem, "controleContatoToolStripMenuItem");
+            controleContatoToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { MnuRegistraContato, mnuAvisos });
             controleContatoToolStripMenuItem.Name = "controleContatoToolStripMenuItem";
-            controleContatoToolStripMenuItem.Size = new Size(113, 20);
-            controleContatoToolStripMenuItem.Text = "Controle\\Contato";
             // 
             // MnuRegistraContato
             // 
+            resources.ApplyResources(MnuRegistraContato, "MnuRegistraContato");
             MnuRegistraContato.Name = "MnuRegistraContato";
-            MnuRegistraContato.Size = new Size(167, 22);
-            MnuRegistraContato.Text = "Registra Contatos";
             MnuRegistraContato.Click += MnuRegistraContato_Click;
+            // 
+            // mnuAvisos
+            // 
+            resources.ApplyResources(mnuAvisos, "mnuAvisos");
+            mnuAvisos.Name = "mnuAvisos";
+            mnuAvisos.Click += mnuAvisos_Click;
             // 
             // labNomeEmpresa
             // 
-            labNomeEmpresa.AutoSize = true;
-            labNomeEmpresa.Location = new Point(78, 27);
+            resources.ApplyResources(labNomeEmpresa, "labNomeEmpresa");
+            labNomeEmpresa.BackColor = Color.Transparent;
             labNomeEmpresa.Name = "labNomeEmpresa";
-            labNomeEmpresa.Size = new Size(0, 15);
-            labNomeEmpresa.TabIndex = 42;
             // 
             // label10
             // 
-            label10.AutoSize = true;
-            label10.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label10.Location = new Point(15, 27);
+            resources.ApplyResources(label10, "label10");
+            label10.BackColor = Color.Transparent;
             label10.Name = "label10";
-            label10.Size = new Size(57, 15);
-            label10.TabIndex = 40;
-            label10.Text = "Empresa:";
             // 
-            // registrosDeContatosToolStripMenuItem
+            // NotifyAvisos
             // 
-            registrosDeContatosToolStripMenuItem.Name = "registrosDeContatosToolStripMenuItem";
-            registrosDeContatosToolStripMenuItem.Size = new Size(189, 22);
-            registrosDeContatosToolStripMenuItem.Text = "Registros de Contatos";
-            registrosDeContatosToolStripMenuItem.Click += registrosDeContatosToolStripMenuItem_Click;
+            resources.ApplyResources(NotifyAvisos, "NotifyAvisos");
+            NotifyAvisos.BalloonTipClicked += NotifyAvisos_BalloonTipClicked;
+            NotifyAvisos.Click += NotifyAvisos_Click;
+            // 
+            // openFileDialog1
+            // 
+            openFileDialog1.FileName = "openFileDialog1";
+            resources.ApplyResources(openFileDialog1, "openFileDialog1");
+            // 
+            // pictureBox1
+            // 
+            resources.ApplyResources(pictureBox1, "pictureBox1");
+            pictureBox1.BackColor = Color.Transparent;
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.TabStop = false;
+            // 
+            // chrtVendasMesaMes
+            // 
+            resources.ApplyResources(chrtVendasMesaMes, "chrtVendasMesaMes");
+            chrtVendasMesaMes.BackColor = Color.Transparent;
+            chartArea3.Area3DStyle.Enable3D = true;
+            chartArea3.Area3DStyle.Inclination = 50;
+            chartArea3.BackColor = Color.FromArgb(192, 255, 255);
+            chartArea3.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.DiagonalLeft;
+            chartArea3.Name = "ChartArea1";
+            chrtVendasMesaMes.ChartAreas.Add(chartArea3);
+            legend3.BackColor = Color.Transparent;
+            legend3.InterlacedRowsColor = Color.Transparent;
+            legend3.Name = "Janeiro";
+            legend3.Title = "Meses";
+            chrtVendasMesaMes.Legends.Add(legend3);
+            chrtVendasMesaMes.Name = "chrtVendasMesaMes";
+            series3.ChartArea = "ChartArea1";
+            series3.Legend = "Janeiro";
+            series3.Name = "Series1";
+            chrtVendasMesaMes.Series.Add(series3);
+            title3.Font = new Font("Microsoft Sans Serif", 8F, FontStyle.Bold, GraphicsUnit.Point);
+            title3.Name = "Title1";
+            title3.Text = "Vendas Mês a Mês";
+            chrtVendasMesaMes.Titles.Add(title3);
             // 
             // frmCRMInicial
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.Info;
-            ClientSize = new Size(1045, 526);
+            resources.ApplyResources(this, "$this");
+            AutoScaleMode = AutoScaleMode.Dpi;
+            BackColor = Color.LightCyan;
+            Controls.Add(chrtVendasMesaMes);
+            Controls.Add(pictureBox1);
             Controls.Add(labNomeEmpresa);
             Controls.Add(label10);
-            Controls.Add(labAgendarContato);
-            Controls.Add(cmdAgendarContato);
             Controls.Add(labVlrMeta);
             Controls.Add(labVlrConsolidado);
             Controls.Add(labVlrProgressao);
-            Controls.Add(cmdCriarAviso);
-            Controls.Add(grdContatosAgendados);
-            Controls.Add(label5);
-            Controls.Add(grdAvisos);
             Controls.Add(label8);
             Controls.Add(textBox2);
             Controls.Add(label7);
@@ -601,26 +455,23 @@
             Controls.Add(labProgressao);
             Controls.Add(pgrsbMeta);
             Controls.Add(labConsolidado);
-            Controls.Add(CalendarioContatos);
             Controls.Add(menuStrip1);
+            DoubleBuffered = true;
             MainMenuStrip = menuStrip1;
             Name = "frmCRMInicial";
-            StartPosition = FormStartPosition.CenterScreen;
-            Text = "GPA - Home";
+            WindowState = FormWindowState.Maximized;
             Load += frmCRMInicial_Load;
             ((System.ComponentModel.ISupportInitialize)grdUltimasVendas).EndInit();
             ((System.ComponentModel.ISupportInitialize)grdUltContato).EndInit();
-            ((System.ComponentModel.ISupportInitialize)grdAvisos).EndInit();
-            ((System.ComponentModel.ISupportInitialize)grdContatosAgendados).EndInit();
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)chrtVendasMesaMes).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private MonthCalendar CalendarioContatos;
         private Label labConsolidado;
         private ProgressBar pgrsbMeta;
         private Label labProgressao;
@@ -634,10 +485,6 @@
         private Label label8;
         private TextBox textBox2;
         private DataGridViewTextBoxColumn Dispensar;
-        private DataGridView grdAvisos;
-        private Label label5;
-        private DataGridView grdContatosAgendados;
-        private Button cmdCriarAviso;
         private Label labVlrProgressao;
         private Label labVlrConsolidado;
         private Label labVlrMeta;
@@ -647,14 +494,6 @@
         private DataGridViewTextBoxColumn UltContato;
         private DataGridViewTextBoxColumn RazSocial;
         private DataGridViewTextBoxColumn Numero;
-        private DataGridViewTextBoxColumn avTexto;
-        private DataGridViewTextBoxColumn grdDatainicio;
-        private DataGridViewTextBoxColumn grdDataTermino;
-        private Button cmdAgendarContato;
-        private Label labAgendarContato;
-        private DataGridViewTextBoxColumn grdID;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private MenuStrip menuStrip1;
         private ToolStripMenuItem relatóriosToolStripMenuItem;
         private ToolStripMenuItem parametrosToolStripMenuItem;
@@ -677,5 +516,11 @@
         private ToolStripMenuItem vendasPorVendedorToolStripMenuItem;
         private ToolStripMenuItem mnuBuscaCadastros;
         private ToolStripMenuItem registrosDeContatosToolStripMenuItem;
+        private ToolStripMenuItem mnuCadastraAvisos;
+        private ToolStripMenuItem mnuAvisos;
+        private NotifyIcon NotifyAvisos;
+        private OpenFileDialog openFileDialog1;
+        private PictureBox pictureBox1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chrtVendasMesaMes;
     }
 }

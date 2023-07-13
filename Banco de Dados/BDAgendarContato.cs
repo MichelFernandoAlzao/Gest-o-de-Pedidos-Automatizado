@@ -17,6 +17,9 @@ namespace Banco_de_Dados
         public string cpEmpresaDR { get; set; }
         public string cpDataContato { get; set; }
         public string cpIDUsuarioDR { get; set; }
+        public string cpNome { get; set; }
+        public string cpFone { get; set; }
+        public string cpAtendido { get; set; }
         public string cpMsgErro { get; set; }
 
 
@@ -32,24 +35,54 @@ namespace Banco_de_Dados
             sSQL = "INSERT INTO OPAgendarContato (";
             sqlconteudo = " VALUES (";
 
-            if (cpEmpresaDR.ToString() != "")
+            if(cpEmpresaDR != null)
             {
-                sqlCampos += "OPACEmpresaDR, ";
+                if (cpEmpresaDR.ToString() != "")
+                {
+                    sqlCampos += "OPACEmpresaDR, ";
 
-                sqlconteudo += "'" + cpEmpresaDR.ToString() + "',";
+                    sqlconteudo += "'" + cpEmpresaDR.ToString() + "',";
+                }
             }
-            if (cpDataContato.ToString() != "")
+            
+            if(cpDataContato != null)
             {
-                sqlCampos += "OPACDataContato, ";
+                if (cpDataContato.ToString() != "")
+                {
+                    sqlCampos += "OPACDataContato, ";
 
-                sqlconteudo += "'" + cpDataContato.ToString() + "',";
+                    sqlconteudo += "'" + cpDataContato.ToString() + "',";
+                }
             }
-            if (cpIDUsuarioDR.ToString() != "")
+            if (cpFone != null)
             {
-                sqlCampos += "OPACUsuarioDR, ";
-
-                sqlconteudo += "'" + cpIDUsuarioDR.ToString() + "',";
+                if(cpFone.ToString() != "")
+                {
+                    sqlCampos += "APCAFone, ";
+                    sqlconteudo += "'" + cpFone.ToString() + "',";
+                }
+                
             }
+
+            if (cpNome != null)
+            {
+                if(cpNome.ToString() != "")
+                {
+                    sqlCampos += "OPACNome, ";
+                    sqlconteudo += "'" + cpNome.ToString() + "',";
+                }
+            }
+
+            if (cpIDUsuarioDR != null)
+            {
+                if (cpIDUsuarioDR.ToString() != "")
+                {
+                    sqlCampos += "OPACUsuarioDR, ";
+
+                    sqlconteudo += "'" + cpIDUsuarioDR.ToString() + "',";
+                }
+            }
+            
 
 
             sSQL = sSQL + sqlCampos.Remove(sqlCampos.Length - 2) + ")" + sqlconteudo.Remove(sqlconteudo.Length - 1) + ")";
@@ -79,54 +112,44 @@ namespace Banco_de_Dados
         }
 
         #region Não é necessario AlteraDados, pois só deve ser criado ou excluido
-        //public void AlteraDados()
-        //{
-        //    string sSQL = "";
-        //    string sqlconteudo = "";
-        //    string sqlWhere = " WHERE OPAvisos = '" + cpID + "'";
+        public void AlteraDados(string inCaminhoBanco)
+        {
+            string sSQL = "";
+            string sqlconteudo = "";
+            string sqlWhere = " WHERE OPAgendarContato = '" + cpID + "'";
 
-        //    sSQL = "UPDATE OPAvisos SET ";
+            sSQL = "UPDATE OPAgendarContato SET ";
 
-        //    if (cpAviso != null)
-        //    {
-        //        sqlconteudo += "OPAAviso = '" + cpAviso.ToString() + "',";
-        //    }
-        //    if (cpDataInicio != null)
-        //    {
-        //        sqlconteudo += "OPADataInicio = '" + cpDataInicio.ToString() + "',";
-        //    }
-        //    if (cpDataTermino != null)
-        //    {
-        //        sqlconteudo += "OPADataTremino = '" + cpDataTermino.ToString() + "',";
-        //    }
-        //    if (cpUsuarioDR != null)
-        //    {
-        //        sqlconteudo += "OPAUsuarioDR = '" + cpUsuarioDR.ToString() + "',";
-        //    }
-        //    if (cpTodos != null)
-        //    {
-        //        sqlconteudo += "OPATodos = '" + cpTodos.ToString() + "',";
-        //    }
-        //    sSQL = sSQL + sqlconteudo.Remove(sqlconteudo.Length - 1);
-        //    sSQL = sSQL + sqlWhere;
+            
+            if (cpAtendido != null)
+            {
+                sqlconteudo += "OPACAtendido = '" + cpAtendido.ToString() + "'";
+            }
+            sSQL = sSQL + sqlconteudo.Remove(sqlconteudo.Length - 1);
+            sSQL = sSQL + sqlWhere;
 
-        //    cmd.CommandText = sSQL;
+            Conexao conexao = new Conexao(LCaminhoBanco);
+            SqlCommand cmd = new SqlCommand();
 
-        //    try
-        //    {
-        //        cmd.Connection = conexao.conectar();
-        //        //Executar o comando
-        //        cmd.ExecuteNonQuery();
-        //        //Desconectar
-        //        conexao.desconectar();
+            cmd.CommandText = sSQL;
 
-        //    }
-        //    catch (SqlException e)
-        //    {
-        //        cpMsgErro = e.Message.ToString();
-        //    }
-        //    cmd.Dispose();
-        //}
+            cmd.CommandText = sSQL;
+
+            try
+            {
+                cmd.Connection = conexao.conectar();
+                //Executar o comando
+                cmd.ExecuteNonQuery();
+                //Desconectar
+                conexao.desconectar();
+
+            }
+            catch (SqlException e)
+            {
+                cpMsgErro = e.Message.ToString();
+            }
+            cmd.Dispose();
+        }
         #endregion
 
 
@@ -182,6 +205,7 @@ namespace Banco_de_Dados
                     bDParametros.cpEmpresaDR = dr["OPACEmpresaDR"].ToString();
                     bDParametros.cpDataContato = dr["OPACDataContato"].ToString();
                     bDParametros.cpIDUsuarioDR = dr["OPACUsuarioDR"].ToString();
+                    bDParametros.cpAtendido = dr["OPACAtendido"].ToString();
 
 
                     lstAgendarContato.Add(bDParametros);

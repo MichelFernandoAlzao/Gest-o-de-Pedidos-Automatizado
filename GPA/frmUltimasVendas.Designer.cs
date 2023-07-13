@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUltimasVendas));
             cmdSair = new Button();
             grdListaPedido = new DataGridView();
             grdNumero = new DataGridViewTextBoxColumn();
@@ -112,6 +113,7 @@
             // 
             // lbCabeçallho
             // 
+            lbCabeçallho.BackColor = Color.Transparent;
             lbCabeçallho.BorderStyle = BorderStyle.Fixed3D;
             lbCabeçallho.Cursor = Cursors.IBeam;
             lbCabeçallho.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
@@ -126,6 +128,7 @@
             // LabDTinicial
             // 
             LabDTinicial.AutoSize = true;
+            LabDTinicial.BackColor = Color.Transparent;
             LabDTinicial.Location = new Point(12, 52);
             LabDTinicial.Name = "LabDTinicial";
             LabDTinicial.Size = new Size(65, 15);
@@ -135,6 +138,7 @@
             // labDTFinal
             // 
             labDTFinal.AutoSize = true;
+            labDTFinal.BackColor = Color.Transparent;
             labDTFinal.Location = new Point(138, 52);
             labDTFinal.Name = "labDTFinal";
             labDTFinal.Size = new Size(59, 15);
@@ -144,22 +148,24 @@
             // chkConcluido
             // 
             chkConcluido.AutoSize = true;
+            chkConcluido.BackColor = Color.Transparent;
             chkConcluido.Location = new Point(573, 78);
             chkConcluido.Name = "chkConcluido";
             chkConcluido.Size = new Size(81, 19);
             chkConcluido.TabIndex = 19;
             chkConcluido.Text = "Concluido";
-            chkConcluido.UseVisualStyleBackColor = true;
+            chkConcluido.UseVisualStyleBackColor = false;
             // 
             // chkCancelado
             // 
             chkCancelado.AutoSize = true;
+            chkCancelado.BackColor = Color.Transparent;
             chkCancelado.Location = new Point(706, 78);
             chkCancelado.Name = "chkCancelado";
             chkCancelado.Size = new Size(82, 19);
             chkCancelado.TabIndex = 20;
             chkCancelado.Text = "Cancelado";
-            chkCancelado.UseVisualStyleBackColor = true;
+            chkCancelado.UseVisualStyleBackColor = false;
             // 
             // txtDataInicio
             // 
@@ -186,6 +192,8 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Info;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(800, 397);
             ControlBox = false;
             Controls.Add(txtDataFim);

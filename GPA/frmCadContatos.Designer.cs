@@ -68,7 +68,7 @@
             cmdSair.Location = new Point(758, 12);
             cmdSair.Name = "cmdSair";
             cmdSair.Size = new Size(30, 30);
-            cmdSair.TabIndex = 0;
+            cmdSair.TabIndex = 12;
             cmdSair.UseVisualStyleBackColor = true;
             cmdSair.Click += cmdSair_Click;
             // 
@@ -79,7 +79,7 @@
             cmdGravar.Location = new Point(722, 12);
             cmdGravar.Name = "cmdGravar";
             cmdGravar.Size = new Size(30, 30);
-            cmdGravar.TabIndex = 1;
+            cmdGravar.TabIndex = 11;
             cmdGravar.UseVisualStyleBackColor = true;
             cmdGravar.Click += cmdGravar_Click;
             // 
@@ -90,12 +90,13 @@
             cmdNovo.Location = new Point(686, 12);
             cmdNovo.Name = "cmdNovo";
             cmdNovo.Size = new Size(30, 30);
-            cmdNovo.TabIndex = 2;
+            cmdNovo.TabIndex = 10;
             cmdNovo.UseVisualStyleBackColor = true;
             cmdNovo.Click += cmdNovo_Click;
             // 
             // label1
             // 
+            label1.BackColor = Color.Transparent;
             label1.BorderStyle = BorderStyle.Fixed3D;
             label1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label1.Location = new Point(12, 12);
@@ -119,7 +120,7 @@
             grdContatos.RowTemplate.Height = 25;
             grdContatos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             grdContatos.Size = new Size(776, 189);
-            grdContatos.TabIndex = 4;
+            grdContatos.TabIndex = 13;
             grdContatos.CellEnter += grdContatos_Selection;
             grdContatos.SelectionChanged += grdContatos_SelectionChanged;
             // 
@@ -189,6 +190,7 @@
             // labNome
             // 
             labNome.AutoSize = true;
+            labNome.BackColor = Color.Transparent;
             labNome.Location = new Point(12, 240);
             labNome.Name = "labNome";
             labNome.Size = new Size(40, 15);
@@ -200,11 +202,12 @@
             txtNome.Location = new Point(12, 258);
             txtNome.Name = "txtNome";
             txtNome.Size = new Size(391, 23);
-            txtNome.TabIndex = 6;
+            txtNome.TabIndex = 1;
             // 
             // labTelefone
             // 
             labTelefone.AutoSize = true;
+            labTelefone.BackColor = Color.Transparent;
             labTelefone.Location = new Point(635, 240);
             labTelefone.Name = "labTelefone";
             labTelefone.Size = new Size(51, 15);
@@ -216,11 +219,12 @@
             txtCargo.Location = new Point(446, 258);
             txtCargo.Name = "txtCargo";
             txtCargo.Size = new Size(153, 23);
-            txtCargo.TabIndex = 10;
+            txtCargo.TabIndex = 2;
             // 
             // labCargo
             // 
             labCargo.AutoSize = true;
+            labCargo.BackColor = Color.Transparent;
             labCargo.Location = new Point(446, 240);
             labCargo.Name = "labCargo";
             labCargo.Size = new Size(62, 15);
@@ -232,11 +236,12 @@
             txtEmail.Location = new Point(12, 308);
             txtEmail.Name = "txtEmail";
             txtEmail.Size = new Size(391, 23);
-            txtEmail.TabIndex = 12;
+            txtEmail.TabIndex = 4;
             // 
             // labEmail
             // 
             labEmail.AutoSize = true;
+            labEmail.BackColor = Color.Transparent;
             labEmail.Location = new Point(12, 290);
             labEmail.Name = "labEmail";
             labEmail.Size = new Size(41, 15);
@@ -246,6 +251,7 @@
             // labAniversario
             // 
             labAniversario.AutoSize = true;
+            labAniversario.BackColor = Color.Transparent;
             labAniversario.Location = new Point(446, 290);
             labAniversario.Name = "labAniversario";
             labAniversario.Size = new Size(66, 15);
@@ -255,22 +261,24 @@
             // chkComprador
             // 
             chkComprador.AutoSize = true;
+            chkComprador.BackColor = Color.Transparent;
             chkComprador.Location = new Point(623, 312);
             chkComprador.Name = "chkComprador";
             chkComprador.Size = new Size(87, 19);
-            chkComprador.TabIndex = 15;
+            chkComprador.TabIndex = 6;
             chkComprador.Text = "Comprador";
-            chkComprador.UseVisualStyleBackColor = true;
+            chkComprador.UseVisualStyleBackColor = false;
             // 
             // chkGerencia
             // 
             chkGerencia.AutoSize = true;
+            chkGerencia.BackColor = Color.Transparent;
             chkGerencia.Location = new Point(716, 312);
             chkGerencia.Name = "chkGerencia";
             chkGerencia.Size = new Size(72, 19);
-            chkGerencia.TabIndex = 16;
+            chkGerencia.TabIndex = 7;
             chkGerencia.Text = "Gerencia";
-            chkGerencia.UseVisualStyleBackColor = true;
+            chkGerencia.UseVisualStyleBackColor = false;
             // 
             // txtAnotacoes
             // 
@@ -278,11 +286,12 @@
             txtAnotacoes.Multiline = true;
             txtAnotacoes.Name = "txtAnotacoes";
             txtAnotacoes.Size = new Size(776, 73);
-            txtAnotacoes.TabIndex = 18;
+            txtAnotacoes.TabIndex = 8;
             // 
             // labAnotacoes
             // 
             labAnotacoes.AutoSize = true;
+            labAnotacoes.BackColor = Color.Transparent;
             labAnotacoes.Location = new Point(12, 347);
             labAnotacoes.Name = "labAnotacoes";
             labAnotacoes.Size = new Size(63, 15);
@@ -296,7 +305,7 @@
             cmdExcluir.Location = new Point(650, 12);
             cmdExcluir.Name = "cmdExcluir";
             cmdExcluir.Size = new Size(30, 30);
-            cmdExcluir.TabIndex = 19;
+            cmdExcluir.TabIndex = 9;
             cmdExcluir.UseVisualStyleBackColor = true;
             cmdExcluir.Click += cmdExcluir_Click;
             // 
@@ -306,7 +315,7 @@
             txtTelefone.Mask = "( 00 ) 00000 - 0000";
             txtTelefone.Name = "txtTelefone";
             txtTelefone.Size = new Size(153, 23);
-            txtTelefone.TabIndex = 20;
+            txtTelefone.TabIndex = 3;
             // 
             // txtAniversario
             // 
@@ -314,7 +323,7 @@
             txtAniversario.Mask = "00/00/0000";
             txtAniversario.Name = "txtAniversario";
             txtAniversario.Size = new Size(153, 23);
-            txtAniversario.TabIndex = 21;
+            txtAniversario.TabIndex = 5;
             txtAniversario.ValidatingType = typeof(DateTime);
             txtAniversario.Leave += txtAniversario_Leave;
             // 
@@ -323,6 +332,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Info;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(800, 450);
             ControlBox = false;
             Controls.Add(txtAniversario);

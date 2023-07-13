@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSelecionarRegistroContato));
             lbSelecRegistroContato = new Label();
             cmdSair = new Button();
             CmdSelecionar = new Button();
@@ -40,6 +41,7 @@
             // 
             // lbSelecRegistroContato
             // 
+            lbSelecRegistroContato.BackColor = Color.Transparent;
             lbSelecRegistroContato.BorderStyle = BorderStyle.Fixed3D;
             lbSelecRegistroContato.Cursor = Cursors.IBeam;
             lbSelecRegistroContato.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
@@ -116,6 +118,8 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Info;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(800, 255);
             ControlBox = false;
             Controls.Add(lbSelecRegistroContato);

@@ -174,6 +174,7 @@
             // lbProduto
             // 
             lbProduto.AutoSize = true;
+            lbProduto.BackColor = Color.Transparent;
             lbProduto.Location = new Point(12, 189);
             lbProduto.Name = "lbProduto";
             lbProduto.Size = new Size(73, 15);
@@ -183,6 +184,7 @@
             // lbQuantidade
             // 
             lbQuantidade.AutoSize = true;
+            lbQuantidade.BackColor = Color.Transparent;
             lbQuantidade.Location = new Point(12, 243);
             lbQuantidade.Name = "lbQuantidade";
             lbQuantidade.Size = new Size(69, 15);
@@ -199,6 +201,7 @@
             // lbLote
             // 
             lbLote.AutoSize = true;
+            lbLote.BackColor = Color.Transparent;
             lbLote.Location = new Point(131, 243);
             lbLote.Name = "lbLote";
             lbLote.Size = new Size(30, 15);
@@ -226,6 +229,7 @@
             // lbValor
             // 
             lbValor.AutoSize = true;
+            lbValor.BackColor = Color.Transparent;
             lbValor.Location = new Point(249, 243);
             lbValor.Name = "lbValor";
             lbValor.Size = new Size(58, 15);
@@ -243,6 +247,7 @@
             // lbFornecedor
             // 
             lbFornecedor.AutoSize = true;
+            lbFornecedor.BackColor = Color.Transparent;
             lbFornecedor.Location = new Point(12, 300);
             lbFornecedor.Name = "lbFornecedor";
             lbFornecedor.Size = new Size(90, 15);
@@ -260,6 +265,7 @@
             // lbTotal
             // 
             lbTotal.AutoSize = true;
+            lbTotal.BackColor = Color.Transparent;
             lbTotal.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             lbTotal.Location = new Point(12, 361);
             lbTotal.Name = "lbTotal";
@@ -270,6 +276,7 @@
             // lbTotalItem
             // 
             lbTotalItem.AutoSize = true;
+            lbTotalItem.BackColor = Color.Transparent;
             lbTotalItem.Font = new Font("Segoe UI", 7F, FontStyle.Bold, GraphicsUnit.Point);
             lbTotalItem.Location = new Point(88, 364);
             lbTotalItem.Name = "lbTotalItem";
@@ -279,6 +286,7 @@
             // 
             // grpbVlrPraticados
             // 
+            grpbVlrPraticados.BackColor = Color.Transparent;
             grpbVlrPraticados.Controls.Add(LabVlrPraticado4);
             grpbVlrPraticados.Controls.Add(lbVlrPraticado4);
             grpbVlrPraticados.Controls.Add(lbVlrPraticado3);
@@ -377,6 +385,7 @@
             // labTotalPedido
             // 
             labTotalPedido.AutoSize = true;
+            labTotalPedido.BackColor = Color.Transparent;
             labTotalPedido.Font = new Font("Segoe UI", 7F, FontStyle.Bold, GraphicsUnit.Point);
             labTotalPedido.Location = new Point(539, 363);
             labTotalPedido.Name = "labTotalPedido";
@@ -387,6 +396,7 @@
             // label2
             // 
             label2.AutoSize = true;
+            label2.BackColor = Color.Transparent;
             label2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label2.Location = new Point(452, 361);
             label2.Name = "label2";
@@ -430,6 +440,7 @@
             // labValorForencedor
             // 
             labValorForencedor.AutoSize = true;
+            labValorForencedor.BackColor = Color.Transparent;
             labValorForencedor.Location = new Point(367, 243);
             labValorForencedor.Name = "labValorForencedor";
             labValorForencedor.Size = new Size(96, 15);
@@ -458,12 +469,13 @@
             // chkFatura
             // 
             chkFatura.AutoSize = true;
+            chkFatura.BackColor = Color.Transparent;
             chkFatura.Location = new Point(485, 265);
             chkFatura.Name = "chkFatura";
             chkFatura.Size = new Size(59, 19);
             chkFatura.TabIndex = 6;
             chkFatura.Text = "Fatura";
-            chkFatura.UseVisualStyleBackColor = true;
+            chkFatura.UseVisualStyleBackColor = false;
             // 
             // cmdCadProduto
             // 
@@ -480,6 +492,8 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Info;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(800, 450);
             ControlBox = false;
             Controls.Add(cmdCadProduto);

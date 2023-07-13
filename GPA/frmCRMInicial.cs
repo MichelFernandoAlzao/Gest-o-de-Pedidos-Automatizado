@@ -21,7 +21,7 @@ namespace Formularios
         FormataValores objFormataValores = new FormataValores();
         public frmCRMInicial(string inCaminhoBanco, string inUsuario)
         {
-            this.MaximizeBox = false;
+            //this.MaximizeBox = false;
             LCaminhoBanco = inCaminhoBanco;
             InitializeComponent();
 
@@ -42,6 +42,8 @@ namespace Formularios
                     labNomeEmpresa.Text = lstCadastroGeral[0].RazaoSocial.ToString();
                 }
             }
+
+
         }
 
         private void frmCRMInicial_Load(object sender, EventArgs e)
@@ -137,92 +139,92 @@ namespace Formularios
             RealizaCargas();
 
         }
-        private void grdContatosAgendados_DoubleClick(object sender, EventArgs e)
-        {
-            frmAgendarContato frmAgendarContato = new frmAgendarContato(LCaminhoBanco, grdContatosAgendados.SelectedRows[0].Cells[0].Value.ToString(), "");
-            frmAgendarContato.ShowDialog();
-            RealizaCargas();
-        }
-        public void CarregaAvisos()
-        {
-            grdAvisos.Rows.Clear();
-            BDAvisos objAvisos = new BDAvisos();
-            objAvisos.cpUsuarioDR = LUsuario;
-            List<BDAvisos> lstAvisos = objAvisos.CarregaDados(LCaminhoBanco);
-            if (lstAvisos.Count > 0)
-            {
-                foreach (BDAvisos item in lstAvisos)
-                {
-                    if (item.cpDataTermino != "")
-                    {
-                        if (Convert.ToDateTime(item.cpDataTermino) < DateTime.Today)
-                        {
-                            continue;
-                        }
-                    }
-                    string usuario = "";
-                    List<SEGUsuario> lstUsuario = new List<SEGUsuario>();
-                    if (item.cpUsuarioDR != "" && item.cpUsuarioDR != null)
-                    {
-                        SEGUsuario objUsuario = new SEGUsuario();
-                        lstUsuario = objUsuario.CarregaDados(LCaminhoBanco, item.cpUsuarioDR, "", "", "");
-                        if (lstUsuario.Count > 0)
-                        {
-                            item.cpUsuarioDR = lstUsuario[0].ID;
-                            usuario = lstUsuario[0].Nome.ToString();
-                        }
-                        else item.cpUsuarioDR = "";
-                    }
-                    string[] Row = new string[]
-                     {
-                      item.cpID.ToString(),
-                      item.cpAviso.ToString(),
-                      item.cpDataInicio.ToString(),
-                      item.cpDataTermino.ToString(),
-                      usuario.ToString(),
-                      item.cpUsuarioDR.ToString(),
-                      item.cpTodos.ToString()
-                     };
-                    grdAvisos.Rows.Add(Row);
-                }
-            }
+        //private void grdContatosAgendados_DoubleClick(object sender, EventArgs e)
+        //{
+        //    frmAgendarContato frmAgendarContato = new frmAgendarContato(LCaminhoBanco, grdContatosAgendados.SelectedRows[0].Cells[0].Value.ToString(), "");
+        //    frmAgendarContato.ShowDialog();
+        //    RealizaCargas();
+        //}
+        //public void CarregaAvisos()
+        //{
+        //    grdAvisos.Rows.Clear();
+        //    BDAvisos objAvisos = new BDAvisos();
+        //    objAvisos.cpUsuarioDR = LUsuario;
+        //    List<BDAvisos> lstAvisos = objAvisos.CarregaDados(LCaminhoBanco);
+        //    if (lstAvisos.Count > 0)
+        //    {
+        //        foreach (BDAvisos item in lstAvisos)
+        //        {
+        //            if (item.cpDataTermino != "")
+        //            {
+        //                if (Convert.ToDateTime(item.cpDataTermino) > DateTime.Today)
+        //                {
+        //                    continue;
+        //                }
+        //            }
+        //            string usuario = "";
+        //            List<SEGUsuario> lstUsuario = new List<SEGUsuario>();
+        //            if (item.cpUsuarioDR != "" && item.cpUsuarioDR != null)
+        //            {
+        //                SEGUsuario objUsuario = new SEGUsuario();
+        //                lstUsuario = objUsuario.CarregaDados(LCaminhoBanco, item.cpUsuarioDR, "", "", "");
+        //                if (lstUsuario.Count > 0)
+        //                {
+        //                    item.cpUsuarioDR = lstUsuario[0].ID;
+        //                    usuario = lstUsuario[0].Nome.ToString();
+        //                }
+        //                else item.cpUsuarioDR = "";
+        //            }
+        //            string[] Row = new string[]
+        //             {
+        //              item.cpID.ToString(),
+        //              item.cpAviso.ToString(),
+        //              item.cpDataInicio.ToString(),
+        //              item.cpDataTermino.ToString(),
+        //              usuario.ToString(),
+        //              item.cpUsuarioDR.ToString(),
+        //              item.cpTodos.ToString()
+        //             };
+        //            grdAvisos.Rows.Add(Row);
+        //        }
+        //    }
 
 
-            BDAvisos objAvisosGeral = new BDAvisos();
-            objAvisosGeral.cpTodos = "S";
-            List<BDAvisos> lstAvisosGeral = objAvisosGeral.CarregaDadosGeral(LCaminhoBanco);
-            if (lstAvisosGeral.Count > 0)
-            {
-                foreach (BDAvisos item in lstAvisosGeral)
-                {
-                    string usuario = "";
-                    List<SEGUsuario> lstUsuario = new List<SEGUsuario>();
-                    if (item.cpUsuarioDR != "" && item.cpUsuarioDR != null)
-                    {
-                        SEGUsuario objUsuario = new SEGUsuario();
-                        lstUsuario = objUsuario.CarregaDados(LCaminhoBanco, item.cpUsuarioDR, "", "", "");
-                        if (lstUsuario.Count > 0)
-                        {
-                            item.cpUsuarioDR = lstUsuario[0].ID;
-                            usuario = lstUsuario[0].Nome.ToString();
-                        }
-                        else item.cpUsuarioDR = "";
-                    }
-                    string[] Row = new string[]
-                     {
-                      item.cpID.ToString(),
-                      item.cpAviso.ToString(),
-                      item.cpDataInicio.ToString(),
-                      item.cpDataTermino.ToString(),
-                      "GERAL",
-                      item.cpUsuarioDR.ToString(),
-                      item.cpTodos.ToString()
-                     };
-                    grdAvisos.Rows.Add(Row);
-                }
-            }
+        //    BDAvisos objAvisosGeral = new BDAvisos();
+        //    objAvisosGeral.cpTodos = "S";
+        //    List<BDAvisos> lstAvisosGeral = objAvisosGeral.CarregaDadosGeral(LCaminhoBanco);
+        //    if (lstAvisosGeral.Count > 0)
+        //    {
+        //        foreach (BDAvisos item in lstAvisosGeral)
+        //        {
+        //            string usuario = "";
+        //            List<SEGUsuario> lstUsuario = new List<SEGUsuario>();
+        //            if (item.cpUsuarioDR != "" && item.cpUsuarioDR != null)
+        //            {
+        //                SEGUsuario objUsuario = new SEGUsuario();
+        //                lstUsuario = objUsuario.CarregaDados(LCaminhoBanco, item.cpUsuarioDR, "", "", "");
+        //                if (lstUsuario.Count > 0)
+        //                {
+        //                    item.cpUsuarioDR = lstUsuario[0].ID;
+        //                    usuario = lstUsuario[0].Nome.ToString();
+        //                }
+        //                else item.cpUsuarioDR = "";
+        //            }
+        //            string[] Row = new string[]
+        //             {
+        //              item.cpID.ToString(),
+        //              item.cpAviso.ToString(),
+        //              item.cpDataInicio.ToString(),
+        //              item.cpDataTermino.ToString(),
+        //              "GERAL",
+        //              item.cpUsuarioDR.ToString(),
+        //              item.cpTodos.ToString()
+        //             };
+        //            grdAvisos.Rows.Add(Row);
+        //        }
+        //    }
 
-        }
+        //}
 
         public void CarregaUltContato()
         {
@@ -328,45 +330,69 @@ namespace Formularios
             labVlrConsolidado.Text = objFormataValores.FormataVlrBRL(VlrCalcMetas[2].ToString());
         }
 
-        public void CarregaAgendaContato()
+        //public void CarregaAgendaContato()
+        //{
+        //    grdContatosAgendados.Rows.Clear();
+        //    BDAgendarContato objAgendaContato = new BDAgendarContato();
+        //    objAgendaContato.cpIDUsuarioDR = LUsuario;
+        //    List<BDAgendarContato> lstAgendarContato = objAgendaContato.CarregaDados(LCaminhoBanco);
+        //    if (lstAgendarContato.Count > 0)
+        //    {
+        //        foreach (BDAgendarContato item in lstAgendarContato)
+        //        {
+        //            string pRazao = "";
+        //            List<BDCadastroGeral> lstEmpresa = new List<BDCadastroGeral>();
+        //            if (item.cpEmpresaDR != "" && item.cpEmpresaDR != null)
+        //            {
+        //                BDCadastroGeral objEmpresa = new BDCadastroGeral();
+        //                lstEmpresa = objEmpresa.CarregaDados(LCaminhoBanco, item.cpEmpresaDR, "", "", "", "", "", "", "", "", "");
+        //                if (lstEmpresa.Count > 0)
+        //                {
+        //                    pRazao = lstEmpresa[0].RazaoSocial.ToString();
+        //                }
+        //            }
+        //            string[] Row = new string[]
+        //                {
+        //                    item.cpID.ToString(),
+        //                    item.cpDataContato.ToString(),
+        //                    pRazao.ToString(),
+        //                };
+        //            grdContatosAgendados.Rows.Add(Row);
+        //        }
+        //    }
+        //}
+
+        public void RealizaCargas()
         {
-            grdContatosAgendados.Rows.Clear();
+            //CarregaAvisos();
+            CarregaUltContato();
+            CarregaUltVenda();
+            ProgressaoMeta();
+            //CarregaAgendaContato();
+            BDAvisos objAviso = new BDAvisos();
+            objAviso.cpUsuarioDR = LUsuario;
+            objAviso.cpConfirmado = "N";
+            List<BDAvisos> lstAvisos = objAviso.CarregaDados(LCaminhoBanco);
+            if (lstAvisos.Count > 0)
+            {
+                NotifyAvisos.BalloonTipTitle = "GPA - Avisos";
+                NotifyAvisos.BalloonTipText = "Você possui " + lstAvisos.Count + " avisos pendentes!";
+                NotifyAvisos.Icon = SystemIcons.Exclamation;
+                NotifyAvisos.ShowBalloonTip(800);
+            }
+
             BDAgendarContato objAgendaContato = new BDAgendarContato();
             objAgendaContato.cpIDUsuarioDR = LUsuario;
             List<BDAgendarContato> lstAgendarContato = objAgendaContato.CarregaDados(LCaminhoBanco);
             if (lstAgendarContato.Count > 0)
             {
-                foreach (BDAgendarContato item in lstAgendarContato)
-                {
-                    string pRazao = "";
-                    List<BDCadastroGeral> lstEmpresa = new List<BDCadastroGeral>();
-                    if (item.cpEmpresaDR != "" && item.cpEmpresaDR != null)
-                    {
-                        BDCadastroGeral objEmpresa = new BDCadastroGeral();
-                        lstEmpresa = objEmpresa.CarregaDados(LCaminhoBanco, item.cpEmpresaDR, "", "", "", "", "", "", "", "", "");
-                        if (lstEmpresa.Count > 0)
-                        {
-                            pRazao = lstEmpresa[0].RazaoSocial.ToString();
-                        }
-                    }
-                    string[] Row = new string[]
-                        {
-                            item.cpID.ToString(),
-                            item.cpDataContato.ToString(),
-                            pRazao.ToString(),
-                        };
-                    grdContatosAgendados.Rows.Add(Row);
-                }
+                NotifyAvisos.BalloonTipTitle = "GPA - Agenda Contatos";
+                NotifyAvisos.BalloonTipText = "Você possui " + lstAgendarContato.Count + " agendamentos de contato pendentes!";
+                NotifyAvisos.Icon = SystemIcons.Exclamation;
+                NotifyAvisos.ShowBalloonTip(800);
             }
-        }
 
-        public void RealizaCargas()
-        {
-            CarregaAvisos();
-            CarregaUltContato();
-            CarregaUltVenda();
-            ProgressaoMeta();
-            CarregaAgendaContato();
+            //chrtVendasMesaMes.Series["Vendas mês"].Points.Add(500);
         }
 
         private void cmdMeusClientes_Click(object sender, EventArgs e)
@@ -375,13 +401,6 @@ namespace Formularios
             frmMeusClientes.ShowDialog();
         }
 
-        private void cmdRelatorios_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Em desenvolvimento", "GPA", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            return;
-            frmSelecionaRelatorio frmRelatorios = new frmSelecionaRelatorio();
-            frmRelatorios.ShowDialog();
-        }
 
         private void MnuParametros_Click(object sender, EventArgs e)
         {
@@ -462,18 +481,49 @@ namespace Formularios
         {
             frmVendasPorCliente frmVendasPorCliente = new frmVendasPorCliente(LCaminhoBanco, LUsuario);
             frmVendasPorCliente.ShowDialog();
+            RealizaCargas();
         }
 
         private void mnuBuscaCadastros_Click(object sender, EventArgs e)
         {
             frmBuscaCadastroCNPJ frmBuscaCadastroCNPJ = new frmBuscaCadastroCNPJ(LCaminhoBanco, LUsuario);
             frmBuscaCadastroCNPJ.ShowDialog();
+            RealizaCargas();
         }
 
         private void registrosDeContatosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmRelRegistroContatos frmRelRegistroContatos = new frmRelRegistroContatos(LCaminhoBanco,LUsuario);
+            frmRelRegistroContatos frmRelRegistroContatos = new frmRelRegistroContatos(LCaminhoBanco, LUsuario);
             frmRelRegistroContatos.ShowDialog();
+            RealizaCargas();
+        }
+
+        private void mnuAvisos_Click(object sender, EventArgs e)
+        {
+            frmMostraAvisos frmMostraAvisos = new frmMostraAvisos(LCaminhoBanco, LUsuario);
+            frmMostraAvisos.ShowDialog();
+            RealizaCargas();
+        }
+
+        private void mnuCadastraAvisos_Click(object sender, EventArgs e)
+        {
+            frmAvisos frmCadAvisos = new frmAvisos(LCaminhoBanco);
+            frmCadAvisos.ShowDialog();
+            RealizaCargas();
+        }
+
+        private void NotifyAvisos_Click(object sender, EventArgs e)
+        {
+            frmMostraAvisos frmMostraAvisos = new frmMostraAvisos(LCaminhoBanco, LUsuario);
+            frmMostraAvisos.ShowDialog();
+            RealizaCargas();
+        }
+
+        private void NotifyAvisos_BalloonTipClicked(object sender, EventArgs e)
+        {
+            frmMostraAvisos frmMostraAvisos = new frmMostraAvisos(LCaminhoBanco, LUsuario);
+            frmMostraAvisos.ShowDialog();
+            RealizaCargas();
         }
     }
 }

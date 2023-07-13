@@ -68,6 +68,7 @@
             // 
             // lbCabeçallho
             // 
+            lbCabeçallho.BackColor = Color.Transparent;
             lbCabeçallho.BorderStyle = BorderStyle.Fixed3D;
             lbCabeçallho.Cursor = Cursors.IBeam;
             lbCabeçallho.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
@@ -82,6 +83,7 @@
             // label1
             // 
             label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
             label1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label1.Location = new Point(12, 55);
             label1.Name = "label1";
@@ -92,6 +94,7 @@
             // labDescricao
             // 
             labDescricao.AutoSize = true;
+            labDescricao.BackColor = Color.Transparent;
             labDescricao.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             labDescricao.Location = new Point(12, 161);
             labDescricao.Name = "labDescricao";
@@ -110,6 +113,7 @@
             // labPedido
             // 
             labPedido.AutoSize = true;
+            labPedido.BackColor = Color.Transparent;
             labPedido.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             labPedido.Location = new Point(579, 294);
             labPedido.Name = "labPedido";
@@ -122,11 +126,12 @@
             txtPedido.Location = new Point(579, 312);
             txtPedido.Name = "txtPedido";
             txtPedido.Size = new Size(101, 23);
-            txtPedido.TabIndex = 5;
+            txtPedido.TabIndex = 6;
             // 
             // labProduto
             // 
             labProduto.AutoSize = true;
+            labProduto.BackColor = Color.Transparent;
             labProduto.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             labProduto.Location = new Point(12, 294);
             labProduto.Name = "labProduto";
@@ -140,14 +145,14 @@
             txtProduto.Location = new Point(12, 312);
             txtProduto.Name = "txtProduto";
             txtProduto.Size = new Size(544, 23);
-            txtProduto.TabIndex = 23;
+            txtProduto.TabIndex = 5;
             // 
             // cmdSelecionar
             // 
             cmdSelecionar.Location = new Point(691, 312);
             cmdSelecionar.Name = "cmdSelecionar";
             cmdSelecionar.Size = new Size(97, 23);
-            cmdSelecionar.TabIndex = 6;
+            cmdSelecionar.TabIndex = 7;
             cmdSelecionar.Text = "Selecionar";
             cmdSelecionar.UseVisualStyleBackColor = true;
             cmdSelecionar.Click += cmdSelecionar_Click;
@@ -164,7 +169,7 @@
             grdProdutos.ReadOnly = true;
             grdProdutos.RowTemplate.Height = 25;
             grdProdutos.Size = new Size(776, 97);
-            grdProdutos.TabIndex = 26;
+            grdProdutos.TabIndex = 12;
             // 
             // grdIDItem
             // 
@@ -201,6 +206,7 @@
             // labDataOcorrencia
             // 
             labDataOcorrencia.AutoSize = true;
+            labDataOcorrencia.BackColor = Color.Transparent;
             labDataOcorrencia.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             labDataOcorrencia.Location = new Point(686, 55);
             labDataOcorrencia.Name = "labDataOcorrencia";
@@ -217,7 +223,7 @@
             cmdNovo.Location = new Point(686, 13);
             cmdNovo.Name = "cmdNovo";
             cmdNovo.Size = new Size(29, 29);
-            cmdNovo.TabIndex = 29;
+            cmdNovo.TabIndex = 9;
             cmdNovo.UseVisualStyleBackColor = true;
             cmdNovo.Click += cmdNovo_Click;
             // 
@@ -229,7 +235,7 @@
             cmdGravar.Location = new Point(722, 12);
             cmdGravar.Name = "cmdGravar";
             cmdGravar.Size = new Size(30, 30);
-            cmdGravar.TabIndex = 30;
+            cmdGravar.TabIndex = 10;
             cmdGravar.UseVisualStyleBackColor = true;
             cmdGravar.Click += cmdGravar_Click;
             // 
@@ -241,13 +247,14 @@
             cmdSair.Location = new Point(758, 13);
             cmdSair.Name = "cmdSair";
             cmdSair.Size = new Size(30, 30);
-            cmdSair.TabIndex = 31;
+            cmdSair.TabIndex = 11;
             cmdSair.UseVisualStyleBackColor = true;
             cmdSair.Click += cmdSair_Click;
             // 
             // labFornecedor
             // 
             labFornecedor.AutoSize = true;
+            labFornecedor.BackColor = Color.Transparent;
             labFornecedor.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             labFornecedor.Location = new Point(12, 106);
             labFornecedor.Name = "labFornecedor";
@@ -266,6 +273,7 @@
             // labDataResolucao
             // 
             labDataResolucao.AutoSize = true;
+            labDataResolucao.BackColor = Color.Transparent;
             labDataResolucao.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             labDataResolucao.Location = new Point(686, 106);
             labDataResolucao.Name = "labDataResolucao";
@@ -280,7 +288,7 @@
             cmdExcluir.Location = new Point(650, 12);
             cmdExcluir.Name = "cmdExcluir";
             cmdExcluir.Size = new Size(29, 29);
-            cmdExcluir.TabIndex = 40;
+            cmdExcluir.TabIndex = 8;
             cmdExcluir.UseVisualStyleBackColor = true;
             cmdExcluir.Click += cmdExcluir_Click;
             // 
@@ -290,7 +298,7 @@
             txtDataOcorrencia.Mask = "00/00/0000";
             txtDataOcorrencia.Name = "txtDataOcorrencia";
             txtDataOcorrencia.Size = new Size(100, 23);
-            txtDataOcorrencia.TabIndex = 41;
+            txtDataOcorrencia.TabIndex = 1;
             txtDataOcorrencia.ValidatingType = typeof(DateTime);
             txtDataOcorrencia.Leave += txtDataOcorrencia_Leave;
             // 
@@ -300,7 +308,7 @@
             txtDataReolucao.Mask = "00/00/0000";
             txtDataReolucao.Name = "txtDataReolucao";
             txtDataReolucao.Size = new Size(100, 23);
-            txtDataReolucao.TabIndex = 42;
+            txtDataReolucao.TabIndex = 3;
             txtDataReolucao.ValidatingType = typeof(DateTime);
             txtDataReolucao.Leave += txtDataReolucao_Leave;
             // 
@@ -309,6 +317,8 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Info;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(800, 450);
             ControlBox = false;
             Controls.Add(txtDataReolucao);

@@ -45,6 +45,7 @@
             // labEmpresa
             // 
             labEmpresa.AutoSize = true;
+            labEmpresa.BackColor = Color.Transparent;
             labEmpresa.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             labEmpresa.Location = new Point(12, 53);
             labEmpresa.Name = "labEmpresa";
@@ -71,6 +72,7 @@
             // labVendedor
             // 
             labVendedor.AutoSize = true;
+            labVendedor.BackColor = Color.Transparent;
             labVendedor.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             labVendedor.Location = new Point(268, 116);
             labVendedor.Name = "labVendedor";
@@ -101,6 +103,7 @@
             // labDataFinal
             // 
             labDataFinal.AutoSize = true;
+            labDataFinal.BackColor = Color.Transparent;
             labDataFinal.Location = new Point(115, 114);
             labDataFinal.Name = "labDataFinal";
             labDataFinal.Size = new Size(59, 15);
@@ -110,6 +113,7 @@
             // lbDataInicial
             // 
             lbDataInicial.AutoSize = true;
+            lbDataInicial.BackColor = Color.Transparent;
             lbDataInicial.Location = new Point(12, 115);
             lbDataInicial.Name = "lbDataInicial";
             lbDataInicial.Size = new Size(65, 15);
@@ -118,6 +122,7 @@
             // 
             // labVendasPorCliente
             // 
+            labVendasPorCliente.BackColor = Color.Transparent;
             labVendasPorCliente.BorderStyle = BorderStyle.Fixed3D;
             labVendasPorCliente.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             labVendasPorCliente.Location = new Point(14, 12);
@@ -156,6 +161,8 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Info;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(436, 184);
             ControlBox = false;
             Controls.Add(cmdImprimir);

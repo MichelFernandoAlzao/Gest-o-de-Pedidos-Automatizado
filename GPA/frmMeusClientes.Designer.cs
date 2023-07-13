@@ -57,7 +57,7 @@
             grdMeusClientes.RowTemplate.Height = 25;
             grdMeusClientes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             grdMeusClientes.Size = new Size(688, 242);
-            grdMeusClientes.TabIndex = 0;
+            grdMeusClientes.TabIndex = 3;
             grdMeusClientes.DoubleClick += grdMeusClientes_DoubleClick;
             // 
             // grdID
@@ -86,12 +86,13 @@
             txtRazaoSocial.Location = new Point(12, 52);
             txtRazaoSocial.Name = "txtRazaoSocial";
             txtRazaoSocial.Size = new Size(415, 23);
-            txtRazaoSocial.TabIndex = 1;
+            txtRazaoSocial.TabIndex = 0;
             txtRazaoSocial.KeyDown += txtRazaoSocial_KeyDown;
             // 
             // labEmpresa
             // 
             labEmpresa.AutoSize = true;
+            labEmpresa.BackColor = Color.Transparent;
             labEmpresa.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             labEmpresa.Location = new Point(12, 34);
             labEmpresa.Name = "labEmpresa";
@@ -101,6 +102,7 @@
             // 
             // lbCabeçallho
             // 
+            lbCabeçallho.BackColor = Color.Transparent;
             lbCabeçallho.BorderStyle = BorderStyle.Fixed3D;
             lbCabeçallho.Cursor = Cursors.IBeam;
             lbCabeçallho.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
@@ -119,7 +121,7 @@
             cmdSair.Location = new Point(670, 4);
             cmdSair.Name = "cmdSair";
             cmdSair.Size = new Size(30, 30);
-            cmdSair.TabIndex = 11;
+            cmdSair.TabIndex = 5;
             cmdSair.UseVisualStyleBackColor = true;
             cmdSair.Click += cmdSair_Click;
             // 
@@ -130,19 +132,20 @@
             cmdSelecionar.Location = new Point(634, 4);
             cmdSelecionar.Name = "cmdSelecionar";
             cmdSelecionar.Size = new Size(30, 30);
-            cmdSelecionar.TabIndex = 10;
+            cmdSelecionar.TabIndex = 4;
             cmdSelecionar.UseVisualStyleBackColor = true;
             cmdSelecionar.Click += cmdSelecionar_Click;
             // 
             // chkGerencia
             // 
             chkGerencia.AutoSize = true;
+            chkGerencia.BackColor = Color.Transparent;
             chkGerencia.Location = new Point(643, 54);
             chkGerencia.Name = "chkGerencia";
             chkGerencia.Size = new Size(57, 19);
-            chkGerencia.TabIndex = 12;
+            chkGerencia.TabIndex = 2;
             chkGerencia.Text = "Todos";
-            chkGerencia.UseVisualStyleBackColor = true;
+            chkGerencia.UseVisualStyleBackColor = false;
             chkGerencia.CheckedChanged += chkGerencia_CheckedChanged;
             // 
             // txtCNPJ
@@ -151,12 +154,13 @@
             txtCNPJ.Mask = "00,000,000/0000-00";
             txtCNPJ.Name = "txtCNPJ";
             txtCNPJ.Size = new Size(173, 23);
-            txtCNPJ.TabIndex = 13;
+            txtCNPJ.TabIndex = 1;
             txtCNPJ.KeyDown += txtCNPJ_KeyDown;
             // 
             // label1
             // 
             label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
             label1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label1.Location = new Point(449, 34);
             label1.Name = "label1";
@@ -169,6 +173,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Info;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(712, 335);
             ControlBox = false;
             Controls.Add(label1);

@@ -100,6 +100,7 @@
             // 
             // lbPedidos
             // 
+            lbPedidos.BackColor = Color.Transparent;
             lbPedidos.BorderStyle = BorderStyle.Fixed3D;
             lbPedidos.Cursor = Cursors.IBeam;
             lbPedidos.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
@@ -122,27 +123,33 @@
             // labAvisos
             // 
             labAvisos.AutoSize = true;
+            labAvisos.BackColor = Color.Transparent;
+            labAvisos.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             labAvisos.Location = new Point(12, 42);
             labAvisos.Name = "labAvisos";
-            labAvisos.Size = new Size(36, 15);
+            labAvisos.Size = new Size(37, 15);
             labAvisos.TabIndex = 17;
             labAvisos.Text = "Aviso";
             // 
             // labInicio
             // 
             labInicio.AutoSize = true;
+            labInicio.BackColor = Color.Transparent;
+            labInicio.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             labInicio.Location = new Point(669, 44);
             labInicio.Name = "labInicio";
-            labInicio.Size = new Size(36, 15);
+            labInicio.Size = new Size(37, 15);
             labInicio.TabIndex = 19;
             labInicio.Text = "Inicio";
             // 
             // labTermino
             // 
             labTermino.AutoSize = true;
+            labTermino.BackColor = Color.Transparent;
+            labTermino.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             labTermino.Location = new Point(668, 89);
             labTermino.Name = "labTermino";
-            labTermino.Size = new Size(50, 15);
+            labTermino.Size = new Size(53, 15);
             labTermino.TabIndex = 21;
             labTermino.Text = "Termino";
             // 
@@ -157,9 +164,11 @@
             // labUsuario
             // 
             labUsuario.AutoSize = true;
+            labUsuario.BackColor = Color.Transparent;
+            labUsuario.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             labUsuario.Location = new Point(647, 138);
             labUsuario.Name = "labUsuario";
-            labUsuario.Size = new Size(70, 15);
+            labUsuario.Size = new Size(73, 15);
             labUsuario.TabIndex = 23;
             labUsuario.Text = "Usuario - F1";
             // 
@@ -167,7 +176,7 @@
             // 
             grdAvisos.AllowUserToAddRows = false;
             grdAvisos.AllowUserToDeleteRows = false;
-            grdAvisos.BackgroundColor = SystemColors.GradientActiveCaption;
+            grdAvisos.BackgroundColor = Color.Gainsboro;
             grdAvisos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             grdAvisos.Columns.AddRange(new DataGridViewColumn[] { grdID, grdAviso, grdInicio, grdTermino, grdUsuario, grdIDusuario, grdTodos });
             grdAvisos.Location = new Point(12, 185);
@@ -229,12 +238,14 @@
             // chkTodos
             // 
             chkTodos.AutoSize = true;
+            chkTodos.BackColor = Color.Transparent;
+            chkTodos.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             chkTodos.Location = new Point(12, 160);
             chkTodos.Name = "chkTodos";
-            chkTodos.Size = new Size(57, 19);
+            chkTodos.Size = new Size(58, 19);
             chkTodos.TabIndex = 26;
             chkTodos.Text = "Todos";
-            chkTodos.UseVisualStyleBackColor = true;
+            chkTodos.UseVisualStyleBackColor = false;
             // 
             // txtDataInicio
             // 
@@ -260,7 +271,8 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.Info;
+            BackColor = Color.Khaki;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(800, 349);
             ControlBox = false;
             Controls.Add(txtDataTermino);

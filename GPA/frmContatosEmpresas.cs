@@ -44,6 +44,7 @@ namespace Formularios
             LDataContato = "";
             LSugestoes = "";
             LReclamacoes = "";
+            txtRegistro.Text = "";
             txtEmpresa.Text = "";
             txtDataContato.Text = "";
             txtSugestoes.Text = "";
@@ -89,7 +90,7 @@ namespace Formularios
             }
             objContato.cpUsuarioDR = LUsuario;
 
-            if(txtSugestoes.Text.ToString().Replace(" ","") == "" && txtReclamacoes.Text.ToString().Replace(" ", "") == "")
+            if (txtSugestoes.Text.ToString().Replace(" ", "") == "" && txtReclamacoes.Text.ToString().Replace(" ", "") == "")
             {
                 MessageBox.Show("Nenhuma reclamação ou Sugestão informada, impossivel gravar!", "GPA", MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
@@ -264,7 +265,7 @@ namespace Formularios
         {
             if (e.KeyCode == Keys.F1)
             {
-                frmSelecionaEmpresa objTela = new frmSelecionaEmpresa(LCaminhoBanco, this, "", txtEmpresa.Text.ToString(), "", "", LUsuario,"","","");
+                frmSelecionaEmpresa objTela = new frmSelecionaEmpresa(LCaminhoBanco, this, "", txtEmpresa.Text.ToString(), "", "", LUsuario, "", "", "");
                 objTela.ShowDialog();
                 if (LRazaoSocial != "")
                 {

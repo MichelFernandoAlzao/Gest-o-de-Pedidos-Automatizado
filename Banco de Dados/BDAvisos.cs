@@ -14,6 +14,7 @@ namespace Banco_de_Dados
         string LCaminhoBanco;
         public string cpID { get; set; }
         public string cpAviso { get; set; }
+        public string cpConfirmado { get; set; }
         public string cpDataInicio { get; set; }
         public string cpDataTermino { get; set; }
         public string cpUsuarioDR { get; set; }
@@ -118,6 +119,10 @@ namespace Banco_de_Dados
             {
                 sqlconteudo += "OPAAviso = '" + cpAviso.ToString() + "',";
             }
+            if(cpConfirmado != null) 
+            {
+                sqlconteudo += "OPAConfirmado = '" + cpConfirmado.ToString() + "',";
+            }
             if (cpDataInicio != null)
             {
                 sqlconteudo += "OPADataInicio = '" + cpDataInicio.ToString() + "',";
@@ -165,36 +170,53 @@ namespace Banco_de_Dados
             List<BDAvisos> lstAvisos = new List<BDAvisos>();
             string slqSelect = "SELECT * FROM OPAvisos ";
             string sqlWhere = "WHERE ";
-            char ClausulaWhere = 'N';
+            string ClausulaWhere = "N";
 
-            //if (cpID != null)
-            //{
-            //    if (cpID != "")
-            //    {
-            //        sqlWhere = "WHERE OPAvisos = '" + cpID + "'";
-            //        ClausulaWhere = 'S';
-            //    }
-            //}
+
             if (cpUsuarioDR != null)
             {
                 if (cpUsuarioDR != "")
                 {
                     sqlWhere = "WHERE OPAUsuarioDR = '" + cpUsuarioDR + "'";
-                    ClausulaWhere = 'S';
+                    ClausulaWhere = "S";
                 }
             }
-
-
-            if (ClausulaWhere == 'S')
+            if(cpConfirmado != null) 
             {
-                if (cpID != "")
+                if (ClausulaWhere != "S")
                 {
-                    slqSelect += sqlWhere;
+                    if(cpConfirmado == "S")
+                    {
+                        sqlWhere = "WHERE OPAConfirmado = '" + cpConfirmado + "'";
+                        ClausulaWhere = "S";
+                    }
+                    else
+                    {
+                        sqlWhere = "WHERE OPAConfirmado <> 'S'";
+                        ClausulaWhere = "S";
+
+                    }
+                    
                 }
                 else
                 {
-                    slqSelect += sqlWhere.Remove(sqlWhere.Length - 3);
+                    if(cpConfirmado == "S")
+                    {
+                        sqlWhere += " AND OPAConfirmado = '" + cpConfirmado + "'";
+                    }
+                    else
+                    {
+                        sqlWhere += " AND OPAConfirmado <> 'S' OR OPAConfirmado is null";
+                    }
+                    
+
                 }
+
+            }
+
+            if (ClausulaWhere == "S")
+            {
+                    slqSelect += sqlWhere;
             }
 
             Conexao conexao = new Conexao(LCaminhoBanco);
@@ -216,6 +238,7 @@ namespace Banco_de_Dados
                     BDAvisos bDParametros = new BDAvisos();
                     bDParametros.cpID = dr["OPAvisos"].ToString();
                     bDParametros.cpAviso = dr["OPAAviso"].ToString();
+                    bDParametros.cpConfirmado = dr["OPAConfirmado"].ToString();
                     bDParametros.cpDataInicio = dr["OPADataInicio"].ToString();
                     bDParametros.cpDataTermino = dr["OPADataTermino"].ToString();
                     bDParametros.cpUsuarioDR = dr["OPAusuarioDR"].ToString();

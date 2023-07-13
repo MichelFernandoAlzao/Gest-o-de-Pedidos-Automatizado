@@ -53,7 +53,7 @@ namespace Formularios
                 objCadastro.RazaoSocial = txtRazaoSocial.Text;
 
             }
-            if(txtCNPJ.Text.Replace(" ","").Replace(".","").Replace("/","").Replace("-","") != "")
+            if (txtCNPJ.Text.Replace(" ", "").Replace(".", "").Replace("/", "").Replace("-", "") != "")
             {
                 objCadastro.RazaoSocial = null;
                 objCadastro.CNPJ = txtCNPJ.Text;

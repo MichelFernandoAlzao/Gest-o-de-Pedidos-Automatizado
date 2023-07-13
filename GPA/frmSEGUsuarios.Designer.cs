@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSEGUsuarios));
             grdUsuarios = new DataGridView();
             grdUserID = new DataGridViewTextBoxColumn();
             grdNomeUsuario = new DataGridViewTextBoxColumn();
@@ -126,6 +127,7 @@
             // label1
             // 
             label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
             label1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label1.Location = new Point(562, 41);
             label1.Name = "label1";
@@ -136,6 +138,7 @@
             // label2
             // 
             label2.AutoSize = true;
+            label2.BackColor = Color.Transparent;
             label2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label2.Location = new Point(562, 85);
             label2.Name = "label2";
@@ -192,48 +195,54 @@
             // chkAdministrador
             // 
             chkAdministrador.AutoSize = true;
+            chkAdministrador.BackColor = Color.Transparent;
             chkAdministrador.Location = new Point(562, 149);
             chkAdministrador.Name = "chkAdministrador";
             chkAdministrador.Size = new Size(102, 19);
             chkAdministrador.TabIndex = 8;
             chkAdministrador.Text = "Administrador";
-            chkAdministrador.UseVisualStyleBackColor = true;
+            chkAdministrador.UseVisualStyleBackColor = false;
             // 
             // chkGerenCadastros
             // 
             chkGerenCadastros.AutoSize = true;
+            chkGerenCadastros.BackColor = Color.Transparent;
             chkGerenCadastros.Location = new Point(670, 149);
             chkGerenCadastros.Name = "chkGerenCadastros";
             chkGerenCadastros.Size = new Size(127, 19);
             chkGerenCadastros.TabIndex = 9;
             chkGerenCadastros.Text = "Gerencia Cadastros";
-            chkGerenCadastros.UseVisualStyleBackColor = true;
+            chkGerenCadastros.UseVisualStyleBackColor = false;
             // 
             // chkSeguranca
             // 
             chkSeguranca.AutoSize = true;
+            chkSeguranca.BackColor = Color.Transparent;
             chkSeguranca.Location = new Point(670, 191);
             chkSeguranca.Name = "chkSeguranca";
             chkSeguranca.Size = new Size(81, 19);
             chkSeguranca.TabIndex = 11;
             chkSeguranca.Text = "Segurança";
-            chkSeguranca.UseVisualStyleBackColor = true;
+            chkSeguranca.UseVisualStyleBackColor = false;
             // 
             // chkOperacional
             // 
             chkOperacional.AutoSize = true;
+            chkOperacional.BackColor = Color.Transparent;
             chkOperacional.Location = new Point(562, 191);
             chkOperacional.Name = "chkOperacional";
             chkOperacional.Size = new Size(90, 19);
             chkOperacional.TabIndex = 10;
             chkOperacional.Text = "Operacional";
-            chkOperacional.UseVisualStyleBackColor = true;
+            chkOperacional.UseVisualStyleBackColor = false;
             // 
             // frmSEGUsuarios
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Info;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(800, 450);
             ControlBox = false;
             Controls.Add(chkSeguranca);

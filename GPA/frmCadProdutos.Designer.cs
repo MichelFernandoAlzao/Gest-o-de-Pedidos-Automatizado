@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadProdutos));
             lbCadProdutos = new Label();
             txtDescricao = new TextBox();
             txtCodigo = new TextBox();
@@ -57,6 +58,7 @@
             // 
             // lbCadProdutos
             // 
+            lbCadProdutos.BackColor = Color.Transparent;
             lbCadProdutos.BorderStyle = BorderStyle.Fixed3D;
             lbCadProdutos.Cursor = Cursors.IBeam;
             lbCadProdutos.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
@@ -88,6 +90,7 @@
             // label1
             // 
             label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
             label1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label1.Location = new Point(12, 47);
             label1.Name = "label1";
@@ -98,6 +101,7 @@
             // label2
             // 
             label2.AutoSize = true;
+            label2.BackColor = Color.Transparent;
             label2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label2.Location = new Point(503, 47);
             label2.Name = "label2";
@@ -108,6 +112,7 @@
             // label3
             // 
             label3.AutoSize = true;
+            label3.BackColor = Color.Transparent;
             label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label3.Location = new Point(652, 47);
             label3.Name = "label3";
@@ -125,6 +130,7 @@
             // label4
             // 
             label4.AutoSize = true;
+            label4.BackColor = Color.Transparent;
             label4.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label4.Location = new Point(12, 95);
             label4.Name = "label4";
@@ -135,6 +141,7 @@
             // label5
             // 
             label5.AutoSize = true;
+            label5.BackColor = Color.Transparent;
             label5.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label5.Location = new Point(12, 147);
             label5.Name = "label5";
@@ -153,6 +160,7 @@
             // label6
             // 
             label6.AutoSize = true;
+            label6.BackColor = Color.Transparent;
             label6.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label6.Location = new Point(789, 47);
             label6.Name = "label6";
@@ -179,6 +187,7 @@
             // label7
             // 
             label7.AutoSize = true;
+            label7.BackColor = Color.Transparent;
             label7.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label7.Location = new Point(12, 226);
             label7.Name = "label7";
@@ -209,36 +218,40 @@
             // chkAtivo
             // 
             chkAtivo.AutoSize = true;
+            chkAtivo.BackColor = Color.Transparent;
             chkAtivo.Location = new Point(12, 194);
             chkAtivo.Name = "chkAtivo";
             chkAtivo.Size = new Size(54, 19);
             chkAtivo.TabIndex = 7;
             chkAtivo.Text = "Ativo";
-            chkAtivo.UseVisualStyleBackColor = true;
+            chkAtivo.UseVisualStyleBackColor = false;
             // 
             // chkOperacional
             // 
             chkOperacional.AutoSize = true;
+            chkOperacional.BackColor = Color.Transparent;
             chkOperacional.Location = new Point(86, 194);
             chkOperacional.Name = "chkOperacional";
             chkOperacional.Size = new Size(90, 19);
             chkOperacional.TabIndex = 8;
             chkOperacional.Text = "Operacional";
-            chkOperacional.UseVisualStyleBackColor = true;
+            chkOperacional.UseVisualStyleBackColor = false;
             // 
             // chkForadeLinha
             // 
             chkForadeLinha.AutoSize = true;
+            chkForadeLinha.BackColor = Color.Transparent;
             chkForadeLinha.Location = new Point(204, 194);
             chkForadeLinha.Name = "chkForadeLinha";
             chkForadeLinha.Size = new Size(94, 19);
             chkForadeLinha.TabIndex = 9;
             chkForadeLinha.Text = "Fora de linha";
-            chkForadeLinha.UseVisualStyleBackColor = true;
+            chkForadeLinha.UseVisualStyleBackColor = false;
             // 
             // labMelFornecedor
             // 
             labMelFornecedor.AutoSize = true;
+            labMelFornecedor.BackColor = Color.Transparent;
             labMelFornecedor.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             labMelFornecedor.Location = new Point(490, 147);
             labMelFornecedor.Name = "labMelFornecedor";
@@ -305,6 +318,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Info;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(948, 437);
             ControlBox = false;
             Controls.Add(txtDataCadastro);
