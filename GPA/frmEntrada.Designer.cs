@@ -40,6 +40,7 @@
             chkSeguranca = new CheckBox();
             chkFinanceiro = new CheckBox();
             cboServidor = new ComboBox();
+            cboNomeServer = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -146,10 +147,18 @@
             // cboServidor
             // 
             cboServidor.FormattingEnabled = true;
-            cboServidor.Location = new Point(91, 326);
+            cboServidor.Location = new Point(130, 326);
             cboServidor.Name = "cboServidor";
-            cboServidor.Size = new Size(210, 23);
+            cboServidor.Size = new Size(144, 23);
             cboServidor.TabIndex = 2;
+            // 
+            // cboNomeServer
+            // 
+            cboNomeServer.FormattingEnabled = true;
+            cboNomeServer.Location = new Point(130, 326);
+            cboNomeServer.Name = "cboNomeServer";
+            cboNomeServer.Size = new Size(144, 23);
+            cboNomeServer.TabIndex = 8;
             // 
             // frmEntrada
             // 
@@ -157,6 +166,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(384, 450);
             ControlBox = false;
+            Controls.Add(cboNomeServer);
             Controls.Add(cboServidor);
             Controls.Add(chkFinanceiro);
             Controls.Add(chkSeguranca);
@@ -190,5 +200,6 @@
         private CheckBox chkSeguranca;
         private CheckBox chkFinanceiro;
         private ComboBox cboServidor;
+        private ComboBox cboNomeServer;
     }
 }

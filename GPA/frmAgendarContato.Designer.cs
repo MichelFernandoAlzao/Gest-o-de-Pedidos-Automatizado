@@ -92,7 +92,7 @@
             txtUsuario.Location = new Point(558, 62);
             txtUsuario.Name = "txtUsuario";
             txtUsuario.Size = new Size(119, 23);
-            txtUsuario.TabIndex = 4;
+            txtUsuario.TabIndex = 2;
             txtUsuario.KeyDown += txtUsuario_KeyDown;
             // 
             // cmdExcluir
@@ -102,7 +102,7 @@
             cmdExcluir.Location = new Point(547, 9);
             cmdExcluir.Name = "cmdExcluir";
             cmdExcluir.Size = new Size(30, 30);
-            cmdExcluir.TabIndex = 50;
+            cmdExcluir.TabIndex = 5;
             cmdExcluir.UseVisualStyleBackColor = true;
             cmdExcluir.Click += cmdExcluir_Click;
             // 
@@ -113,7 +113,7 @@
             cmdNovo.Location = new Point(583, 9);
             cmdNovo.Name = "cmdNovo";
             cmdNovo.Size = new Size(30, 30);
-            cmdNovo.TabIndex = 49;
+            cmdNovo.TabIndex = 6;
             cmdNovo.UseVisualStyleBackColor = true;
             cmdNovo.Click += cmdNovo_Click;
             // 
@@ -124,7 +124,7 @@
             cmdGravar.Location = new Point(619, 9);
             cmdGravar.Name = "cmdGravar";
             cmdGravar.Size = new Size(30, 30);
-            cmdGravar.TabIndex = 48;
+            cmdGravar.TabIndex = 7;
             cmdGravar.UseVisualStyleBackColor = true;
             cmdGravar.Click += cmdGravar_Click;
             // 
@@ -135,7 +135,7 @@
             cmdSair.Location = new Point(655, 9);
             cmdSair.Name = "cmdSair";
             cmdSair.Size = new Size(30, 30);
-            cmdSair.TabIndex = 47;
+            cmdSair.TabIndex = 8;
             cmdSair.UseVisualStyleBackColor = true;
             cmdSair.Click += cmdSair_Click;
             // 
@@ -159,7 +159,7 @@
             txtDataContato.Mask = "00/00/0000";
             txtDataContato.Name = "txtDataContato";
             txtDataContato.Size = new Size(100, 23);
-            txtDataContato.TabIndex = 51;
+            txtDataContato.TabIndex = 1;
             txtDataContato.ValidatingType = typeof(DateTime);
             txtDataContato.Leave += txtDataContato_Leave;
             // 
@@ -179,7 +179,7 @@
             txtNome.Location = new Point(12, 119);
             txtNome.Name = "txtNome";
             txtNome.Size = new Size(462, 23);
-            txtNome.TabIndex = 52;
+            txtNome.TabIndex = 3;
             // 
             // label2
             // 
@@ -199,7 +199,7 @@
             txtFone.Mask = "(99) 00000-0000";
             txtFone.Name = "txtFone";
             txtFone.Size = new Size(185, 23);
-            txtFone.TabIndex = 56;
+            txtFone.TabIndex = 4;
             // 
             // frmAgendarContato
             // 

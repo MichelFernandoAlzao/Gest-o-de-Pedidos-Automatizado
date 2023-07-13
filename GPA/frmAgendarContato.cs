@@ -40,12 +40,12 @@ namespace Formularios
                 {
                     txtEmpresa.Text = LRazaoSocial;
                     BDCadContatos objContato = new BDCadContatos();
-                    List<BDCadContatos> lstContato = objContato.CarregaDados(LCaminhoBanco,LID);
-                    if(lstContato.Count > 0)
+                    List<BDCadContatos> lstContato = objContato.CarregaDados(LCaminhoBanco, LID);
+                    if (lstContato.Count > 0)
                     {
-                        foreach(BDCadContatos contato in lstContato)
+                        foreach (BDCadContatos contato in lstContato)
                         {
-                            if(contato.cpComprador == "S")
+                            if (contato.cpComprador == "S")
                             {
                                 txtNome.Text = contato.cpNome;
                                 txtFone.Text = contato.cpTelefone;
@@ -119,24 +119,36 @@ namespace Formularios
 
         private void cmdGravar_Click(object sender, EventArgs e)
         {
-            if (LID == "")
-            {
-                MessageBox.Show("Nenhuma empresa selecionada", "GPA");
-                return;
-            }
+
             if (LIDUsuario == "")
             {
                 MessageBox.Show("Nenhum usuário selecionado", "GPA");
                 return;
             }
-            if (txtDataContato.Text == "  /  /")
+            if (txtDataContato.Text.Replace(" ", "").Replace("/", "") == "" || txtDataContato.Text.Replace(" ", "").Replace("/", "").Length < 8)
             {
-                MessageBox.Show("Data não informada!", "GPA");
+                MessageBox.Show("Data não informada ou em formato invalido!", "GPA");
                 return;
             }
 
             BDAgendarContato objAgendaContato = new BDAgendarContato();
-            objAgendaContato.cpEmpresaDR = LID;
+            if (LID == "")
+            {
+                if (MessageBox.Show("Deseja seguir sem uma empresa selecionada?", "GPA", MessageBoxButtons.YesNo) == DialogResult.No) { return; }
+            }
+            else
+            {
+                objAgendaContato.cpEmpresaDR = LID;
+            }
+            if (txtFone.Text != "")
+            {
+                objAgendaContato.cpFone = txtFone.Text;
+            }
+            if (objAgendaContato.cpNome != "")
+            {
+                objAgendaContato.cpNome = txtNome.Text;
+            }
+            objAgendaContato.cpAtendido = "N";
             objAgendaContato.cpDataContato = txtDataContato.Text;
             objAgendaContato.cpIDUsuarioDR = LIDUsuario;
 
@@ -148,7 +160,22 @@ namespace Formularios
                     MessageBox.Show(objAgendaContato.cpMsgErro, "GPA");
                     return;
                 }
-
+            }
+            if (objAgendaContato.cpID != null)
+            {
+                if (objAgendaContato.cpID != "")
+                {
+                    MessageBox.Show("Contato Agendado com sucesso!", "GPA");
+                    LID = "";
+                    LIDAContato = "";
+                    LRazaoSocial = "";
+                    LIDUsuario = "";
+                    txtEmpresa.Text = "";
+                    txtDataContato.Text = "";
+                    txtUsuario.Text = "";
+                    txtNome.Text = "";
+                    txtFone.Text = "";
+                }
             }
         }
 

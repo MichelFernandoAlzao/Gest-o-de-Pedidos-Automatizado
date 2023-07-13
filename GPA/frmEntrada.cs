@@ -29,10 +29,15 @@ namespace Formularios
             foreach (string ServidorSerie in Servidor)
             {
                 cboServidor.Items.Add(ServidorSerie);
+                int posicao = ServidorSerie.IndexOf("|");
+                int posicaodois = ServidorSerie.IndexOf("=");
+                int Tamanhonome = posicao - posicaodois;
+                cboNomeServer.Items.Add(ServidorSerie.Substring(8,Tamanhonome - 1));
             }
             if (cboServidor.Items.Count > 0)
             {
                 cboServidor.SelectedIndex = 0;
+                cboNomeServer.SelectedIndex = 0;
             }
             chkOperacional.Checked = true;
         }
@@ -66,8 +71,9 @@ namespace Formularios
                 MessageBox.Show("Nenhum servidor selecionado", "GPA");
                 return;
             }
-            int i = cboServidor.SelectedItem.ToString().IndexOf("|");
-            LCaminhoBanco = cboServidor.SelectedItem.ToString().Remove(0, i + 1);
+            int index = cboNomeServer.SelectedIndex;
+            int i = cboServidor.Items[index].ToString().IndexOf("|");
+            LCaminhoBanco = cboServidor.Items[index].ToString().Remove(0, i + 1);
             if (chkOperacional.Checked == true)
             {
 

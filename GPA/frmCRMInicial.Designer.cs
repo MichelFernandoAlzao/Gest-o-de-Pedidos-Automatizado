@@ -30,10 +30,10 @@
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCRMInicial));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title3 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             labConsolidado = new Label();
             pgrsbMeta = new ProgressBar();
             labProgressao = new Label();
@@ -77,12 +77,12 @@
             controleContatoToolStripMenuItem = new ToolStripMenuItem();
             MnuRegistraContato = new ToolStripMenuItem();
             mnuAvisos = new ToolStripMenuItem();
-            labNomeEmpresa = new Label();
-            label10 = new Label();
+            mnuContatosAgendados = new ToolStripMenuItem();
             NotifyAvisos = new NotifyIcon(components);
-            openFileDialog1 = new OpenFileDialog();
             pictureBox1 = new PictureBox();
             chrtVendasMesaMes = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            NotifyAgendaContato = new NotifyIcon(components);
+            mnuCadAgendarContatos = new ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)grdUltimasVendas).BeginInit();
             ((System.ComponentModel.ISupportInitialize)grdUltContato).BeginInit();
             menuStrip1.SuspendLayout();
@@ -252,7 +252,7 @@
             // 
             resources.ApplyResources(cadastrosToolStripMenuItem, "cadastrosToolStripMenuItem");
             cadastrosToolStripMenuItem.BackColor = Color.Transparent;
-            cadastrosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { MnuCadEmpresas, MnuCadProdutos, MnuNatOperacao, mnuCadastraAvisos });
+            cadastrosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { MnuCadEmpresas, MnuCadProdutos, MnuNatOperacao, mnuCadastraAvisos, mnuCadAgendarContatos });
             cadastrosToolStripMenuItem.Name = "cadastrosToolStripMenuItem";
             // 
             // MnuCadEmpresas
@@ -361,7 +361,7 @@
             // controleContatoToolStripMenuItem
             // 
             resources.ApplyResources(controleContatoToolStripMenuItem, "controleContatoToolStripMenuItem");
-            controleContatoToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { MnuRegistraContato, mnuAvisos });
+            controleContatoToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { MnuRegistraContato, mnuAvisos, mnuContatosAgendados });
             controleContatoToolStripMenuItem.Name = "controleContatoToolStripMenuItem";
             // 
             // MnuRegistraContato
@@ -376,28 +376,17 @@
             mnuAvisos.Name = "mnuAvisos";
             mnuAvisos.Click += mnuAvisos_Click;
             // 
-            // labNomeEmpresa
+            // mnuContatosAgendados
             // 
-            resources.ApplyResources(labNomeEmpresa, "labNomeEmpresa");
-            labNomeEmpresa.BackColor = Color.Transparent;
-            labNomeEmpresa.Name = "labNomeEmpresa";
-            // 
-            // label10
-            // 
-            resources.ApplyResources(label10, "label10");
-            label10.BackColor = Color.Transparent;
-            label10.Name = "label10";
+            resources.ApplyResources(mnuContatosAgendados, "mnuContatosAgendados");
+            mnuContatosAgendados.Name = "mnuContatosAgendados";
+            mnuContatosAgendados.Click += mnuContatosAgendados_Click;
             // 
             // NotifyAvisos
             // 
             resources.ApplyResources(NotifyAvisos, "NotifyAvisos");
             NotifyAvisos.BalloonTipClicked += NotifyAvisos_BalloonTipClicked;
             NotifyAvisos.Click += NotifyAvisos_Click;
-            // 
-            // openFileDialog1
-            // 
-            openFileDialog1.FileName = "openFileDialog1";
-            resources.ApplyResources(openFileDialog1, "openFileDialog1");
             // 
             // pictureBox1
             // 
@@ -410,26 +399,37 @@
             // 
             resources.ApplyResources(chrtVendasMesaMes, "chrtVendasMesaMes");
             chrtVendasMesaMes.BackColor = Color.Transparent;
-            chartArea3.Area3DStyle.Enable3D = true;
-            chartArea3.Area3DStyle.Inclination = 50;
-            chartArea3.BackColor = Color.FromArgb(192, 255, 255);
-            chartArea3.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.DiagonalLeft;
-            chartArea3.Name = "ChartArea1";
-            chrtVendasMesaMes.ChartAreas.Add(chartArea3);
-            legend3.BackColor = Color.Transparent;
-            legend3.InterlacedRowsColor = Color.Transparent;
-            legend3.Name = "Janeiro";
-            legend3.Title = "Meses";
-            chrtVendasMesaMes.Legends.Add(legend3);
+            chartArea1.Area3DStyle.Enable3D = true;
+            chartArea1.Area3DStyle.Inclination = 50;
+            chartArea1.BackColor = Color.FromArgb(192, 255, 255);
+            chartArea1.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.DiagonalLeft;
+            chartArea1.Name = "ChartArea1";
+            chrtVendasMesaMes.ChartAreas.Add(chartArea1);
+            legend1.BackColor = Color.Transparent;
+            legend1.InterlacedRowsColor = Color.Transparent;
+            legend1.Name = "Janeiro";
+            legend1.Title = "Meses";
+            chrtVendasMesaMes.Legends.Add(legend1);
             chrtVendasMesaMes.Name = "chrtVendasMesaMes";
-            series3.ChartArea = "ChartArea1";
-            series3.Legend = "Janeiro";
-            series3.Name = "Series1";
-            chrtVendasMesaMes.Series.Add(series3);
-            title3.Font = new Font("Microsoft Sans Serif", 8F, FontStyle.Bold, GraphicsUnit.Point);
-            title3.Name = "Title1";
-            title3.Text = "Vendas Mês a Mês";
-            chrtVendasMesaMes.Titles.Add(title3);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Janeiro";
+            series1.Name = "Series1";
+            chrtVendasMesaMes.Series.Add(series1);
+            title1.Font = new Font("Microsoft Sans Serif", 8F, FontStyle.Bold, GraphicsUnit.Point);
+            title1.Name = "Title1";
+            title1.Text = "Vendas Mês a Mês";
+            chrtVendasMesaMes.Titles.Add(title1);
+            // 
+            // NotifyAgendaContato
+            // 
+            resources.ApplyResources(NotifyAgendaContato, "NotifyAgendaContato");
+            NotifyAgendaContato.BalloonTipClicked += NotifyAgendaContato_BalloonTipClicked;
+            // 
+            // mnuCadAgendarContatos
+            // 
+            resources.ApplyResources(mnuCadAgendarContatos, "mnuCadAgendarContatos");
+            mnuCadAgendarContatos.Name = "mnuCadAgendarContatos";
+            mnuCadAgendarContatos.Click += mnuCadAgendarContatos_Click;
             // 
             // frmCRMInicial
             // 
@@ -438,8 +438,6 @@
             BackColor = Color.LightCyan;
             Controls.Add(chrtVendasMesaMes);
             Controls.Add(pictureBox1);
-            Controls.Add(labNomeEmpresa);
-            Controls.Add(label10);
             Controls.Add(labVlrMeta);
             Controls.Add(labVlrConsolidado);
             Controls.Add(labVlrProgressao);
@@ -519,8 +517,10 @@
         private ToolStripMenuItem mnuCadastraAvisos;
         private ToolStripMenuItem mnuAvisos;
         private NotifyIcon NotifyAvisos;
-        private OpenFileDialog openFileDialog1;
         private PictureBox pictureBox1;
         private System.Windows.Forms.DataVisualization.Charting.Chart chrtVendasMesaMes;
+        private NotifyIcon NotifyAgendaContato;
+        private ToolStripMenuItem mnuContatosAgendados;
+        private ToolStripMenuItem mnuCadAgendarContatos;
     }
 }

@@ -30,49 +30,58 @@ namespace Formularios
 
         private void CarregaAvisos()
         {
-            grdAviso.Rows.Clear();
-            BDAvisos objAvisos = new BDAvisos();
-            objAvisos.cpUsuarioDR = LUsuario;
-            objAvisos.cpConfirmado = "N";
-            List<BDAvisos> lstAvisos = objAvisos.CarregaDados(LCaminhoBanco);
-            if (lstAvisos.Count > 0)
+            grdAgendaContatos.Rows.Clear();
+            string RazaoSocial = "";
+            BDAgendarContato objContatosAgendados = new BDAgendarContato();
+            objContatosAgendados.cpIDUsuarioDR = LUsuario;
+            objContatosAgendados.cpAtendido = "N";
+            List<BDAgendarContato> lstContatosAgendados = objContatosAgendados.CarregaDados(LCaminhoBanco);
+            if (lstContatosAgendados.Count > 0)
             {
-                foreach (BDAvisos item in lstAvisos)
+                foreach (BDAgendarContato Cttagenda in lstContatosAgendados)
                 {
                     string usuario = "";
                     List<SEGUsuario> lstUsuario = new List<SEGUsuario>();
-                    if (item.cpUsuarioDR != "" && item.cpUsuarioDR != null)
+                    if (Cttagenda.cpIDUsuarioDR != "" && Cttagenda.cpIDUsuarioDR != null)
                     {
                         SEGUsuario objUsuario = new SEGUsuario();
-                        lstUsuario = objUsuario.CarregaDados(LCaminhoBanco, item.cpUsuarioDR, "", "", "");
+                        lstUsuario = objUsuario.CarregaDados(LCaminhoBanco, Cttagenda.cpIDUsuarioDR, "", "", "");
                         if (lstUsuario.Count > 0)
                         {
-                            item.cpUsuarioDR = lstUsuario[0].ID;
+                            Cttagenda.cpIDUsuarioDR = lstUsuario[0].ID;
                             usuario = lstUsuario[0].Nome.ToString();
                         }
-                        else item.cpUsuarioDR = "";
+                        else Cttagenda.cpIDUsuarioDR = "";
+                    }
+                    if(Cttagenda.cpEmpresaDR != "")
+                    {
+                        BDCadastroGeral objCadastro = new BDCadastroGeral();
+                        List<BDCadastroGeral> lstCadastro = objCadastro.CarregaDados(LCaminhoBanco,Cttagenda.cpEmpresaDR,"","","","","","","","","");
+                        RazaoSocial = lstCadastro[0].RazaoSocial.ToString();
                     }
                     string[] Row = new string[]
                      {
-                         item.cpID.ToString(),
-                         item.cpAviso.ToString(),
-                         item.cpDataInicio.ToString(),
-                         item.cpDataTermino.ToString(),
+                         Cttagenda.cpID.ToString(),
+                         RazaoSocial.ToString(),
+                         Cttagenda.cpNome.ToString(),
+                         Cttagenda.cpDataContato.ToString(),
+                         Cttagenda.cpFone.ToString(),
                          usuario.ToString(),
                      };
-                    grdAviso.Rows.Add(Row);
+                    grdAgendaContatos.Rows.Add(Row);
+                    RazaoSocial = "";
                 }
             }
         }
 
         private void cmdConfirmar_Click(object sender, EventArgs e)
         {
-            if (grdAviso.RowCount > 0)
+            if (grdAgendaContatos.RowCount > 0)
             {
-                BDAvisos objAviso = new BDAvisos();
-                objAviso.cpID = grdAviso.SelectedRows[0].Cells[0].Value.ToString();
-                objAviso.cpConfirmado = "S";
-                objAviso.AlteraDados(LCaminhoBanco);
+                BDAgendarContato objContatoAgendado = new BDAgendarContato();
+                objContatoAgendado.cpID = grdAgendaContatos.SelectedRows[0].Cells[0].Value.ToString();
+                objContatoAgendado.cpAtendido = "S";
+                objContatoAgendado.AlteraDados(LCaminhoBanco);
             }
             CarregaAvisos();
         }

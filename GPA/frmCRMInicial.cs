@@ -29,21 +29,6 @@ namespace Formularios
 
             SEGUsuario sEGUsuario = new SEGUsuario();
             List<SEGUsuario> lstUsuario = sEGUsuario.CarregaDados(LCaminhoBanco, inUsuario, "", "", "");
-
-
-            BDParametros objParametros = new BDParametros();
-            List<BDParametros> lstParametros = objParametros.CarregaDados(LCaminhoBanco);
-            if (lstParametros.Count > 0)
-            {
-                if (lstParametros[0].cpEmpresaDR != "")
-                {
-                    BDCadastroGeral objCadastroGeral = new BDCadastroGeral();
-                    List<BDCadastroGeral> lstCadastroGeral = objCadastroGeral.CarregaDados(LCaminhoBanco, lstParametros[0].cpEmpresaDR, "", "", "", "", "", "", "", "", "");
-                    labNomeEmpresa.Text = lstCadastroGeral[0].RazaoSocial.ToString();
-                }
-            }
-
-
         }
 
         private void frmCRMInicial_Load(object sender, EventArgs e)
@@ -379,17 +364,28 @@ namespace Formularios
                 NotifyAvisos.BalloonTipText = "Você possui " + lstAvisos.Count + " avisos pendentes!";
                 NotifyAvisos.Icon = SystemIcons.Exclamation;
                 NotifyAvisos.ShowBalloonTip(800);
+                NotifyAvisos.Visible = true;
             }
 
             BDAgendarContato objAgendaContato = new BDAgendarContato();
             objAgendaContato.cpIDUsuarioDR = LUsuario;
+            objAgendaContato.cpAtendido = "N";
             List<BDAgendarContato> lstAgendarContato = objAgendaContato.CarregaDados(LCaminhoBanco);
             if (lstAgendarContato.Count > 0)
             {
-                NotifyAvisos.BalloonTipTitle = "GPA - Agenda Contatos";
-                NotifyAvisos.BalloonTipText = "Você possui " + lstAgendarContato.Count + " agendamentos de contato pendentes!";
-                NotifyAvisos.Icon = SystemIcons.Exclamation;
-                NotifyAvisos.ShowBalloonTip(800);
+                int Contador = 0;
+                foreach (BDAgendarContato ContatoAgendado in lstAgendarContato)
+                {
+                    DateTime Hoje = DateTime.Today;
+                    if (Convert.ToDateTime(ContatoAgendado.cpDataContato) == Hoje)
+                    {
+                        Contador++;
+                    }
+                }
+                NotifyAgendaContato.BalloonTipTitle = "GPA - Agenda Contatos";
+                NotifyAgendaContato.BalloonTipText = "Você possui " + Contador + " agendamentos de contato pendentes!";
+                NotifyAgendaContato.Icon = SystemIcons.Exclamation;
+                NotifyAgendaContato.ShowBalloonTip(800);
             }
 
             //chrtVendasMesaMes.Series["Vendas mês"].Points.Add(500);
@@ -523,6 +519,27 @@ namespace Formularios
         {
             frmMostraAvisos frmMostraAvisos = new frmMostraAvisos(LCaminhoBanco, LUsuario);
             frmMostraAvisos.ShowDialog();
+            RealizaCargas();
+        }
+
+        private void NotifyAgendaContato_BalloonTipClicked(object sender, EventArgs e)
+        {
+            frmMostraContatosAgendados frmMostraContatosAgendados = new frmMostraContatosAgendados(LCaminhoBanco.ToString(), LUsuario);
+            frmMostraContatosAgendados.ShowDialog();
+            RealizaCargas();
+        }
+
+        private void mnuContatosAgendados_Click(object sender, EventArgs e)
+        {
+            frmMostraContatosAgendados frmMostraContatosAgendados = new frmMostraContatosAgendados(LCaminhoBanco.ToString(), LUsuario);
+            frmMostraContatosAgendados.ShowDialog();
+            RealizaCargas();
+        }
+
+        private void mnuCadAgendarContatos_Click(object sender, EventArgs e)
+        {
+            frmAgendarContato frmAgendarContato = new frmAgendarContato(LCaminhoBanco,"", LUsuario);
+            frmAgendarContato.ShowDialog();
             RealizaCargas();
         }
     }

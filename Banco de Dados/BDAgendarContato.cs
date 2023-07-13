@@ -58,7 +58,7 @@ namespace Banco_de_Dados
             {
                 if(cpFone.ToString() != "")
                 {
-                    sqlCampos += "APCAFone, ";
+                    sqlCampos += "OPACFone, ";
                     sqlconteudo += "'" + cpFone.ToString() + "',";
                 }
                 
@@ -82,6 +82,14 @@ namespace Banco_de_Dados
                     sqlconteudo += "'" + cpIDUsuarioDR.ToString() + "',";
                 }
             }
+            if(cpAtendido != null)
+            {
+                if(cpAtendido != "")
+                {
+                    sqlCampos += "OPACAtendido, ";
+                    sqlconteudo += "'" + cpAtendido.ToString() + "',";
+                }
+            }
             
 
 
@@ -100,6 +108,11 @@ namespace Banco_de_Dados
                 cmd.Connection = conexao.conectar();
                 //Executar o comando
                 cpID = cmd.ExecuteNonQuery().ToString();
+
+                cmd.CommandText = "SELECT IDENT_CURRENT ('OPAgendarContato') AS Current_Identity";
+                string LID = Convert.ToString(cmd.ExecuteScalar());
+
+                cpID = LID;
                 //Desconectar
                 conexao.desconectar();
 
@@ -111,9 +124,11 @@ namespace Banco_de_Dados
             cmd.Dispose();
         }
 
-        #region Não é necessario AlteraDados, pois só deve ser criado ou excluido
+        //#region Não é necessario AlteraDados, pois só deve ser criado ou excluido
+        //Altera dados passou a ser usado pois novo mecanismo de avisos foi implementado.
         public void AlteraDados(string inCaminhoBanco)
         {
+            LCaminhoBanco = inCaminhoBanco;
             string sSQL = "";
             string sqlconteudo = "";
             string sqlWhere = " WHERE OPAgendarContato = '" + cpID + "'";
@@ -121,11 +136,29 @@ namespace Banco_de_Dados
             sSQL = "UPDATE OPAgendarContato SET ";
 
             
+            if(cpNome !=  null)
+            {
+                if(cpNome != "")
+                {
+                    sqlconteudo += "OPACNome = '" + cpNome.ToString() + "', ";
+                }
+            }
             if (cpAtendido != null)
             {
-                sqlconteudo += "OPACAtendido = '" + cpAtendido.ToString() + "'";
+                if(cpAtendido != "")
+                {
+                    sqlconteudo += "OPACAtendido = '" + cpAtendido.ToString() + "', ";
+                }
+                
             }
-            sSQL = sSQL + sqlconteudo.Remove(sqlconteudo.Length - 1);
+            if (cpFone != null)
+            {
+                if(cpFone != "")
+                {
+                    sqlconteudo += "OPACFone = '" + cpFone.ToString() + "', ";
+                }
+            }
+            sSQL = sSQL + sqlconteudo.Remove(sqlconteudo.Length - 2);
             sSQL = sSQL + sqlWhere;
 
             Conexao conexao = new Conexao(LCaminhoBanco);
@@ -150,7 +183,7 @@ namespace Banco_de_Dados
             }
             cmd.Dispose();
         }
-        #endregion
+        //#endregion
 
 
         public List<BDAgendarContato> CarregaDados(string inCaminhoBanco)
@@ -160,19 +193,27 @@ namespace Banco_de_Dados
             List<BDAgendarContato> lstAgendarContato = new List<BDAgendarContato>();
             string slqSelect = "SELECT * FROM OPAgendarContato ";
             string sqlWhere = "WHERE ";
-            char ClausulaWhere = 'N';
+            string ClausulaWhere = "N";
 
             if (cpIDUsuarioDR != null)
             {
                 if (cpIDUsuarioDR != "")
                 {
                     sqlWhere = "WHERE OPACUsuarioDR = '" + cpIDUsuarioDR + "'";
-                    ClausulaWhere = 'S';
+                    ClausulaWhere = "S";
+                }
+            }
+            if(cpAtendido != null)
+            {
+                if(cpAtendido != "")
+                {
+                    sqlWhere += " AND OPACAtendido = '" + cpAtendido + "'";
+                    ClausulaWhere = "S";
                 }
             }
 
 
-            if (ClausulaWhere == 'S')
+            if (ClausulaWhere =="S")
             {
                 if (cpID != "")
                 {
@@ -204,6 +245,8 @@ namespace Banco_de_Dados
                     bDParametros.cpID = dr["OPAgendarContato"].ToString();
                     bDParametros.cpEmpresaDR = dr["OPACEmpresaDR"].ToString();
                     bDParametros.cpDataContato = dr["OPACDataContato"].ToString();
+                    bDParametros.cpNome = dr["OPACNome"].ToString();
+                    bDParametros.cpFone = dr["OPACFone"].ToString();
                     bDParametros.cpIDUsuarioDR = dr["OPACUsuarioDR"].ToString();
                     bDParametros.cpAtendido = dr["OPACAtendido"].ToString();
 
