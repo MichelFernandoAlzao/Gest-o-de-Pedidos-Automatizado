@@ -15,8 +15,7 @@ namespace Banco_de_Dados
         public string cpID { get; set; }
         public string cpEmpresaDR { get; set; }
         public string cpDataContato { get; set; }
-        public string cpSugestao { get; set; }
-        public string cpReclamacao { get; set; }
+        public string cpRegistro { get; set; }
         public string cpUsuarioDR { get; set; }
         public string cpMsgErro { get; set; }
 
@@ -46,25 +45,16 @@ namespace Banco_de_Dados
                 sqlconteudo += "'" + cpDataContato.ToString() + "',";
             }
 
-            if (cpSugestao != null)
+            if (cpRegistro != null)
             {
-                if (cpSugestao.ToString() != "")
+                if (cpRegistro.ToString() != "")
                 {
-                    sqlCampos += "OPRCESugestao, ";
+                    sqlCampos += "OPRCERegistro, ";
 
-                    sqlconteudo += "'" + cpSugestao.ToString() + "',";
+                    sqlconteudo += "'" + cpRegistro.ToString() + "',";
                 }
             }
 
-            if (cpReclamacao != null)
-            {
-                if (cpReclamacao.ToString() != "")
-                {
-                    sqlCampos += "OPRCEReclamacao, ";
-
-                    sqlconteudo += "'" + cpReclamacao.ToString() + "',";
-                }
-            }
 
             if (cpUsuarioDR != null)
             {
@@ -128,18 +118,15 @@ namespace Banco_de_Dados
             {
                 sqlconteudo += "OPRCEDataContato = '" + cpDataContato.ToString() + "',";
             }
-            if (cpSugestao != null)
+            if (cpRegistro != null)
             {
-                sqlconteudo += "OPRCESugestao = '" + cpSugestao.ToString() + "',";
+                sqlconteudo += "OPRCERegistro = '" + cpRegistro.ToString() + "',";
             }
             if (cpUsuarioDR != null)
             {
                 sqlconteudo += "OPRCEUsuarioDR = '" + cpUsuarioDR.ToString() + "',";
             }
-            if (cpReclamacao != null)
-            {
-                sqlconteudo += "OPRCEReclamacao = '" + cpReclamacao.ToString() + "',";
-            }
+
 
             sSQL = sSQL + sqlconteudo.Remove(sqlconteudo.Length - 1);
             sSQL = sSQL + sqlWhere;
@@ -185,7 +172,7 @@ namespace Banco_de_Dados
             {
                 if (cpEmpresaDR != "")
                 {
-                    sqlWhere = "WHERE OPAvisos = '" + cpEmpresaDR + "'";
+                    sqlWhere = "WHERE OPRCEEmpresaDR = '" + cpEmpresaDR + "'";
                     ClausulaWhere = 'S';
                 }
             }
@@ -230,8 +217,7 @@ namespace Banco_de_Dados
                     bDRegContato.cpID = dr["OPRegContatosEmpresa"].ToString();
                     bDRegContato.cpEmpresaDR = dr["OPRCEEmpresaDR"].ToString();
                     bDRegContato.cpDataContato = dr["OPRCEDataContato"].ToString();
-                    bDRegContato.cpSugestao = dr["OPRCESugestao"].ToString();
-                    bDRegContato.cpReclamacao = dr["OPRCEReclamacao"].ToString();
+                    bDRegContato.cpRegistro = dr["OPRCERegistro"].ToString();
                     bDRegContato.cpUsuarioDR = dr["OPRCEusuarioDR"].ToString();
 
                     lstRegContato.Add(bDRegContato);

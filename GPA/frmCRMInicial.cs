@@ -538,9 +538,15 @@ namespace Formularios
 
         private void mnuCadAgendarContatos_Click(object sender, EventArgs e)
         {
-            frmAgendarContato frmAgendarContato = new frmAgendarContato(LCaminhoBanco,"", LUsuario);
+            frmAgendarContato frmAgendarContato = new frmAgendarContato(LCaminhoBanco, "", LUsuario);
             frmAgendarContato.ShowDialog();
             RealizaCargas();
+        }
+
+        private void mnuCadCarteira_Click(object sender, EventArgs e)
+        {
+            frmCadCarteira frmCadCarteira = new frmCadCarteira(LCaminhoBanco, LUsuario);
+            frmCadCarteira.ShowDialog();
         }
     }
 }

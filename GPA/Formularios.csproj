@@ -67,6 +67,9 @@
     <Compile Update="frmMostraContatosAgendados.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="frmSelecionaCarteira.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="frmSelecionarUsuario.cs">
       <SubType>Form</SubType>
     </Compile>

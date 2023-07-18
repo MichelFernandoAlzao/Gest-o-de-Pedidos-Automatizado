@@ -205,8 +205,16 @@ namespace Formularios
             }
             objProduto.cpDescricao = txtDescricao.Text;
             objProduto.cpDataCadastro = DateTime.Today.ToString().Substring(0, 10);
-            objProduto.cpCodigoFabricante = txtCodFabricante.Text;
-            objProduto.cpDescFornecedor = txtDescFornecedor.Text;
+            if(txtCodFabricante.Text.Replace(" ","") != "")
+            {
+                objProduto.cpCodigoFabricante = txtCodFabricante.Text;
+            }
+            
+            if(txtDescFornecedor.Text.Replace(" ","") != "")
+            {
+                objProduto.cpDescFornecedor = txtDescFornecedor.Text;
+            }
+            
             if (LFabricante != null)
             {
                 if (LFabricante == "")
@@ -251,9 +259,11 @@ namespace Formularios
             {
                 objProduto.cpOperacional = "N";
             }
-            objProduto.cpDescritivo = txtDescritivo.Text;
-
-
+            if(txtDescritivo.Text.Replace(" ","") != "")
+            {
+                objProduto.cpDescritivo = txtDescritivo.Text;
+            }
+            
             if (LIDProduto == "")
             {
                 objProduto.InsereDados(LCaminhoBanco);

@@ -61,6 +61,7 @@
             MnuCadProdutos = new ToolStripMenuItem();
             MnuNatOperacao = new ToolStripMenuItem();
             mnuCadastraAvisos = new ToolStripMenuItem();
+            mnuCadAgendarContatos = new ToolStripMenuItem();
             vendasToolStripMenuItem = new ToolStripMenuItem();
             MnuPedidos = new ToolStripMenuItem();
             consultasToolStripMenuItem = new ToolStripMenuItem();
@@ -82,7 +83,7 @@
             pictureBox1 = new PictureBox();
             chrtVendasMesaMes = new System.Windows.Forms.DataVisualization.Charting.Chart();
             NotifyAgendaContato = new NotifyIcon(components);
-            mnuCadAgendarContatos = new ToolStripMenuItem();
+            mnuCadCarteira = new ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)grdUltimasVendas).BeginInit();
             ((System.ComponentModel.ISupportInitialize)grdUltContato).BeginInit();
             menuStrip1.SuspendLayout();
@@ -252,7 +253,7 @@
             // 
             resources.ApplyResources(cadastrosToolStripMenuItem, "cadastrosToolStripMenuItem");
             cadastrosToolStripMenuItem.BackColor = Color.Transparent;
-            cadastrosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { MnuCadEmpresas, MnuCadProdutos, MnuNatOperacao, mnuCadastraAvisos, mnuCadAgendarContatos });
+            cadastrosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { MnuCadEmpresas, MnuCadProdutos, MnuNatOperacao, mnuCadastraAvisos, mnuCadAgendarContatos, mnuCadCarteira });
             cadastrosToolStripMenuItem.Name = "cadastrosToolStripMenuItem";
             // 
             // MnuCadEmpresas
@@ -278,6 +279,12 @@
             resources.ApplyResources(mnuCadastraAvisos, "mnuCadastraAvisos");
             mnuCadastraAvisos.Name = "mnuCadastraAvisos";
             mnuCadastraAvisos.Click += mnuCadastraAvisos_Click;
+            // 
+            // mnuCadAgendarContatos
+            // 
+            resources.ApplyResources(mnuCadAgendarContatos, "mnuCadAgendarContatos");
+            mnuCadAgendarContatos.Name = "mnuCadAgendarContatos";
+            mnuCadAgendarContatos.Click += mnuCadAgendarContatos_Click;
             // 
             // vendasToolStripMenuItem
             // 
@@ -425,11 +432,11 @@
             resources.ApplyResources(NotifyAgendaContato, "NotifyAgendaContato");
             NotifyAgendaContato.BalloonTipClicked += NotifyAgendaContato_BalloonTipClicked;
             // 
-            // mnuCadAgendarContatos
+            // mnuCadCarteira
             // 
-            resources.ApplyResources(mnuCadAgendarContatos, "mnuCadAgendarContatos");
-            mnuCadAgendarContatos.Name = "mnuCadAgendarContatos";
-            mnuCadAgendarContatos.Click += mnuCadAgendarContatos_Click;
+            resources.ApplyResources(mnuCadCarteira, "mnuCadCarteira");
+            mnuCadCarteira.Name = "mnuCadCarteira";
+            mnuCadCarteira.Click += mnuCadCarteira_Click;
             // 
             // frmCRMInicial
             // 
@@ -522,5 +529,6 @@
         private NotifyIcon NotifyAgendaContato;
         private ToolStripMenuItem mnuContatosAgendados;
         private ToolStripMenuItem mnuCadAgendarContatos;
+        private ToolStripMenuItem mnuCadCarteira;
     }
 }

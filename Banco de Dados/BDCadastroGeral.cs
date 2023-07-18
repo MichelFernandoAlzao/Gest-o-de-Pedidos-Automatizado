@@ -15,6 +15,7 @@ namespace Banco_de_Dados
         public string InscricaoEstadual { get; set; }
         public string Vendedor { get; set; }
         public string Cliente { get; set; }
+        public string Carteira { get; set; }
         public string Distribuidor { get; set; }
         public string Fabricante { get; set; }
         public string Fornecedor { get; set; }
@@ -73,6 +74,12 @@ namespace Banco_de_Dados
                 sqlCampos += "CDCECliente, ";
 
                 sqlconteudo += "'" + Cliente.ToString() + "',";
+            }
+            if (Carteira != "")
+            {
+                sqlCampos += "CDCECarteiraDR, ";
+
+                sqlconteudo += "'" + Carteira.ToString() + "',";
             }
             if (Distribuidor != "")
             {
@@ -197,6 +204,10 @@ namespace Banco_de_Dados
             if (Cliente != null)
             {
                 sqlconteudo += "CDCECliente = '" + Cliente.ToString() + "',";
+            }
+            if (Carteira != null)
+            {
+                sqlconteudo += "CDCECarteiraDR = '" + Carteira.ToString() + "',";
             }
             if (Distribuidor != null)
             {
@@ -392,6 +403,7 @@ namespace Banco_de_Dados
                     bDCadastro.InscricaoEstadual = dr["CDCEInscricao"].ToString();
                     bDCadastro.Vendedor = dr["CDCEVendedor"].ToString();
                     bDCadastro.Cliente = dr["CDCECliente"].ToString();
+                    bDCadastro.Carteira = dr["CDCECarteiraDR"].ToString();
                     bDCadastro.Distribuidor = dr["CDCEDistribuidor"].ToString();
                     bDCadastro.Fabricante = dr["CDCEFabricante"].ToString();
                     bDCadastro.Fornecedor = dr["CDCEFornecedor"].ToString();

@@ -157,7 +157,7 @@ namespace Banco_de_Dados
                 //Executar o comando
                 cmd.ExecuteNonQuery();
 
-                cmd.CommandText = "SELECT IDENT_CURRENT ('OPPPedido') AS Current_Identity";
+                cmd.CommandText = "SELECT IDENT_CURRENT ('CDPRodutos') AS Current_Identity";
                 string LID = Convert.ToString(cmd.ExecuteScalar());
 
                 cpID = LID;

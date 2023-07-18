@@ -9,6 +9,7 @@ namespace GPA
         string LCaminhoBanco = "";
         public string LID = "";
         public string LRazaoSocial = "";
+        public string LIDCarteira = "";
         string LRazaoFantasia = "";
         string LCNPJ = "";
         string LInscricaoEstadual = "";
@@ -180,6 +181,10 @@ namespace GPA
             if (Convert.ToString(txtVendedor.Text) == "")
             {
                 objCadastro.Vendedor = "";
+            }
+            if(LIDCarteira != "")
+            {
+                objCadastro.Carteira = LIDCarteira;
             }
 
 
@@ -437,6 +442,22 @@ namespace GPA
                 {
                     MessageBox.Show("Comprimento de CNPJ invalido", "GPA", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
+                }
+            }
+        }
+
+        private void txtCarteira_KeyDown(object sender, KeyEventArgs e)
+        {
+            frmSelecionaCarteira frmSelecionaCarteira = new frmSelecionaCarteira(LCaminhoBanco, this, LUsuario);
+            frmSelecionaCarteira.ShowDialog();
+            if (LIDCarteira != "")
+            {
+                BDCagCarteira objCarteira = new BDCagCarteira();
+                objCarteira.cpID = LIDCarteira;
+                List<BDCagCarteira> lstCarteira = objCarteira.CarregaDados(LCaminhoBanco);
+                if (lstCarteira.Count > 0)
+                {
+                    txtCarteira.Text = lstCarteira[0].cpDescricao.ToString();
                 }
             }
         }

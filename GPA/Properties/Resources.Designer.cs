@@ -103,6 +103,16 @@ namespace Formularios.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap vecteezy_pattern_with_geometric_elements_light_blue_to_dark_blue_17216459 {
+            get {
+                object obj = ResourceManager.GetObject("vecteezy_pattern-with-geometric-elements-light-blue-to-dark-blue_17216459", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap verificar {
             get {
                 object obj = ResourceManager.GetObject("verificar", resourceCulture);

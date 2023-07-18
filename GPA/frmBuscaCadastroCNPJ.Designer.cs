@@ -33,23 +33,27 @@
             cmdSair = new Button();
             cmdBuscar = new Button();
             lbCabeçallho = new Label();
+            txtRazaoSocial = new TextBox();
+            labRazao = new Label();
+            labCNPJ = new Label();
             SuspendLayout();
             // 
             // txtCNPJ
             // 
-            txtCNPJ.Location = new Point(22, 61);
+            txtCNPJ.Location = new Point(452, 61);
             txtCNPJ.Mask = "00,000,000/0000-00";
             txtCNPJ.Name = "txtCNPJ";
-            txtCNPJ.Size = new Size(276, 23);
+            txtCNPJ.Size = new Size(153, 23);
             txtCNPJ.TabIndex = 0;
+            txtCNPJ.KeyDown += txtCNPJ_KeyDown;
             // 
             // cmdSair
             // 
             cmdSair.BackgroundImage = Properties.Resources.logout;
             cmdSair.BackgroundImageLayout = ImageLayout.Stretch;
-            cmdSair.Location = new Point(306, 9);
+            cmdSair.Location = new Point(612, 9);
             cmdSair.Name = "cmdSair";
-            cmdSair.Size = new Size(30, 30);
+            cmdSair.Size = new Size(29, 29);
             cmdSair.TabIndex = 14;
             cmdSair.UseVisualStyleBackColor = true;
             cmdSair.Click += cmdSair_Click;
@@ -58,12 +62,11 @@
             // 
             cmdBuscar.BackgroundImage = (Image)resources.GetObject("cmdBuscar.BackgroundImage");
             cmdBuscar.BackgroundImageLayout = ImageLayout.Stretch;
-            cmdBuscar.Location = new Point(304, 54);
+            cmdBuscar.Location = new Point(611, 54);
             cmdBuscar.Name = "cmdBuscar";
-            cmdBuscar.Size = new Size(30, 30);
+            cmdBuscar.Size = new Size(29, 29);
             cmdBuscar.TabIndex = 13;
             cmdBuscar.UseVisualStyleBackColor = true;
-            cmdBuscar.Click += cmdBuscar_Click;
             // 
             // lbCabeçallho
             // 
@@ -74,10 +77,40 @@
             lbCabeçallho.ForeColor = Color.Black;
             lbCabeçallho.Location = new Point(12, 9);
             lbCabeçallho.Name = "lbCabeçallho";
-            lbCabeçallho.Size = new Size(288, 30);
+            lbCabeçallho.Size = new Size(594, 29);
             lbCabeçallho.TabIndex = 12;
             lbCabeçallho.Text = "Cadastros por CNPJ";
             lbCabeçallho.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // txtRazaoSocial
+            // 
+            txtRazaoSocial.Location = new Point(12, 61);
+            txtRazaoSocial.Name = "txtRazaoSocial";
+            txtRazaoSocial.Size = new Size(434, 23);
+            txtRazaoSocial.TabIndex = 15;
+            txtRazaoSocial.KeyDown += txtRazaoSocial_KeyDown;
+            // 
+            // labRazao
+            // 
+            labRazao.AutoSize = true;
+            labRazao.BackColor = Color.Transparent;
+            labRazao.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            labRazao.Location = new Point(12, 43);
+            labRazao.Name = "labRazao";
+            labRazao.Size = new Size(99, 15);
+            labRazao.TabIndex = 16;
+            labRazao.Text = "Razao Social - F1";
+            // 
+            // labCNPJ
+            // 
+            labCNPJ.AutoSize = true;
+            labCNPJ.BackColor = Color.Transparent;
+            labCNPJ.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            labCNPJ.Location = new Point(452, 43);
+            labCNPJ.Name = "labCNPJ";
+            labCNPJ.Size = new Size(34, 15);
+            labCNPJ.TabIndex = 17;
+            labCNPJ.Text = "CNPJ";
             // 
             // frmBuscaCadastroCNPJ
             // 
@@ -85,8 +118,11 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Info;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
-            ClientSize = new Size(346, 115);
+            ClientSize = new Size(653, 115);
             ControlBox = false;
+            Controls.Add(labCNPJ);
+            Controls.Add(labRazao);
+            Controls.Add(txtRazaoSocial);
             Controls.Add(cmdSair);
             Controls.Add(cmdBuscar);
             Controls.Add(lbCabeçallho);
@@ -104,5 +140,8 @@
         private Button cmdSair;
         private Button cmdBuscar;
         private Label lbCabeçallho;
+        private TextBox txtRazaoSocial;
+        private Label labRazao;
+        private Label labCNPJ;
     }
 }

@@ -16,13 +16,11 @@ namespace Formularios
         string LCaminhoBanco;
         public string LID = "";
         public string LRazaoSocial = "";
-        public string LIDProduto = "";
         public string LIDRegistro = "";
+        public string LIDRegistroSelecionado = "";
         string LDataContato = "";
-        string LSugestoes = "";
-        string LReclamacoes = "";
+        string LRegistro = "";
         string LVendedor = "";
-        string LIDPRodContato = "";
         string LUsuario = "";
 
         public frmContatosEmpresas(string inCaminhoBanco, string inUsuario)
@@ -39,25 +37,10 @@ namespace Formularios
 
         private void cmdNovo_Click(object sender, EventArgs e)
         {
-            LID = "";
             LIDRegistro = "";
             LDataContato = "";
-            LSugestoes = "";
-            LReclamacoes = "";
             txtRegistro.Text = "";
-            txtEmpresa.Text = "";
             txtDataContato.Text = "";
-            txtSugestoes.Text = "";
-            txtReclamacoes.Text = "";
-            grdProdSugeridos.Rows.Clear();
-            TxtContato2.Text = "";
-            labCtt2.Visible = false;
-            TxtContato2.Visible = false;
-            TxtContato1.Text = "";
-            labCtt1.Visible = false;
-            TxtContato1.Visible = false;
-
-
         }
 
         private void cmdGravar_Click(object sender, EventArgs e)
@@ -80,19 +63,19 @@ namespace Formularios
                 MessageBox.Show("Data em formato invalido", "GPA");
                 return;
             }
-            if (txtSugestoes.Text != "")
+            if (txtRegistro.Text != "")
             {
-                objContato.cpSugestao = txtSugestoes.Text;
-            }
-            if (txtReclamacoes.Text != "")
-            {
-                objContato.cpReclamacao = txtReclamacoes.Text;
+                objContato.cpRegistro = txtRegistro.Text;
             }
             objContato.cpUsuarioDR = LUsuario;
 
-            if (txtSugestoes.Text.ToString().Replace(" ", "") == "" && txtReclamacoes.Text.ToString().Replace(" ", "") == "")
+            if (txtRegistro.Text.ToString().Replace(" ", "") == "")
             {
-                MessageBox.Show("Nenhuma reclamação ou Sugestão informada, impossivel gravar!", "GPA", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                MessageBox.Show("Nenhum texto inserido no registro, impossivel gravar!", "GPA", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+            }
+            if (txtRegistro.Text.Length > 1000)
+            {
+                MessageBox.Show("Registro com mais de 1000 caracteres, impossivel gravar!", "GPA", MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
 
             if (LIDRegistro == "")
@@ -117,146 +100,44 @@ namespace Formularios
 
             if (objContato.cpID != "")
             {
-                LIDRegistro = objContato.cpID;
-                txtRegistro.Text = LIDRegistro;
+                MessageBox.Show("Registro Gravado com Sucesso!", "GPA", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
-            MostraDados();
+            CarregaGridRegistros();
         }
 
         private void cmdExcluir_Click(object sender, EventArgs e)
         {
+            if (grdRegistros.RowCount == 0) return;
             BDRegistroContato objRegContato = new BDRegistroContato();
-            objRegContato.cpID = LIDRegistro;
+            objRegContato.cpID = grdRegistros.SelectedRows[0].Cells[0].Value.ToString();
             objRegContato.Excluir(LCaminhoBanco);
-            LID = "";
             LIDRegistro = "";
             LDataContato = "";
-            LSugestoes = "";
-            LReclamacoes = "";
-            txtEmpresa.Text = "";
+            LRegistro = "";
             txtDataContato.Text = "";
-            txtSugestoes.Text = "";
-            txtReclamacoes.Text = "";
             txtRegistro.Text = "";
-            grdProdSugeridos.Rows.Clear();
+            CarregaGridRegistros();
         }
 
-        public void MostraDados()
+        public void CarregaGridRegistros()
         {
-            BDRegistroContato objRegContato = new BDRegistroContato();
-            objRegContato.cpID = LIDRegistro;
-            List<BDRegistroContato> lstRegContato = objRegContato.CarregaDados(LCaminhoBanco);
-            if (lstRegContato.Count > 0)
+            grdRegistros.Rows.Clear();
+            BDRegistroContato objregistroContato = new BDRegistroContato();
+            objregistroContato.cpEmpresaDR = LID;
+            List<BDRegistroContato> lstRegistrosporEmpresa = objregistroContato.CarregaDados(LCaminhoBanco);
+
+            if (lstRegistrosporEmpresa.Count > 0)
             {
-                LID = lstRegContato[0].cpEmpresaDR;
-                if (LID != "")
+                foreach (BDRegistroContato registro in lstRegistrosporEmpresa)
                 {
-                    BDCadastroGeral objEmpresa = new BDCadastroGeral();
-                    List<BDCadastroGeral> lstEmpresa = objEmpresa.CarregaDados(LCaminhoBanco, LID, "", "", "", "", "", "", "", "", "");
-                    txtEmpresa.Text = lstEmpresa[0].RazaoSocial.ToString();
-                }
-            }
-            txtRegistro.Text = lstRegContato[0].cpID.ToString();
-            txtDataContato.Text = lstRegContato[0].cpDataContato.ToString().Substring(0, 10);
-            txtSugestoes.Text = lstRegContato[0].cpSugestao.ToString();
-            txtReclamacoes.Text = lstRegContato[0].cpReclamacao.ToString();
-
-            CarregaGridProdutos();
-
-
-        }
-
-        private void cmdRemover_Click(object sender, EventArgs e)
-        {
-            if (LIDPRodContato == "")
-            {
-                MessageBox.Show("Nenhum Produto selecionado", "GPA");
-                return;
-            }
-            BDProdutosContato objProdutoContato = new BDProdutosContato();
-            objProdutoContato.cpID = LIDPRodContato;
-            objProdutoContato.Excluir(LCaminhoBanco);
-            if (objProdutoContato.cpMsgErro != "")
-            {
-                MessageBox.Show(objProdutoContato.cpMsgErro, "GPA");
-                return;
-            }
-            else
-            {
-                MessageBox.Show("Exclusão Realizada");
-            }
-
-            CarregaGridProdutos();
-        }
-
-        public void CarregaGridProdutos()
-        {
-            grdProdSugeridos.Rows.Clear();
-            BDProdutosContato objProdContato = new BDProdutosContato();
-            objProdContato.cpRegContatoDR = LIDRegistro;
-            List<BDProdutosContato> lstProdContato = objProdContato.CarregaDados(LCaminhoBanco);
-
-            if (lstProdContato.Count > 0)
-            {
-                foreach (BDProdutosContato item in lstProdContato)
-                {
-                    string DescProduto;
-                    BDCadProdutos objProduto = new BDCadProdutos();
-                    objProduto.cpID = item.cpProdutoDR;
-                    List<BDCadProdutos> lstProduto = objProduto.CarregaDados(LCaminhoBanco);
                     string[] Row = new string[]
                     {
-                            item.cpID.ToString(),
-                            lstProduto[0].cpDescricao.ToString(),
-                            item.cpValorOfertado.ToString(),
-                            item.cpQuantidade.ToString()
+                            registro.cpID.ToString(),
+                            registro.cpDataContato.ToString(),
+                            registro.cpRegistro.ToString()
                     };
-                    grdProdSugeridos.Rows.Add(Row);
-                }
-            }
-        }
-
-        private void cmdAdicionar_Click(object sender, EventArgs e)
-        {
-            if (LIDRegistro == "")
-            {
-                MessageBox.Show("Nenhum registro selecionado!", "GPA");
-                return;
-            }
-
-            if (LIDProduto == "")
-            {
-                MessageBox.Show("Nenhum Produto selecionado!", "GPA");
-                return;
-            }
-            BDProdutosContato objProdContato = new BDProdutosContato();
-            objProdContato.cpProdutoDR = LIDProduto;
-            objProdContato.cpRegContatoDR = LIDRegistro;
-            objProdContato.cpValorOfertado = txtValorOfertado.Text;
-            objProdContato.cpQuantidade = txtQuantidade.Text;
-
-            objProdContato.InsereDados(LCaminhoBanco);
-
-            txtDescProduto.Text = "";
-            txtValorOfertado.Text = "";
-            txtQuantidade.Text = "";
-
-            CarregaGridProdutos();
-        }
-
-        private void txtProduto_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.F1)
-            {
-                frmSelecionaProduto objSelecProduto = new frmSelecionaProduto(LCaminhoBanco, this, "", txtDescProduto.Text, "", "");
-                objSelecProduto.ShowDialog();
-                if (LIDProduto != "")
-                {
-                    BDCadProdutos objProduto = new BDCadProdutos();
-                    objProduto.cpID = LIDProduto;
-                    List<BDCadProdutos> lstProduto = objProduto.CarregaDados(LCaminhoBanco);
-                    txtDescProduto.Text = lstProduto[0].cpDescricao.ToString();
+                    grdRegistros.Rows.Add(Row);
                 }
             }
         }
@@ -265,6 +146,14 @@ namespace Formularios
         {
             if (e.KeyCode == Keys.F1)
             {
+                TxtContato2.Text = "";
+                labCtt2.Visible = false;
+                TxtContato2.Visible = false;
+                TxtContato1.Text = "";
+                labCtt1.Visible = false;
+                TxtContato1.Visible = false;
+                txtRegistro.Text = "";
+                grdRegistros.Rows.Clear();
                 frmSelecionaEmpresa objTela = new frmSelecionaEmpresa(LCaminhoBanco, this, "", txtEmpresa.Text.ToString(), "", "", LUsuario, "", "", "");
                 objTela.ShowDialog();
                 if (LRazaoSocial != "")
@@ -285,6 +174,7 @@ namespace Formularios
                         labCtt2.Visible = true;
                         TxtContato2.Visible = true;
                     }
+                    CarregaGridRegistros();
                 }
             }
         }
@@ -294,28 +184,19 @@ namespace Formularios
 
         }
 
-        private void grdProdSugeridos_SelectionChanged(object sender, EventArgs e)
+        private void grdRegistros_SelectionChanged(object sender, EventArgs e)
         {
-            if (grdProdSugeridos.SelectedRows.Count == 0)
+            if (grdRegistros.SelectedRows.Count == 0)
             {
                 return;
             }
-            LIDPRodContato = grdProdSugeridos.SelectedRows[0].Cells[0].Value.ToString();
+            LIDRegistroSelecionado = grdRegistros.SelectedRows[0].Cells[0].Value.ToString();
+            BDRegistroContato objRegistro = new BDRegistroContato();
+            objRegistro.cpID = LIDRegistroSelecionado;
+            List<BDRegistroContato> lstRegistro = objRegistro.CarregaDados(LCaminhoBanco);
+            txtTranscricao.Text = lstRegistro[0].cpRegistro.ToString();
         }
 
-        private void txtRegistro_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.F1)
-            {
-                frmSelecionarRegistroContato frmSelecionarRegistroContato = new frmSelecionarRegistroContato(LCaminhoBanco, this, txtRegistro.Text);
-                frmSelecionarRegistroContato.ShowDialog();
-                if (LIDRegistro != "")
-                {
-                    MostraDados();
-                }
-            }
-
-        }
 
         private void txtDataContato_Leave(object sender, EventArgs e)
         {

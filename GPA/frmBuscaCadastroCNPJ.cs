@@ -23,10 +23,10 @@ namespace Formularios
             InitializeComponent();
         }
 
-        private void cmdBuscar_Click(object sender, EventArgs e)
+        private void Buscar()
         {
             BDCadastroGeral objCadastro = new BDCadastroGeral();
-            List<BDCadastroGeral> lstCadastro = objCadastro.CarregaDados(LCaminhoBanco, "", "", "", txtCNPJ.Text.ToString(), "", "", "", "", "", "");
+            List<BDCadastroGeral> lstCadastro = objCadastro.CarregaDados(LCaminhoBanco, "", txtRazaoSocial.Text.ToString(), "", txtCNPJ.Text.ToString(), "", "", "", "", "", "");
             if (lstCadastro.Count > 0)
             {
                 if (lstCadastro[0].Vendedor == LUsusario)
@@ -53,6 +53,18 @@ namespace Formularios
         private void cmdSair_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txtCNPJ_KeyDown(object sender, KeyEventArgs e)
+        {
+            txtRazaoSocial.Text = "";
+            Buscar();
+        }
+
+        private void txtRazaoSocial_KeyDown(object sender, KeyEventArgs e)
+        {
+            txtCNPJ.Text = "";
+            Buscar();
         }
     }
 }

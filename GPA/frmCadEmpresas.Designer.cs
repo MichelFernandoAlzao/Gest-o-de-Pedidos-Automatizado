@@ -60,7 +60,7 @@
             cmdUltVenda = new Button();
             button2 = new Button();
             label5 = new Label();
-            txtRegVenda = new TextBox();
+            txtCarteira = new TextBox();
             txtCNPJ = new MaskedTextBox();
             chkAtivo = new CheckBox();
             SuspendLayout();
@@ -379,17 +379,17 @@
             label5.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label5.Location = new Point(12, 218);
             label5.Name = "label5";
-            label5.Size = new Size(123, 15);
+            label5.Size = new Size(75, 15);
             label5.TabIndex = 34;
-            label5.Text = "Região de Venda - F1";
+            label5.Text = "Carteira - F1";
             // 
-            // txtRegVenda
+            // txtCarteira
             // 
-            txtRegVenda.Enabled = false;
-            txtRegVenda.Location = new Point(12, 236);
-            txtRegVenda.Name = "txtRegVenda";
-            txtRegVenda.Size = new Size(283, 23);
-            txtRegVenda.TabIndex = 7;
+            txtCarteira.Location = new Point(12, 236);
+            txtCarteira.Name = "txtCarteira";
+            txtCarteira.Size = new Size(209, 23);
+            txtCarteira.TabIndex = 7;
+            txtCarteira.KeyDown += txtCarteira_KeyDown;
             // 
             // txtCNPJ
             // 
@@ -422,7 +422,7 @@
             Controls.Add(chkAtivo);
             Controls.Add(txtCNPJ);
             Controls.Add(label5);
-            Controls.Add(txtRegVenda);
+            Controls.Add(txtCarteira);
             Controls.Add(button2);
             Controls.Add(cmdUltVenda);
             Controls.Add(label4);
@@ -497,5 +497,6 @@
         private TextBox txtRegVenda;
         private MaskedTextBox txtCNPJ;
         private CheckBox chkAtivo;
+        private TextBox txtCarteira;
     }
 }
