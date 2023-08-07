@@ -117,970 +117,979 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="&gt;&gt;label4.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="MnuPedidos.Size" type="System.Drawing.Size, System.Drawing">
-    <value>116, 22</value>
-  </data>
-  <data name="rankingDeVendasToolStripMenuItem.Text" xml:space="preserve">
-    <value>Ranking de Vendas</value>
-  </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="label6.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
-  </data>
-  <data name="&gt;&gt;openFileDialog1.Name" xml:space="preserve">
-    <value>openFileDialog1</value>
-  </data>
-  <data name="&gt;&gt;consultasToolStripMenuItem.Name" xml:space="preserve">
-    <value>consultasToolStripMenuItem</value>
-  </data>
-  <data name="menuStrip1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1008, 24</value>
-  </data>
-  <data name="grdUltContato.RowHeadersWidth" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;labVlrMeta.Name" xml:space="preserve">
-    <value>labVlrMeta</value>
-  </data>
-  <data name="mnuBuscaCadastros.Size" type="System.Drawing.Size, System.Drawing">
-    <value>177, 22</value>
-  </data>
-  <data name="labProgressao.Text" xml:space="preserve">
-    <value>Progressão%:</value>
-  </data>
-  <data name="&gt;&gt;pictureBox1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;registrosDeContatosToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="controleContatoToolStripMenuItem.Text" xml:space="preserve">
-    <value>Controle\Contato</value>
-  </data>
-  <data name="labConsolidado.AutoSize" type="System.Boolean, mscorlib">
+  <data name="labVlrMeta.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="&gt;&gt;VRazao.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;NotifyAgendaContato.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NotifyIcon, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;grdUltContato.Name" xml:space="preserve">
-    <value>grdUltContato</value>
+  <data name="labProgressao.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
   </data>
-  <data name="&gt;&gt;txtObjetivoDiario.ZOrder" xml:space="preserve">
-    <value>10</value>
+  <data name="&gt;&gt;pgrsbMeta.Name" xml:space="preserve">
+    <value>pgrsbMeta</value>
   </data>
-  <data name="&gt;&gt;DataVenda.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="label7.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9pt, style=Bold</value>
   </data>
-  <data name="&gt;&gt;txtObjetivoDiario.Name" xml:space="preserve">
-    <value>txtObjetivoDiario</value>
+  <data name="&gt;&gt;pictureBox1.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
-  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>150, 23</value>
+  <data name="&gt;&gt;pgrsbMeta.ZOrder" xml:space="preserve">
+    <value>15</value>
   </data>
-  <data name="labVlrConsolidado.TabIndex" type="System.Int32, mscorlib">
-    <value>33</value>
-  </data>
-  <data name="&gt;&gt;labVlrConsolidado.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;NotifyAvisos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NotifyIcon, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="$this.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="&gt;&gt;labVlrProgressao.ZOrder" xml:space="preserve">
-    <value>4</value>
+  <data name="&gt;&gt;label7.Name" xml:space="preserve">
+    <value>label7</value>
   </data>
-  <data name="&gt;&gt;MnuCadProdutos.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="labMeta.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
-    <value>CenterScreen</value>
-  </data>
-  <data name="pictureBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 50</value>
-  </data>
-  <data name="&gt;&gt;MnuMeusClientes.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="label8.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 9pt, style=Bold, Underline</value>
-  </data>
-  <data name="&gt;&gt;registrosDeContatosToolStripMenuItem.Name" xml:space="preserve">
-    <value>registrosDeContatosToolStripMenuItem</value>
-  </data>
-  <data name="labProgressao.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="&gt;&gt;vendasToolStripMenuItem.Name" xml:space="preserve">
-    <value>vendasToolStripMenuItem</value>
-  </data>
-  <data name="label8.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;labMeta.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="MnuConsultaPedidos.Size" type="System.Drawing.Size, System.Drawing">
-    <value>177, 22</value>
-  </data>
-  <data name="pgrsbMeta.Location" type="System.Drawing.Point, System.Drawing">
-    <value>248, 45</value>
-  </data>
-  <data name="&gt;&gt;label8.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;labMeta.ZOrder" xml:space="preserve">
-    <value>13</value>
-  </data>
-  <data name="&gt;&gt;labVlrConsolidado.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;labProgressao.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;label7.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;pictureBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="labProgressao.Size" type="System.Drawing.Size, System.Drawing">
     <value>78, 15</value>
   </data>
-  <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 373</value>
-  </data>
-  <data name="MnuRegistraContato.Text" xml:space="preserve">
-    <value>Registra Contatos</value>
-  </data>
-  <data name="&gt;&gt;menuStrip1.Name" xml:space="preserve">
-    <value>menuStrip1</value>
-  </data>
-  <data name="&gt;&gt;vendasToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;mnuCadAgendarContatos.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="MnuParametros.Text" xml:space="preserve">
-    <value>Parametros</value>
-  </data>
-  <data name="mnuAvisos.Text" xml:space="preserve">
-    <value>Avisos</value>
-  </data>
-  <data name="vendasPorVendedorToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>189, 22</value>
-  </data>
-  <data name="&gt;&gt;cadastrosToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="txtObjetivoDiario.Size" type="System.Drawing.Size, System.Drawing">
-    <value>113, 23</value>
-  </data>
-  <data name="&gt;&gt;chrtVendasMesaMes.Parent" xml:space="preserve">
+  <data name="&gt;&gt;label8.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="RazSocial.Width" type="System.Int32, mscorlib">
-    <value>210</value>
+  <data name="labProgressao.Text" xml:space="preserve">
+    <value>Progressão%:</value>
   </data>
-  <data name="labVlrMeta.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>None</value>
+  <data name="&gt;&gt;MnuConsultaPedidos.Name" xml:space="preserve">
+    <value>MnuConsultaPedidos</value>
   </data>
-  <data name="labVlrProgressao.AutoSize" type="System.Boolean, mscorlib">
+  <data name="&gt;&gt;RazSocial.Name" xml:space="preserve">
+    <value>RazSocial</value>
+  </data>
+  <data name="NotifyAvisos.Visible" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="&gt;&gt;pictureBox1.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="MnuNatOperacao.Size" type="System.Drawing.Size, System.Drawing">
-    <value>150, 22</value>
-  </data>
-  <data name="&gt;&gt;Numero.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="MnuNatOperacao.Text" xml:space="preserve">
-    <value>Nat. Operação</value>
-  </data>
-  <data name="label10.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 27</value>
-  </data>
-  <data name="&gt;&gt;NotifyAvisos.Name" xml:space="preserve">
-    <value>NotifyAvisos</value>
-  </data>
-  <data name="&gt;&gt;grdUltContato.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="txtObjetivoDiario.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="&gt;&gt;grdUltimasVendas.Name" xml:space="preserve">
-    <value>grdUltimasVendas</value>
-  </data>
-  <data name="&gt;&gt;mnuBuscaCadastros.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="DataVenda.HeaderText" xml:space="preserve">
-    <value>Data</value>
-  </data>
-  <data name="&gt;&gt;MnuUltimasVendas.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;mnuAvisos.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;labNomeEmpresa.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="VRazao.Width" type="System.Int32, mscorlib">
-    <value>210</value>
-  </data>
-  <data name="&gt;&gt;labNomeEmpresa.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="vendasToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>103, 20</value>
-  </data>
-  <data name="&gt;&gt;MnuConsultaPedidos.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="label7.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 9pt, style=Bold</value>
-  </data>
-  <data name="rankingDeVendasToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>189, 22</value>
-  </data>
-  <data name="Numero.Width" type="System.Int32, mscorlib">
-    <value>40</value>
-  </data>
-  <data name="labMeta.Size" type="System.Drawing.Size, System.Drawing">
-    <value>37, 15</value>
-  </data>
-  <data name="&gt;&gt;labProgressao.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;controleContatoToolStripMenuItem.Name" xml:space="preserve">
-    <value>controleContatoToolStripMenuItem</value>
-  </data>
-  <data name="relatóriosToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>71, 20</value>
-  </data>
-  <data name="&gt;&gt;mnuContatosAgendados.Name" xml:space="preserve">
-    <value>mnuContatosAgendados</value>
-  </data>
-  <data name="grdUltimasVendas.Size" type="System.Drawing.Size, System.Drawing">
-    <value>337, 230</value>
-  </data>
-  <data name="&gt;&gt;label8.Name" xml:space="preserve">
-    <value>label8</value>
-  </data>
-  <data name="&gt;&gt;MnuCadEmpresas.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="MnuRegistraContato.Size" type="System.Drawing.Size, System.Drawing">
-    <value>167, 22</value>
-  </data>
-  <data name="label10.Text" xml:space="preserve">
-    <value>Empresa:</value>
-  </data>
-  <data name="parametrosToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>86, 20</value>
-  </data>
-  <data name="label10.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 9pt, style=Bold</value>
-  </data>
-  <data name="&gt;&gt;MnuMeusClientes.Name" xml:space="preserve">
-    <value>MnuMeusClientes</value>
-  </data>
-  <data name="labVlrConsolidado.Text" xml:space="preserve">
-    <value>xxxx,xx</value>
-  </data>
-  <data name="grdUltimasVendas.RowHeadersWidth" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="MnuCadProdutos.Text" xml:space="preserve">
-    <value>Produtos</value>
-  </data>
-  <data name="&gt;&gt;textBox2.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;labMeta.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="label6.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="&gt;&gt;mnuContatosAgendados.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;mnuCadCarteira.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="consultasToolStripMenuItem.Text" xml:space="preserve">
-    <value>Consultas</value>
-  </data>
-  <data name="VValor.HeaderText" xml:space="preserve">
-    <value>Valor</value>
-  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="label7.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
   </data>
-  <data name="labVlrMeta.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="textBox2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>129, 45</value>
+  </data>
+  <data name="mnuCadAgendarContatos.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="contatosAgendadosPorDataToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>233, 22</value>
+  </data>
+  <data name="&gt;&gt;labVlrConsolidado.Name" xml:space="preserve">
+    <value>labVlrConsolidado</value>
+  </data>
+  <data name="&gt;&gt;mnuBuscaCadastros.Name" xml:space="preserve">
+    <value>mnuBuscaCadastros</value>
+  </data>
+  <data name="&gt;&gt;controleContatoToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labVlrProgressao.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="consultasToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>71, 20</value>
+  </data>
+  <data name="labVlrConsolidado.Size" type="System.Drawing.Size, System.Drawing">
     <value>46, 15</value>
   </data>
-  <data name="&gt;&gt;labProgressao.Name" xml:space="preserve">
-    <value>labProgressao</value>
+  <data name="grdUltimasVendas.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 399</value>
   </data>
-  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>93, 17</value>
-  </data>
-  <data name="label10.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;VRazao.Name" xml:space="preserve">
-    <value>VRazao</value>
+  <data name="&gt;&gt;pgrsbMeta.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="&gt;&gt;relatóriosToolStripMenuItem.Name" xml:space="preserve">
     <value>relatóriosToolStripMenuItem</value>
   </data>
-  <data name="mnuCadastraAvisos.Size" type="System.Drawing.Size, System.Drawing">
-    <value>150, 22</value>
+  <data name="MnuCadProdutos.Text" xml:space="preserve">
+    <value>Produtos</value>
   </data>
-  <data name="labMeta.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="&gt;&gt;labVlrMeta.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
-  <data name="&gt;&gt;relatóriosToolStripMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;labConsolidado.ZOrder" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="&gt;&gt;rankingDeVendasToolStripMenuItem.Name" xml:space="preserve">
+    <value>rankingDeVendasToolStripMenuItem</value>
+  </data>
+  <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 17</value>
+  </data>
+  <data name="&gt;&gt;MnuRegistraContato.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;registrosDeContatosToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="MnuCadEmpresas.Size" type="System.Drawing.Size, System.Drawing">
     <value>150, 22</value>
   </data>
-  <data name="controleContatoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>113, 20</value>
+  <data name="&gt;&gt;MnuParametros.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>GPA - Home</value>
-  </data>
-  <data name="labVlrProgressao.TabIndex" type="System.Int32, mscorlib">
-    <value>32</value>
-  </data>
-  <data name="&gt;&gt;label8.Parent" xml:space="preserve">
+  <data name="&gt;&gt;textBox2.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;RazSocial.Name" xml:space="preserve">
-    <value>RazSocial</value>
-  </data>
-  <data name="labProgressao.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="MnuMeusClientes.Size" type="System.Drawing.Size, System.Drawing">
-    <value>177, 22</value>
-  </data>
-  <data name="&gt;&gt;labVlrConsolidado.Name" xml:space="preserve">
-    <value>labVlrConsolidado</value>
-  </data>
-  <data name="&gt;&gt;label8.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;mnuBuscaCadastros.Name" xml:space="preserve">
-    <value>mnuBuscaCadastros</value>
-  </data>
-  <data name="UltContato.HeaderText" xml:space="preserve">
-    <value>Ult.Contato</value>
-  </data>
-  <data name="Numero.HeaderText" xml:space="preserve">
-    <value>Nº</value>
-  </data>
-  <data name="label8.TabIndex" type="System.Int32, mscorlib">
-    <value>21</value>
-  </data>
-  <data name="&gt;&gt;label7.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;mnuCadastraAvisos.Name" xml:space="preserve">
-    <value>mnuCadastraAvisos</value>
-  </data>
-  <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;MnuNatOperacao.Name" xml:space="preserve">
-    <value>MnuNatOperacao</value>
-  </data>
-  <data name="&gt;&gt;MnuUltimasVendas.Name" xml:space="preserve">
-    <value>MnuUltimasVendas</value>
-  </data>
-  <data name="pictureBox1.TabIndex" type="System.Int32, mscorlib">
-    <value>43</value>
-  </data>
-  <data name="&gt;&gt;grdUltimasVendas.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="&gt;&gt;mnuCadCarteira.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="labProgressao.Location" type="System.Drawing.Point, System.Drawing">
     <value>582, 27</value>
   </data>
-  <data name="label8.Text" xml:space="preserve">
-    <value>Não Consolidado</value>
-  </data>
-  <data name="label8.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 48</value>
-  </data>
-  <data name="&gt;&gt;pictureBox1.Name" xml:space="preserve">
-    <value>pictureBox1</value>
-  </data>
-  <data name="label10.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="&gt;&gt;MnuParametros.Name" xml:space="preserve">
-    <value>MnuParametros</value>
-  </data>
-  <data name="labNomeEmpresa.Size" type="System.Drawing.Size, System.Drawing">
-    <value>0, 15</value>
-  </data>
-  <data name="labVlrMeta.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="labConsolidado.Location" type="System.Drawing.Point, System.Drawing">
-    <value>248, 27</value>
-  </data>
-  <data name="consultasToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>71, 20</value>
-  </data>
-  <data name="labProgressao.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;MnuParametros.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="grdUltContato.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="&gt;&gt;pgrsbMeta.ZOrder" xml:space="preserve">
-    <value>15</value>
-  </data>
-  <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>800, 600</value>
-  </data>
-  <data name="labVlrMeta.Text" xml:space="preserve">
-    <value>xxxx,xx</value>
-  </data>
-  <data name="textBox2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>113, 23</value>
-  </data>
-  <data name="pgrsbMeta.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;menuStrip1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label7.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;chrtVendasMesaMes.Name" xml:space="preserve">
-    <value>chrtVendasMesaMes</value>
-  </data>
-  <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
-    <value>57, 15</value>
-  </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1008, 661</value>
-  </data>
-  <data name="labVlrConsolidado.Size" type="System.Drawing.Size, System.Drawing">
-    <value>46, 15</value>
-  </data>
-  <data name="&gt;&gt;vendasPorVendedorToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;MnuCadEmpresas.Name" xml:space="preserve">
-    <value>MnuCadEmpresas</value>
-  </data>
-  <data name="&gt;&gt;label4.Name" xml:space="preserve">
-    <value>label4</value>
-  </data>
-  <data name="textBox2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="grdUltimasVendas.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;mnuCadCarteira.Name" xml:space="preserve">
-    <value>mnuCadCarteira</value>
-  </data>
-  <data name="labVlrProgressao.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="&gt;&gt;pictureBox1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;openFileDialog1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.OpenFileDialog, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label10.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="pgrsbMeta.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="label10.TabIndex" type="System.Int32, mscorlib">
-    <value>40</value>
-  </data>
-  <data name="mnuBuscaCadastros.Text" xml:space="preserve">
-    <value>Cadastros por CNPJ</value>
-  </data>
-  <data name="label6.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 9pt, style=Bold</value>
-  </data>
-  <data name="&gt;&gt;labConsolidado.Name" xml:space="preserve">
-    <value>labConsolidado</value>
-  </data>
-  <data name="&gt;&gt;labVlrMeta.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="menuStrip1.Text" xml:space="preserve">
-    <value>menuStrip1</value>
-  </data>
-  <data name="&gt;&gt;MnuRegistraContato.Name" xml:space="preserve">
-    <value>MnuRegistraContato</value>
-  </data>
-  <data name="&gt;&gt;labNomeEmpresa.Name" xml:space="preserve">
-    <value>labNomeEmpresa</value>
-  </data>
-  <data name="VRazao.HeaderText" xml:space="preserve">
-    <value>Razao Social</value>
-  </data>
-  <data name="labNomeEmpresa.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="rankingDeVendasToolStripMenuItem.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;label7.Name" xml:space="preserve">
-    <value>label7</value>
-  </data>
-  <data name="&gt;&gt;labVlrConsolidado.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>96, 96</value>
-  </data>
-  <data name="label4.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="vendasPorVendedorToolStripMenuItem.Text" xml:space="preserve">
-    <value>Vendas por Vendedor</value>
-  </data>
-  <data name="&gt;&gt;rankingDeVendasToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtObjetivoDiario.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;labConsolidado.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="NotifyAvisos.Visible" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="MnuCadEmpresas.Text" xml:space="preserve">
-    <value>Empresas</value>
-  </data>
-  <data name="&gt;&gt;labVlrMeta.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="textBox2.TabIndex" type="System.Int32, mscorlib">
-    <value>20</value>
-  </data>
-  <data name="&gt;&gt;MnuPedidos.Name" xml:space="preserve">
-    <value>MnuPedidos</value>
-  </data>
-  <data name="cadastrosToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>71, 20</value>
-  </data>
-  <data name="&gt;&gt;textBox2.Name" xml:space="preserve">
-    <value>textBox2</value>
-  </data>
   <data name="&gt;&gt;mnuCadAgendarContatos.Name" xml:space="preserve">
     <value>mnuCadAgendarContatos</value>
-  </data>
-  <data name="registrosDeContatosToolStripMenuItem.Text" xml:space="preserve">
-    <value>Registros de Contatos</value>
-  </data>
-  <data name="label4.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
-  </data>
-  <data name="labVlrConsolidado.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="&gt;&gt;chrtVendasMesaMes.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataVisualization.Charting.Chart, WinForms.DataVisualization, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;controleContatoToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;mnuAvisos.Name" xml:space="preserve">
-    <value>mnuAvisos</value>
-  </data>
-  <data name="&gt;&gt;label10.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtObjetivoDiario.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;label10.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;parametrosToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="DataVenda.Width" type="System.Int32, mscorlib">
-    <value>75</value>
-  </data>
-  <data name="labVlrProgressao.Location" type="System.Drawing.Point, System.Drawing">
-    <value>666, 27</value>
-  </data>
-  <data name="relatóriosToolStripMenuItem.Text" xml:space="preserve">
-    <value>Relatórios</value>
-  </data>
-  <data name="&gt;&gt;label10.Name" xml:space="preserve">
-    <value>label10</value>
-  </data>
-  <data name="$this.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
-    <value>GrowAndShrink</value>
-  </data>
-  <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 17</value>
-  </data>
-  <data name="&gt;&gt;MnuNatOperacao.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="mnuCadastraAvisos.Text" xml:space="preserve">
-    <value>Cad. Avisos</value>
-  </data>
-  <data name="pgrsbMeta.Size" type="System.Drawing.Size, System.Drawing">
-    <value>751, 23</value>
-  </data>
-  <data name="chrtVendasMesaMes.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 466</value>
-  </data>
-  <data name="&gt;&gt;cadastrosToolStripMenuItem.Name" xml:space="preserve">
-    <value>cadastrosToolStripMenuItem</value>
-  </data>
-  <data name="RazSocial.HeaderText" xml:space="preserve">
-    <value>Razao Social</value>
-  </data>
-  <data name="&gt;&gt;labMeta.Name" xml:space="preserve">
-    <value>labMeta</value>
-  </data>
-  <data name="labVlrProgressao.Text" xml:space="preserve">
-    <value>xxxx,xx</value>
-  </data>
-  <data name="grdUltimasVendas.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="labConsolidado.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;labConsolidado.ZOrder" xml:space="preserve">
-    <value>16</value>
-  </data>
-  <data name="mnuCadCarteira.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
-  </data>
-  <data name="&gt;&gt;RazSocial.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="label6.Text" xml:space="preserve">
-    <value>Clientes não contatados: </value>
-  </data>
-  <data name="label8.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="&gt;&gt;textBox2.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="VValor.Width" type="System.Int32, mscorlib">
-    <value>70</value>
-  </data>
-  <data name="labNomeEmpresa.TabIndex" type="System.Int32, mscorlib">
-    <value>42</value>
-  </data>
-  <data name="MnuConsultaPedidos.Text" xml:space="preserve">
-    <value>Consulta Pedidos</value>
-  </data>
-  <data name="labConsolidado.Text" xml:space="preserve">
-    <value>Consolidado:</value>
-  </data>
-  <data name="&gt;&gt;NotifyAgendaContato.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NotifyIcon, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;grdUltContato.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>frmCRMInicial</value>
-  </data>
-  <data name="MnuMeusClientes.Text" xml:space="preserve">
-    <value>Meus Clientes</value>
-  </data>
-  <data name="&gt;&gt;pgrsbMeta.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;labVlrProgressao.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 78</value>
-  </data>
-  <data name="&gt;&gt;label6.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;pgrsbMeta.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ProgressBar, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="registrosDeContatosToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>189, 22</value>
-  </data>
-  <data name="labMeta.Location" type="System.Drawing.Point, System.Drawing">
-    <value>899, 27</value>
-  </data>
-  <data name="MnuCadProdutos.Size" type="System.Drawing.Size, System.Drawing">
-    <value>150, 22</value>
-  </data>
-  <data name="label4.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 9pt, style=Bold, Underline</value>
-  </data>
-  <data name="&gt;&gt;label6.Name" xml:space="preserve">
-    <value>label6</value>
-  </data>
-  <data name="&gt;&gt;VValor.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="mnuContatosAgendados.Size" type="System.Drawing.Size, System.Drawing">
-    <value>185, 22</value>
-  </data>
-  <data name="grdUltimasVendas.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 399</value>
-  </data>
-  <data name="&gt;&gt;consultasToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;MnuPedidos.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;labVlrProgressao.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;labProgressao.ZOrder" xml:space="preserve">
-    <value>14</value>
-  </data>
-  <data name="&gt;&gt;MnuConsultaPedidos.Name" xml:space="preserve">
-    <value>MnuConsultaPedidos</value>
-  </data>
-  <data name="&gt;&gt;label4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;UltContato.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="grdUltContato.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="MnuUltimasVendas.Size" type="System.Drawing.Size, System.Drawing">
-    <value>177, 22</value>
-  </data>
-  <data name="&gt;&gt;vendasPorVendedorToolStripMenuItem.Name" xml:space="preserve">
-    <value>vendasPorVendedorToolStripMenuItem</value>
-  </data>
-  <data name="vendasToolStripMenuItem.Text" xml:space="preserve">
-    <value>Pedidos\Vendas</value>
-  </data>
-  <data name="&gt;&gt;rankingDeVendasToolStripMenuItem.Name" xml:space="preserve">
-    <value>rankingDeVendasToolStripMenuItem</value>
-  </data>
-  <data name="labVlrMeta.Location" type="System.Drawing.Point, System.Drawing">
-    <value>936, 27</value>
-  </data>
-  <data name="&gt;&gt;labVlrProgressao.Name" xml:space="preserve">
-    <value>labVlrProgressao</value>
-  </data>
-  <data name="&gt;&gt;NotifyAgendaContato.Name" xml:space="preserve">
-    <value>NotifyAgendaContato</value>
-  </data>
-  <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 107</value>
-  </data>
-  <data name="&gt;&gt;VValor.Name" xml:space="preserve">
-    <value>VValor</value>
-  </data>
-  <data name="labNomeEmpresa.Location" type="System.Drawing.Point, System.Drawing">
-    <value>78, 27</value>
-  </data>
-  <data name="labVlrConsolidado.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="pictureBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>574, 260</value>
-  </data>
-  <data name="mnuAvisos.Size" type="System.Drawing.Size, System.Drawing">
-    <value>167, 22</value>
-  </data>
-  <data name="label7.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
-  </data>
-  <data name="&gt;&gt;labVlrMeta.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;parametrosToolStripMenuItem.Name" xml:space="preserve">
-    <value>parametrosToolStripMenuItem</value>
-  </data>
-  <data name="labVlrConsolidado.Location" type="System.Drawing.Point, System.Drawing">
-    <value>331, 27</value>
-  </data>
-  <data name="NotifyAvisos.Text" xml:space="preserve">
-    <value>GPA</value>
-  </data>
-  <data name="&gt;&gt;textBox2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="MnuParametros.Size" type="System.Drawing.Size, System.Drawing">
-    <value>134, 22</value>
-  </data>
-  <data name="&gt;&gt;NotifyAvisos.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NotifyIcon, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="chrtVendasMesaMes.TabIndex" type="System.Int32, mscorlib">
-    <value>44</value>
-  </data>
-  <data name="cadastrosToolStripMenuItem.Text" xml:space="preserve">
-    <value>Cadastros</value>
   </data>
   <data name="label7.Text" xml:space="preserve">
     <value>Ultimas Vendas:</value>
   </data>
-  <data name="txtObjetivoDiario.Location" type="System.Drawing.Point, System.Drawing">
-    <value>129, 75</value>
+  <data name="&gt;&gt;openFileDialog1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.OpenFileDialog, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;mnuCadastraAvisos.Type" xml:space="preserve">
+  <data name="&gt;&gt;mnuAvisos.Name" xml:space="preserve">
+    <value>mnuAvisos</value>
+  </data>
+  <data name="labNomeEmpresa.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;openFileDialog1.Name" xml:space="preserve">
+    <value>openFileDialog1</value>
+  </data>
+  <data name="&gt;&gt;textBox2.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;labConsolidado.Name" xml:space="preserve">
+    <value>labConsolidado</value>
+  </data>
+  <data name="&gt;&gt;label4.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="MnuConsultaPedidos.Size" type="System.Drawing.Size, System.Drawing">
+    <value>177, 22</value>
+  </data>
+  <data name="&gt;&gt;MnuPedidos.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="labConsolidado.Size" type="System.Drawing.Size, System.Drawing">
-    <value>77, 15</value>
-  </data>
-  <data name="grdUltContato.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 133</value>
-  </data>
-  <data name="textBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>129, 45</value>
-  </data>
-  <data name="&gt;&gt;pgrsbMeta.Name" xml:space="preserve">
-    <value>pgrsbMeta</value>
-  </data>
-  <data name="&gt;&gt;MnuCadProdutos.Name" xml:space="preserve">
-    <value>MnuCadProdutos</value>
-  </data>
-  <data name="UltContato.Width" type="System.Int32, mscorlib">
-    <value>75</value>
-  </data>
-  <data name="&gt;&gt;menuStrip1.ZOrder" xml:space="preserve">
-    <value>17</value>
-  </data>
-  <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>98, 23</value>
   </data>
   <data name="&gt;&gt;DataVenda.Name" xml:space="preserve">
     <value>DataVenda</value>
   </data>
-  <data name="menuStrip1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
+  <data name="labVlrMeta.Text" xml:space="preserve">
+    <value>xxxx,xx</value>
   </data>
-  <data name="grdUltContato.Size" type="System.Drawing.Size, System.Drawing">
-    <value>337, 230</value>
+  <data name="controleContatoToolStripMenuItem.Text" xml:space="preserve">
+    <value>Controle\Contato</value>
   </data>
-  <data name="&gt;&gt;label6.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="mnuCadAgendarContatos.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
-  </data>
-  <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="&gt;&gt;MnuRegistraContato.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="labConsolidado.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="&gt;&gt;grdUltimasVendas.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="label4.AutoSize" type="System.Boolean, mscorlib">
+  <data name="labVlrProgressao.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="MnuPedidos.Text" xml:space="preserve">
-    <value>Pedidos</value>
+  <data name="&gt;&gt;cadastrosToolStripMenuItem.Name" xml:space="preserve">
+    <value>cadastrosToolStripMenuItem</value>
   </data>
-  <data name="labVlrMeta.TabIndex" type="System.Int32, mscorlib">
-    <value>34</value>
+  <data name="MnuParametros.Size" type="System.Drawing.Size, System.Drawing">
+    <value>134, 22</value>
   </data>
-  <data name="&gt;&gt;labConsolidado.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="relatóriosToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>71, 20</value>
   </data>
-  <data name="&gt;&gt;Numero.Name" xml:space="preserve">
-    <value>Numero</value>
+  <data name="&gt;&gt;labProgressao.ZOrder" xml:space="preserve">
+    <value>14</value>
   </data>
-  <data name="&gt;&gt;grdUltimasVendas.ZOrder" xml:space="preserve">
-    <value>12</value>
-  </data>
-  <data name="labMeta.Text" xml:space="preserve">
-    <value>Meta:</value>
-  </data>
-  <data name="parametrosToolStripMenuItem.Text" xml:space="preserve">
-    <value>Manutenção</value>
-  </data>
-  <data name="labVlrProgressao.Size" type="System.Drawing.Size, System.Drawing">
-    <value>46, 15</value>
-  </data>
-  <data name="txtObjetivoDiario.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="&gt;&gt;menuStrip1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="menuStrip1.TabIndex" type="System.Int32, mscorlib">
-    <value>38</value>
-  </data>
-  <data name="label4.Text" xml:space="preserve">
-    <value>Objetivo Diario</value>
-  </data>
-  <data name="&gt;&gt;chrtVendasMesaMes.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;grdUltContato.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="&gt;&gt;labNomeEmpresa.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="labMeta.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="MnuUltimasVendas.Text" xml:space="preserve">
-    <value>Ultimas Vendas</value>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterScreen</value>
   </data>
   <data name="&gt;&gt;UltContato.Name" xml:space="preserve">
     <value>UltContato</value>
   </data>
-  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>199</value>
+  <data name="MnuCadProdutos.Size" type="System.Drawing.Size, System.Drawing">
+    <value>150, 22</value>
+  </data>
+  <data name="textBox2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>113, 23</value>
+  </data>
+  <data name="&gt;&gt;txtObjetivoDiario.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="MnuCadEmpresas.Text" xml:space="preserve">
+    <value>Empresas</value>
+  </data>
+  <data name="pgrsbMeta.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>1008, 661</value>
+  </data>
+  <data name="labMeta.Size" type="System.Drawing.Size, System.Drawing">
+    <value>37, 15</value>
+  </data>
+  <data name="&gt;&gt;label6.Name" xml:space="preserve">
+    <value>label6</value>
+  </data>
+  <data name="mnuContatosAgendados.Size" type="System.Drawing.Size, System.Drawing">
+    <value>185, 22</value>
+  </data>
+  <data name="parametrosToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>86, 20</value>
+  </data>
+  <data name="MnuUltimasVendas.Size" type="System.Drawing.Size, System.Drawing">
+    <value>177, 22</value>
+  </data>
+  <data name="&gt;&gt;mnuCadastraAvisos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="label4.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="grdUltContato.Size" type="System.Drawing.Size, System.Drawing">
+    <value>337, 230</value>
+  </data>
+  <data name="&gt;&gt;labVlrProgressao.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;NotifyAvisos.Name" xml:space="preserve">
+    <value>NotifyAvisos</value>
+  </data>
+  <data name="&gt;&gt;labVlrConsolidado.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="NotifyAvisos.Text" xml:space="preserve">
+    <value>GPA</value>
+  </data>
+  <data name="pgrsbMeta.Location" type="System.Drawing.Point, System.Drawing">
+    <value>248, 45</value>
+  </data>
+  <data name="labVlrConsolidado.TabIndex" type="System.Int32, mscorlib">
+    <value>33</value>
+  </data>
+  <data name="&gt;&gt;relatóriosToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;contatosAgendadosPorDataToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="menuStrip1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="MnuNatOperacao.Size" type="System.Drawing.Size, System.Drawing">
+    <value>150, 22</value>
+  </data>
+  <data name="VValor.Width" type="System.Int32, mscorlib">
+    <value>70</value>
+  </data>
+  <data name="&gt;&gt;mnuAvisos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="textBox2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="Numero.Width" type="System.Int32, mscorlib">
+    <value>40</value>
+  </data>
+  <data name="label10.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9pt, style=Bold</value>
+  </data>
+  <data name="label10.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="DataVenda.Width" type="System.Int32, mscorlib">
+    <value>75</value>
+  </data>
+  <data name="&gt;&gt;label6.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="cadastrosToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>71, 20</value>
+  </data>
+  <data name="labVlrConsolidado.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="grdUltimasVendas.Size" type="System.Drawing.Size, System.Drawing">
+    <value>337, 230</value>
+  </data>
+  <data name="&gt;&gt;NotifyAgendaContato.Name" xml:space="preserve">
+    <value>NotifyAgendaContato</value>
+  </data>
+  <data name="labVlrProgressao.Size" type="System.Drawing.Size, System.Drawing">
+    <value>46, 15</value>
+  </data>
+  <data name="&gt;&gt;MnuMeusClientes.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="mnuAvisos.Text" xml:space="preserve">
+    <value>Avisos</value>
+  </data>
+  <data name="&gt;&gt;txtObjetivoDiario.Name" xml:space="preserve">
+    <value>txtObjetivoDiario</value>
+  </data>
+  <data name="&gt;&gt;UltContato.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="VValor.HeaderText" xml:space="preserve">
+    <value>Valor</value>
+  </data>
+  <data name="pgrsbMeta.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="vendasToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>103, 20</value>
+  </data>
+  <data name="&gt;&gt;MnuMeusClientes.Name" xml:space="preserve">
+    <value>MnuMeusClientes</value>
+  </data>
+  <data name="txtObjetivoDiario.Size" type="System.Drawing.Size, System.Drawing">
+    <value>113, 23</value>
+  </data>
+  <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>98, 23</value>
+  </data>
+  <data name="&gt;&gt;labVlrProgressao.Name" xml:space="preserve">
+    <value>labVlrProgressao</value>
+  </data>
+  <data name="&gt;&gt;MnuUltimasVendas.Name" xml:space="preserve">
+    <value>MnuUltimasVendas</value>
+  </data>
+  <data name="&gt;&gt;labProgressao.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;registrosDeContatosToolStripMenuItem.Name" xml:space="preserve">
+    <value>registrosDeContatosToolStripMenuItem</value>
+  </data>
+  <data name="MnuConsultaPedidos.Text" xml:space="preserve">
+    <value>Consulta Pedidos</value>
+  </data>
+  <data name="&gt;&gt;labVlrMeta.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;textBox2.Name" xml:space="preserve">
+    <value>textBox2</value>
+  </data>
+  <data name="&gt;&gt;consultasToolStripMenuItem.Name" xml:space="preserve">
+    <value>consultasToolStripMenuItem</value>
+  </data>
+  <data name="grdUltimasVendas.RowHeadersWidth" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="labVlrProgressao.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="&gt;&gt;menuStrip1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="pgrsbMeta.Size" type="System.Drawing.Size, System.Drawing">
+    <value>751, 23</value>
+  </data>
+  <data name="labVlrConsolidado.Text" xml:space="preserve">
+    <value>xxxx,xx</value>
+  </data>
+  <data name="labProgressao.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="vendasPorVendedorToolStripMenuItem.Text" xml:space="preserve">
+    <value>Vendas por Vendedor</value>
+  </data>
+  <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
+    <value>57, 15</value>
+  </data>
+  <data name="&gt;&gt;vendasToolStripMenuItem.Name" xml:space="preserve">
+    <value>vendasToolStripMenuItem</value>
+  </data>
+  <data name="controleContatoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>113, 20</value>
+  </data>
+  <data name="labNomeEmpresa.Location" type="System.Drawing.Point, System.Drawing">
+    <value>78, 27</value>
+  </data>
+  <data name="&gt;&gt;mnuCadastraAvisos.Name" xml:space="preserve">
+    <value>mnuCadastraAvisos</value>
+  </data>
+  <data name="&gt;&gt;chrtVendasMesaMes.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="vendasPorVendedorToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>189, 22</value>
+  </data>
+  <data name="&gt;&gt;labMeta.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label7.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;labMeta.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="pictureBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>43</value>
+  </data>
+  <data name="&gt;&gt;label4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="labMeta.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="label8.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="label4.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="&gt;&gt;MnuConsultaPedidos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="labMeta.Text" xml:space="preserve">
+    <value>Meta:</value>
+  </data>
+  <data name="labConsolidado.Location" type="System.Drawing.Point, System.Drawing">
+    <value>248, 27</value>
+  </data>
+  <data name="&gt;&gt;label4.Name" xml:space="preserve">
+    <value>label4</value>
+  </data>
+  <data name="RazSocial.Width" type="System.Int32, mscorlib">
+    <value>210</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>GPA - Home</value>
+  </data>
+  <data name="&gt;&gt;MnuCadEmpresas.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="label8.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 48</value>
+  </data>
+  <data name="menuStrip1.Text" xml:space="preserve">
+    <value>menuStrip1</value>
+  </data>
+  <data name="&gt;&gt;RazSocial.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labMeta.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="pictureBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>574, 260</value>
+  </data>
+  <data name="&gt;&gt;consultasToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;parametrosToolStripMenuItem.Name" xml:space="preserve">
+    <value>parametrosToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;Numero.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>Objetivo Diario</value>
+  </data>
+  <data name="&gt;&gt;MnuNatOperacao.Name" xml:space="preserve">
+    <value>MnuNatOperacao</value>
+  </data>
+  <data name="&gt;&gt;vendasPorVendedorToolStripMenuItem.Name" xml:space="preserve">
+    <value>vendasPorVendedorToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;textBox2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="labVlrProgressao.TabIndex" type="System.Int32, mscorlib">
+    <value>32</value>
+  </data>
+  <data name="label8.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="&gt;&gt;labConsolidado.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="VRazao.Width" type="System.Int32, mscorlib">
+    <value>210</value>
+  </data>
+  <data name="&gt;&gt;grdUltimasVendas.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labVlrMeta.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="labVlrMeta.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="cadastrosToolStripMenuItem.Text" xml:space="preserve">
+    <value>Cadastros</value>
+  </data>
+  <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 107</value>
+  </data>
+  <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;grdUltimasVendas.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="textBox2.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="&gt;&gt;label10.Name" xml:space="preserve">
+    <value>label10</value>
+  </data>
+  <data name="labConsolidado.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="txtObjetivoDiario.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;chrtVendasMesaMes.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;mnuCadAgendarContatos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="labNomeEmpresa.TabIndex" type="System.Int32, mscorlib">
+    <value>42</value>
+  </data>
+  <data name="&gt;&gt;menuStrip1.Name" xml:space="preserve">
+    <value>menuStrip1</value>
+  </data>
+  <data name="MnuPedidos.Text" xml:space="preserve">
+    <value>Pedidos</value>
+  </data>
+  <data name="&gt;&gt;label6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="mnuBuscaCadastros.Size" type="System.Drawing.Size, System.Drawing">
+    <value>177, 22</value>
+  </data>
+  <data name="&gt;&gt;labConsolidado.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="MnuPedidos.Size" type="System.Drawing.Size, System.Drawing">
+    <value>116, 22</value>
+  </data>
+  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 78</value>
+  </data>
+  <data name="&gt;&gt;labVlrMeta.Name" xml:space="preserve">
+    <value>labVlrMeta</value>
+  </data>
+  <data name="MnuRegistraContato.Text" xml:space="preserve">
+    <value>Registra Contatos</value>
+  </data>
+  <data name="&gt;&gt;txtObjetivoDiario.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;MnuCadProdutos.Name" xml:space="preserve">
+    <value>MnuCadProdutos</value>
+  </data>
+  <data name="rankingDeVendasToolStripMenuItem.Text" xml:space="preserve">
+    <value>Ranking de Vendas</value>
+  </data>
+  <data name="&gt;&gt;grdUltimasVendas.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;mnuCadCarteira.Name" xml:space="preserve">
+    <value>mnuCadCarteira</value>
+  </data>
+  <data name="&gt;&gt;txtObjetivoDiario.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;MnuPedidos.Name" xml:space="preserve">
+    <value>MnuPedidos</value>
+  </data>
+  <data name="MnuNatOperacao.Text" xml:space="preserve">
+    <value>Nat. Operação</value>
+  </data>
+  <data name="&gt;&gt;grdUltContato.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;labNomeEmpresa.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="UltContato.Width" type="System.Int32, mscorlib">
+    <value>75</value>
+  </data>
+  <data name="label10.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 27</value>
+  </data>
+  <data name="Numero.HeaderText" xml:space="preserve">
+    <value>Nº</value>
+  </data>
+  <data name="MnuUltimasVendas.Text" xml:space="preserve">
+    <value>Ultimas Vendas</value>
+  </data>
+  <data name="txtObjetivoDiario.Location" type="System.Drawing.Point, System.Drawing">
+    <value>129, 75</value>
+  </data>
+  <data name="&gt;&gt;label7.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="labVlrProgressao.Location" type="System.Drawing.Point, System.Drawing">
+    <value>666, 27</value>
+  </data>
+  <data name="grdUltContato.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="&gt;&gt;label10.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;menuStrip1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="label4.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;labVlrConsolidado.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="chrtVendasMesaMes.TabIndex" type="System.Int32, mscorlib">
+    <value>44</value>
+  </data>
+  <data name="&gt;&gt;contatosAgendadosPorDataToolStripMenuItem.Name" xml:space="preserve">
+    <value>contatosAgendadosPorDataToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;MnuUltimasVendas.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;grdUltimasVendas.Name" xml:space="preserve">
+    <value>grdUltimasVendas</value>
+  </data>
+  <data name="labConsolidado.Size" type="System.Drawing.Size, System.Drawing">
+    <value>77, 15</value>
+  </data>
+  <data name="label8.Text" xml:space="preserve">
+    <value>Não Consolidado</value>
+  </data>
+  <data name="&gt;&gt;label10.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="labVlrProgressao.Text" xml:space="preserve">
+    <value>xxxx,xx</value>
+  </data>
+  <data name="label10.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="&gt;&gt;VRazao.Name" xml:space="preserve">
+    <value>VRazao</value>
+  </data>
+  <data name="&gt;&gt;mnuContatosAgendados.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;MnuRegistraContato.Name" xml:space="preserve">
+    <value>MnuRegistraContato</value>
+  </data>
+  <data name="mnuCadastraAvisos.Size" type="System.Drawing.Size, System.Drawing">
+    <value>150, 22</value>
+  </data>
+  <data name="&gt;&gt;MnuParametros.Name" xml:space="preserve">
+    <value>MnuParametros</value>
+  </data>
+  <data name="label10.Text" xml:space="preserve">
+    <value>Empresa:</value>
+  </data>
+  <data name="label6.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="&gt;&gt;MnuCadEmpresas.Name" xml:space="preserve">
+    <value>MnuCadEmpresas</value>
+  </data>
+  <data name="mnuCadCarteira.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="&gt;&gt;mnuContatosAgendados.Name" xml:space="preserve">
+    <value>mnuContatosAgendados</value>
+  </data>
+  <data name="parametrosToolStripMenuItem.Text" xml:space="preserve">
+    <value>Manutenção</value>
+  </data>
+  <data name="mnuAvisos.Size" type="System.Drawing.Size, System.Drawing">
+    <value>167, 22</value>
+  </data>
+  <data name="labVlrMeta.Location" type="System.Drawing.Point, System.Drawing">
+    <value>936, 27</value>
+  </data>
+  <data name="grdUltContato.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;cadastrosToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.Name" xml:space="preserve">
+    <value>pictureBox1</value>
+  </data>
+  <data name="label6.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="labConsolidado.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="&gt;&gt;label8.Name" xml:space="preserve">
+    <value>label8</value>
+  </data>
+  <data name="&gt;&gt;MnuNatOperacao.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="grdUltimasVendas.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="&gt;&gt;menuStrip1.ZOrder" xml:space="preserve">
+    <value>17</value>
+  </data>
+  <data name="&gt;&gt;labMeta.Name" xml:space="preserve">
+    <value>labMeta</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="menuStrip1.TabIndex" type="System.Int32, mscorlib">
+    <value>38</value>
+  </data>
+  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>93, 17</value>
+  </data>
+  <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>800, 600</value>
+  </data>
+  <data name="grdUltContato.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 133</value>
+  </data>
+  <data name="&gt;&gt;label10.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="rankingDeVendasToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>189, 22</value>
+  </data>
+  <data name="consultasToolStripMenuItem.Text" xml:space="preserve">
+    <value>Consultas</value>
+  </data>
+  <data name="&gt;&gt;labVlrProgressao.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="labMeta.Location" type="System.Drawing.Point, System.Drawing">
+    <value>899, 27</value>
+  </data>
+  <data name="mnuCadastraAvisos.Text" xml:space="preserve">
+    <value>Cad. Avisos</value>
+  </data>
+  <data name="&gt;&gt;DataVenda.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labNomeEmpresa.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labProgressao.Name" xml:space="preserve">
+    <value>labProgressao</value>
+  </data>
+  <data name="&gt;&gt;vendasPorVendedorToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;grdUltContato.Name" xml:space="preserve">
+    <value>grdUltContato</value>
+  </data>
+  <data name="&gt;&gt;chrtVendasMesaMes.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataVisualization.Charting.Chart, WinForms.DataVisualization, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="label4.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9pt, style=Bold, Underline</value>
+  </data>
+  <data name="labProgressao.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="rankingDeVendasToolStripMenuItem.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="label8.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="VRazao.HeaderText" xml:space="preserve">
+    <value>Razao Social</value>
+  </data>
+  <data name="&gt;&gt;vendasToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="MnuRegistraContato.Size" type="System.Drawing.Size, System.Drawing">
+    <value>167, 22</value>
+  </data>
+  <data name="menuStrip1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1008, 24</value>
+  </data>
+  <data name="UltContato.HeaderText" xml:space="preserve">
+    <value>Ult.Contato</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>Clientes não contatados: </value>
+  </data>
+  <data name="grdUltimasVendas.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="labNomeEmpresa.Size" type="System.Drawing.Size, System.Drawing">
+    <value>0, 15</value>
+  </data>
+  <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 373</value>
+  </data>
+  <data name="&gt;&gt;grdUltContato.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="MnuMeusClientes.Text" xml:space="preserve">
+    <value>Meus Clientes</value>
+  </data>
+  <data name="&gt;&gt;label7.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>150, 23</value>
+  </data>
+  <data name="&gt;&gt;label8.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="label7.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="&gt;&gt;VValor.Name" xml:space="preserve">
+    <value>VValor</value>
+  </data>
+  <data name="MnuParametros.Text" xml:space="preserve">
+    <value>Parametros</value>
+  </data>
+  <data name="relatóriosToolStripMenuItem.Text" xml:space="preserve">
+    <value>Relatórios</value>
+  </data>
+  <data name="&gt;&gt;rankingDeVendasToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="DataVenda.HeaderText" xml:space="preserve">
+    <value>Data</value>
+  </data>
+  <data name="RazSocial.HeaderText" xml:space="preserve">
+    <value>Razao Social</value>
+  </data>
+  <data name="&gt;&gt;MnuCadProdutos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="labVlrConsolidado.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="&gt;&gt;labProgressao.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label8.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;labNomeEmpresa.Name" xml:space="preserve">
+    <value>labNomeEmpresa</value>
+  </data>
+  <data name="&gt;&gt;parametrosToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pgrsbMeta.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ProgressBar, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="label10.TabIndex" type="System.Int32, mscorlib">
+    <value>40</value>
+  </data>
+  <data name="chrtVendasMesaMes.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 466</value>
+  </data>
+  <data name="MnuMeusClientes.Size" type="System.Drawing.Size, System.Drawing">
+    <value>177, 22</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>frmCRMInicial</value>
+  </data>
+  <data name="&gt;&gt;VValor.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;grdUltContato.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="labVlrMeta.Size" type="System.Drawing.Size, System.Drawing">
+    <value>46, 15</value>
+  </data>
+  <data name="labConsolidado.Text" xml:space="preserve">
+    <value>Consolidado:</value>
+  </data>
+  <data name="labVlrConsolidado.Location" type="System.Drawing.Point, System.Drawing">
+    <value>331, 27</value>
+  </data>
+  <data name="labMeta.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="registrosDeContatosToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>189, 22</value>
+  </data>
+  <data name="&gt;&gt;controleContatoToolStripMenuItem.Name" xml:space="preserve">
+    <value>controleContatoToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;mnuBuscaCadastros.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Numero.Name" xml:space="preserve">
+    <value>Numero</value>
+  </data>
+  <data name="&gt;&gt;labNomeEmpresa.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;labVlrConsolidado.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;VRazao.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="labConsolidado.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="mnuBuscaCadastros.Text" xml:space="preserve">
+    <value>Cadastros por CNPJ</value>
+  </data>
+  <data name="labVlrMeta.TabIndex" type="System.Int32, mscorlib">
+    <value>34</value>
+  </data>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>96, 96</value>
+  </data>
+  <data name="pictureBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 50</value>
+  </data>
+  <data name="&gt;&gt;chrtVendasMesaMes.Name" xml:space="preserve">
+    <value>chrtVendasMesaMes</value>
+  </data>
+  <data name="labMeta.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="registrosDeContatosToolStripMenuItem.Text" xml:space="preserve">
+    <value>Registros de Contatos</value>
+  </data>
+  <data name="grdUltContato.RowHeadersWidth" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="$this.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="label8.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9pt, style=Bold, Underline</value>
+  </data>
+  <data name="label6.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9pt, style=Bold</value>
+  </data>
+  <data name="vendasToolStripMenuItem.Text" xml:space="preserve">
+    <value>Pedidos\Vendas</value>
+  </data>
+  <data name="txtObjetivoDiario.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <metadata name="openFileDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>252, 17</value>
   </metadata>
-  <metadata name="UltContato.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="Numero.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="$this.Language" type="System.Globalization.CultureInfo, System.Private.CoreLib, Culture=neutral, PublicKeyToken=7cec85d7bea7798e">
@@ -1089,22 +1098,22 @@
   <metadata name="RazSocial.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <metadata name="NotifyAvisos.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>132, 17</value>
   </metadata>
-  <metadata name="NotifyAgendaContato.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>251, 21</value>
+  <metadata name="UltContato.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
   </metadata>
   <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <metadata name="openFileDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>252, 17</value>
-  </metadata>
-  <metadata name="Numero.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
+  </metadata>
+  <metadata name="NotifyAgendaContato.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>251, 21</value>
+  </metadata>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>25</value>
   </metadata>
 </root>

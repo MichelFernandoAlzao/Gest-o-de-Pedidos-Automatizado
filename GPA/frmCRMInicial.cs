@@ -547,6 +547,14 @@ namespace Formularios
         {
             frmCadCarteira frmCadCarteira = new frmCadCarteira(LCaminhoBanco, LUsuario);
             frmCadCarteira.ShowDialog();
+            RealizaCargas();
+        }
+
+        private void contatosAgendadosPorDataToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmConsultarContatosAgendados frmConsultarContatosAgendados = new frmConsultarContatosAgendados(LCaminhoBanco, LUsuario);
+            frmConsultarContatosAgendados.ShowDialog();
+            RealizaCargas();
         }
     }
 }

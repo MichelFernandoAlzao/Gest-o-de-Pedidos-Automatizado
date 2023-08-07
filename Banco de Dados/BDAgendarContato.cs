@@ -267,6 +267,73 @@ namespace Banco_de_Dados
             return lstAgendarContato;
         }
 
+        public List<BDAgendarContato> CarregaDadosPorData(string inCaminhoBanco,string inDataInicial, string inDataFinal)
+        {
+            LCaminhoBanco = inCaminhoBanco;
+
+            List<BDAgendarContato> lstAgendarContato = new List<BDAgendarContato>();
+            string slqSelect = "SELECT * FROM OPAgendarContato ";
+            slqSelect = slqSelect + "WHERE OPACUsuarioDR = '" + cpIDUsuarioDR + "' ";
+            slqSelect = slqSelect + "AND (OPACDataContato >= '" + inDataInicial + "' AND OPACDataContato <= '" + inDataFinal + "') ";
+            if(cpAtendido != null)
+            {
+                if(cpAtendido != "")
+                {
+                    if(cpAtendido == "S")
+                    {
+                        slqSelect = slqSelect + "AND OPACAtendido = 'S'";
+                    }
+                    else
+                    {
+                        slqSelect = slqSelect + "AND OPACAtendido = 'N'";
+                    }
+                }
+                
+            }
+
+
+            Conexao conexao = new Conexao(LCaminhoBanco);
+            SqlCommand cmd = new SqlCommand();
+
+            cmd.CommandText = slqSelect;
+            var dt = new DataTable();
+
+            try
+            {
+                cmd.Connection = conexao.conectar();
+                //Executar o comando
+                SqlDataReader reader = cmd.ExecuteReader();
+                dt.Load(reader);
+                reader.Close();
+
+                foreach (DataRow dr in dt.Rows)
+                {
+                    BDAgendarContato bDParametros = new BDAgendarContato();
+                    bDParametros.cpID = dr["OPAgendarContato"].ToString();
+                    bDParametros.cpEmpresaDR = dr["OPACEmpresaDR"].ToString();
+                    bDParametros.cpDataContato = dr["OPACDataContato"].ToString();
+                    bDParametros.cpNome = dr["OPACNome"].ToString();
+                    bDParametros.cpFone = dr["OPACFone"].ToString();
+                    bDParametros.cpIDUsuarioDR = dr["OPACUsuarioDR"].ToString();
+                    bDParametros.cpAtendido = dr["OPACAtendido"].ToString();
+
+
+                    lstAgendarContato.Add(bDParametros);
+
+                }
+
+                //Desconectar
+                conexao.desconectar();
+
+            }
+            catch (SqlException e)
+            {
+                cpMsgErro = e.Message.ToString();
+            }
+            cmd.Dispose();
+            return lstAgendarContato;
+        }
+
         public void Excluir(string inCaminhoBanco)
         {
             LCaminhoBanco = inCaminhoBanco;

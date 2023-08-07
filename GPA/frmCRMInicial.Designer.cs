@@ -62,6 +62,7 @@
             MnuNatOperacao = new ToolStripMenuItem();
             mnuCadastraAvisos = new ToolStripMenuItem();
             mnuCadAgendarContatos = new ToolStripMenuItem();
+            mnuCadCarteira = new ToolStripMenuItem();
             vendasToolStripMenuItem = new ToolStripMenuItem();
             MnuPedidos = new ToolStripMenuItem();
             consultasToolStripMenuItem = new ToolStripMenuItem();
@@ -69,6 +70,7 @@
             MnuConsultaPedidos = new ToolStripMenuItem();
             MnuMeusClientes = new ToolStripMenuItem();
             mnuBuscaCadastros = new ToolStripMenuItem();
+            contatosAgendadosPorDataToolStripMenuItem = new ToolStripMenuItem();
             relatóriosToolStripMenuItem = new ToolStripMenuItem();
             rankingDeVendasToolStripMenuItem = new ToolStripMenuItem();
             vendasPorVendedorToolStripMenuItem = new ToolStripMenuItem();
@@ -83,7 +85,6 @@
             pictureBox1 = new PictureBox();
             chrtVendasMesaMes = new System.Windows.Forms.DataVisualization.Charting.Chart();
             NotifyAgendaContato = new NotifyIcon(components);
-            mnuCadCarteira = new ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)grdUltimasVendas).BeginInit();
             ((System.ComponentModel.ISupportInitialize)grdUltContato).BeginInit();
             menuStrip1.SuspendLayout();
@@ -286,6 +287,12 @@
             mnuCadAgendarContatos.Name = "mnuCadAgendarContatos";
             mnuCadAgendarContatos.Click += mnuCadAgendarContatos_Click;
             // 
+            // mnuCadCarteira
+            // 
+            resources.ApplyResources(mnuCadCarteira, "mnuCadCarteira");
+            mnuCadCarteira.Name = "mnuCadCarteira";
+            mnuCadCarteira.Click += mnuCadCarteira_Click;
+            // 
             // vendasToolStripMenuItem
             // 
             resources.ApplyResources(vendasToolStripMenuItem, "vendasToolStripMenuItem");
@@ -302,7 +309,7 @@
             // consultasToolStripMenuItem
             // 
             resources.ApplyResources(consultasToolStripMenuItem, "consultasToolStripMenuItem");
-            consultasToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { MnuUltimasVendas, MnuConsultaPedidos, MnuMeusClientes, mnuBuscaCadastros });
+            consultasToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { MnuUltimasVendas, MnuConsultaPedidos, MnuMeusClientes, mnuBuscaCadastros, contatosAgendadosPorDataToolStripMenuItem });
             consultasToolStripMenuItem.Name = "consultasToolStripMenuItem";
             // 
             // MnuUltimasVendas
@@ -328,6 +335,12 @@
             resources.ApplyResources(mnuBuscaCadastros, "mnuBuscaCadastros");
             mnuBuscaCadastros.Name = "mnuBuscaCadastros";
             mnuBuscaCadastros.Click += mnuBuscaCadastros_Click;
+            // 
+            // contatosAgendadosPorDataToolStripMenuItem
+            // 
+            resources.ApplyResources(contatosAgendadosPorDataToolStripMenuItem, "contatosAgendadosPorDataToolStripMenuItem");
+            contatosAgendadosPorDataToolStripMenuItem.Name = "contatosAgendadosPorDataToolStripMenuItem";
+            contatosAgendadosPorDataToolStripMenuItem.Click += contatosAgendadosPorDataToolStripMenuItem_Click;
             // 
             // relatóriosToolStripMenuItem
             // 
@@ -432,12 +445,6 @@
             resources.ApplyResources(NotifyAgendaContato, "NotifyAgendaContato");
             NotifyAgendaContato.BalloonTipClicked += NotifyAgendaContato_BalloonTipClicked;
             // 
-            // mnuCadCarteira
-            // 
-            resources.ApplyResources(mnuCadCarteira, "mnuCadCarteira");
-            mnuCadCarteira.Name = "mnuCadCarteira";
-            mnuCadCarteira.Click += mnuCadCarteira_Click;
-            // 
             // frmCRMInicial
             // 
             resources.ApplyResources(this, "$this");
@@ -530,5 +537,6 @@
         private ToolStripMenuItem mnuContatosAgendados;
         private ToolStripMenuItem mnuCadAgendarContatos;
         private ToolStripMenuItem mnuCadCarteira;
+        private ToolStripMenuItem contatosAgendadosPorDataToolStripMenuItem;
     }
 }

@@ -75,12 +75,16 @@ namespace Banco_de_Dados
 
                 sqlconteudo += "'" + Cliente.ToString() + "',";
             }
-            if (Carteira != "")
+            if(Carteira != null)
             {
-                sqlCampos += "CDCECarteiraDR, ";
+                if (Carteira != "")
+                {
+                    sqlCampos += "CDCECarteiraDR, ";
 
-                sqlconteudo += "'" + Carteira.ToString() + "',";
+                    sqlconteudo += "'" + Carteira.ToString() + "',";
+                }
             }
+            
             if (Distribuidor != "")
             {
                 sqlCampos += "CDCEDistribuidor, ";

@@ -12,10 +12,6 @@ namespace Camada_Relatorios
         public string CDCERazaoSocial { get; set; }
         public string OPRCEDataContato { get; set; }
         public string OPRCESugestao { get; set; }
-        public string OPRCEReclamacao { get; set; }
-        public string CDPDescricao { get; set; }
-        public string OPPRCVlrOfertado { get; set; }
-        public string OPPRCQuantidade { get; set; }
         public string USUsuario { get; set; }
 
     }

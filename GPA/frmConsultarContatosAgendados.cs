@@ -11,16 +11,15 @@ using System.Windows.Forms;
 
 namespace Formularios
 {
-    public partial class frmMostraContatosAgendados : Form
+    public partial class frmConsultarContatosAgendados : Form
     {
         string LUsuario = "";
         string LCaminhoBanco = "";
-        public frmMostraContatosAgendados(string inCaminhoBanco, string inUsuario)
+        public frmConsultarContatosAgendados(string inCaminhoBanco, string inUsuario)
         {
             LUsuario = inUsuario;
             LCaminhoBanco = inCaminhoBanco;
             InitializeComponent();
-            CarregaAvisos();
         }
 
         private void cmdSair_Click(object sender, EventArgs e)
@@ -30,12 +29,33 @@ namespace Formularios
 
         private void CarregaAvisos()
         {
+            if (txtDataInicial.Text == "  /  /")
+            {
+                txtDataInicial.Text = DateTime.Today.ToShortDateString();
+            }
+            if (txtDataFinal.Text == "  /  /")
+            {
+                txtDataFinal.Text = DateTime.Today.ToShortDateString();
+            }
+
+
+            string DataInicial = txtDataInicial.Text;
+            string DataFinal = txtDataFinal.Text;
+
             grdAgendaContatos.Rows.Clear();
             string RazaoSocial = "";
             BDAgendarContato objContatosAgendados = new BDAgendarContato();
             objContatosAgendados.cpIDUsuarioDR = LUsuario;
-            objContatosAgendados.cpAtendido = "N";
-            List<BDAgendarContato> lstContatosAgendados = objContatosAgendados.CarregaDados(LCaminhoBanco);
+            if (chkAtendido.Checked == true)
+            {
+                objContatosAgendados.cpAtendido = "S";
+            }
+            else
+            {
+                objContatosAgendados.cpAtendido = "N";
+            }
+
+            List<BDAgendarContato> lstContatosAgendados = objContatosAgendados.CarregaDadosPorData(LCaminhoBanco, DataInicial, DataFinal);
             if (lstContatosAgendados.Count > 0)
             {
                 foreach (BDAgendarContato Cttagenda in lstContatosAgendados)
@@ -66,7 +86,7 @@ namespace Formularios
                          Cttagenda.cpNome.ToString(),
                          Cttagenda.cpDataContato.ToString(),
                          Cttagenda.cpFone.ToString(),
-                         usuario.ToString(),
+                         Cttagenda.cpAtendido.ToString()
                      };
                     grdAgendaContatos.Rows.Add(Row);
                     RazaoSocial = "";
@@ -74,15 +94,43 @@ namespace Formularios
             }
         }
 
-        private void cmdConfirmar_Click(object sender, EventArgs e)
+
+        private void txtDataInicial_Leave(object sender, EventArgs e)
         {
-            if (grdAgendaContatos.RowCount > 0)
+            if (txtDataInicial.Text == "  /  /")
             {
-                BDAgendarContato objContatoAgendado = new BDAgendarContato();
-                objContatoAgendado.cpID = grdAgendaContatos.SelectedRows[0].Cells[0].Value.ToString();
-                objContatoAgendado.cpAtendido = "S";
-                objContatoAgendado.AlteraDados(LCaminhoBanco);
+                txtDataInicial.Text = DateTime.Today.ToShortDateString();
             }
+            else
+            {
+                if (DateTime.TryParse(txtDataInicial.Text, out DateTime result) == false)
+                {
+                    MessageBox.Show("Data em formato invalido", "GPA");
+                    txtDataInicial.Text = "";
+                    return;
+                }
+            }
+        }
+
+        private void txtDataFinal_Leave(object sender, EventArgs e)
+        {
+            if (txtDataFinal.Text == "  /  /")
+            {
+                txtDataFinal.Text = DateTime.Today.ToShortDateString();
+            }
+            else
+            {
+                if (DateTime.TryParse(txtDataFinal.Text, out DateTime result) == false)
+                {
+                    MessageBox.Show("Data em formato invalido", "GPA");
+                    txtDataFinal.Text = "";
+                    return;
+                }
+            }
+        }
+
+        private void cmdBuscar_Click(object sender, EventArgs e)
+        {
             CarregaAvisos();
         }
     }

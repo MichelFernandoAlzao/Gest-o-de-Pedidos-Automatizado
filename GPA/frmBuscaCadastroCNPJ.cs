@@ -57,14 +57,22 @@ namespace Formularios
 
         private void txtCNPJ_KeyDown(object sender, KeyEventArgs e)
         {
-            txtRazaoSocial.Text = "";
-            Buscar();
+            if(e.KeyCode == Keys.F1)
+            {
+                txtRazaoSocial.Text = "";
+                Buscar();
+            }
+            
         }
 
         private void txtRazaoSocial_KeyDown(object sender, KeyEventArgs e)
         {
-            txtCNPJ.Text = "";
-            Buscar();
+            if( e.KeyCode == Keys.F1)
+            {
+                txtCNPJ.Text = "";
+                Buscar();
+            }
+            
         }
     }
 }

@@ -22,10 +22,8 @@ namespace CarregaRelatorios
             string inEmpresa  = inParametrosRel[4];
             DataTable DTRegistrosDeContatos = new DataTable();
             string sSQL = "";
-            sSQL += "select OPRegContatosEmpresa, CDCERazaoSocial, OPRCEDataContato, OPRCESugestao, OPRCEReclamacao, CDPDescricao, OPPRCVlrOfertado, OPPRCQuantidade, USUsuario ";
+            sSQL += "select OPRegContatosEmpresa, CDCERazaoSocial, OPRCEDataContato, OPRCERegistro, USUsuario ";
             sSQL += "from OPRegContatosEmpresa ";
-            sSQL += "LEFT OUTER JOIN OPProdRegContato on OPPRCRegContatoDR = OPRegContatosEmpresa ";
-            sSQL += "LEFT OUTER JOIN CDProdutos ON OPPRCProdutoDR = CDProdutos ";
             sSQL += "INNER JOIN CDCadastroEmpresas ON OPRCEEmpresaDR = CDCadastroEmpresas ";
             sSQL += "INNER JOIN SEGUsuarios ON OPRCEusuarioDR = SEGUsuarios ";
             sSQL += "where(OPRCEDataContato >= '" + inDataInicial + "' AND OPRCEDataContato <= '" + inDataFinal + "')";
@@ -62,11 +60,7 @@ namespace CarregaRelatorios
                     bDRegistrodeContatos.OPRegContatosEmpresa = dr["OPRegContatosEmpresa"].ToString();
                     bDRegistrodeContatos.CDCERazaoSocial = dr["CDCERazaoSocial"].ToString();
                     bDRegistrodeContatos.OPRCEDataContato = dr["OPRCEDataContato"].ToString();
-                    bDRegistrodeContatos.OPRCESugestao = dr["OPRCESugestao"].ToString();
-                    bDRegistrodeContatos.OPRCEReclamacao = dr["OPRCEReclamacao"].ToString();
-                    bDRegistrodeContatos.CDPDescricao = dr["CDPDescricao"].ToString();
-                    bDRegistrodeContatos.OPPRCVlrOfertado = dr["OPPRCVlrOfertado"].ToString();
-                    bDRegistrodeContatos.OPPRCQuantidade = dr["OPPRCQuantidade"].ToString();
+                    bDRegistrodeContatos.OPRCESugestao = dr["OPRCERegistro"].ToString();
                     bDRegistrodeContatos.USUsuario = dr["USUsuario"].ToString();
 
 

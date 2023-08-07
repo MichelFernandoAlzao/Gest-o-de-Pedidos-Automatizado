@@ -245,11 +245,23 @@
   <data name="mnuCadAgendarContatos.Text" xml:space="preserve">
     <value>Agendar Contatos</value>
   </data>
-  <data name="mnuCadCarteira.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
-  </data>
   <data name="mnuCadCarteira.Text" xml:space="preserve">
     <value>Cad. Carteira</value>
+  </data>
+  <data name="MnuUltimasVendas.Size" type="System.Drawing.Size, System.Drawing">
+    <value>233, 22</value>
+  </data>
+  <data name="MnuConsultaPedidos.Size" type="System.Drawing.Size, System.Drawing">
+    <value>233, 22</value>
+  </data>
+  <data name="MnuMeusClientes.Size" type="System.Drawing.Size, System.Drawing">
+    <value>233, 22</value>
+  </data>
+  <data name="mnuBuscaCadastros.Size" type="System.Drawing.Size, System.Drawing">
+    <value>233, 22</value>
+  </data>
+  <data name="contatosAgendadosPorDataToolStripMenuItem.Text" xml:space="preserve">
+    <value>Contatos Agendados por Data</value>
   </data>
   <data name="MnuRegistraContato.Size" type="System.Drawing.Size, System.Drawing">
     <value>185, 22</value>
