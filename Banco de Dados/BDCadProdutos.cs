@@ -210,7 +210,14 @@ namespace Banco_de_Dados
             }
             if (ClausulaWhere == 'S')
             {
-                slqSelect += sqlWhere;
+                if(cpID != null)
+                {
+                    slqSelect += sqlWhere;
+                }
+                else
+                {
+                    slqSelect += sqlWhere.Remove(sqlWhere.Length - 3);
+                }
             }
 
             Conexao conexao = new Conexao(LCaminhoBanco);

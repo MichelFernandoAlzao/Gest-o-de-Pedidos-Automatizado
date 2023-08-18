@@ -186,14 +186,6 @@ namespace GPA
             {
                 if (LID != "")
                 {
-                    BDCadastroGeral objVerificaCNPJ = new BDCadastroGeral();
-                    List<BDCadastroGeral> lstVerificaCNPJ = objVerificaCNPJ.CarregaDados(LCaminhoBanco, "", "", "", txtCNPJ.Text, "", "", "", "", "", "");
-                    if (lstVerificaCNPJ.Count > 0)
-                    {
-                        MessageBox.Show("CNPJ já cadastrado, não é permitido o cadastro em duplicidade", "GPA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        return;
-                    }
-
                     BDCadastroGeral objVerifCadastro = new BDCadastroGeral();
                     List<BDCadastroGeral> lstVerfCadastro = objVerifCadastro.CarregaDados(LCaminhoBanco, LID, "", "", "", "", "", "", "", "", "");
                     SEGUsuario objUsuario = new SEGUsuario();
@@ -228,6 +220,13 @@ namespace GPA
             }
             if (LID == "")
             {
+                BDCadastroGeral objVerificaCNPJ = new BDCadastroGeral();
+                List<BDCadastroGeral> lstVerificaCNPJ = objVerificaCNPJ.CarregaDados(LCaminhoBanco, "", "", "", txtCNPJ.Text, "", "", "", "", "", "");
+                if (lstVerificaCNPJ.Count > 0)
+                {
+                    MessageBox.Show("CNPJ já cadastrado, não é permitido o cadastro em duplicidade", "GPA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
                 objCadastro.InsereDados(LCaminhoBanco);
                 MsgErro = objCadastro.MsgErro;
                 if (MsgErro != "")

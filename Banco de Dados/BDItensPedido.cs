@@ -67,13 +67,13 @@ namespace Banco_de_Dados
             {
                 sqlCampos += "OPITPValorUnitario, ";
 
-                sqlconteudo += "'" + cpValorUnit.ToString() + "',";
+                sqlconteudo += "'" + cpValorUnit.ToString().Replace(".","").Replace(",",".") + "',";
             }
             if (cpValorTotalItem.ToString() != "")
             {
                 sqlCampos += "OPITPValorTotalItem, ";
 
-                sqlconteudo += "'" + cpValorTotalItem.ToString() + "',";
+                sqlconteudo += "'" + cpValorTotalItem.ToString().Replace(".", "").Replace(",", ".") + "',";
             }
             if (cpFornecedor.ToString() != "")
             {
@@ -85,7 +85,7 @@ namespace Banco_de_Dados
             {
                 sqlCampos += "OPITPValorFornecedor, ";
 
-                sqlconteudo += "'" + cpValorFornecedor.ToString() + "',";
+                sqlconteudo += "'" + cpValorFornecedor.ToString().Replace(".", "").Replace(",", ".") + "',";
             }
             if (cpPedidoDR != null)
             {
@@ -109,7 +109,7 @@ namespace Banco_de_Dados
                 cmd.ExecuteScalar();
                 //Desconectar
 
-                cmd.CommandText = "SELECT IDENT_CURRENT ('OPPPedido') AS Current_Identity";
+                cmd.CommandText = "SELECT IDENT_CURRENT ('OPItensPedido') AS Current_Identity";
                 string LID = Convert.ToString(cmd.ExecuteScalar());
 
                 cpID = LID;

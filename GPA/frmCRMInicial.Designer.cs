@@ -85,6 +85,7 @@
             pictureBox1 = new PictureBox();
             chrtVendasMesaMes = new System.Windows.Forms.DataVisualization.Charting.Chart();
             NotifyAgendaContato = new NotifyIcon(components);
+            mnuDadosContato = new ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)grdUltimasVendas).BeginInit();
             ((System.ComponentModel.ISupportInitialize)grdUltContato).BeginInit();
             menuStrip1.SuspendLayout();
@@ -254,7 +255,7 @@
             // 
             resources.ApplyResources(cadastrosToolStripMenuItem, "cadastrosToolStripMenuItem");
             cadastrosToolStripMenuItem.BackColor = Color.Transparent;
-            cadastrosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { MnuCadEmpresas, MnuCadProdutos, MnuNatOperacao, mnuCadastraAvisos, mnuCadAgendarContatos, mnuCadCarteira });
+            cadastrosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { MnuCadEmpresas, MnuCadProdutos, MnuNatOperacao, mnuCadastraAvisos, mnuCadAgendarContatos, mnuCadCarteira, mnuDadosContato });
             cadastrosToolStripMenuItem.Name = "cadastrosToolStripMenuItem";
             // 
             // MnuCadEmpresas
@@ -445,6 +446,12 @@
             resources.ApplyResources(NotifyAgendaContato, "NotifyAgendaContato");
             NotifyAgendaContato.BalloonTipClicked += NotifyAgendaContato_BalloonTipClicked;
             // 
+            // mnuDadosContato
+            // 
+            resources.ApplyResources(mnuDadosContato, "mnuDadosContato");
+            mnuDadosContato.Name = "mnuDadosContato";
+            mnuDadosContato.Click += mnuDadosContato_Click;
+            // 
             // frmCRMInicial
             // 
             resources.ApplyResources(this, "$this");
@@ -538,5 +545,6 @@
         private ToolStripMenuItem mnuCadAgendarContatos;
         private ToolStripMenuItem mnuCadCarteira;
         private ToolStripMenuItem contatosAgendadosPorDataToolStripMenuItem;
+        private ToolStripMenuItem mnuDadosContato;
     }
 }

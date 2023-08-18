@@ -382,10 +382,13 @@ namespace Formularios
                         Contador++;
                     }
                 }
-                NotifyAgendaContato.BalloonTipTitle = "GPA - Agenda Contatos";
-                NotifyAgendaContato.BalloonTipText = "Você possui " + Contador + " agendamentos de contato pendentes!";
-                NotifyAgendaContato.Icon = SystemIcons.Exclamation;
-                NotifyAgendaContato.ShowBalloonTip(800);
+                if(Contador > 0)
+                {
+                    NotifyAgendaContato.BalloonTipTitle = "GPA - Agenda Contatos";
+                    NotifyAgendaContato.BalloonTipText = "Você possui " + Contador + " agendamentos de contato pendentes!";
+                    NotifyAgendaContato.Icon = SystemIcons.Exclamation;
+                    NotifyAgendaContato.ShowBalloonTip(800);
+                }
             }
 
             //chrtVendasMesaMes.Series["Vendas mês"].Points.Add(500);
@@ -554,6 +557,13 @@ namespace Formularios
         {
             frmConsultarContatosAgendados frmConsultarContatosAgendados = new frmConsultarContatosAgendados(LCaminhoBanco, LUsuario);
             frmConsultarContatosAgendados.ShowDialog();
+            RealizaCargas();
+        }
+
+        private void mnuDadosContato_Click(object sender, EventArgs e)
+        {
+            frmDadosContato frmDadosContato = new frmDadosContato(LCaminhoBanco, LUsuario);
+            frmDadosContato.ShowDialog();
             RealizaCargas();
         }
     }

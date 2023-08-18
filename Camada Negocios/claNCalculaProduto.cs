@@ -19,9 +19,9 @@ namespace Camada_Negocios
 
         public string CalculaProduto(string inValorUnit,string inQuantidade, string inValorForencedor)
         {
-            string ValorTotal;
-            ValorTotal = Convert.ToString((Convert.ToDouble(inValorUnit) * Convert.ToInt32(inQuantidade)));
-            return ValorTotal;
+            double ValorTotal;
+            ValorTotal = (Convert.ToDouble(inValorUnit) * Convert.ToInt32(inQuantidade));
+            return Convert.ToString(ValorTotal);
         }
 
         public void CalculaTotalItens(string inPedidoDR,string inCaminhoBanco)

@@ -14,6 +14,8 @@ namespace Banco_de_Dados
         string LCaminhoBanco;
         public string ID { get; set; }
         public string Usuario { get; set; }
+        public string Contato { get; set; }
+        public string Email { get; set; }
         public string Nome { get; set; }
         public string Senha { get; set; }
         public string Administrador { get; set; }
@@ -103,6 +105,8 @@ namespace Banco_de_Dados
                     SEGUsuario objUsuario = new SEGUsuario();
                     objUsuario.ID = dr["SEGUsuarios"].ToString();
                     objUsuario.Administrador = dr["USAdministrador"].ToString();
+                    objUsuario.Contato = dr["USContato"].ToString();
+                    objUsuario.Email = dr["USEmail"].ToString();
                     objUsuario.GerenciaCadastros = dr["USGernciaCadastros"].ToString();
                     objUsuario.Operacional = dr["USOperacional"].ToString();
                     objUsuario.Usuario = dr["USUsuario"].ToString();
@@ -130,6 +134,7 @@ namespace Banco_de_Dados
 
         public void AlteraDados(string inCaminhoBanco)
         {
+            MsgErro = "";
             LCaminhoBanco = inCaminhoBanco;
             string sSQL = "";
             string sqlconteudo = "";
@@ -144,6 +149,14 @@ namespace Banco_de_Dados
             if (Nome != null)
             {
                 sqlconteudo += "USNome = '" + Nome.ToString() + "',";
+            }
+            if (Email != null)
+            {
+                sqlconteudo += "USEmail = '" + Email.ToString() + "',";
+            }
+            if (Contato != null)
+            {
+                sqlconteudo += "USContato = '" + Contato.ToString() + "',";
             }
             if (Senha != null)
             {
@@ -178,7 +191,7 @@ namespace Banco_de_Dados
             SqlCommand cmd = new SqlCommand();
 
             cmd.CommandText = sSQL;
-
+            
             try
             {
                 cmd.Connection = conexao.conectar();

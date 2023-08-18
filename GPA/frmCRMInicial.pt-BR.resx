@@ -248,6 +248,12 @@
   <data name="mnuCadCarteira.Text" xml:space="preserve">
     <value>Cad. Carteira</value>
   </data>
+  <data name="mnuDadosContato.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="mnuDadosContato.Text" xml:space="preserve">
+    <value>Dados Contato</value>
+  </data>
   <data name="MnuUltimasVendas.Size" type="System.Drawing.Size, System.Drawing">
     <value>233, 22</value>
   </data>

@@ -80,13 +80,13 @@
             labValidadeProp = new Label();
             labFatMinimo = new Label();
             txtFatMinimo = new TextBox();
-            txtPrazoEntrega = new MaskedTextBox();
             label2 = new Label();
             label3 = new Label();
             txtPrazoPagamento = new TextBox();
             chkImpInclu = new CheckBox();
             cboStatus = new ComboBox();
             labStatus = new Label();
+            txtPrazoEntrega = new TextBox();
             SuspendLayout();
             // 
             // lbPedidos
@@ -571,7 +571,7 @@
             // 
             // txtValidadeProposta
             // 
-            txtValidadeProposta.Location = new Point(118, 225);
+            txtValidadeProposta.Location = new Point(12, 223);
             txtValidadeProposta.Mask = "00/00/0000";
             txtValidadeProposta.Name = "txtValidadeProposta";
             txtValidadeProposta.Size = new Size(100, 23);
@@ -583,7 +583,7 @@
             // 
             labValidadeProp.AutoSize = true;
             labValidadeProp.BackColor = Color.Transparent;
-            labValidadeProp.Location = new Point(118, 206);
+            labValidadeProp.Location = new Point(12, 204);
             labValidadeProp.Name = "labValidadeProp";
             labValidadeProp.Size = new Size(101, 15);
             labValidadeProp.TabIndex = 52;
@@ -593,7 +593,7 @@
             // 
             labFatMinimo.AutoSize = true;
             labFatMinimo.BackColor = Color.Transparent;
-            labFatMinimo.Location = new Point(227, 210);
+            labFatMinimo.Location = new Point(227, 206);
             labFatMinimo.Name = "labFatMinimo";
             labFatMinimo.Size = new Size(120, 15);
             labFatMinimo.TabIndex = 55;
@@ -608,21 +608,11 @@
             txtFatMinimo.KeyPress += txtFatMinimo_KeyPress;
             txtFatMinimo.Leave += txtFatMinimo_Leave;
             // 
-            // txtPrazoEntrega
-            // 
-            txtPrazoEntrega.Location = new Point(12, 225);
-            txtPrazoEntrega.Mask = "00/00/0000";
-            txtPrazoEntrega.Name = "txtPrazoEntrega";
-            txtPrazoEntrega.Size = new Size(100, 23);
-            txtPrazoEntrega.TabIndex = 7;
-            txtPrazoEntrega.ValidatingType = typeof(DateTime);
-            txtPrazoEntrega.Leave += txtPrazoEntrega_Leave;
-            // 
             // label2
             // 
             label2.AutoSize = true;
             label2.BackColor = Color.Transparent;
-            label2.Location = new Point(12, 210);
+            label2.Location = new Point(119, 206);
             label2.Name = "label2";
             label2.Size = new Size(79, 15);
             label2.TabIndex = 56;
@@ -632,7 +622,7 @@
             // 
             label3.AutoSize = true;
             label3.BackColor = Color.Transparent;
-            label3.Location = new Point(353, 210);
+            label3.Location = new Point(353, 204);
             label3.Name = "label3";
             label3.Size = new Size(100, 15);
             label3.TabIndex = 59;
@@ -676,6 +666,13 @@
             labStatus.TabIndex = 62;
             labStatus.Text = "Status:";
             // 
+            // txtPrazoEntrega
+            // 
+            txtPrazoEntrega.Location = new Point(118, 225);
+            txtPrazoEntrega.Name = "txtPrazoEntrega";
+            txtPrazoEntrega.Size = new Size(100, 23);
+            txtPrazoEntrega.TabIndex = 63;
+            // 
             // frmPedido
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -685,12 +682,12 @@
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(800, 496);
             ControlBox = false;
+            Controls.Add(txtPrazoEntrega);
             Controls.Add(labStatus);
             Controls.Add(cboStatus);
             Controls.Add(chkImpInclu);
             Controls.Add(label3);
             Controls.Add(txtPrazoPagamento);
-            Controls.Add(txtPrazoEntrega);
             Controls.Add(label2);
             Controls.Add(labFatMinimo);
             Controls.Add(txtFatMinimo);
@@ -805,7 +802,6 @@
         private Label labValidadeProp;
         private Label labFatMinimo;
         private TextBox txtFatMinimo;
-        private MaskedTextBox txtPrazoEntrega;
         private Label label2;
         private Label label3;
         private TextBox txtPrazoPagamento;
@@ -813,5 +809,6 @@
         private ComboBox cboStatus;
         private Label labStatus;
         private TextBox txtImpostos;
+        private TextBox txtPrazoEntrega;
     }
 }

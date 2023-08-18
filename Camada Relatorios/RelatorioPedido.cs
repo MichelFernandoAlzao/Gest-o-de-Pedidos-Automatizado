@@ -27,6 +27,8 @@ namespace Camada_Relatorios
         public string fdPrazoEntrega { get; set; }
         public string fdImpostos { get;set; }
         public string fdImpInclu { get; set; }
+        public string fdContato { get; set; }
+        public string fdEmail { get; set; }
 
         
     }

@@ -7,7 +7,7 @@
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>6d8ac6f6-d5c7-465d-96c7-5145a4e83745</rd:DataSourceID>
+      <rd:DataSourceID>6e0d2a9b-e66e-4759-9955-ea62f1bc02f4</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
@@ -27,6 +27,14 @@
         </Field>
         <Field Name="fdCDPDescricao">
           <DataField>fdCDPDescricao</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="fdContato">
+          <DataField>fdContato</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="fdEmail">
+          <DataField>fdEmail</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="fdFatMinimo">
@@ -190,7 +198,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Proposta Comercial Nº:</Value>
+                                  <Value>Proposta Comercial:</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -632,14 +640,31 @@
                                 <TablixCells>
                                   <TablixCell>
                                     <CellContents>
-                                      <Rectangle Name="Rectangle1">
+                                      <Textbox Name="Textbox2">
+                                        <CanGrow>true</CanGrow>
                                         <KeepTogether>true</KeepTogether>
+                                        <Paragraphs>
+                                          <Paragraph>
+                                            <TextRuns>
+                                              <TextRun>
+                                                <Value />
+                                                <Style />
+                                              </TextRun>
+                                            </TextRuns>
+                                            <Style />
+                                          </Paragraph>
+                                        </Paragraphs>
+                                        <rd:DefaultName>Textbox2</rd:DefaultName>
                                         <Style>
                                           <Border>
                                             <Style>Solid</Style>
                                           </Border>
+                                          <PaddingLeft>2pt</PaddingLeft>
+                                          <PaddingRight>2pt</PaddingRight>
+                                          <PaddingTop>2pt</PaddingTop>
+                                          <PaddingBottom>2pt</PaddingBottom>
                                         </Style>
-                                      </Rectangle>
+                                      </Textbox>
                                     </CellContents>
                                   </TablixCell>
                                 </TablixCells>
@@ -735,7 +760,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!fdOPITPValorUnitario.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <Format>'R$'#,0.00;('R$'#,0.00)</Format>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
@@ -753,6 +780,7 @@
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
                             <PaddingBottom>2pt</PaddingBottom>
+                            <rd:FormatSymbolCulture>pt-BR</rd:FormatSymbolCulture>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -767,7 +795,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!fdOPITPValorTotalItem.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <Format>'R$'#,0.00;('R$'#,0.00)</Format>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
@@ -785,6 +815,7 @@
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
                             <PaddingBottom>2pt</PaddingBottom>
+                            <rd:FormatSymbolCulture>pt-BR</rd:FormatSymbolCulture>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -842,8 +873,11 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>="R$:" + Fields!fdOPPVlrItensFaturando.Value</Value>
-                                  <Style />
+                                  <Value>=Fields!fdOPPVlrItensFaturando.Value</Value>
+                                  <Style>
+                                    <Format>'R$'#,0.00;('R$'#,0.00)</Format>
+                                    <Language>pt-BR</Language>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
@@ -865,6 +899,7 @@
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
                             <PaddingBottom>2pt</PaddingBottom>
+                            <rd:FormatSymbolCulture>pt-BR</rd:FormatSymbolCulture>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -978,7 +1013,7 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>Pedido</DataSetName>
-            <Top>0.92604cm</Top>
+            <Top>0.32604cm</Top>
             <Left>0.56917cm</Left>
             <Height>3.7141cm</Height>
             <Width>18.92249cm</Width>
@@ -1049,7 +1084,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!fdPrazoEntrega.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <Format>d</Format>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -1412,7 +1449,7 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>Pedido</DataSetName>
-            <Top>5.2575cm</Top>
+            <Top>4.43729cm</Top>
             <Left>0.56917cm</Left>
             <Height>3.6cm</Height>
             <Width>7.5cm</Width>
@@ -1434,7 +1471,7 @@
       <Width>7.92389in</Width>
       <Page>
         <PageHeader>
-          <Height>4.14606cm</Height>
+          <Height>4.53912cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -1469,6 +1506,41 @@
                 </Border>
               </Style>
             </Image>
+            <Textbox Name="Textbox12">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>="Empresa: " + First(Fields!fdCDCERazaoSocial.Value, "Pedido")</Value>
+                      <Style>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox12</rd:DefaultName>
+              <Top>3.93912cm</Top>
+              <Left>0.42016cm</Left>
+              <Height>0.6cm</Height>
+              <Width>19.0715cm</Width>
+              <ZIndex>2</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <BottomBorder>
+                  <Style>Solid</Style>
+                </BottomBorder>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
           </ReportItems>
           <Style>
             <Border>
@@ -1477,15 +1549,15 @@
           </Style>
         </PageHeader>
         <PageFooter>
-          <Height>2.51354cm</Height>
+          <Height>2.31921cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
             <Line Name="Line1">
               <Top>0.34396cm</Top>
-              <Left>1.00224cm</Left>
+              <Left>0.56917cm</Left>
               <Height>0cm</Height>
-              <Width>18.00323cm</Width>
+              <Width>18.92249cm</Width>
               <Style>
                 <Border>
                   <Style>Solid</Style>
@@ -1518,24 +1590,47 @@
                   </TextRuns>
                   <Style />
                 </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox113</rd:DefaultName>
+              <Top>0.52035cm</Top>
+              <Left>5.88667cm</Left>
+              <Height>0.98366cm</Height>
+              <Width>8.38276cm</Width>
+              <ZIndex>1</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox1">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value> Fone: (21)2270-7277 Whatsapp: (21)98662-8188</Value>
+                      <Value>="Contato/Whatsapp:" + First(Fields!fdContato.Value, "Pedido") + " Email:" + First(Fields!fdEmail.Value, "Pedido")</Value>
                       <Style>
                         <FontWeight>Bold</FontWeight>
                       </Style>
                     </TextRun>
                   </TextRuns>
-                  <Style />
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
                 </Paragraph>
               </Paragraphs>
-              <rd:DefaultName>Textbox113</rd:DefaultName>
-              <Top>0.52035cm</Top>
-              <Left>5.88667cm</Left>
-              <Height>1.48637cm</Height>
-              <Width>8.38276cm</Width>
-              <ZIndex>1</ZIndex>
+              <rd:DefaultName>Textbox1</rd:DefaultName>
+              <Top>1.50401cm</Top>
+              <Left>0.56919cm</Left>
+              <Height>0.6cm</Height>
+              <Width>18.92249cm</Width>
+              <ZIndex>2</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
