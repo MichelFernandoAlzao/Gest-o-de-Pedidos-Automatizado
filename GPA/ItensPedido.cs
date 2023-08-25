@@ -92,11 +92,11 @@ namespace Formularios
                 MessageBox.Show("Valor unitario não informado", "GPA");
                 return;
             }
-            OBjGravarItem.cpValorUnit = txtValor.Text.Replace(",", ".");
+            OBjGravarItem.cpValorUnit = txtValor.Text.Replace(".", "");
 
             if (txtValorFornecedor.Text != "")
             {
-                OBjGravarItem.cpValorFornecedor = txtValorFornecedor.Text.Replace(",", ".");
+                OBjGravarItem.cpValorFornecedor = txtValorFornecedor.Text.Replace(".", "");
             }
             if (txtQuantidade.Text == "")
             {
@@ -116,8 +116,6 @@ namespace Formularios
             {
                 OBjGravarItem.cpFornecedor = LFornecedor;
             }
-
-            OBjGravarItem.cpValorFornecedor = txtValorFornecedor.Text.Replace(",", ".");
 
             if (chkFatura.Checked)
             {
@@ -303,7 +301,7 @@ namespace Formularios
 
 
             if (txtValor.Text == "") return;
-            double VlrFatMinimo = Convert.ToDouble(txtValor.Text = txtValor.Text);
+            double VlrFatMinimo = Convert.ToDouble(txtValor.Text);
             txtValor.Text = VlrFatMinimo.ToString("N2");
         }
 

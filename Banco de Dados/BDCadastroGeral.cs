@@ -278,6 +278,44 @@ namespace Banco_de_Dados
             cmd.Dispose();
         }
 
+        public void AlteraVendedor(string inCaminhoBanco, string inVendedorAnterior, string inNovoVendedor)
+        {
+            LCaminhoBanco = inCaminhoBanco;
+
+            string sSQL = "";
+            string sqlconteudo = "";
+            string sqlWhere = " WHERE CDCadastroEmpresas = '" + Id + "'";
+
+            sSQL = "UPDATE CDCadastroEmpresas SET ";
+            sSQL += "CDCEVendedor = '" + inVendedorAnterior + "' ";
+            sSQL += "WHERE CDCEVendedor = '" + inNovoVendedor + "'";
+
+
+
+            sSQL = sSQL + sqlconteudo.Remove(sqlconteudo.Length - 1);
+            sSQL = sSQL + sqlWhere;
+
+            Conexao conexao = new Conexao(LCaminhoBanco);
+            SqlCommand cmd = new SqlCommand();
+
+            cmd.CommandText = sSQL;
+
+            try
+            {
+                cmd.Connection = conexao.conectar();
+                //Executar o comando
+                cmd.ExecuteNonQuery();
+                //Desconectar
+                conexao.desconectar();
+                MsgErro = "";
+            }
+            catch (SqlException e)
+            {
+                MsgErro = e.Message.ToString();
+            }
+            cmd.Dispose();
+        }
+
         public List<BDCadastroGeral> CarregaDados(string inCaminhobanco,string id ,string pRazaoSocial, string pRazaoFantasia, string pCNPJ, string pInscricao, string pVendedor, string pCliente, string pDistribuidor, string pFabricante, string pFornecedor)
         {
             LCaminhoBanco = inCaminhobanco;

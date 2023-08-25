@@ -63,6 +63,7 @@
             mnuCadastraAvisos = new ToolStripMenuItem();
             mnuCadAgendarContatos = new ToolStripMenuItem();
             mnuCadCarteira = new ToolStripMenuItem();
+            mnuDadosContato = new ToolStripMenuItem();
             vendasToolStripMenuItem = new ToolStripMenuItem();
             MnuPedidos = new ToolStripMenuItem();
             consultasToolStripMenuItem = new ToolStripMenuItem();
@@ -77,6 +78,7 @@
             registrosDeContatosToolStripMenuItem = new ToolStripMenuItem();
             parametrosToolStripMenuItem = new ToolStripMenuItem();
             MnuParametros = new ToolStripMenuItem();
+            mnuAlteraVendedor = new ToolStripMenuItem();
             controleContatoToolStripMenuItem = new ToolStripMenuItem();
             MnuRegistraContato = new ToolStripMenuItem();
             mnuAvisos = new ToolStripMenuItem();
@@ -85,7 +87,6 @@
             pictureBox1 = new PictureBox();
             chrtVendasMesaMes = new System.Windows.Forms.DataVisualization.Charting.Chart();
             NotifyAgendaContato = new NotifyIcon(components);
-            mnuDadosContato = new ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)grdUltimasVendas).BeginInit();
             ((System.ComponentModel.ISupportInitialize)grdUltContato).BeginInit();
             menuStrip1.SuspendLayout();
@@ -294,6 +295,12 @@
             mnuCadCarteira.Name = "mnuCadCarteira";
             mnuCadCarteira.Click += mnuCadCarteira_Click;
             // 
+            // mnuDadosContato
+            // 
+            resources.ApplyResources(mnuDadosContato, "mnuDadosContato");
+            mnuDadosContato.Name = "mnuDadosContato";
+            mnuDadosContato.Click += mnuDadosContato_Click;
+            // 
             // vendasToolStripMenuItem
             // 
             resources.ApplyResources(vendasToolStripMenuItem, "vendasToolStripMenuItem");
@@ -370,7 +377,7 @@
             // parametrosToolStripMenuItem
             // 
             resources.ApplyResources(parametrosToolStripMenuItem, "parametrosToolStripMenuItem");
-            parametrosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { MnuParametros });
+            parametrosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { MnuParametros, mnuAlteraVendedor });
             parametrosToolStripMenuItem.Name = "parametrosToolStripMenuItem";
             // 
             // MnuParametros
@@ -378,6 +385,12 @@
             resources.ApplyResources(MnuParametros, "MnuParametros");
             MnuParametros.Name = "MnuParametros";
             MnuParametros.Click += MnuParametros_Click;
+            // 
+            // mnuAlteraVendedor
+            // 
+            resources.ApplyResources(mnuAlteraVendedor, "mnuAlteraVendedor");
+            mnuAlteraVendedor.Name = "mnuAlteraVendedor";
+            mnuAlteraVendedor.Click += mnuAlteraVendedor_Click;
             // 
             // controleContatoToolStripMenuItem
             // 
@@ -446,17 +459,12 @@
             resources.ApplyResources(NotifyAgendaContato, "NotifyAgendaContato");
             NotifyAgendaContato.BalloonTipClicked += NotifyAgendaContato_BalloonTipClicked;
             // 
-            // mnuDadosContato
-            // 
-            resources.ApplyResources(mnuDadosContato, "mnuDadosContato");
-            mnuDadosContato.Name = "mnuDadosContato";
-            mnuDadosContato.Click += mnuDadosContato_Click;
-            // 
             // frmCRMInicial
             // 
             resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Dpi;
             BackColor = Color.LightCyan;
+            BackgroundImage = Properties.Resources.vecteezy_pattern_with_geometric_elements_light_blue_to_dark_blue_17216459;
             Controls.Add(chrtVendasMesaMes);
             Controls.Add(pictureBox1);
             Controls.Add(labVlrMeta);
@@ -546,5 +554,6 @@
         private ToolStripMenuItem mnuCadCarteira;
         private ToolStripMenuItem contatosAgendadosPorDataToolStripMenuItem;
         private ToolStripMenuItem mnuDadosContato;
+        private ToolStripMenuItem mnuAlteraVendedor;
     }
 }

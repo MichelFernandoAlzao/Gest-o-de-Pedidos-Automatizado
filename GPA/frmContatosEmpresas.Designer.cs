@@ -52,6 +52,13 @@
             labListaRegistros = new Label();
             txtTranscricao = new TextBox();
             labTranscricao = new Label();
+            cmdEndereco = new Button();
+            labDescNumero = new Label();
+            labDescCEP = new Label();
+            labDescEndereco = new Label();
+            label9 = new Label();
+            label8 = new Label();
+            label7 = new Label();
             ((System.ComponentModel.ISupportInitialize)grdRegistros).BeginInit();
             SuspendLayout();
             // 
@@ -195,21 +202,22 @@
             // 
             // TxtContato1
             // 
+            TxtContato1.Enabled = false;
             TxtContato1.Location = new Point(12, 104);
             TxtContato1.Mask = "(99) 00000-0000";
             TxtContato1.Name = "TxtContato1";
+            TxtContato1.ReadOnly = true;
             TxtContato1.Size = new Size(130, 23);
             TxtContato1.TabIndex = 3;
-            TxtContato1.Visible = false;
             // 
             // TxtContato2
             // 
             TxtContato2.Location = new Point(148, 104);
             TxtContato2.Mask = "(99) 00000-0000";
             TxtContato2.Name = "TxtContato2";
+            TxtContato2.ReadOnly = true;
             TxtContato2.Size = new Size(130, 23);
             TxtContato2.TabIndex = 4;
-            TxtContato2.Visible = false;
             // 
             // labCtt2
             // 
@@ -305,14 +313,98 @@
             labTranscricao.TabIndex = 74;
             labTranscricao.Text = "Transcrição";
             // 
+            // cmdEndereco
+            // 
+            cmdEndereco.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            cmdEndereco.Location = new Point(897, 104);
+            cmdEndereco.Name = "cmdEndereco";
+            cmdEndereco.Size = new Size(99, 29);
+            cmdEndereco.TabIndex = 75;
+            cmdEndereco.Text = "Endereços";
+            cmdEndereco.UseVisualStyleBackColor = true;
+            cmdEndereco.Click += cmdEndereco_Click;
+            // 
+            // labDescNumero
+            // 
+            labDescNumero.AutoSize = true;
+            labDescNumero.BackColor = Color.Transparent;
+            labDescNumero.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            labDescNumero.Location = new Point(827, 107);
+            labDescNumero.Name = "labDescNumero";
+            labDescNumero.Size = new Size(49, 15);
+            labDescNumero.TabIndex = 81;
+            labDescNumero.Text = "xxxxxx";
+            // 
+            // labDescCEP
+            // 
+            labDescCEP.AutoSize = true;
+            labDescCEP.BackColor = Color.Transparent;
+            labDescCEP.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            labDescCEP.Location = new Point(685, 107);
+            labDescCEP.Name = "labDescCEP";
+            labDescCEP.Size = new Size(49, 15);
+            labDescCEP.TabIndex = 80;
+            labDescCEP.Text = "xxxxxx";
+            // 
+            // labDescEndereco
+            // 
+            labDescEndereco.AutoSize = true;
+            labDescEndereco.BackColor = Color.Transparent;
+            labDescEndereco.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            labDescEndereco.Location = new Point(355, 107);
+            labDescEndereco.Name = "labDescEndereco";
+            labDescEndereco.Size = new Size(203, 15);
+            labDescEndereco.TabIndex = 79;
+            labDescEndereco.Text = "xxxxxxxxxxxxxxxxxxxxxxxxxxxx";
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.BackColor = Color.Transparent;
+            label9.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label9.Location = new Point(762, 107);
+            label9.Name = "label9";
+            label9.Size = new Size(59, 15);
+            label9.TabIndex = 78;
+            label9.Text = "Numero: ";
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.BackColor = Color.Transparent;
+            label8.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label8.Location = new Point(653, 107);
+            label8.Name = "label8";
+            label8.Size = new Size(33, 15);
+            label8.TabIndex = 77;
+            label8.Text = "CEP: ";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.BackColor = Color.Transparent;
+            label7.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label7.Location = new Point(284, 107);
+            label7.Name = "label7";
+            label7.Size = new Size(65, 15);
+            label7.TabIndex = 76;
+            label7.Text = "Endereço: ";
+            // 
             // frmContatosEmpresas
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Info;
-            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImage = Properties.Resources.vecteezy_pattern_with_geometric_elements_light_blue_to_dark_blue_17216459;
             ClientSize = new Size(1008, 729);
             ControlBox = false;
+            Controls.Add(labDescNumero);
+            Controls.Add(labDescCEP);
+            Controls.Add(labDescEndereco);
+            Controls.Add(label9);
+            Controls.Add(label8);
+            Controls.Add(label7);
+            Controls.Add(cmdEndereco);
             Controls.Add(labTranscricao);
             Controls.Add(txtTranscricao);
             Controls.Add(cmdContatos);
@@ -367,5 +459,12 @@
         private DataGridViewTextBoxColumn grdIDRegistro;
         private DataGridViewTextBoxColumn grdData;
         private DataGridViewTextBoxColumn grdRegistro;
+        private Button cmdEndereco;
+        private Label labDescNumero;
+        private Label labDescCEP;
+        private Label labDescEndereco;
+        private Label label9;
+        private Label label8;
+        private Label label7;
     }
 }

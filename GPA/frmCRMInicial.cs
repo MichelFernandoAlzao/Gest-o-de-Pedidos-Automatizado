@@ -19,6 +19,7 @@ namespace Formularios
         List<string> LParametros;
         string LUsuario = "";
         FormataValores objFormataValores = new FormataValores();
+        string Gerencia = "";
         public frmCRMInicial(string inCaminhoBanco, string inUsuario)
         {
             //this.MaximizeBox = false;
@@ -29,6 +30,15 @@ namespace Formularios
 
             SEGUsuario sEGUsuario = new SEGUsuario();
             List<SEGUsuario> lstUsuario = sEGUsuario.CarregaDados(LCaminhoBanco, inUsuario, "", "", "");
+            if (lstUsuario[0].GerenciaCadastros == "S")
+            {
+                Gerencia = "S";
+            }
+
+            if (Gerencia != "S")
+            {
+                mnuAlteraVendedor.Visible = false;
+            }
         }
 
         private void frmCRMInicial_Load(object sender, EventArgs e)
@@ -382,7 +392,7 @@ namespace Formularios
                         Contador++;
                     }
                 }
-                if(Contador > 0)
+                if (Contador > 0)
                 {
                     NotifyAgendaContato.BalloonTipTitle = "GPA - Agenda Contatos";
                     NotifyAgendaContato.BalloonTipText = "Você possui " + Contador + " agendamentos de contato pendentes!";
@@ -564,6 +574,13 @@ namespace Formularios
         {
             frmDadosContato frmDadosContato = new frmDadosContato(LCaminhoBanco, LUsuario);
             frmDadosContato.ShowDialog();
+            RealizaCargas();
+        }
+
+        private void mnuAlteraVendedor_Click(object sender, EventArgs e)
+        {
+            frmTrocaVendedor frmTrocaVendedor = new frmTrocaVendedor(LCaminhoBanco, LUsuario);
+            frmTrocaVendedor.ShowDialog();
             RealizaCargas();
         }
     }

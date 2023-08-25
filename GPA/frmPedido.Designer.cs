@@ -76,7 +76,6 @@
             txtDataConfirmacao = new MaskedTextBox();
             txtDataSolicitacao = new MaskedTextBox();
             cmdImprimir = new Button();
-            txtValidadeProposta = new MaskedTextBox();
             labValidadeProp = new Label();
             labFatMinimo = new Label();
             txtFatMinimo = new TextBox();
@@ -87,6 +86,7 @@
             cboStatus = new ComboBox();
             labStatus = new Label();
             txtPrazoEntrega = new TextBox();
+            txtValidadeProposta = new TextBox();
             SuspendLayout();
             // 
             // lbPedidos
@@ -569,16 +569,6 @@
             cmdImprimir.UseVisualStyleBackColor = true;
             cmdImprimir.Click += cmdImprimir_Click;
             // 
-            // txtValidadeProposta
-            // 
-            txtValidadeProposta.Location = new Point(12, 223);
-            txtValidadeProposta.Mask = "00/00/0000";
-            txtValidadeProposta.Name = "txtValidadeProposta";
-            txtValidadeProposta.Size = new Size(100, 23);
-            txtValidadeProposta.TabIndex = 8;
-            txtValidadeProposta.ValidatingType = typeof(DateTime);
-            txtValidadeProposta.Leave += txtValidadeProposta_Leave;
-            // 
             // labValidadeProp
             // 
             labValidadeProp.AutoSize = true;
@@ -631,9 +621,11 @@
             // txtPrazoPagamento
             // 
             txtPrazoPagamento.Location = new Point(353, 225);
+            txtPrazoPagamento.MaxLength = 30;
             txtPrazoPagamento.Name = "txtPrazoPagamento";
             txtPrazoPagamento.Size = new Size(110, 23);
             txtPrazoPagamento.TabIndex = 10;
+            txtPrazoPagamento.Leave += txtPrazoPagamento_Leave;
             // 
             // chkImpInclu
             // 
@@ -669,19 +661,31 @@
             // txtPrazoEntrega
             // 
             txtPrazoEntrega.Location = new Point(118, 225);
+            txtPrazoEntrega.MaxLength = 30;
             txtPrazoEntrega.Name = "txtPrazoEntrega";
             txtPrazoEntrega.Size = new Size(100, 23);
             txtPrazoEntrega.TabIndex = 63;
+            txtPrazoEntrega.Leave += txtPrazoEntrega_Leave_1;
+            // 
+            // txtValidadeProposta
+            // 
+            txtValidadeProposta.Location = new Point(12, 225);
+            txtValidadeProposta.MaxLength = 30;
+            txtValidadeProposta.Name = "txtValidadeProposta";
+            txtValidadeProposta.Size = new Size(100, 23);
+            txtValidadeProposta.TabIndex = 64;
+            txtValidadeProposta.Leave += txtValidadeProposta_Leave;
             // 
             // frmPedido
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Info;
-            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImage = Properties.Resources.vecteezy_pattern_with_geometric_elements_light_blue_to_dark_blue_17216459;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(800, 496);
             ControlBox = false;
+            Controls.Add(txtValidadeProposta);
             Controls.Add(txtPrazoEntrega);
             Controls.Add(labStatus);
             Controls.Add(cboStatus);
@@ -691,7 +695,6 @@
             Controls.Add(label2);
             Controls.Add(labFatMinimo);
             Controls.Add(txtFatMinimo);
-            Controls.Add(txtValidadeProposta);
             Controls.Add(labValidadeProp);
             Controls.Add(cmdImprimir);
             Controls.Add(txtDataSolicitacao);
@@ -798,7 +801,6 @@
         private MaskedTextBox txtDataConfirmacao;
         private MaskedTextBox txtDataSolicitacao;
         private Button cmdImprimir;
-        private MaskedTextBox txtValidadeProposta;
         private Label labValidadeProp;
         private Label labFatMinimo;
         private TextBox txtFatMinimo;
@@ -810,5 +812,6 @@
         private Label labStatus;
         private TextBox txtImpostos;
         private TextBox txtPrazoEntrega;
+        private TextBox txtValidadeProposta;
     }
 }

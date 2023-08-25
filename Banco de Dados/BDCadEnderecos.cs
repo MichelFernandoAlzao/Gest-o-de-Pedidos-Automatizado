@@ -148,7 +148,13 @@ namespace Banco_de_Dados
                 sqlWhere = "WHERE CDCENDEmpresaDR = '" + inIDEmpresa + "'";
                 ClausulaWhere = 'S';
             }
-            
+            if(cpEndFisico != null)
+            {
+                if(cpEndFisico != "")
+                {
+                    sqlWhere += " AND CDCENDEndFisico = '" + cpEndFisico + "'";
+                }
+            }
             if (ClausulaWhere == 'S')
             {
                 slqSelect += sqlWhere;

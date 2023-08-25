@@ -63,6 +63,7 @@
             grdCarteira.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             grdCarteira.Size = new Size(302, 285);
             grdCarteira.TabIndex = 0;
+            grdCarteira.SelectionChanged += grdCarteira_SelectionChanged;
             // 
             // grdID
             // 

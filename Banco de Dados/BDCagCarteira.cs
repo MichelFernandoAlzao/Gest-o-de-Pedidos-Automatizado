@@ -43,7 +43,7 @@ namespace Banco_de_Dados
             {
                 sqlCampos += "CDCPotencial, ";
 
-                sqlConteudo += "'" + cpPotencial + "',";
+                sqlConteudo += "'" + cpPotencial.Replace(",",".") + "',";
             }
 
 
@@ -80,25 +80,25 @@ namespace Banco_de_Dados
             {
                 sqlWhere = "WHERE CDCarteira = " + cpID;
             }
-            if (cpSigla != "")
-            {
-                sqlWhere += "CDCSigla like '%" + cpSigla + "%' " + "AND";
-                ClausulaWhere = 'S';
-            }
-            if (cpDescricao != "")
-            {
-                sqlWhere += "CDCDescricao like '%" + cpDescricao + "%' " + "AND";
-                ClausulaWhere = 'S';
-            }
-            if (cpPotencial != "")
-            {
-                sqlWhere += "CDCPotencial = '" + cpPotencial + "' " + "AND";
-                ClausulaWhere = 'S';
-            }
-            if (ClausulaWhere == 'S')
-            {
-                slqSelect += sqlWhere;
-            }
+            //if (cpSigla != "")
+            //{
+            //    sqlWhere += "CDCSigla like '%" + cpSigla + "%' " + "AND";
+            //    ClausulaWhere = 'S';
+            //}
+            //if (cpDescricao != "")
+            //{
+            //    sqlWhere += "CDCDescricao like '%" + cpDescricao + "%' " + "AND";
+            //    ClausulaWhere = 'S';
+            //}
+            //if (cpPotencial != "")
+            //{
+            //    sqlWhere += "CDCPotencial = '" + cpPotencial + "' " + "AND";
+            //    ClausulaWhere = 'S';
+            //}
+            //if (ClausulaWhere == 'S')
+            //{
+            //    slqSelect += sqlWhere;
+            //}
 
             Conexao conexao = new Conexao(LCaminhoBanco);
             SqlCommand cmd = new SqlCommand();

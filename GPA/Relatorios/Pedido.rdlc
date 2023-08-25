@@ -759,7 +759,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!fdOPITPValorUnitario.Value</Value>
+                                  <Value>=CLng(Fields!fdOPITPValorUnitario.Value)</Value>
                                   <Style>
                                     <Format>'R$'#,0.00;('R$'#,0.00)</Format>
                                   </Style>
@@ -780,7 +780,6 @@
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
                             <PaddingBottom>2pt</PaddingBottom>
-                            <rd:FormatSymbolCulture>pt-BR</rd:FormatSymbolCulture>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -794,7 +793,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!fdOPITPValorTotalItem.Value</Value>
+                                  <Value>=CLng(Fields!fdOPITPValorTotalItem.Value)</Value>
                                   <Style>
                                     <Format>'R$'#,0.00;('R$'#,0.00)</Format>
                                   </Style>
@@ -873,7 +872,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!fdOPPVlrItensFaturando.Value</Value>
+                                  <Value>=CLng(Fields!fdOPPVlrItensFaturando.Value)</Value>
                                   <Style>
                                     <Format>'R$'#,0.00;('R$'#,0.00)</Format>
                                     <Language>pt-BR</Language>
@@ -902,6 +901,7 @@
                             <rd:FormatSymbolCulture>pt-BR</rd:FormatSymbolCulture>
                           </Style>
                         </Textbox>
+                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                   </TablixCells>

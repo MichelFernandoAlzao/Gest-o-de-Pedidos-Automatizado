@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using DAL;
 using System.Data.SqlClient;
 using System.Data;
+using System.Net.NetworkInformation;
 
 namespace Banco_de_Dados
 {
@@ -421,11 +422,46 @@ namespace Banco_de_Dados
             cmd.Dispose();
         }
 
-        public List<BDPedido> CarregaDadosData(string inCaminhoBanco,string inDataInicio, string inDataTermino, string inVendedorDR)
+        public List<BDPedido> CarregaDadosData(string inCaminhoBanco,string inDataInicio, string inDataTermino, string inVendedorDR,string inConcluido, string inPendente, string inCancelado)
         {
+            string PStatus = "";
             LcaminhoBanco = inCaminhoBanco;
             List<BDPedido> lstPedido = new List<BDPedido>();
-            string slqSelect = "SELECT * FROM OPPPedido WHERE (OPPDataConfirmacao >= '" + inDataInicio + "' AND OPPDataConfirmacao <= '" + inDataTermino + "') AND OPPVendedorDR = '" + inVendedorDR + "' AND OPPStatus = 'Concluido'";
+            string slqSelect = "SELECT * FROM OPPPedido WHERE (OPPDataConfirmacao >= '" + inDataInicio + "' AND OPPDataConfirmacao <= '" + inDataTermino + "') AND OPPVendedorDR = '" + inVendedorDR + "'";
+            if(inConcluido != "")
+            {
+                slqSelect += " AND (OPPStatus = 'Concluido'";
+                PStatus = "S";
+            }
+            if(inPendente != "")
+            {
+                if(PStatus == "S") 
+                {
+                    slqSelect += " OR OPPStatus = 'Pendente'";
+                }
+                else
+                {
+                    slqSelect += " AND ( OPPStatus = 'Pendente'";
+                }
+                
+            }
+            if(inCancelado != "")
+            {
+                if(PStatus == "S")
+                {
+                    slqSelect += " OR OPPStatus = 'Cancelado'";
+                }
+                else
+                {
+                    slqSelect += " AND OPPStatus = 'Cancelado'";
+                }
+                
+            }
+            if(PStatus == "S")
+            {
+                slqSelect += ")";
+            }
+            
 
             Conexao conexao = new Conexao(LcaminhoBanco);
             SqlCommand cmd = new SqlCommand();

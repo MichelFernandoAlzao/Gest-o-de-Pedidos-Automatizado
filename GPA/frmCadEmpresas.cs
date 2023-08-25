@@ -176,7 +176,7 @@ namespace GPA
             {
                 objCadastro.Vendedor = "";
             }
-            if(LIDCarteira != "")
+            if (LIDCarteira != "")
             {
                 objCadastro.Carteira = LIDCarteira;
             }

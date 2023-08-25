@@ -41,8 +41,27 @@ namespace Formularios
 
         private void cmdBuscar_Click(object sender, EventArgs e)
         {
+            string PConcluido = "";
+            string PPendente = "";
+            string PCancelado = "";
+            if (chkConcluido.Checked)
+            {
+                PConcluido = "Concluido";
+            }
+            
+            if (chkCancelado.Checked)
+            {
+                PCancelado = "Canelado";
+            }
+
+            if (chkPendente.Checked)
+            {
+                PPendente = "Pendente";
+            }
             BDPedido objPedido = new BDPedido();
-            List<BDPedido> lstPedidos = objPedido.CarregaDadosData(LCaminhoBanco, txtDataInicio.Text, txtDataFim.Text, LUsuario);
+            List<BDPedido> lstPedidos = objPedido.CarregaDadosData(LCaminhoBanco, txtDataInicio.Text, txtDataFim.Text, LUsuario, PConcluido, PPendente, PCancelado);
+
+            grdListaPedido.Rows.Clear();
 
             if (lstPedidos.Count > 0)
             {

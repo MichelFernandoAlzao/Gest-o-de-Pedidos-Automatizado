@@ -86,7 +86,7 @@ namespace Camada_Negocios
             //Variavel que ira receber a soma dos pedidos
             
             BDPedido objPedidos = new BDPedido();
-            List<BDPedido> lstPedido = objPedidos.CarregaDadosData(LCaminhoBanco,Convert.ToString(primeiroDiaDoMes),Convert.ToString(ultimoDiaDoMes),LUsuario);
+            List<BDPedido> lstPedido = objPedidos.CarregaDadosData(LCaminhoBanco,Convert.ToString(primeiroDiaDoMes),Convert.ToString(ultimoDiaDoMes),LUsuario,"Concluido","","");
             if(lstPedido.Count > 0)
             {
                 foreach(BDPedido item in lstPedido)

@@ -67,25 +67,29 @@ namespace Banco_de_Dados
             {
                 sqlCampos += "OPITPValorUnitario, ";
 
-                sqlconteudo += "'" + cpValorUnit.ToString().Replace(".","").Replace(",",".") + "',";
+                sqlconteudo += "'" + cpValorUnit.ToString().Replace(",",".") + "',";
             }
             if (cpValorTotalItem.ToString() != "")
             {
                 sqlCampos += "OPITPValorTotalItem, ";
 
-                sqlconteudo += "'" + cpValorTotalItem.ToString().Replace(".", "").Replace(",", ".") + "',";
+                sqlconteudo += "'" + cpValorTotalItem.ToString().Replace(",", ".") + "',";
             }
-            if (cpFornecedor.ToString() != "")
+            if(cpFornecedor != null)
             {
-                sqlCampos += "OPITPFornecedorDR, ";
+                if (cpFornecedor.ToString() != "")
+                {
+                    sqlCampos += "OPITPFornecedorDR, ";
 
-                sqlconteudo += "'" + cpFornecedor.ToString() + "',";
+                    sqlconteudo += "'" + cpFornecedor.ToString() + "',";
+                }
             }
+            
             if (cpValorFornecedor.ToString() != "")
             {
                 sqlCampos += "OPITPValorFornecedor, ";
 
-                sqlconteudo += "'" + cpValorFornecedor.ToString().Replace(".", "").Replace(",", ".") + "',";
+                sqlconteudo += "'" + cpValorFornecedor.ToString().Replace(",", ".") + "',";
             }
             if (cpPedidoDR != null)
             {
@@ -154,11 +158,11 @@ namespace Banco_de_Dados
             }
             if (cpValorUnit != null)
             {
-                sqlconteudo += "OPITPValorUnitario = '" + cpValorUnit.ToString() + "',";
+                sqlconteudo += "OPITPValorUnitario = '" + cpValorUnit.ToString().Replace(",",".") + "',";
             }
             if (cpValorTotalItem != null)
             {
-                sqlconteudo += "OPITPValorTotalItem = '" + cpValorTotalItem.ToString() + "',";
+                sqlconteudo += "OPITPValorTotalItem = '" + cpValorTotalItem.ToString().Replace(",", ".") + "',";
             }
             if (cpFornecedor != null)
             {
@@ -166,7 +170,7 @@ namespace Banco_de_Dados
             }
             if (cpValorFornecedor != null)
             {
-                sqlconteudo += "OPITPValorFornecedor = '" + cpValorFornecedor.ToString() + "',";
+                sqlconteudo += "OPITPValorFornecedor = '" + cpValorFornecedor.ToString().Replace(",", ".") + "',";
             }
             if (cpPedidoDR != null)
             {

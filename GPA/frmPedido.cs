@@ -205,9 +205,13 @@ namespace Formularios
 
                 txtEmpresa.Text = LRazaoSocial;
 
-
-
-
+                BDCadastroGeral objEmpresa = new BDCadastroGeral();
+                List<BDCadastroGeral> lstEmpresa = objEmpresa.CarregaDados(LCaminhoBanco, LID, LRazaoSocial, "", "", "", LUsuario, "", "", "", "");
+                if(lstEmpresa.Count > 0)
+                {
+                    labDescCNPJ.Text = lstEmpresa[0].CNPJ.ToString();
+                }
+                
                 BDPedido objPedido = new BDPedido();
                 List<BDPedido> lstPedido = objPedido.CarregaDados(LCaminhoBanco, "", LID, LUsuario);
                 if (lstPedido.Count > 0)
@@ -230,12 +234,6 @@ namespace Formularios
                     }
                     labDescUltCompra.Text = MaiorData.ToString();
                 }
-
-
-                BDCadastroGeral objEmpresa = new BDCadastroGeral();
-                List<BDCadastroGeral> lstEmpresa = objEmpresa.CarregaDados(LCaminhoBanco, LID, LRazaoSocial, "", "", "", LUsuario, "", "", "", "");
-                labDescCNPJ.Text = lstEmpresa[0].CNPJ.ToString();
-
             }
         }
 
@@ -602,35 +600,9 @@ namespace Formularios
 
         private void txtValidadeProposta_Leave(object sender, EventArgs e)
         {
-            if (txtValidadeProposta.Text == "  /  /")
+            if (txtValidadeProposta.Text.Length > 30)
             {
-                txtValidadeProposta.Text = DateTime.Today.ToShortDateString();
-            }
-            else
-            {
-                if (DateTime.TryParse(txtValidadeProposta.Text, out DateTime result) == false)
-                {
-                    MessageBox.Show("Data em formato invalido", "GPA");
-                    txtValidadeProposta.Text = "";
-                    return;
-                }
-            }
-        }
-
-        private void txtPrazoEntrega_Leave(object sender, EventArgs e)
-        {
-            if (txtPrazoEntrega.Text == "  /  /")
-            {
-                txtPrazoEntrega.Text = DateTime.Today.ToShortDateString();
-            }
-            else
-            {
-                if (DateTime.TryParse(txtPrazoEntrega.Text, out DateTime result) == false)
-                {
-                    MessageBox.Show("Data em formato invalido", "GPA");
-                    txtPrazoEntrega.Text = "";
-                    return;
-                }
+                MessageBox.Show("Tamanho maximo de 30 caracteres permitido!", "GPA-Pedido/Proposta");
             }
         }
 
@@ -640,6 +612,22 @@ namespace Formularios
             {
                 frmCadEmpresas frmCadastro = new frmCadEmpresas(LCaminhoBanco, LUsuario, LID);
                 frmCadastro.ShowDialog();
+            }
+        }
+
+        private void txtPrazoEntrega_Leave_1(object sender, EventArgs e)
+        {
+            if (txtPrazoEntrega.Text.Length > 30)
+            {
+                MessageBox.Show("Tamanho maximo de 30 caracteres permitido!", "GPA-Pedido/Proposta");
+            }
+        }
+
+        private void txtPrazoPagamento_Leave(object sender, EventArgs e)
+        {
+            if (txtPrazoPagamento.Text.Length > 30)
+            {
+                MessageBox.Show("Tamanho maximo de 30 caracteres permitido!", "GPA-Pedido/Proposta");
             }
         }
     }

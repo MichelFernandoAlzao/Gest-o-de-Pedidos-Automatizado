@@ -43,6 +43,7 @@
             chkCancelado = new CheckBox();
             txtDataInicio = new MaskedTextBox();
             txtDataFim = new MaskedTextBox();
+            chkPendente = new CheckBox();
             ((System.ComponentModel.ISupportInitialize)grdListaPedido).BeginInit();
             SuspendLayout();
             // 
@@ -149,7 +150,7 @@
             // 
             chkConcluido.AutoSize = true;
             chkConcluido.BackColor = Color.Transparent;
-            chkConcluido.Location = new Point(573, 78);
+            chkConcluido.Location = new Point(532, 76);
             chkConcluido.Name = "chkConcluido";
             chkConcluido.Size = new Size(81, 19);
             chkConcluido.TabIndex = 19;
@@ -187,6 +188,17 @@
             txtDataFim.ValidatingType = typeof(DateTime);
             txtDataFim.Leave += txtDataFim_Leave;
             // 
+            // chkPendente
+            // 
+            chkPendente.AutoSize = true;
+            chkPendente.BackColor = Color.Transparent;
+            chkPendente.Location = new Point(619, 76);
+            chkPendente.Name = "chkPendente";
+            chkPendente.Size = new Size(76, 19);
+            chkPendente.TabIndex = 23;
+            chkPendente.Text = "Pendente";
+            chkPendente.UseVisualStyleBackColor = false;
+            // 
             // frmUltimasVendas
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -196,6 +208,7 @@
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(800, 397);
             ControlBox = false;
+            Controls.Add(chkPendente);
             Controls.Add(txtDataFim);
             Controls.Add(txtDataInicio);
             Controls.Add(chkCancelado);
@@ -231,5 +244,6 @@
         private DataGridViewTextBoxColumn grdNumero;
         private DataGridViewTextBoxColumn grdRazao;
         private DataGridViewTextBoxColumn grdData;
+        private CheckBox chkPendente;
     }
 }

@@ -148,10 +148,8 @@ namespace Formularios
             {
                 TxtContato2.Text = "";
                 labCtt2.Visible = false;
-                TxtContato2.Visible = false;
                 TxtContato1.Text = "";
                 labCtt1.Visible = false;
-                TxtContato1.Visible = false;
                 txtRegistro.Text = "";
                 grdRegistros.Rows.Clear();
                 frmSelecionaEmpresa objTela = new frmSelecionaEmpresa(LCaminhoBanco, this, "", txtEmpresa.Text.ToString(), "", "", LUsuario, "", "", "");
@@ -166,13 +164,21 @@ namespace Formularios
                     {
                         TxtContato1.Text = lstContatos[0].cpTelefone.ToString();
                         labCtt1.Visible = true;
-                        TxtContato1.Visible = true;
                     }
                     if (lstContatos.Count > 1)
                     {
                         TxtContato2.Text = lstContatos[1].cpTelefone.ToString();
                         labCtt2.Visible = true;
-                        TxtContato2.Visible = true;
+                    }
+
+                    BDCadEnderecos objEnderecos = new BDCadEnderecos();
+                    objEnderecos.cpEndFisico = "S";
+                    List<BDCadEnderecos> lstCadEnderecos = objEnderecos.CarregaDados(LCaminhoBanco, LID);
+                    if (lstCadEnderecos.Count > 0)
+                    {
+                        labDescEndereco.Text = lstCadEnderecos[0].cpRua.ToString();
+                        labDescCEP.Text = lstCadEnderecos[0].cpCEP.ToString();
+                        labDescNumero.Text = lstCadEnderecos[0].cpNumero.ToString();
                     }
                     CarregaGridRegistros();
                 }
@@ -243,6 +249,26 @@ namespace Formularios
                     labCtt2.Visible = true;
                     TxtContato2.Visible = true;
                 }
+            }
+        }
+
+        private void cmdEndereco_Click(object sender, EventArgs e)
+        {
+            if (LID == "")
+            {
+                MessageBox.Show("Nenhuma empresa selecionada!", "GPA");
+                return;
+            }
+            frmCadEndereco objTela = new frmCadEndereco(LCaminhoBanco, LID);
+            objTela.ShowDialog();
+            BDCadEnderecos objEnderecos = new BDCadEnderecos();
+            objEnderecos.cpEndFisico = "S";
+            List<BDCadEnderecos> lstCadEnderecos = objEnderecos.CarregaDados(LCaminhoBanco, LID);
+            if (lstCadEnderecos.Count > 0)
+            {
+                labDescEndereco.Text = lstCadEnderecos[0].cpRua.ToString();
+                labDescCEP.Text = lstCadEnderecos[0].cpCEP.ToString();
+                labDescNumero.Text = lstCadEnderecos[0].cpNumero.ToString();
             }
         }
     }

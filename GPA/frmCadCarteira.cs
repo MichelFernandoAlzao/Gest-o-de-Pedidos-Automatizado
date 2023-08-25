@@ -64,6 +64,7 @@ namespace Formularios
             }
             else
             {
+                objCarteira.cpID = LIDCarteira;
                 objCarteira.AlteraDados(LcaminhoBanco);
             }
 
@@ -104,6 +105,17 @@ namespace Formularios
                 grdCarteira.Rows.Add(Row);
             }
 
+        }
+
+        private void grdCarteira_SelectionChanged(object sender, EventArgs e)
+        {
+            if(grdCarteira.RowCount > 0)
+            {
+                LIDCarteira = grdCarteira.SelectedRows[0].Cells[0].Value.ToString();
+                txtSigla.Text = grdCarteira.SelectedRows[0].Cells[1].Value.ToString();
+                txtDescricao.Text = grdCarteira.SelectedRows[0].Cells[2].Value.ToString(); 
+                txtPotencial.Text = grdCarteira.SelectedRows[0].Cells[3].Value.ToString();
+            }
         }
     }
 }
