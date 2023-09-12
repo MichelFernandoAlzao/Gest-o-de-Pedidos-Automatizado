@@ -483,16 +483,15 @@ namespace Banco_de_Dados
             {
                 if (RazaoSocial != "")
                 {
-                    if(pVendedor != null)
+                    if (pVendedor != "")
                     {
-                        if (pVendedor != "")
-                        {
-                            sqlWhere += " AND CDCERazaoSocial like '%" + RazaoSocial + "%'";
-                        }
+                        sqlWhere += " AND CDCERazaoSocial like '%" + RazaoSocial + "%'";
+                        ClausulaWhere = 'S';
                     }
                     else
                     {
-                        sqlWhere += "CDCERazaoSocial like '%" + RazaoSocial + "%'";
+                        sqlWhere += " CDCERazaoSocial like '%" + RazaoSocial + "%'";
+                        ClausulaWhere = 'S';
                     }
                     
                 }
@@ -501,7 +500,15 @@ namespace Banco_de_Dados
             {
                 if (CNPJ != "")
                 {
-                    sqlWhere += "CDCECNPJ like '%" + CNPJ + "'%'";
+                    if(pVendedor != "")
+                    {
+                        sqlWhere += " AND CDCECNPJ like '%" + CNPJ + "%'";
+                    }
+                    else
+                    {
+                        sqlWhere += "CDCECNPJ like '%" + CNPJ + "%'";
+                    }
+                    ClausulaWhere = 'S';
                 }
             }
             
@@ -509,10 +516,7 @@ namespace Banco_de_Dados
 
             if (ClausulaWhere == 'S')
             {
-                if (pVendedor != "")
-                {
-                    slqSelect += sqlWhere;
-                }
+              slqSelect += sqlWhere;
             }
 
 

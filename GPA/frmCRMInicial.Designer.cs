@@ -87,6 +87,7 @@
             pictureBox1 = new PictureBox();
             chrtVendasMesaMes = new System.Windows.Forms.DataVisualization.Charting.Chart();
             NotifyAgendaContato = new NotifyIcon(components);
+            mnuRelCadastroDeEmpresas = new ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)grdUltimasVendas).BeginInit();
             ((System.ComponentModel.ISupportInitialize)grdUltContato).BeginInit();
             menuStrip1.SuspendLayout();
@@ -353,7 +354,7 @@
             // relatóriosToolStripMenuItem
             // 
             resources.ApplyResources(relatóriosToolStripMenuItem, "relatóriosToolStripMenuItem");
-            relatóriosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { rankingDeVendasToolStripMenuItem, vendasPorVendedorToolStripMenuItem, registrosDeContatosToolStripMenuItem });
+            relatóriosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { rankingDeVendasToolStripMenuItem, vendasPorVendedorToolStripMenuItem, registrosDeContatosToolStripMenuItem, mnuRelCadastroDeEmpresas });
             relatóriosToolStripMenuItem.Name = "relatóriosToolStripMenuItem";
             // 
             // rankingDeVendasToolStripMenuItem
@@ -459,6 +460,12 @@
             resources.ApplyResources(NotifyAgendaContato, "NotifyAgendaContato");
             NotifyAgendaContato.BalloonTipClicked += NotifyAgendaContato_BalloonTipClicked;
             // 
+            // mnuRelCadastroDeEmpresas
+            // 
+            resources.ApplyResources(mnuRelCadastroDeEmpresas, "mnuRelCadastroDeEmpresas");
+            mnuRelCadastroDeEmpresas.Name = "mnuRelCadastroDeEmpresas";
+            mnuRelCadastroDeEmpresas.Click += mnuRelCadastroDeEmpresas_Click;
+            // 
             // frmCRMInicial
             // 
             resources.ApplyResources(this, "$this");
@@ -555,5 +562,6 @@
         private ToolStripMenuItem contatosAgendadosPorDataToolStripMenuItem;
         private ToolStripMenuItem mnuDadosContato;
         private ToolStripMenuItem mnuAlteraVendedor;
+        private ToolStripMenuItem mnuRelCadastroDeEmpresas;
     }
 }

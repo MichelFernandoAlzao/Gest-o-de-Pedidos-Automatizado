@@ -39,6 +39,7 @@
             ReportViewer.ServerReport.BearerToken = null;
             ReportViewer.Size = new Size(800, 450);
             ReportViewer.TabIndex = 0;
+            ReportViewer.Load += ReportViewer_Load;
             // 
             // frmRelatorios
             // 

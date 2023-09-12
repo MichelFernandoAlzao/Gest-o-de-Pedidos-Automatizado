@@ -84,8 +84,10 @@
             // 
             // txtRazaoSocial
             // 
+            txtRazaoSocial.Enabled = false;
             txtRazaoSocial.Location = new Point(12, 61);
             txtRazaoSocial.Name = "txtRazaoSocial";
+            txtRazaoSocial.ReadOnly = true;
             txtRazaoSocial.Size = new Size(434, 23);
             txtRazaoSocial.TabIndex = 15;
             txtRazaoSocial.KeyDown += txtRazaoSocial_KeyDown;

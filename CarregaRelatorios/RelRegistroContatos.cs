@@ -14,6 +14,12 @@ namespace CarregaRelatorios
 {
     public class RelRegistroContatos
     {
+        public string OPRegContatosEmpresa { get; set; }
+        public string CDCERazaoSocial { get; set; }
+        public string OPRCEDataContato { get; set; }
+        public string OPRCESugestao { get; set; }
+        public string USUsuario { get; set; }
+
         public List<RegistrodeContato> CarregaRelatorioRDLC(string inCaminhoBanco, string[] inParametrosRel)
         {
             string inVendedor = inParametrosRel[1];

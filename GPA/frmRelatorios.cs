@@ -30,51 +30,107 @@ namespace Formularios
             string pRelatorio = inParametrosRel[0];
 
             ParametrosRel = inParametrosRel;
-            if (pRelatorio == "Formularios.Relatorios.Pedido.rdlc")
+            ReportDataSource fonteDeDados = new ReportDataSource();
+            switch (pRelatorio)
             {
-                List<RelatorioPedido> lstPedido = new List<RelatorioPedido>();
-                CarregaRelatorio objRelPedido = new CarregaRelatorio();
-                lstPedido = objRelPedido.CarregaRelatorioRDLC(LCaminhoBanco, ParametrosRel[1]);
+                case "Formularios.Relatorios.Pedido.rdlc":
+                    List<RelatorioPedido> lstPedido = new List<RelatorioPedido>();
+                    CarregaRelatorio objRelPedido = new CarregaRelatorio();
+                    lstPedido = objRelPedido.CarregaRelatorioRDLC(LCaminhoBanco, ParametrosRel[1]);
+                    fonteDeDados.Name = "Pedido";
+                    fonteDeDados.Value = lstPedido;
+                    this.ReportViewer.LocalReport.DataSources.Clear();
+                    this.ReportViewer.LocalReport.DataSources.Add(fonteDeDados);
+                    ReportViewer.LocalReport.ReportEmbeddedResource = pRelatorio;
+                    this.Controls.Add(this.ReportViewer);
+                break;
 
-                //var fonteDeDados = new Microsoft.Reporting.WinForms.ReportDataSource();
-                ReportDataSource fonteDeDados = new ReportDataSource();
-                fonteDeDados.Name = "Pedido";
-                fonteDeDados.Value = lstPedido;
-                this.ReportViewer.LocalReport.DataSources.Clear();
-                this.ReportViewer.LocalReport.DataSources.Add(fonteDeDados);
-                ReportViewer.LocalReport.ReportEmbeddedResource = pRelatorio;
-                this.Controls.Add(this.ReportViewer);
-            }
-            if (pRelatorio == "Formularios.Relatorios.VendasPorCliente.rdlc")
-            {
-                List<VendasPorCliente> lstVendas = new List<VendasPorCliente>();
-                RelVendasPorCliente objRelVendas = new RelVendasPorCliente();
-                lstVendas = objRelVendas.CarregaRelatorioRDLC(LCaminhoBanco, ParametrosRel);
+                case "Formularios.Relatorios.VendasPorCliente.rdlc":
+                    List<VendasPorCliente> lstVendas = new List<VendasPorCliente>();
+                    RelVendasPorCliente objRelVendas = new RelVendasPorCliente();
+                    lstVendas = objRelVendas.CarregaRelatorioRDLC(LCaminhoBanco, ParametrosRel);
+                    fonteDeDados.Name = "VendasPorCliente";
+                    fonteDeDados.Value = lstVendas;
+                    this.ReportViewer.LocalReport.DataSources.Clear();
+                    this.ReportViewer.LocalReport.DataSources.Add(fonteDeDados);
+                    ReportViewer.LocalReport.ReportEmbeddedResource = pRelatorio;
+                    this.Controls.Add(this.ReportViewer);
+                break;
 
-                ReportDataSource fonteDeDados = new ReportDataSource();
-                fonteDeDados.Name = "VendasPorCliente";
-                fonteDeDados.Value = lstVendas;
-                this.ReportViewer.LocalReport.DataSources.Clear();
-                this.ReportViewer.LocalReport.DataSources.Add(fonteDeDados);
-                ReportViewer.LocalReport.ReportEmbeddedResource = pRelatorio;
-                this.Controls.Add(this.ReportViewer);
-            }
-            if (pRelatorio == "Formularios.Relatorios.RegistroContatos.rdlc")
-            {
-                List<RegistrodeContato> lstregistros = new List<RegistrodeContato>();
-                RelRegistroContatos objRelRegistros = new RelRegistroContatos();
-                lstregistros = objRelRegistros.CarregaRelatorioRDLC(LCaminhoBanco, ParametrosRel);
+                case "Formularios.Relatorios.RegistroContatos.rdlc":
+                    List<RegistrodeContato> lstregistros = new List<RegistrodeContato>();
+                    RelRegistroContatos objRelRegistros = new RelRegistroContatos();
+                    lstregistros = objRelRegistros.CarregaRelatorioRDLC(LCaminhoBanco, ParametrosRel);
+                    fonteDeDados.Name = "RegistroDeContatos";
+                    fonteDeDados.Value = lstregistros;
+                    this.ReportViewer.LocalReport.DataSources.Clear();
+                    this.ReportViewer.LocalReport.DataSources.Add(fonteDeDados);
+                    ReportViewer.LocalReport.ReportEmbeddedResource = pRelatorio;
+                    this.Controls.Add(this.ReportViewer);
+                break;
 
-                ReportDataSource fonteDeDados = new ReportDataSource();
-                fonteDeDados.Name = "RegistroDeContatos";
-                fonteDeDados.Value = lstregistros;
-                this.ReportViewer.LocalReport.DataSources.Clear();
-                this.ReportViewer.LocalReport.DataSources.Add(fonteDeDados);
-                ReportViewer.LocalReport.ReportEmbeddedResource = pRelatorio;
-                this.Controls.Add(this.ReportViewer);
+                case "Formularios.Relatorios.CadastrosDeEmpresas.rdlc":
+                    List<CadastrosDeEmpresas> lstCadastros = new List<CadastrosDeEmpresas>();
+                    RelCadastroDeEmpresas objRelCadastros = new RelCadastroDeEmpresas();
+                    lstCadastros = objRelCadastros.CarregaRelatorioRDLC(LCaminhoBanco, ParametrosRel);
+                    fonteDeDados.Name = "CadastrosDeEmpresas";
+                    fonteDeDados.Value = lstCadastros;
+                    this.ReportViewer.LocalReport.DataSources.Clear();
+                    this.ReportViewer.LocalReport.DataSources.Add(fonteDeDados);
+                    ReportViewer.LocalReport.ReportEmbeddedResource = pRelatorio;
+                    this.Controls.Add(this.ReportViewer);
+                    break;
             }
+            //if (pRelatorio == "Formularios.Relatorios.Pedido.rdlc")
+            //{
+            //    List<RelatorioPedido> lstPedido = new List<RelatorioPedido>();
+            //    CarregaRelatorio objRelPedido = new CarregaRelatorio();
+            //    lstPedido = objRelPedido.CarregaRelatorioRDLC(LCaminhoBanco, ParametrosRel[1]);
+
+            //    //var fonteDeDados = new Microsoft.Reporting.WinForms.ReportDataSource();
+            //    ReportDataSource fonteDeDados = new ReportDataSource();
+            //    fonteDeDados.Name = "Pedido";
+            //    fonteDeDados.Value = lstPedido;
+            //    this.ReportViewer.LocalReport.DataSources.Clear();
+            //    this.ReportViewer.LocalReport.DataSources.Add(fonteDeDados);
+            //    ReportViewer.LocalReport.ReportEmbeddedResource = pRelatorio;
+            //    this.Controls.Add(this.ReportViewer);
+            //}
+            //if (pRelatorio == "Formularios.Relatorios.VendasPorCliente.rdlc")
+            //{
+            //    List<VendasPorCliente> lstVendas = new List<VendasPorCliente>();
+            //    RelVendasPorCliente objRelVendas = new RelVendasPorCliente();
+            //    lstVendas = objRelVendas.CarregaRelatorioRDLC(LCaminhoBanco, ParametrosRel);
+
+            //    ReportDataSource fonteDeDados = new ReportDataSource();
+            //    fonteDeDados.Name = "VendasPorCliente";
+            //    fonteDeDados.Value = lstVendas;
+            //    this.ReportViewer.LocalReport.DataSources.Clear();
+            //    this.ReportViewer.LocalReport.DataSources.Add(fonteDeDados);
+            //    ReportViewer.LocalReport.ReportEmbeddedResource = pRelatorio;
+            //    this.Controls.Add(this.ReportViewer);
+            //}
+            //if (pRelatorio == "Formularios.Relatorios.RegistroContatos.rdlc")
+            //{
+            //    List<RegistrodeContato> lstregistros = new List<RegistrodeContato>();
+            //    RelRegistroContatos objRelRegistros = new RelRegistroContatos();
+            //    lstregistros = objRelRegistros.CarregaRelatorioRDLC(LCaminhoBanco, ParametrosRel);
+
+            //    ReportDataSource fonteDeDados = new ReportDataSource();
+            //    fonteDeDados.Name = "RegistroDeContatos";
+            //    fonteDeDados.Value = lstregistros;
+            //    this.ReportViewer.LocalReport.DataSources.Clear();
+            //    this.ReportViewer.LocalReport.DataSources.Add(fonteDeDados);
+            //    ReportViewer.LocalReport.ReportEmbeddedResource = pRelatorio;
+            //    this.Controls.Add(this.ReportViewer);
+            //}
             ReportViewer.SetDisplayMode(DisplayMode.PrintLayout);
             ReportViewer.RefreshReport();
+
+        }
+
+        private void ReportViewer_Load(object sender, EventArgs e)
+        {
 
         }
     }

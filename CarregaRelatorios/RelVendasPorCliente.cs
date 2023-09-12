@@ -20,11 +20,13 @@ namespace CarregaRelatorios
             string inDataFinal = inParametrosRel[3];
             DataTable DTVendasPorCliente = new DataTable();
             string sSQL = "";
-            sSQL += "SELECT OPPPedido,CDCERazaoSocial,OPPDataContato,OPPDataConfirmacao, OPPVlritensFaturando,CDNODescricao, USUsuario ";
+            sSQL += "SELECT OPPPedido,CDCERazaoSocial,OPPDataContato,OPPDataConfirmacao, OPPVlritensFaturando,CDNODescricao, USUsuario, OPITPPedidoDR, CDPDescricao, OPITPValorUnitario, OPITPQuantidade ";
             sSQL += "FROM OPPPedido ";
             sSQL += "INNER JOIN CDCadastroEmpresas ON OPPEmpresaDR = CDCadastroEmpresas ";
             sSQL += "INNER JOIN CDNatOperacao ON OPPNaturezaDR = CDNatOperacao ";
             sSQL += "INNER JOIN SEGUsuarios on OPPVendedorDR = SEGUsuarios ";
+            sSQL += "INNER JOIN OPItensPedido ON OPITPPedidoDR = OPPPedido ";
+            sSQL += "INNER JOIN CDProdutos ON OPITPProdutoDR = CDProdutos ";
             sSQL += "WHERE OPPStatus = 'Concluido'";
             sSQL += " AND (OPPDataConfirmacao >= '" + inDataInicial + "' AND OPPDataConfirmacao <= '" + inDataFinal + "')";
             if (inVendedor != "")
@@ -54,13 +56,17 @@ namespace CarregaRelatorios
                 foreach (DataRow dr in DTVendasPorCliente.Rows)
                 {
                     VendasPorCliente bDVendasPorCliente = new VendasPorCliente();
-                    bDVendasPorCliente.IDPedido = dr["OPPPedido"].ToString();
-                    bDVendasPorCliente.RazaoSocial = dr["CDCERazaoSocial"].ToString();
-                    bDVendasPorCliente.DataPedido = dr["OPPDataContato"].ToString();
-                    bDVendasPorCliente.DataConfirmacao = dr["OPPDataConfirmacao"].ToString();
-                    bDVendasPorCliente.VlrItensFaturando = dr["OPPVlritensFaturando"].ToString();
-                    bDVendasPorCliente.NatOperacao = dr["CDNODescricao"].ToString();
-                    bDVendasPorCliente.Vendedor = dr["USUsuario"].ToString();
+                    bDVendasPorCliente.cpIDPedido = dr["OPPPedido"].ToString();
+                    bDVendasPorCliente.cpRazaoSocial = dr["CDCERazaoSocial"].ToString();
+                    bDVendasPorCliente.cpDataPedido = dr["OPPDataContato"].ToString();
+                    bDVendasPorCliente.cpDataConfirmacao = dr["OPPDataConfirmacao"].ToString();
+                    bDVendasPorCliente.cpVlrItensFaturando = dr["OPPVlritensFaturando"].ToString();
+                    bDVendasPorCliente.cpNatOperacao = dr["CDNODescricao"].ToString();
+                    bDVendasPorCliente.cpVendedor = dr["USUsuario"].ToString();
+                    bDVendasPorCliente.cpITPedidoDR = dr["OPITPPedidoDR"].ToString();
+                    bDVendasPorCliente.cpProdDescricao = dr["CDPDescricao"].ToString();
+                    bDVendasPorCliente.cpITVlrUnitario = dr["OPITPValorUnitario"].ToString();
+                    bDVendasPorCliente.cpQtdProduto = dr["OPITPQuantidade"].ToString();
 
 
                     lstRelVendasPorCliente.Add(bDVendasPorCliente);

@@ -8,12 +8,16 @@ namespace Camada_Relatorios
 {
     public class VendasPorCliente
     {
-        public string IDPedido { get; set; }
-        public string RazaoSocial { get; set; }
-        public string DataPedido { get; set; }
-        public string DataConfirmacao { get; set; }
-        public string VlrItensFaturando { get; set; }
-        public string NatOperacao { get; set; }
-        public string Vendedor { get; set; }
+        public string cpIDPedido { get; set; }
+        public string cpRazaoSocial { get; set; }
+        public string cpDataPedido { get; set; }
+        public string cpDataConfirmacao { get; set; }
+        public string cpVlrItensFaturando { get; set; }
+        public string cpNatOperacao { get; set; }
+        public string cpVendedor { get; set; }
+        public string cpITPedidoDR { get; set; }
+        public string cpProdDescricao { get; set; }
+        public string cpITVlrUnitario { get; set; }
+        public string cpQtdProduto { get; set; }
     }
 }

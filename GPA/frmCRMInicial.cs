@@ -583,5 +583,12 @@ namespace Formularios
             frmTrocaVendedor.ShowDialog();
             RealizaCargas();
         }
+
+        private void mnuRelCadastroDeEmpresas_Click(object sender, EventArgs e)
+        {
+            frmCadastroEmpresas frmCadastroEmpresas = new frmCadastroEmpresas(LCaminhoBanco, LUsuario);
+            frmCadastroEmpresas.ShowDialog();
+            RealizaCargas();
+        }
     }
 }
