@@ -73,6 +73,7 @@
             // txtDescricao
             // 
             txtDescricao.Location = new Point(12, 65);
+            txtDescricao.MaxLength = 80;
             txtDescricao.Name = "txtDescricao";
             txtDescricao.Size = new Size(472, 23);
             txtDescricao.TabIndex = 0;
@@ -123,6 +124,7 @@
             // txtDescFornecedor
             // 
             txtDescFornecedor.Location = new Point(12, 113);
+            txtDescFornecedor.MaxLength = 80;
             txtDescFornecedor.Name = "txtDescFornecedor";
             txtDescFornecedor.Size = new Size(472, 23);
             txtDescFornecedor.TabIndex = 4;
@@ -171,6 +173,7 @@
             // txtCodFabricante
             // 
             txtCodFabricante.Location = new Point(789, 65);
+            txtCodFabricante.MaxLength = 20;
             txtCodFabricante.Name = "txtCodFabricante";
             txtCodFabricante.Size = new Size(130, 23);
             txtCodFabricante.TabIndex = 3;
@@ -179,6 +182,7 @@
             // txtDescritivo
             // 
             txtDescritivo.Location = new Point(12, 244);
+            txtDescritivo.MaxLength = 80;
             txtDescritivo.Multiline = true;
             txtDescritivo.Name = "txtDescritivo";
             txtDescritivo.Size = new Size(755, 180);

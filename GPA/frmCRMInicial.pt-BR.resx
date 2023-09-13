@@ -261,31 +261,46 @@
     <value>Dados Contato</value>
   </data>
   <data name="MnuUltimasVendas.Size" type="System.Drawing.Size, System.Drawing">
-    <value>233, 22</value>
+    <value>234, 22</value>
   </data>
   <data name="MnuConsultaPedidos.Size" type="System.Drawing.Size, System.Drawing">
-    <value>233, 22</value>
+    <value>234, 22</value>
+  </data>
+  <data name="MnuConsultaPedidos.Text" xml:space="preserve">
+    <value>Consulta Pedidos Por Numero</value>
   </data>
   <data name="MnuMeusClientes.Size" type="System.Drawing.Size, System.Drawing">
-    <value>233, 22</value>
+    <value>234, 22</value>
   </data>
   <data name="mnuBuscaCadastros.Size" type="System.Drawing.Size, System.Drawing">
-    <value>233, 22</value>
+    <value>234, 22</value>
+  </data>
+  <data name="contatosAgendadosPorDataToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>234, 22</value>
   </data>
   <data name="contatosAgendadosPorDataToolStripMenuItem.Text" xml:space="preserve">
     <value>Contatos Agendados por Data</value>
   </data>
-  <data name="mnuRelCadastroDeEmpresas.Size" type="System.Drawing.Size, System.Drawing">
-    <value>189, 22</value>
+  <data name="mnuConsultaPedidoGeral.Text" xml:space="preserve">
+    <value>Consulta Pedido Geral</value>
   </data>
   <data name="mnuRelCadastroDeEmpresas.Text" xml:space="preserve">
     <value>Cadastros Empresas</value>
   </data>
   <data name="MnuParametros.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>209, 22</value>
+  </data>
+  <data name="mnuAlteraVendedor.Size" type="System.Drawing.Size, System.Drawing">
+    <value>209, 22</value>
   </data>
   <data name="mnuAlteraVendedor.Text" xml:space="preserve">
     <value>Altera Vendedor</value>
+  </data>
+  <data name="mnuAlteraCadastroParaLivre.Size" type="System.Drawing.Size, System.Drawing">
+    <value>209, 22</value>
+  </data>
+  <data name="mnuAlteraCadastroParaLivre.Text" xml:space="preserve">
+    <value>Altera Cadastro para Livre</value>
   </data>
   <data name="MnuRegistraContato.Size" type="System.Drawing.Size, System.Drawing">
     <value>185, 22</value>

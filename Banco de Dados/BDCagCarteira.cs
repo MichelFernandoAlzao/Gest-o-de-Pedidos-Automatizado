@@ -75,10 +75,11 @@ namespace Banco_de_Dados
             List<BDCagCarteira> lstCadCarteira = new List<BDCagCarteira>();
             string slqSelect = "SELECT * FROM CDCarteira ";
             string sqlWhere = "WHERE ";
-            char ClausulaWhere = 'N';
+            string ClausulaWhere = "N";
             if (cpID != null)
             {
                 sqlWhere = "WHERE CDCarteira = " + cpID;
+                ClausulaWhere = "S";
             }
             //if (cpSigla != "")
             //{
@@ -95,10 +96,10 @@ namespace Banco_de_Dados
             //    sqlWhere += "CDCPotencial = '" + cpPotencial + "' " + "AND";
             //    ClausulaWhere = 'S';
             //}
-            //if (ClausulaWhere == 'S')
-            //{
-            //    slqSelect += sqlWhere;
-            //}
+            if (ClausulaWhere == "S")
+            {
+                slqSelect += sqlWhere;
+            }
 
             Conexao conexao = new Conexao(LCaminhoBanco);
             SqlCommand cmd = new SqlCommand();

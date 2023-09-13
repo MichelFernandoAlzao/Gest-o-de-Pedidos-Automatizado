@@ -143,6 +143,7 @@
             // txtSigla
             // 
             txtSigla.Location = new Point(12, 361);
+            txtSigla.MaxLength = 5;
             txtSigla.Name = "txtSigla";
             txtSigla.Size = new Size(53, 23);
             txtSigla.TabIndex = 26;
@@ -150,6 +151,7 @@
             // txtDescricao
             // 
             txtDescricao.Location = new Point(71, 361);
+            txtDescricao.MaxLength = 20;
             txtDescricao.Name = "txtDescricao";
             txtDescricao.Size = new Size(243, 23);
             txtDescricao.TabIndex = 27;
@@ -177,6 +179,7 @@
             // txtPotencial
             // 
             txtPotencial.Location = new Point(12, 405);
+            txtPotencial.MaxLength = 18;
             txtPotencial.Name = "txtPotencial";
             txtPotencial.Size = new Size(100, 23);
             txtPotencial.TabIndex = 30;

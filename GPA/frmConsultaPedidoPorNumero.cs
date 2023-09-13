@@ -11,10 +11,10 @@ using System.Windows.Forms;
 
 namespace Formularios
 {
-    public partial class frmConsultaPedido : Form
+    public partial class frmConsultaPedidoPorNumero : Form
     {
         string LCaminhoBanco;
-        public frmConsultaPedido(string inCmainhoBanco)
+        public frmConsultaPedidoPorNumero(string inCmainhoBanco)
         {
             LCaminhoBanco = inCmainhoBanco;
             InitializeComponent();
@@ -41,7 +41,7 @@ namespace Formularios
                         if (item.cpEmpresaDR != "" && item.cpEmpresaDR != null)
                         {
                             BDCadastroGeral objEmpresa = new BDCadastroGeral();
-                            lstEmpresa = objEmpresa.CarregaDados(LCaminhoBanco, item.cpEmpresaDR, "", "", "", "", "", "", "", "", "");
+                            lstEmpresa = objEmpresa.CarregaDados(LCaminhoBanco, item.cpEmpresaDR, "", "", "", "", "", "", "", "", "", "","");
                             if (lstEmpresa.Count > 0)
                             {
                                 pRazao = lstEmpresa[0].RazaoSocial.ToString();

@@ -30,7 +30,7 @@ namespace Formularios
             InitializeComponent();
             List<BDCadastroGeral> lstEmpresa = new List<BDCadastroGeral>();
             BDCadastroGeral objEmpresa = new BDCadastroGeral();
-            lstEmpresa = objEmpresa.CarregaDados(LCaminhoBanco, LEmpresaDR, "", "", "", "", "", "", "", "", "");
+            lstEmpresa = objEmpresa.CarregaDados(LCaminhoBanco, LEmpresaDR, "", "", "", "", "", "", "", "", "", "", "");
             txtEmpresa.Text = lstEmpresa[0].RazaoSocial.ToString();
         }
 
@@ -142,7 +142,7 @@ namespace Formularios
         {
             if (e.KeyCode == Keys.F1)
             {
-                frmSelecionaEmpresa objTela = new frmSelecionaEmpresa(LCaminhoBanco, this, "", txtFornecedor.Text.ToString(), "", "", "", "", "", "");
+                frmSelecionaEmpresa objTela = new frmSelecionaEmpresa(LCaminhoBanco, this, "", txtFornecedor.Text.ToString(), "", "", "", "", "", "", "S");
                 objTela.ShowDialog();
                 MostraDados();
             }

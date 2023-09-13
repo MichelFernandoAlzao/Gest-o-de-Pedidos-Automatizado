@@ -92,7 +92,7 @@ namespace Formularios
             {
                 BDCadastroGeral objFabricante = new BDCadastroGeral();
                 List<BDCadastroGeral> lstFabricante = new List<BDCadastroGeral>();
-                lstFabricante = objFabricante.CarregaDados(LCaminhoBanco, Convert.ToString(LFabricante), "", "", "", "", "", "", "", "", "");
+                lstFabricante = objFabricante.CarregaDados(LCaminhoBanco, Convert.ToString(LFabricante), "", "", "", "", "", "", "", "", "", "", "");
                 txtFabricante.Text = lstFabricante[0].RazaoSocial.ToString();
             }
             else txtFabricante.Text = "";
@@ -101,7 +101,7 @@ namespace Formularios
             {
                 BDCadastroGeral objFornecedor = new BDCadastroGeral();
                 List<BDCadastroGeral> lstFornecedor = new List<BDCadastroGeral>();
-                lstFornecedor = objFornecedor.CarregaDados(LCaminhoBanco, Convert.ToString(LMelhorFornecedor), "", "", "", "", "", "", "", "", "");
+                lstFornecedor = objFornecedor.CarregaDados(LCaminhoBanco, Convert.ToString(LMelhorFornecedor), "", "", "", "", "", "", "", "", "", "", "");
                 txtMelhorFornecedor.Text = lstFornecedor[0].RazaoSocial.ToString();
             }
             else txtMelhorFornecedor.Text = "";
@@ -157,7 +157,7 @@ namespace Formularios
                 }
                 if (e.KeyCode == Keys.F1)
                 {
-                    frmSelecionaEmpresa objTela = new frmSelecionaEmpresa(LCaminhoBanco, this, "", txtFabricante.Text.ToString(), "", "", "", "S", "", "");
+                    frmSelecionaEmpresa objTela = new frmSelecionaEmpresa(LCaminhoBanco, this, "", txtFabricante.Text.ToString(), "", "", "", "S", "", "", "");
                     objTela.ShowDialog();
                     LFabricante = LID;
                     txtFabricante.Text = LRazaoSocial.ToString();
@@ -185,7 +185,7 @@ namespace Formularios
                 }
                 if (e.KeyCode == Keys.F1)
                 {
-                    frmSelecionaEmpresa objTela = new frmSelecionaEmpresa(LCaminhoBanco, this, "", txtMelhorFornecedor.Text.ToString(), "", "", "", "", "S", "");
+                    frmSelecionaEmpresa objTela = new frmSelecionaEmpresa(LCaminhoBanco, this, "", txtMelhorFornecedor.Text.ToString(), "", "", "", "", "S", "", "");
                     objTela.ShowDialog();
                     LMelhorFornecedor = LID;
                     txtMelhorFornecedor.Text = LRazaoSocial.ToString();
@@ -205,16 +205,16 @@ namespace Formularios
             }
             objProduto.cpDescricao = txtDescricao.Text;
             objProduto.cpDataCadastro = DateTime.Today.ToString().Substring(0, 10);
-            if(txtCodFabricante.Text.Replace(" ","") != "")
+            if (txtCodFabricante.Text.Replace(" ", "") != "")
             {
                 objProduto.cpCodigoFabricante = txtCodFabricante.Text;
             }
-            
-            if(txtDescFornecedor.Text.Replace(" ","") != "")
+
+            if (txtDescFornecedor.Text.Replace(" ", "") != "")
             {
                 objProduto.cpDescFornecedor = txtDescFornecedor.Text;
             }
-            
+
             if (LFabricante != null)
             {
                 if (LFabricante == "")
@@ -259,11 +259,11 @@ namespace Formularios
             {
                 objProduto.cpOperacional = "N";
             }
-            if(txtDescritivo.Text.Replace(" ","") != "")
+            if (txtDescritivo.Text.Replace(" ", "") != "")
             {
                 objProduto.cpDescritivo = txtDescritivo.Text;
             }
-            
+
             if (LIDProduto == "")
             {
                 objProduto.InsereDados(LCaminhoBanco);

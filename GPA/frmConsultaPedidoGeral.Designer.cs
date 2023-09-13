@@ -1,6 +1,6 @@
 ﻿namespace Formularios
 {
-    partial class frmConsultaPedido
+    partial class frmConsultaPedidoGeral
     {
         /// <summary>
         /// Required designer variable.
@@ -28,16 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmConsultaPedido));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmConsultaPedidoGeral));
             lbCabeçallho = new Label();
             cmdBuscar = new Button();
-            txtNumero = new TextBox();
             cmdSelecionar = new Button();
             grdListaPedido = new DataGridView();
             grdID = new DataGridViewTextBoxColumn();
             grdRazao = new DataGridViewTextBoxColumn();
             grdData = new DataGridViewTextBoxColumn();
             cmdSair = new Button();
+            txtVendedor = new TextBox();
+            labVendedor = new Label();
+            label1 = new Label();
+            labDataInicial = new Label();
+            txtDataFinal = new MaskedTextBox();
+            txtDataInicial = new MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)grdListaPedido).BeginInit();
             SuspendLayout();
             // 
@@ -59,20 +64,12 @@
             // 
             cmdBuscar.BackgroundImage = (Image)resources.GetObject("cmdBuscar.BackgroundImage");
             cmdBuscar.BackgroundImageLayout = ImageLayout.Stretch;
-            cmdBuscar.Location = new Point(129, 42);
+            cmdBuscar.Location = new Point(758, 75);
             cmdBuscar.Name = "cmdBuscar";
             cmdBuscar.Size = new Size(30, 30);
             cmdBuscar.TabIndex = 5;
             cmdBuscar.UseVisualStyleBackColor = true;
             cmdBuscar.Click += cmdBuscar_Click;
-            // 
-            // txtNumero
-            // 
-            txtNumero.Location = new Point(12, 47);
-            txtNumero.Name = "txtNumero";
-            txtNumero.Size = new Size(111, 23);
-            txtNumero.TabIndex = 0;
-            txtNumero.KeyDown += txtNumero_KeyDown;
             // 
             // cmdSelecionar
             // 
@@ -92,12 +89,12 @@
             grdListaPedido.BackgroundColor = SystemColors.GradientActiveCaption;
             grdListaPedido.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             grdListaPedido.Columns.AddRange(new DataGridViewColumn[] { grdID, grdRazao, grdData });
-            grdListaPedido.Location = new Point(12, 78);
+            grdListaPedido.Location = new Point(12, 107);
             grdListaPedido.Name = "grdListaPedido";
             grdListaPedido.ReadOnly = true;
             grdListaPedido.RowTemplate.Height = 25;
             grdListaPedido.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            grdListaPedido.Size = new Size(776, 157);
+            grdListaPedido.Size = new Size(776, 300);
             grdListaPedido.TabIndex = 3;
             grdListaPedido.DoubleClick += grdListaPedido_DoubleClick;
             // 
@@ -131,21 +128,85 @@
             cmdSair.UseVisualStyleBackColor = true;
             cmdSair.Click += button3_Click;
             // 
-            // frmConsultaPedido
+            // txtVendedor
+            // 
+            txtVendedor.Location = new Point(272, 80);
+            txtVendedor.Name = "txtVendedor";
+            txtVendedor.Size = new Size(130, 23);
+            txtVendedor.TabIndex = 9;
+            txtVendedor.KeyDown += txtVendedor_KeyDown;
+            // 
+            // labVendedor
+            // 
+            labVendedor.AutoSize = true;
+            labVendedor.BackColor = Color.Transparent;
+            labVendedor.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            labVendedor.Location = new Point(272, 62);
+            labVendedor.Name = "labVendedor";
+            labVendedor.Size = new Size(85, 15);
+            labVendedor.TabIndex = 10;
+            labVendedor.Text = "Vendedor - F1";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
+            label1.Location = new Point(148, 62);
+            label1.Name = "label1";
+            label1.Size = new Size(59, 15);
+            label1.TabIndex = 26;
+            label1.Text = "Data Final";
+            // 
+            // labDataInicial
+            // 
+            labDataInicial.AutoSize = true;
+            labDataInicial.BackColor = Color.Transparent;
+            labDataInicial.Location = new Point(12, 62);
+            labDataInicial.Name = "labDataInicial";
+            labDataInicial.Size = new Size(65, 15);
+            labDataInicial.TabIndex = 25;
+            labDataInicial.Text = "Data Inicial";
+            // 
+            // txtDataFinal
+            // 
+            txtDataFinal.Location = new Point(148, 80);
+            txtDataFinal.Mask = "00/00/0000";
+            txtDataFinal.Name = "txtDataFinal";
+            txtDataFinal.Size = new Size(100, 23);
+            txtDataFinal.TabIndex = 24;
+            txtDataFinal.ValidatingType = typeof(DateTime);
+            txtDataFinal.Leave += txtDataFinal_Leave;
+            // 
+            // txtDataInicial
+            // 
+            txtDataInicial.Location = new Point(12, 80);
+            txtDataInicial.Mask = "00/00/0000";
+            txtDataInicial.Name = "txtDataInicial";
+            txtDataInicial.Size = new Size(100, 23);
+            txtDataInicial.TabIndex = 23;
+            txtDataInicial.ValidatingType = typeof(DateTime);
+            txtDataInicial.Leave += txtDataInicial_Leave;
+            // 
+            // frmConsultaPedidoGeral
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Info;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
-            ClientSize = new Size(800, 247);
+            ClientSize = new Size(800, 419);
             ControlBox = false;
+            Controls.Add(label1);
+            Controls.Add(labDataInicial);
+            Controls.Add(txtDataFinal);
+            Controls.Add(txtDataInicial);
+            Controls.Add(txtVendedor);
+            Controls.Add(labVendedor);
             Controls.Add(cmdSair);
             Controls.Add(grdListaPedido);
             Controls.Add(cmdSelecionar);
-            Controls.Add(txtNumero);
             Controls.Add(cmdBuscar);
             Controls.Add(lbCabeçallho);
-            Name = "frmConsultaPedido";
+            Name = "frmConsultaPedidoGeral";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Consulta Pedido";
             ((System.ComponentModel.ISupportInitialize)grdListaPedido).EndInit();
@@ -157,12 +218,17 @@
 
         private Label lbCabeçallho;
         private Button cmdBuscar;
-        private TextBox txtNumero;
         private Button cmdSelecionar;
         private DataGridView grdListaPedido;
         private Button cmdSair;
         private DataGridViewTextBoxColumn grdID;
         private DataGridViewTextBoxColumn grdRazao;
         private DataGridViewTextBoxColumn grdData;
+        private TextBox txtVendedor;
+        private Label labVendedor;
+        private Label label1;
+        private Label labDataInicial;
+        private MaskedTextBox txtDataFinal;
+        private MaskedTextBox txtDataInicial;
     }
 }

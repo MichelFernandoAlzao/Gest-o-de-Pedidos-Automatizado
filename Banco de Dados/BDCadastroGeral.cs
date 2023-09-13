@@ -15,6 +15,7 @@ namespace Banco_de_Dados
         public string InscricaoEstadual { get; set; }
         public string Vendedor { get; set; }
         public string Cliente { get; set; }
+        public string cpLivre { get; set; }
         public string Carteira { get; set; }
         public string Distribuidor { get; set; }
         public string Fabricante { get; set; }
@@ -75,7 +76,13 @@ namespace Banco_de_Dados
 
                 sqlconteudo += "'" + Cliente.ToString() + "',";
             }
-            if(Carteira != null)
+            if (cpLivre != "")
+            {
+                sqlCampos += "CDCELivre, ";
+
+                sqlconteudo += "'" + cpLivre.ToString() + "',";
+            }
+            if (Carteira != null)
             {
                 if (Carteira != "")
                 {
@@ -187,71 +194,126 @@ namespace Banco_de_Dados
 
             if (RazaoSocial != null)
             {
-                sqlconteudo+= "CDCERazaoSocial = '" + RazaoSocial.ToString() + "',";
+                if(RazaoSocial != "")
+                {
+                    sqlconteudo += "CDCERazaoSocial = '" + RazaoSocial.ToString() + "',";
+                }
             }
             if(RazaoFantasia != null)
             {
-                sqlconteudo += "CDCERazaoFantasia = '" + RazaoFantasia.ToString() + "',";
+                if(RazaoFantasia != "")
+                {
+                    sqlconteudo += "CDCERazaoFantasia = '" + RazaoFantasia.ToString() + "',";
+                }
             }
             if(CNPJ != null)
             {
-                sqlconteudo += "CDCECNPJ = '" + CNPJ.ToString() + "',";
+                if(CNPJ != "")
+                {
+                    sqlconteudo += "CDCECNPJ = '" + CNPJ.ToString() + "',";
+                }
             }
             if (InscricaoEstadual != null)
             {
-                sqlconteudo += "CDCEInscricao = '" + InscricaoEstadual.ToString() + "',";
+                if(InscricaoEstadual != "")
+                {
+                    sqlconteudo += "CDCEInscricao = '" + InscricaoEstadual.ToString() + "',";
+                }
             }
             if (Vendedor != null)
             {
-                sqlconteudo += "CDCEVendedor = '" + Vendedor.ToString() + "',";
+                if(Vendedor != "")
+                {
+                    sqlconteudo += "CDCEVendedor = '" + Vendedor.ToString() + "',";
+                }
             }
             if (Cliente != null)
             {
-                sqlconteudo += "CDCECliente = '" + Cliente.ToString() + "',";
+                if(Cliente != "")
+                {
+                    sqlconteudo += "CDCECliente = '" + Cliente.ToString() + "',";
+                }
+            }
+            if (cpLivre != null)
+            {
+                if (Cliente != "")
+                {
+                    sqlconteudo += "CDCELivre = '" + cpLivre.ToString() + "',";
+                }
             }
             if (Carteira != null)
             {
-                sqlconteudo += "CDCECarteiraDR = '" + Carteira.ToString() + "',";
+                if(Carteira != "")
+                {
+                    sqlconteudo += "CDCECarteiraDR = '" + Carteira.ToString() + "',";
+                }
             }
             if (Distribuidor != null)
             {
-                sqlconteudo += "CDCEDistribuidor = '" + Distribuidor + "',";
+                if(Distribuidor != "")
+                {
+                    sqlconteudo += "CDCEDistribuidor = '" + Distribuidor + "',";
+                }
             }
             if (Fabricante != null)
             {
-                sqlconteudo += "CDCEFabricante = '" + Fabricante + "',";
+                if(Fabricante != "")
+                {
+                    sqlconteudo += "CDCEFabricante = '" + Fabricante + "',";
+                }
             }
             if (Fornecedor != null)
             {
-                sqlconteudo += "CDCEFornecedor = '" + Fornecedor + "',";
+                if(Fornecedor != "")
+                {
+                    sqlconteudo += "CDCEFornecedor = '" + Fornecedor + "',";
+                }
             }
             if (RegiaodeVenda != null)
             {
-                sqlconteudo += "CDCERegVenda = '" + RegiaodeVenda + "',";
+                if(RegiaodeVenda != "")
+                {
+                    sqlconteudo += "CDCERegVenda = '" + RegiaodeVenda + "',";
+                }
             }
 
             if (Qualificacao != null)
             {
-                sqlconteudo += "CDCEQualificacao =  '" + Qualificacao + "',";
+                if(Qualificacao != "")
+                {
+                    sqlconteudo += "CDCEQualificacao =  '" + Qualificacao + "',";
+                }
             }
 
             if(DiasAtraso != null)
             {
-                sqlconteudo += "CDCEDiasAtraso = '" + DiasAtraso + "',";
+                if(DiasAtraso != "")
+                {
+                    sqlconteudo += "CDCEDiasAtraso = '" + DiasAtraso + "',";
+                }
             }
 
             if(RegCobranca != null)
             {
-                sqlconteudo += "CDCERegCobranca = '" + RegCobranca + "',";
+                if(RegCobranca != "")
+                {
+                    sqlconteudo += "CDCERegCobranca = '" + RegCobranca + "',";
+                }
             }
 
             if (Aviso != null)
             {
-                sqlconteudo += "CDCEAviso = '" + Aviso + "',";
+                if(Aviso != "")
+                {
+                    sqlconteudo += "CDCEAviso = '" + Aviso + "',";
+                }
             }
             if (Ativo != null)
             {
-                sqlconteudo += "CDCEAtivo = '" + Ativo + "',";
+                if(Ativo != "")
+                {
+                    sqlconteudo += "CDCEAtivo = '" + Ativo + "',";
+                }
             }
 
             sSQL = sSQL + sqlconteudo.Remove(sqlconteudo.Length - 1);
@@ -316,7 +378,50 @@ namespace Banco_de_Dados
             cmd.Dispose();
         }
 
-        public List<BDCadastroGeral> CarregaDados(string inCaminhobanco,string id ,string pRazaoSocial, string pRazaoFantasia, string pCNPJ, string pInscricao, string pVendedor, string pCliente, string pDistribuidor, string pFabricante, string pFornecedor)
+        public void PassaParaLivreIndividual(string inCaminhoBanco, string inEstado, string inCarteira,string inVendedor)
+        {
+            LCaminhoBanco = inCaminhoBanco;
+
+            string sSQL = "";
+            //string sqlconteudo = "";
+            //string sqlWhere = " WHERE CDCadastroEmpresas = '" + Id + "'";
+
+            sSQL = "UPDATE CDCadastroEmpresas SET ";
+            sSQL += "CDCELivre = '" + inEstado + "' ";
+            if(inCarteira != "")
+            {
+                sSQL += "WHERE CDCECarteiraDR = '" + inCarteira + "'";
+            }
+            if(inVendedor != "")
+            {
+                sSQL += "WHERE CDCEVendedor = '" + inVendedor + "'";
+            }
+            
+            //sSQL = sSQL + sqlconteudo.Remove(sqlconteudo.Length - 1);
+            //sSQL = sSQL + sqlWhere;
+
+            Conexao conexao = new Conexao(LCaminhoBanco);
+            SqlCommand cmd = new SqlCommand();
+
+            cmd.CommandText = sSQL;
+
+            try
+            {
+                cmd.Connection = conexao.conectar();
+                //Executar o comando
+                cmd.ExecuteNonQuery();
+                //Desconectar
+                conexao.desconectar();
+                MsgErro = "";
+            }
+            catch (SqlException e)
+            {
+                MsgErro = e.Message.ToString();
+            }
+            cmd.Dispose();
+        }
+
+        public List<BDCadastroGeral> CarregaDados(string inCaminhobanco,string id ,string pRazaoSocial, string pRazaoFantasia, string pCNPJ, string pInscricao, string pVendedor, string pCliente, string pDistribuidor, string pFabricante, string pFornecedor, string inLivre, string inCarteira)
         {
             LCaminhoBanco = inCaminhobanco;
             List<BDCadastroGeral> lstCadastros = new List<BDCadastroGeral>();
@@ -379,8 +484,17 @@ namespace Banco_de_Dados
                         ClausulaWhere = 'S';
                     }
                 }
-                
-                if(pDistribuidor != null)
+
+                if (inLivre != null)
+                {
+                    if (inLivre != "")
+                    {
+                        sqlWhere += " CDCELivre like '" + inLivre + "' " + "AND";
+                        ClausulaWhere = 'S';
+                    }
+                }
+
+                if (pDistribuidor != null)
                 {
                     if (pDistribuidor != "")
                     {
@@ -401,6 +515,14 @@ namespace Banco_de_Dados
                     if (pFornecedor != "")
                     {
                         sqlWhere += " CDCEFornecedor like '" + pFornecedor + "' " + "AND";
+                        ClausulaWhere = 'S';
+                    }
+                }
+                if (inCarteira != null)
+                {
+                    if (inCarteira != "")
+                    {
+                        sqlWhere += " CDCECarteiraDR like '" + inCarteira + "' " + "AND";
                         ClausulaWhere = 'S';
                     }
                 }
@@ -445,6 +567,7 @@ namespace Banco_de_Dados
                     bDCadastro.InscricaoEstadual = dr["CDCEInscricao"].ToString();
                     bDCadastro.Vendedor = dr["CDCEVendedor"].ToString();
                     bDCadastro.Cliente = dr["CDCECliente"].ToString();
+                    bDCadastro.cpLivre = dr["CDCELivre"].ToString();
                     bDCadastro.Carteira = dr["CDCECarteiraDR"].ToString();
                     bDCadastro.Distribuidor = dr["CDCEDistribuidor"].ToString();
                     bDCadastro.Fabricante = dr["CDCEFabricante"].ToString();
@@ -476,7 +599,7 @@ namespace Banco_de_Dados
 
             if (pVendedor != "")
             {
-                sqlWhere += " CDCEVendedor = " + pVendedor + "";
+                sqlWhere += " CDCEVendedor = '" + pVendedor + "'";
                 ClausulaWhere = 'S';
             }
             if(RazaoSocial != null)

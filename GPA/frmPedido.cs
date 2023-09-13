@@ -80,7 +80,7 @@ namespace Formularios
         private void MostraDados()
         {
             BDCadastroGeral ObjCadastro = new BDCadastroGeral();
-            List<BDCadastroGeral> lstCadastro = ObjCadastro.CarregaDados(LCaminhoBanco, LID, LRazaoSocial, "", "", "", LUsuario, "", "", "", "");
+            List<BDCadastroGeral> lstCadastro = ObjCadastro.CarregaDados(LCaminhoBanco, LID, LRazaoSocial, "", "", "", LUsuario, "", "", "", "", "S","");
             txtEmpresa.Text = lstCadastro[0].RazaoSocial.ToString();
 
             BDCadEnderecos objEndereco = new BDCadEnderecos();
@@ -179,7 +179,7 @@ namespace Formularios
         {
             if (e.KeyCode == Keys.F1)
             {
-                frmSelecionaEmpresa objTela = new frmSelecionaEmpresa(LCaminhoBanco, this, "", txtEmpresa.Text.ToString(), "", "", LUsuario, "", "", "S");
+                frmSelecionaEmpresa objTela = new frmSelecionaEmpresa(LCaminhoBanco, this, "", txtEmpresa.Text.ToString(), "", "", LUsuario, "", "", "S","S");
                 objTela.ShowDialog();
                 BDCadEnderecos objEndereco = new BDCadEnderecos();
                 List<BDCadEnderecos> lstEndereco = objEndereco.CarregaDados(LCaminhoBanco, LID);
@@ -206,7 +206,7 @@ namespace Formularios
                 txtEmpresa.Text = LRazaoSocial;
 
                 BDCadastroGeral objEmpresa = new BDCadastroGeral();
-                List<BDCadastroGeral> lstEmpresa = objEmpresa.CarregaDados(LCaminhoBanco, LID, LRazaoSocial, "", "", "", LUsuario, "", "", "", "");
+                List<BDCadastroGeral> lstEmpresa = objEmpresa.CarregaDados(LCaminhoBanco, LID, LRazaoSocial, "", "", "", LUsuario, "", "", "", "" , "","");
                 if(lstEmpresa.Count > 0)
                 {
                     labDescCNPJ.Text = lstEmpresa[0].CNPJ.ToString();

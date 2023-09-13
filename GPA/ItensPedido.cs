@@ -265,7 +265,7 @@ namespace Formularios
         {
             if (e.KeyCode == Keys.F1)
             {
-                frmSelecionaEmpresa frmSelecionarFornecedor = new frmSelecionaEmpresa(LCaminhoBanco, this, "", txtFornecedor.Text, "", "", "", "", "S", "");
+                frmSelecionaEmpresa frmSelecionarFornecedor = new frmSelecionaEmpresa(LCaminhoBanco, this, "", txtFornecedor.Text, "", "", "", "", "S", "","");
                 frmSelecionarFornecedor.ShowDialog();
                 if (LID != "")
                 {
@@ -359,7 +359,7 @@ namespace Formularios
             if (lstITPedido[0].cpFornecedor != "")
             {
                 BDCadastroGeral objFornecedor = new BDCadastroGeral();
-                List<BDCadastroGeral> lstFornecedor = objFornecedor.CarregaDados(LCaminhoBanco, lstITPedido[0].cpFornecedor, "", "", "", "", "", "", "", "", "");
+                List<BDCadastroGeral> lstFornecedor = objFornecedor.CarregaDados(LCaminhoBanco, lstITPedido[0].cpFornecedor, "", "", "", "", "", "", "", "", "", "","");
                 LFornecedor = lstFornecedor[0].Id;
                 txtFornecedor.Text = lstFornecedor[0].RazaoSocial.ToString();
             }

@@ -42,15 +42,16 @@ namespace Formularios
                 {
                     string[] Row = new string[]
                         {
+                            Carteira.cpID.ToString(),
                             Carteira.cpSigla.ToString(),
-                            Carteira.cpDescricao.ToString(),
+                            Carteira.cpDescricao.ToString()
                         };
                     grdCarteira.Rows.Add(Row);
                 }
             }
         }
 
-        private void grdCadastroGeral_SelectionChanged(object sender, EventArgs e)
+        private void grdCarteira_SelectionChanged(object sender, EventArgs e)
         {
             if (grdCarteira.SelectedRows.Count > 0)
             {
@@ -64,7 +65,7 @@ namespace Formularios
             RetornaResultado();
         }
 
-        private void grdEmpresas_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void grdCarteira_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             RetornaResultado();
         }

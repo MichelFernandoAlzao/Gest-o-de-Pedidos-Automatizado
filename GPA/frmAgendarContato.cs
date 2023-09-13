@@ -34,7 +34,7 @@ namespace Formularios
         {
             if (e.KeyCode == Keys.F1)
             {
-                frmSelecionaEmpresa frmSelecionaEmpresa = new frmSelecionaEmpresa(LCaminhoBanco, this, "", txtEmpresa.Text, "", "", "", "", "", "");
+                frmSelecionaEmpresa frmSelecionaEmpresa = new frmSelecionaEmpresa(LCaminhoBanco, this, "", txtEmpresa.Text, "", "", "", "", "", "", "S");
                 frmSelecionaEmpresa.ShowDialog();
                 if (LRazaoSocial != "")
                 {
@@ -87,7 +87,7 @@ namespace Formularios
             if (lstAgendarContato.Count > 0)
             {
                 BDCadastroGeral objCadastroGeral = new BDCadastroGeral();
-                List<BDCadastroGeral> lstCadastroGeral = objCadastroGeral.CarregaDados(LCaminhoBanco, lstAgendarContato[0].cpEmpresaDR, "", "", "", "", "", "", "", "", "");
+                List<BDCadastroGeral> lstCadastroGeral = objCadastroGeral.CarregaDados(LCaminhoBanco, lstAgendarContato[0].cpEmpresaDR, "", "", "", "", "", "", "", "", "", "", "");
                 txtEmpresa.Text = lstCadastroGeral[0].RazaoSocial.ToString();
 
                 SEGUsuario objUsuario = new SEGUsuario();

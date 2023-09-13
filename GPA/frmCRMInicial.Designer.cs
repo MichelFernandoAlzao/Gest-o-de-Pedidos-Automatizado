@@ -72,10 +72,12 @@
             MnuMeusClientes = new ToolStripMenuItem();
             mnuBuscaCadastros = new ToolStripMenuItem();
             contatosAgendadosPorDataToolStripMenuItem = new ToolStripMenuItem();
+            mnuConsultaPedidoGeral = new ToolStripMenuItem();
             relatóriosToolStripMenuItem = new ToolStripMenuItem();
             rankingDeVendasToolStripMenuItem = new ToolStripMenuItem();
             vendasPorVendedorToolStripMenuItem = new ToolStripMenuItem();
             registrosDeContatosToolStripMenuItem = new ToolStripMenuItem();
+            mnuRelCadastroDeEmpresas = new ToolStripMenuItem();
             parametrosToolStripMenuItem = new ToolStripMenuItem();
             MnuParametros = new ToolStripMenuItem();
             mnuAlteraVendedor = new ToolStripMenuItem();
@@ -87,7 +89,7 @@
             pictureBox1 = new PictureBox();
             chrtVendasMesaMes = new System.Windows.Forms.DataVisualization.Charting.Chart();
             NotifyAgendaContato = new NotifyIcon(components);
-            mnuRelCadastroDeEmpresas = new ToolStripMenuItem();
+            mnuAlteraCadastroParaLivre = new ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)grdUltimasVendas).BeginInit();
             ((System.ComponentModel.ISupportInitialize)grdUltContato).BeginInit();
             menuStrip1.SuspendLayout();
@@ -318,7 +320,7 @@
             // consultasToolStripMenuItem
             // 
             resources.ApplyResources(consultasToolStripMenuItem, "consultasToolStripMenuItem");
-            consultasToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { MnuUltimasVendas, MnuConsultaPedidos, MnuMeusClientes, mnuBuscaCadastros, contatosAgendadosPorDataToolStripMenuItem });
+            consultasToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { MnuUltimasVendas, MnuConsultaPedidos, MnuMeusClientes, mnuBuscaCadastros, contatosAgendadosPorDataToolStripMenuItem, mnuConsultaPedidoGeral });
             consultasToolStripMenuItem.Name = "consultasToolStripMenuItem";
             // 
             // MnuUltimasVendas
@@ -351,6 +353,12 @@
             contatosAgendadosPorDataToolStripMenuItem.Name = "contatosAgendadosPorDataToolStripMenuItem";
             contatosAgendadosPorDataToolStripMenuItem.Click += contatosAgendadosPorDataToolStripMenuItem_Click;
             // 
+            // mnuConsultaPedidoGeral
+            // 
+            resources.ApplyResources(mnuConsultaPedidoGeral, "mnuConsultaPedidoGeral");
+            mnuConsultaPedidoGeral.Name = "mnuConsultaPedidoGeral";
+            mnuConsultaPedidoGeral.Click += mnuConsultaPedidoGeral_Click;
+            // 
             // relatóriosToolStripMenuItem
             // 
             resources.ApplyResources(relatóriosToolStripMenuItem, "relatóriosToolStripMenuItem");
@@ -375,10 +383,16 @@
             registrosDeContatosToolStripMenuItem.Name = "registrosDeContatosToolStripMenuItem";
             registrosDeContatosToolStripMenuItem.Click += registrosDeContatosToolStripMenuItem_Click;
             // 
+            // mnuRelCadastroDeEmpresas
+            // 
+            resources.ApplyResources(mnuRelCadastroDeEmpresas, "mnuRelCadastroDeEmpresas");
+            mnuRelCadastroDeEmpresas.Name = "mnuRelCadastroDeEmpresas";
+            mnuRelCadastroDeEmpresas.Click += mnuRelCadastroDeEmpresas_Click;
+            // 
             // parametrosToolStripMenuItem
             // 
             resources.ApplyResources(parametrosToolStripMenuItem, "parametrosToolStripMenuItem");
-            parametrosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { MnuParametros, mnuAlteraVendedor });
+            parametrosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { MnuParametros, mnuAlteraVendedor, mnuAlteraCadastroParaLivre });
             parametrosToolStripMenuItem.Name = "parametrosToolStripMenuItem";
             // 
             // MnuParametros
@@ -460,11 +474,11 @@
             resources.ApplyResources(NotifyAgendaContato, "NotifyAgendaContato");
             NotifyAgendaContato.BalloonTipClicked += NotifyAgendaContato_BalloonTipClicked;
             // 
-            // mnuRelCadastroDeEmpresas
+            // mnuAlteraCadastroParaLivre
             // 
-            resources.ApplyResources(mnuRelCadastroDeEmpresas, "mnuRelCadastroDeEmpresas");
-            mnuRelCadastroDeEmpresas.Name = "mnuRelCadastroDeEmpresas";
-            mnuRelCadastroDeEmpresas.Click += mnuRelCadastroDeEmpresas_Click;
+            resources.ApplyResources(mnuAlteraCadastroParaLivre, "mnuAlteraCadastroParaLivre");
+            mnuAlteraCadastroParaLivre.Name = "mnuAlteraCadastroParaLivre";
+            mnuAlteraCadastroParaLivre.Click += mnuAlteraCadastroParaLivre_Click;
             // 
             // frmCRMInicial
             // 
@@ -563,5 +577,7 @@
         private ToolStripMenuItem mnuDadosContato;
         private ToolStripMenuItem mnuAlteraVendedor;
         private ToolStripMenuItem mnuRelCadastroDeEmpresas;
+        private ToolStripMenuItem mnuConsultaPedidoGeral;
+        private ToolStripMenuItem mnuAlteraCadastroParaLivre;
     }
 }

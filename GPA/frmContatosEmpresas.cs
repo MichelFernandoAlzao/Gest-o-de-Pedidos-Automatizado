@@ -152,7 +152,7 @@ namespace Formularios
                 labCtt1.Visible = false;
                 txtRegistro.Text = "";
                 grdRegistros.Rows.Clear();
-                frmSelecionaEmpresa objTela = new frmSelecionaEmpresa(LCaminhoBanco, this, "", txtEmpresa.Text.ToString(), "", "", LUsuario, "", "", "");
+                frmSelecionaEmpresa objTela = new frmSelecionaEmpresa(LCaminhoBanco, this, "", txtEmpresa.Text.ToString(), "", "", LUsuario, "", "", "", "S");
                 objTela.ShowDialog();
                 if (LRazaoSocial != "")
                 {

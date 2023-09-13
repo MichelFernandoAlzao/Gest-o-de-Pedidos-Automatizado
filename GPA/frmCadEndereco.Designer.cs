@@ -69,6 +69,7 @@
             // txtReferncia
             // 
             txtReferncia.Location = new Point(12, 365);
+            txtReferncia.MaxLength = 50;
             txtReferncia.Multiline = true;
             txtReferncia.Name = "txtReferncia";
             txtReferncia.Size = new Size(776, 73);
@@ -109,6 +110,7 @@
             // txtCidade
             // 
             txtCidade.Location = new Point(345, 308);
+            txtCidade.MaxLength = 30;
             txtCidade.Name = "txtCidade";
             txtCidade.Size = new Size(153, 23);
             txtCidade.TabIndex = 5;
@@ -126,6 +128,7 @@
             // txtBairro
             // 
             txtBairro.Location = new Point(12, 308);
+            txtBairro.MaxLength = 30;
             txtBairro.Name = "txtBairro";
             txtBairro.Size = new Size(315, 23);
             txtBairro.TabIndex = 4;
@@ -143,6 +146,7 @@
             // txtRua
             // 
             txtRua.Location = new Point(213, 258);
+            txtRua.MaxLength = 40;
             txtRua.Name = "txtRua";
             txtRua.Size = new Size(364, 23);
             txtRua.TabIndex = 2;
@@ -160,6 +164,7 @@
             // txtNumero
             // 
             txtNumero.Location = new Point(599, 258);
+            txtNumero.MaxLength = 10;
             txtNumero.Name = "txtNumero";
             txtNumero.Size = new Size(153, 23);
             txtNumero.TabIndex = 3;
@@ -177,6 +182,7 @@
             // txtIdentificacao
             // 
             txtIdentificacao.Location = new Point(12, 258);
+            txtIdentificacao.MaxLength = 30;
             txtIdentificacao.Name = "txtIdentificacao";
             txtIdentificacao.Size = new Size(182, 23);
             txtIdentificacao.TabIndex = 1;
@@ -332,6 +338,7 @@
             // txtEstado
             // 
             txtEstado.Location = new Point(520, 308);
+            txtEstado.MaxLength = 2;
             txtEstado.Name = "txtEstado";
             txtEstado.Size = new Size(81, 23);
             txtEstado.TabIndex = 6;

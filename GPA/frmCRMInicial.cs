@@ -78,7 +78,7 @@ namespace Formularios
 
         private void cmdConsultaPedido_Click(object sender, EventArgs e)
         {
-            frmConsultaPedido frmConsultaPedido = new frmConsultaPedido(LCaminhoBanco);
+            frmConsultaPedidoPorNumero frmConsultaPedido = new frmConsultaPedidoPorNumero(LCaminhoBanco);
             frmConsultaPedido.ShowDialog();
             RealizaCargas();
         }
@@ -247,7 +247,7 @@ namespace Formularios
                         if (item.cpUsuarioDR != "" && item.cpUsuarioDR != null)
                         {
                             BDCadastroGeral objEmpresa = new BDCadastroGeral();
-                            lstEmpresa = objEmpresa.CarregaDados(LCaminhoBanco, item.cpEmpresaDR, "", "", "", "", "", "", "", "", "");
+                            lstEmpresa = objEmpresa.CarregaDados(LCaminhoBanco, item.cpEmpresaDR, "", "", "", "", "", "", "", "", "", "", "");
                             if (lstEmpresa.Count > 0)
                             {
                                 pRazao = lstEmpresa[0].RazaoSocial.ToString();
@@ -294,7 +294,7 @@ namespace Formularios
                         if (item.cpEmpresaDR != "" && item.cpEmpresaDR != null)
                         {
                             BDCadastroGeral objEmpresa = new BDCadastroGeral();
-                            lstEmpresa = objEmpresa.CarregaDados(LCaminhoBanco, item.cpEmpresaDR, "", "", "", "", "", "", "", "", "");
+                            lstEmpresa = objEmpresa.CarregaDados(LCaminhoBanco, item.cpEmpresaDR, "", "", "", "", "", "", "", "", "", "", "");
                             if (lstEmpresa.Count > 0)
                             {
                                 pRazao = lstEmpresa[0].RazaoSocial.ToString();
@@ -448,7 +448,7 @@ namespace Formularios
 
         private void MnuConsultaPedidos_Click(object sender, EventArgs e)
         {
-            frmConsultaPedido frmConsultaPedido = new frmConsultaPedido(LCaminhoBanco);
+            frmConsultaPedidoPorNumero frmConsultaPedido = new frmConsultaPedidoPorNumero(LCaminhoBanco);
             frmConsultaPedido.ShowDialog();
             RealizaCargas();
         }
@@ -588,6 +588,20 @@ namespace Formularios
         {
             frmCadastroEmpresas frmCadastroEmpresas = new frmCadastroEmpresas(LCaminhoBanco, LUsuario);
             frmCadastroEmpresas.ShowDialog();
+            RealizaCargas();
+        }
+
+        private void mnuConsultaPedidoGeral_Click(object sender, EventArgs e)
+        {
+            frmConsultaPedidoGeral frmConsultaPedidoGeral = new frmConsultaPedidoGeral(LCaminhoBanco, LUsuario);
+            frmConsultaPedidoGeral.ShowDialog();
+            RealizaCargas();
+        }
+
+        private void mnuAlteraCadastroParaLivre_Click(object sender, EventArgs e)
+        {
+            frmTrocaCadastroParaLivre frmTrocaParaLivre = new frmTrocaCadastroParaLivre(LCaminhoBanco,LUsuario);
+            frmTrocaParaLivre.ShowDialog();
             RealizaCargas();
         }
     }

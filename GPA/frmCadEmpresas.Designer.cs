@@ -62,11 +62,13 @@
             txtCarteira = new TextBox();
             txtCNPJ = new MaskedTextBox();
             chkAtivo = new CheckBox();
+            chkLivre = new CheckBox();
             SuspendLayout();
             // 
             // txtRazaoSocial
             // 
             txtRazaoSocial.Location = new Point(12, 75);
+            txtRazaoSocial.MaxLength = 80;
             txtRazaoSocial.Name = "txtRazaoSocial";
             txtRazaoSocial.Size = new Size(681, 23);
             txtRazaoSocial.TabIndex = 0;
@@ -97,6 +99,7 @@
             // txtInscricaoEstadual
             // 
             txtInscricaoEstadual.Location = new Point(842, 128);
+            txtInscricaoEstadual.MaxLength = 10;
             txtInscricaoEstadual.Name = "txtInscricaoEstadual";
             txtInscricaoEstadual.Size = new Size(155, 23);
             txtInscricaoEstadual.TabIndex = 4;
@@ -126,6 +129,7 @@
             // txtFantasia
             // 
             txtFantasia.Location = new Point(12, 128);
+            txtFantasia.MaxLength = 50;
             txtFantasia.Name = "txtFantasia";
             txtFantasia.Size = new Size(681, 23);
             txtFantasia.TabIndex = 3;
@@ -296,6 +300,7 @@
             // txtAviso
             // 
             txtAviso.Location = new Point(12, 181);
+            txtAviso.MaxLength = 30;
             txtAviso.Name = "txtAviso";
             txtAviso.Size = new Size(681, 23);
             txtAviso.TabIndex = 5;
@@ -410,6 +415,17 @@
             chkAtivo.Text = "Ativo";
             chkAtivo.UseVisualStyleBackColor = false;
             // 
+            // chkLivre
+            // 
+            chkLivre.AutoSize = true;
+            chkLivre.BackColor = Color.Transparent;
+            chkLivre.Location = new Point(768, 79);
+            chkLivre.Name = "chkLivre";
+            chkLivre.Size = new Size(51, 19);
+            chkLivre.TabIndex = 35;
+            chkLivre.Text = "Livre";
+            chkLivre.UseVisualStyleBackColor = false;
+            // 
             // frmCadEmpresas
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -418,6 +434,7 @@
             BackgroundImage = Formularios.Properties.Resources.vecteezy_pattern_with_geometric_elements_light_blue_to_dark_blue_17216459;
             ClientSize = new Size(1009, 449);
             ControlBox = false;
+            Controls.Add(chkLivre);
             Controls.Add(chkAtivo);
             Controls.Add(txtCNPJ);
             Controls.Add(label5);
@@ -497,5 +514,6 @@
         private MaskedTextBox txtCNPJ;
         private CheckBox chkAtivo;
         private TextBox txtCarteira;
+        private CheckBox chkLivre;
     }
 }

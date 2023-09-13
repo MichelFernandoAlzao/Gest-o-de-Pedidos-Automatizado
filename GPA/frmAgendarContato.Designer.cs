@@ -177,6 +177,7 @@
             // txtNome
             // 
             txtNome.Location = new Point(12, 119);
+            txtNome.MaxLength = 50;
             txtNome.Name = "txtNome";
             txtNome.Size = new Size(462, 23);
             txtNome.TabIndex = 3;

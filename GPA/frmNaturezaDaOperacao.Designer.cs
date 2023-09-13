@@ -189,6 +189,7 @@
             // txtDescricao
             // 
             txtDescricao.Location = new Point(353, 82);
+            txtDescricao.MaxLength = 50;
             txtDescricao.Name = "txtDescricao";
             txtDescricao.Size = new Size(435, 23);
             txtDescricao.TabIndex = 0;

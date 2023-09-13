@@ -23,10 +23,11 @@ namespace Formularios
         string LFabricante;
         string LFornecedor;
         string LCliente;
+        string LLivre;
         Form LChamador;
 
         string[] LParametros;
-        public frmSelecionaEmpresa(string inCaminhoBanco, Form frmChamador, string inID, string inrazao, string inFantasia, string inCNPJ, string inUsuario, string inFabricante, string inFornecedor, string inCLiente)
+        public frmSelecionaEmpresa(string inCaminhoBanco, Form frmChamador, string inID, string inrazao, string inFantasia, string inCNPJ, string inUsuario, string inFabricante, string inFornecedor, string inCLiente,string inLivre)
         {
 
             InitializeComponent();
@@ -40,6 +41,7 @@ namespace Formularios
             LFornecedor = inFornecedor;
             LFabricante = inFabricante;
             LCliente = inCLiente;
+            LLivre = inLivre;
         }
 
         private void SelecionaEmpresa_Load(object sender, EventArgs e)
@@ -65,19 +67,19 @@ namespace Formularios
             List<BDCadastroGeral> lstCadastro = new List<BDCadastroGeral>();
             if (LFabricante != "")
             {
-                lstCadastro = objCadastro.CarregaDados(LCaminhoBanco, LIDCadastro, inRazao, inRazaoFantasia, inCNPJ, "", IDVendedor, "", "", "S", "");
+                lstCadastro = objCadastro.CarregaDados(LCaminhoBanco, LIDCadastro, inRazao, inRazaoFantasia, inCNPJ, "", IDVendedor, "", "", "S", "",LLivre,"");
             }
             if (LFornecedor != "")
             {
-                lstCadastro = objCadastro.CarregaDados(LCaminhoBanco, LIDCadastro, inRazao, inRazaoFantasia, inCNPJ, "", IDVendedor, "", "", "", "S");
+                lstCadastro = objCadastro.CarregaDados(LCaminhoBanco, LIDCadastro, inRazao, inRazaoFantasia, inCNPJ, "", IDVendedor, "", "", "", "S", LLivre,"");
             }
             if (LCliente != "")
             {
-                lstCadastro = objCadastro.CarregaDados(LCaminhoBanco, LIDCadastro, inRazao, inRazaoFantasia, inCNPJ, "", IDVendedor, "S", "", "", "");
+                lstCadastro = objCadastro.CarregaDados(LCaminhoBanco, LIDCadastro, inRazao, inRazaoFantasia, inCNPJ, "", IDVendedor, "S", "", "", "",LLivre,"");
             }
             if (LFabricante == "" && LFornecedor == "" && LCliente == "")
             {
-                lstCadastro = objCadastro.CarregaDados(LCaminhoBanco, LIDCadastro, inRazao, inRazaoFantasia, inCNPJ, "", IDVendedor, "", "", "", "");
+                lstCadastro = objCadastro.CarregaDados(LCaminhoBanco, LIDCadastro, inRazao, inRazaoFantasia, inCNPJ, "", IDVendedor, "", "", "", "", LLivre,"");
             }
 
             if (lstCadastro.Count > 0)

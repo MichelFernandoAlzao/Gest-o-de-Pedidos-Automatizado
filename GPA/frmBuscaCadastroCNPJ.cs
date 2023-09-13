@@ -26,7 +26,7 @@ namespace Formularios
         private void Buscar()
         {
             BDCadastroGeral objCadastro = new BDCadastroGeral();
-            List<BDCadastroGeral> lstCadastro = objCadastro.CarregaDados(LCaminhoBanco, "", txtRazaoSocial.Text.ToString(), "", txtCNPJ.Text.ToString(), "", "", "", "", "", "");
+            List<BDCadastroGeral> lstCadastro = objCadastro.CarregaDados(LCaminhoBanco, "", txtRazaoSocial.Text.ToString(), "", txtCNPJ.Text.ToString(), "", "", "", "", "", "","","");
             if (lstCadastro.Count > 0)
             {
                 if (lstCadastro[0].Vendedor == LUsusario)

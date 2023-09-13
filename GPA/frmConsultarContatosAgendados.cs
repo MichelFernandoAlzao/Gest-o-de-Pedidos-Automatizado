@@ -76,7 +76,7 @@ namespace Formularios
                     if (Cttagenda.cpEmpresaDR != "")
                     {
                         BDCadastroGeral objCadastro = new BDCadastroGeral();
-                        List<BDCadastroGeral> lstCadastro = objCadastro.CarregaDados(LCaminhoBanco, Cttagenda.cpEmpresaDR, "", "", "", "", "", "", "", "", "");
+                        List<BDCadastroGeral> lstCadastro = objCadastro.CarregaDados(LCaminhoBanco, Cttagenda.cpEmpresaDR, "", "", "", "", "", "", "", "", "", "", "");
                         RazaoSocial = lstCadastro[0].RazaoSocial.ToString();
                     }
                     string[] Row = new string[]

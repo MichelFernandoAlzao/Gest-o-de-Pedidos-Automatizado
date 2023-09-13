@@ -32,10 +32,10 @@
             cmdSair = new Button();
             CmdSelecionar = new Button();
             grdCarteira = new DataGridView();
-            lbSelecUsuario = new Label();
             grdID = new DataGridViewTextBoxColumn();
             grdSigla = new DataGridViewTextBoxColumn();
             grdDescricao = new DataGridViewTextBoxColumn();
+            lbSelecUsuario = new Label();
             ((System.ComponentModel.ISupportInitialize)grdCarteira).BeginInit();
             SuspendLayout();
             // 
@@ -78,20 +78,8 @@
             grdCarteira.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             grdCarteira.Size = new Size(227, 410);
             grdCarteira.TabIndex = 3;
-            // 
-            // lbSelecUsuario
-            // 
-            lbSelecUsuario.BackColor = Color.Transparent;
-            lbSelecUsuario.BorderStyle = BorderStyle.Fixed3D;
-            lbSelecUsuario.Cursor = Cursors.IBeam;
-            lbSelecUsuario.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            lbSelecUsuario.ForeColor = Color.Black;
-            lbSelecUsuario.Location = new Point(11, 12);
-            lbSelecUsuario.Name = "lbSelecUsuario";
-            lbSelecUsuario.Size = new Size(158, 29);
-            lbSelecUsuario.TabIndex = 6;
-            lbSelecUsuario.Text = "Carteira";
-            lbSelecUsuario.TextAlign = ContentAlignment.MiddleCenter;
+            grdCarteira.CellDoubleClick += grdCarteira_CellDoubleClick;
+            grdCarteira.SelectionChanged += grdCarteira_SelectionChanged;
             // 
             // grdID
             // 
@@ -116,6 +104,20 @@
             grdDescricao.Name = "grdDescricao";
             grdDescricao.ReadOnly = true;
             grdDescricao.Width = 170;
+            // 
+            // lbSelecUsuario
+            // 
+            lbSelecUsuario.BackColor = Color.Transparent;
+            lbSelecUsuario.BorderStyle = BorderStyle.Fixed3D;
+            lbSelecUsuario.Cursor = Cursors.IBeam;
+            lbSelecUsuario.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            lbSelecUsuario.ForeColor = Color.Black;
+            lbSelecUsuario.Location = new Point(11, 12);
+            lbSelecUsuario.Name = "lbSelecUsuario";
+            lbSelecUsuario.Size = new Size(158, 29);
+            lbSelecUsuario.TabIndex = 6;
+            lbSelecUsuario.Text = "Carteira";
+            lbSelecUsuario.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // frmSelecionaCarteira
             // 

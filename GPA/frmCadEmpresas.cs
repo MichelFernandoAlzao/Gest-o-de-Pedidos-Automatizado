@@ -66,6 +66,7 @@ namespace GPA
             chkDistribuidor.Checked = false;
             chkFabricante.Checked = false;
             chkFornecedor.Checked = false;
+            chkLivre.Checked = false;
             LID = "";
             LRazaoSocial = "";
             LRazaoFantasia = "";
@@ -172,6 +173,14 @@ namespace GPA
             {
                 objCadastro.Distribuidor = "N";
             }
+            if (chkLivre.Checked)
+            {
+                objCadastro.cpLivre = "S";
+            }
+            else
+            {
+                objCadastro.cpLivre = "N";
+            }
             if (Convert.ToString(txtVendedor.Text) == "")
             {
                 objCadastro.Vendedor = "";
@@ -187,7 +196,7 @@ namespace GPA
                 if (LID != "")
                 {
                     BDCadastroGeral objVerifCadastro = new BDCadastroGeral();
-                    List<BDCadastroGeral> lstVerfCadastro = objVerifCadastro.CarregaDados(LCaminhoBanco, LID, "", "", "", "", "", "", "", "", "");
+                    List<BDCadastroGeral> lstVerfCadastro = objVerifCadastro.CarregaDados(LCaminhoBanco, LID, "", "", "", "", "", "", "", "", "", "", "");
                     SEGUsuario objUsuario = new SEGUsuario();
                     List<SEGUsuario> lstUsuario = objUsuario.CarregaDados(LCaminhoBanco, LUsuario, "", "", "");
                     if (lstVerfCadastro[0].Vendedor != LIDUsuario && lstUsuario[0].GerenciaCadastros == "N")
@@ -221,7 +230,7 @@ namespace GPA
             if (LID == "")
             {
                 BDCadastroGeral objVerificaCNPJ = new BDCadastroGeral();
-                List<BDCadastroGeral> lstVerificaCNPJ = objVerificaCNPJ.CarregaDados(LCaminhoBanco, "", "", "", txtCNPJ.Text, "", "", "", "", "", "");
+                List<BDCadastroGeral> lstVerificaCNPJ = objVerificaCNPJ.CarregaDados(LCaminhoBanco, "", "", "", txtCNPJ.Text, "", "", "", "", "", "", "", "");
                 if (lstVerificaCNPJ.Count > 0)
                 {
                     MessageBox.Show("CNPJ já cadastrado, não é permitido o cadastro em duplicidade", "GPA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -264,13 +273,13 @@ namespace GPA
         {
             if (e.KeyCode == Keys.F1)
             {
-                frmSelecionaEmpresa objTela = new frmSelecionaEmpresa(LCaminhoBanco, this, "", txtRazaoSocial.Text.ToString(), "", "", LUsuario, "", "", "");
+                frmSelecionaEmpresa objTela = new frmSelecionaEmpresa(LCaminhoBanco, this, "", txtRazaoSocial.Text.ToString(), "", "", LUsuario, "", "", "", "S");
                 objTela.ShowDialog();
 
                 if (LID != "")
                 {
                     BDCadastroGeral objCadastro = new BDCadastroGeral();
-                    List<BDCadastroGeral> lstCadastros = objCadastro.CarregaDados(LCaminhoBanco, LID, "", "", "", "", "", "", "", "", "");
+                    List<BDCadastroGeral> lstCadastros = objCadastro.CarregaDados(LCaminhoBanco, LID, "", "", "", "", "", "", "", "", "", "", "");
 
                     if (lstCadastros.Count > 0)
                     {
@@ -292,7 +301,7 @@ namespace GPA
         public void MostraDados()
         {
             BDCadastroGeral ObjCadastro = new BDCadastroGeral();
-            List<BDCadastroGeral> lstCadastro = ObjCadastro.CarregaDados(LCaminhoBanco, LID, LRazaoSocial, LRazaoFantasia, LCNPJ, "", "", "", "", "", "");
+            List<BDCadastroGeral> lstCadastro = ObjCadastro.CarregaDados(LCaminhoBanco, LID, LRazaoSocial, LRazaoFantasia, LCNPJ, "", "", "", "", "", "", "", "");
             txtRazaoSocial.Text = lstCadastro[0].RazaoSocial.ToString();
             txtFantasia.Text = lstCadastro[0].RazaoFantasia.ToString();
             txtCNPJ.Text = lstCadastro[0].CNPJ.ToString();
@@ -325,6 +334,11 @@ namespace GPA
                 chkAtivo.Checked = true;
             }
             else chkAtivo.Checked = false;
+            if (lstCadastro[0].cpLivre == "S")
+            {
+                chkLivre.Checked = true;
+            }
+            else chkLivre.Checked = false;
 
             if (lstCadastro[0].Vendedor != LUsuario)
             {
@@ -351,7 +365,17 @@ namespace GPA
                     }
                 }
             }
-
+            if (lstCadastro[0].Carteira != "")
+            {
+                BDCagCarteira objCarteira = new BDCagCarteira();
+                objCarteira.cpID = lstCadastro[0].Carteira.ToString();
+                List<BDCagCarteira> lstCarteira = objCarteira.CarregaDados(LCaminhoBanco);
+                if (lstCarteira.Count > 0)
+                {
+                    LIDCarteira = lstCadastro[0].Carteira.ToString();
+                    txtCarteira.Text = lstCarteira[0].cpDescricao.ToString();
+                }
+            }
             if (lstCadastro[0].Aviso != null)
             {
                 if (lstCadastro[0].Aviso != "")
@@ -449,18 +473,22 @@ namespace GPA
 
         private void txtCarteira_KeyDown(object sender, KeyEventArgs e)
         {
-            frmSelecionaCarteira frmSelecionaCarteira = new frmSelecionaCarteira(LCaminhoBanco, this, LUsuario);
-            frmSelecionaCarteira.ShowDialog();
-            if (LIDCarteira != "")
+            if (e.KeyCode == Keys.F1)
             {
-                BDCagCarteira objCarteira = new BDCagCarteira();
-                objCarteira.cpID = LIDCarteira;
-                List<BDCagCarteira> lstCarteira = objCarteira.CarregaDados(LCaminhoBanco);
-                if (lstCarteira.Count > 0)
+                frmSelecionaCarteira frmSelecionaCarteira = new frmSelecionaCarteira(LCaminhoBanco, this, LUsuario);
+                frmSelecionaCarteira.ShowDialog();
+                if (LIDCarteira != "")
                 {
-                    txtCarteira.Text = lstCarteira[0].cpDescricao.ToString();
+                    BDCagCarteira objCarteira = new BDCagCarteira();
+                    objCarteira.cpID = LIDCarteira;
+                    List<BDCagCarteira> lstCarteira = objCarteira.CarregaDados(LCaminhoBanco);
+                    if (lstCarteira.Count > 0)
+                    {
+                        txtCarteira.Text = lstCarteira[0].cpDescricao.ToString();
+                    }
                 }
             }
+
         }
     }
 }

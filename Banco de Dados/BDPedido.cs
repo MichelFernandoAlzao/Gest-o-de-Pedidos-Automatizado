@@ -427,7 +427,7 @@ namespace Banco_de_Dados
             string PStatus = "";
             LcaminhoBanco = inCaminhoBanco;
             List<BDPedido> lstPedido = new List<BDPedido>();
-            string slqSelect = "SELECT * FROM OPPPedido WHERE (OPPDataConfirmacao >= '" + inDataInicio + "' AND OPPDataConfirmacao <= '" + inDataTermino + "') AND OPPVendedorDR = '" + inVendedorDR + "'";
+            string slqSelect = "SELECT * FROM OPPPedido WHERE (OPPDataConfirmacao >= '" + inDataInicio + "' AND OPPDataConfirmacao <= '" + inDataTermino + "')";
             if(inConcluido != "")
             {
                 slqSelect += " AND (OPPStatus = 'Concluido'";
@@ -445,7 +445,8 @@ namespace Banco_de_Dados
                 }
                 
             }
-            if(inCancelado != "")
+
+            if (inCancelado != "")
             {
                 if(PStatus == "S")
                 {
@@ -456,6 +457,17 @@ namespace Banco_de_Dados
                     slqSelect += " AND OPPStatus = 'Cancelado'";
                 }
                 
+            }
+            if(inVendedorDR != "")
+            {
+                if (inVendedorDR == "S")
+                {
+                    slqSelect += " OR OPPVendedorDR = '"+ inVendedorDR +"'";
+                }
+                else
+                {
+                    slqSelect += " AND OPPVendedorDR = '" + inVendedorDR + "'";
+                }
             }
             if(PStatus == "S")
             {

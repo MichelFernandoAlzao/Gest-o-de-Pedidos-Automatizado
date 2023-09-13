@@ -200,6 +200,7 @@
             // txtNome
             // 
             txtNome.Location = new Point(12, 258);
+            txtNome.MaxLength = 50;
             txtNome.Name = "txtNome";
             txtNome.Size = new Size(391, 23);
             txtNome.TabIndex = 1;
@@ -234,6 +235,7 @@
             // txtEmail
             // 
             txtEmail.Location = new Point(12, 308);
+            txtEmail.MaxLength = 50;
             txtEmail.Name = "txtEmail";
             txtEmail.Size = new Size(391, 23);
             txtEmail.TabIndex = 4;
@@ -283,6 +285,7 @@
             // txtAnotacoes
             // 
             txtAnotacoes.Location = new Point(12, 365);
+            txtAnotacoes.MaxLength = 60;
             txtAnotacoes.Multiline = true;
             txtAnotacoes.Name = "txtAnotacoes";
             txtAnotacoes.Size = new Size(776, 73);

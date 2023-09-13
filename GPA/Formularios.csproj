@@ -68,6 +68,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="frmConsultaPedidoGeral.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="frmConsultarContatosAgendados.cs">
       <SubType>Form</SubType>
     </Compile>

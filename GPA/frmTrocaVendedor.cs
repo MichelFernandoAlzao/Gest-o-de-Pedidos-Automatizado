@@ -119,7 +119,7 @@ namespace Formularios
             if (LVendedorAnterior != "")
             {
                 BDCadastroGeral objCadastro = new BDCadastroGeral();
-                List<BDCadastroGeral> lstCadastro = objCadastro.CarregaDados(LCaminhoBanco, "", "", "", "", "", LVendedorAnterior, "", "", "", "");
+                List<BDCadastroGeral> lstCadastro = objCadastro.CarregaDados(LCaminhoBanco, "", "", "", "", "", LVendedorAnterior, "", "", "", "","","");
 
 
                 foreach (BDCadastroGeral Cadastro in lstCadastro)
