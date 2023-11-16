@@ -11,14 +11,14 @@ using System.Windows.Forms;
 
 namespace Formularios
 {
-    public partial class frmCadastroEmpresas : Form
+    public partial class frmRelCadastroEmpresas : Form
     {
         string LCaminhoBanco = "";
         string LUsuario = "";
         public string LIDUsuario = "";
         public string LIDCarteira = "";
         string Ativo = "";
-        public frmCadastroEmpresas(string inCaminhoBanco, string inUsuario)
+        public frmRelCadastroEmpresas(string inCaminhoBanco, string inUsuario)
         {
             InitializeComponent();
             LCaminhoBanco = inCaminhoBanco;

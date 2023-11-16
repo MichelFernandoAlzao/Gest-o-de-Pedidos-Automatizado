@@ -432,6 +432,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Info;
             BackgroundImage = Formularios.Properties.Resources.vecteezy_pattern_with_geometric_elements_light_blue_to_dark_blue_17216459;
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1009, 449);
             ControlBox = false;
             Controls.Add(chkLivre);
@@ -470,6 +471,7 @@
             Controls.Add(labRazaoSocial);
             Controls.Add(txtRazaoSocial);
             Name = "frmCadEmpresas";
+            ShowInTaskbar = false;
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Cadastro Geral";
             Load += frmCadEmpresas_Load;

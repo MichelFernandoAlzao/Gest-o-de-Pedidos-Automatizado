@@ -19,7 +19,8 @@ namespace CarregaRelatorios
             sSQL += "INNER JOIN CDCadastroEmpresas ON OPPEmpresaDR = CDCadastroEmpresas ";
             sSQL += "INNER JOIN CDProdutos ON OPITPProdutoDR = CDProdutos ";
             sSQL += "INNER JOIN SEGUsuarios ON OPPVendedorDR = SEGUsuarios ";
-            sSQL += "WHERE OPPPedido = " + inPedido;
+            sSQL += "WHERE OPPPedido = '" + inPedido + "' ";
+            sSQL += "AND OPITPFatura = 'S' ";
 
             Conexao conexao = new Conexao(inCaminhoBanco);
             SqlCommand cmd = new SqlCommand();

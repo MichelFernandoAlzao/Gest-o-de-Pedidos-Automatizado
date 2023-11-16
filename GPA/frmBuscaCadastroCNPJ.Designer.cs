@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBuscaCadastroCNPJ));
             txtCNPJ = new MaskedTextBox();
             cmdSair = new Button();
-            cmdBuscar = new Button();
             lbCabeçallho = new Label();
             txtRazaoSocial = new TextBox();
             labRazao = new Label();
@@ -57,16 +56,6 @@
             cmdSair.TabIndex = 14;
             cmdSair.UseVisualStyleBackColor = true;
             cmdSair.Click += cmdSair_Click;
-            // 
-            // cmdBuscar
-            // 
-            cmdBuscar.BackgroundImage = (Image)resources.GetObject("cmdBuscar.BackgroundImage");
-            cmdBuscar.BackgroundImageLayout = ImageLayout.Stretch;
-            cmdBuscar.Location = new Point(611, 54);
-            cmdBuscar.Name = "cmdBuscar";
-            cmdBuscar.Size = new Size(29, 29);
-            cmdBuscar.TabIndex = 13;
-            cmdBuscar.UseVisualStyleBackColor = true;
             // 
             // lbCabeçallho
             // 
@@ -110,9 +99,9 @@
             labCNPJ.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             labCNPJ.Location = new Point(452, 43);
             labCNPJ.Name = "labCNPJ";
-            labCNPJ.Size = new Size(34, 15);
+            labCNPJ.Size = new Size(58, 15);
             labCNPJ.TabIndex = 17;
-            labCNPJ.Text = "CNPJ";
+            labCNPJ.Text = "CNPJ - F1";
             // 
             // frmBuscaCadastroCNPJ
             // 
@@ -126,7 +115,6 @@
             Controls.Add(labRazao);
             Controls.Add(txtRazaoSocial);
             Controls.Add(cmdSair);
-            Controls.Add(cmdBuscar);
             Controls.Add(lbCabeçallho);
             Controls.Add(txtCNPJ);
             Name = "frmBuscaCadastroCNPJ";
@@ -140,7 +128,6 @@
 
         private MaskedTextBox txtCNPJ;
         private Button cmdSair;
-        private Button cmdBuscar;
         private Label lbCabeçallho;
         private TextBox txtRazaoSocial;
         private Label labRazao;

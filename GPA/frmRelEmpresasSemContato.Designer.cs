@@ -1,6 +1,6 @@
 ﻿namespace Formularios
 {
-    partial class frmCadastroEmpresas
+    partial class frmRelEmpresasSemContato
     {
         /// <summary>
         /// Required designer variable.
@@ -28,15 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadastroEmpresas));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRelEmpresasSemContato));
             labVendedor = new Label();
             labCarteira = new Label();
             txtVendedor = new TextBox();
-            txtCarteira = new TextBox();
+            txtDias = new TextBox();
             cmdSair = new Button();
             chkAtivo = new CheckBox();
             labCadEmpresas = new Label();
             cmdImprimir = new Button();
+            chkSemContato = new CheckBox();
             SuspendLayout();
             // 
             // labVendedor
@@ -55,9 +56,9 @@
             labCarteira.BackColor = Color.Transparent;
             labCarteira.Location = new Point(172, 48);
             labCarteira.Name = "labCarteira";
-            labCarteira.Size = new Size(71, 15);
+            labCarteira.Size = new Size(29, 15);
             labCarteira.TabIndex = 1;
-            labCarteira.Text = "Carteira - F1";
+            labCarteira.Text = "Dias";
             // 
             // txtVendedor
             // 
@@ -66,21 +67,23 @@
             txtVendedor.Size = new Size(154, 23);
             txtVendedor.TabIndex = 2;
             txtVendedor.KeyDown += txtVendedor_KeyDown;
+            txtVendedor.Leave += txtVendedor_Leave;
             // 
-            // txtCarteira
+            // txtDias
             // 
-            txtCarteira.Location = new Point(172, 66);
-            txtCarteira.Name = "txtCarteira";
-            txtCarteira.Size = new Size(148, 23);
-            txtCarteira.TabIndex = 3;
-            txtCarteira.KeyDown += txtCarteira_KeyDown;
+            txtDias.Location = new Point(172, 66);
+            txtDias.Name = "txtDias";
+            txtDias.Size = new Size(77, 23);
+            txtDias.TabIndex = 3;
+            txtDias.KeyPress += txtDias_KeyPress;
+            txtDias.Leave += txtDias_Leave;
             // 
             // cmdSair
             // 
             cmdSair.AccessibleDescription = "Sair";
             cmdSair.BackgroundImage = Properties.Resources.logout;
             cmdSair.BackgroundImageLayout = ImageLayout.Stretch;
-            cmdSair.Location = new Point(291, 12);
+            cmdSair.Location = new Point(296, 9);
             cmdSair.Name = "cmdSair";
             cmdSair.Size = new Size(29, 29);
             cmdSair.TabIndex = 26;
@@ -91,7 +94,7 @@
             // 
             chkAtivo.AutoSize = true;
             chkAtivo.BackColor = Color.Transparent;
-            chkAtivo.Location = new Point(12, 103);
+            chkAtivo.Location = new Point(255, 59);
             chkAtivo.Name = "chkAtivo";
             chkAtivo.Size = new Size(54, 19);
             chkAtivo.TabIndex = 27;
@@ -107,39 +110,52 @@
             labCadEmpresas.Name = "labCadEmpresas";
             labCadEmpresas.Size = new Size(237, 29);
             labCadEmpresas.TabIndex = 28;
-            labCadEmpresas.Text = "Cadastros de Empresas";
+            labCadEmpresas.Text = "Cadastros de Empresas S/ Contato";
             labCadEmpresas.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // cmdImprimir
             // 
             cmdImprimir.BackgroundImage = (Image)resources.GetObject("cmdImprimir.BackgroundImage");
             cmdImprimir.BackgroundImageLayout = ImageLayout.Zoom;
-            cmdImprimir.Location = new Point(255, 12);
+            cmdImprimir.Location = new Point(260, 9);
             cmdImprimir.Name = "cmdImprimir";
             cmdImprimir.Size = new Size(30, 30);
             cmdImprimir.TabIndex = 29;
             cmdImprimir.UseVisualStyleBackColor = true;
             cmdImprimir.Click += cmdImprimir_Click;
             // 
-            // frmCadastroEmpresas
+            // chkSemContato
+            // 
+            chkSemContato.AutoSize = true;
+            chkSemContato.BackColor = Color.Transparent;
+            chkSemContato.Location = new Point(255, 80);
+            chkSemContato.Name = "chkSemContato";
+            chkSemContato.Size = new Size(80, 19);
+            chkSemContato.TabIndex = 30;
+            chkSemContato.Text = "S/Contato";
+            chkSemContato.UseVisualStyleBackColor = false;
+            chkSemContato.CheckedChanged += chkSemContato_CheckedChanged;
+            // 
+            // frmRelEmpresasSemContato
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.BackGround_600x400;
             BackgroundImageLayout = ImageLayout.Center;
-            ClientSize = new Size(332, 134);
+            ClientSize = new Size(333, 106);
             ControlBox = false;
+            Controls.Add(chkSemContato);
             Controls.Add(cmdImprimir);
             Controls.Add(labCadEmpresas);
             Controls.Add(chkAtivo);
             Controls.Add(cmdSair);
-            Controls.Add(txtCarteira);
+            Controls.Add(txtDias);
             Controls.Add(txtVendedor);
             Controls.Add(labCarteira);
             Controls.Add(labVendedor);
-            Name = "frmCadastroEmpresas";
+            Name = "frmRelEmpresasSemContato";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Cadastros de Empresas";
+            Text = "Cadastros de Empresas S/ Contato";
             ResumeLayout(false);
             PerformLayout();
         }
@@ -149,10 +165,11 @@
         private Label labVendedor;
         private Label labCarteira;
         private TextBox txtVendedor;
-        private TextBox txtCarteira;
+        private TextBox txtDias;
         private Button cmdSair;
         private CheckBox chkAtivo;
         private Label labCadEmpresas;
         private Button cmdImprimir;
+        private CheckBox chkSemContato;
     }
 }

@@ -467,16 +467,8 @@ namespace Banco_de_Dados
                         ClausulaWhere = 'S';
                     }
                 }
-                if(pVendedor != null)
-                {
-                    if (pVendedor != "")
-                    {
-                        sqlWhere += " CDCEVendedor = " + pVendedor + " " + "AND";
-                        ClausulaWhere = 'S';
-                    }
-                }
-                
-                if(pCliente != null) 
+
+                if (pCliente != null)
                 {
                     if (pCliente != "")
                     {
@@ -485,14 +477,30 @@ namespace Banco_de_Dados
                     }
                 }
 
-                if (inLivre != null)
+                if (pVendedor != null)
                 {
-                    if (inLivre != "")
+                    if (pVendedor != "" && (cpLivre != null && cpLivre != ""))
                     {
-                        sqlWhere += " CDCELivre like '" + inLivre + "' " + "AND";
+                        sqlWhere += " (CDCEVendedor = " + pVendedor + " " + " OR CDCELivre like '" + inLivre + "') " + "AND";;
                         ClausulaWhere = 'S';
                     }
+                    else if(pVendedor != "" && (cpLivre == null || cpLivre == ""))
+                    {
+                        sqlWhere += " CDCEVendedor = '" + pVendedor + "' " + "AND";
+                        ClausulaWhere = 'S';
+                    }
+                    else
+                    {
+                        if (inLivre != "" && cpLivre != null)
+                        {
+                            sqlWhere = sqlWhere.Remove(sqlWhere.Length - 3);
+                            sqlWhere += "CDCELivre like '" + inLivre + "' " + "AND";
+                            ClausulaWhere = 'S';
+                        }
+                    }
                 }
+
+
 
                 if (pDistribuidor != null)
                 {

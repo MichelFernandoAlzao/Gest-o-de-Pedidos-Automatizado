@@ -81,6 +81,7 @@
             parametrosToolStripMenuItem = new ToolStripMenuItem();
             MnuParametros = new ToolStripMenuItem();
             mnuAlteraVendedor = new ToolStripMenuItem();
+            mnuAlteraCadastroParaLivre = new ToolStripMenuItem();
             controleContatoToolStripMenuItem = new ToolStripMenuItem();
             MnuRegistraContato = new ToolStripMenuItem();
             mnuAvisos = new ToolStripMenuItem();
@@ -89,7 +90,7 @@
             pictureBox1 = new PictureBox();
             chrtVendasMesaMes = new System.Windows.Forms.DataVisualization.Charting.Chart();
             NotifyAgendaContato = new NotifyIcon(components);
-            mnuAlteraCadastroParaLivre = new ToolStripMenuItem();
+            mnuUltimoContatoEmpresa = new ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)grdUltimasVendas).BeginInit();
             ((System.ComponentModel.ISupportInitialize)grdUltContato).BeginInit();
             menuStrip1.SuspendLayout();
@@ -362,7 +363,7 @@
             // relatóriosToolStripMenuItem
             // 
             resources.ApplyResources(relatóriosToolStripMenuItem, "relatóriosToolStripMenuItem");
-            relatóriosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { rankingDeVendasToolStripMenuItem, vendasPorVendedorToolStripMenuItem, registrosDeContatosToolStripMenuItem, mnuRelCadastroDeEmpresas });
+            relatóriosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { rankingDeVendasToolStripMenuItem, vendasPorVendedorToolStripMenuItem, registrosDeContatosToolStripMenuItem, mnuRelCadastroDeEmpresas, mnuUltimoContatoEmpresa });
             relatóriosToolStripMenuItem.Name = "relatóriosToolStripMenuItem";
             // 
             // rankingDeVendasToolStripMenuItem
@@ -406,6 +407,12 @@
             resources.ApplyResources(mnuAlteraVendedor, "mnuAlteraVendedor");
             mnuAlteraVendedor.Name = "mnuAlteraVendedor";
             mnuAlteraVendedor.Click += mnuAlteraVendedor_Click;
+            // 
+            // mnuAlteraCadastroParaLivre
+            // 
+            resources.ApplyResources(mnuAlteraCadastroParaLivre, "mnuAlteraCadastroParaLivre");
+            mnuAlteraCadastroParaLivre.Name = "mnuAlteraCadastroParaLivre";
+            mnuAlteraCadastroParaLivre.Click += mnuAlteraCadastroParaLivre_Click;
             // 
             // controleContatoToolStripMenuItem
             // 
@@ -474,17 +481,17 @@
             resources.ApplyResources(NotifyAgendaContato, "NotifyAgendaContato");
             NotifyAgendaContato.BalloonTipClicked += NotifyAgendaContato_BalloonTipClicked;
             // 
-            // mnuAlteraCadastroParaLivre
+            // mnuUltimoContatoEmpresa
             // 
-            resources.ApplyResources(mnuAlteraCadastroParaLivre, "mnuAlteraCadastroParaLivre");
-            mnuAlteraCadastroParaLivre.Name = "mnuAlteraCadastroParaLivre";
-            mnuAlteraCadastroParaLivre.Click += mnuAlteraCadastroParaLivre_Click;
+            resources.ApplyResources(mnuUltimoContatoEmpresa, "mnuUltimoContatoEmpresa");
+            mnuUltimoContatoEmpresa.Name = "mnuUltimoContatoEmpresa";
+            mnuUltimoContatoEmpresa.Click += mnuUltimoContatoEmpresa_Click;
             // 
             // frmCRMInicial
             // 
             resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Dpi;
-            BackColor = Color.LightCyan;
+            BackColor = Color.White;
             BackgroundImage = Properties.Resources.vecteezy_pattern_with_geometric_elements_light_blue_to_dark_blue_17216459;
             Controls.Add(chrtVendasMesaMes);
             Controls.Add(pictureBox1);
@@ -579,5 +586,6 @@
         private ToolStripMenuItem mnuRelCadastroDeEmpresas;
         private ToolStripMenuItem mnuConsultaPedidoGeral;
         private ToolStripMenuItem mnuAlteraCadastroParaLivre;
+        private ToolStripMenuItem mnuUltimoContatoEmpresa;
     }
 }

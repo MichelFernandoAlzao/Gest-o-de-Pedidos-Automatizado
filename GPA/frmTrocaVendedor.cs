@@ -88,6 +88,7 @@ namespace Formularios
                         txtVendedorAnterior.Text = lstUsuario[0].Usuario.ToString();
                     }
                 }
+                CarregaGrid();
                 LIDUsuario = "";
             }
         }
@@ -108,7 +109,6 @@ namespace Formularios
                         txtNovoVendedor.Text = lstUsuario[0].Usuario.ToString();
                     }
                 }
-                CarregaGrid();
                 LIDUsuario = "";
             }
         }

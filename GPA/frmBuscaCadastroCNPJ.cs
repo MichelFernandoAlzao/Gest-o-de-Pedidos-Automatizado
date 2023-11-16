@@ -26,7 +26,7 @@ namespace Formularios
         private void Buscar()
         {
             BDCadastroGeral objCadastro = new BDCadastroGeral();
-            List<BDCadastroGeral> lstCadastro = objCadastro.CarregaDados(LCaminhoBanco, "", txtRazaoSocial.Text.ToString(), "", txtCNPJ.Text.ToString(), "", "", "", "", "", "","","");
+            List<BDCadastroGeral> lstCadastro = objCadastro.CarregaDados(LCaminhoBanco, "", txtRazaoSocial.Text.ToString(), "", txtCNPJ.Text.ToString(), "", "", "", "", "", "", "", "");
             if (lstCadastro.Count > 0)
             {
                 if (lstCadastro[0].Vendedor == LUsusario)
@@ -59,6 +59,11 @@ namespace Formularios
         {
             if (e.KeyCode == Keys.F1)
             {
+                if(txtCNPJ.Text.Replace("/","").Replace(".","").Replace(",","").Replace("-","").Length < 14)
+                {
+                    MessageBox.Show("CNPJ com tamanho invalido para busca!", "GPA - Aviso!");
+                    return;
+                }
                 txtRazaoSocial.Text = "";
                 Buscar();
             }
@@ -74,5 +79,21 @@ namespace Formularios
             }
 
         }
+        //public void Foco()
+        //{
+        //    if (txtRazaoSocial.Focus())
+        //    {
+        //        txtCNPJ.Text = "";
+        //    }
+        //    else if (txtCNPJ.Focus())
+        //    {
+        //        txtRazaoSocial.Text = "";
+        //    }
+        //}
+
+        //private void txtRazaoSocial_Enter(object sender, EventArgs e)
+        //{
+        //    Foco();
+        //}
     }
 }

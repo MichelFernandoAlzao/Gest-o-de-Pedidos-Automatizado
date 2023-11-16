@@ -586,7 +586,7 @@ namespace Formularios
 
         private void mnuRelCadastroDeEmpresas_Click(object sender, EventArgs e)
         {
-            frmCadastroEmpresas frmCadastroEmpresas = new frmCadastroEmpresas(LCaminhoBanco, LUsuario);
+            frmRelCadastroEmpresas frmCadastroEmpresas = new frmRelCadastroEmpresas(LCaminhoBanco, LUsuario);
             frmCadastroEmpresas.ShowDialog();
             RealizaCargas();
         }
@@ -600,8 +600,20 @@ namespace Formularios
 
         private void mnuAlteraCadastroParaLivre_Click(object sender, EventArgs e)
         {
-            frmTrocaCadastroParaLivre frmTrocaParaLivre = new frmTrocaCadastroParaLivre(LCaminhoBanco,LUsuario);
+            frmTrocaCadastroParaLivre frmTrocaParaLivre = new frmTrocaCadastroParaLivre(LCaminhoBanco, LUsuario);
             frmTrocaParaLivre.ShowDialog();
+            RealizaCargas();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void mnuUltimoContatoEmpresa_Click(object sender, EventArgs e)
+        {
+            frmRelEmpresasSemContato frmRelEmpresasSemContato = new frmRelEmpresasSemContato(LCaminhoBanco, LUsuario);
+            frmRelEmpresasSemContato.ShowDialog();
             RealizaCargas();
         }
     }

@@ -123,28 +123,28 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="labConsolidado.Location" type="System.Drawing.Point, System.Drawing">
-    <value>248, 674</value>
+    <value>248, 713</value>
   </data>
   <data name="pgrsbMeta.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left, Right</value>
   </data>
   <data name="pgrsbMeta.Location" type="System.Drawing.Point, System.Drawing">
-    <value>250, 694</value>
+    <value>250, 733</value>
   </data>
   <data name="pgrsbMeta.Size" type="System.Drawing.Size, System.Drawing">
-    <value>746, 23</value>
+    <value>762, 23</value>
   </data>
   <data name="labProgressao.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom</value>
   </data>
   <data name="labProgressao.Location" type="System.Drawing.Point, System.Drawing">
-    <value>582, 674</value>
+    <value>590, 713</value>
   </data>
   <data name="labMeta.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
   </data>
   <data name="labMeta.Location" type="System.Drawing.Point, System.Drawing">
-    <value>899, 674</value>
+    <value>915, 713</value>
   </data>
   <data name="grdUltimasVendas.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left</value>
@@ -168,7 +168,7 @@
     <value>Bottom, Left, Right</value>
   </data>
   <data name="txtObjetivoDiario.Location" type="System.Drawing.Point, System.Drawing">
-    <value>131, 694</value>
+    <value>131, 733</value>
   </data>
   <data name="txtObjetivoDiario.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>113, 23</value>
@@ -177,7 +177,7 @@
     <value>Bottom, Left, Right</value>
   </data>
   <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>131, 674</value>
+    <value>131, 713</value>
   </data>
   <data name="label6.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left</value>
@@ -201,13 +201,13 @@
     <value>Bottom, Left, Right</value>
   </data>
   <data name="label8.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 674</value>
+    <value>12, 713</value>
   </data>
   <data name="textBox2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left, Right</value>
   </data>
   <data name="textBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 694</value>
+    <value>12, 733</value>
   </data>
   <data name="textBox2.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>113, 23</value>
@@ -216,19 +216,19 @@
     <value>Bottom</value>
   </data>
   <data name="labVlrProgressao.Location" type="System.Drawing.Point, System.Drawing">
-    <value>666, 674</value>
+    <value>674, 713</value>
   </data>
   <data name="labVlrConsolidado.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
   </data>
   <data name="labVlrConsolidado.Location" type="System.Drawing.Point, System.Drawing">
-    <value>331, 674</value>
+    <value>331, 713</value>
   </data>
   <data name="labVlrMeta.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
   </data>
   <data name="labVlrMeta.Location" type="System.Drawing.Point, System.Drawing">
-    <value>936, 674</value>
+    <value>952, 713</value>
   </data>
   <data name="MnuCadEmpresas.Size" type="System.Drawing.Size, System.Drawing">
     <value>170, 22</value>
@@ -284,8 +284,26 @@
   <data name="mnuConsultaPedidoGeral.Text" xml:space="preserve">
     <value>Consulta Pedido Geral</value>
   </data>
+  <data name="rankingDeVendasToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>196, 22</value>
+  </data>
+  <data name="vendasPorVendedorToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>196, 22</value>
+  </data>
+  <data name="registrosDeContatosToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>196, 22</value>
+  </data>
+  <data name="mnuRelCadastroDeEmpresas.Size" type="System.Drawing.Size, System.Drawing">
+    <value>196, 22</value>
+  </data>
   <data name="mnuRelCadastroDeEmpresas.Text" xml:space="preserve">
     <value>Cadastros Empresas</value>
+  </data>
+  <data name="mnuUltimoContatoEmpresa.Size" type="System.Drawing.Size, System.Drawing">
+    <value>196, 22</value>
+  </data>
+  <data name="mnuUltimoContatoEmpresa.Text" xml:space="preserve">
+    <value>Ultimo Contato Cliente</value>
   </data>
   <data name="MnuParametros.Size" type="System.Drawing.Size, System.Drawing">
     <value>209, 22</value>
@@ -295,9 +313,6 @@
   </data>
   <data name="mnuAlteraVendedor.Text" xml:space="preserve">
     <value>Altera Vendedor</value>
-  </data>
-  <data name="mnuAlteraCadastroParaLivre.Size" type="System.Drawing.Size, System.Drawing">
-    <value>209, 22</value>
   </data>
   <data name="mnuAlteraCadastroParaLivre.Text" xml:space="preserve">
     <value>Altera Cadastro para Livre</value>
@@ -310,6 +325,9 @@
   </data>
   <data name="mnuContatosAgendados.Text" xml:space="preserve">
     <value>Contatos Agendados</value>
+  </data>
+  <data name="menuStrip1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1024, 24</value>
   </data>
   <data name="NotifyAvisos.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1512,7 +1530,7 @@
 </value>
   </data>
   <data name="pictureBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>527, 239</value>
+    <value>535, 259</value>
   </data>
   <data name="pictureBox1.Size" type="System.Drawing.Size, System.Drawing">
     <value>300, 168</value>
@@ -1630,14 +1648,11 @@
   <data name="NotifyAgendaContato.Visible" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="$this.AutoSize" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="$this.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Stretch</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1008, 729</value>
+    <value>1024, 768</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>1024, 768</value>

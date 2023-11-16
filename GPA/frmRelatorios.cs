@@ -80,50 +80,21 @@ namespace Formularios
                     ReportViewer.LocalReport.ReportEmbeddedResource = pRelatorio;
                     this.Controls.Add(this.ReportViewer);
                     break;
+
+                case "Formularios.Relatorios.EmpresassemContato.rdlc":
+                    List<CadastrosDeEmpresas> lstCadastrosSemContato = new List<CadastrosDeEmpresas>();
+                    RelCadastroDeEmpresas objRelCadastrosSemContato = new RelCadastroDeEmpresas();
+                    lstCadastrosSemContato = objRelCadastrosSemContato.CarregaRelatorioSemContatoRDLC(LCaminhoBanco, ParametrosRel);
+                    fonteDeDados.Name = "CadastrosDeEmpresas";
+                    fonteDeDados.Value = lstCadastrosSemContato;
+                    this.ReportViewer.LocalReport.DataSources.Clear();
+                    this.ReportViewer.LocalReport.DataSources.Add(fonteDeDados);
+                    ReportParameter Prazo = new ReportParameter( "Prazo",ParametrosRel[2]);
+                    ReportViewer.LocalReport.ReportEmbeddedResource = pRelatorio;
+                    ReportViewer.LocalReport.SetParameters(Prazo);
+                    this.Controls.Add(this.ReportViewer);
+                    break;
             }
-            //if (pRelatorio == "Formularios.Relatorios.Pedido.rdlc")
-            //{
-            //    List<RelatorioPedido> lstPedido = new List<RelatorioPedido>();
-            //    CarregaRelatorio objRelPedido = new CarregaRelatorio();
-            //    lstPedido = objRelPedido.CarregaRelatorioRDLC(LCaminhoBanco, ParametrosRel[1]);
-
-            //    //var fonteDeDados = new Microsoft.Reporting.WinForms.ReportDataSource();
-            //    ReportDataSource fonteDeDados = new ReportDataSource();
-            //    fonteDeDados.Name = "Pedido";
-            //    fonteDeDados.Value = lstPedido;
-            //    this.ReportViewer.LocalReport.DataSources.Clear();
-            //    this.ReportViewer.LocalReport.DataSources.Add(fonteDeDados);
-            //    ReportViewer.LocalReport.ReportEmbeddedResource = pRelatorio;
-            //    this.Controls.Add(this.ReportViewer);
-            //}
-            //if (pRelatorio == "Formularios.Relatorios.VendasPorCliente.rdlc")
-            //{
-            //    List<VendasPorCliente> lstVendas = new List<VendasPorCliente>();
-            //    RelVendasPorCliente objRelVendas = new RelVendasPorCliente();
-            //    lstVendas = objRelVendas.CarregaRelatorioRDLC(LCaminhoBanco, ParametrosRel);
-
-            //    ReportDataSource fonteDeDados = new ReportDataSource();
-            //    fonteDeDados.Name = "VendasPorCliente";
-            //    fonteDeDados.Value = lstVendas;
-            //    this.ReportViewer.LocalReport.DataSources.Clear();
-            //    this.ReportViewer.LocalReport.DataSources.Add(fonteDeDados);
-            //    ReportViewer.LocalReport.ReportEmbeddedResource = pRelatorio;
-            //    this.Controls.Add(this.ReportViewer);
-            //}
-            //if (pRelatorio == "Formularios.Relatorios.RegistroContatos.rdlc")
-            //{
-            //    List<RegistrodeContato> lstregistros = new List<RegistrodeContato>();
-            //    RelRegistroContatos objRelRegistros = new RelRegistroContatos();
-            //    lstregistros = objRelRegistros.CarregaRelatorioRDLC(LCaminhoBanco, ParametrosRel);
-
-            //    ReportDataSource fonteDeDados = new ReportDataSource();
-            //    fonteDeDados.Name = "RegistroDeContatos";
-            //    fonteDeDados.Value = lstregistros;
-            //    this.ReportViewer.LocalReport.DataSources.Clear();
-            //    this.ReportViewer.LocalReport.DataSources.Add(fonteDeDados);
-            //    ReportViewer.LocalReport.ReportEmbeddedResource = pRelatorio;
-            //    this.Controls.Add(this.ReportViewer);
-            //}
             ReportViewer.SetDisplayMode(DisplayMode.PrintLayout);
             ReportViewer.RefreshReport();
 
